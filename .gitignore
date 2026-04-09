@@ -1,4 +1,27 @@
+# OS files
 .DS_Store
+Thumbs.db
+
+# Editor backups
+*~
 *.swp
 *.swo
-*~
+.#*
+
+# Obsidian — user-specific workspace state (not shared across machines)
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/graph.json
+
+# Obsidian plugin local data (may contain API keys, tokens, sync state)
+.obsidian/plugins/*/data.json
+
+# Local OMC state (if ever used inside the wiki)
+.omx/
+.omc/state/
+
+# Dev tool caches
+__pycache__/
+node_modules/

@@ -1,5 +1,223 @@
 # Activity Log
 
+## 2026-04-10 (오후) — Ingest: "프롬프트에서 하네스까지" AI 에이전틱 패턴 4년 연대기
+- **소스**: https://bits-bytes-nn.github.io/insights/agentic-ai/2026/04/05/evolution-of-ai-agentic-patterns.html
+- **성격**: 2022-2026 AI 에이전틱 개발 패러다임 3 에라(Prompt → Context → Harness Engineering) 연대기 + 부검 보고서
+- **raw 파일**: `raw/2026-04-09-evolution-of-ai-agentic-patterns.md` (WebFetch로 한국어 본문 + 영어 원문 핵심 구절 보존)
+- **생성 페이지 11개**:
+  - **summary (1)**:
+    - `wiki/agents/evolution-of-agentic-patterns.md` — 3 에라 전체 요약 + Mermaid 타임라인 다이어그램
+  - **concept (10)**:
+    - `wiki/concepts/relocating-rigor.md` — Chad Fowler의 메타 원칙 (엄밀함은 이동한다)
+    - `wiki/concepts/prompt-engineering.md` — Era 1 (2022-2024) CoT/ReAct/Tree-of-Thought/Self-Refine/Ng 4 patterns
+    - `wiki/concepts/context-engineering.md` — Era 2 (2025) Anthropic 4전략 + LLM OS 연결
+    - `wiki/concepts/harness-engineering.md` — Era 3 (2026+) Agent = Model + Harness
+    - `wiki/concepts/llm-as-os.md` — Karpathy OS 메타포 (Kernel/RAM/FS/syscall 대응)
+    - `wiki/inference/kv-cache.md` — KV 캐시 구조 + stable prefix/variable suffix 설계 (category: inference, inference 디렉토리 신설)
+    - `wiki/concepts/lethal-trifecta.md` — Simon Willison 3요소 + Meta Rule of Two 보안
+    - `wiki/concepts/harness-quadrants.md` — Fowler/Böckeler 2×2 하네스 분류 (네 사분면)
+    - `wiki/concepts/blind-prompting.md` — Mitchell Hashimoto의 프롬프트 안티패턴
+    - `wiki/concepts/ralph-pattern.md` — Geoffrey Huntley의 클린 컨텍스트 반복 루프 패턴 (파일시스템을 진실의 원천으로)
+- **갱신 페이지 2개 (concept 병합)**:
+  - `wiki/concepts/vibe-coding.md` — 2025-09 Vibe Coding Hangover 사건, CodeRabbit 메트릭, Simon Willison 교정 인용 추가
+  - `wiki/concepts/agentic-engineering.md` — 3 에라 연대기 관점에서의 위치 섹션 추가
+- **Mermaid 다이어그램**: 10개 페이지 중 8개에 포함 (3 에라 타임라인, OS 메타포 대응, 4사분면 의사결정 트리, KV 캐시 히트/미스 흐름, harness-quadrants 2×2 결정 트리, prompt engineering ReAct 루프, context engineering 4전략 트리, harness engineering 3-Agent 아키텍처)
+- **디렉토리 신설**: `wiki/inference/` (기존에 없었음. KV Cache가 첫 페이지)
+- **분류 판단 메모**:
+  - 소스는 에세이/연대기 성격이므로 기본 요약 페이지는 `summary`. 이를 `agents/` 카테고리에 배치 (에이전틱 패턴이 주제)
+  - 3 에라(prompt/context/harness engineering)는 모두 source-agnostic한 일반 개념이므로 `concept`
+  - KV Cache는 추론 최적화 기술이므로 `category: inference`. 디렉토리도 이에 맞춰 신설
+  - Harness Quadrants는 이미 이번 작업 중 다른 버전이 작성되어 있음을 발견 (동등한 품질) — 그대로 유지
+  - Lethal Trifecta와 Meta Rule of Two는 한 페이지에 묶음 (동일 주제)
+- **기존 concept 병합 규칙 준수**: vibe-coding과 agentic-engineering 페이지에 덮어쓰기 없이 새 섹션만 추가, `sources:` 배열에 raw 파일 추가
+- **언어 규칙 준수**: 모든 본문 한국어, 영어 원문은 blockquote 인용으로만 보존 (Mitchell Hashimoto, Simon Willison 핵심 문장)
+- **발견된 지식 갭** (index.md TODO에 반영):
+  - Mitchell Hashimoto의 두 블로그 포스트 (Blind Prompting, My AI Adoption Journey) 원문
+  - Tobi Lütke의 2025-06-19 context engineering 원본 트윗
+  - Karpathy의 Software 3.0 원본
+  - Anthropic 3-Agent 아키텍처 상세
+  - OpenAI Codex 5개월 실험 원본
+  - CoT/ReAct/ToT/Self-Refine/Reflexion/Lost-in-Middle 원본 논문 (paper 타입 후보 6개)
+  - Fowler/Böckeler 4사분면 원본 아티클
+  - Simon Willison Lethal Trifecta 원문
+  - Meta Rule of Two 공식 문서
+  - Andrew Ng "Four Agentic Design Patterns" 원본
+  - Chad Fowler "Relocating Rigor" (Honeycomb) 원문
+
+## 2026-04-10 — Ingest: Google Stitch DESIGN.md 문서
+- **소스**: Google Stitch 공식 문서 DESIGN.MD 섹션 3개 페이지
+  - https://stitch.withgoogle.com/docs/design-md/overview/
+  - https://stitch.withgoogle.com/docs/design-md/format/
+  - https://stitch.withgoogle.com/docs/design-md/usage/
+- **수집 방법**: Stitch는 인증이 필요한 SPA(iframe 내부)라 WebFetch로는 JavaScript만 잡힘. **chrome-devtools MCP**로 실제 렌더링 후 a11y 스냅샷으로 전체 텍스트 추출
+- **raw 파일**: `raw/2026-04-09-stitch-design-md.md` (3개 페이지 한국어 번역 + 영어 원문 핵심 구절 blockquote 보존)
+- **생성 페이지 5개**:
+  - **summary (1)**:
+    - `wiki/applications/stitch-design-md-guide.md` — 3개 페이지 통합 요약 + Mermaid 구조 다이어그램
+  - **entity (1)** [project: Google Stitch]:
+    - `wiki/tooling/google-stitch.md` — Stitch 제품 개요, 아키텍처 다이어그램, MCP/SDK/Learn 섹션 네비게이션
+  - **concept (3)**:
+    - `wiki/concepts/design-md-format.md` — 6개 섹션(Overview/Colors/Typography/Elevation/Components/Do's and Don'ts) 명세와 철학
+    - `wiki/concepts/ai-readable-design-system.md` — README/AGENTS/DESIGN 세 파일 체계, "living artifact" 원칙, 기계 가독성 요건
+    - `wiki/concepts/design-tokens.md` — 3-tier 모델(primitive/semantic/component) + Mermaid 계층도, AI 에이전트 관점
+- **Mermaid 다이어그램**: 5개 페이지 중 4개에 포함 (summary 1개, entity 1개, concept 2개)
+- **언어 규칙 준수**: 모든 본문 한국어. 영어 원문 인용은 blockquote로만 보존. 기술 용어는 괄호 병기
+- **분류 판단 주의점**:
+  - "dual representation" (markdown + structured tokens)은 Stitch 고유 메커니즘 → `design-md-format` concept 페이지에서는 간단히만 언급하고 상세는 `google-stitch` entity로 미루기
+  - DESIGN.md 포맷 자체는 source-agnostic (Claude Code 등 다른 에이전트도 읽을 수 있음) → concept로 분류
+  - Stitch 제품 고유 기능(Design System 패널, export)은 entity/project-internal 영역
+- **발견된 지식 갭**:
+  - Google Stitch의 나머지 docs 섹션 (Learn/MCP/SDK/Prompting/Device Types/Design Modes/Variants/Controls)
+  - AGENTS.md 관례의 역사 (OpenAI/Cursor/Claude Code 생태계)
+  - Design Tokens Community Group (W3C) 공식 JSON 표준
+  - Style Dictionary, Tokens Studio 같은 도구들
+  - Material Design color role 체계 상세
+  - WCAG 접근성 가이드라인
+
+## 2026-04-09 (새벽) — Obsidian Vault 연결 + GitHub remote 설정
+- **GitHub remote 연결**: `git@github-personal:kim62210/llm-wiki.git`을 `origin`으로 추가. 원격 저장소는 비어 있어 push만 하면 됨 (아직 push 전, 사용자 승인 대기).
+- **Obsidian 호환성 확보**: 파일명은 kebab-case(`agentic-engineering-guide.md`)지만 본문 위키링크는 공백형(`[[agentic engineering guide]]`)이라 Obsidian 기본 파일명 해결로는 링크가 깨진다. 해결책으로 **38개 페이지 전체에 `aliases:` frontmatter 필드 추가**. 각 페이지가 실제로 참조되는 모든 wikilink 텍스트를 alias로 포함.
+- **특수 케이스 처리**:
+  - `browser-automation-agents.md` — Playwright, Rodney, Showboat, agent-browser 4개 별칭 통합 (현재 dedicated 페이지 없음)
+  - `omc-hook-system.md` — "Hooks" 별칭
+  - `omc-skill-layering.md` — "Skills" 별칭
+  - `omc-state-management.md` — "State Management" 별칭
+  - `omc-agent-catalog.md` — "Agents" 별칭
+  - `omc-magic-keyword.md` — "매직 키워드" (한글) 별칭
+  - `oh-my-claudecode.md` — "OMC", "oh-my-claudecode" 등 축약형 별칭
+- **미해결 wikilink (knowledge gap)**:
+  - `[[Tesseract.js]]` — dedicated 페이지 없음. Obsidian에서 unresolved link로 표시되어 자연스러운 knowledge gap marker 역할
+- **`.gitignore` 갱신**: Obsidian workspace 파일(`.obsidian/workspace*`, `cache`, `graph.json`), 플러그인 local data, `.omx/`, `.omc/state/` 등 user-specific/민감 파일 제외
+- **`README.md` 신규 생성**: 저장소 루트에 README 작성 — 디렉토리 구조, 두 축 분류 모델, Obsidian vault 열기 가이드, 권장 설정, 위키링크 해결 방식, Mermaid/Graph view 사용법, 새 페이지 추가 스킬 안내
+- **검증**: 38/38 wiki 페이지에 `aliases:` 필드 정상 삽입 확인
+
+## 2026-04-09 (심야) — 시스템 개선: Mermaid 다이어그램 도입
+- **배경**: 구조·흐름·관계 설명을 글과 ASCII art로만 처리하면 가독성과 유지보수성이 떨어짐. Mermaid는 GitHub/Obsidian/VS Code가 기본 지원하므로 텍스트 기반 diff 추적과 렌더링을 모두 얻을 수 있음.
+- **`CLAUDE.md` 갱신**: 작성 스타일 섹션 아래에 "다이어그램 작성 규칙 (Mermaid)" 섹션 신설:
+  - 언제 Mermaid를 쓰는가 / 쓰지 않는가
+  - 다이얼렉트 선택 가이드 (flowchart / sequenceDiagram / stateDiagram-v2 / classDiagram)
+  - 7가지 작성 규칙 (ASCII 금지, 간결성, 한글 레이블 OK, 코드 펜스, 렌더링 확인, 설명 병기, 스타일 지시 자제)
+  - 타입별 적용 힌트 (concept/entity/project-internal/case-study/summary/paper)
+- **`~/.claude/skills/wiki-ingest/SKILL.md` 갱신**: 실행 절차에 Section 7 "다이어그램화 판단 (Mermaid)" 추가. ASCII art 금지, Mermaid 우선 규칙 명시. 섹션 번호 재조정 (7→11).
+- **기존 페이지 8개에 Mermaid 추가/대체**:
+  - **신규 추가 (4)**:
+    - `wiki/agents/how-coding-agents-work.md` — 에이전트 루프 flowchart
+    - `wiki/agents/subagents.md` — parent/child spawn 구조 flowchart
+    - `wiki/concepts/omc-model-routing.md` — task → tier → agent 의사결정 트리
+    - `wiki/applications/red-green-tdd.md` — TDD Red/Green/Refactor stateDiagram
+  - **ASCII → Mermaid 리팩토링 (4)**:
+    - `wiki/concepts/multi-agent-orchestration.md` — orchestrator→에이전트 flowchart
+    - `wiki/concepts/omc-hook-system.md` — 컨텍스트 보존 전략 flowchart (컴팩션 루프 포함)
+    - `wiki/tooling/omc-autopilot.md` — 5-Phase 파이프라인 flowchart (validation 피드백 루프 포함)
+    - `wiki/tooling/omc-team-mode.md` — 5-Stage 파이프라인 stateDiagram
+- **검증**: 8/8 파일에 `mermaid` 코드 펜스 정상 삽입 확인
+- **남은 작업 (TODO)**:
+  - `omc-execution-modes.md`, `oh-my-claudecode.md` 전체 아키텍처 다이어그램
+  - `omc-delegation-categories.md` 카테고리 판정 트리
+  - `agentic-manual-testing.md` 수동 테스트 워크플로우
+  - `interactive-explanations.md` cognitive debt 상환 플로우
+
+## 2026-04-09 (밤) — 시스템 개선: 페이지 타입 축 도입
+- **배경**: OMC 관련 페이지들이 `concepts/` 카테고리에 섞여 있어 Karpathy의 source-agnostic concept 노드 원칙과 충돌. "카테고리 축 하나"만으로는 일반 개념과 프로젝트 내부 디테일을 구분할 수 없음을 발견.
+- **변경 사항**: 카테고리(주제) 축과 독립된 **페이지 타입(성격)** 축 도입. 타입 6종 정의:
+  - `concept` — source-agnostic 일반 개념 (여러 소스에서 누적)
+  - `entity` — 특정 프로젝트/도구/인물 허브
+  - `project-internal` — 특정 프로젝트 내부 구현/기능 디테일
+  - `case-study` — "어떻게 만들었나" narrative
+  - `summary` — 특정 소스의 압축 요약
+  - `paper` — 논문 요약
+- **`CLAUDE.md` 갱신**: 두 축 분류 모델, 페이지 타입 정의, 타입별 편집 규범, 타입 간 교차참조 규칙 표, 프론트매터 템플릿(page_type/project 필드 추가) 전면 재작성
+- **기존 페이지 프론트매터 마이그레이션 (38개)**:
+  - `concept` (19): agentic-engineering, vibe-coding, coding-agent, code-is-cheap, hoard-things-you-know-how-to-do, better-code-with-agents, anti-patterns, cognitive-debt, how-coding-agents-work, subagents, red-green-tdd, first-run-the-tests, agentic-manual-testing, linear-walkthroughs, interactive-explanations, git-with-coding-agents, browser-automation-agents
+  - `entity` (2): claude-code (project: Claude Code), oh-my-claudecode (project: oh-my-claudecode)
+  - `project-internal` (16, project: oh-my-claudecode): omc-agent-catalog, multi-agent-orchestration, omc-delegation-categories, omc-hook-system, omc-magic-keyword, omc-model-routing, omc-skill-layering, omc-state-management, omc-execution-modes, omc-autopilot, omc-ralph-mode, omc-ultrawork, omc-team-mode, omc-ccg, omc-ralplan, omc-deep-interview
+  - `summary` (2): agentic-engineering-guide, prompts-library
+  - `case-study` (1): gif-optimization-case-study
+- **`index.md` 재구성**: 카테고리 섹션 내에서 **타입별 서브섹션**으로 분리. 일반 개념/도구와 특정 프로젝트(oh-my-claudecode) 그룹이 시각적으로 구분됨.
+- **`~/.claude/skills/wiki-ingest/SKILL.md` 갱신**: 실행 절차에 "페이지 계획 (타입 판단 필수 단계)" 추가. concept 오염 방지 규칙, 타입별 편집 가이드, index/log 타입별 분류 절차 명시.
+- **신규 TODO**:
+  - `concepts/multi-agent-orchestration.md`가 내용 70% OMC 특화 상태 → 향후 순수 concept판과 project-internal판으로 분리 필요
+
+## 2026-04-09 (저녁)
+- **Ingest**: `yeachan-heo/oh-my-claudecode` GitHub 프로젝트 전체 구조 위키화
+  - 소스 URL: https://github.com/yeachan-heo/oh-my-claudecode
+  - 수집 범위: README.md, AGENTS.md, CLAUDE.md, docs/ARCHITECTURE.md, docs/FEATURES.md, docs/HOOKS.md, docs/GETTING-STARTED.md, docs/REFERENCE.md, docs/TOOLS.md
+  - raw 파일 9개:
+    - `raw/2026-04-09-omc-README.md`
+    - `raw/2026-04-09-omc-AGENTS.md`
+    - `raw/2026-04-09-omc-CLAUDE.md`
+    - `raw/2026-04-09-omc-ARCHITECTURE.md`
+    - `raw/2026-04-09-omc-FEATURES.md`
+    - `raw/2026-04-09-omc-HOOKS.md`
+    - `raw/2026-04-09-omc-GETTING-STARTED.md`
+    - `raw/2026-04-09-omc-REFERENCE.md`
+    - `raw/2026-04-09-omc-TOOLS.md`
+- **생성된 페이지 (16개)**:
+  - 메인 허브: `wiki/applications/oh-my-claudecode.md`
+  - Concepts (7개):
+    - `wiki/concepts/multi-agent-orchestration.md`
+    - `wiki/concepts/omc-magic-keyword.md`
+    - `wiki/concepts/omc-skill-layering.md`
+    - `wiki/concepts/omc-model-routing.md`
+    - `wiki/concepts/omc-hook-system.md`
+    - `wiki/concepts/omc-state-management.md`
+    - `wiki/concepts/omc-delegation-categories.md`
+  - Agents (1개):
+    - `wiki/agents/omc-agent-catalog.md` (19개 에이전트, 4개 레인)
+  - Tooling (8개):
+    - `wiki/tooling/omc-execution-modes.md`
+    - `wiki/tooling/omc-autopilot.md`
+    - `wiki/tooling/omc-ralph-mode.md`
+    - `wiki/tooling/omc-ultrawork.md`
+    - `wiki/tooling/omc-team-mode.md`
+    - `wiki/tooling/omc-ccg.md`
+    - `wiki/tooling/omc-ralplan.md`
+    - `wiki/tooling/omc-deep-interview.md`
+- **갱신된 페이지**:
+  - `index.md` — Tooling 섹션에 OMC 8개 페이지 추가
+- **발견된 지식 갭**:
+  - OMC Learner / Skill 학습 시스템 별도 페이지
+  - OMC Notepad Wisdom System 상세
+  - OMC MCP 툴 카탈로그
+  - OMC Ecomode / Ultraqa / Visual-Verdict / Web-Clone 개별 페이지
+  - OMC autoresearch runtime 상세
+  - OMC HUD statusline / Notification 통합 (Telegram/Discord/Slack/OpenClaw)
+
+## 2026-04-09
+- **Ingest**: Simon Willison의 "Agentic Engineering Patterns" 가이드 전체 수집 및 컴파일
+  - 소스 URL: https://simonwillison.net/guides/agentic-engineering-patterns
+  - 수집 범위: 메인 가이드 + 모든 서브 챕터 14개 + 2026-02-23 소개 포스트
+  - raw 파일: `raw/2026-04-09-simon-willison-agentic-engineering-patterns.md`
+- **생성된 페이지 (18개)**:
+  - `wiki/applications/agentic-engineering-guide.md` (가이드 전체 맵)
+  - `wiki/concepts/agentic-engineering.md`
+  - `wiki/concepts/vibe-coding.md`
+  - `wiki/concepts/coding-agent.md`
+  - `wiki/concepts/code-is-cheap.md`
+  - `wiki/concepts/hoard-things-you-know-how-to-do.md`
+  - `wiki/concepts/better-code-with-agents.md`
+  - `wiki/concepts/anti-patterns.md`
+  - `wiki/concepts/cognitive-debt.md`
+  - `wiki/agents/how-coding-agents-work.md`
+  - `wiki/agents/subagents.md`
+  - `wiki/applications/red-green-tdd.md`
+  - `wiki/applications/first-run-the-tests.md`
+  - `wiki/applications/agentic-manual-testing.md`
+  - `wiki/applications/linear-walkthroughs.md`
+  - `wiki/applications/interactive-explanations.md`
+  - `wiki/applications/gif-optimization-case-study.md`
+  - `wiki/applications/prompts-library.md`
+  - `wiki/tooling/claude-code.md`
+  - `wiki/tooling/git-with-coding-agents.md`
+  - `wiki/tooling/browser-automation-agents.md`
+- **갱신된 페이지**:
+  - `index.md` — agents, applications, tooling, concepts 카테고리 전면 갱신, TODO 섹션 추가
+- **발견된 지식 갭**:
+  - Max Woolf 원본 글 (word cloud 프롬프트 출처)
+  - Every의 Compound Engineering Loop 원본 방법론
+  - Karpathy의 "vibe coding" 원본 정의
+  - OpenAI Codex, Gemini CLI/Jules 개별 페이지
+
 ## 2026-04-06
 - 위키 초기 구조 생성 (CLAUDE.md, index.md, log.md)
 - 카테고리 10개 정의: foundations, architectures, training, inference, rag, agents, applications, papers, tooling, concepts
