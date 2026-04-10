@@ -40,6 +40,16 @@ Agent Harnesses for Long-Running Coding Sessions은 **모델 능력보다 개발
 
 컨텍스트 윈도우를 넘어 몇 시간 동안 자율적으로 코딩을 이어가게 하는 에이전트 실행 구조. 이 유형의 topic은 보통 하나의 제품보다 **반복 가능한 패턴 / 평가 기준 / 설계 trade-off**로 읽는 편이 유용하다. 이번 source 묶음에서도 `anthropic.com, code.claude.com, github.com`가 함께 나오면서 개념, 구현, 평가가 연결되어 있다.
 
+```mermaid
+flowchart TD
+    Init[Initializer Agent] --> Setup[환경/feature list 설정]
+    Setup --> Loop[Coding Agent 반복 실행]
+    Loop --> Artifacts[progress file / git history / state]
+    Artifacts --> Resume[다음 세션 재개]
+```
+
+이 구조는 long-running harness의 핵심이 모델 자체보다 **세션 사이를 이어 주는 artifact 설계**에 있다는 점을 보여준다.
+
 ## 핵심 포인트
 
 Agent Harnesses for Long-Running Coding Sessions는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 컨텍스트 윈도우를 넘어 몇 시간 동안 자율적으로 코딩을 이어가게 하는 에이전트 실행 구조.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
@@ -85,6 +95,14 @@ Agent Harnesses for Long-Running Coding Sessions는 현재 시점의 핵심 개�
 - 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
 - source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
 - `Anthropic이 2025년 11월 "Effective harnesses for long-running agents"에서 initializer + coding agent 2단 구조와 claude-progress.txt 기반 세션 이어받기 패턴을 공개했고, 2026년 3월에는 generator-evaluator 3-agent 구조로 확장한 후속편을 내며 "harness engineering"`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
+
+### 점검 질문
+
+| 질문 | 의미 |
+|---|---|
+| 상태를 무엇으로 넘기는가? | 세션 간 연속성 확보 |
+| premature completion을 어떻게 막는가? | 장기 작업 중도 종료 방지 |
+| 실패 후 어디서 재개하는가? | 복구 비용과 운영성 판단 |
 
 ## 관련 문서
 

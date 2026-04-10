@@ -50,6 +50,14 @@ updated: 2026-04-10
 
 즉, 이 시기의 핫토픽은 "모델 하나의 성능"보다 **모델을 둘러싼 시스템 전체를 어떻게 설계·측정·운영할 것인가**에 더 무게가 실려 있다.
 
+| 읽기 목표 | 먼저 볼 문서 | 그다음 볼 문서 |
+|---|---|---|
+| 에이전트 설계 이해 | [[context-engineering]] | [[anthropic-multi-agent-research-system]], [[long-running-agent-harnesses]] |
+| 추론/서빙 구조 이해 | [[flashattention-4]], [[disaggregated-serving]] | [[lmcache]], [[tensorrt-llm]] |
+| RAG/메모리 이해 | [[contextual-retrieval]], [[agent-memory-systems]] | [[context-rot]], [[temporal-knowledge-graph-memory]] |
+| 평가/운영 이해 | [[tool-invocation-evaluators]], [[llm-observability-platforms]] | [[long-horizon-agent-benchmarks]], [[metr-time-horizon-benchmark]] |
+| 모델 선택 | [[frontier-model-comparison-2026-04]] | 개별 모델 entity 페이지 |
+
 ## 무엇이 실제로 깊어졌는가
 
 이번 확장에서는 단순 링크 허브를 넘어서 각 토픽 페이지에 **source 기반 참고**가 실제로 붙었다. 따라서 이제는 "토픽 제목만 있는 인덱스"가 아니라, 개별 토픽에서 바로 원문 링크와 짧은 메모를 따라가며 맥락을 복원할 수 있다.

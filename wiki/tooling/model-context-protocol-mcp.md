@@ -39,6 +39,29 @@ LLM 앱이나 오케스트레이터처럼 연결을 시작하는 주체.
 ### Servers
 리소스, 도구, 프롬프트 같은 기능을 외부에 제공하는 측.
 
+## 구조 한눈에 보기
+
+```mermaid
+flowchart LR
+    Host[Host<br/>LLM App / Orchestrator] --> Client[Client Connector]
+    Client --> ServerA[MCP Server A]
+    Client --> ServerB[MCP Server B]
+    ServerA --> Res[Resources / Prompts / Tools]
+    ServerB --> Res
+```
+
+이 구조의 핵심은 host가 모든 기능을 직접 구현하지 않고, **연결 계층(client)과 외부 capability(server)를 분리**한다는 점이다.
+
+## 문서 읽기 순서
+
+1. [[what-is-mcp|What is the Model Context Protocol (MCP)?]] — 입문
+2. [[mcp-specification-2025-11-25|MCP Specification 2025-11-25]] — 규약
+3. [[mcp-authorization|MCP OAuth 2.1 + PKCE Authorization]] — 보안 경계
+4. [[model-context-protocol|MCP 2026 Roadmap & Enterprise Readiness]] — 발전 방향
+5. [[mcp-roadmap-development|MCP Roadmap (Development)]] — 거버넌스/참여
+
+이 순서로 읽으면 “무엇인가 → 어떻게 구현하는가 → 어디로 가는가”의 흐름이 자연스럽다.
+
 ## 실무 적용 관점
 
 MCP는 단순히 “툴을 붙이는 방법”이 아니라, **에이전트 생태계의 인터페이스 계약**이다. 그래서 도입 시에는 기능 목록보다도:
@@ -50,9 +73,17 @@ MCP는 단순히 “툴을 붙이는 방법”이 아니라, **에이전트 생�
 
 같은 운영 문제를 같이 봐야 한다.
 
+## 구현 체크포인트
+
+| 체크포인트 | 왜 중요한가 |
+|---|---|
+| capability negotiation | 클라이언트/서버 호환성 결정 |
+| authorization | 원격 서버 배포와 보안 경계 핵심 |
+| transport 선택 | local / remote 운영 모델 차이 |
+| metadata / registry | discoverability와 운영 자동화에 영향 |
+
 ## 관련 문서
 
 - [[model-context-protocol|MCP 2026 Roadmap & Enterprise Readiness]]
 - [[mcp-authorization|MCP OAuth 2.1 + PKCE Authorization]]
 - [[claude-code-hooks-system|Claude Code Hooks System]]
-

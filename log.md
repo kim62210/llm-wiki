@@ -1,3 +1,15 @@
+## 2026-04-10 — 수동 고급 편집 배치
+- **대상**: 상위 핵심 문서 6개
+- **수행 내용**:
+  - 비교표, 구조도, 읽기 순서 가이드를 추가해 심화 위키 수준으로 강화
+- **대표 문서**:
+  - `wiki/applications/ai-hot-topics-2026-04.md`
+  - `wiki/concepts/context-engineering.md`
+  - `wiki/tooling/model-context-protocol-mcp.md`
+  - `wiki/tooling/long-running-agent-harnesses.md`
+  - `wiki/agents/long-horizon-agent-benchmarks.md`
+  - `wiki/tooling/gpt-5-4.md`
+
 ## 2026-04-10 — Recursive ingest 결과 흡수 (SDK/MCP 세부 문서)
 - **대상**: `raw/recursive-sources/2026-04-10-sdk-mcp/` 아래 5개 문서
 - **생성 페이지**:
