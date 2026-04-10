@@ -14,3 +14,10 @@
   - papers: agentic-rl-survey-paper, plan-and-act-paper, are-gaia2-paper
   - tooling: scaling-managed-agents, claude-sonnet-4-5
 - Fresh verification: broken wikilinks=0, missing index pages=0, batch2 pages=5.
+
+- Added third standalone promotion batch:
+  - papers: deep-research-agents-roadmap-paper
+  - agents: skywork-deepresearchagent
+  - concepts summary: effective-context-engineering-anthropic
+  - tooling summaries: the-2026-mcp-roadmap, what-is-mcp
+- Fresh verification: broken wikilinks=0, missing index pages=0, batch3 pages=5.

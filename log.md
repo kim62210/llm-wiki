@@ -27,6 +27,19 @@
   - `wiki/tooling/scaling-managed-agents.md`
   - `wiki/tooling/claude-sonnet-4-5.md`
 
+## 2026-04-10 — Ingest 계속: third standalone promotion batch
+- **대상**: 남은 high-signal fetched source (deep research / MCP / context engineering)
+- **생성 페이지**:
+  - `paper` 1개
+  - `summary` 3개
+  - `entity` 1개
+- **추가된 주요 페이지**:
+  - `wiki/papers/deep-research-agents-roadmap-paper.md`
+  - `wiki/agents/skywork-deepresearchagent.md`
+  - `wiki/concepts/effective-context-engineering-anthropic.md`
+  - `wiki/tooling/the-2026-mcp-roadmap.md`
+  - `wiki/tooling/what-is-mcp.md`
+
 ## 2026-04-10 — Ingest 확장: 핵심 논문 paper 페이지 생성
 - **대상**: hot-topic 수집 raw 중 핵심 논문/서베이 10편
 - **생성 페이지 수**: `paper` 10개
