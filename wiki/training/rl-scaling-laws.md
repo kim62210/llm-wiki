@@ -73,6 +73,26 @@ RL Scaling Laws (ScaleRL)는 현재 시점의 핵심 개념을 정리한 페이�
 - **What comes next with reinforcement learning** (`interconnects.ai`): https://www.interconnects.ai/p/what-comes-next-with-reinforcement
   - 메모: First, some housekeeping. The blog’s paid discord (access or upgrade here) has been very active and high-quality recently, especially parsing recent AI training tactics like RLVR for agents/planning.
 
+
+## source 종합 해석
+
+이 개념의 핵심은 `RL 컴퓨트 규모에 따른 성능을 예측 가능한 곡선으로 모델링하는 방법론.`에 있지만, 실제 의미는 원문 source들이 어떤 병목·trade-off를 반복적으로 강조하는지에서 더 또렷해진다.
+
+예를 들어 source note는 Reinforcement learning (RL) has become central to training large language models (LLMs), yet the field lacks predictive scaling methodologies comparable to those established for pre-training.
+
+또 다른 source는 1. I’ll be in SF this week for the PyTorch conference (22-23), AI Infra Summit (21st), and other local events. Come say hi.
+
+즉, 이 토픽이 중요한 이유는 `Meta 주도의 40만 GPU-시간 규모 연구가 RL을 "예술"에서 "과학"으로 전환시키며, 2026년 post-training 연구의 핵심 프레임워크로 자리잡고 있다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
+
+함께 읽을 문서로는 ai-hot-topics-2026-04, on-policy-distillation, corpus-grounded-self-play가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- `RL 컴퓨트 규모에 따른 성능을 예측 가능한 곡선으로 모델링하는 방법론.`를 실제로 적용할 때는 정의 자체보다 측정 지표와 실패 모드가 무엇인지 같이 봐야 한다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+- `Meta 주도의 40만 GPU-시간 규모 연구가 RL을 "예술"에서 "과학"으로 전환시키며, 2026년 post-training 연구의 핵심 프레임워크로 자리잡고 있다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04]]

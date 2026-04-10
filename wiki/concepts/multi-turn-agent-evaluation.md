@@ -73,6 +73,26 @@ Multi-Turn Agent Evaluation는 현재 시점의 핵심 개념을 정리한 페�
 - **LangSmith: AI Agent & LLM Observability and Evals Platform** (`langchain.com`): https://www.langchain.com/langsmith-platform
   - 메모: Quick start agents with any model provider
 
+
+## source 종합 해석
+
+이 개념의 핵심은 `대화 전체 세션 단위로 사용자 목표 달성 여부를 채점.`에 있지만, 실제 의미는 원문 source들이 어떤 병목·trade-off를 반복적으로 강조하는지에서 더 또렷해진다.
+
+예를 들어 source note는 We’re releasing new capabilities in LangSmith to help monitor agents in production.
+
+또 다른 source는 Join us May 13th & May 14th at Interrupt, the Agent Conference by LangChain. Buy tickets >
+
+즉, 이 토픽이 중요한 이유는 `LangSmith가 2025년 10월 "threads"를 일급 개념으로 승격하고 Multi-turn Evals + Insights Agent를 출시하면서, 단일 턴을 넘어 세션 전체를 평가하는 것이 2026년 상반기 에이전트 품질 관리의 새 기준이 되었다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
+
+함께 읽을 문서로는 ai-hot-topics-2026-04, agent-trajectory-evaluation, tool-invocation-evaluators가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- `대화 전체 세션 단위로 사용자 목표 달성 여부를 채점.`를 실제로 적용할 때는 정의 자체보다 측정 지표와 실패 모드가 무엇인지 같이 봐야 한다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+- `LangSmith가 2025년 10월 "threads"를 일급 개념으로 승격하고 Multi-turn Evals + Insights Agent를 출시하면서, 단일 턴을 넘어 세션 전체를 평가하는 것이 2026년 상반기 에이전트 품질 관리의 새 기준이 되었다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04]]

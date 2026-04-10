@@ -77,6 +77,21 @@ Open Post-Training Recipes (Tülu 3 / OLMo 3)는 개별 source를 빠르게 따�
 - **GitHub - allenai/open-instruct: AllenAI's post-training codebase · GitHub** (`github.com`): https://github.com/allenai/open-instruct
   - 메모: To see all available qualifiers, see our documentation.
 
+
+## source 종합 해석
+
+이 summary는 하나의 주장보다 **여러 원문을 묶어 읽는 순서와 맥락**을 제공하는 데 가치가 있다.
+
+대표 source를 보면 Tülu 3: Pushing Frontiers in Open Language Model Post-Training, Tülu 3 opens language model post-training up to more tasks and more people  | Ai2, Olmo 3: Charting a path through the model flow to lead open-source AI   | Ai2처럼 서로 다른 종류의 근거가 한 토픽 묶음으로 엮여 있다.
+
+함께 읽을 문서로는 ai-hot-topics-2026-04, test-time-training가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- summary 문서는 결론 고정본이 아니라 탐색 지도이므로, 중요한 판단은 반드시 하단 source 참고 섹션으로 내려가 확인한다.
+- 같은 묶음 안에서도 공식 문서, 논문, 구현 저장소가 어떤 역할을 맡는지 구분해 읽어야 한다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04]]

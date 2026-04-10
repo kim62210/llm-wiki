@@ -73,6 +73,26 @@ Agentic RL (Tool-Integrated Reasoning 학습)는 현재 시점의 핵심 개념�
 - **[2505.01441] Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning** (`arxiv.org`): https://arxiv.org/abs/2505.01441
   - 메모: Large language models (LLMs) have achieved remarkable progress in complex reasoning tasks, yet they remain fundamentally limited by their reliance on static internal knowledge and text-only reasoning.
 
+
+## source 종합 해석
+
+이 개념의 핵심은 `도구 호출 궤적 전체를 RL로 최적화하는 에이전트 post-training 패러다임.`에 있지만, 실제 의미는 원문 source들이 어떤 병목·trade-off를 반복적으로 강조하는지에서 더 또렷해진다.
+
+예를 들어 source note는 The emergence of agentic reinforcement learning (Agentic RL) marks a paradigm shift from conventional reinforcement learning applied to large language models (LLM RL), reframing LLMs from passive sequence generators into
+
+또 다른 source는 Large language model (LLM) agents are moving beyond prompting alone.
+
+즉, 이 토픽이 중요한 이유는 `단일 턴 추론을 넘어 멀티스텝 도구 사용으로 RL이 확장되면서, POMDP 관점의 새 알고리즘과 희소 보상 문제에 대한 연구가 폭발적으로 증가하고 있다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
+
+함께 읽을 문서로는 ai-hot-topics-2026-04, corpus-grounded-self-play, test-time-training가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- `도구 호출 궤적 전체를 RL로 최적화하는 에이전트 post-training 패러다임.`를 실제로 적용할 때는 정의 자체보다 측정 지표와 실패 모드가 무엇인지 같이 봐야 한다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+- `단일 턴 추론을 넘어 멀티스텝 도구 사용으로 RL이 확장되면서, POMDP 관점의 새 알고리즘과 희소 보상 문제에 대한 연구가 폭발적으로 증가하고 있다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04]]

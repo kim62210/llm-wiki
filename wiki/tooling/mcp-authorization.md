@@ -67,6 +67,21 @@ MCP OAuth 2.1 + PKCE Authorization는 현재 시점에서 하나의 제품/모�
 - **What is the Model Context Protocol (MCP)? - Model Context Protocol** (`modelcontextprotocol.io`): https://modelcontextprotocol.io/docs/getting-started/intro
   - 메모: What is the Model Context Protocol (MCP)?
 
+
+## source 종합 해석
+
+`MCP OAuth 2.1 + PKCE Authorization`는 단일 발표보다 **여러 source가 어떤 관점에서 이 대상을 규정하는가**를 함께 읽을 때 의미가 커진다.
+
+이번 수집에서는 Authorization - Model Context Protocol, Specification - Model Context Protocol, The 2026 MCP Roadmap | Model Context Protocol Blog처럼 출시 공지·문서·평가 신호가 같이 모여, 기능 자체보다 생태계 위치와 운영 전제가 더 중요하다는 점이 드러난다.
+
+함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, MCP 2026 Roadmap & Enterprise Readiness, Claude Code Hooks System가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- 도입 판단 시 기능 목록만 보지 말고, 공식 문서·릴리스 노트·벤치마크가 서로 얼마나 일관되게 같은 메시지를 주는지 확인한다.
+- 비교 후보와의 차이는 API/운영 통합, 성능 수치, 생태계 성숙도 같은 기준으로 정리하는 것이 좋다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]

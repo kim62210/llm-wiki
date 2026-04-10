@@ -73,6 +73,26 @@ Agent Prompt Injection Defense & Trustworthy Agents는 현재 시점의 핵심 �
 - **Quantifying Frontier LLM Capabilities for Container Sandbox Escape** (`aisi.gov.uk`): https://www.aisi.gov.uk/research/quantifying-frontier-llm-capabilities-for-container-sandbox-escape
   - 메모: Please enable javascript for this website.
 
+
+## source 종합 해석
+
+이 개념의 핵심은 `에이전트 브라우징/툴 사용 시 악성 지시 주입을 차단하는 계층적 방어 프레임워크.`에 있지만, 실제 의미는 원문 source들이 어떤 병목·trade-off를 반복적으로 강조하는지에서 더 또렷해진다.
+
+예를 들어 source note는 AI “agents” represent the latest major shift in how people and organizations are using AI. A couple of years ago, AI models were only broadly available as chatbots—simple question-and-answer machines.
+
+또 다른 source는 Claude Opus 4.5 sets a new standard in robustness to prompt injections—adversarial instructions hidden within the content that AI models process.
+
+즉, 이 토픽이 중요한 이유는 `2026년 4월 9일 Anthropic의 "Trustworthy agents in practice" 프레임워크 공개와 동시에 AISI가 17.7만 MCP 도구 실태 조사를 발표하면서, agentic web 확장과 함께 prompt injection이 업계의 실질적 보안 병목으로 부각됐다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
+
+함께 읽을 문서로는 ai-hot-topics-2026-04, constitutional-classifiers, responsible-scaling-policy-v3가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- `에이전트 브라우징/툴 사용 시 악성 지시 주입을 차단하는 계층적 방어 프레임워크.`를 실제로 적용할 때는 정의 자체보다 측정 지표와 실패 모드가 무엇인지 같이 봐야 한다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+- `2026년 4월 9일 Anthropic의 "Trustworthy agents in practice" 프레임워크 공개와 동시에 AISI가 17.7만 MCP 도구 실태 조사를 발표하면서, agentic web 확장과 함께 prompt injection이 업계의 실질적 보안 병목으로 부각됐다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04]]

@@ -144,6 +144,23 @@ Context Engineering (컨텍스트 엔지니어링)는 현재 시점의 핵심 �
 - **Context Rot: How Increasing Input Tokens Impacts LLM Performance·|·Chroma** (`trychroma.com`): https://www.trychroma.com/research/context-rot
   - 메모: Context Rot: How Increasing Input Tokens Impacts LLM Performance
 
+
+## source 종합 해석
+
+이 개념의 핵심은 `Context Engineering은 2025년 중반에 등장한 AI 개발 패러다임이다. 핵심 질문은 "모델의 컨텍스트 창에 어떤 정보를 주입해야 작업이 해결될까?"다. 엄밀함의 위치는 프롬프트 텍스트에서 컨텍스트 창 구성으로 이동했다.`에 있지만, 실제 의미는 원문 source들이 어떤 병목·trade-off를 반복적으로 강조하는지에서 더 또렷해진다.
+
+예를 들어 source note는 Effective context engineering for AI agents
+
+또 다른 source는 Large language models (LLMs) are increasingly deployed as agents in dynamic, real-world environments, where success requires both reasoning and effective tool use.
+
+함께 읽을 문서로는 evolution of agentic patterns, prompt engineering, harness engineering가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- `Context Engineering은 2025년 중반에 등장한 AI 개발 패러다임이다. 핵심 질문은 "모델의 컨텍스트 창에 어떤 정보를 주입해야 작업이 해결될까?"다. 엄밀함의 위치는 프롬프트 텍스트에서 컨텍스트 창 구성으로 이동했다.`를 실제로 적용할 때는 정의 자체보다 측정 지표와 실패 모드가 무엇인지 같이 봐야 한다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+
 ## 관련 문서
 
 - [[evolution of agentic patterns]] — 3 에라 연대기에서 Era 2

@@ -69,6 +69,23 @@ Pairwise vs Pointwise Eval Protocol Bias는 현재 시점의 핵심 개념을 �
 - **Language Model Preference Evaluation with Multiple Weak Evaluators** (`arxiv.org`): https://arxiv.org/html/2410.12869v3
   - 메모: A.4 Evaluation Settings: Single Model vs. Single Evaluator
 
+
+## source 종합 해석
+
+예를 들어 source note는 Large Language Models (LLMs) are widely used as proxies for human labelers in both training (Reinforcement Learning from AI Feedback) and large-scale response evaluation (LLM-as-a-judge).
+
+또 다른 source는 Large Language Models (LLMs) have demonstrated promising capabilities as automatic evaluators in assessing the quality of generated natural language.
+
+즉, 이 토픽이 중요한 이유는 `2025년 연구들이 페어와이즈 비교가 35% 뒤집힘률을 보이며 편향을 증폭한다는 것을 입증하면서, "어떤 프로토콜을 선택할 것인가"가 reward modeling·LLM judge 설계의 핵심 논쟁이 되었다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
+
+함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Rubric-Based Evaluation Frameworks, OpenTelemetry GenAI Semantic Conventions가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+- `2025년 연구들이 페어와이즈 비교가 35% 뒤집힘률을 보이며 편향을 증폭한다는 것을 입증하면서, "어떤 프로토콜을 선택할 것인가"가 reward modeling·LLM judge 설계의 핵심 논쟁이 되었다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]

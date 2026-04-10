@@ -73,6 +73,26 @@ Synthetic Eval Data Generation는 현재 시점의 핵심 개념을 정리한 �
 - **[2404.12272] Who Validates the Validators? Aligning LLM-Assisted Evaluation of LLM Outputs with Human Preferences** (`arxiv.org`): https://arxiv.org/abs/2404.12272
   - 메모: Due to the cumbersome nature of human evaluation and limitations of code-based evaluation, Large Language Models (LLMs) are increasingly being used to assist humans in evaluating LLM outputs.
 
+
+## source 종합 해석
+
+이 개념의 핵심은 `LLM으로 자동 생성한 테스트 케이스로 평가 데이터셋을 확장.`에 있지만, 실제 의미는 원문 source들이 어떤 병목·trade-off를 반복적으로 강조하는지에서 더 또렷해진다.
+
+예를 들어 source note는 We propose Data Swarms, an algorithm to optimize the generation of synthetic evaluation data and advance quantitative desiderata of LLM evaluation.
+
+또 다른 source는 Within the evolving landscape of deep learning, the dilemma of data quantity and quality has been a long-standing problem.
+
+즉, 이 토픽이 중요한 이유는 `Data Swarms처럼 particle swarm optimization으로 "어려운 문제를 적대적으로 생성"하는 기법이 등장하면서, 수작업 골든 데이터셋의 한계를 넘는 지속 가능한 데이터 플라이휠이 2026년 핵심 역량이 되었다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
+
+함께 읽을 문서로는 ai-hot-topics-2026-04, opentelemetry-genai-semconv, observability-platform-convergence가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- `LLM으로 자동 생성한 테스트 케이스로 평가 데이터셋을 확장.`를 실제로 적용할 때는 정의 자체보다 측정 지표와 실패 모드가 무엇인지 같이 봐야 한다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+- `Data Swarms처럼 particle swarm optimization으로 "어려운 문제를 적대적으로 생성"하는 기법이 등장하면서, 수작업 골든 데이터셋의 한계를 넘는 지속 가능한 데이터 플라이휠이 2026년 핵심 역량이 되었다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04]]

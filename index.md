@@ -123,7 +123,17 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 
 ### Papers (논문)
 
-> 아직 페이지 없음 - 소스 수집 필요
+**paper**
+- [ACON: Optimizing Context Compression for Long-horizon LLM Agents](wiki/papers/acon-context-compression-paper.md) — 장기 실행 에이전트의 문맥 압축을 단순 요약 문제가 아니라 **실패 원인 기반 최적화 문제**로 다룬 논문이다.
+- [AgentFold: Long-Horizon Web Agents with Proactive Context Management](wiki/papers/agentfold-paper.md) — 웹 에이전트가 단순히 로그를 누적하는 대신, 히스토리를 능동적으로 접어 넣는 **proactive context management** 패러다임을 제안한다.
+- [Memory in the Age of AI Agents](wiki/papers/memory-in-the-age-of-ai-agents-paper.md) — 에이전트 메모리 연구를 token-level, parametric, latent memory와 factual / experiential / working memory 축으로 재정리한 대형 서베이다.
+- [Scaling Long-Horizon LLM Agent via Context-Folding](wiki/papers/context-folding-paper.md) — 서브태스크를 branch한 뒤 fold하여 요약으로 되돌리는 **Context-Folding**을 RL 프레임워크로 학습시킨 논문이다.
+- [ReAcTree: Hierarchical LLM Agent Trees with Control Flow for Long-Horizon Task Planning](wiki/papers/reactree-paper.md) — 단일 trajectory 대신 agent tree와 control flow node를 도입해 장기 계획 문제를 푸는 hierarchical planning 논문이다.
+- [SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios](wiki/papers/swe-evo-paper.md) — 코딩 에이전트를 단일 버그 수정이 아니라 release-note 기반의 다단계 진화 과제로 평가하는 long-horizon benchmark 논문이다.
+- [FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling](wiki/papers/flashattention-4-paper.md) — Blackwell GPU의 비대칭 하드웨어 스케일링에 맞춰 attention kernel을 다시 설계한 FlashAttention-4 논문이다.
+- [ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](wiki/papers/chunkkv-paper.md) — 토큰 단위 중요도 대신 의미 청크를 보존 단위로 삼아 KV cache를 압축하는 기법을 제안한 논문이다.
+- [Lost in the Middle: How Language Models Use Long Contexts](wiki/papers/lost-in-the-middle-paper.md) — 긴 컨텍스트에서 관련 정보가 중간에 있을 때 LLM 성능이 크게 저하된다는 고전적이면서도 여전히 중요한 논문이다.
+- [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](wiki/papers/deepseek-r1-paper.md) — 인간 라벨 reasoning trace 없이도 pure RL만으로 reasoning 패턴이 출현할 수 있음을 강하게 보여준 전환점 논문이다.
 
 ### Tooling (도구)
 

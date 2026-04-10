@@ -73,6 +73,26 @@ Corpus-Grounded Self-Play (SPICE 계열)는 현재 시점의 핵심 개념을 �
 - **Language Self-Play For Data-Free Training** (`arxiv.org`): https://arxiv.org/pdf/2509.07414
   - 메모: << /Author (Jakub Grudzien Kuba; Mengting Gu; Qi Ma; Yuandong Tian; Vijai Mohan; Jason Chen) /Creator (arXiv GenPDF \(tex2pdf:57610bf\)) /DOI (https://doi.org/10.48550/arXiv.2509.07414) /License (http://arxiv.org/license
 
+
+## source 종합 해석
+
+이 개념의 핵심은 `외부 문서 코퍼스를 근거로 한 모델이 문제를 만들고 풀며 자기개선하는 RL.`에 있지만, 실제 의미는 원문 source들이 어떤 병목·trade-off를 반복적으로 강조하는지에서 더 또렷해진다.
+
+예를 들어 source note는 Self-improving systems require environmental interaction for continuous adaptation.
+
+또 다른 source는 Recent advances in large language model (LLM) reasoning, led by reinforcement learning with verifiable rewards (RLVR), have inspired self-play post-training, where models improve by generating and solving their own probl
+
+즉, 이 토픽이 중요한 이유는 `순수 self-play가 몇 라운드 후 붕괴하는 문제를 코퍼스 접지(grounding)로 해결해, 라벨 없는 지속적 self-improvement의 현실적 경로로 주목받고 있다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
+
+함께 읽을 문서로는 ai-hot-topics-2026-04, rl-scaling-laws, agentic-rl가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- `외부 문서 코퍼스를 근거로 한 모델이 문제를 만들고 풀며 자기개선하는 RL.`를 실제로 적용할 때는 정의 자체보다 측정 지표와 실패 모드가 무엇인지 같이 봐야 한다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+- `순수 self-play가 몇 라운드 후 붕괴하는 문제를 코퍼스 접지(grounding)로 해결해, 라벨 없는 지속적 self-improvement의 현실적 경로로 주목받고 있다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04]]

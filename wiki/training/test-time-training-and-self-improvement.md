@@ -70,6 +70,23 @@ Test-Time Training & Self-Improvement는 현재 시점의 핵심 개념을 정�
 - **Why We Think | Lil'Log** (`lilianweng.github.io`): https://lilianweng.github.io/posts/2025-05-01-thinking/
   - 메모: Does the Model Tell What it Thinks Faithfully
 
+
+## source 종합 해석
+
+예를 들어 source note는 One paradigm of language model (LM) fine-tuning relies on creating large training datasets, under the assumption that high quantity and diversity will enable models to generalize to novel tasks after post-training.
+
+또 다른 source는 The static ``train then deploy" paradigm fundamentally limits Large Language Models (LLMs) from dynamically adapting their weights in response to continuous streams of new information inherent in real-world tasks.
+
+즉, 이 토픽이 중요한 이유는 `오프라인 fine-tuning 없이 테스트 분포에 즉시 적응하는 TTT가 장기 컨텍스트와 에이전트 태스크에서 검증되며, 2026년 In-Place TTT 등 후속 논문이 쏟아지고 있다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
+
+함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Agentic RL (Tool-Integrated Reasoning 학습), Open Post-Training Recipes (Tülu 3 / OLMo 3)가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+- `오프라인 fine-tuning 없이 테스트 분포에 즉시 적응하는 TTT가 장기 컨텍스트와 에이전트 태스크에서 검증되며, 2026년 In-Place TTT 등 후속 논문이 쏟아지고 있다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]

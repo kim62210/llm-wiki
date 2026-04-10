@@ -73,6 +73,23 @@ GraphRAG / LightRAG / LazyGraphRAG in Production는 현재 시점의 핵심 개�
 - **Project GraphRAG - Microsoft Research** (`microsoft.com`): https://www.microsoft.com/en-us/research/project/graphrag/
   - 메모: GraphRAG (Graphs + Retrieval Augmented Generation) is a technique for richly understanding text datasets by combining text extraction, network analysis, and LLM prompting and summarization into a single end-to-end system
 
+
+## source 종합 해석
+
+예를 들어 source note는 To see all available qualifiers, see our documentation.
+
+또 다른 source는 GraphRAG is a structured, hierarchical approach to Retrieval Augmented Generation (RAG), as opposed to naive semantic-search
+
+즉, 이 토픽이 중요한 이유는 `Microsoft GraphRAG v3.0.8(2026-03-27) 릴리스와 LightRAG의 OpenSearch·Neo4j 백엔드, LazyGraphRAG의 0.1% 인덱싱 비용(vs full GraphRAG 대비 700배 저렴한 global query)이 맞물리며 "비용이 감당 가능한 Graph RAG" 시대가 2026년 초에 본격화됐다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
+
+함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Adaptive Context Compression for Long-Running Agents, Serverless Object-Storage Vector DBs (Turbopuffer 등)가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+- `Microsoft GraphRAG v3.0.8(2026-03-27) 릴리스와 LightRAG의 OpenSearch·Neo4j 백엔드, LazyGraphRAG의 0.1% 인덱싱 비용(vs full GraphRAG 대비 700배 저렴한 global query)이 맞물리며 "비용이 감당 가능한 Graph RAG" 시대가 2026년 초에 본격화됐다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]

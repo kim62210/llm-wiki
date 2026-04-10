@@ -78,6 +78,21 @@ Claude Code Hooks System는 일반 개념이라기보다 특정 프로젝트 내
 - **Common workflows - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/common-workflows
   - 메모: This page covers practical workflows for everyday development: exploring unfamiliar code, debugging, refactoring, writing tests, creating PRs, and managing sessions.
 
+
+## source 종합 해석
+
+이 페이지는 `Claude Code Hooks System`를 일반 개념이 아니라 **특정 시스템 내부 설계 스냅샷**으로 읽어야 한다.
+
+직접 수집된 source는 Hooks reference - Claude Code Docs, Changelog - Claude Code Docs를 통해 기능 정의와 운영 맥락을 함께 보여준다.
+
+함께 읽을 문서로는 ai-hot-topics-2026-04, mcp-oauth-pkce-authorization, agent-skills가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- project-internal 문서는 일반 원칙으로 일반화하기보다, 현재 프로젝트 스냅샷으로 읽고 버전 변화에 대비해 추적하는 편이 안전하다.
+- 운영 시에는 기능 자체보다 권한 경계, 장애 시 fallback, 상위 허브(entity)와의 관계를 같이 점검한다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04]]

@@ -69,6 +69,23 @@ Error Analysis as the Eval Foundation는 현재 시점의 핵심 개념을 정�
 - **Evals for AI Engineers [Book]** (`oreilly.com`): https://www.oreilly.com/library/view/evals-for-ai/9798341660717/
   - 메모: What This Book CoversWho Should Read This BookWhat This Book Doesn’t CoverHow This Book Is OrganizedConventions Used in This BookUsing Code ExamplesO’Reilly Online LearningHow to Contact UsAcknowledgmentsA Note on the Pa
 
+
+## source 종합 해석
+
+예를 들어 source note는 Q: What’s a minimum viable evaluation setup?
+
+또 다른 source는 Human annotator(s) (ideally a benevolent dictator) review and write open-ended notes about traces, noting any issues. This process is akin to “journaling” and is adapted from qualitative research methodologies.
+
+즉, 이 토픽이 중요한 이유는 `Hamel Husain·Shreya Shankar가 2026년 1월 FAQ에서 "인프라보다 에러 분석이 먼저"라는 원칙을 재강조했고, 60-80% 개발 시간을 에러 분석에 쓸 것을 권장하면서 업계 표준 워크플로우로 자리 잡았다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
+
+함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, LLM-as-Judge Calibration & Reliability, Agent Trajectory Evaluation가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+- `Hamel Husain·Shreya Shankar가 2026년 1월 FAQ에서 "인프라보다 에러 분석이 먼저"라는 원칙을 재강조했고, 60-80% 개발 시간을 에러 분석에 쓸 것을 권장하면서 업계 표준 워크플로우로 자리 잡았다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]

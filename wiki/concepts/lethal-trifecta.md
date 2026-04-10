@@ -72,12 +72,9 @@ Lethal Trifecta 방어는 주로 **우상 사분면(Deterministic Feedback, Comp
 
 ## 실무 체크리스트
 
-새 에이전트를 설계할 때 묻기:
-
-1. [ ] 이 에이전트는 외부 비신뢰 입력을 받는가? (웹 스크레이핑, 이메일 읽기, 파일 업로드 수신 등)
-2. [ ] 이 에이전트는 민감 데이터에 접근하는가? (사용자 PII, 비밀, 내부 DB)
-3. [ ] 이 에이전트는 상태를 수정하는가? (파일 쓰기, 네트워크 요청, DB 쓰기, 알림 발송)
-4. [ ] 세 개 모두 "예"인가? → 그렇다면 최소 하나는 제거하거나 human approval 게이트를 넣는다.
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- `Lethal Trifecta는 Simon Willison이 정리한 AI 에이전트 보안 원칙이다. 에이전트가 다음 세 가지 능력을 동시에 갖추면 보안 사고는 불가피하다: 1. 비신뢰 입력 처리 (Untrusted input handling) — 외부 문서, 이메일, 웹 페이지 등 2.`를 실제로 적용할 때는 정의 자체보다 측정 지표와 실패 모드가 무엇인지 같이 봐야 한다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
 
 ## 관련 사례
 
@@ -128,6 +125,17 @@ Lethal Trifecta (치명적 3요소)는 현재 시점의 핵심 개념을 정리�
   - 메모: Effective context engineering for AI agents
 - **[2510.21413] Context Engineering for AI Agents in Open-Source Software** (`arxiv.org`): https://arxiv.org/abs/2510.21413
   - 메모: GenAI-based coding assistants have disrupted software development. The next generation of these tools is agent-based, operating with more autonomy and potentially without human oversight.
+
+
+## source 종합 해석
+
+이 개념의 핵심은 `Lethal Trifecta는 Simon Willison이 정리한 AI 에이전트 보안 원칙이다. 에이전트가 다음 세 가지 능력을 동시에 갖추면 보안 사고는 불가피하다: 1. 비신뢰 입력 처리 (Untrusted input handling) — 외부 문서, 이메일, 웹 페이지 등 2.`에 있지만, 실제 의미는 원문 source들이 어떤 병목·trade-off를 반복적으로 강조하는지에서 더 또렷해진다.
+
+예를 들어 source note는 If you are a user of LLM systems that use tools (you can call them “AI agents” if you like) it is critically important that you understand the risk of combining tools with the following three characteristics.
+
+또 다른 source는 I’ve started a new project to collect and document Agentic Engineering Patterns—coding practices and patterns to help get the best results out of this new era of coding agent development we find ourselves entering.
+
+함께 읽을 문서로는 evolution of agentic patterns, harness engineering, harness quadrants가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
 
 ## 관련 문서
 

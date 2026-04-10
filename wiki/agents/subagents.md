@@ -136,6 +136,20 @@ Subagents는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점
 - **Effective harnesses for long-running agents \ Anthropic** (`anthropic.com`): https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
   - 메모: Agents still face challenges working across many context windows. We looked to human engineers for inspiration in creating a more effective harness for long-running agents.
 
+
+## source 종합 해석
+
+예를 들어 source note는 Create and use specialized AI subagents in Claude Code for task-specific workflows and improved context management.
+
+또 다른 source는 Harness design is key to performance at the frontier of agentic coding. Here's how we pushed Claude further in frontend design and long-running autonomous software engineering.
+
+함께 읽을 문서로는 how coding agents work, coding agent, Claude Code가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+
 ## 관련 문서
 
 - [[how coding agents work]]

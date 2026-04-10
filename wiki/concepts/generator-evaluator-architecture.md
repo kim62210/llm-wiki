@@ -170,6 +170,23 @@ Generator-Evaluator Architecture (생성자-평가자 아키텍처)는 현재 �
 - **[2512.20845] MAR:Multi-Agent Reflexion Improves Reasoning Abilities in LLMs** (`arxiv.org`): https://arxiv.org/abs/2512.20845
   - 메모: LLMs have shown the capacity to improve their performance on reasoning tasks through reflecting on their mistakes, and acting with these reflections in mind.
 
+
+## source 종합 해석
+
+이 개념의 핵심은 `Generator-Evaluator Architecture는 *작업을 생성하는 에이전트*와 *작업을 평가하는 에이전트*를 구조적으로 분리하는 하네스 패턴이다. GAN(Generative Adversarial Networks)의 generator/discriminator 분리에서 영감을 받았다.`에 있지만, 실제 의미는 원문 source들이 어떤 병목·trade-off를 반복적으로 강조하는지에서 더 또렷해진다.
+
+예를 들어 source note는 Harness design is key to performance at the frontier of agentic coding. Here's how we pushed Claude further in frontend design and long-running autonomous software engineering.
+
+또 다른 source는 Our newest model, Claude Opus 4.5, is available today. It’s intelligent, efficient, and the best model in the world for coding, agents, and computer use.
+
+함께 읽을 문서로는 harness engineering, self-evaluation bias, sprint contracts가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
+
+## 실무 체크리스트
+
+- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
+- `Generator-Evaluator Architecture는 *작업을 생성하는 에이전트*와 *작업을 평가하는 에이전트*를 구조적으로 분리하는 하네스 패턴이다. GAN(Generative Adversarial Networks)의 generator/discriminator 분리에서 영감을 받았다.`를 실제로 적용할 때는 정의 자체보다 측정 지표와 실패 모드가 무엇인지 같이 봐야 한다.
+- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
+
 ## 관련 문서
 
 - [[harness engineering]] — generator-evaluator는 하네스 엔지니어링의 대표 빌딩 블록
