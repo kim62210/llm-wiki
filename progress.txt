@@ -49,3 +49,7 @@
 - Added recursive docs batch (US-008):
   - summary: claude-agent-sdk-quickstart, claude-agent-loop, claude-agent-sessions, mcp-architecture, mcp-authorization-draft
 - Fresh verification: broken wikilinks=0, missing index pages=0, recursive batch pages=5.
+
+- Added recursive SDK/MCP batch (US-009):
+  - summaries: claude-agent-loop, claude-agent-sdk-quickstart, claude-agent-sessions, mcp-architecture, mcp-authorization-draft
+- Fresh verification: broken wikilinks=0, missing index pages=0.

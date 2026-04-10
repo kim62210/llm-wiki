@@ -1,3 +1,12 @@
+## 2026-04-10 — Recursive ingest 결과 흡수 (SDK/MCP 세부 문서)
+- **대상**: `raw/recursive-sources/2026-04-10-sdk-mcp/` 아래 5개 문서
+- **생성 페이지**:
+  - `wiki/tooling/claude-agent-loop.md`
+  - `wiki/tooling/claude-agent-sdk-quickstart.md`
+  - `wiki/tooling/claude-agent-sessions.md`
+  - `wiki/tooling/mcp-architecture.md`
+  - `wiki/tooling/mcp-authorization-draft.md`
+
 # Activity Log
 
 ## 2026-04-10 — Ingest 계속: sixth standalone promotion batch
