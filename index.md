@@ -218,6 +218,14 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [What is the Model Context Protocol (MCP)?](wiki/tooling/what-is-mcp.md) — MCP의 기본 개념과 host / client / server 구조를 빠르게 이해하기 위한 입문 요약
 - [Writing Effective Tools for Agents](wiki/tooling/writing-effective-tools-for-agents.md) — 에이전트용 도구를 deterministic API가 아니라 agent-friendly interface로 설계하는 원칙 요약
 
+- [LangGraph Quickstart](wiki/tooling/langgraph-quickstart.md) — LangGraph의 상태·노드·도구·종료 조건을 가장 짧은 계산기 예제로 설명하는 공식 quickstart 요약
+- [LangGraph Persistence](wiki/tooling/langgraph-persistence.md) — thread, checkpoint, super-step, replay를 통해 LangGraph 상태 저장 구조를 설명하는 문서 요약
+- [LangGraph Durable Execution](wiki/tooling/langgraph-durable-execution.md) — checkpointer와 task wrapping으로 장기 실행 그래프를 재개 가능하게 만드는 가이드 요약
+- [OpenAI Agents SDK Quickstart](wiki/tooling/openai-agents-sdk-quickstart.md) — 단일 agent에서 tool·handoff orchestration으로 확장하는 가장 짧은 공식 입문 경로
+- [OpenAI Agents SDK Handoffs](wiki/tooling/openai-agents-sdk-handoffs.md) — specialist agent handoff, inputType, history filtering을 설명하는 공식 가이드 요약
+- [OpenAI Agents SDK Sessions](wiki/tooling/openai-agents-sdk-sessions.md) — Session 인터페이스, Conversations/Memory 세션, compaction을 설명하는 공식 가이드 요약
+- [OpenAI Agents SDK MCP](wiki/tooling/openai-agents-sdk-model-context-protocol.md) — hosted MCP tools, streamable HTTP, stdio 연결 방식을 정리한 공식 가이드 요약
+
 **project-internal · `Claude Code`**
 - [Claude Code Hooks System](wiki/tooling/claude-code-hooks-system.md) — 이 페이지는 Claude Code 내부에서 Claude Code Hooks System이 어떤 역할을 하는지 정리한 프로젝트 스냅샷이다. 핵심 범위는 툴 호출 전후·세션 이벤트에 사용자 정의 스크립트를 끼워 넣는 settings.json 기반 확장 훅이다.
 

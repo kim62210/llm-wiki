@@ -61,3 +61,9 @@
 - Added standalone-doc deepening batch (US-011):
   - refined 5 standalone docs with tables / diagrams / reading guides
 - Fresh verification: broken wikilinks=0, missing index pages=0.
+
+- Added recursive framework-doc batch:
+  - OpenAI Agents SDK summaries: quickstart, handoffs, sessions, MCP
+  - LangGraph summaries: quickstart, persistence, durable-execution
+  - enriched parent entity pages with reading-path links
+- Fresh verification pending after batch integration.

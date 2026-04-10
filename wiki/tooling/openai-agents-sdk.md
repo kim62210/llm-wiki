@@ -89,6 +89,13 @@ OpenAI Agents SDK는 현재 시점에서 하나의 제품/모델/프레임워크
 - 도입 판단 시 기능 목록만 보지 말고, 공식 문서·릴리스 노트·벤치마크가 서로 얼마나 일관되게 같은 메시지를 주는지 확인한다.
 - 비교 후보와의 차이는 API/운영 통합, 성능 수치, 생태계 성숙도 같은 기준으로 정리하는 것이 좋다.
 
+## 하위 문서 읽기 경로
+
+- [[openai-agents-sdk-quickstart|OpenAI Agents SDK Quickstart]] — 설치부터 첫 agent 실행, tool 추가, handoff 연결까지 가장 짧은 입문 경로
+- [[openai-agents-sdk-handoffs|OpenAI Agents SDK Handoffs]] — specialist agent로 제어권을 넘길 때의 routing 규칙
+- [[openai-agents-sdk-sessions|OpenAI Agents SDK Sessions]] — 장기 대화 메모리, resumable runs, history compaction 정리
+- [[openai-agents-sdk-model-context-protocol|OpenAI Agents SDK MCP]] — hosted/HTTP/stdio MCP 연결과 approval 설계
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04]]

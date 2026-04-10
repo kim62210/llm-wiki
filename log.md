@@ -1,3 +1,18 @@
+## 2026-04-10 — Recursive ingest 배치 (OpenAI Agents SDK / LangGraph 세부 문서)
+- **대상**: 공식 세부 문서 7개 (`openai-agents-js` 4개, `docs.langchain.com` 3개)
+- **생성 페이지**:
+  - `wiki/tooling/openai-agents-sdk-quickstart.md`
+  - `wiki/tooling/openai-agents-sdk-handoffs.md`
+  - `wiki/tooling/openai-agents-sdk-sessions.md`
+  - `wiki/tooling/openai-agents-sdk-model-context-protocol.md`
+  - `wiki/tooling/langgraph-quickstart.md`
+  - `wiki/tooling/langgraph-persistence.md`
+  - `wiki/tooling/langgraph-durable-execution.md`
+- **수행 내용**:
+  - `raw/recursive-sources/2026-04-10-openai-langgraph/` 아래 원문 snapshot 저장
+  - 각 summary 페이지를 표 / 구조도 / 읽기 경로 포함한 심화 위키 수준으로 작성
+  - parent entity(`openai-agents-sdk.md`, `langgraph.md`)에 하위 문서 읽기 경로 추가
+
 ## 2026-04-10 — standalone 문서 심화 배치
 - **대상**: 새로 승격된 standalone 문서 5개
 - **수행 내용**:
