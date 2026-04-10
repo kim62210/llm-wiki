@@ -186,6 +186,18 @@
         "fresh index missing-page check 결과가 0이다"
       ],
       "passes": true
+    },
+    {
+      "id": "US-016",
+      "title": "필수 ingest 완료 후 다음 공식 확장 후보 backlog 문서화",
+      "priority": 16,
+      "acceptanceCriteria": [
+        "추가 공식 child-doc 후보가 applications summary 페이지로 정리된다",
+        "필수 coverage 완료와 선택적 backlog가 명확히 구분된다",
+        "fresh broken wikilink check 결과가 0이다",
+        "fresh index missing-page check 결과가 0이다"
+      ],
+      "passes": true
     }
   ]
 }

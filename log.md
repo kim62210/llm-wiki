@@ -1,3 +1,9 @@
+## 2026-04-10 — 다음 ingest 후보 backlog 문서화
+- **대상**: corpus 완료 이후의 선택적 확장 후보
+- **수행 내용**:
+  - Mastra / Instructor / BAML / Vercel AI SDK / Deep Agents / Pydantic AI의 공식 child-doc 후보를 backlog로 정리
+  - 필수 누락 없음과 선택적 확장 가능성을 분리 문서화
+
 ## 2026-04-10 — 핫토픽 500-link corpus audit 문서화
 - **대상**: `raw/2026-04-10-hot-ai-topics-100.md` 전체 source corpus
 - **수행 내용**:

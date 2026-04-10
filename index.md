@@ -129,6 +129,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - ["Simon Willison's Prompts Library"](wiki/applications/prompts-library.md) — Simon Willison이 agentic engineering guide 부록 "Prompts I use"에 모아둔, 본인이 상시 사용하는 프롬프트 모음. 지속적으로 업데이트되는 섹션이다.
 - [2026년 4월 AI 개발 핫토픽 100선](wiki/applications/ai-hot-topics-2026-04.md) — title: 2026년 4월 AI 개발 핫토픽 100선
 - [2026년 4월 핫토픽 corpus coverage audit](wiki/applications/hot-topics-corpus-coverage-audit-2026-04.md) — 원본 500개 링크가 deduplication, raw snapshot 저장, wiki 참조까지 모두 완료됐는지 검증한 감사 문서
+- [2026년 4월 다음 ingest 후보 지도](wiki/applications/next-ingest-candidates-2026-04.md) — 500-link corpus 완료 이후에도 추가로 확장 가능한 공식 child-doc backlog를 정리한 지도
 - [Agentic Engineering Patterns 가이드 (Simon Willison)](wiki/applications/agentic-engineering-guide.md) — Simon Willison이 2026-02-23에 시작한 가이드 시리즈. 코딩 에이전트(Claude Code, OpenAI Codex, Gemini CLI 등)를 사용하는 프로페셔널 소프트웨어 엔지니어를 위한 패턴 모음이다. 1994년 GoF *Design Patterns* 책에서 영감
 
 **case-study**

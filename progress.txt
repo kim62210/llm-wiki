@@ -95,3 +95,6 @@
 
 - Added corpus audit wiki page for the original hot-topic source set:
   - documented 500 link occurrences -> 452 unique refs -> 452/452 snapshots present -> 452/452 direct wiki references -> 549/549 hot-topics tree references
+
+- Added next-ingest backlog map after confirming full 500-link corpus coverage:
+  - documented optional official child-doc expansion candidates across Mastra/Instructor/BAML/Vercel/Deep Agents/Pydantic AI
