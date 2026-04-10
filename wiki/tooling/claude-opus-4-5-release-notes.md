@@ -3,7 +3,7 @@ title: Claude Opus 4.5 Release Notes
 category: tooling
 page_type: summary
 tags: [tooling, summary, anthropic, opus, release-notes]
-sources: [raw/2026-04-10-hot-ai-topics-sources/long-horizon-agent-benchmarks/04-anthropic-com-introducing-claude-opus-4-5.md]
+sources: [raw/2026-04-10-hot-ai-topics-sources/long-horizon-agent-benchmarks/04-anthropic-com-introducing-claude-opus-4-5.md, raw/2026-04-10-hot-ai-topics-sources/lethal-trifecta/03-anthropic-com-introducing-claude-opus-4-5.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---

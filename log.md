@@ -13,6 +13,15 @@
   - `wiki/rag/context-rot-report.md`
   - `wiki/tooling/claude-opus-4-5-release-notes.md`
 
+## 2026-04-10 — Ingest 계속: provenance merge batch
+- **대상**: 남아 있던 duplicate fetched source 10개
+- **수행 내용**:
+  - 새 페이지를 더 만들지 않고, 대응하는 standalone 페이지의 `sources:`에 alternate raw path를 병합
+- **결과**:
+  - remaining fetched source: 0
+  - broken wikilinks: 0
+  - index missing-page: 0
+
 ## 2026-04-10 — Ingest 계속: standalone source pages 추가 승격
 - **대상**: 이미 수집된 hot-topic raw source 중 고가치 공식 글/스펙/논문
 - **생성 페이지**:

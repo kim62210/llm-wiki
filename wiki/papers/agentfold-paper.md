@@ -3,7 +3,7 @@ title: AgentFold: Long-Horizon Web Agents with Proactive Context Management
 category: papers
 page_type: paper
 tags: [paper, agents, context-folding, web-agents]
-sources: [raw/hot-topics-sources/2026-04-10/004-agentfold-long-horizon-web-agents-with-proactive-context-management.md]
+sources: [raw/hot-topics-sources/2026-04-10/004-agentfold-long-horizon-web-agents-with-proactive-context-management.md, raw/2026-04-10-hot-ai-topics-sources/context-folding/02-arxiv-org-agentfold-long-horizon-web-agents-with-proactive-context-man.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---

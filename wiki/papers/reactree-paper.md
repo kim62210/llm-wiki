@@ -3,7 +3,7 @@ title: ReAcTree: Hierarchical LLM Agent Trees with Control Flow for Long-Horizon
 category: papers
 page_type: paper
 tags: [paper, agents, planning, hierarchy]
-sources: [raw/hot-topics-sources/2026-04-10/030-reactree-hierarchical-llm-agent-trees-with-control-flow-for-long-horizon-task-pl.md]
+sources: [raw/hot-topics-sources/2026-04-10/030-reactree-hierarchical-llm-agent-trees-with-control-flow-for-long-horizon-task-pl.md, raw/2026-04-10-hot-ai-topics-sources/agent-trees/01-arxiv-org-reactree-hierarchical-llm-agent-trees-with-control-flow-for-.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---

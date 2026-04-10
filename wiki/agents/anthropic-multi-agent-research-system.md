@@ -3,7 +3,7 @@ title: Anthropic Multi-Agent Research System
 category: agents
 page_type: summary
 tags: [agents, summary, anthropic, multi-agent, research]
-sources: [raw/hot-topics-sources/2026-04-10/006-how-we-built-our-multi-agent-research-system.md]
+sources: [raw/hot-topics-sources/2026-04-10/006-how-we-built-our-multi-agent-research-system.md, raw/2026-04-10-hot-ai-topics-sources/agent-trees/05-anthropic-com-how-we-built-our-multi-agent-research-system.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---

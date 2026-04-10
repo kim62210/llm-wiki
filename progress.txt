@@ -37,3 +37,7 @@
   - summary: the-lethal-trifecta-article, writing-about-agentic-engineering-patterns, context-rot-report, claude-opus-4-5-release-notes
   - paper: loop-paper
 - Fresh verification: broken wikilinks=0, missing index pages=0, batch6 pages=5.
+
+- Added provenance merge batch (US-007):
+  - merged 10 remaining duplicate fetched source paths into existing standalone pages
+- Fresh verification: remaining fetched sources=0, broken wikilinks=0, missing index pages=0.

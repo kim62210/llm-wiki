@@ -3,7 +3,7 @@ title: Context Engineering for AI Agents in Open-Source Software
 category: papers
 page_type: paper
 tags: [paper, context-engineering, open-source, software-engineering]
-sources: [raw/hot-topics-sources/2026-04-10/040-context-engineering-for-ai-agents-in-open-source-software.md]
+sources: [raw/hot-topics-sources/2026-04-10/040-context-engineering-for-ai-agents-in-open-source-software.md, raw/2026-04-10-hot-ai-topics-sources/lethal-trifecta/05-arxiv-org-context-engineering-for-ai-agents-in-open-source-software.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---

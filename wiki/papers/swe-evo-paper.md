@@ -3,7 +3,7 @@ title: SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Sc
 category: papers
 page_type: paper
 tags: [paper, benchmarks, coding-agents, software-engineering]
-sources: [raw/hot-topics-sources/2026-04-10/035-swe-evo-benchmarking-coding-agents-in-long-horizon-software-evolution.md]
+sources: [raw/hot-topics-sources/2026-04-10/035-swe-evo-benchmarking-coding-agents-in-long-horizon-software-evolution.md, raw/2026-04-10-hot-ai-topics-sources/long-horizon-agent-benchmarks/02-arxiv-org-swe-evo-benchmarking-coding-agents-in-long-horizon-software-.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---

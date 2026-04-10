@@ -3,7 +3,7 @@ title: Effective Context Engineering for AI Agents (Anthropic)
 category: concepts
 page_type: summary
 tags: [concepts, summary, context-engineering, anthropic, agents]
-sources: [raw/2026-04-10-hot-ai-topics-sources/context-folding/04-anthropic-com-effective-context-engineering-for-ai-agents.md]
+sources: [raw/2026-04-10-hot-ai-topics-sources/context-folding/04-anthropic-com-effective-context-engineering-for-ai-agents.md, raw/2026-04-10-hot-ai-topics-sources/lethal-trifecta/04-anthropic-com-effective-context-engineering-for-ai-agents.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---

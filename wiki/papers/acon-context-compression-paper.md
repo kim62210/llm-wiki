@@ -3,7 +3,7 @@ title: ACON: Optimizing Context Compression for Long-horizon LLM Agents
 category: papers
 page_type: paper
 tags: [paper, context-engineering, compression, agents]
-sources: [raw/hot-topics-sources/2026-04-10/002-acon-optimizing-context-compression-for-long-horizon-llm-agents.md]
+sources: [raw/hot-topics-sources/2026-04-10/002-acon-optimizing-context-compression-for-long-horizon-llm-agents.md, raw/2026-04-10-hot-ai-topics-sources/context-folding/03-arxiv-org-acon-optimizing-context-compression-for-long-horizon-llm-age.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---

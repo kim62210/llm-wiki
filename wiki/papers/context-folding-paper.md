@@ -3,7 +3,7 @@ title: Scaling Long-Horizon LLM Agent via Context-Folding
 category: papers
 page_type: paper
 tags: [paper, agents, context-folding, rl]
-sources: [raw/hot-topics-sources/2026-04-10/029-scaling-long-horizon-llm-agent-via-context-folding.md]
+sources: [raw/hot-topics-sources/2026-04-10/029-scaling-long-horizon-llm-agent-via-context-folding.md, raw/2026-04-10-hot-ai-topics-sources/context-folding/01-arxiv-org-scaling-long-horizon-llm-agent-via-context-folding.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---

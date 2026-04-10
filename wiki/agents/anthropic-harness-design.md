@@ -4,7 +4,7 @@ aliases: ["anthropic harness design", "harness design long running apps", "prith
 category: agents
 page_type: summary
 tags: [harness-engineering, generator-evaluator, anthropic, claude-opus, playwright, long-running-tasks]
-sources: [raw/2026-04-09-anthropic-harness-design-long-running-apps.md]
+sources: [raw/2026-04-09-anthropic-harness-design-long-running-apps.md, raw/2026-04-10-hot-ai-topics-sources/long-running-agent-harnesses/02-anthropic-com-harness-design-for-long-running-application-development.md]
 created: 2026-04-09
 updated: 2026-04-09
 ---
