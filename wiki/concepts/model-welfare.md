@@ -27,24 +27,29 @@ updated: 2026-04-10
 - [Kyle Fish on 5 AI welfare experiments (80,000 Hours)](https://80000hours.org/podcast/episodes/kyle-fish-ai-welfare-anthropic/)
 - [Abstractive Red-Teaming of Language Model Character](https://alignment.anthropic.com/2026/abstractive-red-teaming/)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 모델의 의식 가능성과 심리적 안녕을 평가·보호하는 연구 프로그램.
+- 왜 중요한가: 2026년 2월 Claude Opus 4.6 시스템 카드가 사상 최초로 모델 복지 공식 평가를 포함시켰고, Anthropic이 Opus 4.6에 "대화 거부권"과 의사결정 발언권을 실험 도입하며 AI 의식·권리 논쟁이 정책 영역까지 확산됐다.
+- 직접 수집 원문: 5개
+- 주요 도메인: anthropic.com×3, 80000hours.org×1, alignment.anthropic.com×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: www.anthropic.com 3건, 80000hours.org 1건, alignment.anthropic.com 1건
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/model-welfare.md`
-- [Exploring model welfare \ Anthropic](https://www.anthropic.com/research/exploring-model-welfare) — `raw/hot-topics-sources/2026-04-10/398-exploring-model-welfare.md`
-  - 메모: --- title: Exploring model welfare \ Anthropic source_url: https://www.anthropic.com/research/exploring-model-welfare final_url: https://www.anthropic.com/research/exploring-model-welfare status: 200 content_type: text/html; charset=utf-8 topics: [Model Welfare & Formal Welfare A
-- [Exploring model welfare \ Anthropic](https://www.anthropic.com/news/exploring-model-welfare) — `raw/hot-topics-sources/2026-04-10/399-exploring-model-welfare.md`
-  - 메모: --- title: Exploring model welfare \ Anthropic source_url: https://www.anthropic.com/news/exploring-model-welfare final_url: https://www.anthropic.com/news/exploring-model-welfare status: 200 content_type: text/html; charset=utf-8 topics: [Model Welfare & Formal Welfare Assessmen
-- [Emotion concepts and their function in a large language model \ Anthropic](https://www.anthropic.com/research/emotion-concepts-function) — `raw/hot-topics-sources/2026-04-10/400-emotion-concepts-and-their-function-in-a-large-language-model.md`
-  - 메모: --- title: Emotion concepts and their function in a large language model \ Anthropic source_url: https://www.anthropic.com/research/emotion-concepts-function final_url: https://www.anthropic.com/research/emotion-concepts-function status: 200 content_type: text/html; charset=utf-8
-- [Kyle Fish on the most bizarre findings from 5 AI welfare experiments | 80,000 Hours](https://80000hours.org/podcast/episodes/kyle-fish-ai-welfare-anthropic) — `raw/hot-topics-sources/2026-04-10/401-kyle-fish-on-5-ai-welfare-experiments.md`
-  - 메모: --- title: Kyle Fish on the most bizarre findings from 5 AI welfare experiments | 80,000 Hours source_url: https://80000hours.org/podcast/episodes/kyle-fish-ai-welfare-anthropic final_url: https://80000hours.org/podcast/episodes/kyle-fish-ai-welfare-anthropic/ status: 200 content
-- [Abstractive Red-Teaming of Language Model Character](https://alignment.anthropic.com/2026/abstractive-red-teaming) — `raw/hot-topics-sources/2026-04-10/402-abstractive-red-teaming-of-language-model-character.md`
-  - 메모: --- title: Abstractive Red-Teaming of Language Model Character source_url: https://alignment.anthropic.com/2026/abstractive-red-teaming final_url: https://alignment.anthropic.com/2026/abstractive-red-teaming/ status: 200 content_type: text/html; charset=utf-8 topics: [Model Welfa
+
+### source별 핵심 신호
+
+- **Exploring model welfare \ Anthropic** (`anthropic.com`): https://www.anthropic.com/research/exploring-model-welfare
+  - 메모: Human welfare is at the heart of our work at Anthropic: our mission is to make sure that increasingly capable and sophisticated AI systems remain beneficial to humanity.
+- **Exploring model welfare \ Anthropic** (`anthropic.com`): https://www.anthropic.com/news/exploring-model-welfare
+  - 메모: Human welfare is at the heart of our work at Anthropic: our mission is to make sure that increasingly capable and sophisticated AI systems remain beneficial to humanity.
+- **Emotion concepts and their function in a large language model \ Anthropic** (`anthropic.com`): https://www.anthropic.com/research/emotion-concepts-function
+  - 메모: Emotion concepts and their function in a large language model
+- **Kyle Fish on the most bizarre findings from 5 AI welfare experiments | 80,000 Hours** (`80000hours.org`): https://80000hours.org/podcast/episodes/kyle-fish-ai-welfare-anthropic/
+  - 메모: Foundations What's the philosophy behind our advice?
+- **Abstractive Red-Teaming of Language Model Character** (`alignment.anthropic.com`): https://alignment.anthropic.com/2026/abstractive-red-teaming/
+  - 메모: We introduce abstractive red-teaming, a means of testing language models’ adherence to a character specification that searches for natural-language categories of user queries that cause models to violate the specificatio
 
 ## 관련 문서
 

@@ -90,25 +90,29 @@ Claude Code가 Explore 서브에이전트에 준 지침:
 3. **긴 로그 분석**: 전용 서브에이전트에 로그 읽게 하고 요약만 받기
 4. **테스트 반복 실행**: 테스트 러너 서브에이전트로 부모 컨텍스트 보호
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 메인 세션이 전용 컨텍스트·권한을 가진 서브에이전트에 작업을 위임하는 오케스트레이션 패턴.
+- 왜 중요한가: Claude Code가 `/agents`·`.claude/agents/`·`Agent` 툴·`parent_tool_use_id` 필드를 정식화했고, Anthropic 3월 harness 블로그에서 planner-generator-evaluator 3-agent 구조가 long-running 코딩을 가능하게 한 핵심이라고 공개하면서 "GAN-style agent loop" 패턴이 업계 표준 토론거리가 됐다.
+- 직접 수집 원문: 5개
+- 주요 도메인: code.claude.com×3, anthropic.com×2
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: code.claude.com 3건, www.anthropic.com 2건
-- source 조합: 공식 문서
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/subagents.md`
-- [Create custom subagents - Claude Code Docs](https://code.claude.com/docs/en/sub-agents) — `raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md`
-  - 메모: --- title: Create custom subagents - Claude Code Docs source_url: https://code.claude.com/docs/en/sub-agents final_url: https://code.claude.com/docs/en/sub-agents status: 200 content_type: text/html; charset=utf-8 topics: [Orchestrator-Worker Multi-Agent Pattern, Subagents & Mult
-- [Harness design for long-running application development \ Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps) — `raw/hot-topics-sources/2026-04-10/011-harness-design-for-long-running-application-development.md`
-  - 메모: --- title: Harness design for long-running application development \ Anthropic source_url: https://www.anthropic.com/engineering/harness-design-long-running-apps final_url: https://www.anthropic.com/engineering/harness-design-long-running-apps status: 200 content_type: text/html;
-- [Agent SDK overview - Claude Code Docs](https://code.claude.com/docs/en/agent-sdk/overview) — `raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md`
-  - 메모: --- title: Agent SDK overview - Claude Code Docs source_url: https://code.claude.com/docs/en/agent-sdk/overview final_url: https://code.claude.com/docs/en/agent-sdk/overview status: 200 content_type: text/html; charset=utf-8 topics: [Agent Harnesses for Long-Running Coding Sessio
-- [Common workflows - Claude Code Docs](https://code.claude.com/docs/en/common-workflows) — `raw/hot-topics-sources/2026-04-10/054-common-workflows.md`
-  - 메모: --- title: Common workflows - Claude Code Docs source_url: https://code.claude.com/docs/en/common-workflows final_url: https://code.claude.com/docs/en/common-workflows status: 200 content_type: text/html; charset=utf-8 topics: [Claude Code Hooks System, Subagents & Multi-Agent Or
-- [Effective harnesses for long-running agents \ Anthropic](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — `raw/hot-topics-sources/2026-04-10/041-effective-harnesses-for-long-running-agents.md`
-  - 메모: --- title: Effective harnesses for long-running agents \ Anthropic source_url: https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents final_url: https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents status: 200 content_type: 
+
+### source별 핵심 신호
+
+- **Create custom subagents - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/sub-agents
+  - 메모: Create and use specialized AI subagents in Claude Code for task-specific workflows and improved context management.
+- **Harness design for long-running application development \ Anthropic** (`anthropic.com`): https://www.anthropic.com/engineering/harness-design-long-running-apps
+  - 메모: Harness design is key to performance at the frontier of agentic coding. Here's how we pushed Claude further in frontend design and long-running autonomous software engineering.
+- **Agent SDK overview - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/agent-sdk/overview
+  - 메모: Intercept and control agent behavior with hooks
+- **Common workflows - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/common-workflows
+  - 메모: This page covers practical workflows for everyday development: exploring unfamiliar code, debugging, refactoring, writing tests, creating PRs, and managing sessions.
+- **Effective harnesses for long-running agents \ Anthropic** (`anthropic.com`): https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
+  - 메모: Agents still face challenges working across many context windows. We looked to human engineers for inspiration in creating a more effective harness for long-running agents.
 
 ## 관련 문서
 

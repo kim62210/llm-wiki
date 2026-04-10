@@ -27,24 +27,29 @@ LangSmith가 2025년 10월 "threads"를 일급 개념으로 승격하고 Multi-t
 - [LangSmith Evaluations Platform](https://www.langchain.com/langsmith/evaluation)
 - [LangSmith Platform Overview](https://www.langchain.com/langsmith-platform)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 대화 전체 세션 단위로 사용자 목표 달성 여부를 채점.
+- 왜 중요한가: LangSmith가 2025년 10월 "threads"를 일급 개념으로 승격하고 Multi-turn Evals + Insights Agent를 출시하면서, 단일 턴을 넘어 세션 전체를 평가하는 것이 2026년 상반기 에이전트 품질 관리의 새 기준이 되었다.
+- 직접 수집 원문: 5개
+- 주요 도메인: langchain.com×2, blog.langchain.com×1, docs.langchain.com×1, changelog.langchain.com×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: www.langchain.com 2건, blog.langchain.com 1건, docs.langchain.com 1건
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/multi-turn-agent-evaluation.md`
-- [Improve agent quality with Insights Agent and Multi-turn Evals, now in LangSmith](https://blog.langchain.com/insights-agent-multiturn-evals-langsmith) — `raw/hot-topics-sources/2026-04-10/227-improve-agent-quality-with-insights-agent-and-multi-turn-evals.md`
-  - 메모: --- title: Improve agent quality with Insights Agent and Multi-turn Evals, now in LangSmith source_url: https://blog.langchain.com/insights-agent-multiturn-evals-langsmith final_url: https://blog.langchain.com/insights-agent-multiturn-evals-langsmith/ status: 200 content_type: te
-- [LangSmith Evaluation - Docs by LangChain](https://docs.langchain.com/langsmith/evaluation) — `raw/hot-topics-sources/2026-04-10/228-langsmith-evaluation-documentation.md`
-  - 메모: --- title: LangSmith Evaluation - Docs by LangChain source_url: https://docs.langchain.com/langsmith/evaluation final_url: https://docs.langchain.com/langsmith/evaluation status: 200 content_type: text/html; charset=utf-8 topics: [Multi-Turn Agent Evaluation] sections: [Evals & O
-- [LangChain - Changelog | Evaluate end-to-end agent interactions with](https://changelog.langchain.com/announcements/evaluate-end-to-end-agent-interactions-with-multi-turn-evals) — `raw/hot-topics-sources/2026-04-10/229-evaluate-end-to-end-agent-interactions-with-multi-turn-evals.md`
-  - 메모: --- title: LangChain - Changelog | Evaluate end-to-end agent interactions with source_url: https://changelog.langchain.com/announcements/evaluate-end-to-end-agent-interactions-with-multi-turn-evals final_url: https://changelog.langchain.com/announcements/evaluate-end-to-end-agent
-- [LangSmith - LLM & AI Agent Evals Platform: Continuously improve agents](https://www.langchain.com/langsmith/evaluation) — `raw/hot-topics-sources/2026-04-10/230-langsmith-evaluations-platform.md`
-  - 메모: --- title: LangSmith - LLM & AI Agent Evals Platform: Continuously improve agents source_url: https://www.langchain.com/langsmith/evaluation final_url: https://www.langchain.com/langsmith/evaluation status: 200 content_type: text/html; charset=utf-8 topics: [Multi-Turn Agent Eval
-- [LangSmith: AI Agent & LLM Observability and Evals Platform](https://www.langchain.com/langsmith-platform) — `raw/hot-topics-sources/2026-04-10/231-langsmith-platform-overview.md`
-  - 메모: --- title: LangSmith: AI Agent & LLM Observability and Evals Platform source_url: https://www.langchain.com/langsmith-platform final_url: https://www.langchain.com/langsmith-platform status: 200 content_type: text/html; charset=utf-8 topics: [Multi-Turn Agent Evaluation] sections
+
+### source별 핵심 신호
+
+- **Improve agent quality with Insights Agent and Multi-turn Evals, now in LangSmith** (`blog.langchain.com`): https://blog.langchain.com/insights-agent-multiturn-evals-langsmith/
+  - 메모: We’re releasing new capabilities in LangSmith to help monitor agents in production.
+- **LangSmith Evaluation - Docs by LangChain** (`docs.langchain.com`): https://docs.langchain.com/langsmith/evaluation
+  - 메모: Join us May 13th & May 14th at Interrupt, the Agent Conference by LangChain. Buy tickets >
+- **LangChain - Changelog | Evaluate end-to-end agent interactions with** (`changelog.langchain.com`): https://changelog.langchain.com/announcements/evaluate-end-to-end-agent-interactions-with-multi-turn-evals
+  - 메모: Quick start agents with any model provider
+- **LangSmith - LLM & AI Agent Evals Platform: Continuously improve agents** (`langchain.com`): https://www.langchain.com/langsmith/evaluation
+  - 메모: Quick start agents with any model provider
+- **LangSmith: AI Agent & LLM Observability and Evals Platform** (`langchain.com`): https://www.langchain.com/langsmith-platform
+  - 메모: Quick start agents with any model provider
 
 ## 관련 문서
 

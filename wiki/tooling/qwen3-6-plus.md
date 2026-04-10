@@ -32,24 +32,28 @@ updated: 2026-04-10
 - [Supported Models — Alibaba Cloud Model Studio](https://www.alibabacloud.com/help/en/model-studio/models)
 - [Alibaba Qwen Team Releases Qwen3.5 Omni — MarkTechPost](https://www.marktechpost.com/2026/03/30/alibaba-qwen-team-releases-qwen3-5-omni-a-native-multimodal-model-for-text-audio-video-and-realtime-interaction/)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 2026년 4월 Alibaba가 공개한 Qwen 플래그십 (1M 컨텍스트, 항상 reasoning).
+- 왜 중요한가: 2026년 4월 2일 공식 출시된 Qwen3.6-Plus는 기본 1M 토큰 컨텍스트와 모든 프롬프트에서 reasoning이 상시 활성화되는 구조로, 출시 당일 OpenRouter 단일 모델 일일 사용량 1.4조 토큰 역대 최고치를 기록하며 에이전트 코딩/멀티모달 워크로드를 흡수 중이다.
+- 직접 수집 원문: 5개
+- 주요 도메인: alibabacloud.com×2, en.wikipedia.org×1, qwen.ai×1, marktechpost.com×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: www.alibabacloud.com 2건, en.wikipedia.org 1건, qwen.ai 1건
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/qwen3-6-plus.md`
-- [Alibaba Unveils Qwen3.6-Plus to Accelerate Agentic AI Deployment for Enterprises and Alibaba’s AI Applications - Alibaba Cloud Community](https://www.alibabacloud.com/blog/alibaba-unveils-qwen3-6-plus-to-accelerate-agentic-ai-deployment-for-enterprises-and-alibaba%E2%80%99s-ai-applications_603000) — `raw/hot-topics-sources/2026-04-10/145-alibaba-unveils-qwen3-6-plus-alibaba-cloud-community.md`
-  - 메모: --- title: Alibaba Unveils Qwen3.6-Plus to Accelerate Agentic AI Deployment for Enterprises and Alibaba’s AI Applications - Alibaba Cloud Community source_url: https://www.alibabacloud.com/blog/alibaba-unveils-qwen3-6-plus-to-accelerate-agentic-ai-deployment-for-enterprises-and-a
-- [Qwen - Wikipedia](https://en.wikipedia.org/wiki/Qwen) — `raw/hot-topics-sources/2026-04-10/146-qwen-wikipedia.md`
-  - 메모: --- title: Qwen - Wikipedia source_url: https://en.wikipedia.org/wiki/Qwen final_url: https://en.wikipedia.org/wiki/Qwen status: 200 content_type: text/html; charset=UTF-8 topics: [Qwen3.6-Plus] sections: [Model Releases & Benchmarks] fetched_at: 2026-04-10T01:43:44.491339+00:00 
-- [Qwen](https://qwen.ai/blog?id=qwen3-max-thinking) — `raw/hot-topics-sources/2026-04-10/147-qwen3-max-thinking-blog-qwen.md`
-  - 메모: --- title: Qwen source_url: https://qwen.ai/blog?id=qwen3-max-thinking final_url: https://qwen.ai/blog?id=qwen3-max-thinking status: 200 content_type: text/html; charset=utf-8 topics: [Qwen3.6-Plus] sections: [Model Releases & Benchmarks] fetched_at: 2026-04-10T01:43:44.400104+00
-- [Supported Models and Capabilities Overview - Model Studio - Alibaba Cloud - Alibaba Cloud Model Studio - Alibaba Cloud Documentation Center](https://www.alibabacloud.com/help/en/model-studio/models) — `raw/hot-topics-sources/2026-04-10/148-supported-models-alibaba-cloud-model-studio.md`
-  - 메모: --- title: Supported Models and Capabilities Overview - Model Studio - Alibaba Cloud - Alibaba Cloud Model Studio - Alibaba Cloud Documentation Center source_url: https://www.alibabacloud.com/help/en/model-studio/models final_url: https://www.alibabacloud.com/help/en/model-studio
-- [Alibaba Qwen Team Releases Qwen3.5 Omni: A Native Multimodal Model for Text, Audio, Video, and Realtime Interaction - MarkTechPost](https://www.marktechpost.com/2026/03/30/alibaba-qwen-team-releases-qwen3-5-omni-a-native-multimodal-model-for-text-audio-video-and-realtime-interaction) — `raw/hot-topics-sources/2026-04-10/149-alibaba-qwen-team-releases-qwen3-5-omni-marktechpost.md`
-  - 메모: --- title: Alibaba Qwen Team Releases Qwen3.5 Omni: A Native Multimodal Model for Text, Audio, Video, and Realtime Interaction - MarkTechPost source_url: https://www.marktechpost.com/2026/03/30/alibaba-qwen-team-releases-qwen3-5-omni-a-native-multimodal-model-for-text-audio-video
+
+### source별 핵심 신호
+
+- **Alibaba Unveils Qwen3.6-Plus to Accelerate Agentic AI Deployment for Enterprises and Alibaba’s AI Applications - Alibaba Cloud Community** (`alibabacloud.com`): https://www.alibabacloud.com/blog/alibaba-unveils-qwen3-6-plus-to-accelerate-agentic-ai-deployment-for-enterprises-and-alibaba%E2%80%99s-ai-applications_603000
+  - 메모: New model brings advanced agentic coding and refined reasoning to real-world deployment
+- **Qwen - Wikipedia** (`en.wikipedia.org`): https://en.wikipedia.org/wiki/Qwen
+  - 메모: TypeLarge language model, chatbotLicenseApache-2.0
+- **Qwen** (`qwen.ai`): https://qwen.ai/blog?id=qwen3-max-thinking
+- **Supported Models and Capabilities Overview - Model Studio - Alibaba Cloud - Alibaba Cloud Model Studio - Alibaba Cloud Documentation Center** (`alibabacloud.com`): https://www.alibabacloud.com/help/en/model-studio/models
+  - 메모: In international deployment mode, endpoints and data storage are both located in Singapore region. Model inference computing resources are dynamically scheduled globally (excluding Chinese mainland).
+- **Alibaba Qwen Team Releases Qwen3.5 Omni: A Native Multimodal Model for Text, Audio, Video, and Realtime Interaction - MarkTechPost** (`marktechpost.com`): https://www.marktechpost.com/2026/03/30/alibaba-qwen-team-releases-qwen3-5-omni-a-native-multimodal-model-for-text-audio-video-and-realtime-interaction/
+  - 메모: HomeEditors PickAgentic AIAlibaba Qwen Team Releases Qwen3.5 Omni: A Native Multimodal Model for Text,...
 
 ## 관련 문서
 

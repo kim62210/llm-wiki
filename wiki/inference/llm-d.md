@@ -24,25 +24,29 @@ vLLM+Kubernetes Gateway API Inference Extension 기반의 CNCF 분산 추론 스
 - [Introducing Gateway API Inference Extension - Kubernetes Blog](https://kubernetes.io/blog/2025/06/05/introducing-gateway-api-inference-extension/)
 - [Gateway API Inference Extension Documentation](https://gateway-api-inference-extension.sigs.k8s.io/)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: vLLM+Kubernetes Gateway API Inference Extension 기반의 CNCF 분산 추론 스택.
+- 왜 중요한가: 2026년 3월 24일 llm-d가 CNCF Sandbox에 편입되었고 Gateway API Inference Extension v1.4.0이 3월 20일 GA되면서, IBM/Red Hat/Google/NVIDIA가 밀고 있는 쿠버네티스 네이티브 분산 추론의 공식 표준 경로가 되었다.
+- 직접 수집 원문: 5개
+- 주요 도메인: github.com×2, llm-d.ai×1, kubernetes.io×1, gateway-api-inference-extension.sigs.k8s.io×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: github.com 2건, llm-d.ai 1건, kubernetes.io 1건
-- source 조합: 구현체
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/llm-d.md`
-- [GitHub - llm-d/llm-d: Achieve state of the art inference performance with modern accelerators on Kubernetes · GitHub](https://github.com/llm-d/llm-d) — `raw/hot-topics-sources/2026-04-10/329-llm-d-llm-d-github-repository.md`
-  - 메모: --- title: GitHub - llm-d/llm-d: Achieve state of the art inference performance with modern accelerators on Kubernetes · GitHub source_url: https://github.com/llm-d/llm-d final_url: https://github.com/llm-d/llm-d status: 200 content_type: text/html; charset=utf-8 topics: [llm-d &
-- [llm-d Architecture | llm-d](https://llm-d.ai/docs/architecture) — `raw/hot-topics-sources/2026-04-10/330-llm-d-architecture-documentation.md`
-  - 메모: --- title: llm-d Architecture | llm-d source_url: https://llm-d.ai/docs/architecture final_url: https://llm-d.ai/docs/architecture status: 200 content_type: text/html; charset=utf-8 topics: [llm-d & Gateway API Inference Extension] sections: [Infra & Serving] fetched_at: 2026-04-
-- [GitHub - kubernetes-sigs/gateway-api-inference-extension: Gateway API Inference Extension · GitHub](https://github.com/kubernetes-sigs/gateway-api-inference-extension) — `raw/hot-topics-sources/2026-04-10/331-kubernetes-sigs-gateway-api-inference-extension-github.md`
-  - 메모: --- title: GitHub - kubernetes-sigs/gateway-api-inference-extension: Gateway API Inference Extension · GitHub source_url: https://github.com/kubernetes-sigs/gateway-api-inference-extension final_url: https://github.com/kubernetes-sigs/gateway-api-inference-extension status: 200 c
-- [Introducing Gateway API Inference Extension | Kubernetes](https://kubernetes.io/blog/2025/06/05/introducing-gateway-api-inference-extension) — `raw/hot-topics-sources/2026-04-10/332-introducing-gateway-api-inference-extension-kubernetes-blog.md`
-  - 메모: --- title: Introducing Gateway API Inference Extension | Kubernetes source_url: https://kubernetes.io/blog/2025/06/05/introducing-gateway-api-inference-extension final_url: https://kubernetes.io/blog/2025/06/05/introducing-gateway-api-inference-extension/ status: 200 content_type
-- [Introduction - Kubernetes Gateway API Inference Extension](https://gateway-api-inference-extension.sigs.k8s.io) — `raw/hot-topics-sources/2026-04-10/333-gateway-api-inference-extension-documentation.md`
-  - 메모: --- title: Introduction - Kubernetes Gateway API Inference Extension source_url: https://gateway-api-inference-extension.sigs.k8s.io final_url: https://gateway-api-inference-extension.sigs.k8s.io status: 200 content_type: text/html; charset=UTF-8 topics: [llm-d & Gateway API Infe
+
+### source별 핵심 신호
+
+- **GitHub - llm-d/llm-d: Achieve state of the art inference performance with modern accelerators on Kubernetes · GitHub** (`github.com`): https://github.com/llm-d/llm-d
+  - 메모: To see all available qualifiers, see our documentation.
+- **llm-d Architecture | llm-d** (`llm-d.ai`): https://llm-d.ai/docs/architecture
+  - 메모: llm-d is a high-performance distributed inference serving stack optimized for production deployments on Kubernetes.
+- **GitHub - kubernetes-sigs/gateway-api-inference-extension: Gateway API Inference Extension · GitHub** (`github.com`): https://github.com/kubernetes-sigs/gateway-api-inference-extension
+  - 메모: To see all available qualifiers, see our documentation.
+- **Introducing Gateway API Inference Extension | Kubernetes** (`kubernetes.io`): https://kubernetes.io/blog/2025/06/05/introducing-gateway-api-inference-extension/
+  - 메모: Running Agents on Kubernetes with Agent Sandbox
+- **Introduction - Kubernetes Gateway API Inference Extension** (`gateway-api-inference-extension.sigs.k8s.io`): https://gateway-api-inference-extension.sigs.k8s.io
+  - 메모: The overall resource model focuses on 2 new inference-focused
 
 ## 관련 문서
 

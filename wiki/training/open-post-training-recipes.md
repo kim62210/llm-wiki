@@ -31,24 +31,29 @@ Ai2가 Tülu 3에 이어 OLMo 3까지 데이터·코드·학습 곡선을 전부
 - [Scaling the Tülu 3 post-training recipes to surpass DeepSeek V3 (Ai2 blog)](https://allenai.org/blog/tulu-3-405B)
 - [AllenAI open-instruct (post-training codebase)](https://github.com/allenai/open-instruct)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: SFT → DPO → RLVR 전체 파이프라인을 완전 공개한 오픈소스 post-training 레시피.
+- 왜 중요한가: Ai2가 Tülu 3에 이어 OLMo 3까지 데이터·코드·학습 곡선을 전부 공개하며, 폐쇄형 모델 대비 "따라잡기(catch-up)" 속도가 2026년 화두가 되고 있다.
+- 직접 수집 원문: 5개
+- 주요 도메인: allenai.org×3, arxiv.org×1, github.com×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: allenai.org 3건, arxiv.org 1건, github.com 1건
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/open-post-training-recipes.md`
-- [305-tulu-3-pushing-frontiers-in-open-language-model-post-training](https://arxiv.org/pdf/2411.15124) — `raw/hot-topics-sources/2026-04-10/305-tulu-3-pushing-frontiers-in-open-language-model-post-training.md`
-  - 메모: --- title: Tülu 3: Pushing Frontiers in Open Language Model Post-Training source_url: https://arxiv.org/pdf/2411.15124 final_url: https://arxiv.org/pdf/2411.15124 status: 200 content_type: application/pdf topics: [Open Post-Training Recipes (Tülu 3 / OLMo 3)] sections: [Training 
-- [Tülu 3 opens language model post-training up to more tasks and more people  | Ai2](https://allenai.org/blog/tulu-3) — `raw/hot-topics-sources/2026-04-10/306-tulu-3-opens-language-model-post-training.md`
-  - 메모: --- title: Tülu 3 opens language model post-training up to more tasks and more people | Ai2 source_url: https://allenai.org/blog/tulu-3 final_url: https://allenai.org/blog/tulu-3 status: 200 content_type: text/html; charset=utf-8 topics: [Open Post-Training Recipes (Tülu 3 / OLMo
-- [Olmo 3: Charting a path through the model flow to lead open-source AI   | Ai2](https://allenai.org/blog/olmo3) — `raw/hot-topics-sources/2026-04-10/307-olmo-3-charting-a-path-through-the-model-flow-to-lead-open-source-ai.md`
-  - 메모: --- title: Olmo 3: Charting a path through the model flow to lead open-source AI | Ai2 source_url: https://allenai.org/blog/olmo3 final_url: https://allenai.org/blog/olmo3 status: 200 content_type: text/html; charset=utf-8 topics: [Open Post-Training Recipes (Tülu 3 / OLMo 3)] se
-- [Scaling the Tülu 3 post-training recipes to surpass the performance of DeepSeek V3  | Ai2](https://allenai.org/blog/tulu-3-405B) — `raw/hot-topics-sources/2026-04-10/308-scaling-the-tulu-3-post-training-recipes-to-surpass-deepseek-v3.md`
-  - 메모: --- title: Scaling the Tülu 3 post-training recipes to surpass the performance of DeepSeek V3 | Ai2 source_url: https://allenai.org/blog/tulu-3-405B final_url: https://allenai.org/blog/tulu-3-405B status: 200 content_type: text/html; charset=utf-8 topics: [Open Post-Training Reci
-- [GitHub - allenai/open-instruct: AllenAI's post-training codebase · GitHub](https://github.com/allenai/open-instruct) — `raw/hot-topics-sources/2026-04-10/309-allenai-open-instruct.md`
-  - 메모: --- title: GitHub - allenai/open-instruct: AllenAI's post-training codebase · GitHub source_url: https://github.com/allenai/open-instruct final_url: https://github.com/allenai/open-instruct status: 200 content_type: text/html; charset=utf-8 topics: [Open Post-Training Recipes (Tü
+
+### source별 핵심 신호
+
+- **Tülu 3: Pushing Frontiers in Open Language Model Post-Training** (`arxiv.org`): https://arxiv.org/pdf/2411.15124
+  - 메모: << /Type /XObject /Subtype /Form /BBox [ 0 0 100 100 ]
+- **Tülu 3 opens language model post-training up to more tasks and more people  | Ai2** (`allenai.org`): https://allenai.org/blog/tulu-3
+  - 메모: Tülu 3 opens language model post-training up to more tasks and more people | Ai2
+- **Olmo 3: Charting a path through the model flow to lead open-source AI   | Ai2** (`allenai.org`): https://allenai.org/blog/olmo3
+  - 메모: Olmo 3: Charting a path through the model flow to lead open-source AI | Ai2
+- **Scaling the Tülu 3 post-training recipes to surpass the performance of DeepSeek V3  | Ai2** (`allenai.org`): https://allenai.org/blog/tulu-3-405B
+  - 메모: Scaling the Tülu 3 post-training recipes to surpass the performance of DeepSeek V3 | Ai2
+- **GitHub - allenai/open-instruct: AllenAI's post-training codebase · GitHub** (`github.com`): https://github.com/allenai/open-instruct
+  - 메모: To see all available qualifiers, see our documentation.
 
 ## 관련 문서
 

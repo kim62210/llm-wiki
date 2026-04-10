@@ -32,25 +32,29 @@ updated: 2026-04-10
 - [Model Release Notes — OpenAI Help Center](https://help.openai.com/en/articles/9624314-model-release-notes)
 - [GDPval — OpenAI](https://openai.com/index/gdpval/)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 2026년 3월 OpenAI가 공개한 네이티브 컴퓨터 사용 플래그십.
+- 왜 중요한가: 2026년 3월 5일 ChatGPT/API/Codex에 동시 출시, OSWorld-Verified 75%(GPT-5.2의 47.3% 대비 급등)와 GDPval 83%를 기록하고 1M 토큰 컨텍스트 및 GPT-5.3-codex의 프론티어 코딩 능력을 메인라인 reasoning 모델에 통합했다.
+- 직접 수집 원문: 5개
+- 주요 도메인: openai.com×3, en.wikipedia.org×1, help.openai.com×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: openai.com 3건, en.wikipedia.org 1건, help.openai.com 1건
-- source 조합: 공식 문서
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/gpt-5-4.md`
-- [Introducing GPT-5.4 | OpenAI](https://openai.com/index/introducing-gpt-5-4) — `raw/hot-topics-sources/2026-04-10/120-introducing-gpt-5-4-openai.md`
-  - 메모: --- title: Introducing GPT-5.4 | OpenAI source_url: https://openai.com/index/introducing-gpt-5-4 final_url: https://openai.com/index/introducing-gpt-5-4/ status: 200 content_type: text/html; charset=utf-8 topics: [GPT-5.4] sections: [Model Releases & Benchmarks] fetched_at: 2026-
-- [GPT-5.4 - Wikipedia](https://en.wikipedia.org/wiki/GPT-5.4) — `raw/hot-topics-sources/2026-04-10/121-gpt-5-4-wikipedia.md`
-  - 메모: --- title: GPT-5.4 - Wikipedia source_url: https://en.wikipedia.org/wiki/GPT-5.4 final_url: https://en.wikipedia.org/wiki/GPT-5.4 status: 200 content_type: text/html; charset=UTF-8 topics: [GPT-5.4] sections: [Model Releases & Benchmarks] fetched_at: 2026-04-10T01:43:41.722593+00
-- [Introducing GPT-5.4 mini and nano | OpenAI](https://openai.com/index/introducing-gpt-5-4-mini-and-nano) — `raw/hot-topics-sources/2026-04-10/122-introducing-gpt-5-4-mini-and-nano-openai.md`
-  - 메모: --- title: Introducing GPT-5.4 mini and nano | OpenAI source_url: https://openai.com/index/introducing-gpt-5-4-mini-and-nano final_url: https://openai.com/index/introducing-gpt-5-4-mini-and-nano/ status: 200 content_type: text/html; charset=utf-8 topics: [GPT-5.4] sections: [Mode
-- [Model Release Notes | OpenAI Help Center](https://help.openai.com/en/articles/9624314-model-release-notes) — `raw/hot-topics-sources/2026-04-10/123-model-release-notes-openai-help-center.md`
-  - 메모: --- title: Model Release Notes | OpenAI Help Center source_url: https://help.openai.com/en/articles/9624314-model-release-notes final_url: https://help.openai.com/en/articles/9624314-model-release-notes status: 200 content_type: text/html; charset=utf-8 topics: [GPT-5.4] sections
-- [Measuring the performance of our models on real-world tasks  | OpenAI](https://openai.com/index/gdpval) — `raw/hot-topics-sources/2026-04-10/124-gdpval-openai.md`
-  - 메모: --- title: Measuring the performance of our models on real-world tasks | OpenAI source_url: https://openai.com/index/gdpval final_url: https://openai.com/index/gdpval/ status: 200 content_type: text/html; charset=utf-8 topics: [GPT-5.4] sections: [Model Releases & Benchmarks] fet
+
+### source별 핵심 신호
+
+- **Introducing GPT-5.4 | OpenAI** (`openai.com`): https://openai.com/index/introducing-gpt-5-4/
+  - 메모: Today, we’re releasing GPT‑5.4 in ChatGPT (as GPT‑5.4 Thinking), the API, and Codex. It’s our most capable and efficient frontier model for professional work.
+- **GPT-5.4 - Wikipedia** (`en.wikipedia.org`): https://en.wikipedia.org/wiki/GPT-5.4
+  - 메모: GPT-5.4 (Generative Pre-trained Transformer 5.4) is a large language model (LLM) released by OpenAI on March 5, 2026.[1]
+- **Introducing GPT-5.4 mini and nano | OpenAI** (`openai.com`): https://openai.com/index/introducing-gpt-5-4-mini-and-nano/
+  - 메모: Today we’re releasing GPT‑5.4 mini and nano, our most capable small models yet. They bring many of the strengths of GPT‑5.4 to faster, more efficient models designed for high-volume workloads.
+- **Model Release Notes | OpenAI Help Center** (`help.openai.com`): https://help.openai.com/en/articles/9624314-model-release-notes
+  - 메모: We’re rolling out GPT-5.4 mini in ChatGPT. GPT-5.4 mini is available to Free and Go users via the “Thinking” feature in the + menu.
+- **Measuring the performance of our models on real-world tasks  | OpenAI** (`openai.com`): https://openai.com/index/gdpval/
+  - 메모: Measuring the performance of our models on real-world tasks | OpenAI
 
 ## 관련 문서
 

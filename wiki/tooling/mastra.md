@@ -32,25 +32,29 @@ Gatsby 팀이 만든 TypeScript 풀스택 에이전트·워크플로우 프레�
 - [Mastra Announcements](https://mastra.ai/categories/announcements)
 - [Mastra empowers web devs to build AI agents in TypeScript (The New Stack)](https://thenewstack.io/mastra-empowers-web-devs-to-build-ai-agents-in-typescript/)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: Gatsby 팀이 만든 TypeScript 풀스택 에이전트·워크플로우 프레임워크.
+- 왜 중요한가: 2026년 1월 1.0 GA 이후 주간 npm 30만+ 다운로드·GitHub 22k+ 스타로 급성장했고, Mastra Studio 로컬 플레이그라운드와 94개 프로바이더 3300+ 모델 라우터·MCP 통합으로 TS 진영 LangGraph 대안으로 자리잡았다.
+- 직접 수집 원문: 5개
+- 주요 도메인: mastra.ai×3, github.com×1, thenewstack.io×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: mastra.ai 3건, github.com 1건, thenewstack.io 1건
-- source 조합: 구현체, 공식 문서
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/mastra.md`
-- [TypeScript AI Agent Framework & Platform | Mastra](https://mastra.ai) — `raw/hot-topics-sources/2026-04-10/443-mastra-official-homepage.md`
-  - 메모: --- title: TypeScript AI Agent Framework & Platform | Mastra source_url: https://mastra.ai final_url: https://mastra.ai status: 200 content_type: text/html; charset=utf-8 topics: [Mastra (TypeScript Agent Framework)] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:
-- [Get started with Mastra | Mastra Docs](https://mastra.ai/docs) — `raw/hot-topics-sources/2026-04-10/444-mastra-docs.md`
-  - 메모: --- title: Get started with Mastra | Mastra Docs source_url: https://mastra.ai/docs final_url: https://mastra.ai/docs status: 200 content_type: text/html; charset=utf-8 topics: [Mastra (TypeScript Agent Framework)] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:44
-- [GitHub - mastra-ai/mastra: From the team behind Gatsby, Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack. · GitHub](https://github.com/mastra-ai/mastra) — `raw/hot-topics-sources/2026-04-10/445-mastra-ai-mastra-github.md`
-  - 메모: --- title: GitHub - mastra-ai/mastra: From the team behind Gatsby, Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack. · GitHub source_url: https://github.com/mastra-ai/mastra final_url: https://github.com/mastra-ai/mastra status:
-- [The TypeScript AI Framework - Mastra](https://mastra.ai/categories/announcements) — `raw/hot-topics-sources/2026-04-10/446-mastra-announcements.md`
-  - 메모: --- title: The TypeScript AI Framework - Mastra source_url: https://mastra.ai/categories/announcements final_url: https://mastra.ai/categories/announcements status: 200 content_type: text/html; charset=utf-8 topics: [Mastra (TypeScript Agent Framework)] sections: [Dev Tooling & F
-- [Mastra empowers web devs to build AI agents in TypeScript - The New Stack](https://thenewstack.io/mastra-empowers-web-devs-to-build-ai-agents-in-typescript) — `raw/hot-topics-sources/2026-04-10/447-mastra-empowers-web-devs-to-build-ai-agents-in-typescript.md`
-  - 메모: --- title: Mastra empowers web devs to build AI agents in TypeScript - The New Stack source_url: https://thenewstack.io/mastra-empowers-web-devs-to-build-ai-agents-in-typescript final_url: https://thenewstack.io/mastra-empowers-web-devs-to-build-ai-agents-in-typescript/ status: 2
+
+### source별 핵심 신호
+
+- **TypeScript AI Agent Framework & Platform | Mastra** (`mastra.ai`): https://mastra.ai
+  - 메모: Book • PrinciplesPrinciples of Building AI AgentsBook • PatternsPatterns of Building AI AgentsPodcast • Agent HourWeekly livestreams and guests
+- **Get started with Mastra | Mastra Docs** (`mastra.ai`): https://mastra.ai/docs
+  - 메모: Build AI agents your users actually depend on. Mastra is a TypeScript framework that gives you everything you need to prototype fast and ship with confidence.
+- **GitHub - mastra-ai/mastra: From the team behind Gatsby, Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack. · GitHub** (`github.com`): https://github.com/mastra-ai/mastra
+  - 메모: To see all available qualifiers, see our documentation.
+- **The TypeScript AI Framework - Mastra** (`mastra.ai`): https://mastra.ai/categories/announcements
+  - 메모: Book • PrinciplesPrinciples of Building AI AgentsBook • PatternsPatterns of Building AI AgentsPodcast • Agent HourWeekly livestreams and guests
+- **Mastra empowers web devs to build AI agents in TypeScript - The New Stack** (`thenewstack.io`): https://thenewstack.io/mastra-empowers-web-devs-to-build-ai-agents-in-typescript/
+  - 메모: Join our community of software engineering leaders and aspirational developers. Always
 
 ## 관련 문서
 

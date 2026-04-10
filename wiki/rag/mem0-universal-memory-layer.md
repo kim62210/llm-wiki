@@ -24,25 +24,29 @@ updated: 2026-04-10
 - [The Definitive Guide to AI Agent Memory with Mem0 (Docs)](https://docs.mem0.ai/components/llms/overview)
 - [mem0/LLM.md](https://github.com/mem0ai/mem0/blob/main/LLM.md)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 모든 LLM 앱에 꽂는 자가개선형 메모리 레이어 (self-hosted + managed).
+- 왜 중요한가: 2026년 4월 9일 공개된 "State of AI Agent Memory 2026" 보고서에서 LOCOMO 기준 full-context 대비 91% latency 감소·90% 토큰 절감을 입증했고, v1.0.0 메이저 릴리스로 21개 프레임워크·19개 벡터스토어를 지원하며 MCP 생태계의 기본 메모리 백엔드로 표준화됐다.
+- 직접 수집 원문: 5개
+- 주요 도메인: github.com×2, mem0.ai×2, docs.mem0.ai×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: github.com 2건, mem0.ai 2건, docs.mem0.ai 1건
-- source 조합: 구현체
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/mem0-universal-memory-layer.md`
-- [GitHub - mem0ai/mem0: Universal memory layer for AI Agents · GitHub](https://github.com/mem0ai/mem0) — `raw/hot-topics-sources/2026-04-10/182-mem0-github.md`
-  - 메모: --- title: GitHub - mem0ai/mem0: Universal memory layer for AI Agents · GitHub source_url: https://github.com/mem0ai/mem0 final_url: https://github.com/mem0ai/mem0 status: 200 content_type: text/html; charset=utf-8 topics: [Mem0 Universal Memory Layer] sections: [RAG & Context En
-- [Mem0 - The Memory Layer for your AI Apps](https://mem0.ai) — `raw/hot-topics-sources/2026-04-10/183-mem0-official-site.md`
-  - 메모: --- title: Mem0 - The Memory Layer for your AI Apps source_url: https://mem0.ai final_url: https://mem0.ai status: 200 content_type: text/html topics: [Mem0 Universal Memory Layer] sections: [RAG & Context Engineering] fetched_at: 2026-04-10T01:43:51.587840+00:00 --- # Mem0 - The
-- [State of AI Agent Memory 2026](https://mem0.ai/blog/state-of-ai-agent-memory-2026) — `raw/hot-topics-sources/2026-04-10/184-state-of-ai-agent-memory-2026.md`
-  - 메모: --- title: State of AI Agent Memory 2026 source_url: https://mem0.ai/blog/state-of-ai-agent-memory-2026 final_url: https://mem0.ai/blog/state-of-ai-agent-memory-2026 status: 200 content_type: text/html topics: [Mem0 Universal Memory Layer] sections: [RAG & Context Engineering] fe
-- [Overview - Mem0](https://docs.mem0.ai/components/llms/overview) — `raw/hot-topics-sources/2026-04-10/185-the-definitive-guide-to-ai-agent-memory-with-mem0.md`
-  - 메모: --- title: Overview - Mem0 source_url: https://docs.mem0.ai/components/llms/overview final_url: https://docs.mem0.ai/components/llms/overview status: 200 content_type: text/html; charset=utf-8 topics: [Mem0 Universal Memory Layer] sections: [RAG & Context Engineering] fetched_at:
-- [mem0/LLM.md at main · mem0ai/mem0 · GitHub](https://github.com/mem0ai/mem0/blob/main/LLM.md) — `raw/hot-topics-sources/2026-04-10/186-mem0-llm-md.md`
-  - 메모: --- title: mem0/LLM.md at main · mem0ai/mem0 · GitHub source_url: https://github.com/mem0ai/mem0/blob/main/LLM.md final_url: https://github.com/mem0ai/mem0/blob/main/LLM.md status: 200 content_type: text/html; charset=utf-8 topics: [Mem0 Universal Memory Layer] sections: [RAG & C
+
+### source별 핵심 신호
+
+- **GitHub - mem0ai/mem0: Universal memory layer for AI Agents · GitHub** (`github.com`): https://github.com/mem0ai/mem0
+  - 메모: To see all available qualifiers, see our documentation.
+- **Mem0 - The Memory Layer for your AI Apps** (`mem0.ai`): https://mem0.ai
+  - 메모: Mem0 intelligently compresses chat history into highly optimised memory representations for your agents, minimising token usage and latency while preserving context fidelity.
+- **State of AI Agent Memory 2026** (`mem0.ai`): https://mem0.ai/blog/state-of-ai-agent-memory-2026
+  - 메모: This report covers where things actually stand: what the benchmarks measure, how approaches compare, what the integration landscape looks like, where the technical work has been concentrated over the past 18 months, and 
+- **Overview - Mem0** (`docs.mem0.ai`): https://docs.mem0.ai/components/llms/overview
+  - 메모: Structured outputs are LLMs that align with OpenAI’s structured outputs model:
+- **mem0/LLM.md at main · mem0ai/mem0 · GitHub** (`github.com`): https://github.com/mem0ai/mem0/blob/main/LLM.md
+  - 메모: To see all available qualifiers, see our documentation.
 
 ## 관련 문서
 

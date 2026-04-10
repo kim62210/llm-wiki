@@ -23,25 +23,29 @@ Microsoft GraphRAG v3.0.8(2026-03-27) 릴리스와 LightRAG의 OpenSearch·Neo4j
 - [LazyGraphRAG: Setting a new standard for quality and cost (Microsoft Research Blog)](https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/)
 - [Project GraphRAG - Microsoft Research](https://www.microsoft.com/en-us/research/project/graphrag/)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 지식 그래프 + 커뮤니티 요약을 결합해 multi-hop·global QA를 푸는 RAG 계열.
+- 왜 중요한가: Microsoft GraphRAG v3.0.8(2026-03-27) 릴리스와 LightRAG의 OpenSearch·Neo4j 백엔드, LazyGraphRAG의 0.1% 인덱싱 비용(vs full GraphRAG 대비 700배 저렴한 global query)이 맞물리며 "비용이 감당 가능한 Graph RAG" 시대가 2026년 초에 본격화됐다.
+- 직접 수집 원문: 5개
+- 주요 도메인: github.com×2, microsoft.com×2, microsoft.github.io×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: github.com 2건, www.microsoft.com 2건, microsoft.github.io 1건
-- source 조합: 구현체
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/graphrag-in-production.md`
-- [GitHub - microsoft/graphrag: A modular graph-based Retrieval-Augmented Generation (RAG) system · GitHub](https://github.com/microsoft/graphrag) — `raw/hot-topics-sources/2026-04-10/202-microsoft-graphrag-github.md`
-  - 메모: --- title: GitHub - microsoft/graphrag: A modular graph-based Retrieval-Augmented Generation (RAG) system · GitHub source_url: https://github.com/microsoft/graphrag final_url: https://github.com/microsoft/graphrag status: 200 content_type: text/html; charset=utf-8 topics: [GraphR
-- [Welcome - GraphRAG](https://microsoft.github.io/graphrag) — `raw/hot-topics-sources/2026-04-10/203-graphrag-documentation.md`
-  - 메모: --- title: Welcome - GraphRAG source_url: https://microsoft.github.io/graphrag final_url: https://microsoft.github.io/graphrag/ status: 200 content_type: text/html; charset=utf-8 topics: [GraphRAG / LightRAG / LazyGraphRAG in Production] sections: [RAG & Context Engineering] fetc
-- [GitHub - HKUDS/LightRAG: [EMNLP2025] "LightRAG: Simple and Fast Retrieval-Augmented Generation" · GitHub](https://github.com/hkuds/lightrag) — `raw/hot-topics-sources/2026-04-10/204-lightrag-simple-and-fast-retrieval-augmented-generation.md`
-  - 메모: --- title: GitHub - HKUDS/LightRAG: [EMNLP2025] "LightRAG: Simple and Fast Retrieval-Augmented Generation" · GitHub source_url: https://github.com/hkuds/lightrag final_url: https://github.com/hkuds/lightrag status: 200 content_type: text/html; charset=utf-8 topics: [GraphRAG / Li
-- [LazyGraphRAG: Setting a new standard for quality and cost - Microsoft Research](https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost) — `raw/hot-topics-sources/2026-04-10/205-lazygraphrag-setting-a-new-standard-for-quality-and-cost.md`
-  - 메모: --- title: LazyGraphRAG: Setting a new standard for quality and cost - Microsoft Research source_url: https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost final_url: https://www.microsoft.com/en-us/research/blog/lazygraphrag-setti
-- [Project GraphRAG - Microsoft Research](https://www.microsoft.com/en-us/research/project/graphrag) — `raw/hot-topics-sources/2026-04-10/206-project-graphrag-microsoft-research.md`
-  - 메모: --- title: Project GraphRAG - Microsoft Research source_url: https://www.microsoft.com/en-us/research/project/graphrag final_url: https://www.microsoft.com/en-us/research/project/graphrag/ status: 200 content_type: text/html; charset=UTF-8 topics: [GraphRAG / LightRAG / LazyGraph
+
+### source별 핵심 신호
+
+- **GitHub - microsoft/graphrag: A modular graph-based Retrieval-Augmented Generation (RAG) system · GitHub** (`github.com`): https://github.com/microsoft/graphrag
+  - 메모: To see all available qualifiers, see our documentation.
+- **Welcome - GraphRAG** (`microsoft.github.io`): https://microsoft.github.io/graphrag/
+  - 메모: GraphRAG is a structured, hierarchical approach to Retrieval Augmented Generation (RAG), as opposed to naive semantic-search
+- **GitHub - HKUDS/LightRAG: [EMNLP2025] "LightRAG: Simple and Fast Retrieval-Augmented Generation" · GitHub** (`github.com`): https://github.com/hkuds/lightrag
+  - 메모: To see all available qualifiers, see our documentation.
+- **LazyGraphRAG: Setting a new standard for quality and cost - Microsoft Research** (`microsoft.com`): https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/
+  - 메모: In recent blog posts, we have shared two new query mechanisms that exploit the rich, summary-based data index created by GraphRAG to improve local search performance and global search costs, respectively.
+- **Project GraphRAG - Microsoft Research** (`microsoft.com`): https://www.microsoft.com/en-us/research/project/graphrag/
+  - 메모: GraphRAG (Graphs + Retrieval Augmented Generation) is a technique for richly understanding text datasets by combining text extraction, network analysis, and LLM prompting and summarization into a single end-to-end system
 
 ## 관련 문서
 

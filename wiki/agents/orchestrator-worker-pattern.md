@@ -23,25 +23,29 @@ Anthropic이 Claude의 Research 기능 백엔드로 공개한 이 패턴이 단�
 - [Building agents with the Claude Agent SDK](https://claude.com/blog/building-agents-with-the-claude-agent-sdk)
 - [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](https://arxiv.org/abs/2509.02547)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 리드 에이전트가 작업을 분해해 병렬 서브에이전트에게 위임하고 결과를 합성하는 분산형 에이전트 아키텍처.
+- 왜 중요한가: Anthropic이 Claude의 Research 기능 백엔드로 공개한 이 패턴이 단일 Opus 4 대비 90.2% 향상을 보인 이후 사실상 표준이 되었고, 2026년 4월 8일 출시된 Claude Managed Agents는 이 패턴을 매니지드 인프라로 제품화했다.
+- 직접 수집 원문: 5개
+- 주요 도메인: anthropic.com×1, github.com×1, code.claude.com×1, claude.com×1, arxiv.org×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: www.anthropic.com 1건, github.com 1건, code.claude.com 1건
-- source 조합: 공식 문서
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/orchestrator-worker-pattern.md`
-- [How we built our multi-agent research system \ Anthropic](https://www.anthropic.com/engineering/multi-agent-research-system) — `raw/hot-topics-sources/2026-04-10/006-how-we-built-our-multi-agent-research-system.md`
-  - 메모: --- title: How we built our multi-agent research system \ Anthropic source_url: https://www.anthropic.com/engineering/multi-agent-research-system final_url: https://www.anthropic.com/engineering/multi-agent-research-system status: 200 content_type: text/html; charset=utf-8 topics
-- [claude-cookbooks/patterns/agents/orchestrator_workers.ipynb at main · anthropics/claude-cookbooks · GitHub](https://github.com/anthropics/anthropic-cookbook/blob/main/patterns/agents/orchestrator_workers.ipynb) — `raw/hot-topics-sources/2026-04-10/007-orchestrator-workers-workflow-cookbook.md`
-  - 메모: --- title: claude-cookbooks/patterns/agents/orchestrator_workers.ipynb at main · anthropics/claude-cookbooks · GitHub source_url: https://github.com/anthropics/anthropic-cookbook/blob/main/patterns/agents/orchestrator_workers.ipynb final_url: https://github.com/anthropics/claude-
-- [Create custom subagents - Claude Code Docs](https://code.claude.com/docs/en/sub-agents) — `raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md`
-  - 메모: --- title: Create custom subagents - Claude Code Docs source_url: https://code.claude.com/docs/en/sub-agents final_url: https://code.claude.com/docs/en/sub-agents status: 200 content_type: text/html; charset=utf-8 topics: [Orchestrator-Worker Multi-Agent Pattern, Subagents & Mult
-- [Building agents with the Claude Agent SDK | Claude](https://claude.com/blog/building-agents-with-the-claude-agent-sdk) — `raw/hot-topics-sources/2026-04-10/009-building-agents-with-the-claude-agent-sdk.md`
-  - 메모: --- title: Building agents with the Claude Agent SDK | Claude source_url: https://claude.com/blog/building-agents-with-the-claude-agent-sdk final_url: https://claude.com/blog/building-agents-with-the-claude-agent-sdk status: 200 content_type: text/html; charset=utf-8 topics: [Orc
-- [[2509.02547] The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](https://arxiv.org/abs/2509.02547) — `raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md`
-  - 메모: --- title: [2509.02547] The Landscape of Agentic Reinforcement Learning for LLMs: A Survey source_url: https://arxiv.org/abs/2509.02547 final_url: https://arxiv.org/abs/2509.02547 status: 200 content_type: text/html; charset=utf-8 topics: [Orchestrator-Worker Multi-Agent Pattern,
+
+### source별 핵심 신호
+
+- **How we built our multi-agent research system \ Anthropic** (`anthropic.com`): https://www.anthropic.com/engineering/multi-agent-research-system
+  - 메모: How we built our multi-agent research system
+- **claude-cookbooks/patterns/agents/orchestrator_workers.ipynb at main · anthropics/claude-cookbooks · GitHub** (`github.com`): https://github.com/anthropics/claude-cookbooks/blob/main/patterns/agents/orchestrator_workers.ipynb
+  - 메모: To see all available qualifiers, see our documentation.
+- **Create custom subagents - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/sub-agents
+  - 메모: Create and use specialized AI subagents in Claude Code for task-specific workflows and improved context management.
+- **Building agents with the Claude Agent SDK | Claude** (`claude.com`): https://claude.com/blog/building-agents-with-the-claude-agent-sdk
+  - 메모: Building agents with the Claude Agent SDK
+- **[2509.02547] The Landscape of Agentic Reinforcement Learning for LLMs: A Survey** (`arxiv.org`): https://arxiv.org/abs/2509.02547
+  - 메모: The emergence of agentic reinforcement learning (Agentic RL) marks a paradigm shift from conventional reinforcement learning applied to large language models (LLM RL), reframing LLMs from passive sequence generators into
 
 ## 관련 문서
 

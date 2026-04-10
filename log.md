@@ -1,5 +1,17 @@
 # Activity Log
 
+## 2026-04-10 — Enrich: hot-topic source synthesis 보강
+- **대상**: `raw/2026-04-10-hot-ai-topics-100.md`에서 파생된 hot-topic 위키 페이지 전반
+- **수행 내용**:
+  - 실패 링크 3건을 대체 접근 경로로 복구
+  - `raw/hot-topics-sources/2026-04-10/` 아래 개별 원문 snapshot 정리
+  - hot-topic 관련 페이지 97개에 대해 `source 기반 참고` 섹션을 source 제목 + 짧은 메모 중심으로 재정리
+  - 중복되던 `2026년 4월 핫토픽 ...` 보조 섹션을 `2026년 4월 큐레이션 요약`으로 통합
+- **결과**:
+  - manifest 수집 성공: 452 / 452
+  - 깨진 위키링크: 0
+  - index 누락 페이지: 0
+
 ## 2026-04-10 — Source Fetch: hot topics reference crawl
 - **대상 raw**: `raw/2026-04-10-hot-ai-topics-100.md`
 - **정규화된 URL 수**: 452개

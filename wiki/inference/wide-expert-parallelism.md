@@ -30,29 +30,33 @@ MoE 전문가를 다수 노드에 분산하고 EPLB로 로드 밸런싱하는 �
 - [Expert Parallel Deployment - vLLM Docs](https://docs.vllm.ai/en/latest/serving/expert_parallel_deployment/)
 - [DeepEP: Expert-Parallel Communication Library GitHub](https://github.com/deepseek-ai/DeepEP)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: DeepSeek급 MoE 모델을 32+ GPU에 걸쳐 전문가를 분산시키는 병렬화 전략.
+- 왜 중요한가: 2025년 12월 vLLM이 H200에서 2.2k tok/s/GPU를 달성했고 2026년 2월 Blackwell 파트 I 블로그가 공개되었으며, 3월 SGLang의 Elastic EP가 부분 장애 내성을 추가해 MoE 대규모 서빙의 운영 성숙도가 급격히 올라갔다.
+- 직접 수집 원문: 7개
+- 주요 도메인: vllm.ai×3, docs.vllm.ai×1, developers.redhat.com×1, lmsys.org×1, github.com×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 7
-- 상위 도메인: vllm.ai 3건, docs.vllm.ai 1건, developers.redhat.com 1건
-- source 조합: 구현체, 공식 문서
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/wide-expert-parallelism.md`
-- [Driving vLLM WideEP and Large-Scale Serving Toward Maturity on Blackwell (Part I) | vLLM Blog](https://blog.vllm.ai/2026/02/03/dsr1-gb200-part1.html) — `raw/hot-topics-sources/2026-04-10/083-driving-vllm-wideep-and-large-scale-serving-on-blackwell.md`
-  - 메모: --- title: Driving vLLM WideEP and Large-Scale Serving Toward Maturity on Blackwell (Part I) | vLLM Blog source_url: https://blog.vllm.ai/2026/02/03/dsr1-gb200-part1.html final_url: https://vllm.ai/blog/dsr1-gb200-part1 status: 200 content_type: text/html; charset=utf-8 topics: [
-- [Expert Parallel Deployment - vLLM](https://docs.vllm.ai/en/latest/serving/expert_parallel_deployment) — `raw/hot-topics-sources/2026-04-10/086-vllm-expert-parallel-deployment-docs.md`
-  - 메모: --- title: Expert Parallel Deployment - vLLM source_url: https://docs.vllm.ai/en/latest/serving/expert_parallel_deployment final_url: https://docs.vllm.ai/en/latest/serving/expert_parallel_deployment/ status: 200 content_type: text/html; charset=utf-8 topics: [Wide Expert Paralle
-- [Scaling DeepSeek-style MoEs with vLLM + llm-d using Wide EP | Red Hat Developer](https://developers.redhat.com/articles/2025/09/08/scaling-deepseek-style-moes-vllm-and-llm-d-using-wide-ep) — `raw/hot-topics-sources/2026-04-10/087-scaling-deepseek-style-moes-with-vllm-and-llm-d-using-wide-ep.md`
-  - 메모: --- title: Scaling DeepSeek-style MoEs with vLLM + llm-d using Wide EP | Red Hat Developer source_url: https://developers.redhat.com/articles/2025/09/08/scaling-deepseek-style-moes-vllm-and-llm-d-using-wide-ep final_url: https://developers.redhat.com/articles/2025/09/08/scaling-d
-- [vLLM Large Scale Serving: DeepSeek @ 2.2k tok/s/H200 with Wide-EP | vLLM Blog](https://blog.vllm.ai/2025/12/17/large-scale-serving.html) — `raw/hot-topics-sources/2026-04-10/088-vllm-large-scale-serving-deepseek-2-2k-tok-s-h200-with-wide-ep.md`
-  - 메모: --- title: vLLM Large Scale Serving: DeepSeek @ 2.2k tok/s/H200 with Wide-EP | vLLM Blog source_url: https://blog.vllm.ai/2025/12/17/large-scale-serving.html final_url: https://vllm.ai/blog/large-scale-serving status: 200 content_type: text/html; charset=utf-8 topics: [Wide Exper
-- [DeepSeek-V3.2 on GB300: Performance Breakthrough | vLLM Blog](https://blog.vllm.ai/2026/02/13/gb300-deepseek.html) — `raw/hot-topics-sources/2026-04-10/089-deepseek-v3-2-on-gb300-performance-breakthrough.md`
-  - 메모: --- title: DeepSeek-V3.2 on GB300: Performance Breakthrough | vLLM Blog source_url: https://blog.vllm.ai/2026/02/13/gb300-deepseek.html final_url: https://vllm.ai/blog/gb300-deepseek status: 200 content_type: text/html; charset=utf-8 topics: [Wide Expert Parallelism (WideEP) for 
-- [Elastic EP in SGLang: Achieving Partial Failure Tolerance for DeepSeek MoE Deployments - LMSYS Blog | LMSYS Org](https://www.lmsys.org/blog/2026-03-25-eep-partial-failure-tolerance) — `raw/hot-topics-sources/2026-04-10/319-elastic-ep-in-sglang-achieving-partial-failure-tolerance-for-deepseek-moe-deploy.md`
-  - 메모: --- title: Elastic EP in SGLang: Achieving Partial Failure Tolerance for DeepSeek MoE Deployments - LMSYS Blog | LMSYS Org source_url: https://www.lmsys.org/blog/2026-03-25-eep-partial-failure-tolerance final_url: https://www.lmsys.org/blog/2026-03-25-eep-partial-failure-toleranc
-- [GitHub - deepseek-ai/DeepEP: DeepEP: an efficient expert-parallel communication library · GitHub](https://github.com/deepseek-ai/DeepEP) — `raw/hot-topics-sources/2026-04-10/320-deepep-expert-parallel-communication-library-github.md`
-  - 메모: --- title: GitHub - deepseek-ai/DeepEP: DeepEP: an efficient expert-parallel communication library · GitHub source_url: https://github.com/deepseek-ai/DeepEP final_url: https://github.com/deepseek-ai/DeepEP status: 200 content_type: text/html; charset=utf-8 topics: [Wide Expert P
+
+### source별 핵심 신호
+
+- **Driving vLLM WideEP and Large-Scale Serving Toward Maturity on Blackwell (Part I) | vLLM Blog** (`vllm.ai`): https://vllm.ai/blog/dsr1-gb200-part1
+  - 메모: In collaboration with the open-source community, vLLM \+ NVIDIA has achieved significant performance milestones on the gpt-oss-120b model running on NVIDIA's Blackwell GPUs. Through deep...
+- **Expert Parallel Deployment - vLLM** (`docs.vllm.ai`): https://docs.vllm.ai/en/latest/serving/expert_parallel_deployment/
+  - 메모: Retrieval Augmented Generation With Langchain
+- **Scaling DeepSeek-style MoEs with vLLM + llm-d using Wide EP | Red Hat Developer** (`developers.redhat.com`): https://developers.redhat.com/articles/2025/09/08/scaling-deepseek-style-moes-vllm-and-llm-d-using-wide-ep
+  - 메모: Try Red Hat products and technologies without setup or configuration fees for 30 days with this shared Red Hat OpenShift and Kubernetes cluster.
+- **vLLM Large Scale Serving: DeepSeek @ 2.2k tok/s/H200 with Wide-EP | vLLM Blog** (`vllm.ai`): https://vllm.ai/blog/large-scale-serving
+  - 메모: In v0.11.0, the last code from vLLM V0 engine was removed, marking the complete migration to the improved V1 engine architecture.
+- **DeepSeek-V3.2 on GB300: Performance Breakthrough | vLLM Blog** (`vllm.ai`): https://vllm.ai/blog/gb300-deepseek
+  - 메모: In collaboration with the open-source community, vLLM \+ NVIDIA has achieved significant performance milestones on the gpt-oss-120b model running on NVIDIA's Blackwell GPUs. Through deep...
+- **Elastic EP in SGLang: Achieving Partial Failure Tolerance for DeepSeek MoE Deployments - LMSYS Blog | LMSYS Org** (`lmsys.org`): https://www.lmsys.org/blog/2026-03-25-eep-partial-failure-tolerance/
+  - 메모: To serve massive Mixture-of-Experts (MoE) models efficiently, deploying a "wide" Expert Parallelism (EP) strategy—often spanning 32 GPUs or more per inference instance—is not just an option; it is a necessity.
+- **GitHub - deepseek-ai/DeepEP: DeepEP: an efficient expert-parallel communication library · GitHub** (`github.com`): https://github.com/deepseek-ai/DeepEP
+  - 메모: To see all available qualifiers, see our documentation.
 
 ## 관련 문서
 

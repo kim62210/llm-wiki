@@ -27,24 +27,29 @@ DeepSeek-R1이 채택한 이후 오픈소스 추론 모델 학습의 표준이 �
 - [Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](https://arxiv.org/abs/2510.19807)
 - [Understanding GRPO: PPO without the critic (HuggingFace blog)](https://huggingface.co/blog/garg-aayush/derive-grpo-loss)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 크리틱 없이 그룹 내 보상 정규화로 어드밴티지를 계산하는 PPO 변형.
+- 왜 중요한가: DeepSeek-R1이 채택한 이후 오픈소스 추론 모델 학습의 표준이 되었고, 2026년에는 Scaf-GRPO, Training-Free GRPO, CPPO 등 수많은 파생 기법이 쏟아지고 있다.
+- 직접 수집 원문: 5개
+- 주요 도메인: arxiv.org×4, huggingface.co×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: arxiv.org 4건, huggingface.co 1건
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/grpo.md`
-- [266-deepseekmath-pushing-the-limits-of-mathematical-reasoning](https://arxiv.org/pdf/2402.03300) — `raw/hot-topics-sources/2026-04-10/266-deepseekmath-pushing-the-limits-of-mathematical-reasoning.md`
-  - 메모: --- title: DeepSeekMath: Pushing the Limits of Mathematical Reasoning (GRPO 원전) source_url: https://arxiv.org/pdf/2402.03300 final_url: https://arxiv.org/pdf/2402.03300 status: 200 content_type: application/pdf topics: [GRPO (Group Relative Policy Optimization)] sections: [Traini
-- [[2603.01162] Demystifying Group Relative Policy Optimization: Its Policy Gradient is a U-Statistic](https://arxiv.org/abs/2603.01162) — `raw/hot-topics-sources/2026-04-10/267-demystifying-group-relative-policy-optimization-its-policy-gradient-is-a-u-stati.md`
-  - 메모: --- title: [2603.01162] Demystifying Group Relative Policy Optimization: Its Policy Gradient is a U-Statistic source_url: https://arxiv.org/abs/2603.01162 final_url: https://arxiv.org/abs/2603.01162 status: 200 content_type: text/html; charset=utf-8 topics: [GRPO (Group Relative 
-- [[2510.08191] Training-Free Group Relative Policy Optimization](https://arxiv.org/abs/2510.08191) — `raw/hot-topics-sources/2026-04-10/268-training-free-group-relative-policy-optimization.md`
-  - 메모: --- title: [2510.08191] Training-Free Group Relative Policy Optimization source_url: https://arxiv.org/abs/2510.08191 final_url: https://arxiv.org/abs/2510.08191 status: 200 content_type: text/html; charset=utf-8 topics: [GRPO (Group Relative Policy Optimization)] sections: [Trai
-- [[2510.19807] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](https://arxiv.org/abs/2510.19807) — `raw/hot-topics-sources/2026-04-10/269-scaf-grpo-scaffolded-group-relative-policy-optimization-for-enhancing-llm-reason.md`
-  - 메모: --- title: [2510.19807] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning source_url: https://arxiv.org/abs/2510.19807 final_url: https://arxiv.org/abs/2510.19807 status: 200 content_type: text/html; charset=utf-8 topics: [GRPO (Group Relative P
-- [Understanding GRPO: PPO without the critic](https://huggingface.co/blog/garg-aayush/derive-grpo-loss) — `raw/hot-topics-sources/2026-04-10/270-understanding-grpo-ppo-without-the-critic.md`
-  - 메모: --- title: Understanding GRPO: PPO without the critic source_url: https://huggingface.co/blog/garg-aayush/derive-grpo-loss final_url: https://huggingface.co/blog/garg-aayush/derive-grpo-loss status: 200 content_type: text/html; charset=utf-8 topics: [GRPO (Group Relative Policy O
+
+### source별 핵심 신호
+
+- **DeepSeekMath: Pushing the Limits of Mathematical Reasoning (GRPO 원전)** (`arxiv.org`): https://arxiv.org/pdf/2402.03300
+  - 메모: a#A%áÀß¯«ÀÌjDÕå²»«ífðãc;ZæÕÁÌ«¶­®MfGÑÏ}í
+- **[2603.01162] Demystifying Group Relative Policy Optimization: Its Policy Gradient is a U-Statistic** (`arxiv.org`): https://arxiv.org/abs/2603.01162
+  - 메모: Group relative policy optimization (GRPO), a core methodological component of DeepSeekMath and DeepSeek-R1, has emerged as a cornerstone for scaling reasoning capabilities of large language models.
+- **[2510.08191] Training-Free Group Relative Policy Optimization** (`arxiv.org`): https://arxiv.org/abs/2510.08191
+  - 메모: Recent advances in Large Language Model (LLM) agents have demonstrated their promising general capabilities.
+- **[2510.19807] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning** (`arxiv.org`): https://arxiv.org/abs/2510.19807
+  - 메모: Reinforcement learning from verifiable rewards has emerged as a powerful technique for enhancing the complex reasoning abilities of Large Language Models (LLMs).
+- **Understanding GRPO: PPO without the critic** (`huggingface.co`): https://huggingface.co/blog/garg-aayush/derive-grpo-loss
+  - 메모: In my previous posts, I worked through the derivations of PPO and DPO for LLM post-training. PPO gave us a full-fledged RL approach with clipped surrogate objectives, value functions and GAE-based advantage estimation.
 
 ## 관련 문서
 

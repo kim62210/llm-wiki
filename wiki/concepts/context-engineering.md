@@ -98,24 +98,29 @@ Karpathy가 제안한 멘탈 모델: LLM 시스템을 운영체제로 보는 관
 2. **에러 복구 부재**: 비용 자각, 보상 감쇠 탐지, 서킷 브레이커 같은 메커니즘 부재
 3. **보안 공백**: 완벽한 컨텍스트도 민감 데이터 시스템에 대한 **프롬프트 인젝션 공격**을 막지 못한다 (→ [[lethal trifecta]])
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 장기 실행 에이전트가 제한된 컨텍스트 윈도우에 어떤 토큰을 넣을지 의도적으로 큐레이션하는 기술.
+- 왜 중요한가: 2025년 9월 Anthropic의 "Effective Context Engineering" 블로그 이후 프롬프트 엔지니어링을 대체하는 새로운 패러다임으로 자리잡았고, 2026년 4월 현재 ICLR 2026 ACE 논문, ACON, AgentFold 등 후속 연구가 쏟아지면서 컨텍스트 윈도우 크기 경쟁이 끝났다는 합의가 형성되고 있다.
+- 직접 수집 원문: 5개
+- 주요 도메인: arxiv.org×3, anthropic.com×1, trychroma.com×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: arxiv.org 3건, www.anthropic.com 1건, www.trychroma.com 1건
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/context-engineering.md`
-- [Effective context engineering for AI agents \ Anthropic](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — `raw/hot-topics-sources/2026-04-10/001-effective-context-engineering-for-ai-agents.md`
-  - 메모: --- title: Effective context engineering for AI agents \ Anthropic source_url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents final_url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents status: 200 content_type: 
-- [[2510.00615] ACON: Optimizing Context Compression for Long-horizon LLM Agents](https://arxiv.org/abs/2510.00615) — `raw/hot-topics-sources/2026-04-10/002-acon-optimizing-context-compression-for-long-horizon-llm-agents.md`
-  - 메모: --- title: [2510.00615] ACON: Optimizing Context Compression for Long-horizon LLM Agents source_url: https://arxiv.org/abs/2510.00615 final_url: https://arxiv.org/abs/2510.00615 status: 200 content_type: text/html; charset=utf-8 topics: [Context Engineering for Long-Horizon Agent
-- [[2510.04618] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](https://arxiv.org/abs/2510.04618) — `raw/hot-topics-sources/2026-04-10/003-agentic-context-engineering-evolving-contexts-for-self-improving-language-models.md`
-  - 메모: --- title: [2510.04618] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models source_url: https://arxiv.org/abs/2510.04618 final_url: https://arxiv.org/abs/2510.04618 status: 200 content_type: text/html; charset=utf-8 topics: [Context Engineering for L
-- [[2510.24699] AgentFold: Long-Horizon Web Agents with Proactive Context Management](https://arxiv.org/abs/2510.24699) — `raw/hot-topics-sources/2026-04-10/004-agentfold-long-horizon-web-agents-with-proactive-context-management.md`
-  - 메모: --- title: [2510.24699] AgentFold: Long-Horizon Web Agents with Proactive Context Management source_url: https://arxiv.org/abs/2510.24699 final_url: https://arxiv.org/abs/2510.24699 status: 200 content_type: text/html; charset=utf-8 topics: [Context Engineering for Long-Horizon A
-- [Context Rot: How Increasing Input Tokens Impacts LLM Performance·|·Chroma](https://www.trychroma.com/research/context-rot) — `raw/hot-topics-sources/2026-04-10/005-context-rot-how-increasing-input-tokens-impacts-llm-performance.md`
-  - 메모: --- title: Context Rot: How Increasing Input Tokens Impacts LLM Performance·|·Chroma source_url: https://www.trychroma.com/research/context-rot final_url: https://www.trychroma.com/research/context-rot status: 200 content_type: text/html; charset=utf-8 topics: [Context Engineerin
+
+### source별 핵심 신호
+
+- **Effective context engineering for AI agents \ Anthropic** (`anthropic.com`): https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+  - 메모: Effective context engineering for AI agents
+- **[2510.00615] ACON: Optimizing Context Compression for Long-horizon LLM Agents** (`arxiv.org`): https://arxiv.org/abs/2510.00615
+  - 메모: Large language models (LLMs) are increasingly deployed as agents in dynamic, real-world environments, where success requires both reasoning and effective tool use.
+- **[2510.04618] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models** (`arxiv.org`): https://arxiv.org/abs/2510.04618
+  - 메모: Large language model (LLM) applications such as agents and domain-specific reasoning increasingly rely on context adaptation: modifying inputs with instructions, strategies, or evidence, rather than weight updates.
+- **[2510.24699] AgentFold: Long-Horizon Web Agents with Proactive Context Management** (`arxiv.org`): https://arxiv.org/abs/2510.24699
+  - 메모: LLM-based web agents show immense promise for information seeking, yet their effectiveness on long-horizon tasks is hindered by a fundamental trade-off in context management.
+- **Context Rot: How Increasing Input Tokens Impacts LLM Performance·|·Chroma** (`trychroma.com`): https://www.trychroma.com/research/context-rot
+  - 메모: Context Rot: How Increasing Input Tokens Impacts LLM Performance
 
 ## 관련 문서
 

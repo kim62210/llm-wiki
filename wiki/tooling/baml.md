@@ -32,25 +32,29 @@ Schema-Aligned Parsing(SAP) 알고리즘으로 새 모델 출시 Day-1부터 구
 - [Structured Outputs Create False Confidence — BAML Blog](https://boundaryml.com/blog/structured-outputs-create-false-confidence)
 - [baml Go Package](https://pkg.go.dev/github.com/boundaryml/baml)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 프롬프트를 타입 안전한 함수로 정의하는 구조화 출력 전용 DSL.
+- 왜 중요한가: Schema-Aligned Parsing(SAP) 알고리즘으로 새 모델 출시 Day-1부터 구조화 출력이 작동하고, 2026년 들어 Python/TS/Ruby/Go/Java/C#/Rust까지 지원 언어가 확장되며 "스트링 기반 프롬프트 → 스키마 엔지니어링" 전환의 대표 도구가 됐다.
+- 직접 수집 원문: 5개
+- 주요 도메인: boundaryml.com×2, docs.boundaryml.com×1, github.com×1, pkg.go.dev×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: boundaryml.com 2건, docs.boundaryml.com 1건, github.com 1건
-- source 조합: 구현체, 공식 문서
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/baml.md`
-- [🏠 Welcome | Boundary Documentation](https://docs.boundaryml.com/home) — `raw/hot-topics-sources/2026-04-10/423-baml-official-docs.md`
-  - 메모: --- title: 🏠 Welcome | Boundary Documentation source_url: https://docs.boundaryml.com/home final_url: https://docs.boundaryml.com/home status: 200 content_type: text/html; charset=utf-8 topics: [BAML (Boundary ML) — Prompts as Typed Functions] sections: [Dev Tooling & Frameworks]
-- [BAML](https://boundaryml.com) — `raw/hot-topics-sources/2026-04-10/424-boundary-ml-homepage.md`
-  - 메모: --- title: BAML source_url: https://boundaryml.com final_url: https://boundaryml.com status: 200 content_type: text/html; charset=utf-8 topics: [BAML (Boundary ML) — Prompts as Typed Functions] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:44:26.249739+00:00 --- 
-- [GitHub - BoundaryML/baml: The AI framework that adds the engineering to prompt engineering (Python/TS/Ruby/Java/C#/Rust/Go compatible) · GitHub](https://github.com/BoundaryML/baml) — `raw/hot-topics-sources/2026-04-10/425-boundaryml-baml-github.md`
-  - 메모: --- title: GitHub - BoundaryML/baml: The AI framework that adds the engineering to prompt engineering (Python/TS/Ruby/Java/C#/Rust/Go compatible) · GitHub source_url: https://github.com/BoundaryML/baml final_url: https://github.com/BoundaryML/baml status: 200 content_type: text/h
-- [Structured Outputs Create False Confidence | BAML Blog](https://boundaryml.com/blog/structured-outputs-create-false-confidence) — `raw/hot-topics-sources/2026-04-10/426-structured-outputs-create-false-confidence-baml-blog.md`
-  - 메모: --- title: Structured Outputs Create False Confidence | BAML Blog source_url: https://boundaryml.com/blog/structured-outputs-create-false-confidence final_url: https://boundaryml.com/blog/structured-outputs-create-false-confidence status: 200 content_type: text/html; charset=utf-
-- [baml module - github.com/boundaryml/baml - Go Packages](https://pkg.go.dev/github.com/boundaryml/baml) — `raw/hot-topics-sources/2026-04-10/427-baml-go-package.md`
-  - 메모: --- title: baml module - github.com/boundaryml/baml - Go Packages source_url: https://pkg.go.dev/github.com/boundaryml/baml final_url: https://pkg.go.dev/github.com/boundaryml/baml status: 200 content_type: text/html; charset=utf-8 topics: [BAML (Boundary ML) — Prompts as Typed F
+
+### source별 핵심 신호
+
+- **🏠 Welcome | Boundary Documentation** (`docs.boundaryml.com`): https://docs.boundaryml.com/home
+  - 메모: Just as TSX/JSX provided the ideal abstraction for web development, BAML offers the perfect abstraction for prompt engineering. Watch our demo video to see it in action.
+- **BAML** (`boundaryml.com`): https://boundaryml.com
+  - 메모: Yes, we made a whole VSCode extension for BAML.
+- **GitHub - BoundaryML/baml: The AI framework that adds the engineering to prompt engineering (Python/TS/Ruby/Java/C#/Rust/Go compatible) · GitHub** (`github.com`): https://github.com/BoundaryML/baml
+  - 메모: To see all available qualifiers, see our documentation.
+- **Structured Outputs Create False Confidence | BAML Blog** (`boundaryml.com`): https://boundaryml.com/blog/structured-outputs-create-false-confidence
+  - 메모: Update (Dec 21): this post is now on the Hacker News front
+- **baml module - github.com/boundaryml/baml - Go Packages** (`pkg.go.dev`): https://pkg.go.dev/github.com/boundaryml/baml
+  - 메모: Opens a new window with list of versions in this module.
 
 ## 관련 문서
 

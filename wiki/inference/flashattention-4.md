@@ -23,25 +23,29 @@ Tri Dao 팀이 2026년 3월 발표, B200에서 1613 TFLOPs/s(71% 활용률)로 c
 - [Dao-AILab/flash-attention GitHub repository](https://github.com/Dao-AILab/flash-attention)
 - [Generalized Dot-Product Attention PyTorch blog](https://pytorch.org/blog/)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: Blackwell GPU 비대칭 스케일링에 맞춘 attention 커널 재설계.
+- 왜 중요한가: Tri Dao 팀이 2026년 3월 발표, B200에서 1613 TFLOPs/s(71% 활용률)로 cuDNN 대비 1.3배, Triton 대비 2.7배 속도 향상을 달성했다. softmax 지수 연산 소프트웨어 에뮬레이션과 2-CTA MMA 모드 활용이 핵심이다.
+- 직접 수집 원문: 5개
+- 주요 도메인: arxiv.org×1, tridao.me×1, blog.ai.princeton.edu×1, github.com×1, pytorch.org×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: arxiv.org 1건, tridao.me 1건, blog.ai.princeton.edu 1건
-- source 조합: 구현체
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/flashattention-4.md`
-- [[2603.05451] FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling](https://arxiv.org/abs/2603.05451) — `raw/hot-topics-sources/2026-04-10/066-flashattention-4-algorithm-and-kernel-pipelining-co-design-for-asymmetric-hardwa.md`
-  - 메모: --- title: [2603.05451] FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling source_url: https://arxiv.org/abs/2603.05451 final_url: https://arxiv.org/abs/2603.05451 status: 200 content_type: text/html; charset=utf-8 topics: [FlashAttention-
-- [FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling | Tri Dao](https://tridao.me/blog/2026/flash4) — `raw/hot-topics-sources/2026-04-10/067-flashattention-4-blog-post-by-tri-dao.md`
-  - 메모: --- title: FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling | Tri Dao source_url: https://tridao.me/blog/2026/flash4 final_url: https://tridao.me/blog/2026/flash4/ status: 200 content_type: text/html; charset=utf-8 topics: [FlashAttentio
-- [FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling – Princeton Laboratory for Artificial Intelligence Research Blog](https://blog.ai.princeton.edu/2026/03/12/flashattention-4-algorithm-and-kernel-pipelining-co-design-for-asymmetric-hardware-scaling) — `raw/hot-topics-sources/2026-04-10/068-flashattention-4-princeton-ai-lab-blog.md`
-  - 메모: --- title: FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling – Princeton Laboratory for Artificial Intelligence Research Blog source_url: https://blog.ai.princeton.edu/2026/03/12/flashattention-4-algorithm-and-kernel-pipelining-co-design-
-- [GitHub - Dao-AILab/flash-attention: Fast and memory-efficient exact attention · GitHub](https://github.com/Dao-AILab/flash-attention) — `raw/hot-topics-sources/2026-04-10/069-dao-ailab-flash-attention-github-repository.md`
-  - 메모: --- title: GitHub - Dao-AILab/flash-attention: Fast and memory-efficient exact attention · GitHub source_url: https://github.com/Dao-AILab/flash-attention final_url: https://github.com/Dao-AILab/flash-attention status: 200 content_type: text/html; charset=utf-8 topics: [FlashAtte
-- [Blog – PyTorch](https://pytorch.org/blog) — `raw/hot-topics-sources/2026-04-10/070-generalized-dot-product-attention-pytorch-blog.md`
-  - 메모: --- title: Blog – PyTorch source_url: https://pytorch.org/blog final_url: https://pytorch.org/blog/ status: 200 content_type: text/html; charset=UTF-8 topics: [FlashAttention-4 on Blackwell] sections: [Inference Optimization] fetched_at: 2026-04-10T01:43:34.352415+00:00 --- # Blo
+
+### source별 핵심 신호
+
+- **[2603.05451] FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling** (`arxiv.org`): https://arxiv.org/abs/2603.05451
+  - 메모: Attention, as a core layer of the ubiquitous Transformer architecture, is the bottleneck for large language models and long-context applications.
+- **FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling | Tri Dao** (`tridao.me`): https://tridao.me/blog/2026/flash4/
+  - 메모: This scaling asymmetry has profound implications for optimizing complex kernels like attention for the Blackwell architecture.
+- **FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling – Princeton Laboratory for Artificial Intelligence Research Blog** (`blog.ai.princeton.edu`): https://blog.ai.princeton.edu/2026/03/12/flashattention-4-algorithm-and-kernel-pipelining-co-design-for-asymmetric-hardware-scaling/
+  - 메모: Transformers remain the backbone for most AI applications, from large language models to vision and multimodal systems.
+- **GitHub - Dao-AILab/flash-attention: Fast and memory-efficient exact attention · GitHub** (`github.com`): https://github.com/Dao-AILab/flash-attention
+  - 메모: To see all available qualifiers, see our documentation.
+- **Blog – PyTorch** (`pytorch.org`): https://pytorch.org/blog/
+  - 메모: On Hopper and Blackwell GPUs, FlexAttention now has a FlashAttention-4 backend.
 
 ## 관련 문서
 

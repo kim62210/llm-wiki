@@ -32,24 +32,29 @@ updated: 2026-04-10
 - [Gemini 3 Deep Think — Google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/)
 - [Gemini (language model) — Wikipedia](https://en.wikipedia.org/wiki/Gemini_(language_model))
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 2026년 2월 Google DeepMind가 출시한 Gemini 3 시리즈 point-version.
+- 왜 중요한가: 2026년 2월 19일 출시되어 ARC-AGI-2 77.1%로 공개 API 중 1위, GPQA Diamond 94.3%, SWE-bench Verified 80.6%, LiveCodeBench Pro 2887 Elo 등 추상 추론과 에이전틱 워크플로우 전 영역에서 Gemini 3 Pro를 크게 상회했다.
+- 직접 수집 원문: 5개
+- 주요 도메인: deepmind.google×2, blog.google×2, en.wikipedia.org×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: deepmind.google 2건, blog.google 2건, en.wikipedia.org 1건
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/gemini-3-1-pro.md`
-- [Gemini 3.1 Pro - Model Card — Google DeepMind](https://deepmind.google/models/model-cards/gemini-3-1-pro) — `raw/hot-topics-sources/2026-04-10/125-gemini-3-1-pro-model-card-google-deepmind.md`
-  - 메모: --- title: Gemini 3.1 Pro - Model Card — Google DeepMind source_url: https://deepmind.google/models/model-cards/gemini-3-1-pro final_url: https://deepmind.google/models/model-cards/gemini-3-1-pro/ status: 200 content_type: text/html topics: [Gemini 3.1 Pro] sections: [Model Relea
-- [Gemini 3: Introducing the latest Gemini AI model from Google](https://blog.google/products/gemini/gemini-3) — `raw/hot-topics-sources/2026-04-10/126-gemini-3-introducing-the-latest-gemini-ai-model-google.md`
-  - 메모: --- title: Gemini 3: Introducing the latest Gemini AI model from Google source_url: https://blog.google/products/gemini/gemini-3 final_url: https://blog.google/products-and-platforms/products/gemini/gemini-3/ status: 200 content_type: text/html; charset=utf-8 topics: [Gemini 3.1 
-- [Gemini 3 — Google DeepMind](https://deepmind.google/models/gemini) — `raw/hot-topics-sources/2026-04-10/127-gemini-3-google-deepmind.md`
-  - 메모: --- title: Gemini 3 — Google DeepMind source_url: https://deepmind.google/models/gemini final_url: https://deepmind.google/models/gemini/ status: 200 content_type: text/html topics: [Gemini 3.1 Pro] sections: [Model Releases & Benchmarks] fetched_at: 2026-04-10T01:43:43.537024+00
-- [Gemini 3 Deep Think: AI model update designed for science](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think) — `raw/hot-topics-sources/2026-04-10/128-gemini-3-deep-think-google.md`
-  - 메모: --- title: Gemini 3 Deep Think: AI model update designed for science source_url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think final_url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/ sta
-- [Gemini (language model) - Wikipedia](https://en.wikipedia.org/wiki/Gemini_(language_model)) — `raw/hot-topics-sources/2026-04-10/129-gemini-wikipedia.md`
-  - 메모: --- title: Gemini (language model) - Wikipedia source_url: https://en.wikipedia.org/wiki/Gemini_(language_model) final_url: https://en.wikipedia.org/wiki/Gemini_(language_model) status: 200 content_type: text/html; charset=UTF-8 topics: [Gemini 3.1 Pro] sections: [Model Releases 
+
+### source별 핵심 신호
+
+- **Gemini 3.1 Pro - Model Card — Google DeepMind** (`deepmind.google`): https://deepmind.google/models/model-cards/gemini-3-1-pro/
+  - 메모: Our latest AI breakthroughs and updates from the lab
+- **Gemini 3: Introducing the latest Gemini AI model from Google** (`blog.google`): https://blog.google/products-and-platforms/products/gemini/gemini-3/
+  - 메모: Gemini 3 is our most intelligent model that helps you bring any idea to life.
+- **Gemini 3 — Google DeepMind** (`deepmind.google`): https://deepmind.google/models/gemini/
+  - 메모: Our latest AI breakthroughs and updates from the lab
+- **Gemini 3 Deep Think: AI model update designed for science** (`blog.google`): https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/
+  - 메모: Our most specialized reasoning mode is now updated to solve modern science, research and engineering challenges.
+- **Gemini (language model) - Wikipedia** (`en.wikipedia.org`): https://en.wikipedia.org/wiki/Gemini_(language_model)
+  - 메모: Large language model developed by Google
 
 ## 관련 문서
 

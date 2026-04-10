@@ -32,24 +32,29 @@ Stanford-Laude Institute가 만든 터미널 환경 에이전트 평가 벤치�
 - [Terminal-Bench — Vals AI](https://www.vals.ai/benchmarks/terminal-bench)
 - [Benchtalks #1: Alex Shaw — Snorkel AI](https://snorkel.ai/blog/benchtalks-alex-shaw-terminal-bench-harbor-building-the-benchmark-factory/)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: Stanford-Laude Institute가 만든 터미널 환경 에이전트 평가 벤치마크.
+- 왜 중요한가: 89개 고난도 태스크(코드 컴파일, 모델 훈련, 서버 셋업, 보안 등)로 구성된 2.0 버전이 2026년 에이전틱 코딩 표준으로 자리잡으며 Gemini 3.1 Pro 68.5%, Claude Opus 4.6/Sonnet 4.6가 선두권에서 각축을 벌이는 등 프론티어 모델이 핵심 자랑거리로 꼽는 수치가 됐다.
+- 직접 수집 원문: 5개
+- 주요 도메인: tbench.ai×1, llm-stats.com×1, artificialanalysis.ai×1, vals.ai×1, snorkel.ai×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: www.tbench.ai 1건, llm-stats.com 1건, artificialanalysis.ai 1건
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/terminal-bench-2-0.md`
-- [Terminal-Bench](https://www.tbench.ai) — `raw/hot-topics-sources/2026-04-10/154-terminal-bench-official-site.md`
-  - 메모: --- title: Terminal-Bench source_url: https://www.tbench.ai final_url: https://www.tbench.ai status: 200 content_type: text/html; charset=utf-8 topics: [Terminal-Bench 2.0] sections: [Model Releases & Benchmarks] fetched_at: 2026-04-10T01:43:46.400068+00:00 --- # Terminal-Bench #
-- [Terminal-Bench 2.0 Leaderboard](https://llm-stats.com/benchmarks/terminal-bench-2) — `raw/hot-topics-sources/2026-04-10/119-terminal-bench-2-0-leaderboard-llm-stats.md`
-  - 메모: --- title: Terminal-Bench 2.0 Leaderboard source_url: https://llm-stats.com/benchmarks/terminal-bench-2 final_url: https://llm-stats.com/benchmarks/terminal-bench-2 status: 200 content_type: text/html; charset=utf-8 topics: [Claude Opus 4.6, Terminal-Bench 2.0] sections: [Model R
-- [Terminal-Bench Hard Benchmark Leaderboard | Artificial Analysis](https://artificialanalysis.ai/evaluations/terminalbench-hard) — `raw/hot-topics-sources/2026-04-10/155-terminal-bench-hard-artificial-analysis.md`
-  - 메모: --- title: Terminal-Bench Hard Benchmark Leaderboard | Artificial Analysis source_url: https://artificialanalysis.ai/evaluations/terminalbench-hard final_url: https://artificialanalysis.ai/evaluations/terminalbench-hard status: 200 content_type: text/html; charset=utf-8 topics: [
-- [Terminal-Bench](https://www.vals.ai/benchmarks/terminal-bench) — `raw/hot-topics-sources/2026-04-10/156-terminal-bench-vals-ai.md`
-  - 메모: --- title: Terminal-Bench source_url: https://www.vals.ai/benchmarks/terminal-bench final_url: https://www.vals.ai/benchmarks/terminal-bench status: 200 content_type: text/html; charset=utf-8 topics: [Terminal-Bench 2.0] sections: [Model Releases & Benchmarks] fetched_at: 2026-04
-- [Benchtalks #1: Alex Shaw (Terminal-Bench, Harbor) – Building the Benchmark Factory | Snorkel AI](https://snorkel.ai/blog/benchtalks-alex-shaw-terminal-bench-harbor-building-the-benchmark-factory) — `raw/hot-topics-sources/2026-04-10/157-benchtalks-1-alex-shaw-snorkel-ai.md`
-  - 메모: --- title: Benchtalks #1: Alex Shaw (Terminal-Bench, Harbor) – Building the Benchmark Factory | Snorkel AI source_url: https://snorkel.ai/blog/benchtalks-alex-shaw-terminal-bench-harbor-building-the-benchmark-factory final_url: https://snorkel.ai/blog/benchtalks-alex-shaw-termina
+
+### source별 핵심 신호
+
+- **Terminal-Bench** (`tbench.ai`): https://www.tbench.ai
+  - 메모: terminal-bench is a collection ofharbor-native benchmarks to help agent makers quantify their agents' terminal mastery
+- **Terminal-Bench 2.0 Leaderboard** (`llm-stats.com`): https://llm-stats.com/benchmarks/terminal-bench-2
+  - 메모: Terminal-Bench 2.0 is an updated benchmark for testing AI agents' tool use ability to operate a computer via terminal.
+- **Terminal-Bench Hard Benchmark Leaderboard | Artificial Analysis** (`artificialanalysis.ai`): https://artificialanalysis.ai/evaluations/terminalbench-hard
+  - 메모: An agentic benchmark evaluating AI capabilities in terminal environments through software engineering, system administration, and data processing tasks.
+- **Terminal-Bench** (`vals.ai`): https://www.vals.ai/benchmarks/terminal-bench
+  - 메모: Since performance on this benchmark has saturated, we no
+- **Benchtalks #1: Alex Shaw (Terminal-Bench, Harbor) – Building the Benchmark Factory | Snorkel AI** (`snorkel.ai`): https://snorkel.ai/blog/benchtalks-alex-shaw-terminal-bench-harbor-building-the-benchmark-factory/
+  - 메모: We built FinQA — a financial question-answering environment with 290 expert-curated questions across 22 public companies, now available on OpenEnv.
 
 ## 관련 문서
 

@@ -24,25 +24,29 @@ updated: 2026-04-10
 - [optimize_anything: Universal API for Optimizing any Text Parameter](https://gepa-ai.github.io/gepa/blog/2026/02/18/introducing-optimize-anything/)
 - [gepa-ai/gepa GitHub](https://github.com/gepa-ai/gepa)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 프롬프트·코드·에이전트 아키텍처를 선언적으로 최적화하는 Stanford NLP 프레임워크.
+- 왜 중요한가: 2026년 2월 optimize_anything API 공개로 GEPA(Genetic-Pareto) 최적화가 프롬프트를 넘어 코드·에이전트 구조까지 확장됐고, 관련 논문이 ICLR 2026 oral에 채택되며 "프롬프트가 아닌 프로그래밍" 패러다임의 구심점이 됐다.
+- 직접 수집 원문: 5개
+- 주요 도메인: dspy.ai×2, github.com×2, gepa-ai.github.io×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: dspy.ai 2건, github.com 2건, gepa-ai.github.io 1건
-- source 조합: 구현체, 공식 문서
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/dspy-gepa.md`
-- [DSPy](https://dspy.ai) — `raw/hot-topics-sources/2026-04-10/413-dspy-official-docs.md`
-  - 메모: --- title: DSPy source_url: https://dspy.ai final_url: https://dspy.ai status: 200 content_type: text/html; charset=utf-8 topics: [DSPy + GEPA optimize_anything] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:44:23.677872+00:00 --- # DSPy ## 원본 URL https://dspy.ai
-- [1. GEPA Overview - DSPy](https://dspy.ai/api/optimizers/GEPA/overview) — `raw/hot-topics-sources/2026-04-10/414-dspy-gepa-reflective-prompt-optimizer.md`
-  - 메모: --- title: 1. GEPA Overview - DSPy source_url: https://dspy.ai/api/optimizers/GEPA/overview final_url: https://dspy.ai/api/optimizers/GEPA/overview/ status: 200 content_type: text/html; charset=utf-8 topics: [DSPy + GEPA optimize_anything] sections: [Dev Tooling & Frameworks] fet
-- [GitHub - stanfordnlp/dspy: DSPy: The framework for programming—not prompting—language models · GitHub](https://github.com/stanfordnlp/dspy) — `raw/hot-topics-sources/2026-04-10/415-stanfordnlp-dspy-github.md`
-  - 메모: --- title: GitHub - stanfordnlp/dspy: DSPy: The framework for programming—not prompting—language models · GitHub source_url: https://github.com/stanfordnlp/dspy final_url: https://github.com/stanfordnlp/dspy status: 200 content_type: text/html; charset=utf-8 topics: [DSPy + GEPA 
-- [optimize_anything: A Universal API for Optimizing any Text Parameter - GEPA](https://gepa-ai.github.io/gepa/blog/2026/02/18/introducing-optimize-anything) — `raw/hot-topics-sources/2026-04-10/416-optimize-anything-universal-api-for-optimizing-any-text-parameter.md`
-  - 메모: --- title: optimize_anything: A Universal API for Optimizing any Text Parameter - GEPA source_url: https://gepa-ai.github.io/gepa/blog/2026/02/18/introducing-optimize-anything final_url: https://gepa-ai.github.io/gepa/blog/2026/02/18/introducing-optimize-anything/ status: 200 con
-- [GitHub - gepa-ai/gepa: Optimize prompts, code, and more with AI-powered Reflective Text Evolution · GitHub](https://github.com/gepa-ai/gepa) — `raw/hot-topics-sources/2026-04-10/417-gepa-ai-gepa-github.md`
-  - 메모: --- title: GitHub - gepa-ai/gepa: Optimize prompts, code, and more with AI-powered Reflective Text Evolution · GitHub source_url: https://github.com/gepa-ai/gepa final_url: https://github.com/gepa-ai/gepa status: 200 content_type: text/html; charset=utf-8 topics: [DSPy + GEPA opt
+
+### source별 핵심 신호
+
+- **DSPy** (`dspy.ai`): https://dspy.ai
+  - 메모: DSPy is a declarative framework for building modular AI software.
+- **1. GEPA Overview - DSPy** (`dspy.ai`): https://dspy.ai/api/optimizers/GEPA/overview/
+  - 메모: GEPA (Genetic-Pareto) is a reflective optimizer proposed in "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning" (Agrawal et al., 2025, arxiv:2507.19457), that adaptively evolves textual components (
+- **GitHub - stanfordnlp/dspy: DSPy: The framework for programming—not prompting—language models · GitHub** (`github.com`): https://github.com/stanfordnlp/dspy
+  - 메모: To see all available qualifiers, see our documentation.
+- **optimize_anything: A Universal API for Optimizing any Text Parameter - GEPA** (`gepa-ai.github.io`): https://gepa-ai.github.io/gepa/blog/2026/02/18/introducing-optimize-anything/
+  - 메모: 1. Optimize Agent Skills: Near-Perfect Claude Code Accuracy, 47% Faster
+- **GitHub - gepa-ai/gepa: Optimize prompts, code, and more with AI-powered Reflective Text Evolution · GitHub** (`github.com`): https://github.com/gepa-ai/gepa
+  - 메모: To see all available qualifiers, see our documentation.
 
 ## 관련 문서
 

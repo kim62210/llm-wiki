@@ -32,24 +32,29 @@ updated: 2026-04-10
 - [MiniMax M2.5 Open Weights — All Hands](https://openhands.dev/blog/minimax-m2-5-open-weights-models-catch-up-to-claude)
 - [Terminal-Bench Leaderboard](https://llm-stats.com/benchmarks/terminal-bench)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 2026년 2월 공개된 230B/10B MoE 오픈 웨이트 프론티어 근접 모델.
+- 왜 중요한가: 2026년 2월 12일 Hugging Face에 수정 MIT 라이선스로 공개, SWE-bench Verified 80.2%로 Claude Opus 4.6을 앞서며 BrowseComp 76.3%를 달성하면서도 Opus 대비 1/10~1/20 가격("intelligence too cheap to meter") 포지셔닝으로 오픈-클로즈드 격차를 사상 최소로 좁혔다.
+- 직접 수집 원문: 5개
+- 주요 도메인: huggingface.co×1, artificialanalysis.ai×1, datacamp.com×1, openhands.dev×1, llm-stats.com×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: huggingface.co 1건, artificialanalysis.ai 1건, www.datacamp.com 1건
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/minimax-m2-5.md`
-- [MiniMaxAI/MiniMax-M2.5 · Hugging Face](https://huggingface.co/MiniMaxAI/MiniMax-M2.5) — `raw/hot-topics-sources/2026-04-10/135-minimaxai-minimax-m2-5-hugging-face.md`
-  - 메모: --- title: MiniMaxAI/MiniMax-M2.5 · Hugging Face source_url: https://huggingface.co/MiniMaxAI/MiniMax-M2.5 final_url: https://huggingface.co/MiniMaxAI/MiniMax-M2.5 status: 200 content_type: text/html; charset=utf-8 topics: [MiniMax M2.5] sections: [Model Releases & Benchmarks] fe
-- [MiniMax-M2.5 - Intelligence, Performance & Price Analysis](https://artificialanalysis.ai/models/minimax-m2-5) — `raw/hot-topics-sources/2026-04-10/136-minimax-m2-5-artificial-analysis.md`
-  - 메모: --- title: MiniMax-M2.5 - Intelligence, Performance & Price Analysis source_url: https://artificialanalysis.ai/models/minimax-m2-5 final_url: https://artificialanalysis.ai/models/minimax-m2-5 status: 200 content_type: text/html; charset=utf-8 topics: [MiniMax M2.5] sections: [Mod
-- [MiniMax M2.5 Guide: How It Works, Use Cases & More | DataCamp](https://www.datacamp.com/blog/mini-max-m2-5) — `raw/hot-topics-sources/2026-04-10/137-minimax-m2-5-overview-datacamp.md`
-  - 메모: --- title: MiniMax M2.5 Guide: How It Works, Use Cases & More | DataCamp source_url: https://www.datacamp.com/blog/mini-max-m2-5 final_url: https://www.datacamp.com/blog/mini-max-m2-5 status: 200 content_type: text/html; charset=utf-8 topics: [MiniMax M2.5] sections: [Model Relea
-- [MiniMax M2.5: Open Weights Models Catch Up to Claude Sonnet | Feb 11, 2026](https://openhands.dev/blog/minimax-m2-5-open-weights-models-catch-up-to-claude) — `raw/hot-topics-sources/2026-04-10/138-minimax-m2-5-open-weights-all-hands.md`
-  - 메모: --- title: MiniMax M2.5: Open Weights Models Catch Up to Claude Sonnet | Feb 11, 2026 source_url: https://openhands.dev/blog/minimax-m2-5-open-weights-models-catch-up-to-claude final_url: https://openhands.dev/blog/minimax-m2-5-open-weights-models-catch-up-to-claude status: 200 c
-- [Terminal-Bench Leaderboard](https://llm-stats.com/benchmarks/terminal-bench) — `raw/hot-topics-sources/2026-04-10/139-terminal-bench-leaderboard.md`
-  - 메모: --- title: Terminal-Bench Leaderboard source_url: https://llm-stats.com/benchmarks/terminal-bench final_url: https://llm-stats.com/benchmarks/terminal-bench status: 200 content_type: text/html; charset=utf-8 topics: [MiniMax M2.5] sections: [Model Releases & Benchmarks] fetched_a
+
+### source별 핵심 신호
+
+- **MiniMaxAI/MiniMax-M2.5 · Hugging Face** (`huggingface.co`): https://huggingface.co/MiniMaxAI/MiniMax-M2.5
+  - 메모: MiniMax Agent: M2.5 as a Professional Employee
+- **MiniMax-M2.5 - Intelligence, Performance & Price Analysis** (`artificialanalysis.ai`): https://artificialanalysis.ai/models/minimax-m2-5
+  - 메모: MiniMax has launched a newer model,MiniMax-M2.7, we suggest considering this model instead.
+- **MiniMax M2.5 Guide: How It Works, Use Cases & More | DataCamp** (`datacamp.com`): https://www.datacamp.com/blog/mini-max-m2-5
+  - 메모: The MiniMax 2.5 model is significant partly because of price. It is part of the general industry shift towards “intelligence too cheap to meter,” which is a reframing of an old phrase about nuclear energy.
+- **MiniMax M2.5: Open Weights Models Catch Up to Claude Sonnet | Feb 11, 2026** (`openhands.dev`): https://openhands.dev/blog/minimax-m2-5-open-weights-models-catch-up-to-claude
+  - 메모: For a long time, Claude has been the reigning leader in coding models.
+- **Terminal-Bench Leaderboard** (`llm-stats.com`): https://llm-stats.com/benchmarks/terminal-bench
+  - 메모: Terminal-Bench is a benchmark for testing AI agents in real terminal environments.
 
 ## 관련 문서
 

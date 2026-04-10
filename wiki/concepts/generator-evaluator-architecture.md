@@ -124,25 +124,29 @@ stateDiagram-v2
 
 실제 시스템은 여러 패턴을 조합한다. 예: Anthropic 3-agent 시스템은 **Planner + Generator-Evaluator** 조합이다 ([[anthropic harness design]] 참조).
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 생성 에이전트와 별도의 평가 에이전트를 분리해 자기평가 편향을 외부화하는 GAN 영감의 멀티 에이전트 하니스.
+- 왜 중요한가: 2026년 3월 24일 Anthropic의 "Harness design for long-running application development" 글이 Sonnet 4.5의 자기평가 편향과 컨텍스트 불안(context anxiety) 문제를 정면으로 다루며 화제가 되었고, 같은 글에서 Opus 4.5의 등장으로 일부 하니스 컴포넌트를 제거할 수 있다고 밝혀 모델 진화에 따른 하니스 재설계 논의가 본격화됐다.
+- 직접 수집 원문: 5개
+- 주요 도메인: arxiv.org×3, anthropic.com×2
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: arxiv.org 3건, www.anthropic.com 2건
-- source 조합: 공식 문서
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/generator-evaluator-architecture.md`
-- [Harness design for long-running application development \ Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps) — `raw/hot-topics-sources/2026-04-10/011-harness-design-for-long-running-application-development.md`
-  - 메모: --- title: Harness design for long-running application development \ Anthropic source_url: https://www.anthropic.com/engineering/harness-design-long-running-apps final_url: https://www.anthropic.com/engineering/harness-design-long-running-apps status: 200 content_type: text/html;
-- [Introducing Claude Opus 4.5 \ Anthropic](https://www.anthropic.com/news/claude-opus-4-5) — `raw/hot-topics-sources/2026-04-10/012-introducing-claude-opus-4-5.md`
-  - 메모: --- title: Introducing Claude Opus 4.5 \ Anthropic source_url: https://www.anthropic.com/news/claude-opus-4-5 final_url: https://www.anthropic.com/news/claude-opus-4-5 status: 200 content_type: text/html; charset=utf-8 topics: [Generator-Evaluator Harness Architecture, Long-Horiz
-- [Self-Improving AI Agents through Self-Play](https://arxiv.org/html/2512.02731v1) — `raw/hot-topics-sources/2026-04-10/013-self-improving-ai-agents-through-self-play.md`
-  - 메모: --- title: Self-Improving AI Agents through Self-Play source_url: https://arxiv.org/html/2512.02731v1 final_url: https://arxiv.org/html/2512.02731v1 status: 200 content_type: text/html; charset=utf-8 topics: [Generator-Evaluator Harness Architecture] sections: [Agent Architecture
-- [[2506.11442] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](https://arxiv.org/abs/2506.11442) — `raw/hot-topics-sources/2026-04-10/014-reveal-self-evolving-code-agents-via-iterative-generation-verification.md`
-  - 메모: --- title: [2506.11442] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification source_url: https://arxiv.org/abs/2506.11442 final_url: https://arxiv.org/abs/2506.11442 status: 200 content_type: text/html; charset=utf-8 topics: [Generator-Evaluator Harness Architecture, 
-- [[2512.20845] MAR:Multi-Agent Reflexion Improves Reasoning Abilities in LLMs](https://arxiv.org/abs/2512.20845) — `raw/hot-topics-sources/2026-04-10/015-mar-multi-agent-reflexion-improves-reasoning-abilities-in-llms.md`
-  - 메모: --- title: [2512.20845] MAR:Multi-Agent Reflexion Improves Reasoning Abilities in LLMs source_url: https://arxiv.org/abs/2512.20845 final_url: https://arxiv.org/abs/2512.20845 status: 200 content_type: text/html; charset=utf-8 topics: [Generator-Evaluator Harness Architecture] se
+
+### source별 핵심 신호
+
+- **Harness design for long-running application development \ Anthropic** (`anthropic.com`): https://www.anthropic.com/engineering/harness-design-long-running-apps
+  - 메모: Harness design is key to performance at the frontier of agentic coding. Here's how we pushed Claude further in frontend design and long-running autonomous software engineering.
+- **Introducing Claude Opus 4.5 \ Anthropic** (`anthropic.com`): https://www.anthropic.com/news/claude-opus-4-5
+  - 메모: Our newest model, Claude Opus 4.5, is available today. It’s intelligent, efficient, and the best model in the world for coding, agents, and computer use.
+- **Self-Improving AI Agents through Self-Play** (`arxiv.org`): https://arxiv.org/html/2512.02731v1
+  - 메모: We extend the moduli-theoretic framework of psychometric batteries [2] to the domain of dynamical systems.
+- **[2506.11442] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification** (`arxiv.org`): https://arxiv.org/abs/2506.11442
+  - 메모: Reinforcement learning with verifiable rewards (RLVR) has advanced the reasoning capabilities of large language models.
+- **[2512.20845] MAR:Multi-Agent Reflexion Improves Reasoning Abilities in LLMs** (`arxiv.org`): https://arxiv.org/abs/2512.20845
+  - 메모: LLMs have shown the capacity to improve their performance on reasoning tasks through reflecting on their mistakes, and acting with these reflections in mind.
 
 ## 관련 문서
 

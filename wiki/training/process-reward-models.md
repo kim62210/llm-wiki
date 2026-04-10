@@ -27,24 +27,29 @@ updated: 2026-04-10
 - [The Lessons of Developing Process Reward Models in Mathematical Reasoning](https://arxiv.org/abs/2501.07301)
 - [Online Process Reward Learning for Agentic Reinforcement Learning](https://arxiv.org/html/2509.19199v1)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 추론 과정의 각 단계를 평가해 보상을 주는 스텝-레벨 검증자 모델.
+- 왜 중요한가: 2026년 들어 "Process Reward Models That Think", R-PRM, EDU-PRM 등 CoT 기반 생성형 PRM이 기존 판별형 접근을 추월하며 ORM 독주에 제동을 걸고 있다.
+- 직접 수집 원문: 5개
+- 주요 도메인: arxiv.org×5
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: arxiv.org 5건
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/process-reward-models.md`
-- [[2504.16828] Process Reward Models That Think](https://arxiv.org/abs/2504.16828) — `raw/hot-topics-sources/2026-04-10/276-process-reward-models-that-think.md`
-  - 메모: --- title: [2504.16828] Process Reward Models That Think source_url: https://arxiv.org/abs/2504.16828 final_url: https://arxiv.org/abs/2504.16828 status: 200 content_type: text/html; charset=utf-8 topics: [Process Reward Models (PRM) 재부상] sections: [Training & Post-training] fetc
-- [[2503.21295] R-PRM: Reasoning-Driven Process Reward Modeling](https://arxiv.org/abs/2503.21295) — `raw/hot-topics-sources/2026-04-10/277-r-prm-reasoning-driven-process-reward-modeling.md`
-  - 메모: --- title: [2503.21295] R-PRM: Reasoning-Driven Process Reward Modeling source_url: https://arxiv.org/abs/2503.21295 final_url: https://arxiv.org/abs/2503.21295 status: 200 content_type: text/html; charset=utf-8 topics: [Process Reward Models (PRM) 재부상] sections: [Training & Post
-- [[2503.22233] More Bang for the Buck: Process Reward Modeling with Entropy-Driven Uncertainty](https://arxiv.org/abs/2503.22233) — `raw/hot-topics-sources/2026-04-10/278-more-bang-for-the-buck-process-reward-modeling-with-entropy-driven-uncertainty.md`
-  - 메모: --- title: [2503.22233] More Bang for the Buck: Process Reward Modeling with Entropy-Driven Uncertainty source_url: https://arxiv.org/abs/2503.22233 final_url: https://arxiv.org/abs/2503.22233 status: 200 content_type: text/html; charset=utf-8 topics: [Process Reward Models (PRM)
-- [[2501.07301] The Lessons of Developing Process Reward Models in Mathematical Reasoning](https://arxiv.org/abs/2501.07301) — `raw/hot-topics-sources/2026-04-10/279-the-lessons-of-developing-process-reward-models-in-mathematical-reasoning.md`
-  - 메모: --- title: [2501.07301] The Lessons of Developing Process Reward Models in Mathematical Reasoning source_url: https://arxiv.org/abs/2501.07301 final_url: https://arxiv.org/abs/2501.07301 status: 200 content_type: text/html; charset=utf-8 topics: [Process Reward Models (PRM) 재부상] 
-- [Online Process Reward Leanring for Agentic Reinforcement Learning](https://arxiv.org/html/2509.19199v1) — `raw/hot-topics-sources/2026-04-10/280-online-process-reward-learning-for-agentic-reinforcement-learning.md`
-  - 메모: --- title: Online Process Reward Leanring for Agentic Reinforcement Learning source_url: https://arxiv.org/html/2509.19199v1 final_url: https://arxiv.org/html/2509.19199v1 status: 200 content_type: text/html; charset=utf-8 topics: [Process Reward Models (PRM) 재부상] sections: [Trai
+
+### source별 핵심 신호
+
+- **[2504.16828] Process Reward Models That Think** (`arxiv.org`): https://arxiv.org/abs/2504.16828
+  - 메모: Step-by-step verifiers -- also known as process reward models (PRMs) -- are a key ingredient for test-time scaling. PRMs require step-level supervision, making them expensive to train.
+- **[2503.21295] R-PRM: Reasoning-Driven Process Reward Modeling** (`arxiv.org`): https://arxiv.org/abs/2503.21295
+  - 메모: Large language models (LLMs) inevitably make mistakes when performing step-by-step mathematical reasoning. Process Reward Models (PRMs) have emerged as a promising solution by evaluating each reasoning step.
+- **[2503.22233] More Bang for the Buck: Process Reward Modeling with Entropy-Driven Uncertainty** (`arxiv.org`): https://arxiv.org/abs/2503.22233
+  - 메모: We introduce the Entropy-Driven Uncertainty Process Reward Model (EDU-PRM), a novel entropy-driven training framework for process reward modeling that enables dynamic, uncertainty-aligned segmentation of complex reasonin
+- **[2501.07301] The Lessons of Developing Process Reward Models in Mathematical Reasoning** (`arxiv.org`): https://arxiv.org/abs/2501.07301
+  - 메모: Process Reward Models (PRMs) emerge as a promising approach for process supervision in mathematical reasoning of Large Language Models (LLMs), which aim to identify and mitigate intermediate errors in the reasoning proce
+- **Online Process Reward Leanring for Agentic Reinforcement Learning** (`arxiv.org`): https://arxiv.org/html/2509.19199v1
+  - 메모: Sample efficiency and training stability.
 
 ## 관련 문서
 

@@ -23,24 +23,29 @@ updated: 2026-04-10
 - [ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences (arXiv:2505.17691)](https://arxiv.org/html/2505.17691)
 - [Language Model Preference Evaluation with Multiple Weak Evaluators (arXiv:2410.12869)](https://arxiv.org/html/2410.12869v3)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: 선호 비교와 절대 점수 프로토콜의 편향·안정성 비교.
+- 왜 중요한가: 2025년 연구들이 페어와이즈 비교가 35% 뒤집힘률을 보이며 편향을 증폭한다는 것을 입증하면서, "어떤 프로토콜을 선택할 것인가"가 reward modeling·LLM judge 설계의 핵심 논쟁이 되었다.
+- 직접 수집 원문: 5개
+- 주요 도메인: arxiv.org×5
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: arxiv.org 5건
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/pairwise-vs-pointwise-evals.md`
-- [[2504.14716] Pairwise or Pointwise? Evaluating Feedback Protocols for Bias in LLM-Based Evaluation](https://arxiv.org/abs/2504.14716) — `raw/hot-topics-sources/2026-04-10/242-pairwise-or-pointwise-evaluating-feedback-protocols-for-bias.md`
-  - 메모: --- title: [2504.14716] Pairwise or Pointwise? Evaluating Feedback Protocols for Bias in LLM-Based Evaluation source_url: https://arxiv.org/abs/2504.14716 final_url: https://arxiv.org/abs/2504.14716 status: 200 content_type: text/html; charset=utf-8 topics: [Pairwise vs Pointwise
-- [[2403.16950] Aligning with Human Judgement: The Role of Pairwise Preference in Large Language Model Evaluators](https://arxiv.org/abs/2403.16950) — `raw/hot-topics-sources/2026-04-10/243-aligning-with-human-judgement-pairwise-preference-in-llm-evaluators.md`
-  - 메모: --- title: [2403.16950] Aligning with Human Judgement: The Role of Pairwise Preference in Large Language Model Evaluators source_url: https://arxiv.org/abs/2403.16950 final_url: https://arxiv.org/abs/2403.16950 status: 200 content_type: text/html; charset=utf-8 topics: [Pairwise 
-- [The Comparative Trap: Pairwise Comparisons Amplifies Biased Preferences of LLM Evaluators](https://arxiv.org/html/2406.12319v4) — `raw/hot-topics-sources/2026-04-10/244-the-comparative-trap-pairwise-comparisons-amplify-biased-preferences.md`
-  - 메모: --- title: The Comparative Trap: Pairwise Comparisons Amplifies Biased Preferences of LLM Evaluators source_url: https://arxiv.org/html/2406.12319v4 final_url: https://arxiv.org/html/2406.12319v4 status: 200 content_type: text/html; charset=utf-8 topics: [Pairwise vs Pointwise Ev
-- [ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences via Tournament Graph Reconstruction](https://arxiv.org/html/2505.17691) — `raw/hot-topics-sources/2026-04-10/245-elspr-evaluator-llm-training-data-self-purification-on-non-transitive-preference.md`
-  - 메모: --- title: ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences via Tournament Graph Reconstruction source_url: https://arxiv.org/html/2505.17691 final_url: https://arxiv.org/html/2505.17691 status: 200 content_type: text/html; charset=utf-8 topics: 
-- [Language Model Preference Evaluation with Multiple Weak Evaluators](https://arxiv.org/html/2410.12869v3) — `raw/hot-topics-sources/2026-04-10/246-language-model-preference-evaluation-with-multiple-weak-evaluators.md`
-  - 메모: --- title: Language Model Preference Evaluation with Multiple Weak Evaluators source_url: https://arxiv.org/html/2410.12869v3 final_url: https://arxiv.org/html/2410.12869v3 status: 200 content_type: text/html; charset=utf-8 topics: [Pairwise vs Pointwise Eval Protocol Bias] secti
+
+### source별 핵심 신호
+
+- **[2504.14716] Pairwise or Pointwise? Evaluating Feedback Protocols for Bias in LLM-Based Evaluation** (`arxiv.org`): https://arxiv.org/abs/2504.14716
+  - 메모: Large Language Models (LLMs) are widely used as proxies for human labelers in both training (Reinforcement Learning from AI Feedback) and large-scale response evaluation (LLM-as-a-judge).
+- **[2403.16950] Aligning with Human Judgement: The Role of Pairwise Preference in Large Language Model Evaluators** (`arxiv.org`): https://arxiv.org/abs/2403.16950
+  - 메모: Large Language Models (LLMs) have demonstrated promising capabilities as automatic evaluators in assessing the quality of generated natural language.
+- **The Comparative Trap: Pairwise Comparisons Amplifies Biased Preferences of LLM Evaluators** (`arxiv.org`): https://arxiv.org/html/2406.12319v4
+  - 메모: 3 Analyzing LLM Evaluators on Adversarial Evaluation Samples
+- **ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences via Tournament Graph Reconstruction** (`arxiv.org`): https://arxiv.org/html/2505.17691
+  - 메모: 3.2 Quality Analysis Framework for Evaluator LLM Training Data
+- **Language Model Preference Evaluation with Multiple Weak Evaluators** (`arxiv.org`): https://arxiv.org/html/2410.12869v3
+  - 메모: A.4 Evaluation Settings: Single Model vs. Single Evaluator
 
 ## 관련 문서
 

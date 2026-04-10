@@ -24,25 +24,29 @@ Next.js·React 친화의 TypeScript LLM·에이전트 SDK.
 - [AI SDK Homepage](https://ai-sdk.dev)
 - [Vercel AI SDK Product Page](https://vercel.com/docs/ai-sdk)
 
+## 2026년 4월 큐레이션 요약
+
+- 정의: Next.js·React 친화의 TypeScript LLM·에이전트 SDK.
+- 왜 중요한가: 2025년 12월 AI SDK 6 릴리스로 ToolLoopAgent·needsApproval HITL·MCP OAuth·DevTools·이미지 편집·리랭킹까지 탑재되며 풀스택 TS 에이전트의 첫 선택지로 자리잡았고, streamText·generateText 위에 얇은 Agent 추상화를 더한 점진적 업그레이드 경로가 강점이다.
+- 직접 수집 원문: 5개
+- 주요 도메인: vercel.com×2, ai-sdk.dev×2, github.com×1
+
 ## source 기반 참고
 
-- 수집 소스 수: 5
-- 상위 도메인: vercel.com 2건, ai-sdk.dev 2건, github.com 1건
-- source 조합: 구현체, 공식 문서
-
-### source 맵
-
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/vercel-ai-sdk.md`
-- [AI SDK 6 - Vercel](https://vercel.com/blog/ai-sdk-6) — `raw/hot-topics-sources/2026-04-10/438-ai-sdk-6-release-blog.md`
-  - 메모: --- title: AI SDK 6 - Vercel source_url: https://vercel.com/blog/ai-sdk-6 final_url: https://vercel.com/blog/ai-sdk-6 status: 200 content_type: text/html; charset=utf-8 topics: [Vercel AI SDK 6] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:44:28.708927+00:00 ---
-- [439-ai-sdk-official-docs](https://ai-sdk.dev/docs/introduction) — `raw/hot-topics-sources/2026-04-10/439-ai-sdk-official-docs.md`
-  - 메모: --- title: AI SDK Official Docs source_url: https://ai-sdk.dev/docs/introduction final_url: https://ai-sdk.dev/docs/introduction status: 200 content_type: text/markdown; charset=utf-8 topics: [Vercel AI SDK 6] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:44:28.1
-- [Releases · vercel/ai · GitHub](https://github.com/vercel/ai/releases) — `raw/hot-topics-sources/2026-04-10/440-vercel-ai-github-releases.md`
-  - 메모: --- title: Releases · vercel/ai · GitHub source_url: https://github.com/vercel/ai/releases final_url: https://github.com/vercel/ai/releases status: 200 content_type: text/html; charset=utf-8 topics: [Vercel AI SDK 6] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:
-- [AI SDK](https://ai-sdk.dev) — `raw/hot-topics-sources/2026-04-10/441-ai-sdk-homepage.md`
-  - 메모: --- title: AI SDK source_url: https://ai-sdk.dev final_url: https://ai-sdk.dev status: 200 content_type: text/html; charset=utf-8 topics: [Vercel AI SDK 6] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:44:28.487887+00:00 --- # AI SDK ## 원본 URL https://ai-sdk.dev 
-- [442-vercel-ai-sdk-product-page](https://vercel.com/docs/ai-sdk) — `raw/hot-topics-sources/2026-04-10/442-vercel-ai-sdk-product-page.md`
-  - 메모: --- title: Vercel AI SDK Product Page source_url: https://vercel.com/docs/ai-sdk final_url: https://vercel.com/docs/ai-sdk status: 200 content_type: text/markdown; charset=utf-8 topics: [Vercel AI SDK 6] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:44:28.813229+
+
+### source별 핵심 신호
+
+- **AI SDK 6 - Vercel** (`vercel.com`): https://vercel.com/blog/ai-sdk-6
+  - 메모: Thomson Reuters used the AI SDK to build CoCounsel, their AI assistant for attorneys, accountants, and audit teams, with just 3 developers in 2 months.
+- **AI SDK Official Docs** (`ai-sdk.dev`): https://ai-sdk.dev/docs/introduction
+  - 메모: Integrating large language models (LLMs) into applications is complicated and heavily dependent on the specific model provider you use.
+- **Releases · vercel/ai · GitHub** (`github.com`): https://github.com/vercel/ai/releases
+  - 메모: To see all available qualifiers, see our documentation.
+- **AI SDK** (`ai-sdk.dev`): https://ai-sdk.dev
+  - 메모: A unified TypeScript SDK for building AI apps with modern streaming, fallbacks, and multi-model support—powered by Vercel
+- **Vercel AI SDK Product Page** (`vercel.com`): https://vercel.com/docs/ai-sdk
+  - 메모: The is the TypeScript toolkit designed to help developers build AI-powered applications with , , , , and more.
 
 ## 관련 문서
 
