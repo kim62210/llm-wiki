@@ -28,6 +28,17 @@
   - broken wikilinks: 0
   - index missing-page: 0
 
+## 2026-04-10 — Ingest 계속: recursive docs batch (SDK / MCP)
+- **대상**: standalone page에서 파생된 2차 링크 중 MCP / Claude Agent SDK 핵심 문서
+- **생성 페이지**:
+  - `summary` 5개
+- **추가된 주요 페이지**:
+  - `wiki/tooling/claude-agent-sdk-quickstart.md`
+  - `wiki/tooling/claude-agent-loop.md`
+  - `wiki/tooling/claude-agent-sessions.md`
+  - `wiki/tooling/mcp-architecture.md`
+  - `wiki/tooling/mcp-authorization-draft.md`
+
 ## 2026-04-10 — Ingest 계속: standalone source pages 추가 승격
 - **대상**: 이미 수집된 hot-topic raw source 중 고가치 공식 글/스펙/논문
 - **생성 페이지**:

@@ -204,9 +204,14 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 
 **summary**
 - [Claude Agent SDK Overview](wiki/tooling/claude-agent-sdk-overview.md) — Claude Agent SDK의 세션, agent loop, streaming, approval 개념을 한 번에 훑는 공식 개요 요약
+- [Claude Agent SDK Quickstart](wiki/tooling/claude-agent-sdk-quickstart.md) — Claude Agent SDK를 실제로 시작하기 위한 최소 실행 경로 요약
+- [Claude Agent Loop](wiki/tooling/claude-agent-loop.md) — SDK 내부 실행 루프와 tool routing 흐름을 설명하는 문서 요약
+- [Claude Agent Sessions](wiki/tooling/claude-agent-sessions.md) — 장기 실행 에이전트에서 세션이 상태 단위로 어떻게 작동하는지 설명하는 문서 요약
 - [Effective Harnesses for Long-Running Agents](wiki/tooling/effective-harnesses-for-long-running-agents.md) — initializer agent와 coding agent를 분리해 장기 실행 에이전트의 세션 연속성을 확보하는 하네스 설계 글 요약
 - [Claude Opus 4.5 Release Notes](wiki/tooling/claude-opus-4-5-release-notes.md) — Claude Opus 4.5 출시 글에서 모델 성능과 제품군 방향성을 함께 요약한 문서
 - [MCP Specification 2025-11-25](wiki/tooling/mcp-specification-2025-11-25.md) — MCP의 architecture, protocol, authorization, client/server features를 정의하는 공식 스펙 요약
+- [MCP Architecture](wiki/tooling/mcp-architecture.md) — host / client / server 구조를 중심으로 MCP를 시스템 관점에서 설명하는 문서 요약
+- [MCP Authorization Draft](wiki/tooling/mcp-authorization-draft.md) — MCP authorization draft를 security boundary와 운영 관점에서 읽는 문서 요약
 - [MCP Roadmap (Development)](wiki/tooling/mcp-roadmap-development.md) — workstream, working group, governance, SEP 흐름을 중심으로 정리한 MCP development roadmap 요약
 - [Scaling Managed Agents](wiki/tooling/scaling-managed-agents.md) — brain / hands / session을 분리하는 managed agent 인프라 설계 글 요약
 - [The 2026 MCP Roadmap](wiki/tooling/the-2026-mcp-roadmap.md) — MCP의 우선순위가 transport, agent communication, governance, enterprise readiness로 이동했음을 설명하는 공식 로드맵 요약
