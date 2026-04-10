@@ -18,6 +18,16 @@ Model Context Protocol의 2025-11-25 기준 공식 스펙 문서 요약이다. �
 - resources, prompts, tools, sampling, roots, elicitation 같은 핵심 축을 명문화
 - MCP 구현체 간 상호운용성을 위한 기준을 제공
 
+## 어디를 먼저 읽을까
+
+| 관심사 | 먼저 볼 항목 |
+|---|---|
+| 전체 구조 | Architecture |
+| 연결 수명주기 | Base Protocol / Lifecycle |
+| 보안 | Authorization |
+| 기능 노출 | Resources / Tools / Prompts |
+| 클라이언트 확장 | Roots / Sampling / Elicitation |
+
 ## 왜 중요한가
 
 로드맵과 블로그가 방향을 말한다면, 실제 구현 호환성은 결국 이 스펙에서 결정된다. 따라서 MCP를 구현하거나 연동하는 팀에게는 가장 실무적인 문서다.
@@ -31,4 +41,3 @@ MCP를 도입할 때는 소개 글보다 이 스펙이 더 중요하다. transpo
 - [[model-context-protocol-mcp|Model Context Protocol (MCP)]]
 - [[model-context-protocol|MCP 2026 Roadmap & Enterprise Readiness]]
 - [[mcp-authorization|MCP OAuth 2.1 + PKCE Authorization]]
-

@@ -18,6 +18,18 @@ deep research agent를 체계적으로 분해하고, 향후 연구 방향까지 
 - 단순 검색 에이전트보다 더 넓은 범주의 조사형 agent를 다룸
 - 앞으로의 연구 과제를 로드맵 형태로 정리
 
+## 구조 한눈에 보기
+
+```mermaid
+flowchart TD
+    Query[User Query] --> Planning[Planning]
+    Planning --> Retrieval[Retrieval]
+    Retrieval --> Synthesis[Synthesis]
+    Synthesis --> Verification[Verification / Citation]
+```
+
+이 다이어그램은 deep research agent를 단일 search step이 아니라 **조사 파이프라인 전체**로 보게 만든다.
+
 ## 왜 중요한가
 
 research agent는 단순 web browsing이 아니라, **문제 분해 + 탐색 + 근거 정리 + 검증**이 함께 가야 한다. 이 문서는 그 전체 구조를 조망하게 해 준다.
@@ -31,4 +43,3 @@ research agent는 단순 web browsing이 아니라, **문제 분해 + 탐색 + �
 - [[anthropic-multi-agent-research-system|Anthropic Multi-Agent Research System]]
 - [[agent-trees|Hierarchical Planning with Agent Trees]]
 - [[subagents|Subagents]]
-

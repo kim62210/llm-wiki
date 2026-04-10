@@ -1,3 +1,14 @@
+## 2026-04-10 — standalone 문서 심화 배치
+- **대상**: 새로 승격된 standalone 문서 5개
+- **수행 내용**:
+  - 표 / 구조도 / 읽기 가이드를 추가해 summary와 paper의 학습 가치를 강화
+- **대표 문서**:
+  - `wiki/tooling/claude-agent-sdk-overview.md`
+  - `wiki/tooling/mcp-specification-2025-11-25.md`
+  - `wiki/agents/deep-research-agents-roadmap.md`
+  - `wiki/papers/agentic-rl-survey-paper.md`
+  - `wiki/concepts/the-lethal-trifecta-article.md`
+
 ## 2026-04-10 — 수동 고급 편집 배치
 - **대상**: 상위 핵심 문서 6개
 - **수행 내용**:

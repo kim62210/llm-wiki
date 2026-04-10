@@ -128,6 +128,17 @@
         "fresh index missing-page check 결과가 0이다"
       ],
       "passes": true
+    },
+    {
+      "id": "US-011",
+      "title": "새 standalone 문서 5개를 심화 위키 수준으로 추가 편집",
+      "priority": 11,
+      "acceptanceCriteria": [
+        "standalone 문서 5개 이상에 표/구조도/읽기 가이드 중 하나가 추가된다",
+        "fresh broken wikilink check 결과가 0이다",
+        "fresh index missing-page check 결과가 0이다"
+      ],
+      "passes": true
     }
   ]
 }

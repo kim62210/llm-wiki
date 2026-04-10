@@ -57,3 +57,7 @@
 - Added manual high-value doc refinement batch (US-010):
   - enriched 6 core docs with tables / structure diagrams / reading order aids
 - Fresh verification: broken wikilinks=0, missing index pages=0.
+
+- Added standalone-doc deepening batch (US-011):
+  - refined 5 standalone docs with tables / diagrams / reading guides
+- Fresh verification: broken wikilinks=0, missing index pages=0.

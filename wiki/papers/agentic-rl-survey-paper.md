@@ -23,6 +23,15 @@ LLM 에이전트를 위한 강화학습 연구 지형을 정리한 대형 서베
 - 에이전트 학습은 단순 reasoning 최적화가 아니라 **도구 사용과 환경 상호작용의 학습**으로 이동하고 있다.
 - long-horizon agent를 다루려면 reward 설계, trajectory credit assignment, evaluation 환경이 함께 바뀌어야 한다.
 
+## 논문 읽기 포인트
+
+| 축 | 질문 |
+|---|---|
+| 환경 | 어떤 상호작용을 agent RL 문제로 보는가 |
+| 보상 | 무엇이 성공 신호가 되는가 |
+| trajectory | 장기 행동에 대한 credit assignment를 어떻게 다루는가 |
+| 평가 | 어떤 benchmark가 실제 agent behavior를 측정하는가 |
+
 ## 한계
 
 서베이 특성상 전체 흐름을 잘 보여 주지만, 어떤 방법이 특정 환경에서 결정적으로 우월한지까지는 말해주지 않는다.
@@ -36,4 +45,3 @@ LLM 에이전트를 위한 강화학습 연구 지형을 정리한 대형 서베
 - [[long-horizon-rl-training-for-agents|Long-Horizon RL Training for Agents (Multi-Turn RLVR)]]
 - [[rlvr|RLVR (Reinforcement Learning with Verifiable Rewards)]]
 - [[agentic-rl|Agentic RL (Tool-Integrated Reasoning 학습)]]
-

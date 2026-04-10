@@ -28,9 +28,16 @@ Simon Willison이 lethal trifecta를 직접 설명한 원문 글 요약이다. �
 
 agent 설계에서 “더 많은 기능”보다 먼저 봐야 할 것은 이 세 능력이 동시에 결합되는가 여부다. 이 문서는 그 판단 기준을 가장 직관적으로 제공한다.
 
+| 조건 | 질문 |
+|---|---|
+| private data access | 내부 데이터/비밀에 접근하는가 |
+| untrusted content exposure | 외부 입력을 읽는가 |
+| external communication | 외부로 전송/행동할 수 있는가 |
+
+세 칸 모두 “예”가 되는 순간, 이 문서는 그것을 즉시 위험 신호로 보라고 말한다.
+
 ## 관련 문서
 
 - [[lethal-trifecta|Lethal Trifecta (치명적 3요소)]]
 - [[agent-prompt-injection-defense|Agent Prompt Injection Defense & Trustworthy Agents]]
 - [[model-context-protocol-mcp|Model Context Protocol (MCP)]]
-

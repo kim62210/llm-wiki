@@ -18,6 +18,22 @@ Claude Code Docs의 Agent SDK overview 문서 요약이다. Agent SDK를 단순 
 - agent loop, session, streaming input, approval/user input 같은 핵심 개념을 연결한다.
 - Claude Code 기능을 앱/서비스에 내장할 때 어떤 문서를 따라가야 하는지 안내한다.
 
+## 읽기 순서
+
+| 단계 | 문서 | 목적 |
+|---|---|---|
+| 1 | Overview | 전체 개념 지도 |
+| 2 | [[claude-agent-sdk-quickstart]] | 첫 실행 경험 |
+| 3 | [[claude-agent-loop]] | 런타임 구조 이해 |
+| 4 | [[claude-agent-sessions]] | 세션/상태 관리 이해 |
+
+```mermaid
+flowchart TD
+    O[Overview] --> Q[Quickstart]
+    O --> L[Agent Loop]
+    O --> S[Sessions]
+```
+
 ## 왜 중요한가
 
 entity 페이지가 “무엇인가”를 설명한다면, 이 overview는 **어떻게 입문하고 어떤 개념 지도를 따라가야 하는가**를 알려준다. 그래서 실제 도입 초기에 훨씬 실용적이다.
@@ -31,4 +47,3 @@ SDK 도입 시 가장 중요한 것은 API 호출법보다도 session, approval,
 - [[claude-agent-sdk|Claude Agent SDK]]
 - [[long-running-agent-harnesses|Agent Harnesses for Long-Running Coding Sessions]]
 - [[tool-contracts-for-agents|Tool Contracts & Writing Tools for Agents]]
-
