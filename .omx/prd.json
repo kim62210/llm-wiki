@@ -90,6 +90,20 @@
         "fresh index missing-page check 결과가 0이다"
       ],
       "passes": true
+    },
+    {
+      "id": "US-008",
+      "title": "핫토픽 비교 문서 2개 추가 생성",
+      "priority": 8,
+      "acceptanceCriteria": [
+        "모델 비교 summary 페이지 1개가 생성된다",
+        "에이전트 벤치마크 비교 summary 페이지 1개가 생성된다",
+        "두 페이지 모두 올바른 frontmatter를 가진다",
+        "index.md와 log.md가 새 문서를 반영한다",
+        "fresh broken wikilink check 결과가 0이다",
+        "fresh index missing-page check 결과가 0이다"
+      ],
+      "passes": true
     }
   ]
 }

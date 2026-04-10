@@ -123,6 +123,8 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 
 **summary**
 - ["Google Stitch DESIGN.md 가이드 (요약)"](wiki/applications/stitch-design-md-guide.md) — Google Stitch 공식 문서의 DESIGN.MD 섹션 3개 페이지(overview/format/usage)를 한국어로 요약한 문서. 원본은 raw/2026-04-09-stitch-design-md.md에 보존.
+- [2026년 4월 Frontier Model 비교](wiki/applications/frontier-model-comparison-2026-04.md) — 주요 frontier 모델을 성능 수치보다 작업 적합성과 운영 관점으로 비교한 summary
+- [2026년 4월 에이전트 벤치마크 비교](wiki/applications/agent-benchmark-comparison-2026-04.md) — SWE-bench / Terminal-Bench / ARC-AGI / METR의 측정 대상을 비교한 summary
 - [Writing about Agentic Engineering Patterns](wiki/applications/writing-about-agentic-engineering-patterns.md) — Simon Willison이 Agentic Engineering Patterns 프로젝트를 왜 시작했는지 설명한 글 요약
 - ["Simon Willison's Prompts Library"](wiki/applications/prompts-library.md) — Simon Willison이 agentic engineering guide 부록 "Prompts I use"에 모아둔, 본인이 상시 사용하는 프롬프트 모음. 지속적으로 업데이트되는 섹션이다.
 - [2026년 4월 AI 개발 핫토픽 100선](wiki/applications/ai-hot-topics-2026-04.md) — title: 2026년 4월 AI 개발 핫토픽 100선

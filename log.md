@@ -13,6 +13,12 @@
   - `wiki/rag/context-rot-report.md`
   - `wiki/tooling/claude-opus-4-5-release-notes.md`
 
+## 2026-04-10 — 비교 문서 배치
+- **대상**: 이미 수집·승격된 모델/벤치마크 페이지를 가로지르는 summary 문서
+- **생성 페이지**:
+  - `wiki/applications/frontier-model-comparison-2026-04.md`
+  - `wiki/applications/agent-benchmark-comparison-2026-04.md`
+
 ## 2026-04-10 — Ingest 계속: provenance merge batch
 - **대상**: 남아 있던 duplicate fetched source 10개
 - **수행 내용**:

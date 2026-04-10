@@ -41,3 +41,7 @@
 - Added provenance merge batch (US-007):
   - merged 10 remaining duplicate fetched source paths into existing standalone pages
 - Fresh verification: remaining fetched sources=0, broken wikilinks=0, missing index pages=0.
+
+- Added comparison-doc batch (US-008):
+  - applications: frontier-model-comparison-2026-04, agent-benchmark-comparison-2026-04
+- Fresh verification: broken wikilinks=0, missing index pages=0.
