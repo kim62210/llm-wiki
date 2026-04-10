@@ -1,0 +1,34 @@
+---
+title: Claude Agent SDK Overview
+category: tooling
+page_type: summary
+tags: [tooling, summary, claude-agent-sdk, docs, anthropic]
+sources: [raw/2026-04-10-hot-ai-topics-sources/long-running-agent-harnesses/04-code-claude-com-claude-agent-sdk-overview.md]
+created: 2026-04-10
+updated: 2026-04-10
+---
+
+# Claude Agent SDK Overview
+
+Claude Code Docs의 Agent SDK overview 문서 요약이다. Agent SDK를 단순 라이브러리가 아니라 세션, agent loop, input/output, approval 흐름을 포함한 개발 표면으로 설명한다.
+
+## 핵심 내용
+
+- Agent SDK의 전체 구조와 진입점을 소개한다.
+- agent loop, session, streaming input, approval/user input 같은 핵심 개념을 연결한다.
+- Claude Code 기능을 앱/서비스에 내장할 때 어떤 문서를 따라가야 하는지 안내한다.
+
+## 왜 중요한가
+
+entity 페이지가 “무엇인가”를 설명한다면, 이 overview는 **어떻게 입문하고 어떤 개념 지도를 따라가야 하는가**를 알려준다. 그래서 실제 도입 초기에 훨씬 실용적이다.
+
+## 실무 적용 관점
+
+SDK 도입 시 가장 중요한 것은 API 호출법보다도 session, approval, streaming, tool loop 같은 런타임 개념을 정확히 이해하는 것이다. 이 overview는 그 온보딩 역할을 한다.
+
+## 관련 문서
+
+- [[claude-agent-sdk|Claude Agent SDK]]
+- [[long-running-agent-harnesses|Agent Harnesses for Long-Running Coding Sessions]]
+- [[tool-contracts-for-agents|Tool Contracts & Writing Tools for Agents]]
+

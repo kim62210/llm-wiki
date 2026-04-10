@@ -45,6 +45,19 @@
   - `wiki/papers/research-learning-to-reason-with-search-paper.md`
   - `wiki/agents/deep-research-agents-roadmap.md`
   - `wiki/tooling/mcp-specification-2025-11-25.md`
+
+## 2026-04-10 — Ingest 계속: fifth standalone promotion batch
+- **대상**: 구현 레퍼런스와 운영 노트 source
+- **생성 페이지**:
+  - `summary` 2개
+  - `entity` 2개
+  - `case-study` 1개
+- **추가된 주요 페이지**:
+  - `wiki/tooling/claude-agent-sdk-overview.md`
+  - `wiki/tooling/claude-agent-sdk-typescript.md`
+  - `wiki/tooling/claude-opus-4-5.md`
+  - `wiki/tooling/mcp-roadmap-development.md`
+  - `wiki/applications/openhands-swe-bench-scaling-notes.md`
 - **추가된 주요 페이지**:
   - `wiki/papers/deep-research-agents-roadmap-paper.md`
   - `wiki/agents/skywork-deepresearchagent.md`

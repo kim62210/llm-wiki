@@ -127,6 +127,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 **case-study**
 - ["GIF Optimization with WebAssembly — Case Study"](wiki/applications/gif-optimization-case-study.md) — Simon Willison이 agentic engineering guide Section 5 "Annotated Prompts"에 실은 실전 사례. Claude Code에게 Gifsicle을 WebAssembly로 컴파일하고 브라우저 인터페이스를 만들게 하는 과정을 주석 달린 프롬프트로
 - [Anthropic Full-Stack Harness Case Study (Game Maker + DAW)](wiki/applications/anthropic-app-harness-case-study.md) — Anthropic의 Prithvi Rajasekaran이 Harness Design for Long-Running Application Development에서 공개한 두 개의 풀 스택 빌드 케이스. Retro Game Maker (Opus 4.5) 와 Digital Audio Work
+- [OpenHands SWE-Bench Scaling Notes](wiki/applications/openhands-swe-bench-scaling-notes.md) — inference-time scaling과 critic model이 coding agent benchmark 성능을 어떻게 바꾸는지 보여주는 사례 정리
 
 ### Papers (논문)
 
@@ -157,7 +158,9 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [BAML](wiki/tooling/baml.md) — 이 페이지는 BAML를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 프롬프트를 타입 안전한 함수로 정의하는 구조화 출력 전용 DSL이기 때문이다.
 - [Claude Agent SDK](wiki/tooling/claude-agent-sdk.md) — 이 페이지는 Claude Agent SDK를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 Claude Code의 에이전트 루프·툴·컨텍스트 관리를 라이브러리화한 Anthropic SDK이기 때문이다.
 - [Claude Code](wiki/tooling/claude-code.md) — Anthropic이 제공하는 공식 coding agent. Simon Willison이 agentic engineering guide 전반에 걸쳐 가장 많이 레퍼런스하는 도구다.
+- [Claude Agent SDK TypeScript](wiki/tooling/claude-agent-sdk-typescript.md) — Claude Agent SDK의 TypeScript 구현 저장소를 추적하는 허브 페이지.
 - [Claude Opus 4.6](wiki/tooling/claude-opus-4-6.md) — 이 페이지는 Claude Opus 4.6를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 2026년 2월 Anthropic이 공개한 플래그십 모델 (1M 컨텍스트)이기 때문이다.
+- [Claude Opus 4.5](wiki/tooling/claude-opus-4-5.md) — 장기 자율 작업과 고난도 coding workflow를 겨냥한 Anthropic high-end frontier 모델 허브.
 - [Claude Sonnet 4.5](wiki/tooling/claude-sonnet-4-5.md) — agentic coding, computer use, 장시간 작업 유지력 측면에서 중요한 Anthropic frontier 모델 허브.
 - [Cursor Cloud Agents & Parallel Worktree Agents](wiki/tooling/cursor-cloud-agents-and-parallel-worktree-agents.md) — title: Cursor Cloud Agents & Parallel Worktree Agents
 - [Deep Agents](wiki/tooling/deep-agents.md) — 이 페이지는 Deep Agents를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 플래너·파일시스템·서브에이전트를 기본 탑재한 LangGraph 기반 딥 에이전트 하네스이기 때문이다.
@@ -191,8 +194,10 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Tool Contracts & Writing Tools for Agents](wiki/tooling/tool-contracts-for-agents.md) — title: Tool Contracts & Writing Tools for Agents
 
 **summary**
+- [Claude Agent SDK Overview](wiki/tooling/claude-agent-sdk-overview.md) — Claude Agent SDK의 세션, agent loop, streaming, approval 개념을 한 번에 훑는 공식 개요 요약
 - [Effective Harnesses for Long-Running Agents](wiki/tooling/effective-harnesses-for-long-running-agents.md) — initializer agent와 coding agent를 분리해 장기 실행 에이전트의 세션 연속성을 확보하는 하네스 설계 글 요약
 - [MCP Specification 2025-11-25](wiki/tooling/mcp-specification-2025-11-25.md) — MCP의 architecture, protocol, authorization, client/server features를 정의하는 공식 스펙 요약
+- [MCP Roadmap (Development)](wiki/tooling/mcp-roadmap-development.md) — workstream, working group, governance, SEP 흐름을 중심으로 정리한 MCP development roadmap 요약
 - [Scaling Managed Agents](wiki/tooling/scaling-managed-agents.md) — brain / hands / session을 분리하는 managed agent 인프라 설계 글 요약
 - [The 2026 MCP Roadmap](wiki/tooling/the-2026-mcp-roadmap.md) — MCP의 우선순위가 transport, agent communication, governance, enterprise readiness로 이동했음을 설명하는 공식 로드맵 요약
 - [What is the Model Context Protocol (MCP)?](wiki/tooling/what-is-mcp.md) — MCP의 기본 개념과 host / client / server 구조를 빠르게 이해하기 위한 입문 요약

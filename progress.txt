@@ -26,3 +26,9 @@
   - papers: agentgym-rl-paper, reveal-paper, research-learning-to-reason-with-search-paper
   - summary: deep-research-agents-roadmap, mcp-specification-2025-11-25
 - Fresh verification: broken wikilinks=0, missing index pages=0, batch4 pages=5.
+
+- Added fifth standalone promotion batch:
+  - summary: claude-agent-sdk-overview, mcp-roadmap-development
+  - entity: claude-agent-sdk-typescript, claude-opus-4-5
+  - case-study: openhands-swe-bench-scaling-notes
+- Fresh verification: broken wikilinks=0, missing index pages=0, batch5 pages=5.

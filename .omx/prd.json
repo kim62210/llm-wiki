@@ -52,6 +52,19 @@
         "fresh index missing-page check 결과가 0이다"
       ],
       "passes": true
+    },
+    {
+      "id": "US-005",
+      "title": "구현 레퍼런스와 운영 노트 source를 추가 standalone page로 승격",
+      "priority": 5,
+      "acceptanceCriteria": [
+        "새 standalone 페이지가 추가로 5개 이상 생성된다",
+        "새 페이지들은 적절한 타입(summary/entity/case-study)으로 분류된다",
+        "index.md와 log.md가 새 배치를 반영한다",
+        "fresh broken wikilink check 결과가 0이다",
+        "fresh index missing-page check 결과가 0이다"
+      ],
+      "passes": true
     }
   ]
 }
