@@ -46,3 +46,18 @@ BAML의 핵심은 프롬프트 문자열을 직접 흩뿌리는 대신, 구조�
 - [[baml|BAML]]
 - [[instructor|Instructor]]
 - [[pydantic-ai|Pydantic AI]]
+
+## 비교표
+
+| 도구 | 주된 추상화 | 강점 | 주의점 |
+| --- | --- | --- | --- |
+| BAML | 전용 DSL + 생성된 클라이언트 | prompt/interface 분리 강함 | DSL 학습 비용 |
+| Instructor | 런타임 검증/재시도 레이어 | 빠르고 얇은 통합 | 계약 분리 수준은 낮음 |
+| Pydantic AI | agent/runtime abstraction | 더 넓은 시스템 경계 제공 | 더 무거운 도입 |
+
+## 읽는 순서
+
+- 이 문서로 BAML의 추상화 층위를 이해한다.
+- [[instructor|Instructor]]와 비교해 “얇은 검증층 vs 전용 계약 언어” 차이를 본다.
+- 구조화 출력 문제가 agent runtime 문제로 커질 경우 [[pydantic-ai|Pydantic AI]]까지 확장해 읽는다.
+

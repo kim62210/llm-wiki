@@ -46,3 +46,19 @@ Instructor는 모델 응답을 자유 텍스트로 받는 대신, 스키마·검
 - [[instructor|Instructor]]
 - [[baml|BAML]]
 - [[pydantic-ai|Pydantic AI]]
+
+## 비교표
+
+| 선택지 | 적합한 상황 | 장점 | 한계 |
+| --- | --- | --- | --- |
+| Instructor | 빠른 structured output 보강 | 얇고 채택이 쉬움 | orchestration은 별도 |
+| BAML | 계약/생성 중심 접근 | 대규모 surface 관리 강함 | DSL 도입 필요 |
+| Pydantic AI | agent/runtime까지 함께 볼 때 | 더 넓은 시스템 경계 | 무게가 더 큼 |
+
+## 도입 체크리스트
+
+- 출력 품질 문제가 주된 pain point인가?
+- 기존 Python 코드에 최소 변경으로 붙이고 싶은가?
+- tool orchestration보다 schema validation이 더 중요한가?
+- provider 교체 가능성을 유지해야 하는가?
+

@@ -81,3 +81,7 @@
   - Vercel AI SDK: core overview, agents overview, tool calling, MCP tools
   - enriched parent entity pages with reading-path links
 - Fresh verification pending after batch integration.
+
+- Added recursive summary deepening batch:
+  - enriched Mastra/BAML/Instructor/Vercel summaries with comparison tables, reading order, and operational checklists
+- Fresh verification pending after deepening batch.

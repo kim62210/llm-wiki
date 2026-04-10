@@ -48,3 +48,17 @@ Vercel AI SDK의 tool calling은 단순 함수 연결이 아니라 validation, a
 - [[vercel-ai-sdk|Vercel AI SDK 6]]
 - [[vercel-ai-sdk-mcp-tools|Vercel AI SDK MCP Tools]]
 - [[writing-effective-tools-for-agents|Writing Effective Tools for Agents]]
+
+## 운영 체크리스트
+
+- strict mode를 어디에 기본 적용할지 정했는가?
+- approval이 필요한 도구와 자동 실행 가능한 도구를 구분했는가?
+- stopWhen 같은 multi-step 종료 규칙이 있는가?
+- tool input/output lifecycle을 관측할 수 있는가?
+
+## 읽는 순서
+
+- 이 문서로 tool execution policy를 정리한다.
+- [[writing-effective-tools-for-agents|Writing Effective Tools for Agents]]로 tool 인터페이스 설계를 보강한다.
+- 외부 서버형 도구가 필요하면 [[vercel-ai-sdk-mcp-tools|Vercel AI SDK MCP Tools]]로 확장한다.
+

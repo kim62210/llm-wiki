@@ -1,3 +1,9 @@
+## 2026-04-10 — Recursive summary 심화 배치 (Mastra / BAML / Instructor / Vercel)
+- **대상**: 최신 recursive summary 7개
+- **수행 내용**:
+  - 비교표 / 읽는 순서 / 운영 체크리스트를 추가해 deep-wiki 품질 강화
+  - 특히 Vercel AI SDK 계열 4개 문서에 layer-aware 읽기 경로 추가
+
 ## 2026-04-10 — Recursive ingest 배치 (Mastra / BAML / Instructor / Vercel AI SDK 세부 문서)
 - **대상**: 공식 세부 문서 7개 (`mastra.ai` 1개, `docs.boundaryml.com` 1개, `python.useinstructor.com` 1개, `ai-sdk.dev` 4개)
 - **생성 페이지**:

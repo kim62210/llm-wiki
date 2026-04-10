@@ -50,3 +50,19 @@ Vercel AI SDK의 MCP 통합은 tools만이 아니라 resources와 prompts까지 
 - [[vercel-ai-sdk|Vercel AI SDK 6]]
 - [[model-context-protocol-mcp|Model Context Protocol (MCP)]]
 - [[mcp-architecture|MCP Architecture]]
+
+## 비교 메모
+
+| 표면 | 의미 | 실무 질문 |
+| --- | --- | --- |
+| tools | 실행 가능한 기능 | 무엇을 호출하게 할까? |
+| resources | 읽기 컨텍스트 | 무엇을 노출해야 하나? |
+| prompts | 재사용 지시/템플릿 | 어떤 기본 지시를 공유할까? |
+
+## 운영 체크리스트
+
+- MCP client lifecycle을 누가 관리하는가?
+- 사용자 승인 UI가 필요한 도구가 있는가?
+- resources/prompts 노출 범위를 제한했는가?
+- tool, resource, prompt별 감사 로그를 남길 수 있는가?
+

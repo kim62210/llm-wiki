@@ -46,3 +46,18 @@ Mastra docs의 출발점은 단일 API 설명보다 “어떤 종류의 agent/wo
 - [[mastra|Mastra]]
 - [[vercel-ai-sdk|Vercel AI SDK 6]]
 - [[openai-agents-sdk|OpenAI Agents SDK]]
+
+## 읽는 순서
+
+1. 이 문서로 Mastra의 quickstart와 통합 surface를 잡는다.
+2. [[mastra|Mastra]] 허브에서 생태계 위치와 경쟁 구도를 확인한다.
+3. 이후 실제 앱 유형별로 workflow / agent / integration docs를 추가 수집하는 방식이 자연스럽다.
+
+## 비교 메모
+
+| 항목 | Mastra Get Started가 강조하는 점 | 비교 포인트 |
+| --- | --- | --- |
+| 출발점 | 빠른 quickstart + framework integration | Vercel AI SDK보다 더 framework-like한 인상 |
+| 개발 경험 | 앱 유형 중심 onboarding | 단일 primitive보다 전체 app composition 지향 |
+| 도입 판단 | 어떤 앱을 만들지 먼저 정함 | TS agent stack 선택 시 Mastra/AI SDK 비교에 유용 |
+

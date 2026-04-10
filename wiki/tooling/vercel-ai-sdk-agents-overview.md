@@ -47,3 +47,18 @@ Vercel AI SDK의 agent 레이어는 무거운 프레임워크라기보다, core 
 - [[vercel-ai-sdk|Vercel AI SDK 6]]
 - [[openai-agents-sdk|OpenAI Agents SDK]]
 - [[langgraph|LangGraph 1.0 / 2.0 (Agent Orchestration Framework)]]
+
+## 비교표
+
+| 프레임워크 | agent 추상화 성격 | 적합한 상황 |
+| --- | --- | --- |
+| Vercel AI SDK Agents | 얇은 ToolLoopAgent abstraction | 기존 TS 앱의 점진적 agent화 |
+| OpenAI Agents SDK | 공식 multi-agent runtime surface | SDK 중심 orchestration |
+| LangGraph / Deep Agents | 더 무거운 상태/하네스 중심 | 장기 작업, 복잡한 흐름 |
+
+## 도입 체크리스트
+
+- 기존 generate/stream 코드에서 점진적으로 올라가고 싶은가?
+- UI/Next.js 맥락이 강한가?
+- long-horizon memory보다 짧은 tool loop가 더 중요한가?
+

@@ -46,3 +46,19 @@ AI SDK Core는 agent abstraction보다 아래층에서, 생성·스트리밍·�
 - [[vercel-ai-sdk|Vercel AI SDK 6]]
 - [[vercel-ai-sdk-agents-overview|Vercel AI SDK Agents Overview]]
 - [[vercel-ai-sdk-tool-calling|Vercel AI SDK Tool Calling]]
+
+## 읽는 순서
+
+1. 이 문서로 Core primitives 층을 이해한다.
+2. [[vercel-ai-sdk-tool-calling|Vercel AI SDK Tool Calling]]으로 runtime 제어 규칙을 본다.
+3. [[vercel-ai-sdk-agents-overview|Vercel AI SDK Agents Overview]]로 상위 agent abstraction을 읽는다.
+4. 외부 capability 연결이 필요하면 [[vercel-ai-sdk-mcp-tools|Vercel AI SDK MCP Tools]]까지 내려간다.
+
+## 비교 메모
+
+| 층위 | 역할 | 대표 질문 |
+| --- | --- | --- |
+| Core | generate/stream/tools primitives | 어떤 building block이 있나? |
+| Agents | 반복 실행 abstraction | 얼마나 agent화할 것인가? |
+| MCP | 외부 capability 연결 | 어떤 context/tool을 붙일 것인가? |
+
