@@ -92,3 +92,6 @@
   - manifest snapshots present and directly referenced in wiki: 452/452
   - hot-topics-sources tree references in wiki: 549/549 (including topic packets)
   - no remaining un-ingested source paths found
+
+- Added corpus audit wiki page for the original hot-topic source set:
+  - documented 500 link occurrences -> 452 unique refs -> 452/452 snapshots present -> 452/452 direct wiki references -> 549/549 hot-topics tree references

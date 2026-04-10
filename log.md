@@ -1,3 +1,9 @@
+## 2026-04-10 — 핫토픽 500-link corpus audit 문서화
+- **대상**: `raw/2026-04-10-hot-ai-topics-100.md` 전체 source corpus
+- **수행 내용**:
+  - 500 link occurrence / 452 unique ref / 452 raw snapshot / 549 hot-topics tree path를 분리 검증
+  - 결과를 `wiki/applications/hot-topics-corpus-coverage-audit-2026-04.md`로 문서화
+
 ## 2026-04-10 — 500-link corpus coverage audit
 - **대상**: `raw/2026-04-10-hot-ai-topics-100.md`의 원본 링크 500개
 - **검증 결과**:
