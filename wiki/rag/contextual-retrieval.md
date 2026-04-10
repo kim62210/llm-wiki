@@ -27,12 +27,38 @@ Anthropic의 원본 기법이 2026년에도 reranking과 결합 시 실패율 67
 - [Late Chunking GitHub (jina-ai/late-chunking)](https://github.com/jina-ai/late-chunking)
 - [Contextual retrieval in Anthropic using Amazon Bedrock Knowledge Bases (AWS)](https://aws.amazon.com/blogs/machine-learning/contextual-retrieval-in-anthropic-using-amazon-bedrock-knowledge-bases/)
 
+## 해석 포인트
+
+Contextual Retrieval (Anthropic)은 **검색·회수 품질을 어떻게 높일지에 초점을 둔 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `anthropic.com×1, blog.voyageai.com×1, jina.ai×1, github.com×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 검색 정확도, 지연시간, 문맥 길이, 회수 일관성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 청크마다 문서 맥락을 LLM으로 사전 주입한 뒤 임베딩·BM25를 계산하는 기법.
 - 왜 중요한가: Anthropic의 원본 기법이 2026년에도 reranking과 결합 시 실패율 67% 감소라는 기준선으로 인용되며, Voyage·Jina 등이 후속 모델(voyage-context-3, late chunking v2)을 내놓는 "contextual embedding" 생태계로 확장됐다.
 - 직접 수집 원문: 5개
 - 주요 도메인: anthropic.com×1, blog.voyageai.com×1, jina.ai×1, github.com×1, aws.amazon.com×1
+
+## 핵심 메커니즘
+
+청크마다 문서 맥락을 LLM으로 사전 주입한 뒤 임베딩·BM25를 계산하는 기법. RAG 계열 토픽은 보통 하나의 검색 기법보다 **인덱싱 방식, 검색 인터페이스, 후처리·압축 전략**의 조합으로 이해해야 한다. 이번 source 묶음에서도 `anthropic.com×1, blog.voyageai.com×1, jina.ai×1, github.com×1, aws.amazon.com×1`처럼 서로 다른 층위의 구현/연구 source가 함께 나타난다.
+
+## 운영 관점
+
+Anthropic의 원본 기법이 2026년에도 reranking과 결합 시 실패율 67% 감소라는 기준선으로 인용되며, Voyage·Jina 등이 후속 모델(voyage-context-3, late chunking v2)을 내놓는 "contextual embedding" 생태계로 확장됐다. 실제 운영에서는 retrieval quality 하나만 보는 것이 아니라 latency, index 비용, update 빈도, multi-hop 질의 대응 여부를 함께 봐야 한다.
+
+## 핵심 포인트
+
+Contextual Retrieval (Anthropic)는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 이 페이지는 Contextual Retrieval (Anthropic)를 다룬다. 핵심은 청크마다 문서 맥락을 LLM으로 사전 주입한 뒤 임베딩·BM25를 계산하는 기법이며, 2026년 4월 시점에 왜 다시 중요해졌는지 정리한다.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+
+## source로 보면
+
+수집된 source는 anthropic.com×1, aws.amazon.com×1, blog.voyageai.com×1, github.com×1, jina.ai×1로 분포한다. 공식 문서와 구현 저장소가 같이 있어 실제 도입 관점의 정보가 강한 편이다.
+
+## 실무 관점
+
+실무에서는 검색 품질만이 아니라 컨텍스트 예산, chunking, 메모리 구조, 재랭킹, 운영 비용까지 함께 고려해야 한다. 그래서 이 토픽은 검색 정확도보다 '어떤 상황에서 어떤 구조를 쓰는가' 관점으로 읽는 것이 유용하다.
 
 ## source 기반 참고
 

@@ -31,12 +31,34 @@ Ai2가 Tülu 3에 이어 OLMo 3까지 데이터·코드·학습 곡선을 전부
 - [Scaling the Tülu 3 post-training recipes to surpass DeepSeek V3 (Ai2 blog)](https://allenai.org/blog/tulu-3-405B)
 - [AllenAI open-instruct (post-training codebase)](https://github.com/allenai/open-instruct)
 
+## 해석 포인트
+
+Open Post-Training Recipes (Tülu 3 / OLMo 3)은 **학습 데이터·보상·안정성의 트레이드오프를 다루는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `allenai.org×3, arxiv.org×1, github.com×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 학습 안정성, 보상 품질, compute 효율, 일반화를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: SFT → DPO → RLVR 전체 파이프라인을 완전 공개한 오픈소스 post-training 레시피.
 - 왜 중요한가: Ai2가 Tülu 3에 이어 OLMo 3까지 데이터·코드·학습 곡선을 전부 공개하며, 폐쇄형 모델 대비 "따라잡기(catch-up)" 속도가 2026년 화두가 되고 있다.
 - 직접 수집 원문: 5개
 - 주요 도메인: allenai.org×3, arxiv.org×1, github.com×1
+
+## 읽는 순서
+
+이 요약 페이지는 source를 한 장으로 압축한 허브다. 먼저 큐레이션 요약으로 전체 흐름을 잡고, 그 다음 source 기반 참고에서 실제 원문을 따라가면 된다.
+
+## 핵심 포인트
+
+Open Post-Training Recipes (Tülu 3 / OLMo 3)는 개별 source를 빠르게 따라잡기 위한 요약 허브다. 현재 본문은 이 페이지는 Open Post-Training Recipes (Tülu 3 / OLMo 3)를 요약하고, 지금 시점에 왜 중요한지 빠르게 따라잡기 위한 페이지다. 핵심 범위는 SFT → DPO → RLVR 전체 파이프라인을 완전 공개한 오픈소스 post-training 레시피이다.를 중심으로 구성되어 있고, 수집된 근거 5건이 요약의 배경을 받쳐준다.
+
+## source로 보면
+
+수집된 source는 allenai.org×3, arxiv.org×1, github.com×1로 분포한다. 연구 신호와 구현체가 같이 보여서 실험 결과와 적용 방법을 연결해 보기 좋다.
+
+## 실무 관점
+
+학습/후학습 기법은 이름보다 목적 함수와 검증 방식이 중요하다. 보상 신호를 어떻게 만들고 어떤 실패 모드를 줄이는지, 그리고 추론 성능과 운영 비용이 어떻게 바뀌는지를 함께 봐야 실무 의미가 생긴다.
 
 ## source 기반 참고
 

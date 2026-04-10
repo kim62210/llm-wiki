@@ -23,12 +23,34 @@ Cross-layer transcoder로 모델 내부 연산을 특징 단위 그래프로 복
 - [Tracing the thoughts of a large language model](https://www.anthropic.com/research/tracing-thoughts-language-model)
 - [Tracing Attention Computation Through Feature Interactions](https://transformer-circuits.pub/2025/attention-qk/index.html)
 
+## 해석 포인트
+
+Circuit Tracing & Attribution Graphs은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `transformer-circuits.pub×3, anthropic.com×2`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: Cross-layer transcoder로 모델 내부 연산을 특징 단위 그래프로 복원하는 해석성 기법.
 - 왜 중요한가: 2025년 Anthropic이 오픈소스로 공개한 circuit tracing이 MIT Tech Review 2026 10대 혁신 기술로 선정됐고, 2026년 transformer-circuits 최신 논문들이 감정 개념, QK 어텐션 분해 등으로 확장되며 해석성의 주류 방법론으로 자리잡았다.
 - 직접 수집 원문: 5개
 - 주요 도메인: transformer-circuits.pub×3, anthropic.com×2
+
+## 핵심 메커니즘
+
+Cross-layer transcoder로 모델 내부 연산을 특징 단위 그래프로 복원하는 해석성 기법. 이 개념은 단일 문장 정의보다 **어떤 failure mode를 설명하는지, 어떤 구조적 trade-off를 드러내는지**를 함께 볼 때 가치가 커진다.
+
+## 핵심 포인트
+
+Circuit Tracing & Attribution Graphs는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 Cross-layer transcoder로 모델 내부 연산을 특징 단위 그래프로 복원하는 해석성 기법.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+
+## source로 보면
+
+수집된 source는 transformer-circuits.pub×3, anthropic.com×2로 분포한다. 공식 문서/엔지니어링 글 비중이 높아 운영·제품 맥락이 강하다.
+
+## 실무 관점
+
+개념 페이지는 용어 정의에서 끝나지 않고, 어떤 시스템 설계 문제를 해결하려고 등장했는지와 어디까지가 적용 범위인지까지 함께 봐야 한다.
 
 ## source 기반 참고
 

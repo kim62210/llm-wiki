@@ -24,12 +24,38 @@ Turbopuffer가 object-storage 기반 하이브리드 검색(p50 8ms warm, p90 44
 - [Vespa vs Qdrant vs Turbopuffer for large-scale hybrid search (Hugging Face Forums)](https://discuss.huggingface.co/t/vespa-vs-qdrant-vs-turbopuffer-for-large-scale-hybrid-search-bm25-text-image-vectors/171610)
 - [A Practical Guide to Training Custom Rerankers (LanceDB Blog)](https://www.lancedb.com/blog/a-practical-guide-to-training-custom-rerankers)
 
+## 해석 포인트
+
+Serverless Object-Storage Vector DBs (Turbopuffer 등)은 단순한 제품 소개보다 **검색·회수 품질을 어떻게 높일지에 초점을 둔 축** 으로 읽는 편이 유용하다. 이번 source 묶음에서도 `turbopuffer.com×1, qdrant.tech×1, github.com×1, discuss.huggingface.co×1`처럼 연구·문서·구현체 신호가 함께 모여 있어, 단일 발표보다 생태계 위치를 같이 봐야 한다.
+
+실무에서는 이 엔티티를 '최신인가?'보다 **어떤 운영 전제와 통합면을 요구하는가**로 평가해야 한다. 즉 검색 정확도, 지연시간, 문맥 길이, 회수 일관성 같은 기준으로 다른 대안과 비교해야 실제 도입 판단에 도움이 된다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 벡터 + BM25를 S3/GCS 기반으로 저장해 TB급 인덱스 비용을 수십 배 낮춘 벡터DB.
 - 왜 중요한가: Turbopuffer가 object-storage 기반 하이브리드 검색(p50 8ms warm, p90 444ms cold)으로 1M+ 컨텍스트 시대의 "first-stage retrieval" 기본값이 됐고, Qdrant는 양자화, LanceDB는 in-process 멀티모달로 각각 틈새를 공고히 하며 "disk-first vector DB" 트렌드가 굳어졌다.
 - 직접 수집 원문: 5개
 - 주요 도메인: turbopuffer.com×1, qdrant.tech×1, github.com×1, discuss.huggingface.co×1, lancedb.com×1
+
+## 핵심 메커니즘
+
+벡터 + BM25를 S3/GCS 기반으로 저장해 TB급 인덱스 비용을 수십 배 낮춘 벡터DB. RAG 계열 토픽은 보통 하나의 검색 기법보다 **인덱싱 방식, 검색 인터페이스, 후처리·압축 전략**의 조합으로 이해해야 한다. 이번 source 묶음에서도 `turbopuffer.com×1, qdrant.tech×1, github.com×1, discuss.huggingface.co×1, lancedb.com×1`처럼 서로 다른 층위의 구현/연구 source가 함께 나타난다.
+
+## 운영 관점
+
+Turbopuffer가 object-storage 기반 하이브리드 검색(p50 8ms warm, p90 444ms cold)으로 1M+ 컨텍스트 시대의 "first-stage retrieval" 기본값이 됐고, Qdrant는 양자화, LanceDB는 in-process 멀티모달로 각각 틈새를 공고히 하며 "disk-first vector DB" 트렌드가 굳어졌다. 실제 운영에서는 retrieval quality 하나만 보는 것이 아니라 latency, index 비용, update 빈도, multi-hop 질의 대응 여부를 함께 봐야 한다.
+
+## 핵심 포인트
+
+Serverless Object-Storage Vector DBs (Turbopuffer 등)는 현재 시점에서 하나의 제품/모델/프레임워크 허브로 읽는 편이 맞다. 기본 정의는 벡터 + BM25를 S3/GCS 기반으로 저장해 TB급 인덱스 비용을 수십 배 낮춘 벡터DB.이며, 직접 수집한 source 5건은 discuss.huggingface.co×1, github.com×1, lancedb.com×1, qdrant.tech×1, turbopuffer.com×1처럼 여러 채널에 걸쳐 분포한다.
+
+## source로 보면
+
+수집된 source는 discuss.huggingface.co×1, github.com×1, lancedb.com×1, qdrant.tech×1, turbopuffer.com×1로 분포한다. 구현 저장소 비중이 높아 실제 사용·통합 관점이 두드러진다.
+
+## 실무 관점
+
+실무에서는 검색 품질만이 아니라 컨텍스트 예산, chunking, 메모리 구조, 재랭킹, 운영 비용까지 함께 고려해야 한다. 그래서 이 토픽은 검색 정확도보다 '어떤 상황에서 어떤 구조를 쓰는가' 관점으로 읽는 것이 유용하다.
 
 ## source 기반 참고
 

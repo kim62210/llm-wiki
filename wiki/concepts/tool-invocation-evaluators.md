@@ -23,12 +23,34 @@ Arize Phoenix가 2026년 1-2월 두 개의 전용 평가자를 출시하면서, 
 - [Agent Tool Selection (Arize AX Docs)](https://arize.com/docs/ax/evaluate/evaluation-concepts/agent-evaluation)
 - [Phoenix GitHub Repository](https://github.com/Arize-ai/phoenix)
 
+## 해석 포인트
+
+Tool Selection & Tool Invocation Evaluators은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `arize.com×4, github.com×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 올바른 도구 선택과 올바른 파라미터 호출을 분리해 평가.
 - 왜 중요한가: Arize Phoenix가 2026년 1-2월 두 개의 전용 평가자를 출시하면서, "잘못된 도구 선택"과 "올바른 도구+잘못된 인자"를 분리 진단하는 것이 tool-calling 에이전트 디버깅의 표준 패턴이 되었다.
 - 직접 수집 원문: 5개
 - 주요 도메인: arize.com×4, github.com×1
+
+## 핵심 메커니즘
+
+올바른 도구 선택과 올바른 파라미터 호출을 분리해 평가. 이 개념은 단일 문장 정의보다 **어떤 failure mode를 설명하는지, 어떤 구조적 trade-off를 드러내는지**를 함께 볼 때 가치가 커진다.
+
+## 핵심 포인트
+
+Tool Selection & Tool Invocation Evaluators는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 올바른 도구 선택과 올바른 파라미터 호출을 분리해 평가.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+
+## source로 보면
+
+수집된 source는 arize.com×4, github.com×1로 분포한다. 구현 저장소 비중이 높아 실제 사용·통합 관점이 두드러진다.
+
+## 실무 관점
+
+개념 페이지는 용어 정의에서 끝나지 않고, 어떤 시스템 설계 문제를 해결하려고 등장했는지와 어디까지가 적용 범위인지까지 함께 봐야 한다.
 
 ## source 기반 참고
 

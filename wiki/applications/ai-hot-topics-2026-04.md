@@ -7,10 +7,58 @@ sources: [raw/2026-04-10-hot-ai-topics-100.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # 2026년 4월 AI 개발 핫토픽 100선
 
 이 문서는 2026년 4월 시점 AI 개발 흐름을 10개 축, 100개 토픽으로 재구성한 허브다. 중복 토픽은 하나의 위키 페이지로 병합했고, 기존 일반 개념은 덮어쓰지 않고 보강했다.
+
+## 읽는 법
+
+이 허브는 "무엇이 중요한가"를 빠르게 훑는 entrypoint다. 깊게 파고들 때는 아래 순서를 권장한다.
+
+1. **섹션별 대표 개념 1-2개**를 먼저 읽어 현재 흐름을 잡는다.
+2. 같은 섹션 안의 **entity / project-internal / case-study**를 따라가며 실제 구현체와 운영 패턴을 본다.
+3. 페이지 하단의 `## 읽는 순서
+
+이 요약 페이지는 source를 한 장으로 압축한 허브다. 먼저 큐레이션 요약으로 전체 흐름을 잡고, 그 다음 source 기반 참고에서 실제 원문을 따라가면 된다.
+
+## 실무 관점
+
+ 따라서 이 문서는 결론을 확정하는 문서라기보다, **어떤 원문을 어떤 순서로 읽어야 하는지 안내하는 네비게이션 문서**로 쓰는 것이 적절하다.
+
+## source 기반 참고`에서 개별 원문과 짧은 메모를 확인해 근거를 따라간다.
+
+즉, 이 페이지는 최종 목적지가 아니라 **탐색 지도(map)** 역할을 한다.
+
+## 이번 수집 범위
+
+- 원본 큐레이션 링크: 500개
+- 중복 제거 후 실제 수집 URL: 452개
+- 수집 성공: 452개
+- topic packet: 97개
+
+이번 패스는 개별 링크를 직접 수집해 `raw/hot-topics-sources/2026-04-10/` 아래 snapshot으로 저장하고, 각 토픽 페이지에 source 기반 참고 섹션을 연결했다. 그래서 이제 각 토픽은 단순 허브가 아니라 **원문 근거를 바로 따라갈 수 있는 위키 노드**가 되었다.
+
+## 한눈에 보는 흐름
+
+2026년 4월의 AI 개발 담론은 단순히 "더 큰 모델"로 수렴하지 않는다. 오히려 다음 다섯 축이 동시에 강화되는 흐름이 보인다.
+
+1. **에이전트의 장기 지속성** — context engineering, memory, hierarchical planning, long-horizon RL이 하나의 묶음으로 움직인다.
+2. **하네스와 실행 환경의 중요성 증가** — 모델 자체보다 orchestration, sandbox, MCP, tool contract, worktree isolation 같은 주변 시스템이 성능을 좌우한다.
+3. **서빙의 시스템화** — disaggregated serving, MoE 병렬화, KV cache 계층화처럼 인프라가 모델 품질만큼 중요해졌다.
+4. **평가와 관측 가능성의 통합** — LLM-as-judge, trajectory eval, synthetic eval, observability platform이 한 스택으로 수렴한다.
+5. **안전성과 거버넌스의 운영화** — prompt injection, monitorability, responsible scaling처럼 "출시 이후 운영" 문제를 다루는 항목이 핵심 토픽으로 부상했다.
+
+즉, 이 시기의 핫토픽은 "모델 하나의 성능"보다 **모델을 둘러싼 시스템 전체를 어떻게 설계·측정·운영할 것인가**에 더 무게가 실려 있다.
+
+## 무엇이 실제로 깊어졌는가
+
+이번 확장에서는 단순 링크 허브를 넘어서 각 토픽 페이지에 **source 기반 참고**가 실제로 붙었다. 따라서 이제는 "토픽 제목만 있는 인덱스"가 아니라, 개별 토픽에서 바로 원문 링크와 짧은 메모를 따라가며 맥락을 복원할 수 있다.
+
+특히 다음 세 부류가 이전보다 유용해졌다.
+
+1. **연구 트랙 추적** — arXiv / 학회 / 연구 블로그를 함께 묶어 한 개념이 논문-블로그-구현체로 어떻게 이어지는지 볼 수 있다.
+2. **제품 허브 탐색** — 모델/SDK/프레임워크 entity 페이지에서 출시 신호, 공식 문서, 구현 저장소를 한 번에 볼 수 있다.
+3. **운영 패턴 비교** — eval, observability, serving, safety 항목에서 서로 다른 벤더 문서를 나란히 따라가며 공통 패턴을 비교할 수 있다.
 
 ## 구조
 
@@ -27,6 +75,43 @@ flowchart TD
     Root[AI 개발 핫토픽 100선] --> S9[Safety & Alignment<br/>10 topics]
     Root[AI 개발 핫토픽 100선] --> S10[Dev Tooling & Frameworks<br/>10 topics]
 ```
+
+상단 다이어그램은 분야별 분류를 보여주지만, 실제 읽기 순서는 분류보다 의존관계가 중요하다. 실무자는 보통 `Agents → Harness → Inference/RAG → Evals → Safety` 순서로 읽을 때 전체 그림이 잘 잡힌다.
+
+## 우선 읽기 경로
+
+### 1. 에이전트 시스템 설계자에게 중요한 페이지
+
+- [[context-engineering|Context Engineering for Long-Horizon Agents]]
+- [[subagents|Subagents & Multi-Agent Orchestration in the Harness]]
+- [[agent-memory-systems|Agent Memory Systems (Episodic / Semantic / Working)]]
+- [[tool-contracts-for-agents|Tool Contracts & Writing Tools for Agents]]
+- [[llm-as-judge-calibration|LLM-as-Judge Calibration & Reliability]]
+
+### 2. 서빙 / 인프라 엔지니어에게 중요한 페이지
+
+- [[disaggregated-serving|Prefill/Decode Disaggregated Serving]]
+- [[wide-expert-parallelism|Wide Expert Parallelism (WideEP) for MoE]]
+- [[lmcache|LMCache + Mooncake KV Cache Layer]]
+- [[flashattention-4|FlashAttention-4 on Blackwell]]
+- [[tensorrt-llm|TensorRT-LLM 1.3 with Day-0 Model Support]]
+
+### 3. 평가 / 안전 / 운영 담당자에게 중요한 페이지
+
+- [[agent-trajectory-evaluation|Agent Trajectory Evaluation]]
+- [[tool-invocation-evaluators|Tool Selection & Tool Invocation Evaluators]]
+- [[llm-observability-platforms|Production Observability Platforms Convergence]]
+- [[agent-prompt-injection-defense|Agent Prompt Injection Defense & Trustworthy Agents]]
+- [[responsible-scaling-policy-v3|Responsible Scaling Policy v3 & Frontier Safety Roadmap]]
+
+## 읽는 법
+
+- **새로운 개념을 이해하려면** concept 페이지부터 읽는다.
+- **특정 제품/모델/프레임워크를 따라가려면** entity 페이지를 읽는다.
+- **하나의 문서군을 빠르게 훑으려면** summary 페이지를 우선 본다.
+- **시간에 묶인 사례를 이해하려면** case-study를 읽는다.
+
+이 허브는 "분야 지도" 역할을 한다. 실제 학습이나 실무 적용을 위해서는 각 토픽 페이지의 `source 기반 참고` 섹션으로 내려가 원문 신호를 확인하는 것이 좋다.
 
 ## 섹션별 개요
 
@@ -159,3 +244,40 @@ flowchart TD
 - [[vercel-ai-sdk|Vercel AI SDK 6]] — Next.js·React 친화의 TypeScript LLM·에이전트 SDK.
 - [[mastra|Mastra (TypeScript Agent Framework)]] — Gatsby 팀이 만든 TypeScript 풀스택 에이전트·워크플로우 프레임워크.
 - [[instructor|Instructor (Multi-Language Structured Outputs)]] — Pydantic 기반 구조화 출력·검증·재시도를 캡슐화한 다언어 LLM 라이브러리.
+
+## 우선순위 독서 경로
+
+시간이 부족하면 아래 순서로 읽는 것이 효율적이다.
+
+### 1. 에이전트 아키텍처 축
+- [[context-engineering|Context Engineering]]
+- [[orchestrator-worker-pattern|Orchestrator-Worker Multi-Agent Pattern]]
+- [[agent-memory-systems|Agent Memory Systems]]
+
+### 2. 하네스 / 도구 축
+- [[model-context-protocol|MCP 2026 Roadmap & Enterprise Readiness]]
+- [[claude-agent-sdk|Claude Agent SDK]]
+- [[langgraph|LangGraph 1.0 / 2.0]]
+
+### 3. 추론 / 서빙 축
+- [[flashattention-4|FlashAttention-4 on Blackwell]]
+- [[disaggregated-serving|Prefill/Decode Disaggregated Serving]]
+- [[lmcache|LMCache + Mooncake KV Cache Layer]]
+
+### 4. RAG / 메모리 축
+- [[contextual-retrieval|Contextual Retrieval]]
+- [[agentic-rag|Agentic RAG]]
+- [[letta-stateful-agent-runtime|Letta (MemGPT) Stateful Agent Runtime]]
+
+### 5. 평가 / 안전성 축
+- [[llm-as-judge-calibration|LLM-as-Judge Calibration & Reliability]]
+- [[tool-invocation-evaluators|Tool Selection & Tool Invocation Evaluators]]
+- [[agent-prompt-injection-defense|Agent Prompt Injection Defense & Trustworthy Agents]]
+
+## 후속 심화 방향
+
+현재 상태는 "폭넓은 coverage + source 연결"에 최적화돼 있다. 다음 단계로는 아래 세 가지가 가장 효과적이다.
+
+- **핵심 논문 분리**: arXiv / TACL / workshop proposal을 `papers/`로 분리해 장문 paper 페이지화
+- **비교 문서 작성**: 동일 축의 vendor / framework / benchmark를 비교표로 정리
+- **운영 관점 보강**: 각 entity 페이지에 성능, 배포, 실패 모드, 생태계 위치 섹션 추가

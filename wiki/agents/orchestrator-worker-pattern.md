@@ -23,12 +23,34 @@ Anthropic이 Claude의 Research 기능 백엔드로 공개한 이 패턴이 단�
 - [Building agents with the Claude Agent SDK](https://claude.com/blog/building-agents-with-the-claude-agent-sdk)
 - [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](https://arxiv.org/abs/2509.02547)
 
+## 해석 포인트
+
+Orchestrator-Worker Multi-Agent Pattern은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `anthropic.com×1, github.com×1, code.claude.com×1, claude.com×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 리드 에이전트가 작업을 분해해 병렬 서브에이전트에게 위임하고 결과를 합성하는 분산형 에이전트 아키텍처.
 - 왜 중요한가: Anthropic이 Claude의 Research 기능 백엔드로 공개한 이 패턴이 단일 Opus 4 대비 90.2% 향상을 보인 이후 사실상 표준이 되었고, 2026년 4월 8일 출시된 Claude Managed Agents는 이 패턴을 매니지드 인프라로 제품화했다.
 - 직접 수집 원문: 5개
 - 주요 도메인: anthropic.com×1, github.com×1, code.claude.com×1, claude.com×1, arxiv.org×1
+
+## 핵심 구조
+
+리드 에이전트가 작업을 분해해 병렬 서브에이전트에게 위임하고 결과를 합성하는 분산형 에이전트 아키텍처. 에이전트 토픽은 보통 모델 자체보다 **루프 구조, 상태 관리, 작업 분해, 검증 방식**이 핵심이다. 이번 source 묶음도 `anthropic.com×1, github.com×1, code.claude.com×1, claude.com×1, arxiv.org×1`를 오가며 설계 패턴과 구현 사례를 함께 보여 준다.
+
+## 핵심 포인트
+
+Orchestrator-Worker Multi-Agent Pattern는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 리드 에이전트가 작업을 분해해 병렬 서브에이전트에게 위임하고 결과를 합성하는 분산형 에이전트 아키텍처.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+
+## source로 보면
+
+수집된 source는 anthropic.com×1, arxiv.org×1, claude.com×1, code.claude.com×1, github.com×1로 분포한다. 연구·공식문서·구현체가 모두 섞여 있어서 개념과 운영을 함께 추적하기 좋다.
+
+## 실무 관점
+
+실무에서는 장기 실행, 상태 관리, 실패 복구, 평가 루프를 함께 설계해야 이 토픽이 효과를 낸다. 즉 개별 아이디어보다 에이전트 시스템 전체의 제약 속에서 읽는 것이 중요하다.
 
 ## source 기반 참고
 

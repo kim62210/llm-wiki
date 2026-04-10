@@ -27,12 +27,34 @@ updated: 2026-04-10
 - [Demystifying Reinforcement Learning in Agentic Reasoning](https://arxiv.org/html/2510.11701v1)
 - [Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning](https://arxiv.org/abs/2505.01441)
 
+## 해석 포인트
+
+Agentic RL (Tool-Integrated Reasoning 학습)은 **보상 신호와 학습 루프를 어떻게 설계할지에 초점을 둔 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `arxiv.org×5`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 학습 안정성, 보상 품질, compute 효율, 일반화를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 도구 호출 궤적 전체를 RL로 최적화하는 에이전트 post-training 패러다임.
 - 왜 중요한가: 단일 턴 추론을 넘어 멀티스텝 도구 사용으로 RL이 확장되면서, POMDP 관점의 새 알고리즘과 희소 보상 문제에 대한 연구가 폭발적으로 증가하고 있다.
 - 직접 수집 원문: 5개
 - 주요 도메인: arxiv.org×5
+
+## 핵심 메커니즘
+
+도구 호출 궤적 전체를 RL로 최적화하는 에이전트 post-training 패러다임. 이 유형의 topic은 보통 하나의 제품보다 **반복 가능한 패턴 / 평가 기준 / 설계 trade-off**로 읽는 편이 유용하다. 이번 source 묶음에서도 `arxiv.org`가 함께 나오면서 개념, 구현, 평가가 연결되어 있다.
+
+## 핵심 포인트
+
+Agentic RL (Tool-Integrated Reasoning 학습)는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 이 페이지는 Agentic RL (Tool-Integrated Reasoning 학습)를 다룬다. 핵심은 도구 호출 궤적 전체를 RL로 최적화하는 에이전트 post-training 패러다임이며, 2026년 4월 시점에 왜 다시 중요해졌는지 정리한다.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+
+## source로 보면
+
+수집된 source는 arxiv.org×5로 분포한다. 연구 논문 비중이 높아 메커니즘·평가·한계 쪽 정보가 중심이다.
+
+## 실무 관점
+
+학습/후학습 기법은 이름보다 목적 함수와 검증 방식이 중요하다. 보상 신호를 어떻게 만들고 어떤 실패 모드를 줄이는지, 그리고 추론 성능과 운영 비용이 어떻게 바뀌는지를 함께 봐야 실무 의미가 생긴다.
 
 ## source 기반 참고
 

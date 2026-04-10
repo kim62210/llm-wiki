@@ -32,12 +32,34 @@ updated: 2026-04-10
 - [Responsible Scaling Policy v3.1 (PDF, April 2 2026)](https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf)
 - [Anthropic's RSP v3.0 analysis (GovAI)](https://www.governance.ai/analysis/anthropics-rsp-v3-0-how-it-works-whats-changed-and-some-reflections)
 
+## 해석 포인트
+
+Responsible Scaling Policy v3 & Frontier Safety Roadmap은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `anthropic.com×3, www-cdn.anthropic.com×1, governance.ai×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 역량 임계치별 위험 완화를 명문화하고 공개 로드맵으로 진척도를 투명화하는 거버넌스.
 - 왜 중요한가: 2026년 2월 24일 RSP v3.0 공개 후 4월 2일 v3.1과 Frontier Safety Roadmap이 정식 공표되면서 "하드 일시중지" 조항 철회 논란이 일었고, SaferAI·GovAI 등이 비판하는 가운데 산업 표준 거버넌스 논쟁의 중심이 되었다.
 - 직접 수집 원문: 5개
 - 주요 도메인: anthropic.com×3, www-cdn.anthropic.com×1, governance.ai×1
+
+## 핵심 메커니즘
+
+역량 임계치별 위험 완화를 명문화하고 공개 로드맵으로 진척도를 투명화하는 거버넌스. 이 개념은 단일 문장 정의보다 **어떤 failure mode를 설명하는지, 어떤 구조적 trade-off를 드러내는지**를 함께 볼 때 가치가 커진다.
+
+## 핵심 포인트
+
+Responsible Scaling Policy v3 & Frontier Safety Roadmap는 개별 source를 빠르게 따라잡기 위한 요약 허브다. 현재 본문은 이 페이지는 Responsible Scaling Policy v3 & Frontier Safety Roadmap를 요약하고, 지금 시점에 왜 중요한지 빠르게 따라잡기 위한 페이지다. 핵심 범위는 역량 임계치별 위험 완화를 명문화하고 공개 로드맵으로 진척도를 투명화하는 거버넌스이다.를 중심으로 구성되어 있고, 수집된 근거 5건이 요약의 배경을 받쳐준다.
+
+## source로 보면
+
+수집된 source는 anthropic.com×3, governance.ai×1, www-cdn.anthropic.com×1로 분포한다. 공식 문서/엔지니어링 글 비중이 높아 운영·제품 맥락이 강하다.
+
+## 실무 관점
+
+개념 페이지는 용어 정의에서 끝나지 않고, 어떤 시스템 설계 문제를 해결하려고 등장했는지와 어디까지가 적용 범위인지까지 함께 봐야 한다.
 
 ## source 기반 참고
 

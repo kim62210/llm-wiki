@@ -31,12 +31,38 @@ updated: 2026-04-10
 - [DistServe USENIX OSDI 2024 Paper](https://www.usenix.org/system/files/osdi24-zhong-yinmin.pdf)
 - [Disaggregated Prefill and Decode - Perplexity Engineering Blog](https://www.perplexity.ai/hub/blog/disaggregated-prefill-and-decode)
 
+## 해석 포인트
+
+Prefill/Decode Disaggregated Serving은 **단일 모델 성능보다 서빙 토폴로지와 라우팅 품질이 핵심인 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `github.com×2, docs.vllm.ai×1, rocm.blogs.amd.com×1, vllm.ai×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 TTFT, TPOT, 메모리 사용량, 하드웨어 의존성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 프리필과 디코드 단계를 물리적으로 분리된 GPU 풀에서 독립 스케일링.
 - 왜 중요한가: 2026년 초 vLLM, SGLang, Ray Serve, Dynamo 등 모든 메이저 프레임워크가 PD 디스어그리게이션을 프로덕션급으로 성숙시켰고, Meta와 Hugging Face 등에서 실제 운영에 투입되며 TTFT와 TPOT를 SLO로 분리 최적화하는 표준 패턴이 되었다.
 - 직접 수집 원문: 9개
 - 주요 도메인: github.com×2, docs.vllm.ai×1, rocm.blogs.amd.com×1, vllm.ai×1, docs.ray.io×1
+
+## 핵심 메커니즘
+
+프리필과 디코드 단계를 물리적으로 분리된 GPU 풀에서 독립 스케일링. 추론/서빙 토픽은 대부분 **throughput, latency, memory, hardware topology**의 trade-off에서 의미가 생긴다. source를 함께 보면 `github.com×2, docs.vllm.ai×1, rocm.blogs.amd.com×1, vllm.ai×1, docs.ray.io×1`처럼 논문과 구현체/벤더 문서가 동시에 등장한다.
+
+## 구현·운영 관점
+
+2026년 초 vLLM, SGLang, Ray Serve, Dynamo 등 모든 메이저 프레임워크가 PD 디스어그리게이션을 프로덕션급으로 성숙시켰고, Meta와 Hugging Face 등에서 실제 운영에 투입되며 TTFT와 TPOT를 SLO로 분리 최적화하는 표준 패턴이 되었다. 따라서 이 페이지는 개념 자체보다 '어떤 병목을 풀기 위해 도입되는가'와 '어떤 하드웨어/서빙 스택을 전제하는가'를 중심으로 읽는 편이 유용하다.
+
+## 핵심 포인트
+
+Prefill/Decode Disaggregated Serving는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 프리필과 디코드 단계를 물리적으로 분리된 GPU 풀에서 운영하는 서빙 아키텍처. 또한 프리필과 디코드 단계를 물리적으로 분리된 GPU 풀에서 독립 스케일링.이며, 직접 수집한 source 9건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+
+## source로 보면
+
+수집된 source는 github.com×2, arxiv.org×1, docs.ray.io×1, docs.vllm.ai×1, perplexity.ai×1로 분포한다. 연구·공식문서·구현체가 모두 섞여 있어서 개념과 운영을 함께 추적하기 좋다.
+
+## 실무 관점
+
+실무 관점에서는 지연시간, 처리량, 메모리 사용량, 비용 구조를 함께 봐야 한다. 따라서 이 페이지의 개념은 단독 기법이 아니라 전체 serving stack 안에서 어떤 병목을 줄이는지로 이해하는 편이 좋다.
 
 ## source 기반 참고
 

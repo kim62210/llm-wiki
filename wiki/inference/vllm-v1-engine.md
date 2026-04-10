@@ -24,12 +24,38 @@ v0.11.0에서 V0 코드가 완전히 제거되고 V1로 단일화되었으며, 2
 - [vLLM Disaggregated Serving Example Docs](https://docs.vllm.ai/en/latest/examples/online_serving/disaggregated_serving.html)
 - [vLLM Release Notes - NVIDIA Docs](https://docs.nvidia.com/deeplearning/frameworks/vllm-release-notes/index.html)
 
+## 해석 포인트
+
+vLLM V1 Engine on Blackwell (GB200/GB300)은 단순한 제품 소개보다 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 읽는 편이 유용하다. 이번 source 묶음에서도 `github.com×2, vllm.ai×1, docs.vllm.ai×1, docs.nvidia.com×1`처럼 연구·문서·구현체 신호가 함께 모여 있어, 단일 발표보다 생태계 위치를 같이 봐야 한다.
+
+실무에서는 이 엔티티를 '최신인가?'보다 **어떤 운영 전제와 통합면을 요구하는가**로 평가해야 한다. 즉 TTFT, TPOT, 메모리 사용량, 하드웨어 의존성 같은 기준으로 다른 대안과 비교해야 실제 도입 판단에 도움이 된다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: vLLM V0 완전 폐기 후 V1 엔진을 기반으로 Blackwell 아키텍처에서 속도 한계를 추구하는 Q1 로드맵.
 - 왜 중요한가: v0.11.0에서 V0 코드가 완전히 제거되고 V1로 단일화되었으며, 2026 Q1 로드맵이 GB200/B200/H200 디스어그리게이트 클러스터에서의 "speed of light"를 명시적 목표로 선언하면서 대규모 서빙 팀의 최우선 트랙이 되었다.
 - 직접 수집 원문: 5개
 - 주요 도메인: github.com×2, vllm.ai×1, docs.vllm.ai×1, docs.nvidia.com×1
+
+## 핵심 메커니즘
+
+vLLM V0 완전 폐기 후 V1 엔진을 기반으로 Blackwell 아키텍처에서 속도 한계를 추구하는 Q1 로드맵. 추론/서빙 토픽은 대부분 **throughput, latency, memory, hardware topology**의 trade-off에서 의미가 생긴다. source를 함께 보면 `github.com×2, vllm.ai×1, docs.vllm.ai×1, docs.nvidia.com×1`처럼 논문과 구현체/벤더 문서가 동시에 등장한다.
+
+## 구현·운영 관점
+
+v0.11.0에서 V0 코드가 완전히 제거되고 V1로 단일화되었으며, 2026 Q1 로드맵이 GB200/B200/H200 디스어그리게이트 클러스터에서의 "speed of light"를 명시적 목표로 선언하면서 대규모 서빙 팀의 최우선 트랙이 되었다. 따라서 이 페이지는 개념 자체보다 '어떤 병목을 풀기 위해 도입되는가'와 '어떤 하드웨어/서빙 스택을 전제하는가'를 중심으로 읽는 편이 유용하다.
+
+## 핵심 포인트
+
+vLLM V1 Engine on Blackwell (GB200/GB300)는 현재 시점에서 하나의 제품/모델/프레임워크 허브로 읽는 편이 맞다. 기본 정의는 vLLM V0 완전 폐기 후 V1 엔진을 기반으로 Blackwell 아키텍처에서 속도 한계를 추구하는 Q1 로드맵.이며, 직접 수집한 source 5건은 github.com×2, docs.nvidia.com×1, docs.vllm.ai×1, vllm.ai×1처럼 여러 채널에 걸쳐 분포한다.
+
+## source로 보면
+
+수집된 source는 github.com×2, docs.nvidia.com×1, docs.vllm.ai×1, vllm.ai×1로 분포한다. 공식 문서와 구현 저장소가 같이 있어 실제 도입 관점의 정보가 강한 편이다.
+
+## 실무 관점
+
+실무 관점에서는 지연시간, 처리량, 메모리 사용량, 비용 구조를 함께 봐야 한다. 따라서 이 페이지의 개념은 단독 기법이 아니라 전체 serving stack 안에서 어떤 병목을 줄이는지로 이해하는 편이 좋다.
 
 ## source 기반 참고
 

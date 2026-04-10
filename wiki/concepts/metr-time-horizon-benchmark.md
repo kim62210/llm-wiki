@@ -24,12 +24,30 @@ updated: 2026-04-10
 - [Measuring AI Ability to Complete Long Software Tasks (arXiv 2503.14499)](https://arxiv.org/abs/2503.14499)
 - [How Does Time Horizon Vary Across Domains?](https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains/)
 
+## 해석 포인트
+
+METR Time Horizon Benchmark은 단순한 제품 소개보다 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 읽는 편이 유용하다. 이번 source 묶음에서도 `metr.org×4, arxiv.org×1`처럼 연구·문서·구현체 신호가 함께 모여 있어, 단일 발표보다 생태계 위치를 같이 봐야 한다.
+
+실무에서는 이 엔티티를 '최신인가?'보다 **어떤 운영 전제와 통합면을 요구하는가**로 평가해야 한다. 즉 평가셋 범위, 난도 분포, 실제 사용성과의 상관 같은 기준으로 다른 대안과 비교해야 실제 도입 판단에 도움이 된다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 프론티어 에이전트가 50% 신뢰도로 완수 가능한 인간 작업 시간을 측정하는 지표.
 - 왜 중요한가: 2026년 1월 29일 Time Horizon 1.1 공개 후 3월 업데이트에서 최근 모델의 배증 주기가 165일 → 131일로 가속됨이 확인되며, 장기 자율성 위험 예측의 사실상 업계 표준 지표로 자리잡았다.
 - 직접 수집 원문: 5개
 - 주요 도메인: metr.org×4, arxiv.org×1
+
+## 핵심 포인트
+
+METR Time Horizon Benchmark는 현재 시점에서 하나의 제품/모델/프레임워크 허브로 읽는 편이 맞다. 기본 정의는 프론티어 에이전트가 50% 신뢰도로 완수 가능한 인간 작업 시간을 측정하는 지표.이며, 직접 수집한 source 5건은 metr.org×4, arxiv.org×1처럼 여러 채널에 걸쳐 분포한다.
+
+## source로 보면
+
+수집된 source는 metr.org×4, arxiv.org×1로 분포한다. 연구 논문 비중이 높아 메커니즘·평가·한계 쪽 정보가 중심이다.
+
+## 실무 관점
+
+개념 페이지는 용어 정의에서 끝나지 않고, 어떤 시스템 설계 문제를 해결하려고 등장했는지와 어디까지가 적용 범위인지까지 함께 봐야 한다.
 
 ## source 기반 참고
 

@@ -23,12 +23,34 @@ updated: 2026-04-10
 - [Effective context engineering for AI agents (Anthropic)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 - [Context Rot: How Increasing Input Tokens Impacts LLM Performance](https://www.trychroma.com/research/context-rot)
 
+## 해석 포인트
+
+Context Folding & Sub-Trajectory Compression은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `arxiv.org×3, anthropic.com×1, trychroma.com×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 에이전트가 서브태스크 단위로 분기한 뒤 완료 시 그 구간을 요약으로 압축해 활성 컨텍스트를 10배 가까이 줄이는 기법.
 - 왜 중요한가: 2025년 10월 ByteDance의 "Scaling Long-Horizon LLM Agent via Context-Folding"이 ReAct 베이스라인 대비 10배 작은 컨텍스트로 동등 성능을 보였고, 후속 AgentFold가 BrowseComp에서 OpenAI o4-mini를 능가하면서 단순 컨텍스트 확장이 아닌 능동적 압축이 long-horizon 에이전트의 핵심임이 확립되었다.
 - 직접 수집 원문: 5개
 - 주요 도메인: arxiv.org×3, anthropic.com×1, trychroma.com×1
+
+## 핵심 구조
+
+에이전트가 서브태스크 단위로 분기한 뒤 완료 시 그 구간을 요약으로 압축해 활성 컨텍스트를 10배 가까이 줄이는 기법. 에이전트 토픽은 보통 모델 자체보다 **루프 구조, 상태 관리, 작업 분해, 검증 방식**이 핵심이다. 이번 source 묶음도 `arxiv.org×3, anthropic.com×1, trychroma.com×1`를 오가며 설계 패턴과 구현 사례를 함께 보여 준다.
+
+## 핵심 포인트
+
+Context Folding & Sub-Trajectory Compression는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 에이전트가 서브태스크 단위로 분기한 뒤 완료 시 그 구간을 요약으로 압축해 활성 컨텍스트를 10배 가까이 줄이는 기법.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+
+## source로 보면
+
+수집된 source는 arxiv.org×3, anthropic.com×1, trychroma.com×1로 분포한다. 연구 논문과 공식 문서가 함께 있어 원리와 제품화 흐름을 같이 읽을 수 있다.
+
+## 실무 관점
+
+실무에서는 장기 실행, 상태 관리, 실패 복구, 평가 루프를 함께 설계해야 이 토픽이 효과를 낸다. 즉 개별 아이디어보다 에이전트 시스템 전체의 제약 속에서 읽는 것이 중요하다.
 
 ## source 기반 참고
 

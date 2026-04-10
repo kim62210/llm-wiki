@@ -1,5 +1,25 @@
 # Activity Log
 
+## 2026-04-10 — Parallel deepening: hot-topic 장문 심화
+- **대상**: hot-topic 파생 페이지 전반 (현재 98개 반영 페이지 기준)
+- **수행 내용**:
+  - agents / concepts / inference / rag / tooling / training 카테고리별 장문 설명 섹션 추가
+  - entity 페이지는 `핵심 포인트` + `실무 관점` 보강
+  - concept 페이지는 `핵심 메커니즘` + `실무 관점` 보강
+  - source 기반 참고 섹션은 유지하고, 그 위에 해석 가능한 장문 본문을 덧대는 방식으로 확장
+
+## 2026-04-10 — Deepen: hot-topic 파생 페이지 장문 확장
+- **대상**: hot-topic 기반 topic packet 97개 / 반영 페이지 98개
+- **수행 내용**:
+  - inference / rag / tooling / training / agents / concepts 전반에 장문 해석 섹션 추가
+  - `해석 포인트`, `실무 관점`, `2026년 4월 큐레이션 요약`, `source 기반 참고` 구조로 정렬
+  - 얇은 허브형 문장을 운영/비교 관점 문단으로 확장
+- **결과**:
+  - hot-topic 관련 페이지 97개 갱신
+  - manifest 수집 성공: 452 / 452 유지
+  - 깨진 위키링크: 0
+  - index 누락 페이지: 0
+
 ## 2026-04-10 — Enrich: hot-topic source synthesis 보강
 - **대상**: `raw/2026-04-10-hot-ai-topics-100.md`에서 파생된 hot-topic 위키 페이지 전반
 - **수행 내용**:

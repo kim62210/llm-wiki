@@ -23,12 +23,34 @@ Anthropic이 2025년 11월 "Effective harnesses for long-running agents"에서 i
 - [Claude Agent SDK Overview](https://code.claude.com/docs/en/agent-sdk/overview)
 - [anthropics/claude-agent-sdk-typescript](https://github.com/anthropics/claude-agent-sdk-typescript)
 
+## 해석 포인트
+
+Agent Harnesses for Long-Running Coding Sessions은 **모델 능력보다 개발자 경험과 운영 통합면이 중요한 도구 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `anthropic.com×3, code.claude.com×1, github.com×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 컨텍스트 윈도우를 넘어 몇 시간 동안 자율적으로 코딩을 이어가게 하는 에이전트 실행 구조.
 - 왜 중요한가: Anthropic이 2025년 11월 "Effective harnesses for long-running agents"에서 initializer + coding agent 2단 구조와 claude-progress.txt 기반 세션 이어받기 패턴을 공개했고, 2026년 3월에는 generator-evaluator 3-agent 구조로 확장한 후속편을 내며 "harness engineering"을 공식 카테고리로 띄웠다.
 - 직접 수집 원문: 5개
 - 주요 도메인: anthropic.com×3, code.claude.com×1, github.com×1
+
+## 핵심 메커니즘
+
+컨텍스트 윈도우를 넘어 몇 시간 동안 자율적으로 코딩을 이어가게 하는 에이전트 실행 구조. 이 유형의 topic은 보통 하나의 제품보다 **반복 가능한 패턴 / 평가 기준 / 설계 trade-off**로 읽는 편이 유용하다. 이번 source 묶음에서도 `anthropic.com, code.claude.com, github.com`가 함께 나오면서 개념, 구현, 평가가 연결되어 있다.
+
+## 핵심 포인트
+
+Agent Harnesses for Long-Running Coding Sessions는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 컨텍스트 윈도우를 넘어 몇 시간 동안 자율적으로 코딩을 이어가게 하는 에이전트 실행 구조.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+
+## source로 보면
+
+수집된 source는 anthropic.com×3, code.claude.com×1, github.com×1로 분포한다. 공식 문서와 구현 저장소가 같이 있어 실제 도입 관점의 정보가 강한 편이다.
+
+## 실무 관점
+
+도구/프레임워크 페이지는 기능 목록보다 생태계 위치가 중요하다. 어떤 모델·런타임·개발 흐름과 잘 맞는지, 그리고 팀 워크플로우에 어떤 경계 조건을 추가하는지까지 같이 봐야 한다.
 
 ## source 기반 참고
 

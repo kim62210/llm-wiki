@@ -27,12 +27,34 @@ updated: 2026-04-10
 - [Introducing Claude Opus 4.5 (SWE-bench Verified 80.9%)](https://www.anthropic.com/news/claude-opus-4-5)
 - [Introducing Claude Sonnet 4.5 (OSWorld 61.4%, 30+ hour focus)](https://www.anthropic.com/news/claude-sonnet-4-5)
 
+## 해석 포인트
+
+Long-Horizon Agent Benchmarks (GAIA 2 / SWE-Bench Pro / SWE-EVO)은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `arxiv.org×2, anthropic.com×2, openhands.dev×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 평가셋 범위, 난도 분포, 실제 사용성과의 상관를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 수십~수백 단계, 수십 파일에 걸친 실세계 과제로 에이전트의 지속 추론·도구 사용·환경 상호작용을 평가하는 벤치마크 세대.
 - 왜 중요한가: 2025년 9월 Meta의 ARE 플랫폼과 GAIA 2가 시간·예산 제약을 도입했고, 2025년 12월 SWE-EVO는 GPT-5가 SWE-Bench Verified(65%) 대비 21%만 해결한다는 결과로 long-horizon 갭을 폭로했으며, 이로 인해 2026년 1분기 모든 주요 lab이 평가 프레임워크를 long-horizon 중심으로 재정비 중이다.
 - 직접 수집 원문: 5개
 - 주요 도메인: arxiv.org×2, anthropic.com×2, openhands.dev×1
+
+## 핵심 구조
+
+수십~수백 단계, 수십 파일에 걸친 실세계 과제로 에이전트의 지속 추론·도구 사용·환경 상호작용을 평가하는 벤치마크 세대. 에이전트 토픽은 보통 모델 자체보다 **루프 구조, 상태 관리, 작업 분해, 검증 방식**이 핵심이다. 이번 source 묶음도 `arxiv.org×2, anthropic.com×2, openhands.dev×1`를 오가며 설계 패턴과 구현 사례를 함께 보여 준다.
+
+## 핵심 포인트
+
+Long-Horizon Agent Benchmarks (GAIA 2 / SWE-Bench Pro / SWE-EVO)는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 이 페이지는 Long-Horizon Agent Benchmarks (GAIA 2 / SWE-Bench Pro / SWE-EVO)를 다룬다. 핵심은 수십~수백 단계, 수십 파일에 걸친 실세계 과제로 에이전트의 지속 추론·도구 사용·환경 상호작용을 평가하는 벤치마크 세대이며, 2026년 4월 시점에 왜 다시 중요해졌는지 정리한다.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+
+## source로 보면
+
+수집된 source는 anthropic.com×2, arxiv.org×2, openhands.dev×1로 분포한다. 연구 논문과 공식 문서가 함께 있어 원리와 제품화 흐름을 같이 읽을 수 있다.
+
+## 실무 관점
+
+실무에서는 장기 실행, 상태 관리, 실패 복구, 평가 루프를 함께 설계해야 이 토픽이 효과를 낸다. 즉 개별 아이디어보다 에이전트 시스템 전체의 제약 속에서 읽는 것이 중요하다.
 
 ## source 기반 참고
 

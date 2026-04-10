@@ -83,12 +83,34 @@ Lethal Trifecta 방어는 주로 **우상 사분면(Deterministic Feedback, Comp
 
 [[agentic manual testing|에이전틱 수동 테스트]], 브라우저 자동화([[browser automation agents]]), 이메일 처리 에이전트 등이 자연스럽게 Lethal Trifecta 위험에 노출되기 쉬운 영역이다.
 
+## 해석 포인트
+
+Lethal Trifecta (치명적 3요소)은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `simonwillison.net×2, anthropic.com×2, arxiv.org×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 사적 데이터 접근 + 신뢰할 수 없는 콘텐츠 노출 + 외부 통신이 결합될 때 발생하는 에이전트의 구조적 취약성과 그 방어 패턴.
 - 왜 중요한가: Simon Willison이 명명한 "lethal trifecta" 개념이 2026년 1월 IBM Bob, Superhuman AI, Notion AI, Claude Cowork 등 4개 주요 에이전트 제품에서 5일 만에 잇따라 실증되며 보안 위기가 폭발했고, 3월에는 Palo Alto Unit 42가 in-the-wild 인다이렉트 프롬프트 인젝션을 정식 보고하면서 에이전트 아키텍처 설계 시 보안이 1차 고려사항으로 격상되었다.
 - 직접 수집 원문: 5개
 - 주요 도메인: simonwillison.net×2, anthropic.com×2, arxiv.org×1
+
+## 핵심 메커니즘
+
+사적 데이터 접근 + 신뢰할 수 없는 콘텐츠 노출 + 외부 통신이 결합될 때 발생하는 에이전트의 구조적 취약성과 그 방어 패턴. 이 개념은 단일 문장 정의보다 **어떤 failure mode를 설명하는지, 어떤 구조적 trade-off를 드러내는지**를 함께 볼 때 가치가 커진다.
+
+## 핵심 포인트
+
+Lethal Trifecta (치명적 3요소)는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+
+## source로 보면
+
+수집된 source는 anthropic.com×2, simonwillison.net×2, arxiv.org×1로 분포한다. 연구 논문과 공식 문서가 함께 있어 원리와 제품화 흐름을 같이 읽을 수 있다.
+
+## 실무 관점
+
+개념 페이지는 용어 정의에서 끝나지 않고, 어떤 시스템 설계 문제를 해결하려고 등장했는지와 어디까지가 적용 범위인지까지 함께 봐야 한다.
 
 ## source 기반 참고
 

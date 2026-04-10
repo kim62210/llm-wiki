@@ -30,12 +30,38 @@ MoE 전문가를 다수 노드에 분산하고 EPLB로 로드 밸런싱하는 �
 - [Expert Parallel Deployment - vLLM Docs](https://docs.vllm.ai/en/latest/serving/expert_parallel_deployment/)
 - [DeepEP: Expert-Parallel Communication Library GitHub](https://github.com/deepseek-ai/DeepEP)
 
+## 해석 포인트
+
+Wide Expert Parallelism (WideEP) for MoE은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `vllm.ai×3, docs.vllm.ai×1, developers.redhat.com×1, lmsys.org×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 TTFT, TPOT, 메모리 사용량, 하드웨어 의존성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: DeepSeek급 MoE 모델을 32+ GPU에 걸쳐 전문가를 분산시키는 병렬화 전략.
 - 왜 중요한가: 2025년 12월 vLLM이 H200에서 2.2k tok/s/GPU를 달성했고 2026년 2월 Blackwell 파트 I 블로그가 공개되었으며, 3월 SGLang의 Elastic EP가 부분 장애 내성을 추가해 MoE 대규모 서빙의 운영 성숙도가 급격히 올라갔다.
 - 직접 수집 원문: 7개
 - 주요 도메인: vllm.ai×3, docs.vllm.ai×1, developers.redhat.com×1, lmsys.org×1, github.com×1
+
+## 핵심 메커니즘
+
+DeepSeek급 MoE 모델을 32+ GPU에 걸쳐 전문가를 분산시키는 병렬화 전략. 추론/서빙 토픽은 대부분 **throughput, latency, memory, hardware topology**의 trade-off에서 의미가 생긴다. source를 함께 보면 `vllm.ai×3, docs.vllm.ai×1, developers.redhat.com×1, lmsys.org×1, github.com×1`처럼 논문과 구현체/벤더 문서가 동시에 등장한다.
+
+## 구현·운영 관점
+
+2025년 12월 vLLM이 H200에서 2.2k tok/s/GPU를 달성했고 2026년 2월 Blackwell 파트 I 블로그가 공개되었으며, 3월 SGLang의 Elastic EP가 부분 장애 내성을 추가해 MoE 대규모 서빙의 운영 성숙도가 급격히 올라갔다. 따라서 이 페이지는 개념 자체보다 '어떤 병목을 풀기 위해 도입되는가'와 '어떤 하드웨어/서빙 스택을 전제하는가'를 중심으로 읽는 편이 유용하다.
+
+## 핵심 포인트
+
+Wide Expert Parallelism (WideEP) for MoE는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 MoE 전문가를 다수 노드에 분산하고 EPLB로 로드 밸런싱하는 서빙 전략. 또한 DeepSeek급 MoE 모델을 32+ GPU에 걸쳐 전문가를 분산시키는 병렬화 전략.이며, 직접 수집한 source 7건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+
+## source로 보면
+
+수집된 source는 vllm.ai×3, developers.redhat.com×1, docs.vllm.ai×1, github.com×1, lmsys.org×1로 분포한다. 공식 문서와 구현 저장소가 같이 있어 실제 도입 관점의 정보가 강한 편이다.
+
+## 실무 관점
+
+실무 관점에서는 지연시간, 처리량, 메모리 사용량, 비용 구조를 함께 봐야 한다. 따라서 이 페이지의 개념은 단독 기법이 아니라 전체 serving stack 안에서 어떤 병목을 줄이는지로 이해하는 편이 좋다.
 
 ## source 기반 참고
 

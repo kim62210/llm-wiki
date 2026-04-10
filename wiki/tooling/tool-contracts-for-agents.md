@@ -23,12 +23,34 @@ Anthropic의 "Writing effective tools for agents" 가이드라인과 2026년 2�
 - [Cursor 3.0 Changelog](https://cursor.com/changelog/3-0)
 - [Chat modes (Aider)](https://aider.chat/docs/usage/modes.html)
 
+## 해석 포인트
+
+Tool Contracts & Writing Tools for Agents은 **모델 능력보다 개발자 경험과 운영 통합면이 중요한 도구 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `anthropic.com×2, code.claude.com×1, cursor.com×1, aider.chat×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+
+실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+
 ## 2026년 4월 큐레이션 요약
 
 - 정의: 결정론적 시스템과 비결정론적 에이전트 사이의 계약으로 툴을 설계하는 에이전트 우선 설계 철학.
 - 왜 중요한가: Anthropic의 "Writing effective tools for agents" 가이드라인과 2026년 2월 Managed Agents 블로그의 `execute(name, input) → string` 계약("the harness left the container")이 tool design의 기본 언어가 됐고, Cursor 3.0이 Await tool·screenshot-based clicking을 도입하면서 "에이전트에게 맞는 툴 API는 사람용 API와 다르다"는 명제가 보편화됐다.
 - 직접 수집 원문: 5개
 - 주요 도메인: anthropic.com×2, code.claude.com×1, cursor.com×1, aider.chat×1
+
+## 핵심 메커니즘
+
+결정론적 시스템과 비결정론적 에이전트 사이의 계약으로 툴을 설계하는 에이전트 우선 설계 철학. 이 유형의 topic은 보통 하나의 제품보다 **반복 가능한 패턴 / 평가 기준 / 설계 trade-off**로 읽는 편이 유용하다. 이번 source 묶음에서도 `aider.chat, anthropic.com, code.claude.com, cursor.com`가 함께 나오면서 개념, 구현, 평가가 연결되어 있다.
+
+## 핵심 포인트
+
+Tool Contracts & Writing Tools for Agents는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 결정론적 시스템과 비결정론적 에이전트 사이의 계약으로 툴을 설계하는 에이전트 우선 설계 철학.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+
+## source로 보면
+
+수집된 source는 anthropic.com×2, aider.chat×1, code.claude.com×1, cursor.com×1로 분포한다. 공식 문서/엔지니어링 글 비중이 높아 운영·제품 맥락이 강하다.
+
+## 실무 관점
+
+도구/프레임워크 페이지는 기능 목록보다 생태계 위치가 중요하다. 어떤 모델·런타임·개발 흐름과 잘 맞는지, 그리고 팀 워크플로우에 어떤 경계 조건을 추가하는지까지 같이 봐야 한다.
 
 ## source 기반 참고
 
