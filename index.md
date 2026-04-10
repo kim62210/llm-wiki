@@ -127,10 +127,13 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 
 **paper**
 - [ACON: Optimizing Context Compression for Long-horizon LLM Agents](wiki/papers/acon-context-compression-paper.md) — 장기 실행 에이전트의 문맥 압축을 단순 요약 문제가 아니라 **실패 원인 기반 최적화 문제**로 다룬 논문이다.
+- [ARE: Scaling Up Agent Environments and Evaluations](wiki/papers/are-gaia2-paper.md) — 에이전트 평가를 환경·도구·시간 제약을 포함한 실행 문제로 끌어올린 ARE / Gaia2 논문이다.
 - [AgentFold: Long-Horizon Web Agents with Proactive Context Management](wiki/papers/agentfold-paper.md) — 웹 에이전트가 단순히 로그를 누적하는 대신, 히스토리를 능동적으로 접어 넣는 **proactive context management** 패러다임을 제안한다.
 - [Context Engineering for AI Agents in Open-Source Software](wiki/papers/context-engineering-open-source-software-paper.md) — 오픈소스 소프트웨어 작업에서 context engineering을 저장소·문서·작업 이력 설계 문제로 분석한 논문이다.
 - [Memory in the Age of AI Agents](wiki/papers/memory-in-the-age-of-ai-agents-paper.md) — 에이전트 메모리 연구를 token-level, parametric, latent memory와 factual / experiential / working memory 축으로 재정리한 대형 서베이다.
+- [Plan-and-Act: Improving Planning of Agents for Long-Horizon Tasks](wiki/papers/plan-and-act-paper.md) — 장기 과제에서 계획과 실행을 분리하는 접근을 제안한 planning 논문이다.
 - [Scaling Long-Horizon LLM Agent via Context-Folding](wiki/papers/context-folding-paper.md) — 서브태스크를 branch한 뒤 fold하여 요약으로 되돌리는 **Context-Folding**을 RL 프레임워크로 학습시킨 논문이다.
+- [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](wiki/papers/agentic-rl-survey-paper.md) — LLM 에이전트 강화학습의 문제 설정·알고리즘·평가 지형을 정리한 서베이다.
 - [ReAcTree: Hierarchical LLM Agent Trees with Control Flow for Long-Horizon Task Planning](wiki/papers/reactree-paper.md) — 단일 trajectory 대신 agent tree와 control flow node를 도입해 장기 계획 문제를 푸는 hierarchical planning 논문이다.
 - [SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios](wiki/papers/swe-evo-paper.md) — 코딩 에이전트를 단일 버그 수정이 아니라 release-note 기반의 다단계 진화 과제로 평가하는 long-horizon benchmark 논문이다.
 - [FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling](wiki/papers/flashattention-4-paper.md) — Blackwell GPU의 비대칭 하드웨어 스케일링에 맞춰 attention kernel을 다시 설계한 FlashAttention-4 논문이다.
@@ -146,6 +149,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Claude Agent SDK](wiki/tooling/claude-agent-sdk.md) — 이 페이지는 Claude Agent SDK를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 Claude Code의 에이전트 루프·툴·컨텍스트 관리를 라이브러리화한 Anthropic SDK이기 때문이다.
 - [Claude Code](wiki/tooling/claude-code.md) — Anthropic이 제공하는 공식 coding agent. Simon Willison이 agentic engineering guide 전반에 걸쳐 가장 많이 레퍼런스하는 도구다.
 - [Claude Opus 4.6](wiki/tooling/claude-opus-4-6.md) — 이 페이지는 Claude Opus 4.6를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 2026년 2월 Anthropic이 공개한 플래그십 모델 (1M 컨텍스트)이기 때문이다.
+- [Claude Sonnet 4.5](wiki/tooling/claude-sonnet-4-5.md) — agentic coding, computer use, 장시간 작업 유지력 측면에서 중요한 Anthropic frontier 모델 허브.
 - [Cursor Cloud Agents & Parallel Worktree Agents](wiki/tooling/cursor-cloud-agents-and-parallel-worktree-agents.md) — title: Cursor Cloud Agents & Parallel Worktree Agents
 - [Deep Agents](wiki/tooling/deep-agents.md) — 이 페이지는 Deep Agents를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 플래너·파일시스템·서브에이전트를 기본 탑재한 LangGraph 기반 딥 에이전트 하네스이기 때문이다.
 - [DSPy + GEPA optimize_anything](wiki/tooling/dspy-gepa.md) — title: DSPy + GEPA optimize_anything
@@ -179,6 +183,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 
 **summary**
 - [Effective Harnesses for Long-Running Agents](wiki/tooling/effective-harnesses-for-long-running-agents.md) — initializer agent와 coding agent를 분리해 장기 실행 에이전트의 세션 연속성을 확보하는 하네스 설계 글 요약
+- [Scaling Managed Agents](wiki/tooling/scaling-managed-agents.md) — brain / hands / session을 분리하는 managed agent 인프라 설계 글 요약
 - [Writing Effective Tools for Agents](wiki/tooling/writing-effective-tools-for-agents.md) — 에이전트용 도구를 deterministic API가 아니라 agent-friendly interface로 설계하는 원칙 요약
 
 **project-internal · `Claude Code`**

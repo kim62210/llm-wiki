@@ -14,6 +14,19 @@
   - `wiki/tooling/writing-effective-tools-for-agents.md`
   - `wiki/papers/context-engineering-open-source-software-paper.md`
 
+## 2026-04-10 — Ingest 계속: second standalone promotion batch
+- **대상**: 남은 high-signal fetched source (논문 / 모델 / 인프라 글)
+- **생성 페이지**:
+  - `paper` 3개
+  - `summary` 1개
+  - `entity` 1개
+- **추가된 주요 페이지**:
+  - `wiki/papers/agentic-rl-survey-paper.md`
+  - `wiki/papers/plan-and-act-paper.md`
+  - `wiki/papers/are-gaia2-paper.md`
+  - `wiki/tooling/scaling-managed-agents.md`
+  - `wiki/tooling/claude-sonnet-4-5.md`
+
 ## 2026-04-10 — Ingest 확장: 핵심 논문 paper 페이지 생성
 - **대상**: hot-topic 수집 raw 중 핵심 논문/서베이 10편
 - **생성 페이지 수**: `paper` 10개
