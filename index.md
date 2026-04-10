@@ -244,6 +244,14 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Vercel AI SDK Tool Calling](wiki/tooling/vercel-ai-sdk-tool-calling.md) — strict mode, approval, multi-step calls를 정리한 공식 문서 요약
 - [Vercel AI SDK MCP Tools](wiki/tooling/vercel-ai-sdk-mcp-tools.md) — MCP client와 tools/resources/prompts 통합을 다루는 공식 문서 요약
 
+- [Mastra Agents Overview](wiki/tooling/mastra-agents-overview.md) — Mastra에서 agent를 언제 쓰고 어떻게 multi-agent로 확장하는지 설명하는 공식 문서 요약
+- [Mastra Workflows Overview](wiki/tooling/mastra-workflows-overview.md) — workflow step/state/Studio/registration을 중심으로 workflow runtime을 설명하는 문서 요약
+- [Mastra Memory Overview](wiki/tooling/mastra-memory-overview.md) — message history, observational memory, multi-agent memory를 정리한 문서 요약
+- [Mastra MCP Overview](wiki/tooling/mastra-mcp-overview.md) — MCP client/server와 registry, static/dynamic tools를 다루는 문서 요약
+- [Instructor Validation](wiki/tooling/instructor-validation.md) — field/custom/semantic validation과 error handling을 정리한 문서 요약
+- [Instructor Retrying](wiki/tooling/instructor-retrying.md) — Tenacity 기반 retry policy와 failed attempt tracking을 설명하는 문서 요약
+- [Instructor Patching](wiki/tooling/instructor-patching.md) — 기존 LLM client에 structured-output layer를 덧입히는 patching 전략 요약
+
 **project-internal · `Claude Code`**
 - [Claude Code Hooks System](wiki/tooling/claude-code-hooks-system.md) — 이 페이지는 Claude Code 내부에서 Claude Code Hooks System이 어떤 역할을 하는지 정리한 프로젝트 스냅샷이다. 핵심 범위는 툴 호출 전후·세션 이벤트에 사용자 정의 스크립트를 끼워 넣는 settings.json 기반 확장 훅이다.
 

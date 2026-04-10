@@ -98,3 +98,17 @@
 
 - Added next-ingest backlog map after confirming full 500-link corpus coverage:
   - documented optional official child-doc expansion candidates across Mastra/Instructor/BAML/Vercel/Deep Agents/Pydantic AI
+
+- Added raw index system:
+  - raw/index.md
+  - raw/recursive-sources/index.md and per-batch indexes
+  - raw/hot-topics-sources/2026-04-10/index.md
+  - raw/2026-04-10-hot-ai-topics-sources/index.md
+- Added advanced recursive batch for Mastra and Instructor:
+  - Mastra: agents, workflows, memory, MCP
+  - Instructor: validation, retrying, patching
+
+- Completed next-ingest roadmap items for Mastra and Instructor:
+  - Mastra advanced child docs: agents, workflows, memory, MCP
+  - Instructor advanced docs: validation, retrying, patching
+  - roadmap page updated to reflect completed branches

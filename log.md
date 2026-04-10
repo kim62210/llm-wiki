@@ -1,3 +1,17 @@
+## 2026-04-10 — Mastra / Instructor advanced branch 확장
+- **대상**: Mastra 4개, Instructor 3개 child doc + raw index 체계
+- **수행 내용**:
+  - advanced child-doc summary 7개 추가
+  - raw 탐색용 index 문서 생성
+  - backlog roadmap에서 Mastra/Instructor 항목 완료 반영
+
+## 2026-04-10 — Raw index 체계 추가 + Mastra/Instructor advanced ingest
+- **대상**: Mastra child docs 4개, Instructor concepts 3개, raw 디렉토리 전반
+- **수행 내용**:
+  - `raw/index.md`, `raw/recursive-sources/index.md`, 배치별 raw index, hot-topics raw index 생성
+  - Mastra advanced docs 4개와 Instructor advanced docs 3개를 recursive ingest
+  - parent hub(`mastra.md`, `instructor.md`)의 reading path 확장
+
 ## 2026-04-10 — 다음 ingest 후보 backlog 문서화
 - **대상**: corpus 완료 이후의 선택적 확장 후보
 - **수행 내용**:

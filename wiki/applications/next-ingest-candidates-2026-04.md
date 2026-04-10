@@ -38,8 +38,8 @@ flowchart TD
 
 | 우선순위 | 축 | 확인된 공식 문서 후보 | 왜 의미가 큰가 |
 | --- | --- | --- | --- |
-| 1 | Mastra | agents / workflows / memory / MCP overview | 현재 허브에 child doc가 1개뿐이라 확장 여지가 큼 |
-| 1 | Instructor | validation / retrying / patching | structured-output 운영 규칙을 더 깊게 문서화 가능 |
+| 완료 | Mastra | agents / workflows / memory / MCP overview | child docs 5개 체계로 확장 완료 |
+| 완료 | Instructor | validation / retrying / patching | overview 포함 4개 문서 체계로 확장 완료 |
 | 1 | BAML | comparison / reference overview | DSL 관점과 reference 층을 보강할 수 있음 |
 | 1 | Vercel AI SDK | agents workflows / memory / subagents | 이미 branch가 있으므로 이어서 심화하기 좋음 |
 | 2 | Deep Agents | context engineering / sandboxes / human-in-the-loop | long-horizon harness 운영 문서를 두껍게 만들 수 있음 |
@@ -77,6 +77,11 @@ flowchart TD
 - `https://pydantic.dev/docs/ai/core-concepts/message-history/`
 - `https://pydantic.dev/docs/ai/core-concepts/output/`
 
+## 이번 턴에서 완료된 확장
+
+- Mastra: agents / workflows / memory / MCP overview 추가 완료
+- Instructor: validation / retrying / patching 추가 완료
+
 ## 읽는 방법
 
 - **필수 coverage**는 이미 끝났다.
@@ -85,12 +90,10 @@ flowchart TD
 
 ## 추천 순서
 
-1. Mastra child docs 4개
-2. Instructor concepts 3개
-3. BAML comparison/reference 2개
-4. Vercel AI SDK agents memory/workflows/subagents
-5. Deep Agents 운영 심화 3개
-6. Pydantic AI tools/message-history/output
+1. BAML comparison/reference 2개
+2. Vercel AI SDK agents memory/workflows/subagents
+3. Deep Agents 운영 심화 3개
+4. Pydantic AI tools/message-history/output
 
 ## 관련 문서
 

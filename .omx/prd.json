@@ -198,6 +198,33 @@
         "fresh index missing-page check 결과가 0이다"
       ],
       "passes": true
+    },
+    {
+      "id": "US-017",
+      "title": "Mastra/Instructor advanced child-doc ingest와 raw index 체계 추가",
+      "priority": 17,
+      "acceptanceCriteria": [
+        "Mastra 공식 child-doc summary 4개가 추가된다",
+        "Instructor 공식 child-doc summary 3개가 추가된다",
+        "raw 문서 탐색용 index 문서가 생성된다",
+        "fresh broken wikilink check 결과가 0이다",
+        "fresh index missing-page check 결과가 0이다"
+      ],
+      "passes": true
+    },
+    {
+      "id": "US-018",
+      "title": "Mastra/Instructor 공식 child-doc branch 확장과 raw index 요구 반영",
+      "priority": 18,
+      "acceptanceCriteria": [
+        "Mastra child-doc summary 4개가 추가된다",
+        "Instructor child-doc summary 3개가 추가된다",
+        "raw index 문서가 생성되어 raw 문서 탐색 링크를 제공한다",
+        "backlog roadmap이 완료 반영 상태로 갱신된다",
+        "fresh broken wikilink check 결과가 0이다",
+        "fresh index missing-page check 결과가 0이다"
+      ],
+      "passes": true
     }
   ]
 }

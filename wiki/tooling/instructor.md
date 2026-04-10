@@ -91,6 +91,10 @@ Instructor는 현재 시점에서 하나의 제품/모델/프레임워크 허브
 ## 하위 문서 읽기 경로
 
 - [[instructor-overview|Instructor Overview]] — structured output, validation, retry 중심의 입문 요약
+- [[instructor-validation|Instructor Validation]] — semantic/nested validation과 error handling 정리
+- [[instructor-retrying|Instructor Retrying]] — Tenacity 기반 retry policy와 failed attempt tracking 정리
+- [[instructor-patching|Instructor Patching]] — provider별 patching mode와 manual patching 전략 정리
+
 
 ## 관련 문서
 
