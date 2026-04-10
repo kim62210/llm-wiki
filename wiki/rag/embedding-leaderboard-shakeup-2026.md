@@ -25,12 +25,22 @@ Qwen3-Embedding-8B가 MTEB Multilingual 1위(70.58)를 차지하며 오픈웨이
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: arxiv.org 1건, qwenlm.github.io 1건, huggingface.co 1건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/embedding-leaderboard-shakeup-2026.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/192-qwen3-embedding-advancing-text-embedding-and-reranking-through-foundation-models.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/193-qwen3-embedding-blog-announcement.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/194-qwen3-embedding-8b-on-hugging-face.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/195-voyage-3-large-the-new-state-of-the-art-general-purpose-embedding-model.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/196-voyage-ai-text-embeddings-documentation.md`
+- [[2506.05176] Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models](https://arxiv.org/abs/2506.05176) — `raw/hot-topics-sources/2026-04-10/192-qwen3-embedding-advancing-text-embedding-and-reranking-through-foundation-models.md`
+  - 메모: --- title: [2506.05176] Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models source_url: https://arxiv.org/abs/2506.05176 final_url: https://arxiv.org/abs/2506.05176 status: 200 content_type: text/html; charset=utf-8 topics: [Qwen3 / Voyage-4 Embeddin
+- [Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models | Qwen](https://qwenlm.github.io/blog/qwen3-embedding) — `raw/hot-topics-sources/2026-04-10/193-qwen3-embedding-blog-announcement.md`
+  - 메모: --- title: Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models | Qwen source_url: https://qwenlm.github.io/blog/qwen3-embedding final_url: https://qwenlm.github.io/blog/qwen3-embedding/ status: 200 content_type: text/html; charset=utf-8 topics: [Qwen
+- [Qwen/Qwen3-Embedding-8B · Hugging Face](https://huggingface.co/Qwen/Qwen3-Embedding-8B) — `raw/hot-topics-sources/2026-04-10/194-qwen3-embedding-8b-on-hugging-face.md`
+  - 메모: --- title: Qwen/Qwen3-Embedding-8B · Hugging Face source_url: https://huggingface.co/Qwen/Qwen3-Embedding-8B final_url: https://huggingface.co/Qwen/Qwen3-Embedding-8B status: 200 content_type: text/html; charset=utf-8 topics: [Qwen3 / Voyage-4 Embedding Leaderboard Shakeup] secti
+- [voyage-3-large: the new state-of-the-art general-purpose embedding model – Voyage AI](https://blog.voyageai.com/2025/01/07/voyage-3-large) — `raw/hot-topics-sources/2026-04-10/195-voyage-3-large-the-new-state-of-the-art-general-purpose-embedding-model.md`
+  - 메모: --- title: voyage-3-large: the new state-of-the-art general-purpose embedding model – Voyage AI source_url: https://blog.voyageai.com/2025/01/07/voyage-3-large final_url: https://blog.voyageai.com/2025/01/07/voyage-3-large/ status: 200 content_type: text/html; charset=UTF-8 topic
+- [Text Embeddings](https://docs.voyageai.com/docs/embeddings) — `raw/hot-topics-sources/2026-04-10/196-voyage-ai-text-embeddings-documentation.md`
+  - 메모: --- title: Text Embeddings source_url: https://docs.voyageai.com/docs/embeddings final_url: https://docs.voyageai.com/docs/embeddings status: 200 content_type: text/html; charset=utf-8 topics: [Qwen3 / Voyage-4 Embedding Leaderboard Shakeup] sections: [RAG & Context Engineering] 
 
 ## 관련 문서
 

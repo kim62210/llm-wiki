@@ -26,12 +26,23 @@ GPU 외부(CPU/디스크/S3)로 KV 캐시를 오프로드하고 크로스 엔진
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: github.com 2건, arxiv.org 1건, llm-d.ai 1건
+- source 조합: 구현체
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/lmcache-kv-cache-layer.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/095-lmcache-an-efficient-kv-cache-layer-for-enterprise-scale-llm-inference.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/096-lmcache-lmcache-github-repository.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/097-llm-d-kv-cache-architecture-documentation.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/098-llm-d-llm-d-kv-cache-manager-repository.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/099-nixlconnector-usage-guide.md`
+- [[2510.09665] LMCache: An Efficient KV Cache Layer for Enterprise-Scale LLM Inference](https://arxiv.org/abs/2510.09665) — `raw/hot-topics-sources/2026-04-10/095-lmcache-an-efficient-kv-cache-layer-for-enterprise-scale-llm-inference.md`
+  - 메모: --- title: [2510.09665] LMCache: An Efficient KV Cache Layer for Enterprise-Scale LLM Inference source_url: https://arxiv.org/abs/2510.09665 final_url: https://arxiv.org/abs/2510.09665 status: 200 content_type: text/html; charset=utf-8 topics: [LMCache-Based Distributed KV Cache 
+- [GitHub - LMCache/LMCache: Supercharge Your LLM with the Fastest KV Cache Layer · GitHub](https://github.com/LMCache/LMCache) — `raw/hot-topics-sources/2026-04-10/096-lmcache-lmcache-github-repository.md`
+  - 메모: --- title: GitHub - LMCache/LMCache: Supercharge Your LLM with the Fastest KV Cache Layer · GitHub source_url: https://github.com/LMCache/LMCache final_url: https://github.com/LMCache/LMCache status: 200 content_type: text/html; charset=utf-8 topics: [LMCache-Based Distributed KV
+- [KV Cache | llm-d](https://llm-d.ai/docs/architecture/Components/kv-cache) — `raw/hot-topics-sources/2026-04-10/097-llm-d-kv-cache-architecture-documentation.md`
+  - 메모: --- title: KV Cache | llm-d source_url: https://llm-d.ai/docs/architecture/Components/kv-cache final_url: https://llm-d.ai/docs/architecture/Components/kv-cache status: 200 content_type: text/html; charset=utf-8 topics: [LMCache-Based Distributed KV Cache Offloading] sections: [I
+- [GitHub - llm-d/llm-d-kv-cache: Distributed KV cache scheduling & offloading libraries · GitHub](https://github.com/llm-d/llm-d-kv-cache-manager) — `raw/hot-topics-sources/2026-04-10/098-llm-d-llm-d-kv-cache-manager-repository.md`
+  - 메모: --- title: GitHub - llm-d/llm-d-kv-cache: Distributed KV cache scheduling & offloading libraries · GitHub source_url: https://github.com/llm-d/llm-d-kv-cache-manager final_url: https://github.com/llm-d/llm-d-kv-cache status: 200 content_type: text/html; charset=utf-8 topics: [LMC
+- [NixlConnector Usage Guide - vLLM](https://docs.vllm.ai/en/stable/features/nixl_connector_usage) — `raw/hot-topics-sources/2026-04-10/099-nixlconnector-usage-guide.md`
+  - 메모: --- title: NixlConnector Usage Guide - vLLM source_url: https://docs.vllm.ai/en/stable/features/nixl_connector_usage final_url: https://docs.vllm.ai/en/stable/features/nixl_connector_usage/ status: 200 content_type: text/html; charset=utf-8 topics: [LMCache-Based Distributed KV C
 
 ## 관련 문서
 

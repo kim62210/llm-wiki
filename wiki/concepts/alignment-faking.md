@@ -25,12 +25,22 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: alignment.anthropic.com 2건, www.anthropic.com 1건, arxiv.org 1건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/alignment-faking.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/368-alignment-faking-in-large-language-models.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/369-alignment-faking-in-large-language-models.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/370-alignment-faking-revisited-improved-classifiers-and-open-source-extensions.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/371-towards-training-time-mitigations-for-alignment-faking-in-rl.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/372-alignment-faking-in-large-language-models.md`
+- [Alignment faking in large language models \ Anthropic](https://www.anthropic.com/research/alignment-faking) — `raw/hot-topics-sources/2026-04-10/368-alignment-faking-in-large-language-models.md`
+  - 메모: --- title: Alignment faking in large language models \ Anthropic source_url: https://www.anthropic.com/research/alignment-faking final_url: https://www.anthropic.com/research/alignment-faking status: 200 content_type: text/html; charset=utf-8 topics: [Alignment Faking in LLMs] se
+- [[2412.14093] Alignment faking in large language models](https://arxiv.org/abs/2412.14093) — `raw/hot-topics-sources/2026-04-10/369-alignment-faking-in-large-language-models.md`
+  - 메모: --- title: [2412.14093] Alignment faking in large language models source_url: https://arxiv.org/abs/2412.14093 final_url: https://arxiv.org/abs/2412.14093 status: 200 content_type: text/html; charset=utf-8 topics: [Alignment Faking in LLMs] sections: [Safety & Alignment] fetched_
+- [Alignment Faking Revisited: Improved Classifiers and Open Source Extensions](https://alignment.anthropic.com/2025/alignment-faking-revisited) — `raw/hot-topics-sources/2026-04-10/370-alignment-faking-revisited-improved-classifiers-and-open-source-extensions.md`
+  - 메모: --- title: Alignment Faking Revisited: Improved Classifiers and Open Source Extensions source_url: https://alignment.anthropic.com/2025/alignment-faking-revisited final_url: https://alignment.anthropic.com/2025/alignment-faking-revisited/ status: 200 content_type: text/html; char
+- [Alignment Faking MitigationsTowards Training-time Mitigations for Alignment Faking in RL](https://alignment.anthropic.com/2025/alignment-faking-mitigations) — `raw/hot-topics-sources/2026-04-10/371-towards-training-time-mitigations-for-alignment-faking-in-rl.md`
+  - 메모: --- title: Alignment Faking MitigationsTowards Training-time Mitigations for Alignment Faking in RL source_url: https://alignment.anthropic.com/2025/alignment-faking-mitigations final_url: https://alignment.anthropic.com/2025/alignment-faking-mitigations/ status: 200 content_type
+- [372-alignment-faking-in-large-language-models](https://assets.anthropic.com/m/983c85a201a962f/original/Alignment-Faking-in-Large-Language-Models-full-paper.pdf) — `raw/hot-topics-sources/2026-04-10/372-alignment-faking-in-large-language-models.md`
+  - 메모: --- title: Alignment Faking in Large Language Models (full paper PDF) source_url: https://assets.anthropic.com/m/983c85a201a962f/original/Alignment-Faking-in-Large-Language-Models-full-paper.pdf final_url: https://assets.anthropic.com/m/983c85a201a962f/original/Alignment-Faking-i
 
 ## 관련 문서
 

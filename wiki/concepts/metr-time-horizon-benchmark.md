@@ -26,12 +26,22 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: metr.org 4건, arxiv.org 1건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/metr-time-horizon-benchmark.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/388-task-completion-time-horizons-of-frontier-ai-models.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/389-time-horizon-1-1.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/390-measuring-ai-ability-to-complete-long-tasks.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/391-measuring-ai-ability-to-complete-long-software-tasks.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/392-how-does-time-horizon-vary-across-domains.md`
+- [Task-Completion Time Horizons of Frontier AI Models - METR](https://metr.org/time-horizons) — `raw/hot-topics-sources/2026-04-10/388-task-completion-time-horizons-of-frontier-ai-models.md`
+  - 메모: --- title: Task-Completion Time Horizons of Frontier AI Models - METR source_url: https://metr.org/time-horizons final_url: https://metr.org/time-horizons/ status: 200 content_type: text/html; charset=UTF-8 topics: [METR Time Horizon Benchmark] sections: [Safety & Alignment] fetc
+- [Time Horizon 1.1 - METR](https://metr.org/blog/2026-1-29-time-horizon-1-1) — `raw/hot-topics-sources/2026-04-10/389-time-horizon-1-1.md`
+  - 메모: --- title: Time Horizon 1.1 - METR source_url: https://metr.org/blog/2026-1-29-time-horizon-1-1 final_url: https://metr.org/blog/2026-1-29-time-horizon-1-1/ status: 200 content_type: text/html; charset=UTF-8 topics: [METR Time Horizon Benchmark] sections: [Safety & Alignment] fet
+- [Measuring AI Ability to Complete Long Tasks - METR](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks) — `raw/hot-topics-sources/2026-04-10/390-measuring-ai-ability-to-complete-long-tasks.md`
+  - 메모: --- title: Measuring AI Ability to Complete Long Tasks - METR source_url: https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks final_url: https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/ status: 200 content_type: text/html; cha
+- [[2503.14499] Measuring AI Ability to Complete Long Software Tasks](https://arxiv.org/abs/2503.14499) — `raw/hot-topics-sources/2026-04-10/391-measuring-ai-ability-to-complete-long-software-tasks.md`
+  - 메모: --- title: [2503.14499] Measuring AI Ability to Complete Long Software Tasks source_url: https://arxiv.org/abs/2503.14499 final_url: https://arxiv.org/abs/2503.14499 status: 200 content_type: text/html; charset=utf-8 topics: [METR Time Horizon Benchmark] sections: [Safety & Align
+- [How Does Time Horizon Vary Across Domains? - METR](https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains) — `raw/hot-topics-sources/2026-04-10/392-how-does-time-horizon-vary-across-domains.md`
+  - 메모: --- title: How Does Time Horizon Vary Across Domains? - METR source_url: https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains final_url: https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains/ status: 200 content_type: text/html; charset=
 
 ## 관련 문서
 

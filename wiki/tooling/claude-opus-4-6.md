@@ -32,26 +32,25 @@ updated: 2026-04-10
 - [GDPval-AA Leaderboard — Artificial Analysis](https://artificialanalysis.ai/evaluations/gdpval-aa)
 - [Terminal-Bench 2.0 Leaderboard — LLM Stats](https://llm-stats.com/benchmarks/terminal-bench-2)
 
-## 2026년 4월 핫토픽 맥락
-
-2026년 2월 5일 출시, Humanity's Last Exam 1위에 METR 기준 50% 작업 지평선이 14시간 30분으로 프론티어 중 최장기이며, Terminal-Bench 2.0과 GDPval-AA에서 GPT-5.2를 144 ELO 앞서는 에이전틱 코딩 왕좌를 탈환했다.
-
-### 추가 레퍼런스
-
-- [Introducing Claude Opus 4.6 — Anthropic News](https://www.anthropic.com/news/claude-opus-4-6)
-- [Claude (language model) — Wikipedia](https://en.wikipedia.org/wiki/Claude_(language_model))
-- [Claude Platform Release Notes](https://platform.claude.com/docs/en/release-notes/overview)
-- [GDPval-AA Leaderboard — Artificial Analysis](https://artificialanalysis.ai/evaluations/gdpval-aa)
-- [Terminal-Bench 2.0 Leaderboard — LLM Stats](https://llm-stats.com/benchmarks/terminal-bench-2)
-
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: www.anthropic.com 1건, en.wikipedia.org 1건, platform.claude.com 1건
+- source 조합: 공식 문서
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/claude-opus-4-6.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/115-introducing-claude-opus-4-6-anthropic-news.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/116-claude-wikipedia.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/117-claude-platform-release-notes.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/118-gdpval-aa-leaderboard-artificial-analysis.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/119-terminal-bench-2-0-leaderboard-llm-stats.md`
+- [Claude Opus 4.6 \ Anthropic](https://www.anthropic.com/news/claude-opus-4-6) — `raw/hot-topics-sources/2026-04-10/115-introducing-claude-opus-4-6-anthropic-news.md`
+  - 메모: --- title: Claude Opus 4.6 \ Anthropic source_url: https://www.anthropic.com/news/claude-opus-4-6 final_url: https://www.anthropic.com/news/claude-opus-4-6 status: 200 content_type: text/html; charset=utf-8 topics: [Claude Opus 4.6] sections: [Model Releases & Benchmarks] fetched
+- [Claude (language model) - Wikipedia](https://en.wikipedia.org/wiki/Claude_(language_model)) — `raw/hot-topics-sources/2026-04-10/116-claude-wikipedia.md`
+  - 메모: --- title: Claude (language model) - Wikipedia source_url: https://en.wikipedia.org/wiki/Claude_(language_model) final_url: https://en.wikipedia.org/wiki/Claude_(language_model) status: 200 content_type: text/html; charset=UTF-8 topics: [Claude Opus 4.6] sections: [Model Releases
+- [Claude Platform - Claude API Docs](https://platform.claude.com/docs/en/release-notes/overview) — `raw/hot-topics-sources/2026-04-10/117-claude-platform-release-notes.md`
+  - 메모: --- title: Claude Platform - Claude API Docs source_url: https://platform.claude.com/docs/en/release-notes/overview final_url: https://platform.claude.com/docs/en/release-notes/overview status: 200 content_type: text/html; charset=utf-8 topics: [Claude Opus 4.6] sections: [Model 
+- [GDPval-AA Leaderboard | Artificial Analysis](https://artificialanalysis.ai/evaluations/gdpval-aa) — `raw/hot-topics-sources/2026-04-10/118-gdpval-aa-leaderboard-artificial-analysis.md`
+  - 메모: --- title: GDPval-AA Leaderboard | Artificial Analysis source_url: https://artificialanalysis.ai/evaluations/gdpval-aa final_url: https://artificialanalysis.ai/evaluations/gdpval-aa status: 200 content_type: text/html; charset=utf-8 topics: [Claude Opus 4.6] sections: [Model Rele
+- [Terminal-Bench 2.0 Leaderboard](https://llm-stats.com/benchmarks/terminal-bench-2) — `raw/hot-topics-sources/2026-04-10/119-terminal-bench-2-0-leaderboard-llm-stats.md`
+  - 메모: --- title: Terminal-Bench 2.0 Leaderboard source_url: https://llm-stats.com/benchmarks/terminal-bench-2 final_url: https://llm-stats.com/benchmarks/terminal-bench-2 status: 200 content_type: text/html; charset=utf-8 topics: [Claude Opus 4.6, Terminal-Bench 2.0] sections: [Model R
 
 ## 관련 문서
 

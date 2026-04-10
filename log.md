@@ -3,15 +3,13 @@
 ## 2026-04-10 — Source Fetch: hot topics reference crawl
 - **대상 raw**: `raw/2026-04-10-hot-ai-topics-100.md`
 - **정규화된 URL 수**: 452개
-- **수집 성공**: 449개
-- **수집 실패**: 3개
+- **수집 성공**: 452개
+- **수집 실패**: 0개
 - **snapshot 저장 위치**: `raw/hot-topics-sources/2026-04-10/`
 - **topic packet 수**: 97개
 - **위키 재-ingest**: 개별 topic packet을 각 위키 페이지의 `sources:`와 `## source 기반 참고` 섹션에 반영
-- **실패 링크**:
-  - https://openreview.net/pdf?id=U51WxL382H
-  - https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630/Lost-in-the-Middle-How-Language-Models-Use-Long
-  - https://arize.com/docs/ax/evaluate/llm-as-a-judge/arize-evaluators-llm-as-a-judge/agent-tool-selection
+- **후속 복구**:
+  - OpenReview / TACL / Arize의 실패 링크 3건을 대체 URL로 재수집해 현재 실패 0건 상태로 정리
 ## 2026-04-10 — Lint: hot-topics ingest 정리
 - **대상**: hot topics ingest 결과 + 위키 전역 링크/프론트매터 무결성
 - **수행 내용**:

@@ -26,12 +26,23 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: github.com 1건, blog.langchain.com 1건, www.langchain.com 1건
+- source 조합: 구현체
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/langgraph.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/403-langgraph-github-repository.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/404-langchain-and-langgraph-agent-frameworks-reach-v1-0-milestones.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/405-langgraph-product-page.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/406-langgraph-documentation.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/407-langgraph-python-pypi-releases.md`
+- [GitHub - langchain-ai/langgraph: Build resilient language agents as graphs. · GitHub](https://github.com/langchain-ai/langgraph) — `raw/hot-topics-sources/2026-04-10/403-langgraph-github-repository.md`
+  - 메모: --- title: GitHub - langchain-ai/langgraph: Build resilient language agents as graphs. · GitHub source_url: https://github.com/langchain-ai/langgraph final_url: https://github.com/langchain-ai/langgraph status: 200 content_type: text/html; charset=utf-8 topics: [LangGraph 1.0 / 2
+- [LangChain and LangGraph Agent Frameworks Reach v1.0 Milestones](https://blog.langchain.com/langchain-langgraph-1dot0) — `raw/hot-topics-sources/2026-04-10/404-langchain-and-langgraph-agent-frameworks-reach-v1-0-milestones.md`
+  - 메모: --- title: LangChain and LangGraph Agent Frameworks Reach v1.0 Milestones source_url: https://blog.langchain.com/langchain-langgraph-1dot0 final_url: https://blog.langchain.com/langchain-langgraph-1dot0/ status: 200 content_type: text/html; charset=utf-8 topics: [LangGraph 1.0 / 
+- [LangGraph: Agent Orchestration Framework for Reliable AI Agents](https://www.langchain.com/langgraph) — `raw/hot-topics-sources/2026-04-10/405-langgraph-product-page.md`
+  - 메모: --- title: LangGraph: Agent Orchestration Framework for Reliable AI Agents source_url: https://www.langchain.com/langgraph final_url: https://www.langchain.com/langgraph status: 200 content_type: text/html; charset=utf-8 topics: [LangGraph 1.0 / 2.0 (Agent Orchestration Framework
+- [Redirecting to LangGraph Documentation](https://langchain-ai.github.io/langgraph) — `raw/hot-topics-sources/2026-04-10/406-langgraph-documentation.md`
+  - 메모: --- title: Redirecting to LangGraph Documentation source_url: https://langchain-ai.github.io/langgraph final_url: https://langchain-ai.github.io/langgraph/ status: 200 content_type: text/html; charset=utf-8 topics: [LangGraph 1.0 / 2.0 (Agent Orchestration Framework)] sections: [
+- [Client Challenge](https://pypi.org/project/langgraph) — `raw/hot-topics-sources/2026-04-10/407-langgraph-python-pypi-releases.md`
+  - 메모: --- title: Client Challenge source_url: https://pypi.org/project/langgraph final_url: https://pypi.org/project/langgraph status: 200 content_type: text/html; charset=utf-8 topics: [LangGraph 1.0 / 2.0 (Agent Orchestration Framework)] sections: [Dev Tooling & Frameworks] fetched_a
 
 ## 관련 문서
 

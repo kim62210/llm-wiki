@@ -26,12 +26,22 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: cursor.com 5건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/cursor-cloud-agents-and-parallel-worktree-agents.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/057-cursor-3-0-changelog.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/058-cursor-changelog.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/059-cursor-cloud-agents-blog.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/060-cursor-product-page-agent.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/061-cursor-homepage.md`
+- [New Cursor Interface · Cursor](https://cursor.com/changelog/3-0) — `raw/hot-topics-sources/2026-04-10/057-cursor-3-0-changelog.md`
+  - 메모: --- title: New Cursor Interface · Cursor source_url: https://cursor.com/changelog/3-0 final_url: https://cursor.com/changelog/3-0 status: 200 content_type: text/html; charset=utf-8 topics: [Cursor Cloud Agents & Parallel Worktree Agents, Git Worktree Isolation for Parallel Coding
+- [Changelog · Cursor](https://cursor.com/changelog) — `raw/hot-topics-sources/2026-04-10/058-cursor-changelog.md`
+  - 메모: --- title: Changelog · Cursor source_url: https://cursor.com/changelog final_url: https://cursor.com/changelog status: 200 content_type: text/html; charset=utf-8 topics: [Cursor Cloud Agents & Parallel Worktree Agents] sections: [Harness Engineering] fetched_at: 2026-04-10T01:43:
+- [Cloud Agents · Cursor](https://cursor.com/blog/cloud-agents) — `raw/hot-topics-sources/2026-04-10/059-cursor-cloud-agents-blog.md`
+  - 메모: --- title: Cloud Agents · Cursor source_url: https://cursor.com/blog/cloud-agents final_url: https://cursor.com/blog/cloud-agents status: 200 content_type: text/html; charset=utf-8 topics: [Cursor Cloud Agents & Parallel Worktree Agents] sections: [Harness Engineering] fetched_at
+- [Cursor · Agent](https://cursor.com/product) — `raw/hot-topics-sources/2026-04-10/060-cursor-product-page-agent.md`
+  - 메모: --- title: Cursor · Agent source_url: https://cursor.com/product final_url: https://cursor.com/product status: 200 content_type: text/html; charset=utf-8 topics: [Cursor Cloud Agents & Parallel Worktree Agents] sections: [Harness Engineering] fetched_at: 2026-04-10T01:43:33.79440
+- [Cursor: The best way to code with AI](https://cursor.com) — `raw/hot-topics-sources/2026-04-10/061-cursor-homepage.md`
+  - 메모: --- title: Cursor: The best way to code with AI source_url: https://cursor.com final_url: https://cursor.com status: 200 content_type: text/html; charset=utf-8 topics: [Cursor Cloud Agents & Parallel Worktree Agents] sections: [Harness Engineering] fetched_at: 2026-04-10T01:43:33
 
 ## 관련 문서
 

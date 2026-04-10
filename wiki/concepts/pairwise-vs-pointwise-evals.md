@@ -25,12 +25,22 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: arxiv.org 5건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/pairwise-vs-pointwise-evals.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/242-pairwise-or-pointwise-evaluating-feedback-protocols-for-bias.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/243-aligning-with-human-judgement-pairwise-preference-in-llm-evaluators.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/244-the-comparative-trap-pairwise-comparisons-amplify-biased-preferences.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/245-elspr-evaluator-llm-training-data-self-purification-on-non-transitive-preference.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/246-language-model-preference-evaluation-with-multiple-weak-evaluators.md`
+- [[2504.14716] Pairwise or Pointwise? Evaluating Feedback Protocols for Bias in LLM-Based Evaluation](https://arxiv.org/abs/2504.14716) — `raw/hot-topics-sources/2026-04-10/242-pairwise-or-pointwise-evaluating-feedback-protocols-for-bias.md`
+  - 메모: --- title: [2504.14716] Pairwise or Pointwise? Evaluating Feedback Protocols for Bias in LLM-Based Evaluation source_url: https://arxiv.org/abs/2504.14716 final_url: https://arxiv.org/abs/2504.14716 status: 200 content_type: text/html; charset=utf-8 topics: [Pairwise vs Pointwise
+- [[2403.16950] Aligning with Human Judgement: The Role of Pairwise Preference in Large Language Model Evaluators](https://arxiv.org/abs/2403.16950) — `raw/hot-topics-sources/2026-04-10/243-aligning-with-human-judgement-pairwise-preference-in-llm-evaluators.md`
+  - 메모: --- title: [2403.16950] Aligning with Human Judgement: The Role of Pairwise Preference in Large Language Model Evaluators source_url: https://arxiv.org/abs/2403.16950 final_url: https://arxiv.org/abs/2403.16950 status: 200 content_type: text/html; charset=utf-8 topics: [Pairwise 
+- [The Comparative Trap: Pairwise Comparisons Amplifies Biased Preferences of LLM Evaluators](https://arxiv.org/html/2406.12319v4) — `raw/hot-topics-sources/2026-04-10/244-the-comparative-trap-pairwise-comparisons-amplify-biased-preferences.md`
+  - 메모: --- title: The Comparative Trap: Pairwise Comparisons Amplifies Biased Preferences of LLM Evaluators source_url: https://arxiv.org/html/2406.12319v4 final_url: https://arxiv.org/html/2406.12319v4 status: 200 content_type: text/html; charset=utf-8 topics: [Pairwise vs Pointwise Ev
+- [ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences via Tournament Graph Reconstruction](https://arxiv.org/html/2505.17691) — `raw/hot-topics-sources/2026-04-10/245-elspr-evaluator-llm-training-data-self-purification-on-non-transitive-preference.md`
+  - 메모: --- title: ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences via Tournament Graph Reconstruction source_url: https://arxiv.org/html/2505.17691 final_url: https://arxiv.org/html/2505.17691 status: 200 content_type: text/html; charset=utf-8 topics: 
+- [Language Model Preference Evaluation with Multiple Weak Evaluators](https://arxiv.org/html/2410.12869v3) — `raw/hot-topics-sources/2026-04-10/246-language-model-preference-evaluation-with-multiple-weak-evaluators.md`
+  - 메모: --- title: Language Model Preference Evaluation with Multiple Weak Evaluators source_url: https://arxiv.org/html/2410.12869v3 final_url: https://arxiv.org/html/2410.12869v3 status: 200 content_type: text/html; charset=utf-8 topics: [Pairwise vs Pointwise Eval Protocol Bias] secti
 
 ## 관련 문서
 

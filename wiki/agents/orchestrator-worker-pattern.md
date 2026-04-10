@@ -25,12 +25,23 @@ Anthropic이 Claude의 Research 기능 백엔드로 공개한 이 패턴이 단�
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: www.anthropic.com 1건, github.com 1건, code.claude.com 1건
+- source 조합: 공식 문서
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/orchestrator-worker-pattern.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/006-how-we-built-our-multi-agent-research-system.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/007-orchestrator-workers-workflow-cookbook.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/009-building-agents-with-the-claude-agent-sdk.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md`
+- [How we built our multi-agent research system \ Anthropic](https://www.anthropic.com/engineering/multi-agent-research-system) — `raw/hot-topics-sources/2026-04-10/006-how-we-built-our-multi-agent-research-system.md`
+  - 메모: --- title: How we built our multi-agent research system \ Anthropic source_url: https://www.anthropic.com/engineering/multi-agent-research-system final_url: https://www.anthropic.com/engineering/multi-agent-research-system status: 200 content_type: text/html; charset=utf-8 topics
+- [claude-cookbooks/patterns/agents/orchestrator_workers.ipynb at main · anthropics/claude-cookbooks · GitHub](https://github.com/anthropics/anthropic-cookbook/blob/main/patterns/agents/orchestrator_workers.ipynb) — `raw/hot-topics-sources/2026-04-10/007-orchestrator-workers-workflow-cookbook.md`
+  - 메모: --- title: claude-cookbooks/patterns/agents/orchestrator_workers.ipynb at main · anthropics/claude-cookbooks · GitHub source_url: https://github.com/anthropics/anthropic-cookbook/blob/main/patterns/agents/orchestrator_workers.ipynb final_url: https://github.com/anthropics/claude-
+- [Create custom subagents - Claude Code Docs](https://code.claude.com/docs/en/sub-agents) — `raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md`
+  - 메모: --- title: Create custom subagents - Claude Code Docs source_url: https://code.claude.com/docs/en/sub-agents final_url: https://code.claude.com/docs/en/sub-agents status: 200 content_type: text/html; charset=utf-8 topics: [Orchestrator-Worker Multi-Agent Pattern, Subagents & Mult
+- [Building agents with the Claude Agent SDK | Claude](https://claude.com/blog/building-agents-with-the-claude-agent-sdk) — `raw/hot-topics-sources/2026-04-10/009-building-agents-with-the-claude-agent-sdk.md`
+  - 메모: --- title: Building agents with the Claude Agent SDK | Claude source_url: https://claude.com/blog/building-agents-with-the-claude-agent-sdk final_url: https://claude.com/blog/building-agents-with-the-claude-agent-sdk status: 200 content_type: text/html; charset=utf-8 topics: [Orc
+- [[2509.02547] The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](https://arxiv.org/abs/2509.02547) — `raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md`
+  - 메모: --- title: [2509.02547] The Landscape of Agentic Reinforcement Learning for LLMs: A Survey source_url: https://arxiv.org/abs/2509.02547 final_url: https://arxiv.org/abs/2509.02547 status: 200 content_type: text/html; charset=utf-8 topics: [Orchestrator-Worker Multi-Agent Pattern,
 
 ## 관련 문서
 

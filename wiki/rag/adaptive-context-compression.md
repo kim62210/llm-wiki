@@ -25,12 +25,22 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: arxiv.org 5건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/adaptive-context-compression.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/197-developing-adaptive-context-compression-techniques-for-llms-in-long-running-inte.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/198-active-context-compression-autonomous-memory-management-in-llm-agents.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/199-poc-performance-oriented-context-compression-for-llms-via-performance-prediction.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/200-latent-context-compilation-distilling-long-context-into-compact-portable-memory.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/201-when-less-is-more-the-llm-scaling-paradox-in-context-compression.md`
+- [[2603.29193] Developing Adaptive Context Compression Techniques for Large Language Models (LLMs) in Long-Running Interactions](https://arxiv.org/abs/2603.29193) — `raw/hot-topics-sources/2026-04-10/197-developing-adaptive-context-compression-techniques-for-llms-in-long-running-inte.md`
+  - 메모: --- title: [2603.29193] Developing Adaptive Context Compression Techniques for Large Language Models (LLMs) in Long-Running Interactions source_url: https://arxiv.org/abs/2603.29193 final_url: https://arxiv.org/abs/2603.29193 status: 200 content_type: text/html; charset=utf-8 top
+- [[2601.07190] Active Context Compression: Autonomous Memory Management in LLM Agents](https://arxiv.org/abs/2601.07190) — `raw/hot-topics-sources/2026-04-10/198-active-context-compression-autonomous-memory-management-in-llm-agents.md`
+  - 메모: --- title: [2601.07190] Active Context Compression: Autonomous Memory Management in LLM Agents source_url: https://arxiv.org/abs/2601.07190 final_url: https://arxiv.org/abs/2601.07190 status: 200 content_type: text/html; charset=utf-8 topics: [Adaptive Context Compression for Lon
+- [[2603.19733] PoC: Performance-oriented Context Compression for Large Language Models via Performance Prediction](https://arxiv.org/abs/2603.19733) — `raw/hot-topics-sources/2026-04-10/199-poc-performance-oriented-context-compression-for-llms-via-performance-prediction.md`
+  - 메모: --- title: [2603.19733] PoC: Performance-oriented Context Compression for Large Language Models via Performance Prediction source_url: https://arxiv.org/abs/2603.19733 final_url: https://arxiv.org/abs/2603.19733 status: 200 content_type: text/html; charset=utf-8 topics: [Adaptive
+- [[2602.21221] Latent Context Compilation: Distilling Long Context into Compact Portable Memory](https://arxiv.org/abs/2602.21221) — `raw/hot-topics-sources/2026-04-10/200-latent-context-compilation-distilling-long-context-into-compact-portable-memory.md`
+  - 메모: --- title: [2602.21221] Latent Context Compilation: Distilling Long Context into Compact Portable Memory source_url: https://arxiv.org/abs/2602.21221 final_url: https://arxiv.org/abs/2602.21221 status: 200 content_type: text/html; charset=utf-8 topics: [Adaptive Context Compressi
+- [[2602.09789] When Less is More: The LLM Scaling Paradox in Context Compression](https://arxiv.org/abs/2602.09789) — `raw/hot-topics-sources/2026-04-10/201-when-less-is-more-the-llm-scaling-paradox-in-context-compression.md`
+  - 메모: --- title: [2602.09789] When Less is More: The LLM Scaling Paradox in Context Compression source_url: https://arxiv.org/abs/2602.09789 final_url: https://arxiv.org/abs/2602.09789 status: 200 content_type: text/html; charset=utf-8 topics: [Adaptive Context Compression for Long-Run
 
 ## 관련 문서
 

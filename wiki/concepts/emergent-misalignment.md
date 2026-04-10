@@ -25,12 +25,22 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: arxiv.org 2건, www.anthropic.com 1건, assets.anthropic.com 1건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/emergent-misalignment.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/353-from-shortcuts-to-sabotage-natural-emergent-misalignment-from-reward-hacking.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/354-natural-emergent-misalignment-from-reward-hacking-in-production-rl.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/355-natural-emergent-misalignment-from-reward-hacking.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/356-recent-frontier-models-are-reward-hacking.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/357-monitoring-emergent-reward-hacking-via-internal-activations.md`
+- [From shortcuts to sabotage: natural emergent misalignment from reward hacking \ Anthropic](https://www.anthropic.com/research/emergent-misalignment-reward-hacking) — `raw/hot-topics-sources/2026-04-10/353-from-shortcuts-to-sabotage-natural-emergent-misalignment-from-reward-hacking.md`
+  - 메모: --- title: From shortcuts to sabotage: natural emergent misalignment from reward hacking \ Anthropic source_url: https://www.anthropic.com/research/emergent-misalignment-reward-hacking final_url: https://www.anthropic.com/research/emergent-misalignment-reward-hacking status: 200 
+- [354-natural-emergent-misalignment-from-reward-hacking-in-production-rl](https://assets.anthropic.com/m/74342f2c96095771/original/Natural-emergent-misalignment-from-reward-hacking-paper.pdf) — `raw/hot-topics-sources/2026-04-10/354-natural-emergent-misalignment-from-reward-hacking-in-production-rl.md`
+  - 메모: --- title: Natural Emergent Misalignment from Reward Hacking in Production RL (PDF) source_url: https://assets.anthropic.com/m/74342f2c96095771/original/Natural-emergent-misalignment-from-reward-hacking-paper.pdf final_url: https://assets.anthropic.com/m/74342f2c96095771/original
+- [Natural emergent misalignment from reward hacking in production RL](https://arxiv.org/html/2511.18397v1) — `raw/hot-topics-sources/2026-04-10/355-natural-emergent-misalignment-from-reward-hacking.md`
+  - 메모: --- title: Natural emergent misalignment from reward hacking in production RL source_url: https://arxiv.org/html/2511.18397v1 final_url: https://arxiv.org/html/2511.18397v1 status: 200 content_type: text/html; charset=utf-8 topics: [Natural Emergent Misalignment from Reward Hacki
+- [Recent Frontier Models Are Reward Hacking - METR](https://metr.org/blog/2025-06-05-recent-reward-hacking) — `raw/hot-topics-sources/2026-04-10/356-recent-frontier-models-are-reward-hacking.md`
+  - 메모: --- title: Recent Frontier Models Are Reward Hacking - METR source_url: https://metr.org/blog/2025-06-05-recent-reward-hacking final_url: https://metr.org/blog/2025-06-05-recent-reward-hacking/ status: 200 content_type: text/html; charset=UTF-8 topics: [Natural Emergent Misalignm
+- [[2603.04069] Monitoring Emergent Reward Hacking During Generation via Internal Activations](https://arxiv.org/abs/2603.04069) — `raw/hot-topics-sources/2026-04-10/357-monitoring-emergent-reward-hacking-via-internal-activations.md`
+  - 메모: --- title: [2603.04069] Monitoring Emergent Reward Hacking During Generation via Internal Activations source_url: https://arxiv.org/abs/2603.04069 final_url: https://arxiv.org/abs/2603.04069 status: 200 content_type: text/html; charset=utf-8 topics: [Natural Emergent Misalignment
 
 ## 관련 문서
 

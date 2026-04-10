@@ -83,54 +83,25 @@ Lethal Trifecta 방어는 주로 **우상 사분면(Deterministic Feedback, Comp
 
 [[agentic manual testing|에이전틱 수동 테스트]], 브라우저 자동화([[browser automation agents]]), 이메일 처리 에이전트 등이 자연스럽게 Lethal Trifecta 위험에 노출되기 쉬운 영역이다.
 
-## 2026년 4월 핫토픽 업데이트
-
-### Agent Security: Lethal Trifecta & Prompt Injection Defense
-
-- **정의**: 사적 데이터 접근 + 신뢰할 수 없는 콘텐츠 노출 + 외부 통신이 결합될 때 발생하는 에이전트의 구조적 취약성과 그 방어 패턴.
-- **왜 다시 중요해졌나**: Simon Willison이 명명한 "lethal trifecta" 개념이 2026년 1월 IBM Bob, Superhuman AI, Notion AI, Claude Cowork 등 4개 주요 에이전트 제품에서 5일 만에 잇따라 실증되며 보안 위기가 폭발했고, 3월에는 Palo Alto Unit 42가 in-the-wild 인다이렉트 프롬프트 인젝션을 정식 보고하면서 에이전트 아키텍처 설계 시 보안이 1차 고려사항으로 격상되었다.
-- **대표 자료**:
-- [The lethal trifecta for AI agents (Simon Willison)](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
-- [Writing about Agentic Engineering Patterns (Simon Willison)](https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/)
-- [Introducing Claude Opus 4.5 (Prompt Injection Robustness)](https://www.anthropic.com/news/claude-opus-4-5)
-
-- [[ai-hot-topics-2026-04]]
-
-
-## 2026년 4월 핫토픽 메모
-
-### Agent Security: Lethal Trifecta & Prompt Injection Defense
-
-- **정의**: 사적 데이터 접근 + 신뢰할 수 없는 콘텐츠 노출 + 외부 통신이 결합될 때 발생하는 에이전트의 구조적 취약성과 그 방어 패턴.
-- **왜 중요한가**: Simon Willison이 명명한 "lethal trifecta" 개념이 2026년 1월 IBM Bob, Superhuman AI, Notion AI, Claude Cowork 등 4개 주요 에이전트 제품에서 5일 만에 잇따라 실증되며 보안 위기가 폭발했고, 3월에는 Palo Alto Unit 42가 in-the-wild 인다이렉트 프롬프트 인젝션을 정식 보고하면서 에이전트 아키텍처 설계 시 보안이 1차 고려사항으로 격상되었다.
-- **대표 자료**:
-  - [The lethal trifecta for AI agents (Simon Willison)](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
-  - [Writing about Agentic Engineering Patterns (Simon Willison)](https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/)
-  - [Introducing Claude Opus 4.5 (Prompt Injection Robustness)](https://www.anthropic.com/news/claude-opus-4-5)
-  - [Effective context engineering for AI agents (Anthropic)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
-  - [Context Engineering for AI Agents in Open-Source Software (AGENTS.md study)](https://arxiv.org/abs/2510.21413)
-
-
-## 2026년 4월 핫토픽 맥락
-
-Simon Willison이 명명한 "lethal trifecta" 개념이 2026년 1월 IBM Bob, Superhuman AI, Notion AI, Claude Cowork 등 4개 주요 에이전트 제품에서 5일 만에 잇따라 실증되며 보안 위기가 폭발했고, 3월에는 Palo Alto Unit 42가 in-the-wild 인다이렉트 프롬프트 인젝션을 정식 보고하면서 에이전트 아키텍처 설계 시 보안이 1차 고려사항으로 격상되었다.
-
-### 추가 레퍼런스
-
-- [The lethal trifecta for AI agents (Simon Willison)](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
-- [Writing about Agentic Engineering Patterns (Simon Willison)](https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/)
-- [Introducing Claude Opus 4.5 (Prompt Injection Robustness)](https://www.anthropic.com/news/claude-opus-4-5)
-- [Effective context engineering for AI agents (Anthropic)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
-- [Context Engineering for AI Agents in Open-Source Software (AGENTS.md study)](https://arxiv.org/abs/2510.21413)
-
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: simonwillison.net 2건, www.anthropic.com 2건, arxiv.org 1건
+- source 조합: 공식 문서
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/lethal-trifecta.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/038-the-lethal-trifecta-for-ai-agents.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/039-writing-about-agentic-engineering-patterns.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/012-introducing-claude-opus-4-5.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/001-effective-context-engineering-for-ai-agents.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/040-context-engineering-for-ai-agents-in-open-source-software.md`
+- [The lethal trifecta for AI agents: private data, untrusted content, and external communication](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta) — `raw/hot-topics-sources/2026-04-10/038-the-lethal-trifecta-for-ai-agents.md`
+  - 메모: --- title: The lethal trifecta for AI agents: private data, untrusted content, and external communication source_url: https://simonwillison.net/2025/Jun/16/the-lethal-trifecta final_url: https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/ status: 200 content_type: text/htm
+- [Writing about Agentic Engineering Patterns](https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns) — `raw/hot-topics-sources/2026-04-10/039-writing-about-agentic-engineering-patterns.md`
+  - 메모: --- title: Writing about Agentic Engineering Patterns source_url: https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns final_url: https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/ status: 200 content_type: text/html; charset=utf-8 topics: [Agent Se
+- [Introducing Claude Opus 4.5 \ Anthropic](https://www.anthropic.com/news/claude-opus-4-5) — `raw/hot-topics-sources/2026-04-10/012-introducing-claude-opus-4-5.md`
+  - 메모: --- title: Introducing Claude Opus 4.5 \ Anthropic source_url: https://www.anthropic.com/news/claude-opus-4-5 final_url: https://www.anthropic.com/news/claude-opus-4-5 status: 200 content_type: text/html; charset=utf-8 topics: [Generator-Evaluator Harness Architecture, Long-Horiz
+- [Effective context engineering for AI agents \ Anthropic](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — `raw/hot-topics-sources/2026-04-10/001-effective-context-engineering-for-ai-agents.md`
+  - 메모: --- title: Effective context engineering for AI agents \ Anthropic source_url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents final_url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents status: 200 content_type: 
+- [[2510.21413] Context Engineering for AI Agents in Open-Source Software](https://arxiv.org/abs/2510.21413) — `raw/hot-topics-sources/2026-04-10/040-context-engineering-for-ai-agents-in-open-source-software.md`
+  - 메모: --- title: [2510.21413] Context Engineering for AI Agents in Open-Source Software source_url: https://arxiv.org/abs/2510.21413 final_url: https://arxiv.org/abs/2510.21413 status: 200 content_type: text/html; charset=utf-8 topics: [Agent Security: Lethal Trifecta & Prompt Injectio
 
 ## 관련 문서
 

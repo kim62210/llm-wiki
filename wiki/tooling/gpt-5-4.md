@@ -32,26 +32,25 @@ updated: 2026-04-10
 - [Model Release Notes — OpenAI Help Center](https://help.openai.com/en/articles/9624314-model-release-notes)
 - [GDPval — OpenAI](https://openai.com/index/gdpval/)
 
-## 2026년 4월 핫토픽 맥락
-
-2026년 3월 5일 ChatGPT/API/Codex에 동시 출시, OSWorld-Verified 75%(GPT-5.2의 47.3% 대비 급등)와 GDPval 83%를 기록하고 1M 토큰 컨텍스트 및 GPT-5.3-codex의 프론티어 코딩 능력을 메인라인 reasoning 모델에 통합했다.
-
-### 추가 레퍼런스
-
-- [Introducing GPT-5.4 — OpenAI](https://openai.com/index/introducing-gpt-5-4/)
-- [GPT-5.4 — Wikipedia](https://en.wikipedia.org/wiki/GPT-5.4)
-- [Introducing GPT-5.4 mini and nano — OpenAI](https://openai.com/index/introducing-gpt-5-4-mini-and-nano/)
-- [Model Release Notes — OpenAI Help Center](https://help.openai.com/en/articles/9624314-model-release-notes)
-- [GDPval — OpenAI](https://openai.com/index/gdpval/)
-
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: openai.com 3건, en.wikipedia.org 1건, help.openai.com 1건
+- source 조합: 공식 문서
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/gpt-5-4.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/120-introducing-gpt-5-4-openai.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/121-gpt-5-4-wikipedia.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/122-introducing-gpt-5-4-mini-and-nano-openai.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/123-model-release-notes-openai-help-center.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/124-gdpval-openai.md`
+- [Introducing GPT-5.4 | OpenAI](https://openai.com/index/introducing-gpt-5-4) — `raw/hot-topics-sources/2026-04-10/120-introducing-gpt-5-4-openai.md`
+  - 메모: --- title: Introducing GPT-5.4 | OpenAI source_url: https://openai.com/index/introducing-gpt-5-4 final_url: https://openai.com/index/introducing-gpt-5-4/ status: 200 content_type: text/html; charset=utf-8 topics: [GPT-5.4] sections: [Model Releases & Benchmarks] fetched_at: 2026-
+- [GPT-5.4 - Wikipedia](https://en.wikipedia.org/wiki/GPT-5.4) — `raw/hot-topics-sources/2026-04-10/121-gpt-5-4-wikipedia.md`
+  - 메모: --- title: GPT-5.4 - Wikipedia source_url: https://en.wikipedia.org/wiki/GPT-5.4 final_url: https://en.wikipedia.org/wiki/GPT-5.4 status: 200 content_type: text/html; charset=UTF-8 topics: [GPT-5.4] sections: [Model Releases & Benchmarks] fetched_at: 2026-04-10T01:43:41.722593+00
+- [Introducing GPT-5.4 mini and nano | OpenAI](https://openai.com/index/introducing-gpt-5-4-mini-and-nano) — `raw/hot-topics-sources/2026-04-10/122-introducing-gpt-5-4-mini-and-nano-openai.md`
+  - 메모: --- title: Introducing GPT-5.4 mini and nano | OpenAI source_url: https://openai.com/index/introducing-gpt-5-4-mini-and-nano final_url: https://openai.com/index/introducing-gpt-5-4-mini-and-nano/ status: 200 content_type: text/html; charset=utf-8 topics: [GPT-5.4] sections: [Mode
+- [Model Release Notes | OpenAI Help Center](https://help.openai.com/en/articles/9624314-model-release-notes) — `raw/hot-topics-sources/2026-04-10/123-model-release-notes-openai-help-center.md`
+  - 메모: --- title: Model Release Notes | OpenAI Help Center source_url: https://help.openai.com/en/articles/9624314-model-release-notes final_url: https://help.openai.com/en/articles/9624314-model-release-notes status: 200 content_type: text/html; charset=utf-8 topics: [GPT-5.4] sections
+- [Measuring the performance of our models on real-world tasks  | OpenAI](https://openai.com/index/gdpval) — `raw/hot-topics-sources/2026-04-10/124-gdpval-openai.md`
+  - 메모: --- title: Measuring the performance of our models on real-world tasks | OpenAI source_url: https://openai.com/index/gdpval final_url: https://openai.com/index/gdpval/ status: 200 content_type: text/html; charset=utf-8 topics: [GPT-5.4] sections: [Model Releases & Benchmarks] fet
 
 ## 관련 문서
 

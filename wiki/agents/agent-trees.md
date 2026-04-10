@@ -25,12 +25,22 @@ AAMAS 2026에 채택된 ReAcTree가 Qwen 2.5 72B로 ReAct(31%) 대비 61% 성공
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: arxiv.org 3건, github.com 1건, www.anthropic.com 1건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/agent-trees.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/030-reactree-hierarchical-llm-agent-trees-with-control-flow-for-long-horizon-task-pl.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/031-plan-and-act-improving-planning-of-agents-for-long-horizon-tasks.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/032-deep-research-agents-a-systematic-examination-and-roadmap.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/033-skyworkai-deepresearchagent.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/006-how-we-built-our-multi-agent-research-system.md`
+- [[2511.02424] ReAcTree: Hierarchical LLM Agent Trees with Control Flow for Long-Horizon Task Planning](https://arxiv.org/abs/2511.02424) — `raw/hot-topics-sources/2026-04-10/030-reactree-hierarchical-llm-agent-trees-with-control-flow-for-long-horizon-task-pl.md`
+  - 메모: --- title: [2511.02424] ReAcTree: Hierarchical LLM Agent Trees with Control Flow for Long-Horizon Task Planning source_url: https://arxiv.org/abs/2511.02424 final_url: https://arxiv.org/abs/2511.02424 status: 200 content_type: text/html; charset=utf-8 topics: [Hierarchical Planni
+- [[2503.09572] Plan-and-Act: Improving Planning of Agents for Long-Horizon Tasks](https://arxiv.org/abs/2503.09572) — `raw/hot-topics-sources/2026-04-10/031-plan-and-act-improving-planning-of-agents-for-long-horizon-tasks.md`
+  - 메모: --- title: [2503.09572] Plan-and-Act: Improving Planning of Agents for Long-Horizon Tasks source_url: https://arxiv.org/abs/2503.09572 final_url: https://arxiv.org/abs/2503.09572 status: 200 content_type: text/html; charset=utf-8 topics: [Hierarchical Planning with Agent Trees] s
+- [[2506.18096] Deep Research Agents: A Systematic Examination And Roadmap](https://arxiv.org/abs/2506.18096) — `raw/hot-topics-sources/2026-04-10/032-deep-research-agents-a-systematic-examination-and-roadmap.md`
+  - 메모: --- title: [2506.18096] Deep Research Agents: A Systematic Examination And Roadmap source_url: https://arxiv.org/abs/2506.18096 final_url: https://arxiv.org/abs/2506.18096 status: 200 content_type: text/html; charset=utf-8 topics: [Hierarchical Planning with Agent Trees] sections
+- [GitHub - SkyworkAI/DeepResearchAgent: DeepResearchAgent is a hierarchical multi-agent system designed not only for deep research tasks but also for general-purpose task solving. The framework leverages a top-level planning agent to coordinate multiple specialized lower-level agents, enabling automated task decomposition and efficient execution across diverse and complex domains. · GitHub](https://github.com/SkyworkAI/DeepResearchAgent) — `raw/hot-topics-sources/2026-04-10/033-skyworkai-deepresearchagent.md`
+  - 메모: --- title: GitHub - SkyworkAI/DeepResearchAgent: DeepResearchAgent is a hierarchical multi-agent system designed not only for deep research tasks but also for general-purpose task solving. The framework leverages a top-level planning agent to coordinate multiple specialized lower
+- [How we built our multi-agent research system \ Anthropic](https://www.anthropic.com/engineering/multi-agent-research-system) — `raw/hot-topics-sources/2026-04-10/006-how-we-built-our-multi-agent-research-system.md`
+  - 메모: --- title: How we built our multi-agent research system \ Anthropic source_url: https://www.anthropic.com/engineering/multi-agent-research-system final_url: https://www.anthropic.com/engineering/multi-agent-research-system status: 200 content_type: text/html; charset=utf-8 topics
 
 ## 관련 문서
 

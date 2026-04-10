@@ -25,12 +25,22 @@ Apollo Research와 OpenAI의 공동 연구가 o3의 scheming을 13% → 0.4%로 
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: www.apolloresearch.ai 2건, openai.com 2건, arxiv.org 1건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/deliberative-alignment.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/358-stress-testing-deliberative-alignment-for-anti-scheming-training.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/359-detecting-and-reducing-scheming-in-ai-models.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/360-deliberative-alignment-reasoning-enables-safer-language-models.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/361-stress-testing-deliberative-alignment.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/362-frontier-models-are-capable-of-in-context-scheming.md`
+- [Stress Testing Deliberative Alignment for Anti-Scheming Training – Apollo Research](https://www.apolloresearch.ai/research/stress-testing-deliberative-alignment-for-anti-scheming-training) — `raw/hot-topics-sources/2026-04-10/358-stress-testing-deliberative-alignment-for-anti-scheming-training.md`
+  - 메모: --- title: Stress Testing Deliberative Alignment for Anti-Scheming Training – Apollo Research source_url: https://www.apolloresearch.ai/research/stress-testing-deliberative-alignment-for-anti-scheming-training final_url: https://www.apolloresearch.ai/research/stress-testing-delib
+- [Detecting and reducing scheming in AI models | OpenAI](https://openai.com/index/detecting-and-reducing-scheming-in-ai-models) — `raw/hot-topics-sources/2026-04-10/359-detecting-and-reducing-scheming-in-ai-models.md`
+  - 메모: --- title: Detecting and reducing scheming in AI models | OpenAI source_url: https://openai.com/index/detecting-and-reducing-scheming-in-ai-models final_url: https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/ status: 200 content_type: text/html; charset=utf-8 
+- [Deliberative alignment: reasoning enables safer language models | OpenAI](https://openai.com/index/deliberative-alignment) — `raw/hot-topics-sources/2026-04-10/360-deliberative-alignment-reasoning-enables-safer-language-models.md`
+  - 메모: --- title: Deliberative alignment: reasoning enables safer language models | OpenAI source_url: https://openai.com/index/deliberative-alignment final_url: https://openai.com/index/deliberative-alignment/ status: 200 content_type: text/html; charset=utf-8 topics: [Deliberative Ali
+- [[2509.15541] Stress Testing Deliberative Alignment for Anti-Scheming Training](https://arxiv.org/abs/2509.15541) — `raw/hot-topics-sources/2026-04-10/361-stress-testing-deliberative-alignment.md`
+  - 메모: --- title: [2509.15541] Stress Testing Deliberative Alignment for Anti-Scheming Training source_url: https://arxiv.org/abs/2509.15541 final_url: https://arxiv.org/abs/2509.15541 status: 200 content_type: text/html; charset=utf-8 topics: [Deliberative Alignment & Anti-Scheming Tra
+- [Frontier Models are Capable of In-Context Scheming – Apollo Research](https://www.apolloresearch.ai/research/frontier-models-are-capable-of-incontext-scheming) — `raw/hot-topics-sources/2026-04-10/362-frontier-models-are-capable-of-in-context-scheming.md`
+  - 메모: --- title: Frontier Models are Capable of In-Context Scheming – Apollo Research source_url: https://www.apolloresearch.ai/research/frontier-models-are-capable-of-incontext-scheming final_url: https://www.apolloresearch.ai/research/frontier-models-are-capable-of-incontext-scheming
 
 ## 관련 문서
 

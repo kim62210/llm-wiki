@@ -26,12 +26,23 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: dspy.ai 2건, github.com 2건, gepa-ai.github.io 1건
+- source 조합: 구현체, 공식 문서
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/dspy-gepa.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/413-dspy-official-docs.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/414-dspy-gepa-reflective-prompt-optimizer.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/415-stanfordnlp-dspy-github.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/416-optimize-anything-universal-api-for-optimizing-any-text-parameter.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/417-gepa-ai-gepa-github.md`
+- [DSPy](https://dspy.ai) — `raw/hot-topics-sources/2026-04-10/413-dspy-official-docs.md`
+  - 메모: --- title: DSPy source_url: https://dspy.ai final_url: https://dspy.ai status: 200 content_type: text/html; charset=utf-8 topics: [DSPy + GEPA optimize_anything] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:44:23.677872+00:00 --- # DSPy ## 원본 URL https://dspy.ai
+- [1. GEPA Overview - DSPy](https://dspy.ai/api/optimizers/GEPA/overview) — `raw/hot-topics-sources/2026-04-10/414-dspy-gepa-reflective-prompt-optimizer.md`
+  - 메모: --- title: 1. GEPA Overview - DSPy source_url: https://dspy.ai/api/optimizers/GEPA/overview final_url: https://dspy.ai/api/optimizers/GEPA/overview/ status: 200 content_type: text/html; charset=utf-8 topics: [DSPy + GEPA optimize_anything] sections: [Dev Tooling & Frameworks] fet
+- [GitHub - stanfordnlp/dspy: DSPy: The framework for programming—not prompting—language models · GitHub](https://github.com/stanfordnlp/dspy) — `raw/hot-topics-sources/2026-04-10/415-stanfordnlp-dspy-github.md`
+  - 메모: --- title: GitHub - stanfordnlp/dspy: DSPy: The framework for programming—not prompting—language models · GitHub source_url: https://github.com/stanfordnlp/dspy final_url: https://github.com/stanfordnlp/dspy status: 200 content_type: text/html; charset=utf-8 topics: [DSPy + GEPA 
+- [optimize_anything: A Universal API for Optimizing any Text Parameter - GEPA](https://gepa-ai.github.io/gepa/blog/2026/02/18/introducing-optimize-anything) — `raw/hot-topics-sources/2026-04-10/416-optimize-anything-universal-api-for-optimizing-any-text-parameter.md`
+  - 메모: --- title: optimize_anything: A Universal API for Optimizing any Text Parameter - GEPA source_url: https://gepa-ai.github.io/gepa/blog/2026/02/18/introducing-optimize-anything final_url: https://gepa-ai.github.io/gepa/blog/2026/02/18/introducing-optimize-anything/ status: 200 con
+- [GitHub - gepa-ai/gepa: Optimize prompts, code, and more with AI-powered Reflective Text Evolution · GitHub](https://github.com/gepa-ai/gepa) — `raw/hot-topics-sources/2026-04-10/417-gepa-ai-gepa-github.md`
+  - 메모: --- title: GitHub - gepa-ai/gepa: Optimize prompts, code, and more with AI-powered Reflective Text Evolution · GitHub source_url: https://github.com/gepa-ai/gepa final_url: https://github.com/gepa-ai/gepa status: 200 content_type: text/html; charset=utf-8 topics: [DSPy + GEPA opt
 
 ## 관련 문서
 

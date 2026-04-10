@@ -34,12 +34,23 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: www.anthropic.com 3건, www-cdn.anthropic.com 1건, www.governance.ai 1건
+- source 조합: 공식 문서
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/responsible-scaling-policy-v3.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/383-responsible-scaling-policy-version-3-0.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/384-anthropic-s-frontier-safety-roadmap.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/385-anthropic-s-responsible-scaling-policy.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/386-responsible-scaling-policy-v3-1.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/387-anthropic-s-rsp-v3-0-analysis.md`
+- [Responsible Scaling Policy Version 3.0 \ Anthropic](https://www.anthropic.com/news/responsible-scaling-policy-v3) — `raw/hot-topics-sources/2026-04-10/383-responsible-scaling-policy-version-3-0.md`
+  - 메모: --- title: Responsible Scaling Policy Version 3.0 \ Anthropic source_url: https://www.anthropic.com/news/responsible-scaling-policy-v3 final_url: https://www.anthropic.com/news/responsible-scaling-policy-v3 status: 200 content_type: text/html; charset=utf-8 topics: [Responsible S
+- [Frontier Safety Roadmap \ Anthropic](https://www.anthropic.com/responsible-scaling-policy/roadmap) — `raw/hot-topics-sources/2026-04-10/384-anthropic-s-frontier-safety-roadmap.md`
+  - 메모: --- title: Frontier Safety Roadmap \ Anthropic source_url: https://www.anthropic.com/responsible-scaling-policy/roadmap final_url: https://www.anthropic.com/responsible-scaling-policy/roadmap status: 200 content_type: text/html; charset=utf-8 topics: [Responsible Scaling Policy v
+- [Responsible Scaling Policy Updates \ Anthropic](https://www.anthropic.com/responsible-scaling-policy) — `raw/hot-topics-sources/2026-04-10/385-anthropic-s-responsible-scaling-policy.md`
+  - 메모: --- title: Responsible Scaling Policy Updates \ Anthropic source_url: https://www.anthropic.com/responsible-scaling-policy final_url: https://www.anthropic.com/responsible-scaling-policy status: 200 content_type: text/html; charset=utf-8 topics: [Responsible Scaling Policy v3 & F
+- [386-responsible-scaling-policy-v3-1](https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf) — `raw/hot-topics-sources/2026-04-10/386-responsible-scaling-policy-v3-1.md`
+  - 메모: --- title: Responsible Scaling Policy v3.1 (PDF, April 2 2026) source_url: https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf final_url: https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pd
+- [Anthropic’s RSP v3.0: How it Works, What’s Changed, and Some Reflections | GovAI](https://www.governance.ai/analysis/anthropics-rsp-v3-0-how-it-works-whats-changed-and-some-reflections) — `raw/hot-topics-sources/2026-04-10/387-anthropic-s-rsp-v3-0-analysis.md`
+  - 메모: --- title: Anthropic’s RSP v3.0: How it Works, What’s Changed, and Some Reflections | GovAI source_url: https://www.governance.ai/analysis/anthropics-rsp-v3-0-how-it-works-whats-changed-and-some-reflections final_url: https://www.governance.ai/analysis/anthropics-rsp-v3-0-how-it-
 
 ## 관련 문서
 

@@ -25,12 +25,22 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: arxiv.org 5건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/kv-cache-compression.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/105-chunkkv-semantic-preserving-kv-cache-compression-for-efficient-long-context-llm-.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/106-fastkv-kv-cache-compression-for-fast-long-context-inference.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/107-structkv-preserving-the-structural-skeleton-for-scalable-long-context-inference.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/108-kvsculpt-kv-cache-compression-as-distillation.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/109-rocketkv-accelerating-long-context-llm-inference-via-two-stage-kv-cache-compress.md`
+- [[2502.00299] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](https://arxiv.org/abs/2502.00299) — `raw/hot-topics-sources/2026-04-10/105-chunkkv-semantic-preserving-kv-cache-compression-for-efficient-long-context-llm-.md`
+  - 메모: --- title: [2502.00299] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference source_url: https://arxiv.org/abs/2502.00299 final_url: https://arxiv.org/abs/2502.00299 status: 200 content_type: text/html; charset=utf-8 topics: [Chunk-Semantic K
+- [[2502.01068] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration](https://arxiv.org/abs/2502.01068) — `raw/hot-topics-sources/2026-04-10/106-fastkv-kv-cache-compression-for-fast-long-context-inference.md`
+  - 메모: --- title: [2502.01068] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration source_url: https://arxiv.org/abs/2502.01068 final_url: https://arxiv.org/abs/2502.01068 status: 200 content_type: text/html; charset=utf-8 topics: [Chunk-Se
+- [[2604.06746] StructKV: Preserving the Structural Skeleton for Scalable Long-Context Inference](https://arxiv.org/abs/2604.06746) — `raw/hot-topics-sources/2026-04-10/107-structkv-preserving-the-structural-skeleton-for-scalable-long-context-inference.md`
+  - 메모: --- title: [2604.06746] StructKV: Preserving the Structural Skeleton for Scalable Long-Context Inference source_url: https://arxiv.org/abs/2604.06746 final_url: https://arxiv.org/abs/2604.06746 status: 200 content_type: text/html; charset=utf-8 topics: [Chunk-Semantic KV Cache Co
+- [[2603.27819] KVSculpt: KV Cache Compression as Distillation](https://arxiv.org/abs/2603.27819) — `raw/hot-topics-sources/2026-04-10/108-kvsculpt-kv-cache-compression-as-distillation.md`
+  - 메모: --- title: [2603.27819] KVSculpt: KV Cache Compression as Distillation source_url: https://arxiv.org/abs/2603.27819 final_url: https://arxiv.org/abs/2603.27819 status: 200 content_type: text/html; charset=utf-8 topics: [Chunk-Semantic KV Cache Compression] sections: [Inference Op
+- [RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache Compression](https://arxiv.org/html/2502.14051v3) — `raw/hot-topics-sources/2026-04-10/109-rocketkv-accelerating-long-context-llm-inference-via-two-stage-kv-cache-compress.md`
+  - 메모: --- title: RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache Compression source_url: https://arxiv.org/html/2502.14051v3 final_url: https://arxiv.org/html/2502.14051v3 status: 200 content_type: text/html; charset=utf-8 topics: [Chunk-Semantic KV Cache Compr
 
 ## 관련 문서
 

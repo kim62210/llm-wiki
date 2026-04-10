@@ -90,54 +90,25 @@ Claude Code가 Explore 서브에이전트에 준 지침:
 3. **긴 로그 분석**: 전용 서브에이전트에 로그 읽게 하고 요약만 받기
 4. **테스트 반복 실행**: 테스트 러너 서브에이전트로 부모 컨텍스트 보호
 
-## 2026년 4월 핫토픽 업데이트
-
-### Subagents & Multi-Agent Orchestration in the Harness
-
-- **정의**: 메인 세션이 전용 컨텍스트·권한을 가진 서브에이전트에 작업을 위임하는 오케스트레이션 패턴.
-- **왜 다시 중요해졌나**: Claude Code가 `/agents`·`.claude/agents/`·`Agent` 툴·`parent_tool_use_id` 필드를 정식화했고, Anthropic 3월 harness 블로그에서 planner-generator-evaluator 3-agent 구조가 long-running 코딩을 가능하게 한 핵심이라고 공개하면서 "GAN-style agent loop" 패턴이 업계 표준 토론거리가 됐다.
-- **대표 자료**:
-- [Create custom subagents (Claude Code)](https://code.claude.com/docs/en/sub-agents)
-- [Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-- [Claude Agent SDK Overview](https://code.claude.com/docs/en/agent-sdk/overview)
-
-- [[ai-hot-topics-2026-04]]
-
-
-## 2026년 4월 핫토픽 메모
-
-### Subagents & Multi-Agent Orchestration in the Harness
-
-- **정의**: 메인 세션이 전용 컨텍스트·권한을 가진 서브에이전트에 작업을 위임하는 오케스트레이션 패턴.
-- **왜 중요한가**: Claude Code가 `/agents`·`.claude/agents/`·`Agent` 툴·`parent_tool_use_id` 필드를 정식화했고, Anthropic 3월 harness 블로그에서 planner-generator-evaluator 3-agent 구조가 long-running 코딩을 가능하게 한 핵심이라고 공개하면서 "GAN-style agent loop" 패턴이 업계 표준 토론거리가 됐다.
-- **대표 자료**:
-  - [Create custom subagents (Claude Code)](https://code.claude.com/docs/en/sub-agents)
-  - [Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-  - [Claude Agent SDK Overview](https://code.claude.com/docs/en/agent-sdk/overview)
-  - [Common workflows (Claude Code)](https://code.claude.com/docs/en/common-workflows)
-  - [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-
-
-## 2026년 4월 핫토픽 맥락
-
-Claude Code가 `/agents`·`.claude/agents/`·`Agent` 툴·`parent_tool_use_id` 필드를 정식화했고, Anthropic 3월 harness 블로그에서 planner-generator-evaluator 3-agent 구조가 long-running 코딩을 가능하게 한 핵심이라고 공개하면서 "GAN-style agent loop" 패턴이 업계 표준 토론거리가 됐다.
-
-### 추가 레퍼런스
-
-- [Create custom subagents (Claude Code)](https://code.claude.com/docs/en/sub-agents)
-- [Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-- [Claude Agent SDK Overview](https://code.claude.com/docs/en/agent-sdk/overview)
-- [Common workflows (Claude Code)](https://code.claude.com/docs/en/common-workflows)
-- [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
-
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: code.claude.com 3건, www.anthropic.com 2건
+- source 조합: 공식 문서
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/subagents.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/011-harness-design-for-long-running-application-development.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/054-common-workflows.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/041-effective-harnesses-for-long-running-agents.md`
+- [Create custom subagents - Claude Code Docs](https://code.claude.com/docs/en/sub-agents) — `raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md`
+  - 메모: --- title: Create custom subagents - Claude Code Docs source_url: https://code.claude.com/docs/en/sub-agents final_url: https://code.claude.com/docs/en/sub-agents status: 200 content_type: text/html; charset=utf-8 topics: [Orchestrator-Worker Multi-Agent Pattern, Subagents & Mult
+- [Harness design for long-running application development \ Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps) — `raw/hot-topics-sources/2026-04-10/011-harness-design-for-long-running-application-development.md`
+  - 메모: --- title: Harness design for long-running application development \ Anthropic source_url: https://www.anthropic.com/engineering/harness-design-long-running-apps final_url: https://www.anthropic.com/engineering/harness-design-long-running-apps status: 200 content_type: text/html;
+- [Agent SDK overview - Claude Code Docs](https://code.claude.com/docs/en/agent-sdk/overview) — `raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md`
+  - 메모: --- title: Agent SDK overview - Claude Code Docs source_url: https://code.claude.com/docs/en/agent-sdk/overview final_url: https://code.claude.com/docs/en/agent-sdk/overview status: 200 content_type: text/html; charset=utf-8 topics: [Agent Harnesses for Long-Running Coding Sessio
+- [Common workflows - Claude Code Docs](https://code.claude.com/docs/en/common-workflows) — `raw/hot-topics-sources/2026-04-10/054-common-workflows.md`
+  - 메모: --- title: Common workflows - Claude Code Docs source_url: https://code.claude.com/docs/en/common-workflows final_url: https://code.claude.com/docs/en/common-workflows status: 200 content_type: text/html; charset=utf-8 topics: [Claude Code Hooks System, Subagents & Multi-Agent Or
+- [Effective harnesses for long-running agents \ Anthropic](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — `raw/hot-topics-sources/2026-04-10/041-effective-harnesses-for-long-running-agents.md`
+  - 메모: --- title: Effective harnesses for long-running agents \ Anthropic source_url: https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents final_url: https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents status: 200 content_type: 
 
 ## 관련 문서
 

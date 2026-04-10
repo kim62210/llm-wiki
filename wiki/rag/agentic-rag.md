@@ -25,12 +25,23 @@ LLM이 검색 도구를 스스로 호출·반복하며 다단계 탐색을 수�
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: arxiv.org 3건, github.com 2건
+- source 조합: 구현체
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/agentic-rag.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/167-a-rag-scaling-agentic-retrieval-augmented-generation-via-hierarchical-retrieval-.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/168-agentic-retrieval-augmented-generation-a-survey-on-agentic-rag.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/169-a-rag-github-repository.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/170-agenticrag-survey-github.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/171-hero-adaptive-orchestration-of-agentic-rag-on-heterogeneous-mobile-soc.md`
+- [[2602.03442] A-RAG: Scaling Agentic Retrieval-Augmented Generation via Hierarchical Retrieval Interfaces](https://arxiv.org/abs/2602.03442) — `raw/hot-topics-sources/2026-04-10/167-a-rag-scaling-agentic-retrieval-augmented-generation-via-hierarchical-retrieval-.md`
+  - 메모: --- title: [2602.03442] A-RAG: Scaling Agentic Retrieval-Augmented Generation via Hierarchical Retrieval Interfaces source_url: https://arxiv.org/abs/2602.03442 final_url: https://arxiv.org/abs/2602.03442 status: 200 content_type: text/html; charset=utf-8 topics: [Agentic RAG wit
+- [[2501.09136] Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG](https://arxiv.org/abs/2501.09136) — `raw/hot-topics-sources/2026-04-10/168-agentic-retrieval-augmented-generation-a-survey-on-agentic-rag.md`
+  - 메모: --- title: [2501.09136] Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG source_url: https://arxiv.org/abs/2501.09136 final_url: https://arxiv.org/abs/2501.09136 status: 200 content_type: text/html; charset=utf-8 topics: [Agentic RAG with Hierarchical Retrieval Int
+- [GitHub - Ayanami0730/arag: A-RAG: Agentic Retrieval-Augmented Generation via Hierarchical Retrieval Interfaces. State-of-the-art RAG framework with keyword, semantic, and chunk read tools for multi-hop QA. · GitHub](https://github.com/Ayanami0730/arag) — `raw/hot-topics-sources/2026-04-10/169-a-rag-github-repository.md`
+  - 메모: --- title: GitHub - Ayanami0730/arag: A-RAG: Agentic Retrieval-Augmented Generation via Hierarchical Retrieval Interfaces. State-of-the-art RAG framework with keyword, semantic, and chunk read tools for multi-hop QA. · GitHub source_url: https://github.com/Ayanami0730/arag final_
+- [GitHub - asinghcsu/AgenticRAG-Survey: Agentic-RAG explores advanced Retrieval-Augmented Generation systems enhanced with AI LLM agents. · GitHub](https://github.com/asinghcsu/AgenticRAG-Survey) — `raw/hot-topics-sources/2026-04-10/170-agenticrag-survey-github.md`
+  - 메모: --- title: GitHub - asinghcsu/AgenticRAG-Survey: Agentic-RAG explores advanced Retrieval-Augmented Generation systems enhanced with AI LLM agents. · GitHub source_url: https://github.com/asinghcsu/AgenticRAG-Survey final_url: https://github.com/asinghcsu/AgenticRAG-Survey status:
+- [[2603.01661] HeRo: Adaptive Orchestration of Agentic RAG on Heterogeneous Mobile SoC](https://arxiv.org/abs/2603.01661) — `raw/hot-topics-sources/2026-04-10/171-hero-adaptive-orchestration-of-agentic-rag-on-heterogeneous-mobile-soc.md`
+  - 메모: --- title: [2603.01661] HeRo: Adaptive Orchestration of Agentic RAG on Heterogeneous Mobile SoC source_url: https://arxiv.org/abs/2603.01661 final_url: https://arxiv.org/abs/2603.01661 status: 200 content_type: text/html; charset=utf-8 topics: [Agentic RAG with Hierarchical Retri
 
 ## 관련 문서
 

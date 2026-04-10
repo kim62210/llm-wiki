@@ -26,12 +26,23 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: openai.com 3건, arxiv.org 2건
+- source 조합: 공식 문서
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/cot-monitorability.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/393-evaluating-chain-of-thought-monitorability.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/394-reasoning-models-struggle-to-control-their-chains-of-thought.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/395-chain-of-thought-monitorability-a-new-and-fragile-opportunity.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/396-chain-of-thought-monitorability-v2.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/397-openai-research-index.md`
+- [Evaluating chain-of-thought monitorability | OpenAI](https://openai.com/index/evaluating-chain-of-thought-monitorability) — `raw/hot-topics-sources/2026-04-10/393-evaluating-chain-of-thought-monitorability.md`
+  - 메모: --- title: Evaluating chain-of-thought monitorability | OpenAI source_url: https://openai.com/index/evaluating-chain-of-thought-monitorability final_url: https://openai.com/index/evaluating-chain-of-thought-monitorability/ status: 200 content_type: text/html; charset=utf-8 topics
+- [Reasoning models struggle to control their chains of thought, and that’s good | OpenAI](https://openai.com/index/reasoning-models-chain-of-thought-controllability) — `raw/hot-topics-sources/2026-04-10/394-reasoning-models-struggle-to-control-their-chains-of-thought.md`
+  - 메모: --- title: Reasoning models struggle to control their chains of thought, and that’s good | OpenAI source_url: https://openai.com/index/reasoning-models-chain-of-thought-controllability final_url: https://openai.com/index/reasoning-models-chain-of-thought-controllability/ status: 
+- [[2507.11473] Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety](https://arxiv.org/abs/2507.11473) — `raw/hot-topics-sources/2026-04-10/395-chain-of-thought-monitorability-a-new-and-fragile-opportunity.md`
+  - 메모: --- title: [2507.11473] Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety source_url: https://arxiv.org/abs/2507.11473 final_url: https://arxiv.org/abs/2507.11473 status: 200 content_type: text/html; charset=utf-8 topics: [Chain-of-Thought Monitorabilit
+- [Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety](https://arxiv.org/html/2507.11473v2) — `raw/hot-topics-sources/2026-04-10/396-chain-of-thought-monitorability-v2.md`
+  - 메모: --- title: Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety source_url: https://arxiv.org/html/2507.11473v2 final_url: https://arxiv.org/html/2507.11473v2 status: 200 content_type: text/html; charset=utf-8 topics: [Chain-of-Thought Monitorability] sect
+- [OpenAI Research | OpenAI](https://openai.com/research/index) — `raw/hot-topics-sources/2026-04-10/397-openai-research-index.md`
+  - 메모: --- title: OpenAI Research | OpenAI source_url: https://openai.com/research/index final_url: https://openai.com/research/index/ status: 200 content_type: text/html; charset=utf-8 topics: [Chain-of-Thought Monitorability] sections: [Safety & Alignment] fetched_at: 2026-04-10T01:44
 
 ## 관련 문서
 

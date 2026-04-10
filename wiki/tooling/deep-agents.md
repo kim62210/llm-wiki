@@ -32,26 +32,25 @@ updated: 2026-04-10
 - [deepagents PyPI](https://pypi.org/project/deepagents/)
 - [LangChain Releases Deep Agents: Structured Runtime for Planning, Memory, Context Isolation](https://www.marktechpost.com/2026/03/15/langchain-releases-deep-agents-a-structured-runtime-for-planning-memory-and-context-isolation-in-multi-step-ai-agents/)
 
-## 2026년 4월 핫토픽 맥락
-
-2026년 3월 정식 릴리스 이후 Claude Code식 "코딩·리서치 에이전트" 패턴을 프레임워크화해 빠르게 확산됐고, write_todos·FilesystemBackend·서브에이전트 컨텍스트 격리로 롱 컨텍스트 붕괴 문제를 정면 해결한다.
-
-### 추가 레퍼런스
-
-- [langchain-ai/deepagents GitHub](https://github.com/langchain-ai/deepagents)
-- [Deep Agents Overview Docs](https://docs.langchain.com/oss/python/deepagents/overview)
-- [LangChain Deep Agents Product Page](https://www.langchain.com/deep-agents)
-- [deepagents PyPI](https://pypi.org/project/deepagents/)
-- [LangChain Releases Deep Agents: Structured Runtime for Planning, Memory, Context Isolation](https://www.marktechpost.com/2026/03/15/langchain-releases-deep-agents-a-structured-runtime-for-planning-memory-and-context-isolation-in-multi-step-ai-agents/)
-
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: github.com 1건, docs.langchain.com 1건, www.langchain.com 1건
+- source 조합: 구현체, 공식 문서
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/deep-agents.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/408-langchain-ai-deepagents-github.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/409-deep-agents-overview-docs.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/410-langchain-deep-agents-product-page.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/411-deepagents-pypi.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/412-langchain-releases-deep-agents-structured-runtime-for-planning-memory-context-is.md`
+- [GitHub - langchain-ai/deepagents: Agent harness built with LangChain and LangGraph. Equipped with a planning tool, a filesystem backend, and the ability to spawn subagents - well-equipped to handle complex agentic tasks. · GitHub](https://github.com/langchain-ai/deepagents) — `raw/hot-topics-sources/2026-04-10/408-langchain-ai-deepagents-github.md`
+  - 메모: --- title: GitHub - langchain-ai/deepagents: Agent harness built with LangChain and LangGraph. Equipped with a planning tool, a filesystem backend, and the ability to spawn subagents - well-equipped to handle complex agentic tasks. · GitHub source_url: https://github.com/langchai
+- [Deep Agents overview - Docs by LangChain](https://docs.langchain.com/oss/python/deepagents/overview) — `raw/hot-topics-sources/2026-04-10/409-deep-agents-overview-docs.md`
+  - 메모: --- title: Deep Agents overview - Docs by LangChain source_url: https://docs.langchain.com/oss/python/deepagents/overview final_url: https://docs.langchain.com/oss/python/deepagents/overview status: 200 content_type: text/html; charset=utf-8 topics: [Deep Agents (LangChain Harnes
+- [LangChain Deep Agents: Build Agents for Complex, Multi-Step Tasks](https://www.langchain.com/deep-agents) — `raw/hot-topics-sources/2026-04-10/410-langchain-deep-agents-product-page.md`
+  - 메모: --- title: LangChain Deep Agents: Build Agents for Complex, Multi-Step Tasks source_url: https://www.langchain.com/deep-agents final_url: https://www.langchain.com/deep-agents status: 200 content_type: text/html; charset=utf-8 topics: [Deep Agents (LangChain Harness for Long-Runn
+- [Client Challenge](https://pypi.org/project/deepagents) — `raw/hot-topics-sources/2026-04-10/411-deepagents-pypi.md`
+  - 메모: --- title: Client Challenge source_url: https://pypi.org/project/deepagents final_url: https://pypi.org/project/deepagents status: 200 content_type: text/html; charset=utf-8 topics: [Deep Agents (LangChain Harness for Long-Running Tasks)] sections: [Dev Tooling & Frameworks] fetc
+- [LangChain Releases Deep Agents: A Structured Runtime for Planning, Memory, and Context Isolation in Multi-Step AI Agents - MarkTechPost](https://www.marktechpost.com/2026/03/15/langchain-releases-deep-agents-a-structured-runtime-for-planning-memory-and-context-isolation-in-multi-step-ai-agents) — `raw/hot-topics-sources/2026-04-10/412-langchain-releases-deep-agents-structured-runtime-for-planning-memory-context-is.md`
+  - 메모: --- title: LangChain Releases Deep Agents: A Structured Runtime for Planning, Memory, and Context Isolation in Multi-Step AI Agents - MarkTechPost source_url: https://www.marktechpost.com/2026/03/15/langchain-releases-deep-agents-a-structured-runtime-for-planning-memory-and-conte
 
 ## 관련 문서
 

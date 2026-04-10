@@ -25,12 +25,22 @@ Autorubric 논문(2026년 2월 arXiv)이 흩어져 있던 루브릭 기법을 �
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: arxiv.org 4건, hamel.dev 1건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/rubric-based-evals.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/237-autorubric-unifying-rubric-based-llm-evaluation.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/238-llm-rubric-a-multidimensional-calibrated-approach.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/239-rethinking-rubric-generation-for-llm-judge-and-reward-modeling.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/240-rubric-is-all-you-need.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/241-using-llm-as-a-judge-for-evaluation-a-complete-guide.md`
+- [[2603.00077] Autorubric: Unifying Rubric-based LLM Evaluation](https://arxiv.org/abs/2603.00077) — `raw/hot-topics-sources/2026-04-10/237-autorubric-unifying-rubric-based-llm-evaluation.md`
+  - 메모: --- title: [2603.00077] Autorubric: Unifying Rubric-based LLM Evaluation source_url: https://arxiv.org/abs/2603.00077 final_url: https://arxiv.org/abs/2603.00077 status: 200 content_type: text/html; charset=utf-8 topics: [Rubric-Based Evaluation Frameworks] sections: [Evals & Obs
+- [LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts†](https://arxiv.org/html/2501.00274v1) — `raw/hot-topics-sources/2026-04-10/238-llm-rubric-a-multidimensional-calibrated-approach.md`
+  - 메모: --- title: LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts† source_url: https://arxiv.org/html/2501.00274v1 final_url: https://arxiv.org/html/2501.00274v1 status: 200 content_type: text/html; charset=utf-8 topics: [Rubric-Base
+- [[2602.05125v1] Rethinking Rubric Generation for Improving LLM Judge and Reward Modeling for Open-ended Tasks](https://arxiv.org/abs/2602.05125v1) — `raw/hot-topics-sources/2026-04-10/239-rethinking-rubric-generation-for-llm-judge-and-reward-modeling.md`
+  - 메모: --- title: [2602.05125v1] Rethinking Rubric Generation for Improving LLM Judge and Reward Modeling for Open-ended Tasks source_url: https://arxiv.org/abs/2602.05125v1 final_url: https://arxiv.org/abs/2602.05125v1 status: 200 content_type: text/html; charset=utf-8 topics: [Rubric-
+- [[2503.23989] Rubric Is All You Need: Enhancing LLM-based Code Evaluation With Question-Specific Rubrics](https://arxiv.org/abs/2503.23989) — `raw/hot-topics-sources/2026-04-10/240-rubric-is-all-you-need.md`
+  - 메모: --- title: [2503.23989] Rubric Is All You Need: Enhancing LLM-based Code Evaluation With Question-Specific Rubrics source_url: https://arxiv.org/abs/2503.23989 final_url: https://arxiv.org/abs/2503.23989 status: 200 content_type: text/html; charset=utf-8 topics: [Rubric-Based Eva
+- [Using LLM-as-a-Judge For Evaluation: A Complete Guide – Hamel's Blog - Hamel Husain](https://hamel.dev/blog/posts/llm-judge) — `raw/hot-topics-sources/2026-04-10/241-using-llm-as-a-judge-for-evaluation-a-complete-guide.md`
+  - 메모: --- title: Using LLM-as-a-Judge For Evaluation: A Complete Guide – Hamel's Blog - Hamel Husain source_url: https://hamel.dev/blog/posts/llm-judge final_url: https://hamel.dev/blog/posts/llm-judge/ status: 200 content_type: text/html; charset=utf-8 topics: [Rubric-Based Evaluation
 
 ## 관련 문서
 

@@ -27,26 +27,24 @@ updated: 2026-04-10
 - [Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain](https://arxiv.org/html/2603.02218)
 - [Language Self-Play For Data-Free Training](https://arxiv.org/pdf/2509.07414)
 
-## 2026년 4월 핫토픽 맥락
-
-순수 self-play가 몇 라운드 후 붕괴하는 문제를 코퍼스 접지(grounding)로 해결해, 라벨 없는 지속적 self-improvement의 현실적 경로로 주목받고 있다.
-
-### 추가 레퍼런스
-
-- [SPICE: Self-Play In Corpus Environments Improves Reasoning](https://arxiv.org/abs/2510.24684)
-- [Towards Understanding Self-play for LLM Reasoning](https://arxiv.org/abs/2510.27072)
-- [SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](https://arxiv.org/html/2509.23863)
-- [Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain](https://arxiv.org/html/2603.02218)
-- [Language Self-Play For Data-Free Training](https://arxiv.org/pdf/2509.07414)
-
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: arxiv.org 5건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/corpus-grounded-self-play.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/291-spice-self-play-in-corpus-environments-improves-reasoning.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/292-towards-understanding-self-play-for-llm-reasoning.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/293-spell-self-play-reinforcement-learning-for-evolving-long-context-language-models.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/294-self-play-only-evolves-when-self-synthetic-pipeline-ensures-learnable-informatio.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/295-language-self-play-for-data-free-training.md`
+- [[2510.24684] SPICE: Self-Play In Corpus Environments Improves Reasoning](https://arxiv.org/abs/2510.24684) — `raw/hot-topics-sources/2026-04-10/291-spice-self-play-in-corpus-environments-improves-reasoning.md`
+  - 메모: --- title: [2510.24684] SPICE: Self-Play In Corpus Environments Improves Reasoning source_url: https://arxiv.org/abs/2510.24684 final_url: https://arxiv.org/abs/2510.24684 status: 200 content_type: text/html; charset=utf-8 topics: [Corpus-Grounded Self-Play (SPICE 계열)] sections: 
+- [[2510.27072] Towards Understanding Self-play for LLM Reasoning](https://arxiv.org/abs/2510.27072) — `raw/hot-topics-sources/2026-04-10/292-towards-understanding-self-play-for-llm-reasoning.md`
+  - 메모: --- title: [2510.27072] Towards Understanding Self-play for LLM Reasoning source_url: https://arxiv.org/abs/2510.27072 final_url: https://arxiv.org/abs/2510.27072 status: 200 content_type: text/html; charset=utf-8 topics: [Corpus-Grounded Self-Play (SPICE 계열)] sections: [Training
+- [SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](https://arxiv.org/html/2509.23863) — `raw/hot-topics-sources/2026-04-10/293-spell-self-play-reinforcement-learning-for-evolving-long-context-language-models.md`
+  - 메모: --- title: SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models source_url: https://arxiv.org/html/2509.23863 final_url: https://arxiv.org/html/2509.23863 status: 200 content_type: text/html; charset=utf-8 topics: [Corpus-Grounded Self-Play (SPICE 계열)
+- [Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain](https://arxiv.org/html/2603.02218) — `raw/hot-topics-sources/2026-04-10/294-self-play-only-evolves-when-self-synthetic-pipeline-ensures-learnable-informatio.md`
+  - 메모: --- title: Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain source_url: https://arxiv.org/html/2603.02218 final_url: https://arxiv.org/html/2603.02218 status: 200 content_type: text/html; charset=utf-8 topics: [Corpus-Grounded Self-Play (SPIC
+- [295-language-self-play-for-data-free-training](https://arxiv.org/pdf/2509.07414) — `raw/hot-topics-sources/2026-04-10/295-language-self-play-for-data-free-training.md`
+  - 메모: --- title: Language Self-Play For Data-Free Training source_url: https://arxiv.org/pdf/2509.07414 final_url: https://arxiv.org/pdf/2509.07414 status: 200 content_type: application/pdf topics: [Corpus-Grounded Self-Play (SPICE 계열)] sections: [Training & Post-training] fetched_at: 
 
 ## 관련 문서
 

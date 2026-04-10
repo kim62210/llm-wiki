@@ -25,12 +25,22 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: arxiv.org 3건, www.anthropic.com 1건, www.trychroma.com 1건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/context-folding.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/029-scaling-long-horizon-llm-agent-via-context-folding.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/004-agentfold-long-horizon-web-agents-with-proactive-context-management.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/002-acon-optimizing-context-compression-for-long-horizon-llm-agents.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/001-effective-context-engineering-for-ai-agents.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/005-context-rot-how-increasing-input-tokens-impacts-llm-performance.md`
+- [[2510.11967] Scaling Long-Horizon LLM Agent via Context-Folding](https://arxiv.org/abs/2510.11967) — `raw/hot-topics-sources/2026-04-10/029-scaling-long-horizon-llm-agent-via-context-folding.md`
+  - 메모: --- title: [2510.11967] Scaling Long-Horizon LLM Agent via Context-Folding source_url: https://arxiv.org/abs/2510.11967 final_url: https://arxiv.org/abs/2510.11967 status: 200 content_type: text/html; charset=utf-8 topics: [Context Folding & Sub-Trajectory Compression] sections: 
+- [[2510.24699] AgentFold: Long-Horizon Web Agents with Proactive Context Management](https://arxiv.org/abs/2510.24699) — `raw/hot-topics-sources/2026-04-10/004-agentfold-long-horizon-web-agents-with-proactive-context-management.md`
+  - 메모: --- title: [2510.24699] AgentFold: Long-Horizon Web Agents with Proactive Context Management source_url: https://arxiv.org/abs/2510.24699 final_url: https://arxiv.org/abs/2510.24699 status: 200 content_type: text/html; charset=utf-8 topics: [Context Engineering for Long-Horizon A
+- [[2510.00615] ACON: Optimizing Context Compression for Long-horizon LLM Agents](https://arxiv.org/abs/2510.00615) — `raw/hot-topics-sources/2026-04-10/002-acon-optimizing-context-compression-for-long-horizon-llm-agents.md`
+  - 메모: --- title: [2510.00615] ACON: Optimizing Context Compression for Long-horizon LLM Agents source_url: https://arxiv.org/abs/2510.00615 final_url: https://arxiv.org/abs/2510.00615 status: 200 content_type: text/html; charset=utf-8 topics: [Context Engineering for Long-Horizon Agent
+- [Effective context engineering for AI agents \ Anthropic](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — `raw/hot-topics-sources/2026-04-10/001-effective-context-engineering-for-ai-agents.md`
+  - 메모: --- title: Effective context engineering for AI agents \ Anthropic source_url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents final_url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents status: 200 content_type: 
+- [Context Rot: How Increasing Input Tokens Impacts LLM Performance·|·Chroma](https://www.trychroma.com/research/context-rot) — `raw/hot-topics-sources/2026-04-10/005-context-rot-how-increasing-input-tokens-impacts-llm-performance.md`
+  - 메모: --- title: Context Rot: How Increasing Input Tokens Impacts LLM Performance·|·Chroma source_url: https://www.trychroma.com/research/context-rot final_url: https://www.trychroma.com/research/context-rot status: 200 content_type: text/html; charset=utf-8 topics: [Context Engineerin
 
 ## 관련 문서
 

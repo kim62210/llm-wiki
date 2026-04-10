@@ -25,12 +25,22 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: arxiv.org 5건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/long-horizon-rl-training-for-agents.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/026-reinforcement-learning-for-long-horizon-interactive-llm-agents.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/027-agentgym-rl-training-llm-agents-for-long-horizon-decision-making-through-multi-t.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/014-reveal-self-evolving-code-agents-via-iterative-generation-verification.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/028-research-learning-to-reason-with-search-for-llms-via-reinforcement-learning.md`
+- [[2509.02547] The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](https://arxiv.org/abs/2509.02547) — `raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md`
+  - 메모: --- title: [2509.02547] The Landscape of Agentic Reinforcement Learning for LLMs: A Survey source_url: https://arxiv.org/abs/2509.02547 final_url: https://arxiv.org/abs/2509.02547 status: 200 content_type: text/html; charset=utf-8 topics: [Orchestrator-Worker Multi-Agent Pattern,
+- [[2502.01600] Reinforcement Learning for Long-Horizon Interactive LLM Agents](https://arxiv.org/abs/2502.01600) — `raw/hot-topics-sources/2026-04-10/026-reinforcement-learning-for-long-horizon-interactive-llm-agents.md`
+  - 메모: --- title: [2502.01600] Reinforcement Learning for Long-Horizon Interactive LLM Agents source_url: https://arxiv.org/abs/2502.01600 final_url: https://arxiv.org/abs/2502.01600 status: 200 content_type: text/html; charset=utf-8 topics: [Long-Horizon RL Training for Agents (Multi-T
+- [[2509.08755] AgentGym-RL: Training LLM Agents for Long-Horizon Decision Making through Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2509.08755) — `raw/hot-topics-sources/2026-04-10/027-agentgym-rl-training-llm-agents-for-long-horizon-decision-making-through-multi-t.md`
+  - 메모: --- title: [2509.08755] AgentGym-RL: Training LLM Agents for Long-Horizon Decision Making through Multi-Turn Reinforcement Learning source_url: https://arxiv.org/abs/2509.08755 final_url: https://arxiv.org/abs/2509.08755 status: 200 content_type: text/html; charset=utf-8 topics: 
+- [[2506.11442] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](https://arxiv.org/abs/2506.11442) — `raw/hot-topics-sources/2026-04-10/014-reveal-self-evolving-code-agents-via-iterative-generation-verification.md`
+  - 메모: --- title: [2506.11442] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification source_url: https://arxiv.org/abs/2506.11442 final_url: https://arxiv.org/abs/2506.11442 status: 200 content_type: text/html; charset=utf-8 topics: [Generator-Evaluator Harness Architecture, 
+- [[2503.19470] ReSearch: Learning to Reason with Search for LLMs via Reinforcement Learning](https://arxiv.org/abs/2503.19470) — `raw/hot-topics-sources/2026-04-10/028-research-learning-to-reason-with-search-for-llms-via-reinforcement-learning.md`
+  - 메모: --- title: [2503.19470] ReSearch: Learning to Reason with Search for LLMs via Reinforcement Learning source_url: https://arxiv.org/abs/2503.19470 final_url: https://arxiv.org/abs/2503.19470 status: 200 content_type: text/html; charset=utf-8 topics: [Long-Horizon RL Training for A
 
 ## 관련 문서
 

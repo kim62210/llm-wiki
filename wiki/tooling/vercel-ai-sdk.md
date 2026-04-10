@@ -26,12 +26,23 @@ Next.js·React 친화의 TypeScript LLM·에이전트 SDK.
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: vercel.com 2건, ai-sdk.dev 2건, github.com 1건
+- source 조합: 구현체, 공식 문서
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/vercel-ai-sdk.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/438-ai-sdk-6-release-blog.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/439-ai-sdk-official-docs.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/440-vercel-ai-github-releases.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/441-ai-sdk-homepage.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/442-vercel-ai-sdk-product-page.md`
+- [AI SDK 6 - Vercel](https://vercel.com/blog/ai-sdk-6) — `raw/hot-topics-sources/2026-04-10/438-ai-sdk-6-release-blog.md`
+  - 메모: --- title: AI SDK 6 - Vercel source_url: https://vercel.com/blog/ai-sdk-6 final_url: https://vercel.com/blog/ai-sdk-6 status: 200 content_type: text/html; charset=utf-8 topics: [Vercel AI SDK 6] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:44:28.708927+00:00 ---
+- [439-ai-sdk-official-docs](https://ai-sdk.dev/docs/introduction) — `raw/hot-topics-sources/2026-04-10/439-ai-sdk-official-docs.md`
+  - 메모: --- title: AI SDK Official Docs source_url: https://ai-sdk.dev/docs/introduction final_url: https://ai-sdk.dev/docs/introduction status: 200 content_type: text/markdown; charset=utf-8 topics: [Vercel AI SDK 6] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:44:28.1
+- [Releases · vercel/ai · GitHub](https://github.com/vercel/ai/releases) — `raw/hot-topics-sources/2026-04-10/440-vercel-ai-github-releases.md`
+  - 메모: --- title: Releases · vercel/ai · GitHub source_url: https://github.com/vercel/ai/releases final_url: https://github.com/vercel/ai/releases status: 200 content_type: text/html; charset=utf-8 topics: [Vercel AI SDK 6] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:
+- [AI SDK](https://ai-sdk.dev) — `raw/hot-topics-sources/2026-04-10/441-ai-sdk-homepage.md`
+  - 메모: --- title: AI SDK source_url: https://ai-sdk.dev final_url: https://ai-sdk.dev status: 200 content_type: text/html; charset=utf-8 topics: [Vercel AI SDK 6] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:44:28.487887+00:00 --- # AI SDK ## 원본 URL https://ai-sdk.dev 
+- [442-vercel-ai-sdk-product-page](https://vercel.com/docs/ai-sdk) — `raw/hot-topics-sources/2026-04-10/442-vercel-ai-sdk-product-page.md`
+  - 메모: --- title: Vercel AI SDK Product Page source_url: https://vercel.com/docs/ai-sdk final_url: https://vercel.com/docs/ai-sdk status: 200 content_type: text/markdown; charset=utf-8 topics: [Vercel AI SDK 6] sections: [Dev Tooling & Frameworks] fetched_at: 2026-04-10T01:44:28.813229+
 
 ## 관련 문서
 

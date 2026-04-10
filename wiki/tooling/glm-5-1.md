@@ -32,26 +32,24 @@ updated: 2026-04-10
 - [SWE-Bench Pro Leaderboard — Scale Labs](https://labs.scale.com/leaderboard/swe_bench_pro_public)
 - [zai-org GLM-5 — Hugging Face](https://huggingface.co/zai-org/GLM-5)
 
-## 2026년 4월 핫토픽 맥락
-
-2026년 4월 7일 MIT 라이선스로 공개되어 SWE-bench Pro 58.4점으로 GPT-5.4(57.7)와 Claude Opus 4.6(57.3)을 꺾고 오픈소스 최초 1위에 올랐으며, 8시간 장시간 자율 코딩과 수백 라운드 반복 RL 튜닝이 핵심이다.
-
-### 추가 레퍼런스
-
-- [zai-org/GLM-5.1 — Hugging Face](https://huggingface.co/zai-org/GLM-5.1)
-- [GLM-5.1 Collection — Hugging Face](https://huggingface.co/collections/zai-org/glm-51)
-- [GLM-5.1 — Unsloth Documentation](https://unsloth.ai/docs/models/glm-5.1)
-- [SWE-Bench Pro Leaderboard — Scale Labs](https://labs.scale.com/leaderboard/swe_bench_pro_public)
-- [zai-org GLM-5 — Hugging Face](https://huggingface.co/zai-org/GLM-5)
-
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: huggingface.co 3건, unsloth.ai 1건, labs.scale.com 1건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/glm-5-1.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/140-zai-org-glm-5-1-hugging-face.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/141-glm-5-1-collection-hugging-face.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/142-glm-5-1-unsloth-documentation.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/143-swe-bench-pro-leaderboard-scale-labs.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/144-zai-org-glm-5-hugging-face.md`
+- [zai-org/GLM-5.1 · Hugging Face](https://huggingface.co/zai-org/GLM-5.1) — `raw/hot-topics-sources/2026-04-10/140-zai-org-glm-5-1-hugging-face.md`
+  - 메모: --- title: zai-org/GLM-5.1 · Hugging Face source_url: https://huggingface.co/zai-org/GLM-5.1 final_url: https://huggingface.co/zai-org/GLM-5.1 status: 200 content_type: text/html; charset=utf-8 topics: [GLM-5.1] sections: [Model Releases & Benchmarks] fetched_at: 2026-04-10T01:43
+- [GLM-5.1 - a zai-org Collection](https://huggingface.co/collections/zai-org/glm-51) — `raw/hot-topics-sources/2026-04-10/141-glm-5-1-collection-hugging-face.md`
+  - 메모: --- title: GLM-5.1 - a zai-org Collection source_url: https://huggingface.co/collections/zai-org/glm-51 final_url: https://huggingface.co/collections/zai-org/glm-51 status: 200 content_type: text/html; charset=utf-8 topics: [GLM-5.1] sections: [Model Releases & Benchmarks] fetche
+- [142-glm-5-1-unsloth-documentation](https://unsloth.ai/docs/models/glm-5.1) — `raw/hot-topics-sources/2026-04-10/142-glm-5-1-unsloth-documentation.md`
+  - 메모: --- title: GLM-5.1 — Unsloth Documentation source_url: https://unsloth.ai/docs/models/glm-5.1 final_url: https://unsloth.ai/docs/models/glm-5.1 status: 200 content_type: text/markdown; charset=utf-8 topics: [GLM-5.1] sections: [Model Releases & Benchmarks] fetched_at: 2026-04-10T
+- [SWE-Bench Pro Leaderboard AI Coding Benchmark (Public Dataset) | Scale](https://labs.scale.com/leaderboard/swe_bench_pro_public) — `raw/hot-topics-sources/2026-04-10/143-swe-bench-pro-leaderboard-scale-labs.md`
+  - 메모: --- title: SWE-Bench Pro Leaderboard AI Coding Benchmark (Public Dataset) | Scale source_url: https://labs.scale.com/leaderboard/swe_bench_pro_public final_url: https://labs.scale.com/leaderboard/swe_bench_pro_public status: 200 content_type: text/html; charset=utf-8 topics: [GLM
+- [zai-org/GLM-5 · Hugging Face](https://huggingface.co/zai-org/GLM-5) — `raw/hot-topics-sources/2026-04-10/144-zai-org-glm-5-hugging-face.md`
+  - 메모: --- title: zai-org/GLM-5 · Hugging Face source_url: https://huggingface.co/zai-org/GLM-5 final_url: https://huggingface.co/zai-org/GLM-5 status: 200 content_type: text/html; charset=utf-8 topics: [GLM-5.1] sections: [Model Releases & Benchmarks] fetched_at: 2026-04-10T01:43:44.62
 
 ## 관련 문서
 

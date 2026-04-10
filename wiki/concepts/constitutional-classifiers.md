@@ -25,12 +25,22 @@ updated: 2026-04-10
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: www.anthropic.com 2건, arxiv.org 2건, alignment.anthropic.com 1건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/constitutional-classifiers.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/373-next-generation-constitutional-classifiers.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/374-constitutional-classifiers-defending-against-universal-jailbreaks.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/375-constitutional-classifiers-efficient-production-grade-defenses.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/376-constitutional-classifiers.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/377-cost-effective-constitutional-classifiers-via-representation-re-use.md`
+- [Next-generation Constitutional Classifiers: More efficient protection against universal jailbreaks \ Anthropic](https://www.anthropic.com/research/next-generation-constitutional-classifiers) — `raw/hot-topics-sources/2026-04-10/373-next-generation-constitutional-classifiers.md`
+  - 메모: --- title: Next-generation Constitutional Classifiers: More efficient protection against universal jailbreaks \ Anthropic source_url: https://www.anthropic.com/research/next-generation-constitutional-classifiers final_url: https://www.anthropic.com/research/next-generation-consti
+- [Constitutional Classifiers: Defending against universal jailbreaks \ Anthropic](https://www.anthropic.com/research/constitutional-classifiers) — `raw/hot-topics-sources/2026-04-10/374-constitutional-classifiers-defending-against-universal-jailbreaks.md`
+  - 메모: --- title: Constitutional Classifiers: Defending against universal jailbreaks \ Anthropic source_url: https://www.anthropic.com/research/constitutional-classifiers final_url: https://www.anthropic.com/research/constitutional-classifiers status: 200 content_type: text/html; charse
+- [[2601.04603] Constitutional Classifiers++: Efficient Production-Grade Defenses against Universal Jailbreaks](https://arxiv.org/abs/2601.04603) — `raw/hot-topics-sources/2026-04-10/375-constitutional-classifiers-efficient-production-grade-defenses.md`
+  - 메모: --- title: [2601.04603] Constitutional Classifiers++: Efficient Production-Grade Defenses against Universal Jailbreaks source_url: https://arxiv.org/abs/2601.04603 final_url: https://arxiv.org/abs/2601.04603 status: 200 content_type: text/html; charset=utf-8 topics: [Constitution
+- [376-constitutional-classifiers](https://arxiv.org/pdf/2501.18837) — `raw/hot-topics-sources/2026-04-10/376-constitutional-classifiers.md`
+  - 메모: --- title: Constitutional Classifiers (arXiv 2501.18837) source_url: https://arxiv.org/pdf/2501.18837 final_url: https://arxiv.org/pdf/2501.18837 status: 200 content_type: application/pdf topics: [Constitutional Classifiers++ (Jailbreak Defense)] sections: [Safety & Alignment] fe
+- [Cost-Effective Constitutional Classifiers via Representation Re-use](https://alignment.anthropic.com/2025/cheap-monitors) — `raw/hot-topics-sources/2026-04-10/377-cost-effective-constitutional-classifiers-via-representation-re-use.md`
+  - 메모: --- title: Cost-Effective Constitutional Classifiers via Representation Re-use source_url: https://alignment.anthropic.com/2025/cheap-monitors final_url: https://alignment.anthropic.com/2025/cheap-monitors/ status: 200 content_type: text/html; charset=utf-8 topics: [Constitutiona
 
 ## 관련 문서
 

@@ -26,12 +26,22 @@ vLLM ROCm 백엔드가 MI300X/MI325X/MI350X에서 7개 어텐션 백엔드를 �
 
 ## source 기반 참고
 
+- 수집 소스 수: 5
+- 상위 도메인: rocm.blogs.amd.com 2건, rocm.docs.amd.com 2건, vllm.ai 1건
+
+### source 맵
+
 - topic packet: `raw/hot-topics-sources/2026-04-10/topics/vllm-rocm-platform.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/348-beyond-porting-how-vllm-orchestrates-high-performance-inference-on-amd-rocm.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/349-rocm-becomes-a-first-class-platform-in-the-vllm-ecosystem-rocm-blogs.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/350-vllm-inference-rocm-documentation.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/351-llm-inference-frameworks-rocm-documentation.md`
-- raw source: `raw/hot-topics-sources/2026-04-10/352-sglang-fast-serving-framework-on-amd-instinct-gpus-rocm-blogs.md`
+- [Beyond Porting: How vLLM Orchestrates High-Performance Inference on AMD ROCm | vLLM Blog](https://blog.vllm.ai/2026/02/27/rocm-attention-backend.html) — `raw/hot-topics-sources/2026-04-10/348-beyond-porting-how-vllm-orchestrates-high-performance-inference-on-amd-rocm.md`
+  - 메모: --- title: Beyond Porting: How vLLM Orchestrates High-Performance Inference on AMD ROCm | vLLM Blog source_url: https://blog.vllm.ai/2026/02/27/rocm-attention-backend.html final_url: https://vllm.ai/blog/rocm-attention-backend status: 200 content_type: text/html; charset=utf-8 to
+- [ROCm Becomes a First-Class Platform in the vLLM Ecosystem — ROCm Blogs](https://rocm.blogs.amd.com/software-tools-optimization/vllm-omni/README.html) — `raw/hot-topics-sources/2026-04-10/349-rocm-becomes-a-first-class-platform-in-the-vllm-ecosystem-rocm-blogs.md`
+  - 메모: --- title: ROCm Becomes a First-Class Platform in the vLLM Ecosystem — ROCm Blogs source_url: https://rocm.blogs.amd.com/software-tools-optimization/vllm-omni/README.html final_url: https://rocm.blogs.amd.com/software-tools-optimization/vllm-omni/README.html status: 200 content_t
+- [vLLM inference — ROCm Documentation](https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference/benchmark-docker/vllm.html) — `raw/hot-topics-sources/2026-04-10/350-vllm-inference-rocm-documentation.md`
+  - 메모: --- title: vLLM inference — ROCm Documentation source_url: https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference/benchmark-docker/vllm.html final_url: https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference/benchmark-docker/vllm.html status: 200 content_type: 
+- [LLM inference frameworks — ROCm Documentation](https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference/llm-inference-frameworks.html) — `raw/hot-topics-sources/2026-04-10/351-llm-inference-frameworks-rocm-documentation.md`
+  - 메모: --- title: LLM inference frameworks — ROCm Documentation source_url: https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference/llm-inference-frameworks.html final_url: https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference/llm-inference-frameworks.html status: 20
+- [SGLang: Fast Serving Framework for Large Language and Vision-Language Models on AMD Instinct GPUs — ROCm Blogs](https://rocm.blogs.amd.com/artificial-intelligence/sglang/README.html) — `raw/hot-topics-sources/2026-04-10/352-sglang-fast-serving-framework-on-amd-instinct-gpus-rocm-blogs.md`
+  - 메모: --- title: SGLang: Fast Serving Framework for Large Language and Vision-Language Models on AMD Instinct GPUs — ROCm Blogs source_url: https://rocm.blogs.amd.com/artificial-intelligence/sglang/README.html final_url: https://rocm.blogs.amd.com/artificial-intelligence/sglang/README.
 
 ## 관련 문서
 

@@ -4004,11 +4004,12 @@
         "Agent Architecture"
       ],
       "path": "raw/hot-topics-sources/2026-04-10/017-iclr-2026-memagents-workshop-proposal.md",
-      "ok": false,
-      "title": "",
-      "content_type": "",
-      "status": "",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
+      "ok": true,
+      "title": "ICLR 2026 Workshop on Memory for LLM-Based Agentic Systems (MemAgents)",
+      "content_type": "text/plain; charset=utf-8",
+      "status": 200,
+      "error": "",
+      "final_url": "https://openreview.net/forum?id=U51WxL382H"
     },
     {
       "seq": 81,
@@ -6313,11 +6314,12 @@
         "RAG & Context Engineering"
       ],
       "path": "raw/hot-topics-sources/2026-04-10/166-lost-in-the-middle-how-language-models-use-long-contexts.md",
-      "ok": false,
-      "title": "",
-      "content_type": "",
-      "status": "",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
+      "ok": true,
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "content_type": "text/plain; charset=utf-8",
+      "status": 200,
+      "error": "",
+      "final_url": "https://arxiv.org/abs/2307.03172"
     },
     {
       "seq": 222,
@@ -8252,11 +8254,12 @@
         "Evals & Observability"
       ],
       "path": "raw/hot-topics-sources/2026-04-10/235-agent-tool-selection.md",
-      "ok": false,
-      "title": "",
-      "content_type": "",
-      "status": "",
-      "error": "HTTPError: HTTP Error 404: Not Found"
+      "ok": true,
+      "title": "Agent evaluation - Arize AX Docs",
+      "content_type": "text/plain; charset=utf-8",
+      "status": 200,
+      "error": "",
+      "final_url": "https://arize.com/docs/ax/evaluate/evaluation-concepts/agent-evaluation"
     },
     {
       "seq": 332,
