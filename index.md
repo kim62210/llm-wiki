@@ -93,6 +93,8 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Subagents](wiki/agents/subagents.md) — Simon Willison이 agentic engineering guide Section 2에서 설명하는 핵심 패턴.
 
 **summary**
+- [Agent Skills Specification](wiki/agents/agent-skills-specification.md) — Agent Skills 포맷의 디렉토리 구조와 SKILL.md 스펙을 정리한 공식 specification 요약
+- [Anthropic Multi-Agent Research System](wiki/agents/anthropic-multi-agent-research-system.md) — Claude Research 백엔드에 적용된 orchestrator-worker 멀티 에이전트 시스템의 구조와 교훈 요약
 - ["프롬프트에서 하네스까지 — AI 에이전틱 패턴 4년의 기록"](wiki/agents/evolution-of-agentic-patterns.md) — 이 글의 중심 명제는 Chad Fowler의 "relocating rigor" 원칙이다:
 - [Anthropic Harness Design for Long-Running Apps (Prithvi Rajasekaran, 2026-03)](wiki/agents/anthropic-harness-design.md) — 저자: Prithvi Rajasekaran (Anthropic Labs) · 발행: 2026-03-24 · 출처: anthropic.com/engineering/harness-design-long-running-apps
 
@@ -126,6 +128,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 **paper**
 - [ACON: Optimizing Context Compression for Long-horizon LLM Agents](wiki/papers/acon-context-compression-paper.md) — 장기 실행 에이전트의 문맥 압축을 단순 요약 문제가 아니라 **실패 원인 기반 최적화 문제**로 다룬 논문이다.
 - [AgentFold: Long-Horizon Web Agents with Proactive Context Management](wiki/papers/agentfold-paper.md) — 웹 에이전트가 단순히 로그를 누적하는 대신, 히스토리를 능동적으로 접어 넣는 **proactive context management** 패러다임을 제안한다.
+- [Context Engineering for AI Agents in Open-Source Software](wiki/papers/context-engineering-open-source-software-paper.md) — 오픈소스 소프트웨어 작업에서 context engineering을 저장소·문서·작업 이력 설계 문제로 분석한 논문이다.
 - [Memory in the Age of AI Agents](wiki/papers/memory-in-the-age-of-ai-agents-paper.md) — 에이전트 메모리 연구를 token-level, parametric, latent memory와 factual / experiential / working memory 축으로 재정리한 대형 서베이다.
 - [Scaling Long-Horizon LLM Agent via Context-Folding](wiki/papers/context-folding-paper.md) — 서브태스크를 branch한 뒤 fold하여 요약으로 되돌리는 **Context-Folding**을 RL 프레임워크로 학습시킨 논문이다.
 - [ReAcTree: Hierarchical LLM Agent Trees with Control Flow for Long-Horizon Task Planning](wiki/papers/reactree-paper.md) — 단일 trajectory 대신 agent tree와 control flow node를 도입해 장기 계획 문제를 푸는 hierarchical planning 논문이다.
@@ -157,6 +160,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [MCP 2026 Roadmap & Enterprise Readiness](wiki/tooling/model-context-protocol.md) — title: MCP 2026 Roadmap & Enterprise Readiness
 - [MCP OAuth 2.1 + PKCE Authorization](wiki/tooling/mcp-authorization.md) — title: MCP OAuth 2.1 + PKCE Authorization
 - [MiniMax M2.5](wiki/tooling/minimax-m2-5.md) — 이 페이지는 MiniMax M2.5를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 2026년 2월 공개된 230B/10B MoE 오픈 웨이트 프론티어 근접 모델이기 때문이다.
+- [Model Context Protocol (MCP)](wiki/tooling/model-context-protocol-mcp.md) — LLM 앱과 외부 데이터/도구 연결을 표준화하는 개방형 프로토콜 자체를 다루는 허브 페이지.
 - [OpenAI Agents SDK](wiki/tooling/openai-agents-sdk.md) — 이 페이지는 OpenAI Agents SDK를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 Swarm의 후속 프로덕션 버전인 OpenAI 공식 에이전트 오케스트레이션 SDK이기 때문이다.
 - [Pydantic AI](wiki/tooling/pydantic-ai.md) — 이 페이지는 Pydantic AI를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 FastAPI식 개발 경험을 가진 타입 안전 Python 에이전트 프레임워크이기 때문이다.
 - [Qwen3.6-Plus](wiki/tooling/qwen3-6-plus.md) — 이 페이지는 Qwen3.6-Plus를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 2026년 4월 Alibaba가 공개한 Qwen 플래그십 (1M 컨텍스트, 항상 reasoning)이기 때문이다.
@@ -172,6 +176,10 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Git with Coding Agents](wiki/tooling/git-with-coding-agents.md) — Simon Willison이 agentic engineering guide Section 2에서 다루는 주제. Git을 코딩 에이전트의 "시간 여행 도구"로 활용하는 법.
 - [Git Worktree Isolation for Parallel Coding Agents](wiki/tooling/git-worktree-isolation.md) — title: Git Worktree Isolation for Parallel Coding Agents
 - [Tool Contracts & Writing Tools for Agents](wiki/tooling/tool-contracts-for-agents.md) — title: Tool Contracts & Writing Tools for Agents
+
+**summary**
+- [Effective Harnesses for Long-Running Agents](wiki/tooling/effective-harnesses-for-long-running-agents.md) — initializer agent와 coding agent를 분리해 장기 실행 에이전트의 세션 연속성을 확보하는 하네스 설계 글 요약
+- [Writing Effective Tools for Agents](wiki/tooling/writing-effective-tools-for-agents.md) — 에이전트용 도구를 deterministic API가 아니라 agent-friendly interface로 설계하는 원칙 요약
 
 **project-internal · `Claude Code`**
 - [Claude Code Hooks System](wiki/tooling/claude-code-hooks-system.md) — 이 페이지는 Claude Code 내부에서 Claude Code Hooks System이 어떤 역할을 하는지 정리한 프로젝트 스냅샷이다. 핵심 범위는 툴 호출 전후·세션 이벤트에 사용자 정의 스크립트를 끼워 넣는 settings.json 기반 확장 훅이다.

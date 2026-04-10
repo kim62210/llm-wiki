@@ -1,5 +1,19 @@
 # Activity Log
 
+## 2026-04-10 — Ingest 계속: standalone source pages 추가 승격
+- **대상**: 이미 수집된 hot-topic raw source 중 고가치 공식 글/스펙/논문
+- **생성 페이지**:
+  - `summary` 4개
+  - `entity` 1개
+  - `paper` 1개
+- **추가된 주요 페이지**:
+  - `wiki/agents/anthropic-multi-agent-research-system.md`
+  - `wiki/agents/agent-skills-specification.md`
+  - `wiki/tooling/effective-harnesses-for-long-running-agents.md`
+  - `wiki/tooling/model-context-protocol-mcp.md`
+  - `wiki/tooling/writing-effective-tools-for-agents.md`
+  - `wiki/papers/context-engineering-open-source-software-paper.md`
+
 ## 2026-04-10 — Ingest 확장: 핵심 논문 paper 페이지 생성
 - **대상**: hot-topic 수집 raw 중 핵심 논문/서베이 10편
 - **생성 페이지 수**: `paper` 10개

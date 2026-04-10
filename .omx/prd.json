@@ -1,0 +1,18 @@
+{
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "핵심 fetched source를 standalone wiki page로 승격",
+      "priority": 1,
+      "acceptanceCriteria": [
+        "최소 5개의 새 standalone 페이지가 생성된다",
+        "새 페이지들은 올바른 frontmatter(title/category/page_type/tags/sources/created/updated)를 가진다",
+        "index.md가 새 페이지들을 올바른 섹션에 등록한다",
+        "log.md에 continuation ingest 항목이 추가된다",
+        "alias-aware broken wikilink check 결과가 0이다",
+        "index missing-page check 결과가 0이다"
+      ],
+      "passes": true
+    }
+  ]
+}

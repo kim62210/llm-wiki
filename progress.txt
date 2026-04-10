@@ -1,0 +1,11 @@
+2026-04-10
+- Continued ingest after full hot-topic source collection/deepening.
+- Promoted fetched standalone sources into reusable pages:
+  - agents summary: Anthropic Multi-Agent Research System
+  - agents summary: Agent Skills Specification
+  - tooling summary: Effective Harnesses for Long-Running Agents
+  - tooling entity: Model Context Protocol (MCP)
+  - tooling summary: Writing Effective Tools for Agents
+  - papers paper: Context Engineering for AI Agents in Open-Source Software
+- Updated index/log and verified broken wikilinks=0, missing index pages=0.
+- Learning: after hub thickening, the best next ingest step is source promotion into summary/entity/paper pages rather than generating more thin concept hubs.
