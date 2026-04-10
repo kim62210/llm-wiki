@@ -4,7 +4,7 @@ category: tooling
 page_type: project-internal
 project: Claude Code
 tags: [tooling, project-internal, claude, code, hooks, system, harness-engineering]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/claude-code-hooks-system.md, raw/hot-topics-sources/2026-04-10/051-claude-code-hooks-reference.md, raw/hot-topics-sources/2026-04-10/052-claude-code-changelog.md, raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md, raw/hot-topics-sources/2026-04-10/053-anthropics-claude-code.md, raw/hot-topics-sources/2026-04-10/054-common-workflows.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ Claude Code v2.1.85 이후 `if` 필드(permission rule 문법)·CwdChanged·File
 - [Claude Code Agent SDK Overview](https://code.claude.com/docs/en/agent-sdk/overview)
 - [anthropics/claude-code (GitHub)](https://github.com/anthropics/claude-code)
 - [Common workflows (Claude Code)](https://code.claude.com/docs/en/common-workflows)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/claude-code-hooks-system.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/051-claude-code-hooks-reference.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/052-claude-code-changelog.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/053-anthropics-claude-code.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/054-common-workflows.md`
 
 ## 관련 문서
 

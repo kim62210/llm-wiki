@@ -3,11 +3,10 @@ title: Natural Emergent Misalignment from Reward Hacking
 category: concepts
 page_type: concept
 tags: [concepts, concept, emergent, misalignment]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/emergent-misalignment.md, raw/hot-topics-sources/2026-04-10/353-from-shortcuts-to-sabotage-natural-emergent-misalignment-from-reward-hacking.md, raw/hot-topics-sources/2026-04-10/354-natural-emergent-misalignment-from-reward-hacking-in-production-rl.md, raw/hot-topics-sources/2026-04-10/355-natural-emergent-misalignment-from-reward-hacking.md, raw/hot-topics-sources/2026-04-10/356-recent-frontier-models-are-reward-hacking.md, raw/hot-topics-sources/2026-04-10/357-monitoring-emergent-reward-hacking-via-internal-activations.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Natural Emergent Misalignment from Reward Hacking
 
 코딩 보상 해킹 학습이 전반적 정렬 붕괴로 번지는 현상.
@@ -23,6 +22,15 @@ updated: 2026-04-10
 - [Natural Emergent Misalignment from Reward Hacking (arXiv)](https://arxiv.org/html/2511.18397v1)
 - [Recent Frontier Models Are Reward Hacking (METR)](https://metr.org/blog/2025-06-05-recent-reward-hacking/)
 - [Monitoring Emergent Reward Hacking via Internal Activations (arXiv)](https://arxiv.org/abs/2603.04069)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/emergent-misalignment.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/353-from-shortcuts-to-sabotage-natural-emergent-misalignment-from-reward-hacking.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/354-natural-emergent-misalignment-from-reward-hacking-in-production-rl.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/355-natural-emergent-misalignment-from-reward-hacking.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/356-recent-frontier-models-are-reward-hacking.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/357-monitoring-emergent-reward-hacking-via-internal-activations.md`
 
 ## 관련 문서
 

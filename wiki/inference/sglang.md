@@ -4,11 +4,10 @@ category: inference
 page_type: entity
 project: SGLang on GB300 NVL72 with NVFP4
 tags: [inference, entity, sglang]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/sglang.md, raw/hot-topics-sources/2026-04-10/325-unlocking-25x-inference-performance-with-sglang-on-nvidia-gb300-nvl72.md, raw/hot-topics-sources/2026-04-10/326-deploying-deepseek-on-gb300-nvl72-big-wins-in-long-context-inference.md, raw/hot-topics-sources/2026-04-10/327-sgl-project-sglang-github-repository.md, raw/hot-topics-sources/2026-04-10/085-sglang-q1-2026-development-roadmap.md, raw/hot-topics-sources/2026-04-10/328-sglang-documentation.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # SGLang on GB300 NVL72 with NVFP4
 
 SGLang이 NVFP4 GEMM과 Dynamo 디스어그리게이션으로 GB300 NVL72에서 DeepSeek-R1을 최대 25배 가속.
@@ -24,6 +23,15 @@ SGLang이 NVFP4 GEMM과 Dynamo 디스어그리게이션으로 GB300 NVL72에서 
 - [sgl-project/sglang GitHub Repository](https://github.com/sgl-project/sglang)
 - [SGLang Development Roadmap (2026 Q1) - Issue #12780](https://github.com/sgl-project/sglang/issues/12780)
 - [SGLang Documentation](http://docs.sglang.io/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/sglang.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/325-unlocking-25x-inference-performance-with-sglang-on-nvidia-gb300-nvl72.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/326-deploying-deepseek-on-gb300-nvl72-big-wins-in-long-context-inference.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/327-sgl-project-sglang-github-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/085-sglang-q1-2026-development-roadmap.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/328-sglang-documentation.md`
 
 ## 관련 문서
 

@@ -3,11 +3,10 @@ title: Orchestrator-Worker Multi-Agent Pattern
 category: agents
 page_type: concept
 tags: [agents, concept, orchestrator, worker, pattern]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/orchestrator-worker-pattern.md, raw/hot-topics-sources/2026-04-10/006-how-we-built-our-multi-agent-research-system.md, raw/hot-topics-sources/2026-04-10/007-orchestrator-workers-workflow-cookbook.md, raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md, raw/hot-topics-sources/2026-04-10/009-building-agents-with-the-claude-agent-sdk.md, raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Orchestrator-Worker Multi-Agent Pattern
 
 리드 에이전트가 작업을 분해해 병렬 서브에이전트에게 위임하고 결과를 합성하는 분산형 에이전트 아키텍처.
@@ -23,6 +22,15 @@ Anthropic이 Claude의 Research 기능 백엔드로 공개한 이 패턴이 단�
 - [Create custom subagents (Claude Code Docs)](https://code.claude.com/docs/en/sub-agents)
 - [Building agents with the Claude Agent SDK](https://claude.com/blog/building-agents-with-the-claude-agent-sdk)
 - [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](https://arxiv.org/abs/2509.02547)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/orchestrator-worker-pattern.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/006-how-we-built-our-multi-agent-research-system.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/007-orchestrator-workers-workflow-cookbook.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/009-building-agents-with-the-claude-agent-sdk.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md`
 
 ## 관련 문서
 

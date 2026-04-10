@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: Deep Agents
 tags: [tooling, entity, deep, agents, dev-tooling-and-frameworks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/deep-agents.md, raw/hot-topics-sources/2026-04-10/408-langchain-ai-deepagents-github.md, raw/hot-topics-sources/2026-04-10/409-deep-agents-overview-docs.md, raw/hot-topics-sources/2026-04-10/410-langchain-deep-agents-product-page.md, raw/hot-topics-sources/2026-04-10/411-deepagents-pypi.md, raw/hot-topics-sources/2026-04-10/412-langchain-releases-deep-agents-structured-runtime-for-planning-memory-context-is.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ updated: 2026-04-10
 - [LangChain Deep Agents Product Page](https://www.langchain.com/deep-agents)
 - [deepagents PyPI](https://pypi.org/project/deepagents/)
 - [LangChain Releases Deep Agents: Structured Runtime for Planning, Memory, Context Isolation](https://www.marktechpost.com/2026/03/15/langchain-releases-deep-agents-a-structured-runtime-for-planning-memory-and-context-isolation-in-multi-step-ai-agents/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/deep-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/408-langchain-ai-deepagents-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/409-deep-agents-overview-docs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/410-langchain-deep-agents-product-page.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/411-deepagents-pypi.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/412-langchain-releases-deep-agents-structured-runtime-for-planning-memory-context-is.md`
 
 ## 관련 문서
 

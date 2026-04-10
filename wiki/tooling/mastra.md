@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: Mastra
 tags: [tooling, entity, mastra, dev-tooling-and-frameworks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/mastra.md, raw/hot-topics-sources/2026-04-10/443-mastra-official-homepage.md, raw/hot-topics-sources/2026-04-10/444-mastra-docs.md, raw/hot-topics-sources/2026-04-10/445-mastra-ai-mastra-github.md, raw/hot-topics-sources/2026-04-10/446-mastra-announcements.md, raw/hot-topics-sources/2026-04-10/447-mastra-empowers-web-devs-to-build-ai-agents-in-typescript.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ Gatsby 팀이 만든 TypeScript 풀스택 에이전트·워크플로우 프레�
 - [mastra-ai/mastra GitHub](https://github.com/mastra-ai/mastra)
 - [Mastra Announcements](https://mastra.ai/categories/announcements)
 - [Mastra empowers web devs to build AI agents in TypeScript (The New Stack)](https://thenewstack.io/mastra-empowers-web-devs-to-build-ai-agents-in-typescript/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/mastra.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/443-mastra-official-homepage.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/444-mastra-docs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/445-mastra-ai-mastra-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/446-mastra-announcements.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/447-mastra-empowers-web-devs-to-build-ai-agents-in-typescript.md`
 
 ## 관련 문서
 

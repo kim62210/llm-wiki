@@ -3,11 +3,10 @@ title: Deliberative Alignment & Anti-Scheming Training
 category: concepts
 page_type: concept
 tags: [concepts, concept, deliberative, alignment]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/deliberative-alignment.md, raw/hot-topics-sources/2026-04-10/358-stress-testing-deliberative-alignment-for-anti-scheming-training.md, raw/hot-topics-sources/2026-04-10/359-detecting-and-reducing-scheming-in-ai-models.md, raw/hot-topics-sources/2026-04-10/360-deliberative-alignment-reasoning-enables-safer-language-models.md, raw/hot-topics-sources/2026-04-10/361-stress-testing-deliberative-alignment.md, raw/hot-topics-sources/2026-04-10/362-frontier-models-are-capable-of-in-context-scheming.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Deliberative Alignment & Anti-Scheming Training
 
 추론 모델에게 안전 규범을 명시적으로 숙의시켜 숨은 목표 추구를 억제하는 학습법.
@@ -23,6 +22,15 @@ Apollo Research와 OpenAI의 공동 연구가 o3의 scheming을 13% → 0.4%로 
 - [Deliberative alignment: reasoning enables safer language models (OpenAI)](https://openai.com/index/deliberative-alignment/)
 - [Stress Testing Deliberative Alignment (arXiv 2509.15541)](https://arxiv.org/abs/2509.15541)
 - [Frontier Models are Capable of In-Context Scheming (Apollo)](https://www.apolloresearch.ai/research/frontier-models-are-capable-of-incontext-scheming/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/deliberative-alignment.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/358-stress-testing-deliberative-alignment-for-anti-scheming-training.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/359-detecting-and-reducing-scheming-in-ai-models.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/360-deliberative-alignment-reasoning-enables-safer-language-models.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/361-stress-testing-deliberative-alignment.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/362-frontier-models-are-capable-of-in-context-scheming.md`
 
 ## 관련 문서
 

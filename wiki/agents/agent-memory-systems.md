@@ -3,7 +3,7 @@ title: Agent Memory Systems (Episodic / Semantic / Working)
 category: agents
 page_type: concept
 tags: [agents, concept, agent, memory, systems, agent-architecture]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/agent-memory-systems.md, raw/hot-topics-sources/2026-04-10/016-memory-in-the-age-of-ai-agents.md, raw/hot-topics-sources/2026-04-10/017-iclr-2026-memagents-workshop-proposal.md, raw/hot-topics-sources/2026-04-10/018-agent-r-training-language-model-agents-to-reflect-via-iterative-self-training.md, raw/hot-topics-sources/2026-04-10/019-agent-memory-paper-list.md, raw/hot-topics-sources/2026-04-10/020-awesome-memory-for-agents.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ updated: 2026-04-10
 - [Agent-R: Training Language Model Agents to Reflect via Iterative Self-Training](https://arxiv.org/abs/2501.11425)
 - [Agent Memory Paper List (GitHub)](https://github.com/Shichun-Liu/Agent-Memory-Paper-List)
 - [Awesome-Memory-for-Agents (Tsinghua C3I)](https://github.com/TsinghuaC3I/Awesome-Memory-for-Agents)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/agent-memory-systems.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/016-memory-in-the-age-of-ai-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/017-iclr-2026-memagents-workshop-proposal.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/018-agent-r-training-language-model-agents-to-reflect-via-iterative-self-training.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/019-agent-memory-paper-list.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/020-awesome-memory-for-agents.md`
 
 ## 관련 문서
 

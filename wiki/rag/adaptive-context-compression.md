@@ -3,11 +3,10 @@ title: Adaptive Context Compression for Long-Running Agents
 category: rag
 page_type: concept
 tags: [rag, concept, adaptive, context, compression]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/adaptive-context-compression.md, raw/hot-topics-sources/2026-04-10/197-developing-adaptive-context-compression-techniques-for-llms-in-long-running-inte.md, raw/hot-topics-sources/2026-04-10/198-active-context-compression-autonomous-memory-management-in-llm-agents.md, raw/hot-topics-sources/2026-04-10/199-poc-performance-oriented-context-compression-for-llms-via-performance-prediction.md, raw/hot-topics-sources/2026-04-10/200-latent-context-compilation-distilling-long-context-into-compact-portable-memory.md, raw/hot-topics-sources/2026-04-10/201-when-less-is-more-the-llm-scaling-paradox-in-context-compression.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Adaptive Context Compression for Long-Running Agents
 
 중요도·일관성·동적 예산을 기반으로 대화/에이전트 컨텍스트를 손실압축하는 기법.
@@ -23,6 +22,15 @@ updated: 2026-04-10
 - [PoC: Performance-oriented Context Compression for LLMs via Performance Prediction (arXiv 2603.19733)](https://arxiv.org/abs/2603.19733)
 - [Latent Context Compilation: Distilling Long Context into Compact Portable Memory (arXiv 2602.21221)](https://arxiv.org/abs/2602.21221)
 - [When Less is More: The LLM Scaling Paradox in Context Compression (arXiv 2602.09789)](https://arxiv.org/abs/2602.09789)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/adaptive-context-compression.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/197-developing-adaptive-context-compression-techniques-for-llms-in-long-running-inte.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/198-active-context-compression-autonomous-memory-management-in-llm-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/199-poc-performance-oriented-context-compression-for-llms-via-performance-prediction.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/200-latent-context-compilation-distilling-long-context-into-compact-portable-memory.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/201-when-less-is-more-the-llm-scaling-paradox-in-context-compression.md`
 
 ## 관련 문서
 

@@ -4,11 +4,10 @@ category: concepts
 page_type: entity
 project: METR Time Horizon Benchmark
 tags: [concepts, entity, metr, time, horizon, benchmark]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/metr-time-horizon-benchmark.md, raw/hot-topics-sources/2026-04-10/388-task-completion-time-horizons-of-frontier-ai-models.md, raw/hot-topics-sources/2026-04-10/389-time-horizon-1-1.md, raw/hot-topics-sources/2026-04-10/390-measuring-ai-ability-to-complete-long-tasks.md, raw/hot-topics-sources/2026-04-10/391-measuring-ai-ability-to-complete-long-software-tasks.md, raw/hot-topics-sources/2026-04-10/392-how-does-time-horizon-vary-across-domains.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # METR Time Horizon Benchmark
 
 프론티어 에이전트가 50% 신뢰도로 완수 가능한 인간 작업 시간을 측정하는 지표.
@@ -24,6 +23,15 @@ updated: 2026-04-10
 - [Measuring AI Ability to Complete Long Tasks (METR)](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/)
 - [Measuring AI Ability to Complete Long Software Tasks (arXiv 2503.14499)](https://arxiv.org/abs/2503.14499)
 - [How Does Time Horizon Vary Across Domains?](https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/metr-time-horizon-benchmark.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/388-task-completion-time-horizons-of-frontier-ai-models.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/389-time-horizon-1-1.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/390-measuring-ai-ability-to-complete-long-tasks.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/391-measuring-ai-ability-to-complete-long-software-tasks.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/392-how-does-time-horizon-vary-across-domains.md`
 
 ## 관련 문서
 

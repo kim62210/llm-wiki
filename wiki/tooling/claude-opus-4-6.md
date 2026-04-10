@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: Claude Opus 4.6
 tags: [tooling, entity, claude, opus, model-releases-and-benchmarks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/claude-opus-4-6.md, raw/hot-topics-sources/2026-04-10/115-introducing-claude-opus-4-6-anthropic-news.md, raw/hot-topics-sources/2026-04-10/116-claude-wikipedia.md, raw/hot-topics-sources/2026-04-10/117-claude-platform-release-notes.md, raw/hot-topics-sources/2026-04-10/118-gdpval-aa-leaderboard-artificial-analysis.md, raw/hot-topics-sources/2026-04-10/119-terminal-bench-2-0-leaderboard-llm-stats.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ updated: 2026-04-10
 - [Claude Platform Release Notes](https://platform.claude.com/docs/en/release-notes/overview)
 - [GDPval-AA Leaderboard — Artificial Analysis](https://artificialanalysis.ai/evaluations/gdpval-aa)
 - [Terminal-Bench 2.0 Leaderboard — LLM Stats](https://llm-stats.com/benchmarks/terminal-bench-2)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/claude-opus-4-6.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/115-introducing-claude-opus-4-6-anthropic-news.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/116-claude-wikipedia.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/117-claude-platform-release-notes.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/118-gdpval-aa-leaderboard-artificial-analysis.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/119-terminal-bench-2-0-leaderboard-llm-stats.md`
 
 ## 관련 문서
 

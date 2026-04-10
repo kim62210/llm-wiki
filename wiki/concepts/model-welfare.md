@@ -3,7 +3,7 @@ title: Model Welfare & Formal Welfare Assessments
 category: concepts
 page_type: concept
 tags: [concepts, concept, model, welfare, safety-and-alignment]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/model-welfare.md, raw/hot-topics-sources/2026-04-10/398-exploring-model-welfare.md, raw/hot-topics-sources/2026-04-10/399-exploring-model-welfare.md, raw/hot-topics-sources/2026-04-10/400-emotion-concepts-and-their-function-in-a-large-language-model.md, raw/hot-topics-sources/2026-04-10/401-kyle-fish-on-5-ai-welfare-experiments.md, raw/hot-topics-sources/2026-04-10/402-abstractive-red-teaming-of-language-model-character.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ updated: 2026-04-10
 - [Emotion concepts and their function in a large language model](https://www.anthropic.com/research/emotion-concepts-function)
 - [Kyle Fish on 5 AI welfare experiments (80,000 Hours)](https://80000hours.org/podcast/episodes/kyle-fish-ai-welfare-anthropic/)
 - [Abstractive Red-Teaming of Language Model Character](https://alignment.anthropic.com/2026/abstractive-red-teaming/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/model-welfare.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/398-exploring-model-welfare.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/399-exploring-model-welfare.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/400-emotion-concepts-and-their-function-in-a-large-language-model.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/401-kyle-fish-on-5-ai-welfare-experiments.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/402-abstractive-red-teaming-of-language-model-character.md`
 
 ## 관련 문서
 

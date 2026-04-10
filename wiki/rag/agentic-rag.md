@@ -3,11 +3,10 @@ title: Agentic RAG with Hierarchical Retrieval Interfaces
 category: rag
 page_type: concept
 tags: [rag, concept, agentic, rag]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/agentic-rag.md, raw/hot-topics-sources/2026-04-10/167-a-rag-scaling-agentic-retrieval-augmented-generation-via-hierarchical-retrieval-.md, raw/hot-topics-sources/2026-04-10/168-agentic-retrieval-augmented-generation-a-survey-on-agentic-rag.md, raw/hot-topics-sources/2026-04-10/169-a-rag-github-repository.md, raw/hot-topics-sources/2026-04-10/170-agenticrag-survey-github.md, raw/hot-topics-sources/2026-04-10/171-hero-adaptive-orchestration-of-agentic-rag-on-heterogeneous-mobile-soc.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Agentic RAG with Hierarchical Retrieval Interfaces
 
 LLM이 검색 도구를 스스로 호출·반복하며 다단계 탐색을 수행하는 RAG 패러다임.
@@ -23,6 +22,15 @@ LLM이 검색 도구를 스스로 호출·반복하며 다단계 탐색을 수�
 - [A-RAG GitHub Repository](https://github.com/Ayanami0730/arag)
 - [AgenticRAG-Survey GitHub (Singh et al.)](https://github.com/asinghcsu/AgenticRAG-Survey)
 - [HeRo: Adaptive Orchestration of Agentic RAG on Heterogeneous Mobile SoC (arXiv 2603.01661)](https://arxiv.org/abs/2603.01661)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/agentic-rag.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/167-a-rag-scaling-agentic-retrieval-augmented-generation-via-hierarchical-retrieval-.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/168-agentic-retrieval-augmented-generation-a-survey-on-agentic-rag.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/169-a-rag-github-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/170-agenticrag-survey-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/171-hero-adaptive-orchestration-of-agentic-rag-on-heterogeneous-mobile-soc.md`
 
 ## 관련 문서
 

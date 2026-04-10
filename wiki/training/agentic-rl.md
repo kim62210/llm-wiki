@@ -3,7 +3,7 @@ title: Agentic RL (Tool-Integrated Reasoning 학습)
 category: training
 page_type: concept
 tags: [training, concept, agentic, training-and-post-training]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/agentic-rl.md, raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md, raw/hot-topics-sources/2026-04-10/296-adaptation-of-agentic-ai-a-survey-of-post-training-memory-and-skills.md, raw/hot-topics-sources/2026-04-10/297-enhancing-agentic-rl-with-progressive-reward-shaping.md, raw/hot-topics-sources/2026-04-10/298-demystifying-reinforcement-learning-in-agentic-reasoning.md, raw/hot-topics-sources/2026-04-10/299-agentic-reasoning-and-tool-integration-for-llms-via-reinforcement-learning.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ updated: 2026-04-10
 - [Enhancing Agentic RL with Progressive Reward Shaping](https://arxiv.org/abs/2512.07478)
 - [Demystifying Reinforcement Learning in Agentic Reasoning](https://arxiv.org/html/2510.11701v1)
 - [Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning](https://arxiv.org/abs/2505.01441)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/agentic-rl.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/296-adaptation-of-agentic-ai-a-survey-of-post-training-memory-and-skills.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/297-enhancing-agentic-rl-with-progressive-reward-shaping.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/298-demystifying-reinforcement-learning-in-agentic-reasoning.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/299-agentic-reasoning-and-tool-integration-for-llms-via-reinforcement-learning.md`
 
 ## 관련 문서
 

@@ -4,11 +4,10 @@ category: inference
 page_type: entity
 project: XGrammar-2 Constrained Decoding for Agentic LLMs
 tags: [inference, entity, xgrammar, 2]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/xgrammar-2.md, raw/hot-topics-sources/2026-04-10/110-xgrammar-flexible-and-efficient-structured-generation-engine-for-llms.md, raw/hot-topics-sources/2026-04-10/111-mlc-ai-xgrammar-github-repository.md, raw/hot-topics-sources/2026-04-10/112-achieving-efficient-flexible-and-portable-structured-generation-with-xgrammar.md, raw/hot-topics-sources/2026-04-10/113-guidance-ai-llguidance-github-repository.md, raw/hot-topics-sources/2026-04-10/114-catalyst-xgrammar.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # XGrammar-2 Constrained Decoding for Agentic LLMs
 
 에이전트 워크플로 대상 동적 JSON/문법 제약 디코딩 엔진.
@@ -24,6 +23,15 @@ updated: 2026-04-10
 - [Achieving Efficient, Flexible, and Portable Structured Generation with XGrammar (MLC blog)](https://blog.mlc.ai/2024/11/22/achieving-efficient-flexible-portable-structured-generation-with-xgrammar)
 - [guidance-ai/llguidance GitHub repository](https://github.com/guidance-ai/llguidance)
 - [Catalyst: XGrammar (CMU)](https://catalyst.cs.cmu.edu/projects/xgrammar.html)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/xgrammar-2.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/110-xgrammar-flexible-and-efficient-structured-generation-engine-for-llms.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/111-mlc-ai-xgrammar-github-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/112-achieving-efficient-flexible-and-portable-structured-generation-with-xgrammar.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/113-guidance-ai-llguidance-github-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/114-catalyst-xgrammar.md`
 
 ## 관련 문서
 

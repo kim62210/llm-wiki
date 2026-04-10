@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: BAML
 tags: [tooling, entity, baml, dev-tooling-and-frameworks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/baml.md, raw/hot-topics-sources/2026-04-10/423-baml-official-docs.md, raw/hot-topics-sources/2026-04-10/424-boundary-ml-homepage.md, raw/hot-topics-sources/2026-04-10/425-boundaryml-baml-github.md, raw/hot-topics-sources/2026-04-10/426-structured-outputs-create-false-confidence-baml-blog.md, raw/hot-topics-sources/2026-04-10/427-baml-go-package.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ Schema-Aligned Parsing(SAP) 알고리즘으로 새 모델 출시 Day-1부터 구
 - [BoundaryML/baml GitHub](https://github.com/BoundaryML/baml)
 - [Structured Outputs Create False Confidence — BAML Blog](https://boundaryml.com/blog/structured-outputs-create-false-confidence)
 - [baml Go Package](https://pkg.go.dev/github.com/boundaryml/baml)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/baml.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/423-baml-official-docs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/424-boundary-ml-homepage.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/425-boundaryml-baml-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/426-structured-outputs-create-false-confidence-baml-blog.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/427-baml-go-package.md`
 
 ## 관련 문서
 

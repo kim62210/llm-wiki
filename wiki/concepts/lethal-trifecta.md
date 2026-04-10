@@ -4,7 +4,7 @@ aliases: ["lethal trifecta", "치명적 3요소", "rule of two", Lethal Trifecta
 category: concepts
 page_type: concept
 tags: [security, prompt-injection, simon-willison, meta-rule-of-two, agent-security]
-sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md, raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md, raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/lethal-trifecta.md, raw/hot-topics-sources/2026-04-10/038-the-lethal-trifecta-for-ai-agents.md, raw/hot-topics-sources/2026-04-10/039-writing-about-agentic-engineering-patterns.md, raw/hot-topics-sources/2026-04-10/012-introducing-claude-opus-4-5.md, raw/hot-topics-sources/2026-04-10/001-effective-context-engineering-for-ai-agents.md, raw/hot-topics-sources/2026-04-10/040-context-engineering-for-ai-agents-in-open-source-software.md]
 created: 2026-04-09
 updated: 2026-04-10
 ---
@@ -122,6 +122,15 @@ Simon Willison이 명명한 "lethal trifecta" 개념이 2026년 1월 IBM Bob, Su
 - [Introducing Claude Opus 4.5 (Prompt Injection Robustness)](https://www.anthropic.com/news/claude-opus-4-5)
 - [Effective context engineering for AI agents (Anthropic)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 - [Context Engineering for AI Agents in Open-Source Software (AGENTS.md study)](https://arxiv.org/abs/2510.21413)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/lethal-trifecta.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/038-the-lethal-trifecta-for-ai-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/039-writing-about-agentic-engineering-patterns.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/012-introducing-claude-opus-4-5.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/001-effective-context-engineering-for-ai-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/040-context-engineering-for-ai-agents-in-open-source-software.md`
 
 ## 관련 문서
 

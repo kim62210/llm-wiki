@@ -4,7 +4,7 @@ aliases: ["subagents", subagents, Subagents]
 category: agents
 page_type: concept
 tags: [subagents, context-window, claude-code, parallel-agents]
-sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md, raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md, raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/subagents.md, raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md, raw/hot-topics-sources/2026-04-10/011-harness-design-for-long-running-application-development.md, raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md, raw/hot-topics-sources/2026-04-10/054-common-workflows.md, raw/hot-topics-sources/2026-04-10/041-effective-harnesses-for-long-running-agents.md]
 created: 2026-04-09
 updated: 2026-04-10
 ---
@@ -129,6 +129,15 @@ Claude Code가 `/agents`·`.claude/agents/`·`Agent` 툴·`parent_tool_use_id` �
 - [Claude Agent SDK Overview](https://code.claude.com/docs/en/agent-sdk/overview)
 - [Common workflows (Claude Code)](https://code.claude.com/docs/en/common-workflows)
 - [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/subagents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/011-harness-design-for-long-running-application-development.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/054-common-workflows.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/041-effective-harnesses-for-long-running-agents.md`
 
 ## 관련 문서
 

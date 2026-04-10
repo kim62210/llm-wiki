@@ -4,7 +4,7 @@ aliases: ["generator-evaluator architecture", "generator evaluator", "생성자 
 category: concepts
 page_type: concept
 tags: [harness-engineering, multi-agent, GAN, evaluator, self-evaluation, architecture]
-sources: [raw/2026-04-09-anthropic-harness-design-long-running-apps.md, raw/2026-04-09-evolution-of-ai-agentic-patterns.md, raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-09-anthropic-harness-design-long-running-apps.md, raw/2026-04-09-evolution-of-ai-agentic-patterns.md, raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/generator-evaluator-architecture.md, raw/hot-topics-sources/2026-04-10/011-harness-design-for-long-running-application-development.md, raw/hot-topics-sources/2026-04-10/012-introducing-claude-opus-4-5.md, raw/hot-topics-sources/2026-04-10/013-self-improving-ai-agents-through-self-play.md, raw/hot-topics-sources/2026-04-10/014-reveal-self-evolving-code-agents-via-iterative-generation-verification.md, raw/hot-topics-sources/2026-04-10/015-mar-multi-agent-reflexion-improves-reasoning-abilities-in-llms.md]
 created: 2026-04-09
 updated: 2026-04-10
 ---
@@ -161,6 +161,15 @@ stateDiagram-v2
   - [Self-Improving AI Agents through Self-Play (Generator-Verifier-Updater)](https://arxiv.org/html/2512.02731v1)
   - [ReVeal: Self-Evolving Code Agents via Iterative Generation-Verification](https://arxiv.org/abs/2506.11442)
   - [MAR: Multi-Agent Reflexion Improves Reasoning Abilities in LLMs](https://arxiv.org/abs/2512.20845)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/generator-evaluator-architecture.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/011-harness-design-for-long-running-application-development.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/012-introducing-claude-opus-4-5.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/013-self-improving-ai-agents-through-self-play.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/014-reveal-self-evolving-code-agents-via-iterative-generation-verification.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/015-mar-multi-agent-reflexion-improves-reasoning-abilities-in-llms.md`
 
 ## 관련 문서
 

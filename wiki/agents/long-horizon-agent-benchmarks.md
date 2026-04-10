@@ -3,7 +3,7 @@ title: Long-Horizon Agent Benchmarks (GAIA 2 / SWE-Bench Pro / SWE-EVO)
 category: agents
 page_type: concept
 tags: [agents, concept, long, horizon, agent, benchmarks, agent-architecture]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/long-horizon-agent-benchmarks.md, raw/hot-topics-sources/2026-04-10/034-are-scaling-up-agent-environments-and-evaluations.md, raw/hot-topics-sources/2026-04-10/035-swe-evo-benchmarking-coding-agents-in-long-horizon-software-evolution.md, raw/hot-topics-sources/2026-04-10/036-sota-on-swe-bench-verified-with-inference-time-scaling-and-critic-model.md, raw/hot-topics-sources/2026-04-10/012-introducing-claude-opus-4-5.md, raw/hot-topics-sources/2026-04-10/037-introducing-claude-sonnet-4-5.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ updated: 2026-04-10
 - [SOTA on SWE-Bench Verified with Inference-Time Scaling and Critic Model (OpenHands)](https://openhands.dev/blog/sota-on-swe-bench-verified-with-inference-time-scaling-and-critic-model)
 - [Introducing Claude Opus 4.5 (SWE-bench Verified 80.9%)](https://www.anthropic.com/news/claude-opus-4-5)
 - [Introducing Claude Sonnet 4.5 (OSWorld 61.4%, 30+ hour focus)](https://www.anthropic.com/news/claude-sonnet-4-5)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/long-horizon-agent-benchmarks.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/034-are-scaling-up-agent-environments-and-evaluations.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/035-swe-evo-benchmarking-coding-agents-in-long-horizon-software-evolution.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/036-sota-on-swe-bench-verified-with-inference-time-scaling-and-critic-model.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/012-introducing-claude-opus-4-5.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/037-introducing-claude-sonnet-4-5.md`
 
 ## 관련 문서
 

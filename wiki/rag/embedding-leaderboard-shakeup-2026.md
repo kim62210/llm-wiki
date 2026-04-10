@@ -3,11 +3,10 @@ title: Qwen3 / Voyage-4 Embedding Leaderboard Shakeup
 category: rag
 page_type: case-study
 tags: [rag, case-study, embedding, leaderboard, shakeup, 2026]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/embedding-leaderboard-shakeup-2026.md, raw/hot-topics-sources/2026-04-10/192-qwen3-embedding-advancing-text-embedding-and-reranking-through-foundation-models.md, raw/hot-topics-sources/2026-04-10/193-qwen3-embedding-blog-announcement.md, raw/hot-topics-sources/2026-04-10/194-qwen3-embedding-8b-on-hugging-face.md, raw/hot-topics-sources/2026-04-10/195-voyage-3-large-the-new-state-of-the-art-general-purpose-embedding-model.md, raw/hot-topics-sources/2026-04-10/196-voyage-ai-text-embeddings-documentation.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Qwen3 / Voyage-4 Embedding Leaderboard Shakeup
 
 MTEB v2·다국어 벤치마크를 주도하는 최신 오픈·상용 임베딩 모델 세대.
@@ -23,6 +22,15 @@ Qwen3-Embedding-8B가 MTEB Multilingual 1위(70.58)를 차지하며 오픈웨이
 - [Qwen3-Embedding-8B on Hugging Face](https://huggingface.co/Qwen/Qwen3-Embedding-8B)
 - [voyage-3-large: the new state-of-the-art general-purpose embedding model (Voyage AI Blog)](https://blog.voyageai.com/2025/01/07/voyage-3-large/)
 - [Voyage AI Text Embeddings Documentation](https://docs.voyageai.com/docs/embeddings)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/embedding-leaderboard-shakeup-2026.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/192-qwen3-embedding-advancing-text-embedding-and-reranking-through-foundation-models.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/193-qwen3-embedding-blog-announcement.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/194-qwen3-embedding-8b-on-hugging-face.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/195-voyage-3-large-the-new-state-of-the-art-general-purpose-embedding-model.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/196-voyage-ai-text-embeddings-documentation.md`
 
 ## 관련 문서
 

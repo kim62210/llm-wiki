@@ -4,11 +4,10 @@ category: inference
 page_type: entity
 project: llm-d & Gateway API Inference Extension
 tags: [inference, entity, llm, d]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/llm-d.md, raw/hot-topics-sources/2026-04-10/329-llm-d-llm-d-github-repository.md, raw/hot-topics-sources/2026-04-10/330-llm-d-architecture-documentation.md, raw/hot-topics-sources/2026-04-10/331-kubernetes-sigs-gateway-api-inference-extension-github.md, raw/hot-topics-sources/2026-04-10/332-introducing-gateway-api-inference-extension-kubernetes-blog.md, raw/hot-topics-sources/2026-04-10/333-gateway-api-inference-extension-documentation.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # llm-d & Gateway API Inference Extension
 
 vLLM+Kubernetes Gateway API Inference Extension 기반의 CNCF 분산 추론 스택.
@@ -24,6 +23,15 @@ vLLM+Kubernetes Gateway API Inference Extension 기반의 CNCF 분산 추론 스
 - [kubernetes-sigs/gateway-api-inference-extension GitHub](https://github.com/kubernetes-sigs/gateway-api-inference-extension)
 - [Introducing Gateway API Inference Extension - Kubernetes Blog](https://kubernetes.io/blog/2025/06/05/introducing-gateway-api-inference-extension/)
 - [Gateway API Inference Extension Documentation](https://gateway-api-inference-extension.sigs.k8s.io/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/llm-d.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/329-llm-d-llm-d-github-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/330-llm-d-architecture-documentation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/331-kubernetes-sigs-gateway-api-inference-extension-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/332-introducing-gateway-api-inference-extension-kubernetes-blog.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/333-gateway-api-inference-extension-documentation.md`
 
 ## 관련 문서
 

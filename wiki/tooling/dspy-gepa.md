@@ -4,11 +4,10 @@ category: tooling
 page_type: entity
 project: DSPy + GEPA optimize_anything
 tags: [tooling, entity, dspy, gepa]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/dspy-gepa.md, raw/hot-topics-sources/2026-04-10/413-dspy-official-docs.md, raw/hot-topics-sources/2026-04-10/414-dspy-gepa-reflective-prompt-optimizer.md, raw/hot-topics-sources/2026-04-10/415-stanfordnlp-dspy-github.md, raw/hot-topics-sources/2026-04-10/416-optimize-anything-universal-api-for-optimizing-any-text-parameter.md, raw/hot-topics-sources/2026-04-10/417-gepa-ai-gepa-github.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # DSPy + GEPA optimize_anything
 
 프롬프트·코드·에이전트 아키텍처를 선언적으로 최적화하는 Stanford NLP 프레임워크.
@@ -24,6 +23,15 @@ updated: 2026-04-10
 - [stanfordnlp/dspy GitHub](https://github.com/stanfordnlp/dspy)
 - [optimize_anything: Universal API for Optimizing any Text Parameter](https://gepa-ai.github.io/gepa/blog/2026/02/18/introducing-optimize-anything/)
 - [gepa-ai/gepa GitHub](https://github.com/gepa-ai/gepa)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/dspy-gepa.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/413-dspy-official-docs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/414-dspy-gepa-reflective-prompt-optimizer.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/415-stanfordnlp-dspy-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/416-optimize-anything-universal-api-for-optimizing-any-text-parameter.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/417-gepa-ai-gepa-github.md`
 
 ## 관련 문서
 

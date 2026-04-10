@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: OpenAI Agents SDK
 tags: [tooling, entity, openai, agents, sdk, dev-tooling-and-frameworks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/openai-agents-sdk.md, raw/hot-topics-sources/2026-04-10/433-openai-agents-python-docs.md, raw/hot-topics-sources/2026-04-10/434-openai-openai-agents-python-github.md, raw/hot-topics-sources/2026-04-10/435-openai-agents-pypi.md, raw/hot-topics-sources/2026-04-10/436-openai-swarm-github.md, raw/hot-topics-sources/2026-04-10/437-openai-agents-typescript-sdk.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ Swarm의 후속 프로덕션 버전인 OpenAI 공식 에이전트 오케스트�
 - [openai-agents PyPI](https://pypi.org/project/openai-agents/)
 - [OpenAI Swarm (Legacy/Educational) GitHub](https://github.com/openai/swarm)
 - [OpenAI Agents TypeScript SDK](https://openai.github.io/openai-agents-js/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/openai-agents-sdk.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/433-openai-agents-python-docs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/434-openai-openai-agents-python-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/435-openai-agents-pypi.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/436-openai-swarm-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/437-openai-agents-typescript-sdk.md`
 
 ## 관련 문서
 

@@ -3,11 +3,10 @@ title: Constitutional Classifiers++ (Jailbreak Defense)
 category: concepts
 page_type: concept
 tags: [concepts, concept, constitutional, classifiers]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/constitutional-classifiers.md, raw/hot-topics-sources/2026-04-10/373-next-generation-constitutional-classifiers.md, raw/hot-topics-sources/2026-04-10/374-constitutional-classifiers-defending-against-universal-jailbreaks.md, raw/hot-topics-sources/2026-04-10/375-constitutional-classifiers-efficient-production-grade-defenses.md, raw/hot-topics-sources/2026-04-10/376-constitutional-classifiers.md, raw/hot-topics-sources/2026-04-10/377-cost-effective-constitutional-classifiers-via-representation-re-use.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Constitutional Classifiers++ (Jailbreak Defense)
 
 헌법 규칙 기반 합성 데이터로 학습한 입출력 분류기로 범용 jailbreak 차단.
@@ -23,6 +22,15 @@ updated: 2026-04-10
 - [Constitutional Classifiers++: Efficient Production-Grade Defenses (arXiv 2601.04603)](https://arxiv.org/abs/2601.04603)
 - [Constitutional Classifiers (arXiv 2501.18837)](https://arxiv.org/pdf/2501.18837)
 - [Cost-Effective Constitutional Classifiers via Representation Re-use](https://alignment.anthropic.com/2025/cheap-monitors/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/constitutional-classifiers.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/373-next-generation-constitutional-classifiers.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/374-constitutional-classifiers-defending-against-universal-jailbreaks.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/375-constitutional-classifiers-efficient-production-grade-defenses.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/376-constitutional-classifiers.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/377-cost-effective-constitutional-classifiers-via-representation-re-use.md`
 
 ## 관련 문서
 

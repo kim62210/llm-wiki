@@ -3,7 +3,7 @@ title: RLVR (Reinforcement Learning with Verifiable Rewards)
 category: training
 page_type: concept
 tags: [training, concept, rlvr, training-and-post-training]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/rlvr.md, raw/hot-topics-sources/2026-04-10/261-deepseek-r1-incentivizing-reasoning-capability-in-llms-via-reinforcement-learnin.md, raw/hot-topics-sources/2026-04-10/262-deepseek-r1-incentivizes-reasoning-in-llms-through-reinforcement-learning.md, raw/hot-topics-sources/2026-04-10/263-reinforcement-learning-with-verifiable-rewards-implicitly-incentivizes-correct-r.md, raw/hot-topics-sources/2026-04-10/264-rethinking-exploration-in-rlvr-from-entropy-regularization-to-refinement-via-bid.md, raw/hot-topics-sources/2026-04-10/265-decoupling-reasoning-and-confidence-resurrecting-calibration-in-rlvr.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ DeepSeek-R1 이후 추론 모델 학습의 지배적 패러다임이 되었고, 
 - [Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](https://arxiv.org/abs/2506.14245)
 - [Rethinking Exploration in RLVR: From Entropy Regularization to Refinement via Bidirectional Entropy Modulation](https://arxiv.org/abs/2604.04894)
 - [Decoupling Reasoning and Confidence: Resurrecting Calibration in RLVR](https://arxiv.org/abs/2603.09117)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/rlvr.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/261-deepseek-r1-incentivizing-reasoning-capability-in-llms-via-reinforcement-learnin.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/262-deepseek-r1-incentivizes-reasoning-in-llms-through-reinforcement-learning.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/263-reinforcement-learning-with-verifiable-rewards-implicitly-incentivizes-correct-r.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/264-rethinking-exploration-in-rlvr-from-entropy-regularization-to-refinement-via-bid.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/265-decoupling-reasoning-and-confidence-resurrecting-calibration-in-rlvr.md`
 
 ## 관련 문서
 

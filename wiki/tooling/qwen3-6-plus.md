@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: Qwen3.6-Plus
 tags: [tooling, entity, qwen3, plus, model-releases-and-benchmarks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/qwen3-6-plus.md, raw/hot-topics-sources/2026-04-10/145-alibaba-unveils-qwen3-6-plus-alibaba-cloud-community.md, raw/hot-topics-sources/2026-04-10/146-qwen-wikipedia.md, raw/hot-topics-sources/2026-04-10/147-qwen3-max-thinking-blog-qwen.md, raw/hot-topics-sources/2026-04-10/148-supported-models-alibaba-cloud-model-studio.md, raw/hot-topics-sources/2026-04-10/149-alibaba-qwen-team-releases-qwen3-5-omni-marktechpost.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ updated: 2026-04-10
 - [Qwen3-Max-Thinking Blog — Qwen](https://qwen.ai/blog?id=qwen3-max-thinking)
 - [Supported Models — Alibaba Cloud Model Studio](https://www.alibabacloud.com/help/en/model-studio/models)
 - [Alibaba Qwen Team Releases Qwen3.5 Omni — MarkTechPost](https://www.marktechpost.com/2026/03/30/alibaba-qwen-team-releases-qwen3-5-omni-a-native-multimodal-model-for-text-audio-video-and-realtime-interaction/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/qwen3-6-plus.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/145-alibaba-unveils-qwen3-6-plus-alibaba-cloud-community.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/146-qwen-wikipedia.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/147-qwen3-max-thinking-blog-qwen.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/148-supported-models-alibaba-cloud-model-studio.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/149-alibaba-qwen-team-releases-qwen3-5-omni-marktechpost.md`
 
 ## 관련 문서
 

@@ -3,7 +3,7 @@ title: Open Post-Training Recipes (Tülu 3 / OLMo 3)
 category: training
 page_type: summary
 tags: [training, summary, open, post, recipes, training-and-post-training]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/open-post-training-recipes.md, raw/hot-topics-sources/2026-04-10/305-tulu-3-pushing-frontiers-in-open-language-model-post-training.md, raw/hot-topics-sources/2026-04-10/306-tulu-3-opens-language-model-post-training.md, raw/hot-topics-sources/2026-04-10/307-olmo-3-charting-a-path-through-the-model-flow-to-lead-open-source-ai.md, raw/hot-topics-sources/2026-04-10/308-scaling-the-tulu-3-post-training-recipes-to-surpass-deepseek-v3.md, raw/hot-topics-sources/2026-04-10/309-allenai-open-instruct.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -42,6 +42,15 @@ Ai2가 Tülu 3에 이어 OLMo 3까지 데이터·코드·학습 곡선을 전부
 - [Olmo 3: Charting a path through the model flow to lead open-source AI (Ai2 blog)](https://allenai.org/blog/olmo3)
 - [Scaling the Tülu 3 post-training recipes to surpass DeepSeek V3 (Ai2 blog)](https://allenai.org/blog/tulu-3-405B)
 - [AllenAI open-instruct (post-training codebase)](https://github.com/allenai/open-instruct)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/open-post-training-recipes.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/305-tulu-3-pushing-frontiers-in-open-language-model-post-training.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/306-tulu-3-opens-language-model-post-training.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/307-olmo-3-charting-a-path-through-the-model-flow-to-lead-open-source-ai.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/308-scaling-the-tulu-3-post-training-recipes-to-surpass-deepseek-v3.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/309-allenai-open-instruct.md`
 
 ## 관련 문서
 

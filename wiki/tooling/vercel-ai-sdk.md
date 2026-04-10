@@ -4,11 +4,10 @@ category: tooling
 page_type: entity
 project: Vercel AI SDK 6
 tags: [tooling, entity, vercel, ai, sdk]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/vercel-ai-sdk.md, raw/hot-topics-sources/2026-04-10/438-ai-sdk-6-release-blog.md, raw/hot-topics-sources/2026-04-10/439-ai-sdk-official-docs.md, raw/hot-topics-sources/2026-04-10/440-vercel-ai-github-releases.md, raw/hot-topics-sources/2026-04-10/441-ai-sdk-homepage.md, raw/hot-topics-sources/2026-04-10/442-vercel-ai-sdk-product-page.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Vercel AI SDK 6
 
 Next.js·React 친화의 TypeScript LLM·에이전트 SDK.
@@ -24,6 +23,15 @@ Next.js·React 친화의 TypeScript LLM·에이전트 SDK.
 - [vercel/ai GitHub Releases](https://github.com/vercel/ai/releases)
 - [AI SDK Homepage](https://ai-sdk.dev)
 - [Vercel AI SDK Product Page](https://vercel.com/docs/ai-sdk)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/vercel-ai-sdk.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/438-ai-sdk-6-release-blog.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/439-ai-sdk-official-docs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/440-vercel-ai-github-releases.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/441-ai-sdk-homepage.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/442-vercel-ai-sdk-product-page.md`
 
 ## 관련 문서
 

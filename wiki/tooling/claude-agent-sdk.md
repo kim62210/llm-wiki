@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: Claude Agent SDK
 tags: [tooling, entity, claude, agent, sdk, dev-tooling-and-frameworks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/claude-agent-sdk.md, raw/hot-topics-sources/2026-04-10/428-claude-agent-sdk-overview.md, raw/hot-topics-sources/2026-04-10/429-anthropics-claude-agent-sdk-python-github.md, raw/hot-topics-sources/2026-04-10/430-anthropic-ai-claude-agent-sdk.md, raw/hot-topics-sources/2026-04-10/431-building-agents-with-the-claude-agent-sdk.md, raw/hot-topics-sources/2026-04-10/432-claude-agent-sdk-pypi.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ Claude Code의 에이전트 루프·툴·컨텍스트 관리를 라이브러리�
 - [@anthropic-ai/claude-agent-sdk (npm)](https://www.npmjs.com/package/@anthropic-ai/claude-agent-sdk)
 - [Building agents with the Claude Agent SDK (Anthropic Engineering)](https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk)
 - [claude-agent-sdk PyPI](https://pypi.org/project/claude-agent-sdk/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/claude-agent-sdk.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/428-claude-agent-sdk-overview.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/429-anthropics-claude-agent-sdk-python-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/430-anthropic-ai-claude-agent-sdk.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/431-building-agents-with-the-claude-agent-sdk.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/432-claude-agent-sdk-pypi.md`
 
 ## 관련 문서
 

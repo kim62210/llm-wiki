@@ -3,11 +3,10 @@ title: Error Analysis as the Eval Foundation
 category: concepts
 page_type: concept
 tags: [concepts, concept, error, analysis, for, evals]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/error-analysis-for-evals.md, raw/hot-topics-sources/2026-04-10/217-llm-evals-everything-you-need-to-know.md, raw/hot-topics-sources/2026-04-10/218-q-why-is-error-analysis-so-important-in-llm-evals.md, raw/hot-topics-sources/2026-04-10/219-your-ai-product-needs-evals.md, raw/hot-topics-sources/2026-04-10/220-an-llm-as-judge-won-t-save-the-product-fixing-your-process-will.md, raw/hot-topics-sources/2026-04-10/221-evals-for-ai-engineers.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Error Analysis as the Eval Foundation
 
 실제 트레이스를 수동 검토해 실패 분류 체계를 만드는 실무 기법.
@@ -23,6 +22,15 @@ Hamel Husain·Shreya Shankar가 2026년 1월 FAQ에서 "인프라보다 에러 �
 - [Your AI Product Needs Evals (Hamel Husain)](https://hamel.dev/blog/posts/evals/)
 - [An LLM-as-Judge Won't Save The Product—Fixing Your Process Will (Eugene Yan)](https://eugeneyan.com/writing/eval-process/)
 - [Evals for AI Engineers (O'Reilly, Shreya Shankar & Hamel Husain)](https://www.oreilly.com/library/view/evals-for-ai/9798341660717/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/error-analysis-for-evals.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/217-llm-evals-everything-you-need-to-know.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/218-q-why-is-error-analysis-so-important-in-llm-evals.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/219-your-ai-product-needs-evals.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/220-an-llm-as-judge-won-t-save-the-product-fixing-your-process-will.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/221-evals-for-ai-engineers.md`
 
 ## 관련 문서
 

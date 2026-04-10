@@ -5,11 +5,10 @@ category: rag
 page_type: entity
 project: Letta Stateful Agent Runtime
 tags: [rag, entity, letta, stateful, agent, runtime]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/letta-stateful-agent-runtime.md, raw/hot-topics-sources/2026-04-10/177-letta-github.md, raw/hot-topics-sources/2026-04-10/178-letta-code-a-memory-first-coding-agent.md, raw/hot-topics-sources/2026-04-10/179-rearchitecting-letta-s-agent-loop-lessons-from-react-memgpt-and-claude-code.md, raw/hot-topics-sources/2026-04-10/180-intro-to-letta.md, raw/hot-topics-sources/2026-04-10/181-agent-memory-how-to-build-agents-that-learn-and-remember.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Letta (MemGPT) Stateful Agent Runtime
 
 LLM-as-OS 모델로 Core/Recall/Archival 3-tier 메모리를 관리하는 에이전트 플랫폼.
@@ -25,6 +24,15 @@ LLM-as-OS 모델로 Core/Recall/Archival 3-tier 메모리를 관리하는 에이
 - [Rearchitecting Letta's Agent Loop: Lessons from ReAct, MemGPT, & Claude Code](https://www.letta.com/blog/letta-v1-agent)
 - [Intro to Letta (MemGPT docs)](https://docs.letta.com/concepts/memgpt/)
 - [Agent Memory: How to Build Agents that Learn and Remember](https://www.letta.com/blog/agent-memory)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/letta-stateful-agent-runtime.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/177-letta-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/178-letta-code-a-memory-first-coding-agent.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/179-rearchitecting-letta-s-agent-loop-lessons-from-react-memgpt-and-claude-code.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/180-intro-to-letta.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/181-agent-memory-how-to-build-agents-that-learn-and-remember.md`
 
 ## 관련 문서
 

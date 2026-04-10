@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: SWE-bench Pro
 tags: [tooling, entity, swe, bench, pro, model-releases-and-benchmarks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/swe-bench-pro.md, raw/hot-topics-sources/2026-04-10/150-swe-bench-pro-paper-landing-scale-labs.md, raw/hot-topics-sources/2026-04-10/143-swe-bench-pro-leaderboard-scale-labs.md, raw/hot-topics-sources/2026-04-10/151-swe-bench-pro-leaderboard-scale.md, raw/hot-topics-sources/2026-04-10/152-swe-bench-pro-project-scale.md, raw/hot-topics-sources/2026-04-10/153-scaleapi-swe-bench-pro-os-github.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ Scale AI가 구축한 장기 호흡(long-horizon) 소프트웨어 엔지니어�
 - [SWE-Bench Pro Leaderboard (Private) — Scale](https://labs.scale.com/leaderboard/swe_bench_pro_private)
 - [SWE-Bench Pro Project — Scale](https://scaleapi.github.io/SWE-bench_Pro-os/)
 - [scaleapi/SWE-bench_Pro-os — GitHub](https://github.com/scaleapi/SWE-bench_Pro-os)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/swe-bench-pro.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/150-swe-bench-pro-paper-landing-scale-labs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/143-swe-bench-pro-leaderboard-scale-labs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/151-swe-bench-pro-leaderboard-scale.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/152-swe-bench-pro-project-scale.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/153-scaleapi-swe-bench-pro-os-github.md`
 
 ## 관련 문서
 

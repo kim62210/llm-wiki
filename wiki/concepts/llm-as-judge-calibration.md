@@ -3,11 +3,10 @@ title: LLM-as-Judge Calibration & Reliability
 category: concepts
 page_type: concept
 tags: [concepts, concept, llm, as, judge, calibration]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/llm-as-judge-calibration.md, raw/hot-topics-sources/2026-04-10/212-calibrating-llm-judges-linear-probes-for-fast-and-reliable-uncertainty-estimatio.md, raw/hot-topics-sources/2026-04-10/213-how-to-correctly-report-llm-as-a-judge-evaluations.md, raw/hot-topics-sources/2026-04-10/214-overconfidence-in-llm-as-a-judge-diagnosis-and-confidence-driven-solution.md, raw/hot-topics-sources/2026-04-10/215-evaluating-the-effectiveness-of-llm-evaluators.md, raw/hot-topics-sources/2026-04-10/216-a-survey-on-llm-as-a-judge.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # LLM-as-Judge Calibration & Reliability
 
 LLM 평가자의 과신·편향을 진단하고 확신도를 보정하는 기법.
@@ -23,6 +22,15 @@ LLM 평가자의 과신·편향을 진단하고 확신도를 보정하는 기법
 - [Overconfidence in LLM-as-a-Judge: Diagnosis and Confidence-Driven Solution (arXiv:2508.06225)](https://arxiv.org/abs/2508.06225)
 - [Evaluating the Effectiveness of LLM-Evaluators (Eugene Yan)](https://eugeneyan.com/writing/llm-evaluators/)
 - [A Survey on LLM-as-a-Judge (arXiv:2411.15594)](https://arxiv.org/abs/2411.15594)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/llm-as-judge-calibration.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/212-calibrating-llm-judges-linear-probes-for-fast-and-reliable-uncertainty-estimatio.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/213-how-to-correctly-report-llm-as-a-judge-evaluations.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/214-overconfidence-in-llm-as-a-judge-diagnosis-and-confidence-driven-solution.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/215-evaluating-the-effectiveness-of-llm-evaluators.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/216-a-survey-on-llm-as-a-judge.md`
 
 ## 관련 문서
 

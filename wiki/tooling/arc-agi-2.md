@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: ARC-AGI-2
 tags: [tooling, entity, arc, agi, model-releases-and-benchmarks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/arc-agi-2.md, raw/hot-topics-sources/2026-04-10/158-arc-agi-2-overview-arc-prize.md, raw/hot-topics-sources/2026-04-10/159-arc-prize-leaderboard.md, raw/hot-topics-sources/2026-04-10/160-arc-agi-v2-leaderboard-llm-stats.md, raw/hot-topics-sources/2026-04-10/161-beating-arc-agi-2-with-code-evolution-imbue.md, raw/hot-topics-sources/2026-04-10/162-arc-prize-2026-kaggle.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ ARC Prize가 운영하는 추상 추론/유동지능(fluid intelligence) 벤치�
 - [ARC-AGI v2 Leaderboard — LLM Stats](https://llm-stats.com/benchmarks/arc-agi-v2)
 - [Beating ARC-AGI-2 with Code Evolution — Imbue](https://imbue.com/research/2026-02-27-arc-agi-2-evolution/)
 - [ARC Prize 2026 — Kaggle](https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-2/leaderboard)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/arc-agi-2.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/158-arc-agi-2-overview-arc-prize.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/159-arc-prize-leaderboard.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/160-arc-agi-v2-leaderboard-llm-stats.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/161-beating-arc-agi-2-with-code-evolution-imbue.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/162-arc-prize-2026-kaggle.md`
 
 ## 관련 문서
 

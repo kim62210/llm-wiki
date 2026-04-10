@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: Terminal-Bench 2.0
 tags: [tooling, entity, terminal, bench, model-releases-and-benchmarks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/terminal-bench-2-0.md, raw/hot-topics-sources/2026-04-10/154-terminal-bench-official-site.md, raw/hot-topics-sources/2026-04-10/119-terminal-bench-2-0-leaderboard-llm-stats.md, raw/hot-topics-sources/2026-04-10/155-terminal-bench-hard-artificial-analysis.md, raw/hot-topics-sources/2026-04-10/156-terminal-bench-vals-ai.md, raw/hot-topics-sources/2026-04-10/157-benchtalks-1-alex-shaw-snorkel-ai.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ Stanford-Laude Institute가 만든 터미널 환경 에이전트 평가 벤치�
 - [Terminal-Bench Hard — Artificial Analysis](https://artificialanalysis.ai/evaluations/terminalbench-hard)
 - [Terminal-Bench — Vals AI](https://www.vals.ai/benchmarks/terminal-bench)
 - [Benchtalks #1: Alex Shaw — Snorkel AI](https://snorkel.ai/blog/benchtalks-alex-shaw-terminal-bench-harbor-building-the-benchmark-factory/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/terminal-bench-2-0.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/154-terminal-bench-official-site.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/119-terminal-bench-2-0-leaderboard-llm-stats.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/155-terminal-bench-hard-artificial-analysis.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/156-terminal-bench-vals-ai.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/157-benchtalks-1-alex-shaw-snorkel-ai.md`
 
 ## 관련 문서
 

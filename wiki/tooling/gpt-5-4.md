@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: GPT-5.4
 tags: [tooling, entity, gpt, model-releases-and-benchmarks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/gpt-5-4.md, raw/hot-topics-sources/2026-04-10/120-introducing-gpt-5-4-openai.md, raw/hot-topics-sources/2026-04-10/121-gpt-5-4-wikipedia.md, raw/hot-topics-sources/2026-04-10/122-introducing-gpt-5-4-mini-and-nano-openai.md, raw/hot-topics-sources/2026-04-10/123-model-release-notes-openai-help-center.md, raw/hot-topics-sources/2026-04-10/124-gdpval-openai.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ updated: 2026-04-10
 - [Introducing GPT-5.4 mini and nano — OpenAI](https://openai.com/index/introducing-gpt-5-4-mini-and-nano/)
 - [Model Release Notes — OpenAI Help Center](https://help.openai.com/en/articles/9624314-model-release-notes)
 - [GDPval — OpenAI](https://openai.com/index/gdpval/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/gpt-5-4.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/120-introducing-gpt-5-4-openai.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/121-gpt-5-4-wikipedia.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/122-introducing-gpt-5-4-mini-and-nano-openai.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/123-model-release-notes-openai-help-center.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/124-gdpval-openai.md`
 
 ## 관련 문서
 

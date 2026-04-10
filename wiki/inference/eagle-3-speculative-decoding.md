@@ -3,7 +3,7 @@ title: EAGLE-3 Speculative Decoding
 category: inference
 page_type: concept
 tags: [inference, concept, eagle, speculative, decoding, inference-optimization]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/eagle-3-speculative-decoding.md, raw/hot-topics-sources/2026-04-10/076-eagle-3-scaling-up-inference-acceleration-of-large-language-models-via-training-.md, raw/hot-topics-sources/2026-04-10/077-safeailab-eagle-official-repository.md, raw/hot-topics-sources/2026-04-10/078-from-research-to-production-accelerate-oss-llm-with-eagle-3-on-vertex.md, raw/hot-topics-sources/2026-04-10/079-fly-eagle-3-fly-faster-inference-with-vllm.md, raw/hot-topics-sources/2026-04-10/080-sglang-speculative-decoding-documentation.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ NeurIPS 2025 채택 후 2025년 말부터 vLLM, SGLang, TensorRT-LLM 모두에 �
 - [From research to production: Accelerate OSS LLM with EAGLE-3 on Vertex (LMSYS)](https://lmsys.org/blog/2025-12-01-eagle3-vertex/)
 - [Fly Eagle-3 fly: Faster inference with vLLM (Red Hat)](https://developers.redhat.com/articles/2025/07/01/fly-eagle3-fly-faster-inference-vllm-speculative-decoding)
 - [SGLang Speculative Decoding documentation](https://docs.sglang.io/advanced_features/speculative_decoding.html)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/eagle-3-speculative-decoding.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/076-eagle-3-scaling-up-inference-acceleration-of-large-language-models-via-training-.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/077-safeailab-eagle-official-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/078-from-research-to-production-accelerate-oss-llm-with-eagle-3-on-vertex.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/079-fly-eagle-3-fly-faster-inference-with-vllm.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/080-sglang-speculative-decoding-documentation.md`
 
 ## 관련 문서
 

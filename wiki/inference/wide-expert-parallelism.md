@@ -3,7 +3,7 @@ title: Wide Expert Parallelism (WideEP) for MoE
 category: inference
 page_type: concept
 tags: [inference, concept, wide, expert, parallelism]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/wide-expert-parallelism.md, raw/hot-topics-sources/2026-04-10/083-driving-vllm-wideep-and-large-scale-serving-on-blackwell.md, raw/hot-topics-sources/2026-04-10/086-vllm-expert-parallel-deployment-docs.md, raw/hot-topics-sources/2026-04-10/087-scaling-deepseek-style-moes-with-vllm-and-llm-d-using-wide-ep.md, raw/hot-topics-sources/2026-04-10/088-vllm-large-scale-serving-deepseek-2-2k-tok-s-h200-with-wide-ep.md, raw/hot-topics-sources/2026-04-10/089-deepseek-v3-2-on-gb300-performance-breakthrough.md, raw/hot-topics-sources/2026-04-10/319-elastic-ep-in-sglang-achieving-partial-failure-tolerance-for-deepseek-moe-deploy.md, raw/hot-topics-sources/2026-04-10/320-deepep-expert-parallel-communication-library-github.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ MoE 전문가를 다수 노드에 분산하고 EPLB로 로드 밸런싱하는 �
 - [Scaling DeepSeek-style MoEs with vLLM and llm-d using Wide EP (Red Hat)](https://developers.redhat.com/articles/2025/09/08/scaling-deepseek-style-moes-vllm-and-llm-d-using-wide-ep)
 - [vLLM Large Scale Serving: DeepSeek @ 2.2k tok/s/H200 with Wide-EP](https://blog.vllm.ai/2025/12/17/large-scale-serving.html)
 - [DeepSeek-V3.2 on GB300: Performance Breakthrough (vLLM Blog)](https://blog.vllm.ai/2026/02/13/gb300-deepseek.html)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/wide-expert-parallelism.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/083-driving-vllm-wideep-and-large-scale-serving-on-blackwell.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/088-vllm-large-scale-serving-deepseek-2-2k-tok-s-h200-with-wide-ep.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/319-elastic-ep-in-sglang-achieving-partial-failure-tolerance-for-deepseek-moe-deploy.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/086-vllm-expert-parallel-deployment-docs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/320-deepep-expert-parallel-communication-library-github.md`
 
 ## 관련 문서
 

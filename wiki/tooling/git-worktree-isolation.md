@@ -3,11 +3,10 @@ title: Git Worktree Isolation for Parallel Coding Agents
 category: tooling
 page_type: concept
 tags: [tooling, concept, git, worktree, isolation]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/git-worktree-isolation.md, raw/hot-topics-sources/2026-04-10/054-common-workflows.md, raw/hot-topics-sources/2026-04-10/051-claude-code-hooks-reference.md, raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md, raw/hot-topics-sources/2026-04-10/057-cursor-3-0-changelog.md, raw/hot-topics-sources/2026-04-10/052-claude-code-changelog.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Git Worktree Isolation for Parallel Coding Agents
 
 각 에이전트에게 독립된 git worktree를 할당해 파일 충돌 없이 병렬 작업하게 하는 격리 패턴.
@@ -23,6 +22,15 @@ Claude Code가 `--worktree` 플래그·`.claude/worktrees/`·`WorktreeCreate`/`W
 - [Create custom subagents (Claude Code)](https://code.claude.com/docs/en/sub-agents)
 - [Cursor 3.0 Changelog](https://cursor.com/changelog/3-0)
 - [Claude Code Changelog](https://code.claude.com/docs/en/changelog)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/git-worktree-isolation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/054-common-workflows.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/051-claude-code-hooks-reference.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/057-cursor-3-0-changelog.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/052-claude-code-changelog.md`
 
 ## 관련 문서
 

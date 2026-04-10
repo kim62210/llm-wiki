@@ -4,11 +4,10 @@ aliases: ["responsible-scaling-policy-v3-and-frontier-safety-roadmap"]
 category: concepts
 page_type: summary
 tags: [concepts, summary, responsible, scaling, policy, safety-and-alignment]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/responsible-scaling-policy-v3.md, raw/hot-topics-sources/2026-04-10/383-responsible-scaling-policy-version-3-0.md, raw/hot-topics-sources/2026-04-10/384-anthropic-s-frontier-safety-roadmap.md, raw/hot-topics-sources/2026-04-10/385-anthropic-s-responsible-scaling-policy.md, raw/hot-topics-sources/2026-04-10/386-responsible-scaling-policy-v3-1.md, raw/hot-topics-sources/2026-04-10/387-anthropic-s-rsp-v3-0-analysis.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Responsible Scaling Policy v3 & Frontier Safety Roadmap
 
 이 페이지는 Responsible Scaling Policy v3 & Frontier Safety Roadmap를 요약하고, 지금 시점에 왜 중요한지 빠르게 따라잡기 위한 페이지다. 핵심 범위는 역량 임계치별 위험 완화를 명문화하고 공개 로드맵으로 진척도를 투명화하는 거버넌스이다.
@@ -32,6 +31,15 @@ updated: 2026-04-10
 - [Anthropic's Responsible Scaling Policy](https://www.anthropic.com/responsible-scaling-policy)
 - [Responsible Scaling Policy v3.1 (PDF, April 2 2026)](https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf)
 - [Anthropic's RSP v3.0 analysis (GovAI)](https://www.governance.ai/analysis/anthropics-rsp-v3-0-how-it-works-whats-changed-and-some-reflections)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/responsible-scaling-policy-v3.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/383-responsible-scaling-policy-version-3-0.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/384-anthropic-s-frontier-safety-roadmap.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/385-anthropic-s-responsible-scaling-policy.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/386-responsible-scaling-policy-v3-1.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/387-anthropic-s-rsp-v3-0-analysis.md`
 
 ## 관련 문서
 

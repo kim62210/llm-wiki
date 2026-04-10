@@ -3,7 +3,7 @@ title: Contextual Retrieval (Anthropic)
 category: rag
 page_type: concept
 tags: [rag, concept, contextual, retrieval, rag-and-context-engineering]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/contextual-retrieval.md, raw/hot-topics-sources/2026-04-10/172-introducing-contextual-retrieval.md, raw/hot-topics-sources/2026-04-10/173-voyage-context-3-focused-chunk-level-details-with-global-document-context.md, raw/hot-topics-sources/2026-04-10/174-late-chunking-in-long-context-embedding-models.md, raw/hot-topics-sources/2026-04-10/175-late-chunking-github.md, raw/hot-topics-sources/2026-04-10/176-contextual-retrieval-in-anthropic-using-amazon-bedrock-knowledge-bases.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ Anthropic의 원본 기법이 2026년에도 reranking과 결합 시 실패율 67
 - [Late Chunking in Long-Context Embedding Models (Jina AI)](https://jina.ai/news/late-chunking-in-long-context-embedding-models/)
 - [Late Chunking GitHub (jina-ai/late-chunking)](https://github.com/jina-ai/late-chunking)
 - [Contextual retrieval in Anthropic using Amazon Bedrock Knowledge Bases (AWS)](https://aws.amazon.com/blogs/machine-learning/contextual-retrieval-in-anthropic-using-amazon-bedrock-knowledge-bases/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/contextual-retrieval.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/172-introducing-contextual-retrieval.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/173-voyage-context-3-focused-chunk-level-details-with-global-document-context.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/174-late-chunking-in-long-context-embedding-models.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/175-late-chunking-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/176-contextual-retrieval-in-anthropic-using-amazon-bedrock-knowledge-bases.md`
 
 ## 관련 문서
 

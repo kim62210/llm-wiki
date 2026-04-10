@@ -4,11 +4,10 @@ category: rag
 page_type: entity
 project: Serverless Object-Storage Vector DBs
 tags: [rag, entity, serverless, vector, dbs]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/serverless-vector-dbs.md, raw/hot-topics-sources/2026-04-10/207-turbopuffer-documentation.md, raw/hot-topics-sources/2026-04-10/208-qdrant-official-site.md, raw/hot-topics-sources/2026-04-10/209-lancedb-github.md, raw/hot-topics-sources/2026-04-10/210-vespa-vs-qdrant-vs-turbopuffer-for-large-scale-hybrid-search.md, raw/hot-topics-sources/2026-04-10/211-a-practical-guide-to-training-custom-rerankers.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Serverless Object-Storage Vector DBs (Turbopuffer 등)
 
 벡터 + BM25를 S3/GCS 기반으로 저장해 TB급 인덱스 비용을 수십 배 낮춘 벡터DB.
@@ -24,6 +23,15 @@ Turbopuffer가 object-storage 기반 하이브리드 검색(p50 8ms warm, p90 44
 - [LanceDB GitHub](https://github.com/lancedb/lancedb)
 - [Vespa vs Qdrant vs Turbopuffer for large-scale hybrid search (Hugging Face Forums)](https://discuss.huggingface.co/t/vespa-vs-qdrant-vs-turbopuffer-for-large-scale-hybrid-search-bm25-text-image-vectors/171610)
 - [A Practical Guide to Training Custom Rerankers (LanceDB Blog)](https://www.lancedb.com/blog/a-practical-guide-to-training-custom-rerankers)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/serverless-vector-dbs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/207-turbopuffer-documentation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/208-qdrant-official-site.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/209-lancedb-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/210-vespa-vs-qdrant-vs-turbopuffer-for-large-scale-hybrid-search.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/211-a-practical-guide-to-training-custom-rerankers.md`
 
 ## 관련 문서
 

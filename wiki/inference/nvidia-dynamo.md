@@ -4,11 +4,10 @@ category: inference
 page_type: entity
 project: NVIDIA Dynamo 1.0 Inference OS
 tags: [inference, entity, nvidia, dynamo]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/nvidia-dynamo.md, raw/hot-topics-sources/2026-04-10/310-nvidia-enters-production-with-dynamo-the-broadly-adopted-inference-operating-sys.md, raw/hot-topics-sources/2026-04-10/311-how-nvidia-dynamo-1-0-powers-multi-node-inference-at-production-scale.md, raw/hot-topics-sources/2026-04-10/312-ai-dynamo-dynamo-github-repository.md, raw/hot-topics-sources/2026-04-10/313-nvidia-dynamo-developer-page.md, raw/hot-topics-sources/2026-04-10/314-nvidia-dynamo-product-overview.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # NVIDIA Dynamo 1.0 Inference OS
 
 AI 팩토리용 분산 인퍼런스 OS로 SGLang/vLLM/TRT-LLM을 오케스트레이션.
@@ -24,6 +23,15 @@ AI 팩토리용 분산 인퍼런스 OS로 SGLang/vLLM/TRT-LLM을 오케스트레
 - [ai-dynamo/dynamo GitHub Repository](https://github.com/ai-dynamo/dynamo)
 - [NVIDIA Dynamo Developer Page](https://developer.nvidia.com/dynamo)
 - [NVIDIA Dynamo Product Overview](https://www.nvidia.com/en-us/ai/dynamo/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/nvidia-dynamo.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/310-nvidia-enters-production-with-dynamo-the-broadly-adopted-inference-operating-sys.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/311-how-nvidia-dynamo-1-0-powers-multi-node-inference-at-production-scale.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/312-ai-dynamo-dynamo-github-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/313-nvidia-dynamo-developer-page.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/314-nvidia-dynamo-product-overview.md`
 
 ## 관련 문서
 

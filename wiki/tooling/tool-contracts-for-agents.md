@@ -3,11 +3,10 @@ title: Tool Contracts & Writing Tools for Agents
 category: tooling
 page_type: concept
 tags: [tooling, concept, tool, contracts, for, agents]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/tool-contracts-for-agents.md, raw/hot-topics-sources/2026-04-10/025-writing-effective-tools-for-agents.md, raw/hot-topics-sources/2026-04-10/042-scaling-managed-agents-decoupling-the-brain-from-the-hands.md, raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md, raw/hot-topics-sources/2026-04-10/057-cursor-3-0-changelog.md, raw/hot-topics-sources/2026-04-10/065-chat-modes.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Tool Contracts & Writing Tools for Agents
 
 결정론적 시스템과 비결정론적 에이전트 사이의 계약으로 툴을 설계하는 에이전트 우선 설계 철학.
@@ -23,6 +22,15 @@ Anthropic의 "Writing effective tools for agents" 가이드라인과 2026년 2�
 - [Claude Agent SDK Overview](https://code.claude.com/docs/en/agent-sdk/overview)
 - [Cursor 3.0 Changelog](https://cursor.com/changelog/3-0)
 - [Chat modes (Aider)](https://aider.chat/docs/usage/modes.html)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/tool-contracts-for-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/025-writing-effective-tools-for-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/042-scaling-managed-agents-decoupling-the-brain-from-the-hands.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/057-cursor-3-0-changelog.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/065-chat-modes.md`
 
 ## 관련 문서
 

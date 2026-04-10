@@ -3,7 +3,7 @@ title: Agent Prompt Injection Defense & Trustworthy Agents
 category: concepts
 page_type: concept
 tags: [concepts, concept, agent, prompt, injection, defense, safety-and-alignment]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/agent-prompt-injection-defense.md, raw/hot-topics-sources/2026-04-10/378-trustworthy-agents-in-practice.md, raw/hot-topics-sources/2026-04-10/379-mitigating-the-risk-of-prompt-injections-in-browser-use.md, raw/hot-topics-sources/2026-04-10/380-our-framework-for-developing-safe-and-trustworthy-agents.md, raw/hot-topics-sources/2026-04-10/381-how-are-ai-agents-used-evidence-from-177-000-mcp-tools.md, raw/hot-topics-sources/2026-04-10/382-quantifying-frontier-llm-capabilities-for-container-sandbox-escape.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ updated: 2026-04-10
 - [Our framework for developing safe and trustworthy agents](https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents)
 - [How are AI agents used? Evidence from 177,000 MCP tools (AISI)](https://www.aisi.gov.uk/research/how-are-ai-agents-used-evidence-from-177-000-mcp-tools)
 - [Quantifying Frontier LLM Capabilities for Container Sandbox Escape (AISI)](https://www.aisi.gov.uk/research/quantifying-frontier-llm-capabilities-for-container-sandbox-escape)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/agent-prompt-injection-defense.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/378-trustworthy-agents-in-practice.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/379-mitigating-the-risk-of-prompt-injections-in-browser-use.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/380-our-framework-for-developing-safe-and-trustworthy-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/381-how-are-ai-agents-used-evidence-from-177-000-mcp-tools.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/382-quantifying-frontier-llm-capabilities-for-container-sandbox-escape.md`
 
 ## 관련 문서
 

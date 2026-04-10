@@ -3,7 +3,7 @@ title: GRPO (Group Relative Policy Optimization)
 category: training
 page_type: concept
 tags: [training, concept, grpo, training-and-post-training]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/grpo.md, raw/hot-topics-sources/2026-04-10/266-deepseekmath-pushing-the-limits-of-mathematical-reasoning.md, raw/hot-topics-sources/2026-04-10/267-demystifying-group-relative-policy-optimization-its-policy-gradient-is-a-u-stati.md, raw/hot-topics-sources/2026-04-10/268-training-free-group-relative-policy-optimization.md, raw/hot-topics-sources/2026-04-10/269-scaf-grpo-scaffolded-group-relative-policy-optimization-for-enhancing-llm-reason.md, raw/hot-topics-sources/2026-04-10/270-understanding-grpo-ppo-without-the-critic.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ DeepSeek-R1이 채택한 이후 오픈소스 추론 모델 학습의 표준이 �
 - [Training-Free Group Relative Policy Optimization](https://arxiv.org/abs/2510.08191)
 - [Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](https://arxiv.org/abs/2510.19807)
 - [Understanding GRPO: PPO without the critic (HuggingFace blog)](https://huggingface.co/blog/garg-aayush/derive-grpo-loss)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/grpo.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/266-deepseekmath-pushing-the-limits-of-mathematical-reasoning.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/267-demystifying-group-relative-policy-optimization-its-policy-gradient-is-a-u-stati.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/268-training-free-group-relative-policy-optimization.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/269-scaf-grpo-scaffolded-group-relative-policy-optimization-for-enhancing-llm-reason.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/270-understanding-grpo-ppo-without-the-critic.md`
 
 ## 관련 문서
 

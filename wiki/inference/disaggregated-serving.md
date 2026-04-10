@@ -4,7 +4,7 @@ aliases: ["disaggregated-prefill-decode-serving"]
 category: inference
 page_type: concept
 tags: [inference, concept, disaggregated, serving]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/disaggregated-serving.md, raw/hot-topics-sources/2026-04-10/081-vllm-disaggregated-prefilling-documentation.md, raw/hot-topics-sources/2026-04-10/082-unleashing-amd-mi300x-disaggregating-prefill-and-decode-with-sglang.md, raw/hot-topics-sources/2026-04-10/083-driving-vllm-wideep-and-large-scale-serving-on-blackwell.md, raw/hot-topics-sources/2026-04-10/084-vllm-q1-2026-roadmap.md, raw/hot-topics-sources/2026-04-10/085-sglang-q1-2026-development-roadmap.md, raw/hot-topics-sources/2026-04-10/315-prefill-decode-disaggregation-ray-serve-docs.md, raw/hot-topics-sources/2026-04-10/316-distserve-disaggregating-prefill-and-decoding-for-goodput-optimized-llm-serving.md, raw/hot-topics-sources/2026-04-10/317-distserve-usenix-osdi-2024-paper.md, raw/hot-topics-sources/2026-04-10/318-disaggregated-prefill-and-decode-perplexity-engineering-blog.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -44,6 +44,15 @@ updated: 2026-04-10
 - [Driving vLLM WideEP and Large-Scale Serving on Blackwell (vLLM Blog)](https://blog.vllm.ai/2026/02/03/dsr1-gb200-part1.html)
 - [vLLM Q1 2026 Roadmap](https://github.com/vllm-project/vllm/issues/32455)
 - [SGLang Q1 2026 Development Roadmap](https://github.com/sgl-project/sglang/issues/12780)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/disaggregated-serving.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/081-vllm-disaggregated-prefilling-documentation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/315-prefill-decode-disaggregation-ray-serve-docs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/316-distserve-disaggregating-prefill-and-decoding-for-goodput-optimized-llm-serving.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/317-distserve-usenix-osdi-2024-paper.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/318-disaggregated-prefill-and-decode-perplexity-engineering-blog.md`
 
 ## 관련 문서
 

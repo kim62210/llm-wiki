@@ -4,7 +4,7 @@ category: inference
 page_type: project-internal
 project: vLLM
 tags: [inference, project-internal, vllm, semantic, router, infra-and-serving]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/vllm-semantic-router.md, raw/hot-topics-sources/2026-04-10/338-vllm-semantic-router-v0-1-iris-the-first-major-release.md, raw/hot-topics-sources/2026-04-10/339-getting-started-with-vllm-semantic-router-athena-release-red-hat-developer.md, raw/hot-topics-sources/2026-04-10/340-vllm-project-semantic-router-github-repository.md, raw/hot-topics-sources/2026-04-10/341-vllm-semantic-router-official-site.md, raw/hot-topics-sources/2026-04-10/342-intelligent-semantic-routing-vllm-production-stack-docs.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ mmBERT 기반 신경 분류기로 요청을 적절한 모델에 라우팅하는 
 - [vllm-project/semantic-router GitHub Repository](https://github.com/vllm-project/semantic-router)
 - [vLLM Semantic Router Official Site](https://vllm-semantic-router.com/)
 - [Intelligent Semantic Routing - vLLM production-stack Docs](https://docs.vllm.ai/projects/production-stack/en/latest/use_cases/semantic-router-integration.html)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/vllm-semantic-router.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/338-vllm-semantic-router-v0-1-iris-the-first-major-release.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/339-getting-started-with-vllm-semantic-router-athena-release-red-hat-developer.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/340-vllm-project-semantic-router-github-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/341-vllm-semantic-router-official-site.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/342-intelligent-semantic-routing-vllm-production-stack-docs.md`
 
 ## 관련 문서
 

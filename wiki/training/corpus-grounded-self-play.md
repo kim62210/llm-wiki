@@ -3,7 +3,7 @@ title: Corpus-Grounded Self-Play (SPICE 계열)
 category: training
 page_type: concept
 tags: [training, concept, corpus, grounded, self, play, training-and-post-training]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/corpus-grounded-self-play.md, raw/hot-topics-sources/2026-04-10/291-spice-self-play-in-corpus-environments-improves-reasoning.md, raw/hot-topics-sources/2026-04-10/292-towards-understanding-self-play-for-llm-reasoning.md, raw/hot-topics-sources/2026-04-10/293-spell-self-play-reinforcement-learning-for-evolving-long-context-language-models.md, raw/hot-topics-sources/2026-04-10/294-self-play-only-evolves-when-self-synthetic-pipeline-ensures-learnable-informatio.md, raw/hot-topics-sources/2026-04-10/295-language-self-play-for-data-free-training.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ updated: 2026-04-10
 - [SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](https://arxiv.org/html/2509.23863)
 - [Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain](https://arxiv.org/html/2603.02218)
 - [Language Self-Play For Data-Free Training](https://arxiv.org/pdf/2509.07414)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/corpus-grounded-self-play.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/291-spice-self-play-in-corpus-environments-improves-reasoning.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/292-towards-understanding-self-play-for-llm-reasoning.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/293-spell-self-play-reinforcement-learning-for-evolving-long-context-language-models.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/294-self-play-only-evolves-when-self-synthetic-pipeline-ensures-learnable-informatio.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/295-language-self-play-for-data-free-training.md`
 
 ## 관련 문서
 

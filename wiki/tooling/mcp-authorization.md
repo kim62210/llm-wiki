@@ -5,11 +5,10 @@ category: tooling
 page_type: entity
 project: MCP OAuth 2.1 + PKCE Authorization
 tags: [tooling, entity, mcp, authorization]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/mcp-authorization.md, raw/hot-topics-sources/2026-04-10/050-mcp-authorization-specification.md, raw/hot-topics-sources/2026-04-10/047-mcp-specification-2025-11-25.md, raw/hot-topics-sources/2026-04-10/045-the-2026-mcp-roadmap.md, raw/hot-topics-sources/2026-04-10/049-modelcontextprotocol-modelcontextprotocol.md, raw/hot-topics-sources/2026-04-10/048-mcp-what-is-the-model-context-protocol.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # MCP OAuth 2.1 + PKCE Authorization
 
 MCP 서버를 OAuth 2.1 리소스 서버로 다루는 PKCE·Resource Indicator 기반 인증 스펙.
@@ -25,6 +24,15 @@ MCP 서버를 OAuth 2.1 리소스 서버로 다루는 PKCE·Resource Indicator �
 - [The 2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/)
 - [modelcontextprotocol/modelcontextprotocol (GitHub)](https://github.com/modelcontextprotocol/modelcontextprotocol)
 - [MCP What is the Model Context Protocol?](https://modelcontextprotocol.io/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/mcp-authorization.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/050-mcp-authorization-specification.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/047-mcp-specification-2025-11-25.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/045-the-2026-mcp-roadmap.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/049-modelcontextprotocol-modelcontextprotocol.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/048-mcp-what-is-the-model-context-protocol.md`
 
 ## 관련 문서
 

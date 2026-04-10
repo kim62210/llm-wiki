@@ -3,7 +3,7 @@ title: Multi-Turn Agent Evaluation
 category: concepts
 page_type: concept
 tags: [concepts, concept, multi, turn, agent, evaluation, evals-and-observability]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/multi-turn-agent-evaluation.md, raw/hot-topics-sources/2026-04-10/227-improve-agent-quality-with-insights-agent-and-multi-turn-evals.md, raw/hot-topics-sources/2026-04-10/228-langsmith-evaluation-documentation.md, raw/hot-topics-sources/2026-04-10/229-evaluate-end-to-end-agent-interactions-with-multi-turn-evals.md, raw/hot-topics-sources/2026-04-10/230-langsmith-evaluations-platform.md, raw/hot-topics-sources/2026-04-10/231-langsmith-platform-overview.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ LangSmith가 2025년 10월 "threads"를 일급 개념으로 승격하고 Multi-t
 - [Evaluate end-to-end agent interactions with Multi-turn Evals (LangChain Changelog)](https://changelog.langchain.com/announcements/evaluate-end-to-end-agent-interactions-with-multi-turn-evals)
 - [LangSmith Evaluations Platform](https://www.langchain.com/langsmith/evaluation)
 - [LangSmith Platform Overview](https://www.langchain.com/langsmith-platform)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/multi-turn-agent-evaluation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/227-improve-agent-quality-with-insights-agent-and-multi-turn-evals.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/228-langsmith-evaluation-documentation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/229-evaluate-end-to-end-agent-interactions-with-multi-turn-evals.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/230-langsmith-evaluations-platform.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/231-langsmith-platform-overview.md`
 
 ## 관련 문서
 

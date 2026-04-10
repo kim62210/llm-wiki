@@ -3,11 +3,10 @@ title: Tool Selection & Tool Invocation Evaluators
 category: concepts
 page_type: concept
 tags: [concepts, concept, tool, invocation, evaluators]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/tool-invocation-evaluators.md, raw/hot-topics-sources/2026-04-10/232-tool-selection-and-tool-invocation-evaluators-release-notes.md, raw/hot-topics-sources/2026-04-10/233-how-to-evaluate-tool-calling-agents.md, raw/hot-topics-sources/2026-04-10/234-tool-invocation-evaluator-docs.md, raw/hot-topics-sources/2026-04-10/235-agent-tool-selection.md, raw/hot-topics-sources/2026-04-10/236-phoenix-github-repository.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Tool Selection & Tool Invocation Evaluators
 
 올바른 도구 선택과 올바른 파라미터 호출을 분리해 평가.
@@ -23,6 +22,15 @@ Arize Phoenix가 2026년 1-2월 두 개의 전용 평가자를 출시하면서, 
 - [Tool Invocation Evaluator Docs (Phoenix)](https://arize.com/docs/phoenix/evaluation/pre-built-metrics/tool-invocation)
 - [Agent Tool Selection (Arize AX Docs)](https://arize.com/docs/ax/evaluate/llm-as-a-judge/arize-evaluators-llm-as-a-judge/agent-tool-selection)
 - [Phoenix GitHub Repository](https://github.com/Arize-ai/phoenix)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/tool-invocation-evaluators.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/232-tool-selection-and-tool-invocation-evaluators-release-notes.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/233-how-to-evaluate-tool-calling-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/234-tool-invocation-evaluator-docs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/235-agent-tool-selection.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/236-phoenix-github-repository.md`
 
 ## 관련 문서
 

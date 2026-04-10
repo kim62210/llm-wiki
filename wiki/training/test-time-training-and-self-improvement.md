@@ -4,11 +4,10 @@ aliases: ["test-time-training"]
 category: training
 page_type: concept
 tags: [training, concept, test, time, training, and, self]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/test-time-training-and-self-improvement.md, raw/hot-topics-sources/2026-04-10/300-self-improving-llm-agents-at-test-time.md, raw/hot-topics-sources/2026-04-10/301-in-place-test-time-training.md, raw/hot-topics-sources/2026-04-10/302-test-time-learning-for-large-language-models.md, raw/hot-topics-sources/2026-04-10/303-continuous-self-improvement-of-llms-by-test-time-training-with-verifier-driven-s.md, raw/hot-topics-sources/2026-04-10/304-why-we-think.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Test-Time Training & Self-Improvement
 
 추론 시점에 모델 파라미터를 실시간으로 업데이트해 성능을 높이는 기법.
@@ -24,6 +23,15 @@ updated: 2026-04-10
 - [Test-Time Learning for Large Language Models](https://arxiv.org/abs/2505.20633)
 - [Continuous Self-Improvement of LLMs by Test-time Training with Verifier-Driven Sample Selection](https://arxiv.org/abs/2505.19475)
 - [Why We Think (Lilian Weng, Lil'Log)](https://lilianweng.github.io/posts/2025-05-01-thinking/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/test-time-training-and-self-improvement.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/300-self-improving-llm-agents-at-test-time.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/301-in-place-test-time-training.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/302-test-time-learning-for-large-language-models.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/303-continuous-self-improvement-of-llms-by-test-time-training-with-verifier-driven-s.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/304-why-we-think.md`
 
 ## 관련 문서
 

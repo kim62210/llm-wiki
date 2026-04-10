@@ -4,11 +4,10 @@ category: tooling
 page_type: entity
 project: LangGraph 1.0 / 2.0
 tags: [tooling, entity, langgraph]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/langgraph.md, raw/hot-topics-sources/2026-04-10/403-langgraph-github-repository.md, raw/hot-topics-sources/2026-04-10/404-langchain-and-langgraph-agent-frameworks-reach-v1-0-milestones.md, raw/hot-topics-sources/2026-04-10/405-langgraph-product-page.md, raw/hot-topics-sources/2026-04-10/406-langgraph-documentation.md, raw/hot-topics-sources/2026-04-10/407-langgraph-python-pypi-releases.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # LangGraph 1.0 / 2.0 (Agent Orchestration Framework)
 
 상태 기반·체크포인트형 에이전트 그래프 오케스트레이션 프레임워크.
@@ -24,6 +23,15 @@ updated: 2026-04-10
 - [LangGraph Product Page](https://www.langchain.com/langgraph)
 - [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
 - [LangGraph Python PyPI Releases](https://pypi.org/project/langgraph/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/langgraph.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/403-langgraph-github-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/404-langchain-and-langgraph-agent-frameworks-reach-v1-0-milestones.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/405-langgraph-product-page.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/406-langgraph-documentation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/407-langgraph-python-pypi-releases.md`
 
 ## 관련 문서
 

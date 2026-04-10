@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: Pydantic AI
 tags: [tooling, entity, pydantic, dev-tooling-and-frameworks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/pydantic-ai.md, raw/hot-topics-sources/2026-04-10/418-pydantic-ai-official-docs.md, raw/hot-topics-sources/2026-04-10/419-pydantic-ai-pypi.md, raw/hot-topics-sources/2026-04-10/420-pydantic-pydantic-ai-github.md, raw/hot-topics-sources/2026-04-10/421-samuel-colvin-on-pydantic-ai-graph-support.md, raw/hot-topics-sources/2026-04-10/422-agent-engineering-with-pydantic-graphs-samuel-colvin.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ Samuel Colvin(Pydantic 창시자)이 주도하여 2026년 4월까지 수십 번�
 - [pydantic/pydantic-ai GitHub](https://github.com/pydantic/pydantic-ai)
 - [Samuel Colvin on Pydantic AI Graph Support (X)](https://x.com/samuel_colvin/status/1879627376990224417)
 - [Agent Engineering with Pydantic + Graphs — Samuel Colvin (Latent Space)](https://www.latent.space/p/pydantic)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/pydantic-ai.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/418-pydantic-ai-official-docs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/419-pydantic-ai-pypi.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/420-pydantic-pydantic-ai-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/421-samuel-colvin-on-pydantic-ai-graph-support.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/422-agent-engineering-with-pydantic-graphs-samuel-colvin.md`
 
 ## 관련 문서
 

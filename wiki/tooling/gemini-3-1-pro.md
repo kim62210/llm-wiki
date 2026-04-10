@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: Gemini 3.1 Pro
 tags: [tooling, entity, gemini, pro, model-releases-and-benchmarks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/gemini-3-1-pro.md, raw/hot-topics-sources/2026-04-10/125-gemini-3-1-pro-model-card-google-deepmind.md, raw/hot-topics-sources/2026-04-10/126-gemini-3-introducing-the-latest-gemini-ai-model-google.md, raw/hot-topics-sources/2026-04-10/127-gemini-3-google-deepmind.md, raw/hot-topics-sources/2026-04-10/128-gemini-3-deep-think-google.md, raw/hot-topics-sources/2026-04-10/129-gemini-wikipedia.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ updated: 2026-04-10
 - [Gemini 3 — Google DeepMind](https://deepmind.google/models/gemini/)
 - [Gemini 3 Deep Think — Google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/)
 - [Gemini (language model) — Wikipedia](https://en.wikipedia.org/wiki/Gemini_(language_model))
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/gemini-3-1-pro.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/125-gemini-3-1-pro-model-card-google-deepmind.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/126-gemini-3-introducing-the-latest-gemini-ai-model-google.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/127-gemini-3-google-deepmind.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/128-gemini-3-deep-think-google.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/129-gemini-wikipedia.md`
 
 ## 관련 문서
 

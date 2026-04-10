@@ -3,11 +3,10 @@ title: NVFP4 Quantization for LLM Inference
 category: inference
 page_type: concept
 tags: [inference, concept, nvfp4, quantization]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/nvfp4-quantization.md, raw/hot-topics-sources/2026-04-10/071-introducing-nvfp4-for-efficient-and-accurate-low-precision-inference.md, raw/hot-topics-sources/2026-04-10/072-accelerating-llms-with-nvfp4-quantization.md, raw/hot-topics-sources/2026-04-10/073-nvfp4-llm-compressor-documentation.md, raw/hot-topics-sources/2026-04-10/074-nvidia-model-optimizer-repository.md, raw/hot-topics-sources/2026-04-10/075-quantization-aware-distillation-for-nvfp4-inference-accuracy-recovery.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # NVFP4 Quantization for LLM Inference
 
 Blackwell 전용 4비트 부동소수점 포맷, 16값 블록 이중 스케일링.
@@ -23,6 +22,15 @@ Blackwell 전용 4비트 부동소수점 포맷, 16값 블록 이중 스케일�
 - [NVFP4 LLM Compressor Documentation](https://docs.vllm.ai/projects/llm-compressor/en/latest/examples/quantization_w4a4_fp4/)
 - [NVIDIA Model-Optimizer repository](https://github.com/NVIDIA/Model-Optimizer)
 - [Quantization-Aware Distillation for NVFP4 Inference Accuracy Recovery (NVIDIA research)](https://research.nvidia.com/labs/nemotron/files/NVFP4-QAD-Report.pdf)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/nvfp4-quantization.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/071-introducing-nvfp4-for-efficient-and-accurate-low-precision-inference.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/072-accelerating-llms-with-nvfp4-quantization.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/073-nvfp4-llm-compressor-documentation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/074-nvidia-model-optimizer-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/075-quantization-aware-distillation-for-nvfp4-inference-accuracy-recovery.md`
 
 ## 관련 문서
 

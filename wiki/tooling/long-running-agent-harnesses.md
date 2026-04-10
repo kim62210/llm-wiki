@@ -3,11 +3,10 @@ title: Agent Harnesses for Long-Running Coding Sessions
 category: tooling
 page_type: concept
 tags: [tooling, concept, long, running, agent, harnesses]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/long-running-agent-harnesses.md, raw/hot-topics-sources/2026-04-10/041-effective-harnesses-for-long-running-agents.md, raw/hot-topics-sources/2026-04-10/011-harness-design-for-long-running-application-development.md, raw/hot-topics-sources/2026-04-10/042-scaling-managed-agents-decoupling-the-brain-from-the-hands.md, raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md, raw/hot-topics-sources/2026-04-10/044-anthropics-claude-agent-sdk-typescript.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Agent Harnesses for Long-Running Coding Sessions
 
 컨텍스트 윈도우를 넘어 몇 시간 동안 자율적으로 코딩을 이어가게 하는 에이전트 실행 구조.
@@ -23,6 +22,15 @@ Anthropic이 2025년 11월 "Effective harnesses for long-running agents"에서 i
 - [Scaling Managed Agents: Decoupling the brain from the hands](https://www.anthropic.com/engineering/managed-agents)
 - [Claude Agent SDK Overview](https://code.claude.com/docs/en/agent-sdk/overview)
 - [anthropics/claude-agent-sdk-typescript](https://github.com/anthropics/claude-agent-sdk-typescript)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/long-running-agent-harnesses.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/041-effective-harnesses-for-long-running-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/011-harness-design-for-long-running-application-development.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/042-scaling-managed-agents-decoupling-the-brain-from-the-hands.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/044-anthropics-claude-agent-sdk-typescript.md`
 
 ## 관련 문서
 

@@ -3,7 +3,7 @@ title: RL Scaling Laws (ScaleRL)
 category: training
 page_type: concept
 tags: [training, concept, scaling, laws, training-and-post-training]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/rl-scaling-laws.md, raw/hot-topics-sources/2026-04-10/286-the-art-of-scaling-reinforcement-learning-compute-for-llms.md, raw/hot-topics-sources/2026-04-10/287-how-to-scale-rl.md, raw/hot-topics-sources/2026-04-10/288-scaling-laws-for-robotics-and-rl-not-quite-yet.md, raw/hot-topics-sources/2026-04-10/289-scaling-laws-for-value-based-rl.md, raw/hot-topics-sources/2026-04-10/290-what-comes-next-with-reinforcement-learning.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ Meta 주도의 40만 GPU-시간 규모 연구가 RL을 "예술"에서 "과학"�
 - [Scaling laws for robotics & RL: Not quite yet (Interconnects)](https://www.interconnects.ai/p/scaling-rl-axes)
 - [Scaling Laws for Value-Based RL](https://value-scaling.github.io/)
 - [What comes next with reinforcement learning (Interconnects)](https://www.interconnects.ai/p/what-comes-next-with-reinforcement)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/rl-scaling-laws.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/286-the-art-of-scaling-reinforcement-learning-compute-for-llms.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/287-how-to-scale-rl.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/288-scaling-laws-for-robotics-and-rl-not-quite-yet.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/289-scaling-laws-for-value-based-rl.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/290-what-comes-next-with-reinforcement-learning.md`
 
 ## 관련 문서
 

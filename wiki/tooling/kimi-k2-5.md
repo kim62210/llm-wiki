@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: Kimi K2.5
 tags: [tooling, entity, kimi, model-releases-and-benchmarks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/kimi-k2-5.md, raw/hot-topics-sources/2026-04-10/130-kimi-k2-5-moonshot-ai.md, raw/hot-topics-sources/2026-04-10/131-moonshotai-kimi-k2-5-hugging-face.md, raw/hot-topics-sources/2026-04-10/132-moonshot-ai-official-site.md, raw/hot-topics-sources/2026-04-10/133-kimi-api-newsletter-moonshot-platform.md, raw/hot-topics-sources/2026-04-10/134-moonshot-ai-wikipedia.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ updated: 2026-04-10
 - [Moonshot AI Official Site](https://www.moonshot.ai/)
 - [Kimi API Newsletter — Moonshot Platform](https://platform.moonshot.ai/blog/posts/Kimi_API_Newsletter)
 - [Moonshot AI — Wikipedia](https://en.wikipedia.org/wiki/Moonshot_AI)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/kimi-k2-5.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/130-kimi-k2-5-moonshot-ai.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/131-moonshotai-kimi-k2-5-hugging-face.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/132-moonshot-ai-official-site.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/133-kimi-api-newsletter-moonshot-platform.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/134-moonshot-ai-wikipedia.md`
 
 ## 관련 문서
 

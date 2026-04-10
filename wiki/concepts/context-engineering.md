@@ -4,7 +4,7 @@ aliases: ["context engineering", "컨텍스트 엔지니어링", Context Enginee
 category: concepts
 page_type: concept
 tags: [context-engineering, paradigm, 2025, agentic-era, kv-cache]
-sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md, raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md, raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/context-engineering.md, raw/hot-topics-sources/2026-04-10/001-effective-context-engineering-for-ai-agents.md, raw/hot-topics-sources/2026-04-10/002-acon-optimizing-context-compression-for-long-horizon-llm-agents.md, raw/hot-topics-sources/2026-04-10/003-agentic-context-engineering-evolving-contexts-for-self-improving-language-models.md, raw/hot-topics-sources/2026-04-10/004-agentfold-long-horizon-web-agents-with-proactive-context-management.md, raw/hot-topics-sources/2026-04-10/005-context-rot-how-increasing-input-tokens-impacts-llm-performance.md]
 created: 2026-04-09
 updated: 2026-04-10
 ---
@@ -137,6 +137,15 @@ Karpathy가 제안한 멘탈 모델: LLM 시스템을 운영체제로 보는 관
 - [Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (ICLR 2026)](https://arxiv.org/abs/2510.04618)
 - [AgentFold: Long-Horizon Web Agents with Proactive Context Management](https://arxiv.org/abs/2510.24699)
 - [Context Rot: How Increasing Input Tokens Impacts LLM Performance (Chroma Research)](https://www.trychroma.com/research/context-rot)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/context-engineering.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/001-effective-context-engineering-for-ai-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/002-acon-optimizing-context-compression-for-long-horizon-llm-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/003-agentic-context-engineering-evolving-contexts-for-self-improving-language-models.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/004-agentfold-long-horizon-web-agents-with-proactive-context-management.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/005-context-rot-how-increasing-input-tokens-impacts-llm-performance.md`
 
 ## 관련 문서
 

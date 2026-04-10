@@ -3,11 +3,10 @@ title: Pairwise vs Pointwise Eval Protocol Bias
 category: concepts
 page_type: concept
 tags: [concepts, concept, pairwise, vs, pointwise, evals]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/pairwise-vs-pointwise-evals.md, raw/hot-topics-sources/2026-04-10/242-pairwise-or-pointwise-evaluating-feedback-protocols-for-bias.md, raw/hot-topics-sources/2026-04-10/243-aligning-with-human-judgement-pairwise-preference-in-llm-evaluators.md, raw/hot-topics-sources/2026-04-10/244-the-comparative-trap-pairwise-comparisons-amplify-biased-preferences.md, raw/hot-topics-sources/2026-04-10/245-elspr-evaluator-llm-training-data-self-purification-on-non-transitive-preference.md, raw/hot-topics-sources/2026-04-10/246-language-model-preference-evaluation-with-multiple-weak-evaluators.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Pairwise vs Pointwise Eval Protocol Bias
 
 선호 비교와 절대 점수 프로토콜의 편향·안정성 비교.
@@ -23,6 +22,15 @@ updated: 2026-04-10
 - [The Comparative Trap: Pairwise Comparisons Amplify Biased Preferences (arXiv:2406.12319)](https://arxiv.org/html/2406.12319v4)
 - [ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences (arXiv:2505.17691)](https://arxiv.org/html/2505.17691)
 - [Language Model Preference Evaluation with Multiple Weak Evaluators (arXiv:2410.12869)](https://arxiv.org/html/2410.12869v3)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/pairwise-vs-pointwise-evals.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/242-pairwise-or-pointwise-evaluating-feedback-protocols-for-bias.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/243-aligning-with-human-judgement-pairwise-preference-in-llm-evaluators.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/244-the-comparative-trap-pairwise-comparisons-amplify-biased-preferences.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/245-elspr-evaluator-llm-training-data-self-purification-on-non-transitive-preference.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/246-language-model-preference-evaluation-with-multiple-weak-evaluators.md`
 
 ## 관련 문서
 

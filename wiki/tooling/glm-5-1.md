@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: GLM-5.1
 tags: [tooling, entity, glm, model-releases-and-benchmarks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/glm-5-1.md, raw/hot-topics-sources/2026-04-10/140-zai-org-glm-5-1-hugging-face.md, raw/hot-topics-sources/2026-04-10/141-glm-5-1-collection-hugging-face.md, raw/hot-topics-sources/2026-04-10/142-glm-5-1-unsloth-documentation.md, raw/hot-topics-sources/2026-04-10/143-swe-bench-pro-leaderboard-scale-labs.md, raw/hot-topics-sources/2026-04-10/144-zai-org-glm-5-hugging-face.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ updated: 2026-04-10
 - [GLM-5.1 — Unsloth Documentation](https://unsloth.ai/docs/models/glm-5.1)
 - [SWE-Bench Pro Leaderboard — Scale Labs](https://labs.scale.com/leaderboard/swe_bench_pro_public)
 - [zai-org GLM-5 — Hugging Face](https://huggingface.co/zai-org/GLM-5)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/glm-5-1.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/140-zai-org-glm-5-1-hugging-face.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/141-glm-5-1-collection-hugging-face.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/142-glm-5-1-unsloth-documentation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/143-swe-bench-pro-leaderboard-scale-labs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/144-zai-org-glm-5-hugging-face.md`
 
 ## 관련 문서
 

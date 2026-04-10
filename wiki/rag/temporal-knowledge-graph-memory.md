@@ -3,11 +3,10 @@ title: Zep / Graphiti Temporal Knowledge Graph Memory
 category: rag
 page_type: concept
 tags: [rag, concept, temporal, knowledge, graph, memory]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/temporal-knowledge-graph-memory.md, raw/hot-topics-sources/2026-04-10/187-zep-a-temporal-knowledge-graph-architecture-for-agent-memory.md, raw/hot-topics-sources/2026-04-10/188-graphiti-github.md, raw/hot-topics-sources/2026-04-10/189-zep-platform.md, raw/hot-topics-sources/2026-04-10/190-zep-blog-a-temporal-knowledge-graph-architecture-for-agent-memory.md, raw/hot-topics-sources/2026-04-10/191-graphiti-knowledge-graph-memory-for-an-agentic-world.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Zep / Graphiti Temporal Knowledge Graph Memory
 
 사실의 유효 기간(bi-temporal)을 추적하는 지식 그래프 기반 에이전트 메모리.
@@ -23,6 +22,15 @@ LongMemEval에서 GPT-4o 기준 Zep 63.8% vs Mem0 49.0%로 15pt 격차를 기록
 - [Zep Platform](https://www.getzep.com/)
 - [Zep Blog: A Temporal Knowledge Graph Architecture for Agent Memory](https://blog.getzep.com/zep-a-temporal-knowledge-graph-architecture-for-agent-memory/)
 - [Graphiti: Knowledge Graph Memory for an Agentic World (Neo4j Blog)](https://neo4j.com/blog/developer/graphiti-knowledge-graph-memory/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/temporal-knowledge-graph-memory.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/187-zep-a-temporal-knowledge-graph-architecture-for-agent-memory.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/188-graphiti-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/189-zep-platform.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/190-zep-blog-a-temporal-knowledge-graph-architecture-for-agent-memory.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/191-graphiti-knowledge-graph-memory-for-an-agentic-world.md`
 
 ## 관련 문서
 

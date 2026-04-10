@@ -4,11 +4,10 @@ category: inference
 page_type: entity
 project: LMCache-Based Distributed KV Cache Offloading
 tags: [inference, entity, lmcache, kv, cache, layer]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/lmcache-kv-cache-layer.md, raw/hot-topics-sources/2026-04-10/095-lmcache-an-efficient-kv-cache-layer-for-enterprise-scale-llm-inference.md, raw/hot-topics-sources/2026-04-10/096-lmcache-lmcache-github-repository.md, raw/hot-topics-sources/2026-04-10/097-llm-d-kv-cache-architecture-documentation.md, raw/hot-topics-sources/2026-04-10/098-llm-d-llm-d-kv-cache-manager-repository.md, raw/hot-topics-sources/2026-04-10/099-nixlconnector-usage-guide.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # LMCache-Based Distributed KV Cache Offloading
 
 GPU 외부(CPU/디스크/S3)로 KV 캐시를 오프로드하고 크로스 엔진 재사용하는 계층.
@@ -24,6 +23,15 @@ GPU 외부(CPU/디스크/S3)로 KV 캐시를 오프로드하고 크로스 엔진
 - [llm-d KV Cache Architecture documentation](https://llm-d.ai/docs/architecture/Components/kv-cache)
 - [llm-d/llm-d-kv-cache-manager repository](https://github.com/llm-d/llm-d-kv-cache-manager)
 - [NixlConnector Usage Guide (vLLM)](https://docs.vllm.ai/en/stable/features/nixl_connector_usage/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/lmcache-kv-cache-layer.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/095-lmcache-an-efficient-kv-cache-layer-for-enterprise-scale-llm-inference.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/096-lmcache-lmcache-github-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/097-llm-d-kv-cache-architecture-documentation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/098-llm-d-llm-d-kv-cache-manager-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/099-nixlconnector-usage-guide.md`
 
 ## 관련 문서
 

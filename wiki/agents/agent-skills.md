@@ -3,7 +3,7 @@ title: Agent Skills
 category: agents
 page_type: concept
 tags: [agents, concept, agent, skills]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/agent-skills.md, raw/hot-topics-sources/2026-04-10/021-equipping-agents-for-the-real-world-with-agent-skills.md, raw/hot-topics-sources/2026-04-10/022-agent-skills-specification.md, raw/hot-topics-sources/2026-04-10/023-anthropics-skills-github-repository.md, raw/hot-topics-sources/2026-04-10/024-agent-skills.md, raw/hot-topics-sources/2026-04-10/025-writing-effective-tools-for-agents.md, raw/hot-topics-sources/2026-04-10/055-extend-claude-with-skills.md, raw/hot-topics-sources/2026-04-10/052-claude-code-changelog.md, raw/hot-topics-sources/2026-04-10/056-discover-and-install-plugins-through-marketplaces.md, raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ Claude Code가 `.claude/commands/`와 슬래시 커맨드를 `.claude/skills/`�
 - [anthropics/skills GitHub Repository](https://github.com/anthropics/skills)
 - [Agent Skills (Claude API Docs)](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
 - [Writing effective tools for agents (Anthropic)](https://www.anthropic.com/engineering/writing-tools-for-agents)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/agent-skills.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/055-extend-claude-with-skills.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/023-anthropics-skills-github-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/052-claude-code-changelog.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/056-discover-and-install-plugins-through-marketplaces.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md`
 
 ## 관련 문서
 

@@ -4,11 +4,10 @@ aliases: ["chain-of-thought-monitorability"]
 category: concepts
 page_type: concept
 tags: [concepts, concept, cot, monitorability]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/cot-monitorability.md, raw/hot-topics-sources/2026-04-10/393-evaluating-chain-of-thought-monitorability.md, raw/hot-topics-sources/2026-04-10/394-reasoning-models-struggle-to-control-their-chains-of-thought.md, raw/hot-topics-sources/2026-04-10/395-chain-of-thought-monitorability-a-new-and-fragile-opportunity.md, raw/hot-topics-sources/2026-04-10/396-chain-of-thought-monitorability-v2.md, raw/hot-topics-sources/2026-04-10/397-openai-research-index.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Chain-of-Thought Monitorability
 
 추론 모델의 CoT를 감시해 악의적 의도를 조기에 포착하는 안전 모니터링 기법.
@@ -24,6 +23,15 @@ updated: 2026-04-10
 - [Chain of Thought Monitorability: A New and Fragile Opportunity (arXiv 2507.11473)](https://arxiv.org/abs/2507.11473)
 - [Chain of Thought Monitorability v2 (arXiv HTML)](https://arxiv.org/html/2507.11473v2)
 - [OpenAI Research Index](https://openai.com/research/index/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/cot-monitorability.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/393-evaluating-chain-of-thought-monitorability.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/394-reasoning-models-struggle-to-control-their-chains-of-thought.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/395-chain-of-thought-monitorability-a-new-and-fragile-opportunity.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/396-chain-of-thought-monitorability-v2.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/397-openai-research-index.md`
 
 ## 관련 문서
 

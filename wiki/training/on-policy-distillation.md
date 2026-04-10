@@ -3,7 +3,7 @@ title: On-Policy Distillation
 category: training
 page_type: concept
 tags: [training, concept, policy, distillation, training-and-post-training]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/on-policy-distillation.md, raw/hot-topics-sources/2026-04-10/281-on-policy-distillation.md, raw/hot-topics-sources/2026-04-10/282-qwen3-technical-report.md, raw/hot-topics-sources/2026-04-10/283-self-distilled-reasoner-on-policy-self-distillation-for-large-language-models.md, raw/hot-topics-sources/2026-04-10/284-revisiting-on-policy-distillation-empirical-failure-modes-and-simple-fixes.md, raw/hot-topics-sources/2026-04-10/285-reinforcement-aware-knowledge-distillation-for-llm-reasoning.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ Thinking Machines Lab이 Qwen3-8B에서 RL 대비 1/10 비용으로 동등 성�
 - [Self-Distilled Reasoner: On-Policy Self-Distillation for Large Language Models](https://arxiv.org/abs/2601.18734)
 - [Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes](https://arxiv.org/html/2603.25562)
 - [Reinforcement-aware Knowledge Distillation for LLM Reasoning](https://arxiv.org/abs/2602.22495)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/on-policy-distillation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/281-on-policy-distillation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/282-qwen3-technical-report.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/283-self-distilled-reasoner-on-policy-self-distillation-for-large-language-models.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/284-revisiting-on-policy-distillation-empirical-failure-modes-and-simple-fixes.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/285-reinforcement-aware-knowledge-distillation-for-llm-reasoning.md`
 
 ## 관련 문서
 

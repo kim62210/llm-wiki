@@ -4,7 +4,7 @@ category: tooling
 page_type: entity
 project: Instructor
 tags: [tooling, entity, instructor, dev-tooling-and-frameworks]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/instructor.md, raw/hot-topics-sources/2026-04-10/448-instructor-python-docs.md, raw/hot-topics-sources/2026-04-10/449-instructor-homepage.md, raw/hot-topics-sources/2026-04-10/450-567-labs-instructor-github.md, raw/hot-topics-sources/2026-04-10/451-instructor-pypi.md, raw/hot-topics-sources/2026-04-10/452-why-instructor-is-the-best-library-for-structured-llm-outputs.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -43,6 +43,15 @@ Pydantic 기반 구조화 출력·검증·재시도를 캡슐화한 다언어 LL
 - [567-labs/instructor GitHub](https://github.com/567-labs/instructor)
 - [instructor PyPI](https://pypi.org/project/instructor/)
 - [Why Instructor is the Best Library for Structured LLM Outputs](https://python.useinstructor.com/blog/2024/03/05/zero-cost-abstractions/)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/instructor.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/448-instructor-python-docs.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/449-instructor-homepage.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/450-567-labs-instructor-github.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/451-instructor-pypi.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/452-why-instructor-is-the-best-library-for-structured-llm-outputs.md`
 
 ## 관련 문서
 

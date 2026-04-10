@@ -3,11 +3,10 @@ title: Circuit Tracing & Attribution Graphs
 category: concepts
 page_type: concept
 tags: [concepts, concept, circuit, tracing]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/circuit-tracing.md, raw/hot-topics-sources/2026-04-10/363-circuit-tracing-revealing-computational-graphs-in-language-models.md, raw/hot-topics-sources/2026-04-10/364-on-the-biology-of-a-large-language-model.md, raw/hot-topics-sources/2026-04-10/365-open-sourcing-circuit-tracing-tools.md, raw/hot-topics-sources/2026-04-10/366-tracing-the-thoughts-of-a-large-language-model.md, raw/hot-topics-sources/2026-04-10/367-tracing-attention-computation-through-feature-interactions.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Circuit Tracing & Attribution Graphs
 
 Cross-layer transcoder로 모델 내부 연산을 특징 단위 그래프로 복원하는 해석성 기법.
@@ -23,6 +22,15 @@ Cross-layer transcoder로 모델 내부 연산을 특징 단위 그래프로 복
 - [Open-sourcing circuit-tracing tools (Anthropic)](https://www.anthropic.com/research/open-source-circuit-tracing)
 - [Tracing the thoughts of a large language model](https://www.anthropic.com/research/tracing-thoughts-language-model)
 - [Tracing Attention Computation Through Feature Interactions](https://transformer-circuits.pub/2025/attention-qk/index.html)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/circuit-tracing.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/363-circuit-tracing-revealing-computational-graphs-in-language-models.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/364-on-the-biology-of-a-large-language-model.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/365-open-sourcing-circuit-tracing-tools.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/366-tracing-the-thoughts-of-a-large-language-model.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/367-tracing-attention-computation-through-feature-interactions.md`
 
 ## 관련 문서
 

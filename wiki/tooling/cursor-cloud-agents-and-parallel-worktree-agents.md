@@ -4,11 +4,10 @@ category: tooling
 page_type: entity
 project: Cursor Cloud Agents & Parallel Worktree Agents
 tags: [tooling, entity, cursor, cloud, agents, and, parallel]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/cursor-cloud-agents-and-parallel-worktree-agents.md, raw/hot-topics-sources/2026-04-10/057-cursor-3-0-changelog.md, raw/hot-topics-sources/2026-04-10/058-cursor-changelog.md, raw/hot-topics-sources/2026-04-10/059-cursor-cloud-agents-blog.md, raw/hot-topics-sources/2026-04-10/060-cursor-product-page-agent.md, raw/hot-topics-sources/2026-04-10/061-cursor-homepage.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Cursor Cloud Agents & Parallel Worktree Agents
 
 로컬·worktree·클라우드 VM·원격 SSH 환경에서 다수의 코딩 에이전트를 병렬 실행하는 Cursor의 에이전트 우선 UI.
@@ -24,6 +23,15 @@ updated: 2026-04-10
 - [Cursor Cloud Agents Blog](https://cursor.com/blog/cloud-agents)
 - [Cursor Product Page — Agent](https://cursor.com/product)
 - [Cursor Homepage](https://cursor.com)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/cursor-cloud-agents-and-parallel-worktree-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/057-cursor-3-0-changelog.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/058-cursor-changelog.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/059-cursor-cloud-agents-blog.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/060-cursor-product-page-agent.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/061-cursor-homepage.md`
 
 ## 관련 문서
 

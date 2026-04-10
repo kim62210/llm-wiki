@@ -3,7 +3,7 @@ title: Process Reward Models (PRM) 재부상
 category: training
 page_type: concept
 tags: [training, concept, process, reward, models, training-and-post-training]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/process-reward-models.md, raw/hot-topics-sources/2026-04-10/276-process-reward-models-that-think.md, raw/hot-topics-sources/2026-04-10/277-r-prm-reasoning-driven-process-reward-modeling.md, raw/hot-topics-sources/2026-04-10/278-more-bang-for-the-buck-process-reward-modeling-with-entropy-driven-uncertainty.md, raw/hot-topics-sources/2026-04-10/279-the-lessons-of-developing-process-reward-models-in-mathematical-reasoning.md, raw/hot-topics-sources/2026-04-10/280-online-process-reward-learning-for-agentic-reinforcement-learning.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ updated: 2026-04-10
 - [More Bang for the Buck: Process Reward Modeling with Entropy-Driven Uncertainty](https://arxiv.org/abs/2503.22233)
 - [The Lessons of Developing Process Reward Models in Mathematical Reasoning](https://arxiv.org/abs/2501.07301)
 - [Online Process Reward Learning for Agentic Reinforcement Learning](https://arxiv.org/html/2509.19199v1)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/process-reward-models.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/276-process-reward-models-that-think.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/277-r-prm-reasoning-driven-process-reward-modeling.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/278-more-bang-for-the-buck-process-reward-modeling-with-entropy-driven-uncertainty.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/279-the-lessons-of-developing-process-reward-models-in-mathematical-reasoning.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/280-online-process-reward-learning-for-agentic-reinforcement-learning.md`
 
 ## 관련 문서
 

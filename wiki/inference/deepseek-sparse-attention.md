@@ -3,11 +3,10 @@ title: DeepSeek Sparse Attention (DSA) for Long Context
 category: inference
 page_type: concept
 tags: [inference, concept, deepseek, sparse, attention]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/deepseek-sparse-attention.md, raw/hot-topics-sources/2026-04-10/090-deepseek-v3-2-pushing-the-frontier-of-open-large-language-models.md, raw/hot-topics-sources/2026-04-10/091-deepseek-v3-2-exp-github-repository.md, raw/hot-topics-sources/2026-04-10/092-hisa-efficient-hierarchical-indexing-for-fine-grained-sparse-attention.md, raw/hot-topics-sources/2026-04-10/093-sals-sparse-attention-in-latent-space-for-kv-cache-compression.md, raw/hot-topics-sources/2026-04-10/094-deepseek-v3-2-usage-guide.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # DeepSeek Sparse Attention (DSA) for Long Context
 
 lightning indexer와 top-k 셀렉터로 토큰 단위 희소 attention을 구현하는 방식.
@@ -23,6 +22,15 @@ DeepSeek-V3.2에서 O(L²)를 O(Lk)로 축소하며 긴 컨텍스트 학습·추
 - [HISA: Efficient Hierarchical Indexing for Fine-Grained Sparse Attention](https://arxiv.org/html/2603.28458)
 - [SALS: Sparse Attention in Latent Space for KV cache Compression](https://arxiv.org/pdf/2510.24273)
 - [DeepSeek-V3.2 Usage Guide (vLLM Recipes)](https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-V3_2.html)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/deepseek-sparse-attention.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/090-deepseek-v3-2-pushing-the-frontier-of-open-large-language-models.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/091-deepseek-v3-2-exp-github-repository.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/092-hisa-efficient-hierarchical-indexing-for-fine-grained-sparse-attention.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/093-sals-sparse-attention-in-latent-space-for-kv-cache-compression.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/094-deepseek-v3-2-usage-guide.md`
 
 ## 관련 문서
 

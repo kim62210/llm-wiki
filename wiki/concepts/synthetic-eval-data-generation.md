@@ -3,7 +3,7 @@ title: Synthetic Eval Data Generation
 category: concepts
 page_type: concept
 tags: [concepts, concept, synthetic, eval, data, generation, evals-and-observability]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/synthetic-eval-data-generation.md, raw/hot-topics-sources/2026-04-10/252-data-swarms-optimizable-generation-of-synthetic-evaluation-data.md, raw/hot-topics-sources/2026-04-10/253-on-llms-driven-synthetic-data-generation-curation-and-evaluation-a-survey.md, raw/hot-topics-sources/2026-04-10/254-synthetic-data-generation-using-llms-advances-in-text-and-code.md, raw/hot-topics-sources/2026-04-10/255-data-flywheels-for-llm-applications.md, raw/hot-topics-sources/2026-04-10/256-who-validates-the-validators-evalgen.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
@@ -38,6 +38,15 @@ Data Swarms처럼 particle swarm optimization으로 "어려운 문제를 적대�
 - [Synthetic Data Generation Using LLMs: Advances in Text and Code (arXiv:2503.14023)](https://arxiv.org/abs/2503.14023)
 - [Data Flywheels for LLM Applications (Shreya Shankar)](https://www.sh-reya.com/blog/ai-engineering-flywheel/)
 - [Who Validates the Validators? EvalGen (arXiv:2404.12272)](https://arxiv.org/abs/2404.12272)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/synthetic-eval-data-generation.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/252-data-swarms-optimizable-generation-of-synthetic-evaluation-data.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/253-on-llms-driven-synthetic-data-generation-curation-and-evaluation-a-survey.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/254-synthetic-data-generation-using-llms-advances-in-text-and-code.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/255-data-flywheels-for-llm-applications.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/256-who-validates-the-validators-evalgen.md`
 
 ## 관련 문서
 

@@ -3,11 +3,10 @@ title: Long-Horizon RL Training for Agents (Multi-Turn RLVR)
 category: agents
 page_type: concept
 tags: [agents, concept, long, horizon, rl, training, for]
-sources: [raw/2026-04-10-hot-ai-topics-100.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/long-horizon-rl-training-for-agents.md, raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md, raw/hot-topics-sources/2026-04-10/026-reinforcement-learning-for-long-horizon-interactive-llm-agents.md, raw/hot-topics-sources/2026-04-10/027-agentgym-rl-training-llm-agents-for-long-horizon-decision-making-through-multi-t.md, raw/hot-topics-sources/2026-04-10/014-reveal-self-evolving-code-agents-via-iterative-generation-verification.md, raw/hot-topics-sources/2026-04-10/028-research-learning-to-reason-with-search-for-llms-via-reinforcement-learning.md]
 created: 2026-04-10
 updated: 2026-04-10
 ---
-
 # Long-Horizon RL Training for Agents (Multi-Turn RLVR)
 
 멀티 턴 환경에서 검증 가능한 보상으로 에이전트의 도구 사용·계획·자기수정 능력을 직접 학습시키는 강화학습 기법.
@@ -23,6 +22,15 @@ updated: 2026-04-10
 - [AgentGym-RL: Training LLM Agents for Long-Horizon Decision Making through Multi-Turn RL](https://arxiv.org/abs/2509.08755)
 - [ReVeal: Self-Evolving Code Agents via Iterative Generation-Verification](https://arxiv.org/abs/2506.11442)
 - [ReSearch: Learning to Reason with Search for LLMs via Reinforcement Learning](https://arxiv.org/abs/2503.19470)
+
+## source 기반 참고
+
+- topic packet: `raw/hot-topics-sources/2026-04-10/topics/long-horizon-rl-training-for-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/026-reinforcement-learning-for-long-horizon-interactive-llm-agents.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/027-agentgym-rl-training-llm-agents-for-long-horizon-decision-making-through-multi-t.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/014-reveal-self-evolving-code-agents-via-iterative-generation-verification.md`
+- raw source: `raw/hot-topics-sources/2026-04-10/028-research-learning-to-reason-with-search-for-llms-via-reinforcement-learning.md`
 
 ## 관련 문서
 

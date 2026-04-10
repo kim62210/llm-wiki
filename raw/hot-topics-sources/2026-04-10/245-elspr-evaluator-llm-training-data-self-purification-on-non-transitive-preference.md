@@ -1,0 +1,483 @@
+---
+title: ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences via Tournament Graph Reconstruction
+source_url: https://arxiv.org/html/2505.17691
+final_url: https://arxiv.org/html/2505.17691
+status: 200
+content_type: text/html; charset=utf-8
+topics: [Pairwise vs Pointwise Eval Protocol Bias]
+sections: [Evals & Observability]
+fetched_at: 2026-04-10T01:44:00.023219+00:00
+---
+
+# ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences via Tournament Graph Reconstruction
+
+## 원본 URL
+
+https://arxiv.org/html/2505.17691
+
+## 추출 본문
+
+ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences via Tournament Graph Reconstruction
+1 Introduction
+
+2 Related Work
+2.1 LLM-as-a-Judge and Its Non-Transitive Preferences
+
+2.2 Data Selection for LLM Fine-tuning
+
+3 Methodology
+3.1 Background
+
+3.2 Quality Analysis Framework for Evaluator LLM Training Data
+
+3.3 Filtering Strategy for Preference Data That Induce Non-Transitivity
+
+4 Experiment Setup
+4.1 Dataset
+
+4.2 Preference Data Collection
+
+4.3 Experiment Details
+
+5 Results and Analysis
+5.1 Main Results
+
+5.2 Ablation Studies
+
+6 Conclusion
+
+A Algorithm Detail
+
+B Additional Experimental Results
+B.1 Experimental Results of Different Prompt Forms.
+
+B.2 “Unseen” question validation
+
+C Evaluate Prompts
+C.1 CoT Comparison
+
+C.2 CoT Comparison (Tie Allowed)
+
+D Limitations and Future Work
+
+E Ethics Statement
+
+ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences via Tournament Graph Reconstruction
+
+Yan Yu1,
+Yilun Liu2 
+🖂,
+Minggui He2,
+Shimin Tao2,
+Weibin Meng2,
+Xinhua Yang2,
+Li Zhang2,
+Hongxia Ma2,
+Dengye Li3,
+Daimeng Wei2,
+Boxing Chen4,
+Fuliang Li1 
+🖂🖂  Corresponding author.
+
+Abstract
+Pairwise evaluation of large language models (LLMs) has become the dominant paradigm for benchmarking open-ended tasks, yet non-transitive preferences—where evaluators prefer A over B, B over C, but C over A—fundamentally undermine ranking reliability. We show that this critical issue stems largely from low-quality data that contains inherently ambiguous preference pairs. To address this challenge, we propose ELSPR, a principled graph-theoretic framework that models pairwise preferences as tournament graphs and systematically identifies problematic training data. ELSPR quantifies non-transitivity through strongly connected components (SCCs) analysis and measures overall preference clarity using a novel normalized directed graph structural entropy metric. Our filtering methodology selectively removes preference data that induce non-transitivity while preserving transitive preferences. Extensive experiments on the AlpacaEval benchmark demonstrate that models fine-tuned on ELSPR-filtered data achieve substantial improvements: a 13.8% reduction in non-transitivity, a 0.088 decrease in structural entropy, and significantly enhanced discriminative power in real-world evaluation systems. Human validation confirms that discarded data exhibit dramatically lower inter-annotator agreement (34.4% vs. 52.6%) and model-human consistency (51.2% vs. 80.6%) compared to cleaned data. These findings establish ELSPR as an effective data self-purification approach for developing more robust, consistent, and human-aligned LLM evaluation systems.
+
+Code & Datasets — https://github.com/yy0525/ELSPR
+
+1 Introduction
+
+With the rapid advancement of large language model (LLM; openai2024gpt4technicalreport; qwen25max; llama31) technology, an increasing number of models have become available, making it essential to evaluate their capabilities for selecting the most suitable one. However, existing benchmarks such as MMLU (hendrycks2020measuring) and HELM (liang2022holistic) have been shown to be insufficient for capturing performance differences in open-ended tasks (zheng2024judging_mt).
+
+Given the lack of definitive answers in open-ended tasks, human expert evaluation is considered the gold standard. Yet, due to its high cost and limited scalability, the mainstream approach has shifted toward using LLM-as-a-Judge for efficient evaluation. Recent studies have demonstrated that powerful LLMs, such as GPT-4, can achieve high consistency with human judgments (zheng2024judging_mt; NEURIPS2023_5fc47800). Among various approaches, pairwise comparison has emerged as the dominant paradigm, due to its strong alignment with human preferences (NEURIPS2024_8147a43d; chen-etal-2024-humans; alpaca_eval; chiang2024chatbot; liu2024aligning; liusie-etal-2024-llm).
+
+Despite these promising results, LLM-as-a-Judge still suffers from various biases—such as position, verbosity, conformity, selection, and self-reinforcement bias—which compromise evaluation reliability (xu-etal-2024-pride; zheng2024judging_mt; koo-etal-2024-benchmarking; ye2025justice; wei-etal-2024-unveiling; choi-etal-2025-mitigating). A particularly underexplored yet critical issue is the non-transitivity of preferences generated by evaluator LLMs (e.g., A≻BA\succ B, B≻CB\succ C, C≻AC\succ A), where ≻\succ denotes “is preferred to”; that is, A≻BA\succ B means AA is preferred over BB. An illustration is provided in Figure 1.
+Recent research (xu2025investigating) analyzed inconsistencies in the GPT-4 evaluation outcomes when conducting pairwise comparisons between different baseline models. Building on the widely adopted AlpacaEval framework, their findings indicate that preference non-transitivity significantly undermines the robustness of evaluation systems, leading to inconsistent model rankings under various baselines and thereby compromising the reliability of LLM-based evaluators. However, their analysis is limited to observing preference non-transitivity within triplets of samples and does not extend to larger sample sets. Moreover, they do not propose an effective method to substantially reduce the degree of non-transitivity exhibited by evaluator LLMs. These limitations highlight the need for more comprehensive investigations, particularly with larger sample sets, to further explore preference non-transitivity within LLM-based evaluation frameworks.
+
+Worryingly, this issue is also inherited by specialized evaluators such as JudgeLM, PandaLM, and Auto-J (zhu2025judgelm; wang2024pandalm; li2024generative), which are trained through the distillation of knowledge from advanced models. The distillation process may inadvertently propagate non-transitive judgment patterns to downstream evaluators.
+
+We hypothesize that the presence of low-quality training data may impair the transitivity of the preferences generated by the evaluator LLM. Many pairwise comparisons, particularly those from open-ended tasks, lack definitive ground truth due to their inherent subjectivity. Human annotators frequently demonstrate significant disagreement, with empirical studies reporting inter-annotator agreement rates as low as 65.7% (alpaca_eval), indicating that such tasks fundamentally lack universally accepted preference orderings. Consequently, training models with ambiguous and low-quality training data may introduce or exacerbate non-transitive preference relationships, undermining the development of stable and reliable evaluator LLMs. This phenomenon underscores the critical necessity of implementing robust filtering mechanisms to eliminate unreliable data points prior to model training.
+
+In this paper, we present a novel graph-theoretic approach to assess and mitigate preference non-transitivity in evaluator LLMs. Our method, ELSPR, formulates multi-response pairwise comparisons as tournament graphs and systematically filters preference data that induce to overall preference non-transitivity. To quantify preference clarity, we introduce a new metric based on two-dimensional structural entropy of directed graphs. Experimental results demonstrate that models fine-tuned on cleaned data reduce preference non-transitivity by 13.78% and structural entropy by 0.0879, while achieving more robust rankings in real-world evaluation systems, as evidenced by increased standard deviations in MT-bench evaluation framework metrics. Human evaluation studies further validate our approach, confirming that data inducing to overall preference non-transitivity correlates with low inter-annotator agreement among human evaluators and poor alignment between LLM evaluations and human majority votes. These findings underscore ELSPR’s effectiveness in developing more reliable evaluation systems for LLMs. Specifically, our contributions are:
+
+•
+
+We introduce a graph-theoretic approach to systematically study the non-transitivity problem in preference data generated by evaluator LLM, reveal significant non-transitivity, and propose a two-dimensional structural entropy to quantify preference clarity.
+
+•
+
+We propose a robust filtering methodology leveraging tournament graph theory to systematically identify and eliminate preference data that induce non-transitivity in evaluator LLMs. Our experimental results demonstrate that this approach significantly reduces preference non-transitivity, decreases structural entropy, and substantially enhances the evaluation robustness of the resulting models when deployed in real-world evaluation systems.
+
+•
+
+We empirically demonstrate through human evaluation that data causing preference non-transitivity is inherently ambiguous and low-quality, with significantly lower inter-annotator agreement (34.4% vs. 52.6%) and lower consistency between evaluator LLM assessments and human majority votes (51.2% vs. 80.6%).
+
+Figure 1: Non-Transitive Preferences in LLM-as-a-Judge for Pairwise Comparisons (e.g., A≻BA\succ B, B≻CB\succ C, C≻AC\succ A).
+
+2 Related Work
+
+2.1 LLM-as-a-Judge and Its Non-Transitive Preferences
+
+The prevailing LLM-as-a-Judge paradigm operates primarily through pairwise comparisons, as evidenced in established frameworks such as VicunaEval, AlpacaEval, and Arena-Hard (vicuna2023; alpaca_eval; DBLP:journals/corr/abs-2406-11939). These systems collect responses generated by various LLMs for a given set of questions and then employ advanced LLMs as judges to determine preference orders between response pairs, thus evaluating the relative performance of different models. Recent studies demonstrate that even advanced models such as GPT-4 exhibit significant preference non-transitivity when used in evaluation systems, substantially undermining the reliability of evaluation outcomes. Despite systematic exploration of six distinct prompt templates, improvements in mitigating preference non-transitivity remain limited (xu2025investigating). This issue extends to Reinforcement Learning from Human Feedback (RLHF), where non-transitive preferences significantly impair performance. Recent research suggests that this non-transitivity can hinder the learning algorithm from stably converging to the global optimum, leading to preference cycles and thus hindering the effective utilization of preference data (zhou2025extragradient).
+
+To address this critical challenge, we systematically investigate the underlying conditions that generate non-transitivity in LLM-as-a-Judge systems and introduce a novel methodology to mitigate such inconsistencies.
+
+Figure 2: ELSPR (Evaluator LLM training data Self-purification non-transitive Preferences via tournament graph Reconstruction) framework overview. (a) Raw preference data is collected via pairwise comparisons conducted by an advanced LLM. (b) The core analysis and filtering process: The raw data is first modeled as a tournament graph to identify cycles within SCCs. These cycles are then broken by reconstructing each SCC into a DAG based on in-degree ranking. The final global DAG serves as a rule to filter the initial raw data, separating it into a cleaned, transitively consistent training set and a discarded set of non-transitive preferences.
+
+2.2 Data Selection for LLM Fine-tuning
+
+Previous research (chen2024alpagasus; ge-etal-2024-clustering; li-etal-2024-one) has established that extracting high-quality subsets from synthetic training sets is crucial for effective fine-tuning. This approach not only enhances the performance of the model, but also substantially reduces the computational requirements. However, this strategy remains underexplored in the domain of LLM-as-a-Judge. Existing methodologies predominantly focus on scaling model architectures or refining engineering techniques, while neglecting the potential benefits of optimizing training data quality.
+
+3 Methodology
+
+This section presents a graph-theoretic analysis method using tournament graphs to analyze pairwise preferences from evaluator LLMs. The method introduces quality analysis criteria for training data, including non-transitivity detection via strongly connected components (SCCs) and preference clarity analysis via graph entropy. Additionally, a data filtering method is proposed to mitigate non-transitive preferences. Figure 2 outlines the overall framework, with implementation details provided in the following subsections.
+
+3.1 Background
+
+Modeling preferences generated by LLM as a tournament graph.
+For each question qi∈Qq_{i}\in Q, given the response set Ai={a1,a2,…,an}A_{i}=\{a_{1},a_{2},...,a_{n}\} from nn LLMs, we construct a tournament graph Gi=(Vi,Ei)G_{i}=(V_{i},E_{i}) through the following procedure:
+vertices: set Vi={v1,v2,…,vn}V_{i}=\{v_{1},v_{2},...,v_{n}\} corresponds to responses Ai={a1,a2,…,an}A_{i}=\{a_{1},a_{2},...,a_{n}\}. Edges: Defined by preferences generated by evaluator LLM:
+Ei=⋃1≤j,k≤nj≠k{vk→vj,if ​𝒥​(aj,ak)=‘win’ and ​𝒥​(ak,aj)=‘lose’vj→vk,if ​𝒥​(aj,ak)=‘lose’ and ​𝒥​(ak,aj)=‘win’vj↔vk,otherwise\displaystyle E_{i}=\bigcup_{\begin{subarray}{c}1\leq j,k\leq n\\
+j\neq k\end{subarray}}(1)
+Here, 𝒥​(aj,ak)∈{‘win’,‘lose’}\mathcal{J}(a_{j},a_{k})\in\{\text{`win'},\text{`lose'}\} denotes the pairwise comparison result between answers aja_{j} and aka_{k}, where aja_{j} appears before aka_{k} in the prompt.
+
+Considering the common position bias in evaluator LLMs (wang-etal-2024-large-language-models-fair), we apply position swapping by comparing each response pair in both orders: 𝒥​(aj,ak)\mathcal{J}(a_{j},a_{k}) and 𝒥​(ak,aj)\mathcal{J}(a_{k},a_{j}). This ensures a more robust and balanced assessment (zheng2024judging_mt). If the preferences differ across orders—indicating possible position bias—a bidirectional edge is added between the corresponding vertices to represent a ‘tie’.
+
+3.2 Quality Analysis Framework for Evaluator LLM Training Data
+
+We introduce a framework for analyzing evaluator LLM training data quality. Leveraging directed graph representations of preference tournaments, the framework introduces two metrics: SCC analysis quantifying preference non-transitivity and two-dimensional structural entropy measuring preference clarity.
+
+Quantifying preference non-transitivity via SCC analysis.
+SCCs are maximal subgraphs where any two vertices are mutually reachable through directed paths. This property provides a natural mechanism for identifying preference cycles—a direct manifestation of non-transitivity in evaluator LLM judgments. When vertex viv_{i} can reach vertex vjv_{j} via a directed path, this indicates a preference chain aj≻⋅≻aia_{j}\succ\cdot\succ a_{i}. The simultaneous existence of paths from viv_{i} to vjv_{j} and from vjv_{j} to viv_{i} represents contradictory preference relationships, signaling a violation of transitivity.
+
+We employ Tarjan’s algorithm (doi:10.1137/0201010) to efficiently identify SCCs in our directed graphs. Tarjan’s algorithm operates in linear time, specifically 𝒪​(|V|+|E|)\mathcal{O}(|V|+|E|), where |V||V| and |E||E| denote the number of vertices and edges, respectively, ensuring scalability to large graphs. Since non-transitivity requires at least three elements in a cycle, we focus on SCCs containing more than two vertices. Additionally, we exclude cases where every vertex pair shares bidirectional edges (indicating ‘tie’), as these represent consistent preference relations. For example, the pattern (A=B)(A=B), (B=C)(B=C), (C=A)(C=A) constitutes a valid SCC but maintains transitive preference relationships. Formally, we identify the set of non-transitive SCCs as:
+
+𝒮n-t={S∈SCCs​(G)||S|>2∧∃vj,vk∈S,(vj↔vk)∉E(S)},\mathcal{S}_{\text{n-t}}=\left\{S\in\text{SCCs}(G)\,\middle|\,\begin{aligned} |S|>2\land\exists v_{j},v_{k}\in S,\\
+(v_{j}\leftrightarrow v_{k})\notin E(S)\end{aligned}\right\},(2)
+
+where SCCs​(G)\text{SCCs}(G) represents all SCC in graph GG, |S||S| denotes the component size, and (vj↔vk)∉E(S)(v_{j}\leftrightarrow v_{k})\notin E(S) indicates the absence of bidirectional edges between some vertices.
+
+To quantify the prevalence of non-transitivity across our entire training set, we compute the non-transitivity ratio:
+
+ρnon-trans=∑qi∈𝐐|Sn-t​(Gi)|∑qi∈𝐐|Vi|,\rho_{\text{non-trans}}=\frac{\sum_{q_{i}\in\mathbf{Q}}|S_{\text{n-t}}(G_{i})|}{\sum_{q_{i}\in\mathbf{Q}}|V_{i}|},(3)
+
+where the numerator represents the total number of vertices in non-transitive SCCs across all questions 𝐐\mathbf{Q}, and the denominator represents the total number of vertices across all graphs. This metric ranges from 0 to 1, with higher values indicating greater prevalence of non-transitive in the evaluator LLM’s preferences. A perfectly transitive preference system would yield ρnon-trans=0\rho_{\text{non-trans}}=0, while completely cyclical preferences would approach ρnon-trans=1\rho_{\text{non-trans}}=1.
+
+Analysis of preference clarity based the structural entropy of directed graph. While the SCC-based approach effectively quantifies preference non-transitivity, this metric alone is insufficient to characterize preference linearity. For instance, a dataset comprised entirely of preference ‘tie’ would exhibit perfect transitivity yet fail to establish any linear ordering. To address this limitation, we introduce directed graph entropy as a complementary measurement. Structural entropy (7456290) extends Shannon entropy (6773024) to directed graphs, providing a measure of system uncertainty and the complexity of relationships within the graph. These concepts have been widely applied across various domains
+ (10.1145/3616855.3635820; Duan_Chen_Liu_Liu_Yue_Li_2024; 10.1145/3660522; Hou_Zhu_Liu_Su_Xia_Wu_Xu_2025). We introduce and refine the two-dimensional structural entropy metric for directed graphs to analyze the overall clarity of preferences in evaluator LLMs.
+
+A crucial observation drives our methodology is that SCCs composed of single vertices inherently exhibit strict transitivity. Preference relations among such singleton components naturally form a linear order that does not increase preference complexity. For example, consider preferences A≻BA\succ B, B≻CB\succ C, and A≻CA\succ C. These form a clear linear order A≻B≻CA\succ B\succ C, where each vertex constitutes its own singleton SCC. This clarity reflects the inherent transitivity of singleton SCCs.
+Based on this insight, we adopt SCCs as the basic community units when calculating structural entropy. To ensure accurate quantification of meaningful structural complexity, we exclude interactions between pure single-point SCCs. Instead, we retain only interactions between singleton SCCs and multi-vertex SCCs, as well as interactions between different multi-vertex SCCs. This selective approach ensures more accurate quantification of meaningful structural complexity. Consequently, preference relations closer to a linear order produce lower entropy values.
+
+Figure 3: Cases of High and Low Structural Entropy in Preference Tournaments.
+
+Figure 3 illustrates two contrasting scenarios that provide an intuitive explanation of the two-dimensional structural entropy in tournament graph preference relations. Figure 3 (a) depicts a high entropy case with a chaotic tournament containing multiple preference cycles resulting in complex non-transitive relationships. In contrast, Figure 3 (b) shows a low entropy case with a perfectly ordered tournament where responses form a clear linear hierarchy, producing a simple transitive structure.
+
+Given a directed graph G=(V,E)G=(V,E) with n=|V|n=|V| vertices, we perform SCC decomposition resulting in SCCs​(G)={S​C​C1,S​C​C2,…,S​C​CL}\text{SCCs}(G)=\{SCC_{1},SCC_{2},\ldots,SCC_{L}\}, where LL is the total number of SCCs. For any vertex v∈Vv\in V, we denote din​(v)d_{\text{in}}(v) and dout​(v)d_{\text{out}}(v) as the in-degree and out-degree of vv in GG. For any S​C​CiSCC_{i}, we define its volume as v​(S​C​Ci)=∑v∈S​C​Cidin​(v)v(SCC_{i})=\sum_{v\in SCC_{i}}d_{\text{in}}(v), while v​(G)v(G) represents the total in-degree of the entire graph.
+
+The two-dimensional structural entropy is computed as:
+H2​(G)\displaystyle H^{2}(G)=−∑j=1Lgjv​(G)​log2⁡v​(S​C​Cj)v​(G)\displaystyle=-\sum_{j=1}^{L}\frac{g_{j}}{v(G)}\log_{2}\frac{v(SCC_{j})}{v(G)}−∑j=1Lv​(S​C​Cj)v​(G)​(∑v∈S​C​Cjdin​(v)v​(S​C​Cj)​log2⁡din​(v)v​(S​C​Cj)),\displaystyle-\sum_{j=1}^{L}\frac{v(SCC_{j})}{v(G)}\left(\sum_{v\in SCC_{j}}\frac{d_{\text{in}}(v)}{v(SCC_{j})}\log_{2}\frac{d_{\text{in}}(v)}{v(SCC_{j})}\right),(4)
+
+The first term captures the entropy of the partition (inter-community complexity), while the second term captures the weighted average of entropies within each SCC (intra-community complexity). The variable gjg_{j} represents the number of incoming edges to S​C​CjSCC_{j} from vertices outside this component, specifically counting edges between singleton SCCs and multi-vertex SCCs, as well as edges between different multi-vertex SCCs. This value quantifies the external influence on each SCC and plays a crucial role in measuring cross-community complexity.
+
+To facilitate meaningful comparisons across graphs of different sizes, we normalize the structural entropy. The normalized structural entropy for a graph GG is defined as:
+
+τ​(G)=H2​(G)log2⁡n.\tau(G)=\frac{H^{2}(G)}{\log_{2}n}.(5)
+
+Normalization is necessary since raw entropy increases with graph size. Dividing by log2⁡n\log_{2}n scales the entropy to a range between 0 and 1, where values closer to 0 indicate more ordered structures approaching linear hierarchy, while values closer to 1 suggest higher complexity and less clear preference ordering. The upper bound log2⁡n\log_{2}n represents the maximum possible entropy for a graph with nn vertices, corresponding to a completely uniform distribution of structural information. To evaluate the overall preference clarity of an evaluator LLM across a set of questions 𝐐\mathbf{Q}, we compute the average normalized structural entropy:
+
+τavg=∑qi∈𝐐τ​(Gi)|𝐐|,\tau_{\text{avg}}=\frac{\sum_{q_{i}\in\mathbf{Q}}\tau(G_{i})}{|\mathbf{Q}|},(6)
+Here, τ​(Gi)\tau(G_{i}) is the normalized structural entropy for the graph GiG_{i} corresponding to question qiq_{i}, and |𝐐||\mathbf{Q}| is the total number of questions in the set 𝐐\mathbf{Q}.
+
+The τavg\tau_{\text{avg}} metric quantifies preference clarity: higher values indicate complex, non-transitive patterns, while lower values reflect relationships closer to linear order. It enables objective assessment of consistency across evaluator LLMs, where lower entropy denotes more coherent and interpretable preferences.
+
+3.3 Filtering Strategy for Preference Data That Induce Non-Transitivity
+
+If cycles within each SCC of a directed graph can be eliminated to form DAGs, the entire graph can be transformed into a DAG. Our framework leverages this property by converting each SCC into a DAG while preserving inter-SCC preference relations, ensuring global acyclicity without altering component relationships. From the resulting DAG, we derive transitive preference relations to filter evaluator LLMs’ preference data, enabling training data self-purification. The procedure is:
+
+1.
+
+For each S​C​CiSCC_{i} compute the in-degree eiine_{i}^{\text{in}} for each vertex viv_{i}, representing its global ‘win’ score. Vertices with higher in-degree scores are prioritized over those with lower scores. To reconstruct the internal edges within S​C​CiSCC_{i}, first remove all original edges between vertices within S​C​CiSCC_{i}. Then, for any pair vi,vjv_{i},v_{j}: if eiin>ejine_{i}^{\text{in}}>e_{j}^{\text{in}}, add a directed edge vj→viv_{j}\rightarrow v_{i}; if eiin=ejine_{i}^{\text{in}}=e_{j}^{\text{in}}, add a bidirectional edge vi↔vjv_{i}\leftrightarrow v_{j}.
+
+2.
+
+After processing all SCCs, the original cyclic graph is transformed into a DAG. This DAG is used to filter the training data as follows: For bidirectional edges (vi↔vj)(v_{i}\leftrightarrow v_{j}), the correct preferences are recorded as 𝒥​(ai,aj)=‘tie’\mathcal{J}(a_{i},a_{j})=\text{`tie'} and 𝒥​(aj,ai)=‘tie’\mathcal{J}(a_{j},a_{i})=\text{`tie'}. For unidirectional edges (vi→vj)(v_{i}\rightarrow v_{j}), the correct preferences are recorded as 𝒥​(ai,aj)=‘lose’\mathcal{J}(a_{i},a_{j})=\text{`lose'} and 𝒥​(aj,ai)=‘win’\mathcal{J}(a_{j},a_{i})=\text{`win'}.
+
+3.
+
+The training data are traversed sequentially. All instances that are consistent with the correct preferences are added to the training set “Cleaned”, while the remaining data are placed in the training set “Discarded”.
+
+The final “Cleaned” training data only retains linearly transitive preference data, resulting in ρnon-trans=0\rho_{\text{non-trans}}=0 and τavg=0\tau_{\text{avg}}=0. Our approach balances optimality and scalability, with an overall time complexity of 𝒪​(|V|2+|E|)\mathcal{O}(|V|^{2}+|E|), consisting of 𝒪​(|V|2)\mathcal{O}(|V|^{2}) for graph construction, 𝒪​(|V|+|E|)\mathcal{O}(|V|+|E|) for SCC decomposition, 𝒪​(|V|2)\mathcal{O}(|V|^{2}) for intra-SCC reconstruction, and 𝒪​(|E|)\mathcal{O}(|E|) for edge filtering. The detailed algorithmic procedure is provided in Appendix A.
+
+4 Experiment Setup
+ModelHelpful_BaseVicunaOasstKoalaSelf-instructρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}Stronger LLMsQwen2.5-Max63.7%0.80575.4%0.84564.3%0.78871.5%0.83065.0%0.780Base models and VariantsQwen-Base82.8%0.92278.9%0.89183.4%0.91481.0%0.91081.5%0.912Qwen-Raw62.0%0.79657.5%0.80355.8%0.77364.3%0.81659.7%0.767Qwen-Random60.6%0.79063.6%0.80858.8%0.77160.4%0.81257.1%0.764Qwen-Cleaned (ours)44.9%0.70043.9%0.72647.0%0.69448.5%0.71549.0%0.680LLaMA-Base76.4%0.85267.0%0.84667.4%0.79369.9%0.81871.0%0.809LLaMA-Raw59.0%0.76560.2%0.77258.2%0.76057.2%0.74660.0%0.783LLaMA-Cleaned (ours)40.2%0.65245.4%0.69143.0%0.62944.4%0.65942.0%0.642Table 1: 
+Comparison of Preference Non-Transitivity and Overall Clarity for evaluator LLMs.
+Qwen-Base denotes to the original Qwen2.5-7B-Instruct model, while Qwen-Raw, Qwen-Random, and Qwen-Cleaned denote models fine-tuned on the “Raw”, “Random”, and “Cleaned” training sets, respectively. For example, Qwen-Cleaned in the Helpful_Base column reflects the performance of the model fine-tuned on the ”Cleaned” training set derived from filtered Helpful_Base training set.
+
+4.1 Dataset
+
+In this study, we conduct experimental validation using the AlpacaEval benchmark (alpaca_eval). AlpacaEval is specifically designed to assess the overall capabilities of LLMs in open-ended tasks, covering a wide range of evaluation scenarios such as reasoning and text and code generation. The benchmark comprises five datasets, Helpful_Base, Oasst, Koala, Vicuna, and Self-Instruct.
+
+4.2 Preference Data Collection
+
+We evaluated Qwen2.5-Max (qwen25max) on 2.5k human-annotated samples from AlpacaEval using the chain-of-thought (COT) comparison (alpaca_eval). Qwen2.5-Max achieved a human agreement rate of 68.9%. Based on these results, we selected it as our teacher model for preference data generation.
+
+4.3 Experiment Details
+
+21 representative LLMs were selected from the AlpacaEval leaderboard (14 for training, 7 for testing). All experiments employed CoT comparison templates with temperature set to 0, and preferences were generated via the Qwen2.5-Max API. The unfiltered “Raw” datasets were processed according to the procedure described in Section 3.3 to produce “Cleaned” training sets; the corresponding distributions are illustrated in Figure 4. Qwen2.5-7B-Instruct was fine-tuned on both versions of each of the five datasets using LoRA (hu2022lora) (rank =8=8, 3 epochs, learning rate =1×10−4=1\times 10^{-4}, batch size =16=16).
+
+Figure 4: Comparison of data volumes between “Raw” and “Cleaned” training sets across datasets. The “Cleaned” training set’s volume is approximately 80% of the “Raw” training set for each dataset.
+
+5 Results and Analysis
+
+This section verifies the effectiveness of the proposed filtering method on five datasets. The analysis begins with an examination of preference non-transitivity degree and overall preference clarity of evaluator LLMs. To further demonstrate the method’s effectiveness, experiments based on actual usage scenarios are conducted using the MT-bench evaluation framework to calculate the standard deviation between final results. Additionally, a detailed data quality analysis examines two key aspects of manual evaluation: (1) consistency between manual annotators, and (2) consistency between evaluation results and human majority vote.
+
+5.1 Main Results
+
+Analysis of preference non-transitivity and clarity. As shown in Table 1, models fine-tuned on the “Cleaned” training set demonstrate the lowest preference non-transitivity and highest preference clarity across all datasets, including Qwen2.5-Max, highlighting the effectiveness of our proposed data filtering methodology. To verify that models fine-tuned on the “Cleaned” training set achieve lower preference non-transitivity and higher preference clarity even on “unseen” questions, we conducted cross-validation as our out-of-domain experiment by testing each fine-tuned model across five test sets. As demonstrated in Table 2, models fine-tuned on “Cleaned” training set exhibited an average reduction in non-transitivity of 13.8% compared to those trained on “Raw” training set. Table 3 shows a reduction of 0.088 in normalized structural entropy, indicating clearer overall preferences. Detailed results are in Appendix B.
+
+DatasetRawCleanedΔ\DeltaHelpful_Base66.0%50.3%-15.7%Vicuna61.6%51.0%-10.6%Oasst62.6%48.7%-13.9%Koala64.1%48.7%-15.4%Self-instruct67.2%53.8%-13.4%Average64.3%50.5%-13.8%Table 2: Comparison of ρnon-trans\rho_{\text{non-trans}} (average preference non-transitivity) between models fine-tuned on “Raw” and “Cleaned” training sets using Qwen2.5-7B-Instruct.DatasetRawCleanedΔ\DeltaHelpful_Base0.8200.717-0.103Vicuna0.8060.737-0.069Oasst0.7970.710-0.087Koala0.8040.718-0.086Self-instruct0.8290.735-0.094Average0.8110.723-0.088Table 3: Comparison of τavg\tau_{\text{avg}} (average preference clarity) between models fine-tuned on “Raw” and “Cleaned” training sets using Qwen2.5-7B-Instruct.
+
+Human validation of discarded data quality. To verify the low quality of discarded data, we evaluated 100 randomly sampled instances from both “Cleaned” and “Discarded” sets across five datasets (1,000 total instances). Three independent annotators assessed these samples, enabling measurement of inter-annotator consistency and model-human alignment. Results in Table 4 indicate that human annotator consistency in the “Discard” training set averages only 34.4%, significantly lower than the 52.6% observed in the “Cleaned” training set. This confirms that data leading to non-transitive preferences is inherently ambiguous. Furthermore, model evaluation reveals that consistency between the “Discarded” training set and human majority votes averages merely 51.2%, substantially below the 80.6% achieved by the “Cleaned” training set. These findings provide compelling evidence that the “Discarded” training set contains low-quality preference pairs unsuitable for training models to learn consensus human preferences.
+
+For deeper insight into non-transitive preferences, we observed that source response pairs exhibiting non-transitivity demonstrate higher textual similarity. This observation suggests that preference cycles are likely to occur when the quality difference between source responses falls below the just noticeable difference (JND) (stern2010just) threshold of the evaluator LLM. As shown in Table 5, we quantified content similarity between response pairs by calculating Self-Bleu scores. Source response pairs with non-transitive preference relations consistently displayed higher Self-Bleu values than those with transitive relations, confirming that preference non-transitivity correlates with greater text similarity between comparative samples.
+
+HCMHADatasetCleanedDiscardedCleanedDiscardedHelp.59%46%72%45%Vicuna48%24%78%47%Oasst56%33%83%53%Koala54%41%84%61%Self.46%28%86%50%Average52.6%34.4%80.6%51.2%Table 4: Comparison of Human Evaluation Consistency and Model-Human Agreement between training sets. HC: Human Consistency (inter-annotator consensus); MHA: Model-Human Agreement (alignment with majority vote). Help. = Helpful_Base; Self. = Self-instruct.Pref.Helpful.VicunaOasstKoalaSelf.Non.0.09030.10260.09460.08880.1135Trans.0.07130.09180.07880.07460.0829Table 5: Comparison of source text pair Self-Bleu scores across datasets. Non. and Trans. indicate source pairs from non-transitive and transitive preferences; Helpful. = Helpful_Base; Self. = Self-instruct.
+
+Performance analysis of real-world evaluation systems. We compared the performance of our trained evaluator LLMs within the MT-bench evaluation framework (zheng2024judging_mt). We adopted the adjusted win rate calculation consistent with the MT-bench evaluation methodology. This metric normalizes performance by treating ties as partial wins, defined as radj=(rw+0.5⋅rt)/(rw+rl+rt)r_{\text{adj}}=(r_{w}+0.5\cdot r_{t})/(r_{w}+r_{l}+r_{t}), where rwr_{w}, rlr_{l}, and rtr_{t} represent the win rate, loss rate, and tie rate respectively. The adjusted rate radjr_{\text{adj}} serves as the primary indicator for our model ranking. Results in Table 6 demonstrate that models fine-tuned on the “Cleaned” training sets exhibit significantly higher standard deviations in their adjusted win rates across five datasets. This indicates enhanced robustness of the evaluation results and better differentiation of performance differences between models.
+
+DatasetHelp.Vicu.OasstKoalaSelf.Cleaned16.1%16.6%13.1%14.9%9.7%Raw12.2%13.6%11.0%12.3%8.2%Δ\Delta+3.9%+3.0%+2.1%+2.6%+1.5%Table 6: Standard deviation analysis. Help. = Helpful_Base; Vicu. = Vicuna; Self. = Self-instruct.MHASCDatasetRawCleanedRawCleanedHelpful_base66.9%66.9%0.930.97Vicuna65.2%65.8%0.970.98Oasst66.4%67.6%0.930.93Koala66.4%66.9%0.980.98Self-instruct67.8%68.3%0.981.00Average66.5%67.1%0.960.97Table 7: Comparison of Model-Human Agreement (MHA) and Spearman Correlation (SC) between fine-tuned models. Spearman Correlation quantifies the rank correlation between model and human preferences.
+
+Analysis of human agreement impact. The model’s alignment with human preferences was evaluated by calculating agreement rates and Spearman correlation coefficients on 2.5k manually annotated preference labels from AlpacaEval. Results in Table 7 indicate that models fine-tuned on the “Cleaned” training set consistently outperformed those trained on “Raw” training set across multiple dataset, with maximum improvements of 1.2% in human agreement and 0.04 in Spearman correlation. These results demonstrate that filtering ambiguous, low-quality preference data not only improves discrimination and enhances the performance of downstream evaluation systems but also increases consistency with human judgment, providing strong evidence for practical applications.
+
+5.2 Ablation Studies
+
+Effect of Different Base Models: Testing using the same steps with LLaMA3.1-8B-Instruct confirms our findings: models trained on the “Cleaned” training set consistently outperformed those trained on the “Raw” training set (Table 1). Data Filtering Analysis: Our “Cleaned” set retained approximately 80% of the raw data (Figure 4). A control experiment with random 20% filtering (Qwen-Random) produced results similar to training on the “Raw” set but with higher preference non-transitivity, confirming that our targeted approach improves data quality beyond simple reduction (Table 1). Prompt Format Variations: Additional experiments with prompts explicitly allowing “tie” judgments further validated our methodology. Detailed prompt templates and results are provided in Appendices B and C.
+
+6 Conclusion
+
+We propose ELSPR, a graph-theoretic framework to analyze and mitigate non-transitivity in evaluator LLMs by modeling pairwise comparisons as a tournament graph and filtering problematic data. Ambiguous, low-quality preferences are a major source of non-transitive judgments, and targeted filtering improves evaluation reliability. Empirical results show that filtered data aligns better with human judgments and can fine-tune models to reduce non-transitive bias and structural entropy. This work underscores the importance of data quality and provides a scalable approach to enhance consistency on future benchmarks.
+
+Acknowledgments
+
+This work is supported by the National Natural Science Foundation of China under Grant Nos. 62572105 and U22B2005; the Liaoning Revitalization Talents Program under Grant No. XLYC2403086.
+
+Appendix A Algorithm Detail
+
+In this section, we provide the detailed pseudocode for the filtering algorithm described in Section 3.3 of the main text.
+
+Algorithm 1 Filtering Strategy for Preference Data That Induces Non-Transitivity
+
+1:Cyclic directed graph G=(V,E)G=(V,E)
+
+2:Clean dataset with transitive preference relations
+
+3:Decompose GG into strongly connected components S​C​C​sSCCs: {S​C​C1,S​C​C2,…,S​C​Cn}\{SCC_{1},SCC_{2},\dots,SCC_{n}\}
+
+4:for each S​C​Ci∈{S​C​C1,…,S​C​Cn}SCC_{i}\in\{SCC_{1},\dots,SCC_{n}\}do
+
+5:for each vertex vk∈S​C​Civ_{k}\in SCC_{i}do
+
+6:   Compute in-degree score ekine_{k}^{\text{in}}
+
+7:endfor
+
+8:  Remove edges within S​C​CiSCC_{i}
+
+9:for each pair of vertices (vi,vj)∈S​C​Ci(v_{i},v_{j})\in SCC_{i}do
+
+10:ifeiin>ejine_{i}^{\text{in}}>e_{j}^{\text{in}}then
+
+11:     Add edge (vj→vi)(v_{j}\rightarrow v_{i})
+
+12:elseifeiin=ejine_{i}^{\text{in}}=e_{j}^{\text{in}}then
+
+13:     Add bidirectional edge (vi↔vj)(v_{i}\leftrightarrow v_{j})
+
+14:endif
+
+15:endfor
+
+16:endfor
+
+17:Combine all modified S​C​CiSCC_{i} components to form a global DAG G′G^{\prime}
+
+18:for each edge in G′G^{\prime}do
+
+19:if edge is (vi→vj)(v_{i}\rightarrow v_{j})then
+
+20:   Set 𝒥​(ai,aj)=‘lose’\mathcal{J}(a_{i},a_{j})=\text{`lose'}, 𝒥​(aj,ai)=‘win’\mathcal{J}(a_{j},a_{i})=\text{`win'}
+
+21:elseif edge is (vi↔vj)(v_{i}\leftrightarrow v_{j})then
+
+22:   Set 𝒥​(ai,aj)=𝒥​(aj,ai)=‘tie’\mathcal{J}(a_{i},a_{j})=\mathcal{J}(a_{j},a_{i})=\text{`tie'}
+
+23:endif
+
+24:endfor
+
+25:Initialize empty dataset Cleaned
+
+26:Initialize empty dataset Discarded
+
+27:for each data point in original dataset do
+
+28:if preference relation matches 𝒥\mathcal{J}then
+
+29:   Add data point to Cleaned
+
+30:else
+
+31:   Add data point to Discarded
+
+32:endif
+
+33:endfor
+
+34:returnCleaned, Discarded
+
+Appendix B Additional Experimental Results
+
+B.1 Experimental Results of Different Prompt Forms.
+
+We repeated the experiment using the CoT Comparison (Tie Allowed) prompt template.
+Figure 5 illustrates the distribution of dataset sizes before and after filtering across different training sets. The test results are presented in Table 9.
+
+Across five testing sets, models fine-tuned on the “Cleaned” training set exhibit the highest preference clarity. In four of these testing sets (excluding Vicuna), these models also demonstrate the lowest preference non-transitivity, outperforming models fine-tuned on the “Raw” training set and the teacher model Qwen2.5-Max. We observe that models fine-tuned on the “Raw” training set, as well as the teacher model Qwen2.5-Max, exhibit a higher rate of ties in preferences on the Vicuna testing set. The prevalence of such ties—often arising from SCCs formed by cases like (A=B)(A=B), (B=C)(B=C), and (C=A)(C=A)—significantly reduces the degree of preference non-transitivity when these SCCs are removed. As shown in Table 8, we compare the probability of ties among three models on the Vicuna testing set. Furthermore, the τavg↓\tau_{\text{avg}}^{\downarrow} values of models fine-tuned on the “Cleaned” training set indicate a higher overall clarity in preferences.
+
+Figure 5: Comparison of Data Volumes Between “Raw” and “Cleaned” Training Sets Across Different Datasets (Using the CoT Comparison (Tie Allowed) Prompt Template)Modeltie probabilityQwen2.5-Max7.59%Qwen-Raw10.06%Qwen-Cleaned6.13%Table 8: Comparison of tie probabilities in evaluation results produced by different evaluator LLMs on Vicuna testing set.
+
+B.2 “Unseen” question validation
+
+We perform a detailed comparison of the performance of models fine-tuned on different training sets and the advanced evaluator LLM on various testing sets:
+
+•
+
+Results for models based on Qwen2.5-7B-Instruct are presented in Table 10.
+
+•
+
+Results for models based on LLaMA3.1-8B-Instruct are presented in Table 11.
+
+Appendix C Evaluate Prompts
+
+C.1 CoT Comparison
+
+The CoT Comparison prompt template, identical to AlpacaEval 2.0, is detailed in Table 12.
+
+C.2 CoT Comparison (Tie Allowed)
+
+The CoT Comparison (Tie Allowed) prompt template, is detailed in Table 13.
+
+Appendix D Limitations and Future Work
+
+Although we have validated the effectiveness of our filtering approach on five datasets from AlpacaEval, it still cannot fully cover all real-world scenarios, and further validation across a broader range of domains is needed. Additionally, while our method has successfully reduced the issue of preference non-transitivity, it has not been completely eliminated. Further efforts to minimize preference intransitivity remain an important direction for future work. Lastly, our study primarily focused on pairwise comparison tasks in single-turn dialogues, exploring multi-turn dialogue tasks presents an intriguing avenue for future research.
+
+Appendix E Ethics Statement
+
+This research aims to analyze and mitigate non-transitive preferences in large language models when employed as evaluators for open-ended tasks. Our methodology exclusively utilizes publicly available data, existing datasets, and open-source frameworks for computational experiments. All human annotation revisions were conducted by graduate students under fair working conditions with appropriate compensation, ensuring both high-quality data collection and adherence to ethical standards. We confirm that our research procedures comply with established ethical guidelines for AI research and do not present foreseeable negative societal impacts.
+
+ModelHelpful_BaseVicunaOasstKoalaSelf-instructρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}Qwen2.5-Max76.97%0.865478.04%0.923179.71%0.865976.31%0.892371.77%0.8595Qwen-Base85.94%0.937190.71%0.960284.88%0.945981.96%0.962676.64%0.8853Qwen-Raw79.07%0.924483.21%0.939677.58%0.906678.66%0.907873.87%0.8853Qwen-Cleaned (ours)74.42%0.859685.89%0.892273.94%0.856472.34%0.840369.05%0.8288
+Table 9: 
+Comparison of Preference Non-Transitivity and Overall Clarity for evaluator LLMs ( using the CoT Comparison (Tie Allowed) prompt template).
+Qwen-Base denotes to the original Qwen2.5-7B-Instruct model, while Qwen-Raw and Qwen-Cleaned denote models fine-tuned on the “Raw” and “Cleaned” training sets, respectively. For example, Qwen-Cleaned in the Helpful_Base column reflects the performance of the model fine-tuned on the “Cleaned” training set derived from filtered Helpful_Base data.
+
+ModelHelpful_BaseVicunaOasstKoalaSelf-instructAverageρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}Stronger LLMsQwen2.5-Max63.68%0.804775.36%0.844864.29%0.788371.52%0.829664.97%0.780367.96%0.8095Base ModelQwen-Base82.83%0.922178.93%0.891283.36%0.913880.96%0.909781.46%0.912381.51%0.9098Cleaned groupQwen-Helpful_Base-Cleaned44.85%0.699748.93%0.737152.13%0.713753.75%0.722351.98%0.713850.33%0.7173Qwen-Vicuna-Cleaned47.18%0.739543.93%0.726252.43%0.727653.48%0.741857.77%0.748350.96%0.7367Qwen-Oasst-Cleaned45.74%0.704045.00%0.710946.96%0.694254.85%0.718651.08%0.722748.73%0.7101Qwen-Koala-Cleaned50.28%0.735746.79%0.704548.94%0.718348.53%0.714948.70%0.715048.65%0.7177Qwen-Self-instruct-Cleaned56.26%0.750451.79%0.748954.94%0.737057.23%0.759048.98%0.680253.84%0.7351Raw groupQwen-Helpful_Base-Raw62.02%0.796374.29%0.862663.07%0.810969.87%0.838560.49%0.793665.95%0.8204Qwen-Vicuna-Raw61.13%0.814757.50%0.803464.59%0.801960.35%0.815064.23%0.796661.56%0.8063Qwen-Oasst-Raw60.58%0.809970.89%0.810155.78%0.773463.83%0.815061.96%0.774662.61%0.7966Qwen-Koala-Raw64.23%0.822867.86%0.809064.59%0.796664.29%0.815959.30%0.777964.05%0.8044Qwen-Self-instruct-Raw68.99%0.856971.79%0.859568.84%0.816766.85%0.843359.69%0.766567.23%0.8286
+Table 10: 
+Comparison of Preference Non-Transitivity and Overall Clarity for evaluator LLMs.
+Qwen-Base denotes to the original Qwen2.5-7B-Instruct model. Raw group and Cleaned group refer to models fine-tuned on the original and filtered training sets, respectively.
+Specifically, Qwen-Helpful_Base-Raw is fine-tuned on the “Raw” training data generated from the Helpful_Base dataset, while Qwen-Helpful_Base-Cleaned is fine-tuned on the corresponding “Cleaned” dataset after removing non-transitive preference data.
+
+ModelHelpful_BaseVicunaOasstKoalaSelf-instructAverageρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}ρnon-trans↓\rho_{\text{non-trans}}^{\downarrow}τavg↓\tau_{\text{avg}}^{\downarrow}Stronger LLMsQwen2.5-Max63.68%0.804775.36%0.844864.29%0.788371.52%0.829664.97%0.780367.96%0.8095Base ModelLLaMA-Base76.41%0.851866.96%0.846167.40%0.793369.87%0.818071.03%0.809170.33%0.8237Cleaned groupLLaMA-Helpful_Base-Cleaned40.20%0.652347.86%0.681049.92%0.682750.92%0.700355.33%0.730048.85%0.6893LLaMA-Vicuna-Cleaned49.83%0.713945.36%0.691048.02%0.686353.02%0.729557.14%0.740850.67%0.7123LLaMA-Oasst-Cleaned50.28%0.665547.68%0.681243.01%0.628850.73%0.703454.25%0.705649.19%0.6769LLaMA-Koala-Cleaned44.85%0.658846.61%0.682644.38%0.659145.51%0.682750.11%0.703146.29%0.6773LLaMA-Self-instruct-Cleaned40.42%0.637349.29%0.695141.95%0.642348.99%0.695946.15%0.665245.36%0.6672Raw groupLLaMA-Helpful_Base-Raw59.03%0.765460.71%0.788859.42%0.768261.36%0.796563.78%0.788660.86%0.7815LLaMA-Vicuna-Raw56.92%0.802860.18%0.771858.81%0.764660.35%0.794359.69%0.764459.19%0.7797LLaMA-Oasst-Raw59.80%0.782164.64%0.787858.21%0.759667.49%0.806263.89%0.774562.810.7820LLaMA-Koala-Raw58.03%0.753253.75%0.760157.22%0.745757.23%0.759765.59%0.788758.36%0.7615LLaMA-Self-instruct-Raw62.79%0.786064.11%0.788559.95%0.783065.02%0.805456.52%0.755961.68%0.7838
+Table 11: 
+Comparison of Preference Non-Transitivity and Overall Clarity for evaluator LLMs.
+LLaMA-Base refers to the original LLaMA3.1-8B-Instruct model. Raw group and Cleaned group refer to models fine-tuned on the original and filtered training sets, respectively.
+Specifically, LLaMA-Helpful_Base-Raw is fine-tuned on the “Raw” training data generated from the Helpful_Base dataset, while LLaMA-Helpful_Base-Cleaned is fine-tuned on the corresponding “Cleaned” dataset after removing non-transitive preference data.
+SystemYou are a highly efficient assistant, who evaluates and selects the best large language model (LLMs) based on the quality of their responses to a given instruction. This process will be used to create a leaderboard reflecting the most accurate and human-preferred answers.UserI require a leaderboard for various large language models. I’ll provide you with prompts given to these models and their corresponding outputs. Your task is to assess these responses and select the model that produces the best output from a human perspective.
+
+## Instruction
+
+{
+
+”instruction”: ”””{instruction}”””,
+
+}## Model Outputs
+
+Here are the unordered outputs from the models. Each output is associated with a specific model, identified by a unique model identifier.
+
+{
+
+{
+
+”model_identifier”: ”m”,
+
+”output”: ”””{output_1}”””
+
+},
+
+{
+
+”model_identifier”: ”M”,
+
+”output”: ”””{output_2}”””
+
+}
+
+}
+
+## Task
+
+Evaluate the models based on the quality and relevance of their outputs, and select the model that generated the best output. Answer by first providing a concise explanation and then end your answer by providing the model identifier of the best output. We will use the last character of your output ‘output[-1]‘ as the name of the best model, so make sure you finish with the token of the model identifiers and nothing else: ‘m‘ or ‘M‘ (no quotes, no dots, no backticks, no new lines, …). For example:
+
+### Concise explanation
+…some text…
+
+### Which is best, m or M?
+
+MNow is your turn.
+
+## Your answer: ”Concise explanation” followed by ”Which is best, m or M?”Table 12: The Chain-of-Thought Comparison prompt for pairwise comparison.SystemYou are a highly efficient assistant, who evaluates and selects the best large language model (LLMs) based on the quality of their responses to a given instruction. This process will be used to create a leaderboard reflecting the most accurate and human-preferred answers.UserI require a leaderboard for various large language models. I’ll provide you with prompts given to these models and their corresponding outputs. Your task is to assess these responses, and select the model that produces the best output from a human perspective. If you determine that both outputs are of equal quality or are unable to decide which one is better, you should indicate a tie by providing the identifier ‘D‘.
+
+## Instruction
+
+{
+
+”instruction”: ”””{instruction}”””,
+
+}## Model Outputs
+
+Here are the unordered outputs from the models. Each output is associated with a specific model, identified by a unique model identifier.
+
+{
+
+{
+
+”model_identifier”: ”m”,
+
+”output”: ”””{output_1}”””
+
+},
+
+{
+
+”model_identifier”: ”M”,
+
+”output”: ”””{output_2}”””
+
+}
+
+}
+
+## Task
+
+Evaluate the models based on the quality and relevance of their outputs, and select the model that generated the best output. Answer by first providing a concise explanation and then end your answer by providing the model identifier of the best output. If you determine that both outputs are of equal quality or cannot decide which one is better, indicate a tie by using the identifier ‘D‘. We will use the last character of your output ‘output[-1]‘ as the name of the best model, so make sure you finish with the token of the model identifiers and nothing else: ‘m‘, ‘M‘ or ‘D‘ (no quotes, no dots, no backticks, no new lines, …). For example:
+
+### Concise explanation
+…some text…
+
+### Which is best, m, M or D?
+
+MNow is your turn.
+
+## Your answer: ”Concise explanation” followed by ”Which is best, m, M or D?”Table 13: The Chain-of-Thought Comparison prompt (Tie Allowed) for pairwise comparison.
+
+Generated on Tue Dec 2 10:33:01 2025 by LaTeXML
