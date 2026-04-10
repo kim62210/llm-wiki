@@ -1,0 +1,32 @@
+---
+title: Tool Selection & Tool Invocation Evaluators
+category: concepts
+page_type: concept
+tags: [concepts, concept, tool, invocation, evaluators]
+sources: [raw/2026-04-10-hot-ai-topics-100.md]
+created: 2026-04-10
+updated: 2026-04-10
+---
+
+# Tool Selection & Tool Invocation Evaluators
+
+올바른 도구 선택과 올바른 파라미터 호출을 분리해 평가.
+
+## 왜 중요한가
+
+Arize Phoenix가 2026년 1-2월 두 개의 전용 평가자를 출시하면서, "잘못된 도구 선택"과 "올바른 도구+잘못된 인자"를 분리 진단하는 것이 tool-calling 에이전트 디버깅의 표준 패턴이 되었다.
+
+## 대표 레퍼런스
+
+- [Tool Selection and Tool Invocation Evaluators Release Notes (Phoenix, 2026-02-01)](https://arize.com/docs/phoenix/release-notes/02-2026/02-01-2026-tool-selection-and-tool-invocation-evaluators)
+- [How to Evaluate Tool-Calling Agents (Arize Blog, 2026-03-02)](https://arize.com/blog/how-to-evaluate-tool-calling-agents/)
+- [Tool Invocation Evaluator Docs (Phoenix)](https://arize.com/docs/phoenix/evaluation/pre-built-metrics/tool-invocation)
+- [Agent Tool Selection (Arize AX Docs)](https://arize.com/docs/ax/evaluate/llm-as-a-judge/arize-evaluators-llm-as-a-judge/agent-tool-selection)
+- [Phoenix GitHub Repository](https://github.com/Arize-ai/phoenix)
+
+## 관련 문서
+
+- [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
+- [[multi-turn-agent-evaluation|Multi-Turn Agent Evaluation]]
+- [[rubric-based-evals|Rubric-Based Evaluation Frameworks]]
+- [[context-engineering|Context Engineering]]

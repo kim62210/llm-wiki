@@ -1,6 +1,6 @@
 ---
 title: Browser Automation for Coding Agents
-aliases: ["Playwright", "Rodney", "Showboat", "agent-browser", "browser automation"]
+aliases: ["Playwright", "Rodney", "Showboat", "agent-browser", "browser automation", "browser automation agents"]
 category: tooling
 page_type: concept
 tags: [playwright, rodney, agent-browser, showboat, browser-automation, testing]

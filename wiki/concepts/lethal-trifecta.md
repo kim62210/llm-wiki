@@ -1,14 +1,13 @@
 ---
 title: Lethal Trifecta (치명적 3요소)
-aliases: ["lethal trifecta", "치명적 3요소", "rule of two"]
+aliases: ["lethal trifecta", "치명적 3요소", "rule of two", Lethal Trifecta, lethal trifecta]
 category: concepts
 page_type: concept
 tags: [security, prompt-injection, simon-willison, meta-rule-of-two, agent-security]
-sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md]
+sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md, raw/2026-04-10-hot-ai-topics-100.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-10
 ---
-
 # Lethal Trifecta (치명적 3요소)
 
 ## 정의
@@ -83,6 +82,46 @@ Lethal Trifecta 방어는 주로 **우상 사분면(Deterministic Feedback, Comp
 ## 관련 사례
 
 [[agentic manual testing|에이전틱 수동 테스트]], 브라우저 자동화([[browser automation agents]]), 이메일 처리 에이전트 등이 자연스럽게 Lethal Trifecta 위험에 노출되기 쉬운 영역이다.
+
+## 2026년 4월 핫토픽 업데이트
+
+### Agent Security: Lethal Trifecta & Prompt Injection Defense
+
+- **정의**: 사적 데이터 접근 + 신뢰할 수 없는 콘텐츠 노출 + 외부 통신이 결합될 때 발생하는 에이전트의 구조적 취약성과 그 방어 패턴.
+- **왜 다시 중요해졌나**: Simon Willison이 명명한 "lethal trifecta" 개념이 2026년 1월 IBM Bob, Superhuman AI, Notion AI, Claude Cowork 등 4개 주요 에이전트 제품에서 5일 만에 잇따라 실증되며 보안 위기가 폭발했고, 3월에는 Palo Alto Unit 42가 in-the-wild 인다이렉트 프롬프트 인젝션을 정식 보고하면서 에이전트 아키텍처 설계 시 보안이 1차 고려사항으로 격상되었다.
+- **대표 자료**:
+- [The lethal trifecta for AI agents (Simon Willison)](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
+- [Writing about Agentic Engineering Patterns (Simon Willison)](https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/)
+- [Introducing Claude Opus 4.5 (Prompt Injection Robustness)](https://www.anthropic.com/news/claude-opus-4-5)
+
+- [[ai-hot-topics-2026-04]]
+
+
+## 2026년 4월 핫토픽 메모
+
+### Agent Security: Lethal Trifecta & Prompt Injection Defense
+
+- **정의**: 사적 데이터 접근 + 신뢰할 수 없는 콘텐츠 노출 + 외부 통신이 결합될 때 발생하는 에이전트의 구조적 취약성과 그 방어 패턴.
+- **왜 중요한가**: Simon Willison이 명명한 "lethal trifecta" 개념이 2026년 1월 IBM Bob, Superhuman AI, Notion AI, Claude Cowork 등 4개 주요 에이전트 제품에서 5일 만에 잇따라 실증되며 보안 위기가 폭발했고, 3월에는 Palo Alto Unit 42가 in-the-wild 인다이렉트 프롬프트 인젝션을 정식 보고하면서 에이전트 아키텍처 설계 시 보안이 1차 고려사항으로 격상되었다.
+- **대표 자료**:
+  - [The lethal trifecta for AI agents (Simon Willison)](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
+  - [Writing about Agentic Engineering Patterns (Simon Willison)](https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/)
+  - [Introducing Claude Opus 4.5 (Prompt Injection Robustness)](https://www.anthropic.com/news/claude-opus-4-5)
+  - [Effective context engineering for AI agents (Anthropic)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+  - [Context Engineering for AI Agents in Open-Source Software (AGENTS.md study)](https://arxiv.org/abs/2510.21413)
+
+
+## 2026년 4월 핫토픽 맥락
+
+Simon Willison이 명명한 "lethal trifecta" 개념이 2026년 1월 IBM Bob, Superhuman AI, Notion AI, Claude Cowork 등 4개 주요 에이전트 제품에서 5일 만에 잇따라 실증되며 보안 위기가 폭발했고, 3월에는 Palo Alto Unit 42가 in-the-wild 인다이렉트 프롬프트 인젝션을 정식 보고하면서 에이전트 아키텍처 설계 시 보안이 1차 고려사항으로 격상되었다.
+
+### 추가 레퍼런스
+
+- [The lethal trifecta for AI agents (Simon Willison)](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
+- [Writing about Agentic Engineering Patterns (Simon Willison)](https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/)
+- [Introducing Claude Opus 4.5 (Prompt Injection Robustness)](https://www.anthropic.com/news/claude-opus-4-5)
+- [Effective context engineering for AI agents (Anthropic)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- [Context Engineering for AI Agents in Open-Source Software (AGENTS.md study)](https://arxiv.org/abs/2510.21413)
 
 ## 관련 문서
 

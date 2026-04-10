@@ -1,14 +1,13 @@
 ---
 title: Context Engineering (컨텍스트 엔지니어링)
-aliases: ["context engineering", "컨텍스트 엔지니어링"]
+aliases: ["context engineering", "컨텍스트 엔지니어링", Context Engineering, context engineering]
 category: concepts
 page_type: concept
 tags: [context-engineering, paradigm, 2025, agentic-era, kv-cache]
-sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md]
+sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md, raw/2026-04-10-hot-ai-topics-100.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-10
 ---
-
 # Context Engineering (컨텍스트 엔지니어링)
 
 ## 정의
@@ -98,6 +97,46 @@ Karpathy가 제안한 멘탈 모델: LLM 시스템을 운영체제로 보는 관
 1. **단일 턴 중심**: "이번 호출에 무엇을 주입할까"에 최적화되어 있어 **멀티턴 순차적 결정 체인**을 놓친다
 2. **에러 복구 부재**: 비용 자각, 보상 감쇠 탐지, 서킷 브레이커 같은 메커니즘 부재
 3. **보안 공백**: 완벽한 컨텍스트도 민감 데이터 시스템에 대한 **프롬프트 인젝션 공격**을 막지 못한다 (→ [[lethal trifecta]])
+
+## 2026년 4월 핫토픽 업데이트
+
+### Context Engineering for Long-Horizon Agents
+
+- **정의**: 장기 실행 에이전트가 제한된 컨텍스트 윈도우에 어떤 토큰을 넣을지 의도적으로 큐레이션하는 기술.
+- **왜 다시 중요해졌나**: 2025년 9월 Anthropic의 "Effective Context Engineering" 블로그 이후 프롬프트 엔지니어링을 대체하는 새로운 패러다임으로 자리잡았고, 2026년 4월 현재 ICLR 2026 ACE 논문, ACON, AgentFold 등 후속 연구가 쏟아지면서 컨텍스트 윈도우 크기 경쟁이 끝났다는 합의가 형성되고 있다.
+- **대표 자료**:
+- [Effective context engineering for AI agents (Anthropic)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- [ACON: Optimizing Context Compression for Long-horizon LLM Agents](https://arxiv.org/abs/2510.00615)
+- [Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (ICLR 2026)](https://arxiv.org/abs/2510.04618)
+
+- [[ai-hot-topics-2026-04]]
+
+
+## 2026년 4월 핫토픽 메모
+
+### Context Engineering for Long-Horizon Agents
+
+- **정의**: 장기 실행 에이전트가 제한된 컨텍스트 윈도우에 어떤 토큰을 넣을지 의도적으로 큐레이션하는 기술.
+- **왜 중요한가**: 2025년 9월 Anthropic의 "Effective Context Engineering" 블로그 이후 프롬프트 엔지니어링을 대체하는 새로운 패러다임으로 자리잡았고, 2026년 4월 현재 ICLR 2026 ACE 논문, ACON, AgentFold 등 후속 연구가 쏟아지면서 컨텍스트 윈도우 크기 경쟁이 끝났다는 합의가 형성되고 있다.
+- **대표 자료**:
+  - [Effective context engineering for AI agents (Anthropic)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+  - [ACON: Optimizing Context Compression for Long-horizon LLM Agents](https://arxiv.org/abs/2510.00615)
+  - [Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (ICLR 2026)](https://arxiv.org/abs/2510.04618)
+  - [AgentFold: Long-Horizon Web Agents with Proactive Context Management](https://arxiv.org/abs/2510.24699)
+  - [Context Rot: How Increasing Input Tokens Impacts LLM Performance (Chroma Research)](https://www.trychroma.com/research/context-rot)
+
+
+## 2026년 4월 핫토픽 맥락
+
+2025년 9월 Anthropic의 "Effective Context Engineering" 블로그 이후 프롬프트 엔지니어링을 대체하는 새로운 패러다임으로 자리잡았고, 2026년 4월 현재 ICLR 2026 ACE 논문, ACON, AgentFold 등 후속 연구가 쏟아지면서 컨텍스트 윈도우 크기 경쟁이 끝났다는 합의가 형성되고 있다.
+
+### 추가 레퍼런스
+
+- [Effective context engineering for AI agents (Anthropic)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- [ACON: Optimizing Context Compression for Long-horizon LLM Agents](https://arxiv.org/abs/2510.00615)
+- [Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (ICLR 2026)](https://arxiv.org/abs/2510.04618)
+- [AgentFold: Long-Horizon Web Agents with Proactive Context Management](https://arxiv.org/abs/2510.24699)
+- [Context Rot: How Increasing Input Tokens Impacts LLM Performance (Chroma Research)](https://www.trychroma.com/research/context-rot)
 
 ## 관련 문서
 

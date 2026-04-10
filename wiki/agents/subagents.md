@@ -1,14 +1,13 @@
 ---
 title: Subagents
-aliases: ["subagents"]
+aliases: ["subagents", subagents, Subagents]
 category: agents
 page_type: concept
 tags: [subagents, context-window, claude-code, parallel-agents]
-sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
+sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md, raw/2026-04-10-hot-ai-topics-100.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-10
 ---
-
 # Subagents
 
 Simon Willison이 [[agentic engineering guide]] Section 2에서 설명하는 핵심 패턴.
@@ -90,6 +89,46 @@ Claude Code가 Explore 서브에이전트에 준 지침:
 2. **병렬 리팩토링**: "Use subagents to update all templates" — 독립 파일에 유리
 3. **긴 로그 분석**: 전용 서브에이전트에 로그 읽게 하고 요약만 받기
 4. **테스트 반복 실행**: 테스트 러너 서브에이전트로 부모 컨텍스트 보호
+
+## 2026년 4월 핫토픽 업데이트
+
+### Subagents & Multi-Agent Orchestration in the Harness
+
+- **정의**: 메인 세션이 전용 컨텍스트·권한을 가진 서브에이전트에 작업을 위임하는 오케스트레이션 패턴.
+- **왜 다시 중요해졌나**: Claude Code가 `/agents`·`.claude/agents/`·`Agent` 툴·`parent_tool_use_id` 필드를 정식화했고, Anthropic 3월 harness 블로그에서 planner-generator-evaluator 3-agent 구조가 long-running 코딩을 가능하게 한 핵심이라고 공개하면서 "GAN-style agent loop" 패턴이 업계 표준 토론거리가 됐다.
+- **대표 자료**:
+- [Create custom subagents (Claude Code)](https://code.claude.com/docs/en/sub-agents)
+- [Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+- [Claude Agent SDK Overview](https://code.claude.com/docs/en/agent-sdk/overview)
+
+- [[ai-hot-topics-2026-04]]
+
+
+## 2026년 4월 핫토픽 메모
+
+### Subagents & Multi-Agent Orchestration in the Harness
+
+- **정의**: 메인 세션이 전용 컨텍스트·권한을 가진 서브에이전트에 작업을 위임하는 오케스트레이션 패턴.
+- **왜 중요한가**: Claude Code가 `/agents`·`.claude/agents/`·`Agent` 툴·`parent_tool_use_id` 필드를 정식화했고, Anthropic 3월 harness 블로그에서 planner-generator-evaluator 3-agent 구조가 long-running 코딩을 가능하게 한 핵심이라고 공개하면서 "GAN-style agent loop" 패턴이 업계 표준 토론거리가 됐다.
+- **대표 자료**:
+  - [Create custom subagents (Claude Code)](https://code.claude.com/docs/en/sub-agents)
+  - [Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+  - [Claude Agent SDK Overview](https://code.claude.com/docs/en/agent-sdk/overview)
+  - [Common workflows (Claude Code)](https://code.claude.com/docs/en/common-workflows)
+  - [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
+
+
+## 2026년 4월 핫토픽 맥락
+
+Claude Code가 `/agents`·`.claude/agents/`·`Agent` 툴·`parent_tool_use_id` 필드를 정식화했고, Anthropic 3월 harness 블로그에서 planner-generator-evaluator 3-agent 구조가 long-running 코딩을 가능하게 한 핵심이라고 공개하면서 "GAN-style agent loop" 패턴이 업계 표준 토론거리가 됐다.
+
+### 추가 레퍼런스
+
+- [Create custom subagents (Claude Code)](https://code.claude.com/docs/en/sub-agents)
+- [Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+- [Claude Agent SDK Overview](https://code.claude.com/docs/en/agent-sdk/overview)
+- [Common workflows (Claude Code)](https://code.claude.com/docs/en/common-workflows)
+- [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
 
 ## 관련 문서
 

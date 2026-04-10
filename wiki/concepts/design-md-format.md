@@ -1,6 +1,6 @@
 ---
 title: "DESIGN.md 포맷"
-aliases: ["design-md format", "DESIGN.md", "design.md", "design-md"]
+aliases: ["DESIGN.md 포맷", "design-md format", "DESIGN.md", "design.md", "design-md"]
 category: concepts
 page_type: concept
 tags: [design-md, design-system, markdown, ai-agents, portability]

@@ -1,5 +1,31 @@
 # Activity Log
 
+## 2026-04-10 — Lint: hot-topics ingest 정리
+- **대상**: hot topics ingest 결과 + 위키 전역 링크/프론트매터 무결성
+- **수행 내용**:
+  - alias-aware 위키링크 점검
+  - 누락 alias 보강
+  - 누락 `sources` 프론트매터 2건 수정
+  - 신규 보강 페이지 2개 추가: `wiki/concepts/lost-in-the-middle.md`, `wiki/tooling/tesseract-js.md`
+  - `index.md`, `log.md` 정리
+- **결과**:
+  - alias-aware 깨진 위키링크: 34건 → 0건
+  - `entity` / `project-internal`의 누락 `project` 필드: 0건
+  - `index.md` 등록 누락 페이지: 0건
+
+## 2026-04-10 — Ingest: 2026년 4월 AI 개발 핫토픽 100선
+- **소스**: `raw/2026-04-10-hot-ai-topics-100.md`
+- **결과 요약**:
+  - 이번 raw가 반영된 전체 페이지: 98개
+  - `entity`: 39개
+  - `concept`: 53개
+  - `summary`: 3개
+  - `case-study`: 1개
+  - `project-internal`: 2개
+- **메모**:
+  - 링크가 많은 큐레이션 문서였기 때문에, 개별 원문을 추가 수집한 것이 아니라 raw 내부 신호를 기준으로 허브/개념 페이지로 분해했다.
+  - 후속 확장이 필요한 항목은 entity 허브에서 별도 source ingest로 깊이를 늘리는 방식이 적합하다.
+
 ## 2026-04-10 (오후) — Ingest: "프롬프트에서 하네스까지" AI 에이전틱 패턴 4년 연대기
 - **소스**: https://bits-bytes-nn.github.io/insights/agentic-ai/2026/04/05/evolution-of-ai-agentic-patterns.html
 - **성격**: 2022-2026 AI 에이전틱 개발 패러다임 3 에라(Prompt → Context → Harness Engineering) 연대기 + 부검 보고서

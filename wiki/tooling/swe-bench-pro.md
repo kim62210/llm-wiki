@@ -1,0 +1,51 @@
+---
+title: SWE-bench Pro
+category: tooling
+page_type: entity
+project: SWE-bench Pro
+tags: [tooling, entity, swe, bench, pro, model-releases-and-benchmarks]
+sources: [raw/2026-04-10-hot-ai-topics-100.md]
+created: 2026-04-10
+updated: 2026-04-10
+---
+# SWE-bench Pro
+
+이 페이지는 SWE-bench Pro를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 Scale AI가 구축한 장기 호흡(long-horizon) 소프트웨어 엔지니어링 벤치마크이기 때문이다.
+
+## 정의
+
+Scale AI가 구축한 장기 호흡(long-horizon) 소프트웨어 엔지니어링 벤치마크.
+
+## 왜 지금 중요한가
+
+41개 저장소 1,865개 태스크(공개 731 + Held-out 858 + 상용 276)로 GPL/상용 코드 기반 오염 방지 설계, SWE-bench Verified가 80%를 넘어 포화되자 2026년 사실상의 후속 표준으로 부상했고 GLM-5.1 58.4%/GPT-5.4-pro 59.1% 등 최상위 모델도 60% 문턱에서 분투 중이다.
+
+## 개요
+
+이 페이지는 **SWE-bench Pro** 자체를 지속적으로 누적·갱신하기 위한 허브 페이지다.
+
+## 대표 자료
+
+- [SWE-Bench Pro Paper Landing — Scale Labs](https://labs.scale.com/papers/swe_bench_pro)
+- [SWE-Bench Pro Leaderboard (Public) — Scale](https://labs.scale.com/leaderboard/swe_bench_pro_public)
+- [SWE-Bench Pro Leaderboard (Private) — Scale](https://labs.scale.com/leaderboard/swe_bench_pro_private)
+- [SWE-Bench Pro Project — Scale](https://scaleapi.github.io/SWE-bench_Pro-os/)
+- [scaleapi/SWE-bench_Pro-os — GitHub](https://github.com/scaleapi/SWE-bench_Pro-os)
+
+## 2026년 4월 핫토픽 맥락
+
+41개 저장소 1,865개 태스크(공개 731 + Held-out 858 + 상용 276)로 GPL/상용 코드 기반 오염 방지 설계, SWE-bench Verified가 80%를 넘어 포화되자 2026년 사실상의 후속 표준으로 부상했고 GLM-5.1 58.4%/GPT-5.4-pro 59.1% 등 최상위 모델도 60% 문턱에서 분투 중이다.
+
+### 추가 레퍼런스
+
+- [SWE-Bench Pro Paper Landing — Scale Labs](https://labs.scale.com/papers/swe_bench_pro)
+- [SWE-Bench Pro Leaderboard (Public) — Scale](https://labs.scale.com/leaderboard/swe_bench_pro_public)
+- [SWE-Bench Pro Leaderboard (Private) — Scale](https://labs.scale.com/leaderboard/swe_bench_pro_private)
+- [SWE-Bench Pro Project — Scale](https://scaleapi.github.io/SWE-bench_Pro-os/)
+- [scaleapi/SWE-bench_Pro-os — GitHub](https://github.com/scaleapi/SWE-bench_Pro-os)
+
+## 관련 문서
+
+- [[ai-hot-topics-2026-04]]
+- [[qwen3-6-plus]]
+- [[terminal-bench-2-0]]

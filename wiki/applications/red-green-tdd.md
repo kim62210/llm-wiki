@@ -1,6 +1,6 @@
 ---
 title: Red/Green TDD with Coding Agents
-aliases: ["red-green TDD", "red/green TDD", "Red/Green TDD"]
+aliases: ["red-green TDD", "red-green tdd", "red/green TDD", "Red/Green TDD"]
 category: applications
 page_type: concept
 tags: [tdd, testing, prompts, red-green, agents]

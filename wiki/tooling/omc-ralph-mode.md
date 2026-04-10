@@ -1,6 +1,6 @@
 ---
 title: OMC Ralph Mode
-aliases: ["OMC Ralph Mode"]
+aliases: ["OMC Ralph Mode", "omc ralph mode", "omc-ralph-mode"]
 category: tooling
 page_type: project-internal
 project: oh-my-claudecode

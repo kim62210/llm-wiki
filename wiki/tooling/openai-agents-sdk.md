@@ -1,0 +1,51 @@
+---
+title: OpenAI Agents SDK
+category: tooling
+page_type: entity
+project: OpenAI Agents SDK
+tags: [tooling, entity, openai, agents, sdk, dev-tooling-and-frameworks]
+sources: [raw/2026-04-10-hot-ai-topics-100.md]
+created: 2026-04-10
+updated: 2026-04-10
+---
+# OpenAI Agents SDK
+
+이 페이지는 OpenAI Agents SDK를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 Swarm의 후속 프로덕션 버전인 OpenAI 공식 에이전트 오케스트레이션 SDK이기 때문이다.
+
+## 정의
+
+Swarm의 후속 프로덕션 버전인 OpenAI 공식 에이전트 오케스트레이션 SDK.
+
+## 왜 지금 중요한가
+
+2025년 3월 프로덕션 릴리스 이후 Agents·Handoffs·Guardrails 3대 프리미티브와 Sessions·Tracing·Voice(gpt-realtime-1.5)까지 통합되며 2026년 4월 v0.13.x 시리즈에서 MCP·100+ 모델 호환으로 확장됐다.
+
+## 개요
+
+이 페이지는 **OpenAI Agents SDK** 자체를 지속적으로 누적·갱신하기 위한 허브 페이지다.
+
+## 대표 자료
+
+- [OpenAI Agents Python Docs](https://openai.github.io/openai-agents-python/)
+- [openai/openai-agents-python GitHub](https://github.com/openai/openai-agents-python)
+- [openai-agents PyPI](https://pypi.org/project/openai-agents/)
+- [OpenAI Swarm (Legacy/Educational) GitHub](https://github.com/openai/swarm)
+- [OpenAI Agents TypeScript SDK](https://openai.github.io/openai-agents-js/)
+
+## 2026년 4월 핫토픽 맥락
+
+2025년 3월 프로덕션 릴리스 이후 Agents·Handoffs·Guardrails 3대 프리미티브와 Sessions·Tracing·Voice(gpt-realtime-1.5)까지 통합되며 2026년 4월 v0.13.x 시리즈에서 MCP·100+ 모델 호환으로 확장됐다.
+
+### 추가 레퍼런스
+
+- [OpenAI Agents Python Docs](https://openai.github.io/openai-agents-python/)
+- [openai/openai-agents-python GitHub](https://github.com/openai/openai-agents-python)
+- [openai-agents PyPI](https://pypi.org/project/openai-agents/)
+- [OpenAI Swarm (Legacy/Educational) GitHub](https://github.com/openai/swarm)
+- [OpenAI Agents TypeScript SDK](https://openai.github.io/openai-agents-js/)
+
+## 관련 문서
+
+- [[ai-hot-topics-2026-04]]
+- [[claude-agent-sdk]]
+- [[vercel-ai-sdk]]

@@ -4,9 +4,7 @@ aliases: ["agentic engineering"]
 category: concepts
 page_type: concept
 tags: [agentic-engineering, coding-agents, definition, paradigm]
-sources:
-  - raw/2026-04-09-simon-willison-agentic-engineering-patterns.md
-  - raw/2026-04-09-evolution-of-ai-agentic-patterns.md
+sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md, raw/2026-04-09-evolution-of-ai-agentic-patterns.md]
 created: 2026-04-09
 updated: 2026-04-09
 ---

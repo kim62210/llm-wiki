@@ -1,6 +1,6 @@
 ---
 title: LLM as OS (운영체제로서의 LLM)
-aliases: ["llm as os", "LLM OS", "LLM as operating system"]
+aliases: ["llm as os", "LLM as OS", "LLM OS", "LLM as operating system"]
 category: concepts
 page_type: concept
 tags: [karpathy, metaphor, llm-architecture, context-engineering, mental-model]
