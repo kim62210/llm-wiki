@@ -33,6 +33,18 @@
   - `paper` 1개
   - `summary` 3개
   - `entity` 1개
+
+## 2026-04-10 — Ingest 계속: fourth standalone promotion batch
+- **대상**: 남은 high-signal fetched source (agent RL / planning / MCP spec)
+- **생성 페이지**:
+  - `paper` 3개
+  - `summary` 2개
+- **추가된 주요 페이지**:
+  - `wiki/papers/agentgym-rl-paper.md`
+  - `wiki/papers/reveal-paper.md`
+  - `wiki/papers/research-learning-to-reason-with-search-paper.md`
+  - `wiki/agents/deep-research-agents-roadmap.md`
+  - `wiki/tooling/mcp-specification-2025-11-25.md`
 - **추가된 주요 페이지**:
   - `wiki/papers/deep-research-agents-roadmap-paper.md`
   - `wiki/agents/skywork-deepresearchagent.md`

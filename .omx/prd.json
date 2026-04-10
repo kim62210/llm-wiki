@@ -38,15 +38,15 @@
         "fresh broken wikilink check 결과가 0이다",
         "fresh index missing-page check 결과가 0이다"
       ],
-      "passes": false
+      "passes": true
     },
     {
-      "id": "US-003",
-      "title": "deep research / MCP / context engineering 계열 standalone page 추가 승격",
-      "priority": 3,
+      "id": "US-004",
+      "title": "남은 MCP / deep research 구현 / agent RL 소스를 추가 승격",
+      "priority": 4,
       "acceptanceCriteria": [
         "새 standalone 페이지가 추가로 5개 이상 생성된다",
-        "새 페이지들은 올바른 frontmatter를 가진다",
+        "새 페이지들은 적절한 타입(summary/paper/entity)으로 분류된다",
         "index.md와 log.md가 새 배치를 반영한다",
         "fresh broken wikilink check 결과가 0이다",
         "fresh index missing-page check 결과가 0이다"

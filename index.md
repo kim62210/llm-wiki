@@ -95,6 +95,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 **summary**
 - [Agent Skills Specification](wiki/agents/agent-skills-specification.md) — Agent Skills 포맷의 디렉토리 구조와 SKILL.md 스펙을 정리한 공식 specification 요약
 - [Anthropic Multi-Agent Research System](wiki/agents/anthropic-multi-agent-research-system.md) — Claude Research 백엔드에 적용된 orchestrator-worker 멀티 에이전트 시스템의 구조와 교훈 요약
+- [Deep Research Agents Roadmap](wiki/agents/deep-research-agents-roadmap.md) — deep research agent의 구성 요소, 한계, 향후 연구 로드맵을 체계적으로 정리한 문서 요약
 - [Effective Context Engineering for AI Agents (Anthropic)](wiki/concepts/effective-context-engineering-anthropic.md) — Anthropic이 context engineering을 Write / Select / Compress / Isolate 전략으로 정리한 대표 글 요약
 - ["프롬프트에서 하네스까지 — AI 에이전틱 패턴 4년의 기록"](wiki/agents/evolution-of-agentic-patterns.md) — 이 글의 중심 명제는 Chad Fowler의 "relocating rigor" 원칙이다:
 - [Anthropic Harness Design for Long-Running Apps (Prithvi Rajasekaran, 2026-03)](wiki/agents/anthropic-harness-design.md) — 저자: Prithvi Rajasekaran (Anthropic Labs) · 발행: 2026-03-24 · 출처: anthropic.com/engineering/harness-design-long-running-apps
@@ -133,10 +134,13 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [ACON: Optimizing Context Compression for Long-horizon LLM Agents](wiki/papers/acon-context-compression-paper.md) — 장기 실행 에이전트의 문맥 압축을 단순 요약 문제가 아니라 **실패 원인 기반 최적화 문제**로 다룬 논문이다.
 - [ARE: Scaling Up Agent Environments and Evaluations](wiki/papers/are-gaia2-paper.md) — 에이전트 평가를 환경·도구·시간 제약을 포함한 실행 문제로 끌어올린 ARE / Gaia2 논문이다.
 - [AgentFold: Long-Horizon Web Agents with Proactive Context Management](wiki/papers/agentfold-paper.md) — 웹 에이전트가 단순히 로그를 누적하는 대신, 히스토리를 능동적으로 접어 넣는 **proactive context management** 패러다임을 제안한다.
+- [AgentGym-RL: Training LLM Agents for Long-Horizon Decision Making through Multi-Turn Reinforcement Learning](wiki/papers/agentgym-rl-paper.md) — 장기 의사결정 에이전트를 multi-turn RL로 훈련시키는 프레임워크 논문이다.
 - [Deep Research Agents: A Systematic Examination and Roadmap](wiki/papers/deep-research-agents-roadmap-paper.md) — deep research agent를 planning / retrieval / synthesis / verification 문제로 정리한 로드맵형 논문이다.
 - [Context Engineering for AI Agents in Open-Source Software](wiki/papers/context-engineering-open-source-software-paper.md) — 오픈소스 소프트웨어 작업에서 context engineering을 저장소·문서·작업 이력 설계 문제로 분석한 논문이다.
 - [Memory in the Age of AI Agents](wiki/papers/memory-in-the-age-of-ai-agents-paper.md) — 에이전트 메모리 연구를 token-level, parametric, latent memory와 factual / experiential / working memory 축으로 재정리한 대형 서베이다.
 - [Plan-and-Act: Improving Planning of Agents for Long-Horizon Tasks](wiki/papers/plan-and-act-paper.md) — 장기 과제에서 계획과 실행을 분리하는 접근을 제안한 planning 논문이다.
+- [ReSearch: Learning to Reason with Search for LLMs via Reinforcement Learning](wiki/papers/research-learning-to-reason-with-search-paper.md) — search policy와 reasoning policy를 함께 RL로 최적화하는 논문이다.
+- [ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](wiki/papers/reveal-paper.md) — reliable self-verification으로 코드 에이전트를 진화시키는 구조를 제안한 논문이다.
 - [Scaling Long-Horizon LLM Agent via Context-Folding](wiki/papers/context-folding-paper.md) — 서브태스크를 branch한 뒤 fold하여 요약으로 되돌리는 **Context-Folding**을 RL 프레임워크로 학습시킨 논문이다.
 - [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](wiki/papers/agentic-rl-survey-paper.md) — LLM 에이전트 강화학습의 문제 설정·알고리즘·평가 지형을 정리한 서베이다.
 - [ReAcTree: Hierarchical LLM Agent Trees with Control Flow for Long-Horizon Task Planning](wiki/papers/reactree-paper.md) — 단일 trajectory 대신 agent tree와 control flow node를 도입해 장기 계획 문제를 푸는 hierarchical planning 논문이다.
@@ -188,6 +192,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 
 **summary**
 - [Effective Harnesses for Long-Running Agents](wiki/tooling/effective-harnesses-for-long-running-agents.md) — initializer agent와 coding agent를 분리해 장기 실행 에이전트의 세션 연속성을 확보하는 하네스 설계 글 요약
+- [MCP Specification 2025-11-25](wiki/tooling/mcp-specification-2025-11-25.md) — MCP의 architecture, protocol, authorization, client/server features를 정의하는 공식 스펙 요약
 - [Scaling Managed Agents](wiki/tooling/scaling-managed-agents.md) — brain / hands / session을 분리하는 managed agent 인프라 설계 글 요약
 - [The 2026 MCP Roadmap](wiki/tooling/the-2026-mcp-roadmap.md) — MCP의 우선순위가 transport, agent communication, governance, enterprise readiness로 이동했음을 설명하는 공식 로드맵 요약
 - [What is the Model Context Protocol (MCP)?](wiki/tooling/what-is-mcp.md) — MCP의 기본 개념과 host / client / server 구조를 빠르게 이해하기 위한 입문 요약
