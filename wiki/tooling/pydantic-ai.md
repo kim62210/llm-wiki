@@ -89,6 +89,12 @@ Pydantic AI는 현재 시점에서 하나의 제품/모델/프레임워크 허�
 - 도입 판단 시 기능 목록만 보지 말고, 공식 문서·릴리스 노트·벤치마크가 서로 얼마나 일관되게 같은 메시지를 주는지 확인한다.
 - 비교 후보와의 차이는 API/운영 통합, 성능 수치, 생태계 성숙도 같은 기준으로 정리하는 것이 좋다.
 
+## 하위 문서 읽기 경로
+
+- [[pydantic-ai-agent-core|Pydantic AI Agent Core Concepts]] — Agent 추상화, 타입 계약, 실행 표면을 이해하는 기본 문서
+- [[pydantic-ai-mcp-overview|Pydantic AI MCP Overview]] — Python agent에 MCP capability를 붙이는 통합 관점
+- [[pydantic-ai-durable-execution-overview|Pydantic AI Durable Execution Overview]] — Temporal/DBOS/Prefect와 결합한 장기 실행 전략
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04]]

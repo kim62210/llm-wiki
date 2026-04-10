@@ -226,6 +226,14 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [OpenAI Agents SDK Sessions](wiki/tooling/openai-agents-sdk-sessions.md) — Session 인터페이스, Conversations/Memory 세션, compaction을 설명하는 공식 가이드 요약
 - [OpenAI Agents SDK MCP](wiki/tooling/openai-agents-sdk-model-context-protocol.md) — hosted MCP tools, streamable HTTP, stdio 연결 방식을 정리한 공식 가이드 요약
 
+- [Pydantic AI Agent Core Concepts](wiki/tooling/pydantic-ai-agent-core.md) — Agent를 타입 계약과 실행 표면 중심으로 설명하는 Pydantic AI 핵심 개념 요약
+- [Pydantic AI MCP Overview](wiki/tooling/pydantic-ai-mcp-overview.md) — Pydantic AI가 MCP client / FastMCP / built-in MCP tool을 지원하는 방식을 정리한 문서 요약
+- [Pydantic AI Durable Execution Overview](wiki/tooling/pydantic-ai-durable-execution-overview.md) — Temporal·DBOS·Prefect와의 durable execution 통합 전략 요약
+- [Deep Agents Quickstart](wiki/tooling/deep-agents-quickstart.md) — planning·filesystem·subagents를 갖춘 deep agent를 빠르게 실행하는 공식 입문 경로
+- [Deep Agents Subagents](wiki/tooling/deep-agents-subagents.md) — context isolation 중심의 subagent 설계와 best practices 요약
+- [Deep Agents Memory](wiki/tooling/deep-agents-memory.md) — scoped memory와 forgetting 정책을 설명하는 문서 요약
+- [Deep Agents Going to Production](wiki/tooling/deep-agents-production.md) — memory·sandbox·guardrails·frontend를 포함한 운영 전환 가이드 요약
+
 **project-internal · `Claude Code`**
 - [Claude Code Hooks System](wiki/tooling/claude-code-hooks-system.md) — 이 페이지는 Claude Code 내부에서 Claude Code Hooks System이 어떤 역할을 하는지 정리한 프로젝트 스냅샷이다. 핵심 범위는 툴 호출 전후·세션 이벤트에 사용자 정의 스크립트를 끼워 넣는 settings.json 기반 확장 훅이다.
 

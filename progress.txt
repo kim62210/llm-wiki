@@ -67,3 +67,9 @@
   - LangGraph summaries: quickstart, persistence, durable-execution
   - enriched parent entity pages with reading-path links
 - Fresh verification pending after batch integration.
+
+- Added recursive framework-doc batch 2:
+  - Pydantic AI summaries: agent core, MCP overview, durable execution overview
+  - Deep Agents summaries: quickstart, subagents, memory, production
+  - enriched parent entity pages with reading-path links
+- Fresh verification pending after batch integration.

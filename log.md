@@ -1,3 +1,18 @@
+## 2026-04-10 — Recursive ingest 배치 (Pydantic AI / Deep Agents 세부 문서)
+- **대상**: 공식 세부 문서 7개 (`pydantic.dev` 3개, `docs.langchain.com` 4개)
+- **생성 페이지**:
+  - `wiki/tooling/pydantic-ai-agent-core.md`
+  - `wiki/tooling/pydantic-ai-mcp-overview.md`
+  - `wiki/tooling/pydantic-ai-durable-execution-overview.md`
+  - `wiki/tooling/deep-agents-quickstart.md`
+  - `wiki/tooling/deep-agents-subagents.md`
+  - `wiki/tooling/deep-agents-memory.md`
+  - `wiki/tooling/deep-agents-production.md`
+- **수행 내용**:
+  - `raw/recursive-sources/2026-04-10-pydantic-deepagents/` 아래 원문 snapshot 저장
+  - summary 페이지에 구조도 / 비교표 / 체크리스트를 추가해 심화 위키 수준으로 작성
+  - parent entity(`pydantic-ai.md`, `deep-agents.md`)에 하위 문서 읽기 경로 추가
+
 ## 2026-04-10 — Recursive ingest 배치 (OpenAI Agents SDK / LangGraph 세부 문서)
 - **대상**: 공식 세부 문서 7개 (`openai-agents-js` 4개, `docs.langchain.com` 3개)
 - **생성 페이지**:
