@@ -1,3 +1,14 @@
+## 2026-04-10 — 500-link corpus coverage audit
+- **대상**: `raw/2026-04-10-hot-ai-topics-100.md`의 원본 링크 500개
+- **검증 결과**:
+  - 원문 링크 개수: `500`
+  - 정규화된 고유 URL(manifest refs): `452`
+  - manifest snapshot 존재: `452 / 452`
+  - manifest raw path의 wiki 직접 참조: `452 / 452`
+  - `raw/hot-topics-sources/2026-04-10/` 전체 경로(스냅샷 + topic packet) wiki 참조: `549 / 549`
+- **판정**:
+  - 중복 링크를 포함한 500-link corpus는 현재 위키에 모두 흡수되었고, 추가 미반영 source는 발견되지 않음
+
 ## 2026-04-10 — Recursive summary 심화 배치 (Mastra / BAML / Instructor / Vercel)
 - **대상**: 최신 recursive summary 7개
 - **수행 내용**:

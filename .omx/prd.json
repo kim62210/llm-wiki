@@ -162,6 +162,18 @@
         "fresh index missing-page check 결과가 0이다"
       ],
       "passes": true
+    },
+    {
+      "id": "US-014",
+      "title": "원본 500-link corpus의 ingest 완결성 검증",
+      "priority": 14,
+      "acceptanceCriteria": [
+        "raw/2026-04-10-hot-ai-topics-100.md의 URL 매치 수가 계산된다",
+        "manifest refs 452개가 모두 raw snapshot 파일로 존재한다",
+        "manifest refs 452개가 모두 wiki에서 직접 참조된다",
+        "hot-topics-sources/2026-04-10 트리의 snapshot/topic packet 경로가 모두 wiki에서 참조된다"
+      ],
+      "passes": true
     }
   ]
 }
