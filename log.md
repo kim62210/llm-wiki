@@ -1,5 +1,18 @@
 # Activity Log
 
+## 2026-04-10 — Ingest 계속: sixth standalone promotion batch
+- **대상**: 남은 source-specific 고가치 문서
+- **생성 페이지**:
+  - `summary` 3개
+  - `paper` 1개
+  - `concept summary` 1개
+- **추가된 주요 페이지**:
+  - `wiki/concepts/the-lethal-trifecta-article.md`
+  - `wiki/applications/writing-about-agentic-engineering-patterns.md`
+  - `wiki/papers/loop-paper.md`
+  - `wiki/rag/context-rot-report.md`
+  - `wiki/tooling/claude-opus-4-5-release-notes.md`
+
 ## 2026-04-10 — Ingest 계속: standalone source pages 추가 승격
 - **대상**: 이미 수집된 hot-topic raw source 중 고가치 공식 글/스펙/논문
 - **생성 페이지**:

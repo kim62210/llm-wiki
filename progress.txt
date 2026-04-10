@@ -32,3 +32,8 @@
   - entity: claude-agent-sdk-typescript, claude-opus-4-5
   - case-study: openhands-swe-bench-scaling-notes
 - Fresh verification: broken wikilinks=0, missing index pages=0, batch5 pages=5.
+
+- Added sixth standalone promotion batch:
+  - summary: the-lethal-trifecta-article, writing-about-agentic-engineering-patterns, context-rot-report, claude-opus-4-5-release-notes
+  - paper: loop-paper
+- Fresh verification: broken wikilinks=0, missing index pages=0, batch6 pages=5.

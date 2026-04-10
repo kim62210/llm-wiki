@@ -76,6 +76,9 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [GraphRAG / LightRAG / LazyGraphRAG in Production](wiki/rag/graphrag-in-production.md) — title: GraphRAG / LightRAG / LazyGraphRAG in Production
 - [Zep / Graphiti Temporal Knowledge Graph Memory](wiki/rag/temporal-knowledge-graph-memory.md) — title: Zep / Graphiti Temporal Knowledge Graph Memory
 
+**summary**
+- [Context Rot Report (Chroma)](wiki/rag/context-rot-report.md) — context window 크기와 실제 유효 컨텍스트 사이의 차이를 강조한 Chroma 기술 보고서 요약
+
 **case-study**
 - [Qwen3 / Voyage-4 Embedding Leaderboard Shakeup](wiki/rag/embedding-leaderboard-shakeup-2026.md) — title: Qwen3 / Voyage-4 Embedding Leaderboard Shakeup
 
@@ -120,6 +123,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 
 **summary**
 - ["Google Stitch DESIGN.md 가이드 (요약)"](wiki/applications/stitch-design-md-guide.md) — Google Stitch 공식 문서의 DESIGN.MD 섹션 3개 페이지(overview/format/usage)를 한국어로 요약한 문서. 원본은 raw/2026-04-09-stitch-design-md.md에 보존.
+- [Writing about Agentic Engineering Patterns](wiki/applications/writing-about-agentic-engineering-patterns.md) — Simon Willison이 Agentic Engineering Patterns 프로젝트를 왜 시작했는지 설명한 글 요약
 - ["Simon Willison's Prompts Library"](wiki/applications/prompts-library.md) — Simon Willison이 agentic engineering guide 부록 "Prompts I use"에 모아둔, 본인이 상시 사용하는 프롬프트 모음. 지속적으로 업데이트되는 섹션이다.
 - [2026년 4월 AI 개발 핫토픽 100선](wiki/applications/ai-hot-topics-2026-04.md) — title: 2026년 4월 AI 개발 핫토픽 100선
 - [Agentic Engineering Patterns 가이드 (Simon Willison)](wiki/applications/agentic-engineering-guide.md) — Simon Willison이 2026-02-23에 시작한 가이드 시리즈. 코딩 에이전트(Claude Code, OpenAI Codex, Gemini CLI 등)를 사용하는 프로페셔널 소프트웨어 엔지니어를 위한 패턴 모음이다. 1994년 GoF *Design Patterns* 책에서 영감
@@ -150,6 +154,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](wiki/papers/chunkkv-paper.md) — 토큰 단위 중요도 대신 의미 청크를 보존 단위로 삼아 KV cache를 압축하는 기법을 제안한 논문이다.
 - [Lost in the Middle: How Language Models Use Long Contexts](wiki/papers/lost-in-the-middle-paper.md) — 긴 컨텍스트에서 관련 정보가 중간에 있을 때 LLM 성능이 크게 저하된다는 고전적이면서도 여전히 중요한 논문이다.
 - [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](wiki/papers/deepseek-r1-paper.md) — 인간 라벨 reasoning trace 없이도 pure RL만으로 reasoning 패턴이 출현할 수 있음을 강하게 보여준 전환점 논문이다.
+- [Reinforcement Learning for Long-Horizon Interactive LLM Agents](wiki/papers/loop-paper.md) — 장기 상호작용 에이전트를 RL 문제로 정식화한 초기 핵심 논문이다.
 
 ### Tooling (도구)
 
@@ -157,8 +162,10 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [ARC-AGI-2](wiki/tooling/arc-agi-2.md) — 이 페이지는 ARC-AGI-2를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 ARC Prize가 운영하는 추상 추론/유동지능(fluid intelligence) 벤치마크 2세대이기 때문이다.
 - [BAML](wiki/tooling/baml.md) — 이 페이지는 BAML를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 프롬프트를 타입 안전한 함수로 정의하는 구조화 출력 전용 DSL이기 때문이다.
 - [Claude Agent SDK](wiki/tooling/claude-agent-sdk.md) — 이 페이지는 Claude Agent SDK를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 Claude Code의 에이전트 루프·툴·컨텍스트 관리를 라이브러리화한 Anthropic SDK이기 때문이다.
+- [Claude Agent SDK TypeScript](wiki/tooling/claude-agent-sdk-typescript.md) — Claude Agent SDK의 TypeScript 구현 저장소를 추적하는 허브 페이지.
 - [Claude Code](wiki/tooling/claude-code.md) — Anthropic이 제공하는 공식 coding agent. Simon Willison이 agentic engineering guide 전반에 걸쳐 가장 많이 레퍼런스하는 도구다.
 - [Claude Agent SDK TypeScript](wiki/tooling/claude-agent-sdk-typescript.md) — Claude Agent SDK의 TypeScript 구현 저장소를 추적하는 허브 페이지.
+- [Claude Opus 4.5](wiki/tooling/claude-opus-4-5.md) — 장기 자율 작업과 고난도 coding workflow를 겨냥한 Anthropic high-end frontier 모델 허브.
 - [Claude Opus 4.6](wiki/tooling/claude-opus-4-6.md) — 이 페이지는 Claude Opus 4.6를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 2026년 2월 Anthropic이 공개한 플래그십 모델 (1M 컨텍스트)이기 때문이다.
 - [Claude Opus 4.5](wiki/tooling/claude-opus-4-5.md) — 장기 자율 작업과 고난도 coding workflow를 겨냥한 Anthropic high-end frontier 모델 허브.
 - [Claude Sonnet 4.5](wiki/tooling/claude-sonnet-4-5.md) — agentic coding, computer use, 장시간 작업 유지력 측면에서 중요한 Anthropic frontier 모델 허브.
@@ -196,6 +203,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 **summary**
 - [Claude Agent SDK Overview](wiki/tooling/claude-agent-sdk-overview.md) — Claude Agent SDK의 세션, agent loop, streaming, approval 개념을 한 번에 훑는 공식 개요 요약
 - [Effective Harnesses for Long-Running Agents](wiki/tooling/effective-harnesses-for-long-running-agents.md) — initializer agent와 coding agent를 분리해 장기 실행 에이전트의 세션 연속성을 확보하는 하네스 설계 글 요약
+- [Claude Opus 4.5 Release Notes](wiki/tooling/claude-opus-4-5-release-notes.md) — Claude Opus 4.5 출시 글에서 모델 성능과 제품군 방향성을 함께 요약한 문서
 - [MCP Specification 2025-11-25](wiki/tooling/mcp-specification-2025-11-25.md) — MCP의 architecture, protocol, authorization, client/server features를 정의하는 공식 스펙 요약
 - [MCP Roadmap (Development)](wiki/tooling/mcp-roadmap-development.md) — workstream, working group, governance, SEP 흐름을 중심으로 정리한 MCP development roadmap 요약
 - [Scaling Managed Agents](wiki/tooling/scaling-managed-agents.md) — brain / hands / session을 분리하는 managed agent 인프라 설계 글 요약
@@ -249,6 +257,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Harness Quadrants (하네스 4사분면)](wiki/concepts/harness-quadrants.md) — Harness Quadrants는 Martin Fowler와 Birgitta Böckeler(ThoughtWorks)가 2026년 2월에 제시한 하네스 구성요소의 2×2 분류 체계다. harness engineering에서 "모델을 제외한 모든 것"에 해당하는 하네스를 네 영역으로 쪼개
 - [Hoard Things You Know How To Do](wiki/concepts/hoard-things-you-know-how-to-do.md) — Simon Willison이 agentic engineering guide에서 제시하는 핵심 프로페셔널 스킬. "할 줄 아는 것을 축적하라."
 - [Lethal Trifecta (치명적 3요소)](wiki/concepts/lethal-trifecta.md) — Lethal Trifecta는 Simon Willison이 정리한 AI 에이전트 보안 원칙이다. 에이전트가 다음 세 가지 능력을 동시에 갖추면 보안 사고는 불가피하다:
+- [The Lethal Trifecta for AI Agents](wiki/concepts/the-lethal-trifecta-article.md) — Simon Willison이 lethal trifecta를 직접 설명하며 왜 이 규칙이 agent 보안 설계의 출발점이어야 하는지 경고한 원문 글 요약
 - [LLM as OS (운영체제로서의 LLM)](wiki/concepts/llm-as-os.md) — LLM as OS는 Andrej Karpathy가 제안한 메타포로, LLM 시스템을 운영체제(Operating System) 에 빗대어 이해하는 멘탈 모델이다. 이 비유는 context engineering 시대의 표준 프레임워크가 되었다.
 - [LLM-as-Judge Calibration & Reliability](wiki/concepts/llm-as-judge-calibration.md) — title: LLM-as-Judge Calibration & Reliability
 - [Load-Bearing Harness (하네스 load-bearing 테스트)](wiki/concepts/load-bearing-harness.md) — Load-Bearing Harness는 하네스 엔지니어링의 메타 원칙이다: 하네스의 어떤 컴포넌트가 정말로 성능을 떠받치고 있는지는 오직 그것을 제거해봐야 알 수 있다. 그리고 그 답은 모델 버전이 바뀔 때마다 달라진다.
