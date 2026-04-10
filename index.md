@@ -234,6 +234,14 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Deep Agents Memory](wiki/tooling/deep-agents-memory.md) — scoped memory와 forgetting 정책을 설명하는 문서 요약
 - [Deep Agents Going to Production](wiki/tooling/deep-agents-production.md) — memory·sandbox·guardrails·frontend를 포함한 운영 전환 가이드 요약
 
+- [Mastra Get Started](wiki/tooling/mastra-get-started.md) — Mastra의 quickstart와 프레임워크 통합 출발점을 설명하는 공식 docs 요약
+- [What is BAML?](wiki/tooling/baml-what-is-baml.md) — BAML을 structured output용 DSL과 생성된 클라이언트 관점에서 설명하는 공식 문서 요약
+- [Instructor Overview](wiki/tooling/instructor-overview.md) — validation·retry·schema 중심의 structured output 라이브러리 입문 요약
+- [AI SDK Core Overview](wiki/tooling/vercel-ai-sdk-core-overview.md) — Vercel AI SDK Core primitives를 정리하는 공식 overview
+- [Vercel AI SDK Agents Overview](wiki/tooling/vercel-ai-sdk-agents-overview.md) — ToolLoopAgent 중심의 agent 레이어 설계 요약
+- [Vercel AI SDK Tool Calling](wiki/tooling/vercel-ai-sdk-tool-calling.md) — strict mode, approval, multi-step calls를 정리한 공식 문서 요약
+- [Vercel AI SDK MCP Tools](wiki/tooling/vercel-ai-sdk-mcp-tools.md) — MCP client와 tools/resources/prompts 통합을 다루는 공식 문서 요약
+
 **project-internal · `Claude Code`**
 - [Claude Code Hooks System](wiki/tooling/claude-code-hooks-system.md) — 이 페이지는 Claude Code 내부에서 Claude Code Hooks System이 어떤 역할을 하는지 정리한 프로젝트 스냅샷이다. 핵심 범위는 툴 호출 전후·세션 이벤트에 사용자 정의 스크립트를 끼워 넣는 settings.json 기반 확장 훅이다.
 

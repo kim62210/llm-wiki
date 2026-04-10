@@ -1,3 +1,18 @@
+## 2026-04-10 — Recursive ingest 배치 (Mastra / BAML / Instructor / Vercel AI SDK 세부 문서)
+- **대상**: 공식 세부 문서 7개 (`mastra.ai` 1개, `docs.boundaryml.com` 1개, `python.useinstructor.com` 1개, `ai-sdk.dev` 4개)
+- **생성 페이지**:
+  - `wiki/tooling/mastra-get-started.md`
+  - `wiki/tooling/baml-what-is-baml.md`
+  - `wiki/tooling/instructor-overview.md`
+  - `wiki/tooling/vercel-ai-sdk-core-overview.md`
+  - `wiki/tooling/vercel-ai-sdk-agents-overview.md`
+  - `wiki/tooling/vercel-ai-sdk-tool-calling.md`
+  - `wiki/tooling/vercel-ai-sdk-mcp-tools.md`
+- **수행 내용**:
+  - `raw/recursive-sources/2026-04-10-baml-instructor-vercel-mastra/` 아래 원문 snapshot 저장
+  - parent entity(`mastra.md`, `baml.md`, `instructor.md`, `vercel-ai-sdk.md`)에 하위 문서 읽기 경로 추가
+  - 남아 있던 주요 framework hub를 공식 child docs까지 내려가는 deep-wiki 구조로 확장
+
 ## 2026-04-10 — Recursive ingest 배치 (Pydantic AI / Deep Agents 세부 문서)
 - **대상**: 공식 세부 문서 7개 (`pydantic.dev` 3개, `docs.langchain.com` 4개)
 - **생성 페이지**:

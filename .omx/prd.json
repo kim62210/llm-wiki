@@ -139,6 +139,18 @@
         "fresh index missing-page check 결과가 0이다"
       ],
       "passes": true
+    },
+    {
+      "id": "US-012",
+      "title": "남은 주요 framework hub의 recursive child-doc ingest 완료",
+      "priority": 12,
+      "acceptanceCriteria": [
+        "남은 주요 framework entity hub에 대해 공식 child-doc summary가 추가 생성된다",
+        "parent entity에 하위 문서 읽기 경로가 추가된다",
+        "fresh broken wikilink check 결과가 0이다",
+        "fresh index missing-page check 결과가 0이다"
+      ],
+      "passes": true
     }
   ]
 }

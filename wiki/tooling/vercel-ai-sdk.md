@@ -81,6 +81,13 @@ Vercel AI SDK 6는 현재 시점에서 하나의 제품/모델/프레임워크 �
 - 도입 판단 시 기능 목록만 보지 말고, 공식 문서·릴리스 노트·벤치마크가 서로 얼마나 일관되게 같은 메시지를 주는지 확인한다.
 - 비교 후보와의 차이는 API/운영 통합, 성능 수치, 생태계 성숙도 같은 기준으로 정리하는 것이 좋다.
 
+## 하위 문서 읽기 경로
+
+- [[vercel-ai-sdk-core-overview|AI SDK Core Overview]] — generate/stream/tools primitives를 설명하는 기반 문서
+- [[vercel-ai-sdk-agents-overview|Vercel AI SDK Agents Overview]] — ToolLoopAgent와 structured workflows 요약
+- [[vercel-ai-sdk-tool-calling|Vercel AI SDK Tool Calling]] — approval, strict mode, multi-step tool loop 운영 규칙
+- [[vercel-ai-sdk-mcp-tools|Vercel AI SDK MCP Tools]] — MCP client, resources, prompts 통합 요약
+
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
