@@ -1,5 +1,17 @@
 # Activity Log
 
+## 2026-04-10 — Deepen: hot-topic long-form expansion
+- **대상**: hot-topic 파생 페이지 중 실제 본문 밀도가 낮은 페이지 전반
+- **수행 내용**:
+  - 97개 페이지에 `핵심 포인트 / source로 보면 / 실무 관점` 장문 섹션 추가
+  - 기존 `source 기반 참고`는 유지
+  - summary 허브(`wiki/applications/ai-hot-topics-2026-04.md`)에도 읽기 가이드와 해석 층위를 보강
+- **결과**:
+  - 장문 심화 적용 페이지: 97개
+  - manifest 성공 상태 유지: 452 / 452
+  - 깨진 위키링크: 0
+  - index 누락 페이지: 0
+
 ## 2026-04-10 — Parallel deepening: hot-topic 장문 심화
 - **대상**: hot-topic 파생 페이지 전반 (현재 98개 반영 페이지 기준)
 - **수행 내용**:
