@@ -1,3 +1,1878 @@
+## 2026-04-20 -- 고아 링크 리페어: wikilink 렌딩 + 핵심 concept stub 8개
+
+**고아 wikilink 대량 수정**
+- 배치 1 (target exists, rename): `[[nerf]]`→`[[nerf-neural-radiance-fields]]` (9 files), `[[attention-mechanism]]`→`[[self-attention-mechanism]]` (3 files)
+- 배치 2 (target exists, rename): `[[soft-actor-critic-sac]]`→`[[sac-soft-actor-critic]]`, `[[multi-agent-rl-marl]]`→`[[multi-agent-rl]]`, `[[robot-learning]]`→`[[robot-learning-sim2real]]`, `[[rl-for-agents]]`→`[[long-horizon-rl-training-for-agents]]`, `[[reranking-models]]`→`[[reranking-and-cross-encoders]]`, `[[rope-extension]]`→`[[rope-scaling-ntk-yarn]]`, `[[vector-database]]`→`[[vector-db-comparison]]`, `[[differentiable-rendering]]`→`[[volume-rendering-differentiable]]`, `[[transformer-architectures]]`→`[[transformer-architecture]]`, `[[mechanistic-interpretability]]`→`[[mechanistic-interpretability-2026]]`, `[[flashattention]]`→`[[flashattention-4-paper]]`, `[[dpo]]`→`[[dpo-paper]]`, `[[function-calling]]`→`[[function-calling-tool-use]]`
+- 배치 3 (target exists, rename): `[[data-deduplication]]`→`[[data-deduplication-minhash]]`, `[[bert-architecture]]`→`[[bert-paper]]`, `[[mamba-ssm]]`→`[[mamba-original-paper]]`, `[[reasoning-models]]`→`[[ai-reasoning-models]]`, `[[recommendation-systems]]`→`[[ai-recommendation-systems]]`, `[[qlora]]`→`[[lora-qlora-finetuning]]`, `[[model-compression]]`→`[[quantization-model-compression]]`, `[[factorization-machines]]`→`[[deepfm-factorization]]`, `[[molecular-property-prediction]]`→`[[ka-gnn-molecular]]`
+
+**concept stub 신규 생성 8건** (4개 병렬 sonnet 에이전트)
+- `wiki/rag/rag.md` -- RAG 허브 (파이프라인, 구성요소, 고도화). 기존 RAG 페이지 12개 wikilink. Mermaid flowchart
+- `wiki/architectures/moe.md` -- MoE 허브 (Top-K gating, load balancing, Switch/GShard). 관련 MoE 페이지 9개 wikilink. Mermaid flowchart
+- `wiki/training/reinforcement-learning.md` -- RL 기초 허브 (MDP, policy/value, on/off-policy, LLM RL 연결). 관련 15개 wikilink. agent-environment loop Mermaid
+- `wiki/training/distillation.md` -- KD 허브 (teacher-student, temperature, response/feature/relation-based, LLM black-box/sequence-level). 10개 wikilink
+- `wiki/training/rlhf-and-alignment.md` -- RLHF 3단계 파이프라인 + outer/inner/intent alignment. DPO/iterative DPO 대안. 관련 페이지 촘촘히 연결. KL 패널티 수식
+- `wiki/inference/long-context-llm.md` -- 4축 분류(어텐션/RoPE/메모리/분산). NIAH+RULER 평가. Long-context vs RAG 트레이드오프 표
+- `wiki/concepts/behavior-cloning.md` -- BC 정의, compounding error, DAgger, BC vs RL 비교. LLM SFT가 BC의 일종 연결
+- `wiki/concepts/explainable-ai.md` -- 해석가능성 vs 설명가능성, SHAP/LIME/saliency/counterfactual, mechanistic interp 연결, EU AI Act 규제 배경
+
+**index.md 업데이트**
+- RAG 섹션: rag 추가
+- Architectures 섹션: moe 추가
+- Training 섹션: reinforcement-learning, distillation, rlhf-and-alignment 3건 추가
+- Inference 섹션: long-context-llm 추가
+- Concepts 섹션: behavior-cloning, explainable-ai 2건 추가
+
+**결과**
+- 초기 broken wikilink 60건 → 28건 (53% 감소)
+- 위키 페이지 1,408 → 1,416 (+8)
+
+---
+
+## 2026-04-20 -- Wave 4 Ingest: Credit Assignment Survey + GenAC 논문 2건 + concept 1건
+
+**paper (신규 생성 2건)**
+- `wiki/papers/credit-assignment-survey-paper.md` -- Credit Assignment Survey (2604.09459, Zhang). 47개 방법 2차원 taxonomy (granularity x methodology). Reasoning RL vs Agentic RL 이분법 정식화. Turn-level MDP / Hindsight Counterfactual / Privileged Asymmetric Critic. 2D taxonomy Mermaid flowchart + Reasoning vs Agentic 비교 다이어그램
+- `wiki/papers/genac-paper.md` -- GenAC: Generative Actor-Critic (2604.10701, Shan/Zhong/Wang/Zhao). CoT reasoning 기반 generative critic이 discriminative scalar critic 대체. In-Context Conditioning으로 value drift 완화. value-free 트렌드(GRPO)에 경험적 반론. 구조 비교 Mermaid flowchart + actor-critic 시퀀스 다이어그램
+
+**concept (신규 생성 1건)**
+- `wiki/concepts/credit-assignment-rl.md` -- RL 크레딧 할당 source-agnostic 개념. 희소/지연 보상, Minsky 1961 기원, 고전 RL 해법(MC/TD/Eligibility Trace/Actor-Critic/GAE), LLM RL 특수성(극단적 시퀀스, 토큰=행동). Reasoning vs Agentic 이분법, Generative Critic 등장 맥락. 실무 granularity 선택 가이드 Mermaid
+
+**갱신**
+- `wiki/agents/long-horizon-rl-training-for-agents.md` -- "크레딧 할당 심화" 섹션 신설. 2차원 taxonomy 표, 5가지 핵심 기법 정리. sources에 survey raw 추가. 관련 문서에 신규 3개 링크 추가
+
+---
+
+## 2026-04-20 -- Wave 4 Ingest: Efficient Benchmarking + DSRL 논문 2건 + IRT concept 1건
+
+**paper (신규 생성 2건)**
+- `wiki/papers/efficient-benchmarking-paper.md` -- Efficient Benchmarking of AI Agents (2603.23749). IRT 영감 30-70% pass rate 필터로 태스크 44-70% 감축, rank fidelity 유지, Terminal-Bench 2.0 + HAL 7개 검증. 순위 안정적/절대 점수 불안정 비대칭성 핵심 발견. 벤치마크 파이프라인 Mermaid flowchart
+- `wiki/papers/dsrl-pretrain-space-rl-paper.md` -- DSRL (2604.14142). P(y|x)→P(y) 주변분포 최적화, NSR-PreRL + 표준 RLVR 2단계, Policy Reincarnation. reflection 6.54x / transition 14.89x 증가. 2단계 훈련 파이프라인 Mermaid flowchart
+
+**concept (신규 생성 1건)**
+- `wiki/concepts/item-response-theory-benchmarking.md` -- 교육 심리측정학 IRT의 AI 에이전트 평가 적용 패턴. 30-70% pass rate 구간 필터 원리, optimization-free 프로토콜, 순위 안정성 vs 절대 점수 비대칭성. source-agnostic 톤 유지
+
+**갱신 (1건)**
+- `wiki/agents/long-horizon-agent-benchmarks.md` -- "평가 비용 절감: 효율적 벤치마킹" 단락 추가. efficient-benchmarking-paper, item-response-theory-benchmarking 교차참조
+
+**index.md 업데이트**
+- Papers 섹션: efficient-benchmarking-paper, dsrl-pretrain-space-rl-paper 2건 등록
+- Concepts 섹션: item-response-theory-benchmarking 1건 등록
+
+---
+
+## 2026-04-20 -- Wave 4 Ingest: YC-Bench + AIBuildAI 논문 2건
+
+**paper (신규 생성 2건)**
+- `wiki/papers/ycbench-paper.md` -- YC-Bench (2604.01212), 1년 startup 시뮬레이션, 12 models, Claude Opus 4.6 $1.27M / GLM-5 $1.21M, adversarial client 47% 파산, scratchpad 사용이 성공 최대 예측변수. 6대 태스크 표, 실패 원인 Mermaid flowchart
+- `wiki/papers/aibuildai-paper.md` -- AIBuildAI (2604.14455), hierarchical multi-agent(manager/designer/coder/tuner), MLE-Bench medal rate 63.1% SOTA, 4가지 모달리티. 계층 구조 Mermaid flowchart
+
+**갱신 (concept 1건)**
+- `wiki/agents/long-horizon-agent-benchmarks.md` -- YC-Bench / MLE-Bench 항목 추가. 벤치마크 비교표 확장, YC-Bench/MLE-Bench 전용 섹션 2개 신설, sources 배열 2건 추가, 관련 문서에 ycbench-paper / aibuildai-paper 링크
+
+**교차참조 추가**
+- [[ycbench-paper]] -> [[long-horizon-agent-benchmarks]], [[context-folding]], [[agent-memory-systems]], [[omnicode-swe-benchmark-paper]]
+- [[aibuildai-paper]] -> [[orchestrator-worker-pattern]], [[anthropic-multi-agent-research-system]], [[long-horizon-agent-benchmarks]], [[omnicode-swe-benchmark-paper]]
+
+---
+
+## 2026-04-20 -- Willison Pelican + Prompt Archaeology Ingest
+
+**신규 생성 (summary 2건)**
+- `wiki/applications/pelican-benchmark-qwen-opus.md` (summary/applications) -- Qwen3.6-35B-A3B vs Opus 4.7 SVG pelican 테스트. 벤치마크-유용성 단절 논의. 비교표, 핵심 인용 2개
+- `wiki/applications/prompt-archaeology-willison.md` (summary/applications) -- Anthropic 공개 시스템 프롬프트를 Claude Code로 분해, synthetic git history 생성 방법론. Mermaid 파이프라인 flowchart 포함
+
+**신규 생성 (concept 1건)**
+- `wiki/concepts/pelican-benchmark.md` (concept/concepts) -- Willison "자전거를 탄 펠리컨" SVG informal benchmark 개념. 2024-10 ~ 2026-04 추이, 벤치마크-유용성 단절 일반 개념
+
+**갱신 (2건)**
+- `wiki/tooling/claude-opus-4-7.md` -- "외부 평가: Pelican 벤치마크" 섹션 추가, sources에 qwen-beats-opus 추가, 관련 문서 2건 추가
+- `wiki/applications/opus-4-7-system-prompt-diff.md` -- "분석 도구: Extract System Prompts" 섹션 추가, sources에 extract-system-prompts 추가, 관련 문서에 prompt-archaeology-willison 추가
+
+**index.md 갱신**
+- applications summary 서브섹션에 2건 추가
+- concepts concept 서브섹션에 1건 추가
+
+**소스**: raw/2026-04-20-blog-willison-qwen-beats-opus.md, raw/2026-04-20-blog-willison-extract-system-prompts.md
+
+---
+
+## 2026-04-20 -- Wiki Harvest Wave 4: 신규 8건 수집
+
+**수집 (raw 8건, pending_ingest)**
+
+테마: 에이전트 평가 + 장기 계획 + LLM RL(credit assignment/value models/pretrain-space RL) + 프롬프트 archaeology
+
+- `raw/2026-04-20-blog-willison-qwen-beats-opus.md` -- Qwen3.6-35B-A3B 로컬 vs Opus 4.7 SVG pelican 테스트, 벤치마크-유용성 disconnect 주장
+- `raw/2026-04-20-blog-willison-extract-system-prompts.md` -- Anthropic published system prompts를 Claude Code로 분해해 synthetic git history 생성, 프롬프트를 버전 관리 아티팩트로 취급
+- `raw/2026-04-20-arxiv-ycbench-long-horizon.md` -- YC-Bench (2604.01212), 1년 startup 시뮬레이션, Opus 4.6 $1.27M, adversarial client 47% 파산, scratchpad 사용이 성공 최대 예측변수
+- `raw/2026-04-20-arxiv-aibuildai-automl-agent.md` -- AIBuildAI (2604.14455), hierarchical multi-agent(manager/designer/coder/tuner), MLE-Bench 63.1% SOTA
+- `raw/2026-04-20-arxiv-efficient-benchmarking.md` -- Efficient Benchmarking (2603.23749), IRT 30-70% pass rate 필터로 태스크 44-70% 감축하면서 rank fidelity 유지
+- `raw/2026-04-20-arxiv-dsrl-pretrain-space-rl.md` -- DSRL (2604.14142), P(y|x)->P(y), NSR-PreRL로 reflection/transition 6.54x/14.89x 증가, Policy Reincarnation
+- `raw/2026-04-20-arxiv-credit-assignment-survey.md` -- Credit Assignment Survey (2604.09459), 47 papers 2024-2026, reasoning vs agentic RL 2차원 taxonomy, turn-level MDP
+- `raw/2026-04-20-arxiv-genac-generative-critic.md` -- GenAC (2604.10701), CoT reasoning 기반 generative critic이 discriminative scalar critic을 대체, in-context conditioning으로 value drift 완화
+
+`raw/.harvest-queue.json` harvest-2026-04-20-wave4로 업데이트됨.
+
+---
+
+## 2026-04-20 -- concept 신규 생성: Responsible Disclosure
+
+**concept (신규 생성 1건)**
+- `wiki/concepts/responsible-disclosure.md` -- 보안 커뮤니티의 취약점 비공개 보고 후 조율 공개 규범. Full Disclosure / Responsible Disclosure / CVD 3가지 스펙트럼, 역사(BugTraq -> RFPolicy -> Google Project Zero 90일 -> ISO/IEC 29147·30111), 발견-보고-트리아지-패치-공동공개 Mermaid 플로우, AI 안전성 확장(red-team, capability-gated release와의 구조적 유사성). sources: raw/2026-04-20-blog-willison-project-glasswing.md
+
+**교차참조 추가**
+- [[responsible-disclosure]] -> [[capability-gated-release]], [[project-glasswing-case-study]], [[red-teaming-ai]], [[ai-cybersecurity-defensive]], [[llm-security-owasp]]
+
+---
+
+## 2026-04-20 -- concept 신규 생성: Embodied AI
+
+**concept (신규 생성 1건)**
+- `wiki/concepts/embodied-ai.md` -- 체화 인공지능 source-agnostic 개념. Brooks "intelligence without representation" 계보, Perception/Planning/Action Control/Learning 4대 구성 요소 closed-loop Mermaid 다이어그램, VLA/Sim2Real/비디오 세계 모델/로봇 파운데이션 모델 4대 연구 방향, 데이터 희소성·일반화·물리 안정성·안전성 과제. sources: raw/2026-04-20-arxiv-video-gen-robotics-survey.md
+
+**교차참조**
+- embodied-ai -> vla-models, sim2real-transfer, open-x-embodiment, video-gen-robotics-survey-paper, diffusion-policy-robot, manipulation-dexterity, robot-learning-sim2real, nvidia-cosmos, world-model, imitation-learning
+- video-gen-robotics-survey-paper의 기존 [[embodied-ai]] 고아 링크 해소
+
+---
+
+## 2026-04-20 -- Wave 3 고아 링크 보강: world-model concept 신규 생성
+
+**concept (신규 생성 1건)**
+- `wiki/concepts/world-model.md` -- 월드 모델 source-agnostic 개념 허브. Ha&Schmidhuber(2018)/Dreamer V1-V3/LeCun JEPA/비디오 생성 기반/Physics-grounded 5대 계통 정리. agent-world model 상호작용 Mermaid 다이어그램, model-free vs model-based 비교표, 열린 질문(hallucination/장기 예측/추론 비용). video-gen-robotics-survey-paper 고아 링크 해소. sources: raw/2026-04-20-arxiv-video-gen-robotics-survey.md
+
+**교차참조 추가**
+- world-model -> world-model-architectures, dreamer-world-model, jepa-world-models, video-gen-robotics-survey-paper, sim2real-transfer, robot-learning-sim2real, diffusion-policy-robot
+
+---
+
+## 2026-04-20 -- Wave 3 고아 링크 보강: activation-steering concept 신규 생성
+
+**concept (신규 생성 1건)**
+- `wiki/concepts/activation-steering.md` -- inference-time 행동 제어 기법. Turner 2023 Activation Addition, Zou 2023 RepE, Panickssery 2023 CAA, Anthropic 2026 Emotion Vector 계보 정리. 벡터 추출(평균 차이/PCA/프로빙/CAA) 및 주입 메커니즘, 파인튜닝 비교, 정렬 연구 위치. emotion-concepts-claude-sonnet 고아 링크 해소. sources: raw/2026-04-20-blog-anthropic-emotion-concepts.md
+
+---
+
+## 2026-04-20 -- Ingest: OmniCode SWE 벤치마크 + MoE Null Expert 논문 2건 + 기존 논문 2건 갱신
+
+**paper (신규 생성 2건)**
+- `wiki/papers/omnicode-swe-benchmark-paper.md` -- arXiv 2602.02262. Sonwane 외 13명. 1,794 tasks, Python/Java/C++ 3언어, 4범주(bug fix/test gen/code review/style). Java test gen 최고 20.9%. Python 편향 실증. sources: raw/2026-04-20-arxiv-omnicode-swe-benchmark.md
+- `wiki/papers/moe-null-expert-paper.md` -- arXiv 2601.15370. Kilian, Zettlemoyer 외 3명. Zero-compute null expert로 데이터 희소성+causality 공존. Modality-aware routing 자발적 등장. sources: raw/2026-04-20-arxiv-moe-weight-data-sparsity.md
+
+**paper (갱신 2건)**
+- `wiki/papers/coding-agents-general-agents-paper.md` -- 관련 문서에 [[omnicode-swe-benchmark-paper]] 추가. "후속 벤치마크: OmniCode 1,794 tasks 멀티링구얼 확장" 언급 삽입
+- `wiki/papers/moe-scaling-laws-paper.md` -- 관련 문서에 [[moe-null-expert-paper]] 추가. "구현 측면 보완 연구: null expert 데이터 희소성" 언급 삽입
+
+**교차참조 추가**
+- omnicode -> coding-agents-general-agents-paper, featbench-paper, long-horizon-agent-benchmarks
+- moe-null-expert -> moe-original-paper, moe-scaling-laws-paper, mixtral-paper, deepseek-v3-paper
+
+---
+
+## 2026-04-20 -- Ingest: Project Glasswing case-study + capability-gated-release concept + video-gen-robotics paper + Mythos 업데이트
+
+**case-study (신규 생성 1건)**
+- `wiki/applications/project-glasswing-case-study.md` -- Anthropic Claude Mythos 제한 배포 사례. Firefox exploit 2 vs 181 수치, $104M 투자, 창립 파트너 12개사, Willison "합리적 trade-off" 평가. sources: raw/2026-04-20-blog-willison-project-glasswing.md
+
+**concept (신규 생성 1건)**
+- `wiki/concepts/capability-gated-release.md` -- 능력 도메인 기준 차등 출시 개념. Responsible Disclosure 비교, dual-use 능력 관리, Capability Disclosure Window. sources: raw/2026-04-20-blog-willison-project-glasswing.md
+
+**paper (신규 생성 1건)**
+- `wiki/papers/video-gen-robotics-survey-paper.md` -- arXiv 2601.07823. Zhiting Mei 외 11명. 비디오 생성 모델 로봇공학 world model 서베이. Imitation learning/RL/visual planning/policy eval, NVIDIA Cosmos 시사점. sources: raw/2026-04-20-arxiv-video-gen-robotics-survey.md
+
+**entity (업데이트 1건)**
+- `wiki/tooling/claude-mythos-preview.md` -- Willison 2026-04-07 분석 섹션 추가, Firefox 2 vs 181 수치 명시, sources·관련 문서 갱신. updated: 2026-04-20
+
+## 2026-04-20 -- Ingest: Emotion Concepts + Opus 4.7 (raw 2건 -> wiki 3건)
+
+**summary (신규 생성 2건)**
+- `wiki/applications/emotion-concepts-claude-sonnet.md` -- Anthropic 해석가능성팀의 Claude Sonnet 4.5 감정 벡터 연구 요약. 171개 감정 개념, 기능적 인과성(desperation→blackmail), activation steering 안전 레버, 훈련 단계별 감정 형성. sources: raw/2026-04-20-blog-anthropic-emotion-concepts.md
+- `wiki/applications/opus-4-7-system-prompt-diff.md` -- Simon Willison의 Opus 4.6→4.7 시스템 프롬프트 diff 분석 요약. child safety 격리, acting_vs_clarifying, tool_search, Claude Platform 브랜딩, 제거 항목. alignment observability 메타 인사이트. sources: raw/2026-04-20-blog-willison-opus-4-7-system-prompt.md
+
+**entity (신규 생성 1건)**
+- `wiki/tooling/claude-opus-4-7.md` -- Claude Opus 4.7 허브 문서. 2026-04-16 출시, 시스템 프롬프트 주요 변경 4개 축(child safety/acting_vs_clarifying/tool_search/브랜딩), 22개 tool 인벤토리, 2026-01 지식 컷오프. sources: raw/2026-04-20-blog-willison-opus-4-7-system-prompt.md
+
+**갱신 (2건)**
+- `wiki/tooling/claude-opus-4-6.md` -- "관련 문서"에 [[claude-opus-4-7]] 역방향 링크 추가
+- `wiki/concepts/mechanistic-interpretability-2026.md` -- "관련 페이지"에 [[emotion-concepts-claude-sonnet]] 링크 추가
+
+## 2026-04-20 -- Ingest: Graph-based Agent Memory 논문 2건 + concept 갱신 1건
+
+**paper (신규 생성 2건)**
+- `wiki/papers/graph-based-agent-memory-survey-paper.md` -- arXiv 2602.05665. Chang Yang 외 17명. Memory lifecycle(extract→store→retrieve→evolve) 기반 4차원 분류 체계. GraphRAG/A-MEM/LiCoMemory/PlugMem/H-MEM 비교. sources: raw/2026-04-20-arxiv-graph-based-agent-memory-survey.md
+- `wiki/papers/plugmem-paper.md` -- arXiv 2603.03296. Ke Yang 외 8명. Knowledge-centric graph, propositional·prescriptive knowledge 단위 저장. 정보이론 밀도 분석. 3 벤치마크(LoCoMo, multi-hop, web agent)에서 task-specific 대비 우위. sources: raw/2026-04-20-arxiv-plugmem-task-agnostic-memory.md
+
+**concept (갱신 1건)**
+- `wiki/agents/agent-memory-systems.md` -- "최근 2026 연구 동향" 섹션 추가 (graph survey + PlugMem 요약). sources 배열 2건 추가. 관련 문서 섹션에 신규 paper 4건 링크 추가. updated: 2026-04-20
+
+**index.md**: papers 섹션에 신규 2건 추가
+
+## 2026-04-20 -- Ingest: Anthropic alignment & agent safety 2건
+
+**summary (신규 생성 2건)**
+- `wiki/applications/automated-alignment-researchers.md` -- AAR 실험 요약. 9개 Claude Opus 4.6 인스턴스, PGR 0.97(인간 0.23), 수학 0.94/코딩 0.47, 프로덕션 적용 시 개선 없음. sources: raw/2026-04-20-blog-anthropic-automated-alignment-researchers.md
+- `wiki/applications/trustworthy-agents-anthropic.md` -- 신뢰 가능한 에이전트 5원칙 + Plan Mode + 다층 prompt injection 방어. sources: raw/2026-04-20-blog-anthropic-trustworthy-agents.md
+
+**기존 페이지 갱신 (관련 문서 추가 3건)**
+- `wiki/concepts/superalignment-research.md` -- [[automated-alignment-researchers]] 역링크 추가
+- `wiki/training/weak-to-strong-generalization.md` -- [[automated-alignment-researchers]] 역링크 추가
+- `wiki/concepts/agent-prompt-injection-defense.md` -- [[trustworthy-agents-anthropic]] 역링크 추가
+
+**index.md 갱신**
+- Applications > summary 섹션에 신규 2건 등록
+
+## 2026-04-20 -- Wiki Harvest Wave 3: 신규 10건 수집
+
+- **대상 범위**: 2026-04 Anthropic Research 3건, Willison blog 2건, arXiv 2026-Q1~Q2 논문 5건
+- **테마**: alignment 자동화, 에이전트 안전 프레임워크, 감정 해석가능성, Opus 4.7 릴리스 diff, capability-gated release, video-world model, graph agent memory, multilingual SWE 벤치마크, MoE null expert
+- **신규 raw 파일 (10건)**:
+  - `raw/2026-04-20-blog-anthropic-automated-alignment-researchers.md` (AAR PGR 0.97, 2026-04-14)
+  - `raw/2026-04-20-blog-anthropic-trustworthy-agents.md` (5원칙 + Plan Mode, 2026-04-09)
+  - `raw/2026-04-20-blog-anthropic-emotion-concepts.md` (171 감정 벡터 causal steering, 2026-04-02)
+  - `raw/2026-04-20-blog-willison-opus-4-7-system-prompt.md` (child safety + acting_vs_clarifying, 2026-04-18)
+  - `raw/2026-04-20-blog-willison-project-glasswing.md` (Claude Mythos offensive security, 2026-04-07)
+  - `raw/2026-04-20-arxiv-video-gen-robotics-survey.md` (2601.07823, video as world model)
+  - `raw/2026-04-20-arxiv-graph-based-agent-memory-survey.md` (2602.05665, memory lifecycle)
+  - `raw/2026-04-20-arxiv-plugmem-task-agnostic-memory.md` (2603.03296, knowledge-centric graph)
+  - `raw/2026-04-20-arxiv-omnicode-swe-benchmark.md` (2602.02262, 1794 tasks 3 languages)
+  - `raw/2026-04-20-arxiv-moe-weight-data-sparsity.md` (2601.15370, null expert)
+- **중복 스킵**: 이전 Wave 1/2의 8개 주제 확인 후 겹침 없음
+- **대기열 상태**: `raw/.harvest-queue.json` = `harvest-2026-04-20-wave3` (10건 pending_ingest)
+
+## 2026-04-20 -- 고아 페이지 역방향 링크 일괄 삽입
+
+- **시작**: 350개 고아 페이지 (incoming=0)
+- **Wave 1**: 고아가 링크하는 타겟 페이지의 "관련 문서"에 역삽입 -> 226건 해결
+- **Wave 2**: "관련 문서" 섹션이 없는 페이지에 섹션 생성 후 삽입 -> 6건 추가
+- **Wave 3**: 수동 매핑으로 테마별 허브 페이지에 연결 -> 34건 추가
+- **Wave 4**: 마지막 4건 수동 처리 -> 2건 추가
+- **최종**: 350 -> **3개** (graph-stats _meta 파일 1개 + latent-space/process-reward-model은 slug 형태로 이미 참조됨)
+- **수정된 파일**: ~200개 (관련 문서 섹션에 역참조 추가)
+
+## 2026-04-20 -- Wiki Graph: 지식 그래프 분석 보고서
+
+- **그래프 규모**: 1,372 노드, 10,724 엣지
+- **보고서**: wiki/_meta/graph-stats-2026-04-20.md
+- **핵심 발견**:
+  - Top 허브: transformer-architecture (100 incoming), mixed-precision-training (79)
+  - 고아 페이지: 350개 (incoming=0) -- 고립은 아니지만 다른 페이지에서 참조 안 됨
+  - 카테고리 간: concepts가 중심 허브, training-tooling이 주요 축
+  - 완전 고립 노드 0개 -- 모든 페이지가 최소 1개 outgoing link 보유
+
+## 2026-04-20 -- Wiki Lint: 전체 점검 및 자동 수정
+
+- **전체 페이지**: 1,381개 (중복 nerf.md 삭제 후)
+- **프론트매터 검증**: page_type 누락 0건, 모든 페이지 프론트매터 정상
+- **한국어 검증**: 한국어 미달 페이지 0건 (전체 정상)
+
+  **수정 완료 - Critical (13건)**
+  - 깨진 category 필드 수정: tooling 7건 (MCP 관련 wikilink 오염), inference 6건 (kv-cache-inference wikilink 오염)
+  - 원인: category 값에 `[[wikilink|alias]]` 형태가 삽입되어 있었음
+
+  **수정 완료 - 고아/중복 (3건)**
+  - wiki/architectures/nerf.md 중복 삭제 (nerf-neural-radiance-fields.md가 정본)
+  - wiki/applications/code-generation-llm.md -> index.md에 등록
+  - wiki/rag/dense-sparse-hybrid-retrieval.md -> index.md에 등록
+
+  **잔여 이슈 없음**: 유령 항목 0건, 깨진 프론트매터 0건
+
+## 2026-04-20 -- Wiki Expand Wave 2: 고빈도 미등록 용어 20개 생성
+
+- **방법**: 위키 본문 고빈도 용어 스캔 -> 미등록 20개 선별 -> 2 병렬 sonnet 에이전트 생성
+- **탐지 방식**: kebab-case grep + CamelCase grep + 핵심 ML 용어 사전 대조
+
+  **신규 생성 - concept (13개)**
+  - wiki/inference/beam-search-decoding.md -- 빔 서치, 탐욕, top-k/top-p 디코딩 전략
+  - wiki/concepts/tokenization-bpe.md -- BPE, WordPiece, SentencePiece 토크나이제이션
+  - wiki/concepts/red-teaming-ai.md -- AI 레드 팀, 탈옥, HarmBench, 방어
+  - wiki/concepts/function-calling-tool-use.md -- LLM 함수 호출, JSON 스키마, 에이전트 도구
+  - wiki/concepts/grounding-attribution.md -- 출처 귀속, 인용, 그라운딩 API
+  - wiki/concepts/verifier-critic-models.md -- ORM/PRM/자기비평, 검증자 스케일링
+  - wiki/concepts/inference-time-compute.md -- 추론 시점 계산, o1, self-consistency
+  - wiki/concepts/knowledge-distillation-llm.md -- LLM 블랙박스/화이트박스 증류
+  - wiki/concepts/hallucination-mitigation.md -- 환각 완화, SelfCheckGPT, FActScore
+  - wiki/concepts/prefix-tuning-prompt-tuning.md -- 소프트 프롬프트 PEFT
+  - wiki/concepts/responsible-ai-practices.md -- 책임 AI, 모델 카드, 데이터시트
+  - wiki/training/process-reward-model.md -- PRM vs ORM, 단계별 검증
+  - wiki/training/label-smoothing.md -- 소프트 타겟, 캘리브레이션
+
+  **신규 생성 - concept (2개, training)**
+  - wiki/training/gradient-accumulation.md -- 마이크로배치 누적, 유효 배치 크기
+
+  **신규 생성 - entity (4개)**
+  - wiki/tooling/langsmith.md -- LangChain 관측 플랫폼
+  - wiki/tooling/wandb-mlops.md -- W&B 실험 관리
+  - wiki/tooling/chatgpt.md -- OpenAI 대화형 AI 제품
+  - wiki/architectures/palm-architecture.md -- Google PaLM 540B
+
+  **갱신 (2건)**
+  - wiki/concepts/compound-ai-systems.md -- DSPy 섹션 추가
+  - wiki/concepts/structured-output.md -- BAML, xGrammar 섹션 추가
+
+- **index.md** 갱신: 12건 누락분 반영
+
+## 2026-04-20 -- Wiki Ingest Wave 2: harvest 대기열 8건 위키 페이지화
+
+- **소스**: raw/.harvest-queue.json (harvest-2026-04-20-wave2)
+- **처리**: 8건 전체 ingest 완료
+
+  **신규 생성 - paper (7건)**
+  - wiki/papers/vi-cd-visual-circuit-discovery-paper.md -- Vi-CD: ViT 에지 기반 자동 회로 발견, 10x 스파서 (2604.14477)
+  - wiki/papers/calibrated-speculative-decoding-paper.md -- CSD: 훈련 없는 보정 스펙 디코딩, 2.33x 처리량 (2604.13634)
+  - wiki/papers/coding-agents-general-agents-paper.md -- 코딩 에이전트의 범용성 한계, ERP 평가 (2604.13107)
+  - wiki/papers/collabcoder-plan-code-paper.md -- CollabCoder: 계획-코드 공동 진화 (2604.13946)
+  - wiki/papers/mcircke-circuit-knowledge-editing-paper.md -- MCircKE: 회로 기반 지식 편집 최초 결합 (2604.05876)
+  - wiki/papers/relative-density-ratio-alignment-paper.md -- DPO 안정화를 위한 밀도비 최적화 (2604.04410)
+  - wiki/papers/grn-generative-refinement-paper.md -- GRN: 확산 이후 시각 합성 패러다임 (2604.13030)
+
+  **신규 생성 - summary (1건)**
+  - wiki/applications/raschka-llm-architecture-gallery.md -- Sebastian Raschka LLM 아키텍처 갤러리
+
+- **index.md** 갱신: Papers에 paper 7건, Applications summary에 1건 추가
+
+## 2026-04-20 -- Wiki Harvest Wave 2: 8건 신규 소스 수집
+
+- **소스**: arXiv (7) + 블로그 (1)
+- **검색 영역**: 해석가능성, 스펙 디코딩, 코드 생성 에이전트, 정렬, 확산 모델 (1차 harvest와 다른 키워드)
+- **중복 체크**: 기존 speculative-decoding 5개 페이지, circuit-tracing 페이지 등과 비교하여 논문 레벨 중복 없음 확인
+
+  **arXiv 논문 (7건)**
+  - raw/2026-04-20-arxiv-vi-cd-visual-circuit-discovery.md -- Vi-CD: ViT 기계적 해석 가능성 (2604.14477)
+  - raw/2026-04-20-arxiv-calibrated-speculative-decoding.md -- CSD: 훈련 없는 보정 스펙 디코딩, 2.33x 속도 (2604.13634)
+  - raw/2026-04-20-arxiv-coding-agents-general-agents.md -- 코딩 에이전트의 범용성 한계 (2604.13107)
+  - raw/2026-04-20-arxiv-collabcoder-plan-code.md -- CollabCoder: 계획-코드 공동 진화 (2604.13946)
+  - raw/2026-04-20-arxiv-mcircke-circuit-knowledge-editing.md -- MCircKE: 회로 기반 지식 편집 (2604.05876)
+  - raw/2026-04-20-arxiv-relative-density-ratio-alignment.md -- DPO 안정화를 위한 밀도비 최적화 (2604.04410)
+  - raw/2026-04-20-arxiv-grn-generative-refinement.md -- GRN: 확산 모델 이후 시각 합성 (2604.13030)
+
+  **블로그 (1건)**
+  - raw/2026-04-20-blog-raschka-llm-architecture-gallery.md -- Sebastian Raschka LLM 아키텍처 갤러리
+
+- **대기열**: raw/.harvest-queue.json에 8건 등록 -> `/wiki-ingest`로 위키 페이지화 가능
+
+## 2026-04-20 -- Wiki Expand: topic-queue-v2에서 36개 신규 페이지 일괄 생성
+
+- **방법**: topic-queue-v2 잔여 38개 스캔 -> 중복 2건(SAC, MARL 기존 존재) 제거 -> 36개 생성
+- **4 병렬 sonnet 에이전트**: Batch 1 (architectures 8), Batch 2 (training+foundations 8), Batch 3 (concepts 8), Batch 4 (나머지 14)
+- **카테고리별**: architectures 12 + training 2 + foundations 2 + agents 1 + applications 1 + concepts 8 + tooling 3 + inference 1 + papers 갱신 1 = 31 신규 + 2 갱신 + 3 중복제거
+- **index.md** 갱신: 모든 신규 항목 반영
+
+## 2026-04-20 -- Wiki 배치 생성: 14개 신규/갱신 페이지 (Batch 4 상세)
+
+- **작업**: 배치 페이지 생성 요청 (14개 지정 주제)
+
+  **신규 생성 - tooling/concept (3건)**
+  - wiki/tooling/deepspeed-zero-internals.md -- DeepSpeed ZeRO Stage 1/2/3 파라미터 분할, CPU/NVMe 오프로딩, 통신 패턴
+  - wiki/tooling/deepspeed-arctic-lts.md -- Arctic 장문 시퀀스 학습, ZenFlow 비동기 오프로딩, Ulysses/Ring Attention
+  - wiki/tooling/megatron-bridge-checkpoint.md -- HuggingFace <-> Megatron 체크포인트 변환, TP/PP 분할 처리
+
+  **신규 생성 - concepts/concept (4건)**
+  - wiki/concepts/big-bench-hard.md -- BIG-Bench Hard 23개 태스크, 논리 연역/인과 추론, CoT 효과 극대화 영역
+  - wiki/concepts/gsm8k-benchmark.md -- GSM8K 초등 수학 벤치마크, CoT 표준, 프론티어 모델 포화, GSM8K-Platinum
+  - wiki/concepts/chain-of-thought-prompting.md -- Few-shot/Zero-shot CoT, Self-Consistency, 충실도 문제 (Wei et al. 2022)
+  - wiki/concepts/ggda-group-attribution.md -- 그룹 데이터 귀속, 10-50배 효율, 도메인별 데이터 혼합 최적화
+
+  **갱신 - concepts/concept (1건)**
+  - wiki/concepts/tree-of-thought.md -- 프론트매터 tags/sources 보강, Game of 24 결과 포함 (기존 내용 보존)
+
+  **신규 생성 - architectures/concept (4건)**
+  - wiki/architectures/tabr-retrieval-augmented.md -- k-NN 검색 증강 테이블 학습, RAG 철학의 정형 데이터 적용
+  - wiki/architectures/realmlp-tabular.md -- 현대화된 테이블 MLP, BatchNorm/그래디언트 클리핑/범주형 임베딩
+  - wiki/architectures/multi-task-ranking.md -- MMOE/PLE 다중 태스크 추천 순위, 시소 현상, YouTube/TikTok 사례
+  - wiki/architectures/alexnet-imagenet.md -- AlexNet 2012 ILSVRC 혁명, ReLU/Dropout/GPU 병렬 학습, 딥러닝 출발점
+
+  **신규 생성 - inference/concept (1건)**
+  - wiki/inference/pruning-structured-unstructured.md -- 구조적/비구조적/N:M 스파시티, SparseGPT, Wanda, 프루닝+양자화 조합
+
+  **갱신 - papers/paper (1건)**
+  - wiki/papers/rag-original-paper.md -- year: 2020 추가, RAG-Sequence/Token 비교표, 현대 RAG와의 관계 섹션 추가
+
+---
+
+## 2026-04-20 -- Wiki Ingest: harvest 대기열 9건 위키 페이지화
+
+- **소스**: raw/.harvest-queue.json (harvest-2026-04-20)
+- **처리**: 9건 전체 ingest 완료
+
+  **신규 생성 - paper (7건)**
+  - wiki/papers/gam-agentic-memory-paper.md -- GAM: 계층적 그래프 에이전트 메모리. 인코딩-통합 분리 아키텍처 (2604.12285)
+  - wiki/papers/patchrag-feedback-adaptation-paper.md -- PatchRAG: 재훈련 없는 RAG 피드백 적응. ACL 2026 (2604.06647)
+  - wiki/papers/moe-scaling-laws-paper.md -- MoE Transformer 일반화/스케일링 이론 통합 (2604.09175)
+  - wiki/papers/dataset-scaling-laws-paper.md -- 30% 데이터로 90% 정확도. ICLR 2026 WS (2604.09389)
+  - wiki/papers/universal-yoco-paper.md -- Universal YOCO: 재귀 계산 깊이 스케일링 (2604.01220)
+  - wiki/papers/mapo-multimodal-agentic-paper.md -- MAPO: VLM 추론-행동 간극 정책 최적화 (2604.06777)
+  - wiki/papers/tempo-video-vlm-compressor-paper.md -- Tempo: 소규모 VLM 비디오 시간 압축기 (2604.08120)
+
+  **신규 생성 - paper (concepts 카테고리, 1건)**
+  - wiki/papers/hot-mess-misalignment-paper.md -- Anthropic "Hot Mess of AI": 편향-분산 분해로 오정렬 스케일링 분석
+
+  **신규 생성 - case-study (1건)**
+  - wiki/applications/claude-prompts-git-timeline.md -- Simon Willison: Claude 시스템 프롬프트를 git 타임라인으로
+
+- **index.md** 갱신: Papers에 paper 8건, Applications case-study에 1건 추가
+
+## 2026-04-20 -- Wiki Harvest: 9건 신규 소스 수집
+
+- **소스**: arXiv (7) + 블로그 (2)
+- **검색 범위**: 2026-04-01 ~ 2026-04-20
+- **중복 체크**: OpenClaw, Gemma 4, OpenAI Agents SDK 등 기존 위키 페이지와 겹치는 소스 제외
+
+  **arXiv 논문 (7건)**
+  - raw/2026-04-20-arxiv-gam-agentic-memory.md -- GAM: 계층적 그래프 기반 에이전트 메모리 (2604.12285)
+  - raw/2026-04-20-arxiv-patchrag-feedback-adaptation.md -- PatchRAG: RAG 피드백 적응, ACL 2026 (2604.06647)
+  - raw/2026-04-20-arxiv-moe-scaling-laws.md -- MoE Transformer 일반화/스케일링 법칙 이론 (2604.09175)
+  - raw/2026-04-20-arxiv-dataset-scaling-tiny-decoder.md -- 데이터셋 스케일링 법칙: 30% 데이터로 90% 정확도 (2604.09389)
+  - raw/2026-04-20-arxiv-universal-yoco.md -- Universal YOCO: 재귀 계산으로 깊이 스케일링 (2604.01220)
+  - raw/2026-04-20-arxiv-mapo-multimodal-agentic.md -- MAPO: 멀티모달 에이전트 정책 최적화 (2604.06777)
+  - raw/2026-04-20-arxiv-tempo-video-vlm-compressor.md -- Tempo: 소규모 VLM을 비디오 압축기로 활용 (2604.08120)
+
+  **블로그 (2건)**
+  - raw/2026-04-20-blog-anthropic-hot-mess-misalignment.md -- Anthropic 정렬 연구: AI 오류의 편향-분산 분석
+  - raw/2026-04-20-blog-willison-claude-prompts-git.md -- Simon Willison: Claude 시스템 프롬프트 git 타임라인
+
+- **관련성 낮아 스킵**: 순수 비즈니스 뉴스, 이미 위키에 존재하는 주제 (OpenClaw, Gemma 4, OpenAI Agents SDK)
+- **대기열**: raw/.harvest-queue.json에 9건 등록 -> `/wiki-ingest`로 위키 페이지화 가능
+
+## 2026-04-17 -- 비전/멀티모달 8개 신규 페이지 (SE-Net/DeformConv/캡셔닝/VQA/퓨샷분류/장면그래프/멀티모달벤치/KG구축)
+
+- **방법**: topic-queue-v2 기반 CNN 어텐션 1개 + 비전 개념 6개 + 지식 그래프 1개 일괄 생성
+
+  **신규 생성 - concept (architectures, 1개)**
+  - wiki/architectures/squeeze-excitation-networks.md -- SE-Net. 채널 어텐션 Squeeze+Excitation. ILSVRC 2017 1위. ResNet 플러그인
+
+  **신규 생성 - concept (concepts, 7개)**
+  - wiki/concepts/deformable-convolution.md -- 변형 합성곱. 학습 가능한 오프셋+이중선형 보간. DCNv1/v2. DETR 활용
+  - wiki/concepts/image-captioning-architecture.md -- 이미지 캡셔닝. CNN-RNN→Attention→CLIP-LLM 세대 진화. CIDEr/CLIPScore
+  - wiki/concepts/visual-question-answering.md -- VQA. 이미지+질문→답변 멀티모달 추론. 언어 편향, VQA v2/GQA 벤치마크
+  - wiki/concepts/few-shot-image-classification.md -- 퓨샷 이미지 분류. 프로토타입 네트워크, 에피소딕 훈련, miniImageNet
+  - wiki/concepts/scene-graph-generation.md -- 장면 그래프 생성. 객체+관계 트리플 추출. Graph-RCNN, 롱테일 문제
+  - wiki/concepts/multimodal-benchmark.md -- 멀티모달 벤치마크. MMBench/SEED-Bench/MathVista/MMMU/POPE 비교
+  - wiki/concepts/knowledge-graph-construction.md -- KG 구축. NER→EL→RE→트리플→KG 완성. LLM 통합 추출
+
+- **index.md** 갱신: architectures concept에 1개, concepts concept에 7개 항목 추가
+
+## 2026-04-17 -- RL/벤치마크 8개 신규 페이지 (IQL/IRL/RL환경/MMLU/HumanEval/MATH/MT-Bench/강건성트레이드오프)
+
+- **방법**: topic-queue-v2 기반 오프라인 RL 개념 2개 + RL 벤치마크 환경 1개 + 평가 벤치마크 tooling 4개 + 강건성 개념 1개 일괄 생성
+
+  **신규 생성 - concept (training, 2개)**
+  - wiki/training/implicit-q-learning-iql.md -- IQL. Expectile Regression으로 OOD 우회. D4RL SOTA
+  - wiki/training/inverse-rl-imitation.md -- 역강화학습. 전문가 궤적에서 보상 함수 역추론. MaxEnt IRL, GAIL
+
+  **신규 생성 - concept (concepts, 2개)**
+  - wiki/concepts/rl-benchmark-environments.md -- RL 벤치마크 환경. Atari/MuJoCo/D4RL/Gymnasium 전체 지형도
+  - wiki/concepts/robustness-generalization-tradeoff.md -- 강건성-일반화 트레이드오프. 적대적 훈련 정확도 하락 이론/실무
+
+  **신규 생성 - entity (tooling, 4개)**
+  - wiki/tooling/mmlu-benchmark-details.md -- MMLU. 57개 과목, 5-shot, GPT-4 86.4%, 포화 징후
+  - wiki/tooling/humaneval-mbpp.md -- HumanEval/MBPP. pass@k 메트릭, 코드 생성 양대 벤치마크
+  - wiki/tooling/math-benchmark.md -- MATH. 경쟁 수학 7단계, o1 94.8%, FrontierMath 후속
+  - wiki/tooling/mtbench-llmjudge.md -- MT-Bench + LLM-as-Judge. 멀티턴 80문항, GPT-4 심사관
+
+- **index.md** 갱신: training concept에 2개, concepts concept에 2개, tooling entity에 4개 항목 추가
+
+---
+
+## 2026-04-17 -- 시계열 파운데이션 모델 + 이상탐지/분류 8개 신규 페이지
+
+- **방법**: topic-queue-v2 기반 시계열 FM(TimeGPT, Chronos, Moirai)/희소 어텐션(Informer)/순수 MLP(N-BEATS, N-HiTS)/이상 탐지/분류/파운데이션 모델 개요 일괄 생성
+
+  **신규 생성 - entity (2개)**
+  - wiki/tooling/timegpt-foundation.md -- Nixtla TimeGPT. 제로샷 시계열 예측 FM. Transformer 기반, API 서비스
+  - wiki/tooling/chronos-amazon.md -- Amazon Chronos. T5 기반 시계열 FM. 양자화 토크나이저, 오픈소스
+
+  **신규 생성 - concept/architectures (6개)**
+  - wiki/architectures/moirai-unified-forecasting.md -- Salesforce Moirai. 다변량+가변빈도 통합 예측, 마스크 인코더, LOTSA 데이터셋
+  - wiki/architectures/informer-sparse-attention.md -- Informer. ProbSparse 어텐션 O(L log L), 생성형 디코더, AAAI 2021 Best Paper
+  - wiki/architectures/n-beats-n-hits.md -- N-BEATS/N-HiTS. 기저 확장 순수 MLP, M4 대회 SOTA, 계층적 보간
+  - wiki/concepts/time-series-anomaly-detection.md -- 시계열 이상 탐지. 재구성 오류/예측 편차, Anomaly Transformer, OmniAnomaly
+  - wiki/concepts/time-series-classification.md -- 시계열 분류. DTW, InceptionTime, Rocket/MiniRocket, UCR/UEA 벤치마크
+  - wiki/concepts/time-series-foundation-models.md -- 시계열 FM 개요. TSFM 지형도, 수치 표현 방식 비교, GIFT-Eval 벤치마크
+
+  **참고**: wiki/architectures/patchtst.md 기존 존재로 인해 8번 항목을 time-series-foundation-models.md로 대체
+
+- **index.md** 갱신: tooling entity에 2개, architectures concept(시계열)에 3개, concepts concept에 3개 항목 추가
+
+---
+
+## 2026-04-17 -- TTS/오디오/비디오 이해 + Mip-NeRF 8개 신규 페이지
+
+- **방법**: topic-queue-v2 기반 음성합성/오디오 LM/ASR 평가/비디오 이해(TAD/VideoQA/추적/시공간) + 3D 안티앨리어싱 일괄 생성
+
+  **신규 생성 - concept (6개)**
+  - wiki/concepts/audio-language-models.md -- 오디오 언어 모델. Qwen-Audio/SALMONN 듀얼 인코더. 오디오-텍스트 정렬 과제
+  - wiki/concepts/asr-evaluation-metrics.md -- ASR 평가 지표. WER/CER/SER/RTF 정의·계산·해석. 텍스트 정규화 표준화
+  - wiki/concepts/temporal-action-detection.md -- 시간적 행동 탐지. 2단계/1단계/DETR 기반 방식. tIoU mAP 평가
+  - wiki/concepts/video-question-answering.md -- 비디오 질의응답. 시각+시간 추론. NExT-QA/EgoSchema/Video-MME
+  - wiki/concepts/video-object-tracking.md -- 비디오 객체 추적. SOT/MOT, ByteTrack 저신뢰 탐지, SAM2 마스크 추적
+  - wiki/concepts/spatiotemporal-representation.md -- 시공간 표현 학습. 2-Stream->3D CNN->VideoMAE->VLM 발전사
+
+  **신규 생성 - architectures concept (2개)**
+  - wiki/architectures/naturalspeech3-tts.md -- NaturalSpeech 3. FACodec 4-속성 분해 + 비자기회귀 확산. 제로샷 TTS
+  - wiki/architectures/mip-nerf.md -- Mip-NeRF. 원뿔 캐스팅 + 적분 위치 인코딩(IPE). 안티앨리어싱 NeRF
+
+- **index.md** 갱신: architectures **concept** 섹션에 2개, concepts **concept** 섹션에 6개 항목 추가
+
+---
+
+## 2026-04-17 -- 벤치마크 3개 + 에이전틱/RL 개념 5개 신규 페이지 (ARC/TruthfulQA/LiveCodeBench/에이전틱벤치마크/Dreamer/CQL/HRL/보상형성)
+
+- **방법**: topic-queue-v2 기반 벤치마크 툴링 3개 + 개념 5개 일괄 생성
+
+  **신규 생성 - entity (tooling, 3개)**
+  - wiki/tooling/arc-benchmark.md -- AI2 과학 추론 4지선다, ARC-Easy/Challenge 분할, 포화 현상
+  - wiki/tooling/truthfulqa-benchmark.md -- 817개 질문, 38개 카테고리, 역규모 효과, 인간 편향 탐지
+  - wiki/tooling/livecodebench.md -- LeetCode/Codeforces/AtCoder 실시간 수집, 데이터 오염 방지, 4가지 평가 시나리오
+
+  **신규 생성 - concept (concepts, 2개)**
+  - wiki/concepts/agentic-benchmarks-overview.md -- SWE-bench/WebArena/OSWorld 비교, 에이전트 평가 공통 과제
+  - wiki/concepts/reward-shaping-exploration.md -- 포텐셜 기반 형성, ICM, RND, 탐색-활용 트레이드오프
+
+  **신규 생성 - concept (training, 3개)**
+  - wiki/training/dreamer-world-model.md -- RSSM, DreamerV1/V2/V3, 잠재 공간 상상 학습
+  - wiki/training/conservative-q-learning-cql.md -- OOD 과대추정 페널티, Q값 하한 이론 보장, D4RL 성능
+  - wiki/training/hierarchical-rl.md -- 옵션 프레임워크, Feudal Networks, HIRO, Option-Critic, 반 MDP
+
+- **index.md** 갱신: tooling **entity** 섹션 3개, concepts **concept** 섹션 2개, training **concept** 섹션 3개 추가
+
+## 2026-04-17 -- 3D 비전 + 로봇 학습 8개 신규 페이지 (SfM/암묵적표면/4DGS/비디오생성/RDT-1B/Sim2Real/확산정책/Splat장면)
+
+- **방법**: topic-queue-v2 기반 3D 재구성/표현 4개 + 로봇 학습 4개 일괄 생성
+
+  **신규 생성 - concept (6개)**
+  - wiki/concepts/structure-from-motion.md -- 다시점 이미지 3D 재구성, 번들 조정, COLMAP, NeRF/3DGS 전처리
+  - wiki/concepts/implicit-surface-representation.md -- SDF/Occupancy Network, Marching Cubes, NeuS, DeepSDF
+  - wiki/concepts/4d-gaussian-splatting.md -- 3DGS 시간 확장, 동적 장면, 변형 기반/명시적 4D/HexPlane 방식
+  - wiki/concepts/robot-learning-sim2real.md -- 도메인 랜덤화, 시스템 식별, 적응 방법, RMA 구조
+  - wiki/concepts/diffusion-policy-robot.md -- DDPM 행동 생성, ACT 비교, 행동 청킹, DDIM/일관성 가속
+  - wiki/concepts/splat-scene-representation.md -- 3DGS 편집/합성/압축, LangSplat, PhysGaussian
+
+  **신규 생성 - concept (architectures, 1개)**
+  - wiki/architectures/video-generation-architecture.md -- DiT/U-Net 비디오 확장, 시간 어텐션, Flow Matching, 비디오 VAE
+
+  **신규 생성 - entity (tooling, 1개)**
+  - wiki/tooling/rdt-1b-bimanual.md -- RDT-1B (칭화대) 양팔 로봇 파운데이션 모델, 1.1B 확산 Transformer
+
+- **index.md** 갱신: architectures **concept** 섹션 1개, tooling **entity** 섹션 1개, concepts **concept** 섹션 6개 추가
+
+---
+
+## 2026-04-17 -- NLP 파싱/추출/교정 + 적대적 ML 8개 신규 페이지 (구구조분석/이벤트추출/IE파이프라인/ABSA/GEC/C&W/백도어/자연적대적예시)
+
+- **방법**: topic-queue-v2 기반 NLP 심화 4개 + 적대적 ML 4개 일괄 생성
+
+  **신규 생성 - concept (7개)**
+  - wiki/concepts/constituency-parsing.md -- CFG, CYK 알고리즘, Penn Treebank, 신경망 파서
+  - wiki/concepts/event-extraction.md -- 트리거+논항 식별, ACE 온톨로지, 파이프라인/공동학습/생성 모델
+  - wiki/concepts/information-extraction-pipeline.md -- NER->RE->EE 통합 파이프라인, 공동 학습, 엔드-투-엔드 생성
+  - wiki/concepts/sentiment-analysis-aspect.md -- 속성별 감성 극성 분류(ABSA), ATE/ASC/OTE, BERT 기반 접근
+  - wiki/concepts/carlini-wagner-attack.md -- 최적화 기반 적대적 공격, L0/L2/Linf 노름, Defensive Distillation 무력화
+  - wiki/concepts/backdoor-attack-defense.md -- 은닉 트리거 삽입, Neural Cleanse, STRIP, Fine-Pruning
+  - wiki/concepts/natural-adversarial-examples.md -- 분포 내 자연 발생 오분류, ImageNet-A, 텍스처 편향
+
+  **신규 생성 - concept (applications, 1개)**
+  - wiki/applications/grammatical-error-correction.md -- 시퀀스 태깅/seq2seq/LLM 방식, ERRANT 오류 분류, M2 F0.5
+
+- **index.md** 갱신: concepts **concept** 섹션에 7개, applications **concept** 섹션에 1개 항목 추가
+
+---
+
+## 2026-04-17 -- 적대적 강건성 + 심층 RL 8개 신규 페이지 (FGSM/PGD/인증강건성/포이즈닝/SAC/TD3/DecisionTransformer/모방학습)
+
+- **방법**: topic-queue-v2 기반 적대적 공격·방어 4개 + 심층 강화학습 4개 일괄 생성
+
+  **신규 생성 - concept (8개)**
+  - wiki/concepts/fgsm-fast-gradient-sign.md -- 단일 스텝 적대적 섭동 생성. Goodfellow 2014, 입력 기울기 부호 활용
+  - wiki/concepts/pgd-adversarial-training.md -- 반복 투영 경사 공격 및 학습. Madry 2017 미니맥스 강건화
+  - wiki/concepts/adversarial-robustness-certified.md -- 수학적 보장 강건성. 무작위 평활화, IBP, 정형 검증 비교
+  - wiki/concepts/data-poisoning-attacks.md -- 학습 데이터 오염으로 모델 행동 조작. 백도어/클린-레이블/가용성 공격
+  - wiki/training/sac-soft-actor-critic.md -- 엔트로피 정규화 오프-폴리시 RL. 쌍둥이 Q + 자동 온도 조정
+  - wiki/training/td3-twin-delayed-ddpg.md -- 쌍둥이 Q + 지연 업데이트 + 타겟 평활화로 DDPG 안정화
+  - wiki/training/decision-transformer.md -- RL을 시퀀스 모델링으로 재정식화. Return-to-Go 조건부 GPT 기반 정책
+  - wiki/training/imitation-learning.md -- 전문가 시연에서 정책 추출. BC, DAgger, GAIL, IRL 기법 총괄
+
+- **index.md** 갱신: training **concept** 섹션에 4개, concepts **concept** 섹션에 4개 항목 추가
+
+---
+
+## 2026-04-17 -- NLP 심화 8개 신규 페이지 (NER상세/관계추출/상호참조해결/의존구문분석/의미역결정/텍스트요약/기계번역/추출적QA)
+
+- **방법**: topic-queue-v2 기반 NLP 심화 태스크 미등록 토픽 8개 일괄 생성
+
+  **신규 생성 - concept (8개)**
+  - wiki/applications/ner-named-entity-recognition.md -- BIO/BIOES 태깅, SpaCy, BERT 파인튜닝, 한국어 NER 특수성
+  - wiki/concepts/relation-extraction.md -- 파이프라인/공동학습/원거리지도/문서수준 방식, TACRED, KLUE-RE
+  - wiki/concepts/coreference-resolution.md -- 멘션 클러스터링, SpanBERT, 영 대용어, 한국어 상호참조
+  - wiki/concepts/dependency-parsing.md -- Biaffine 파서, Universal Dependencies, 의존 경로 피처
+  - wiki/concepts/semantic-role-labeling.md -- PropBank/FrameNet, 술어-논항 구조, 사건 추출 활용
+  - wiki/applications/text-summarization-dl.md -- GSG 사전학습 PEGASUS, ROUGE, 추출적/추상적 요약 비교
+  - wiki/applications/machine-translation-modern.md -- NLLB 200개 언어, BLEU/COMET/chrF, 도메인 적응
+  - wiki/applications/question-answering-extractive.md -- SQuAD 1.1/2.0, 스팬 추출, RAG 리더 컴포넌트
+
+- **index.md** 갱신: applications **concept** 섹션에 4개, concepts **concept** 섹션에 4개 항목 추가
+
+---
+
+## 2026-04-17 -- Architectures 8개 신규 페이지 (DeiT/BEiT/EVA-CLIP/MobileViT/ViT-Register/MIM-Survey/Hierarchical-ViT/InternViT-6B)
+
+- **방법**: topic-queue-v2 기반 architectures 카테고리 비전 트랜스포머 관련 미등록 토픽 8개 일괄 생성
+
+  **신규 생성 - concept (7개)**
+  - wiki/architectures/deit-data-efficient-image-transformer.md -- ImageNet-1k만으로 ViT 학습. 증류 토큰(distillation token) 도입. 하드/소프트 증류 비교
+  - wiki/architectures/beit-bert-pretraining-images.md -- 마스크 이미지 모델링 + dVAE 이산 토큰 예측. 블록 마스킹. MAE와 상세 비교
+  - wiki/architectures/eva-clip-scaling.md -- 18B 파라미터 오픈소스 CLIP. 단계적 스케일업, 학습 불안정성 해결 기법
+  - wiki/architectures/mobilevit-efficient-vit.md -- CNN+ViT 하이브리드. 언폴딩-폴딩 메커니즘. MobileViT v2 분리형 어텐션
+  - wiki/architectures/vit-register-tokens.md -- 고노름 패치 아티팩트 문제 발견 및 레지스터 토큰으로 해결. DINOv2에서 도입
+  - wiki/architectures/masked-image-modeling-survey.md -- MAE/BEiT/SimMIM 세 방법론 상세 비교. 예측 타겟, 마스킹 비율, 구조 차이
+  - wiki/architectures/hierarchical-vit-design.md -- Swin/CSWin/MaxViT 계층적 ViT 패턴. 윈도우/십자형/그리드 어텐션 비교
+
+  **신규 생성 - entity (1개)**
+  - wiki/architectures/internvit-6b.md -- InternVL 프레임워크의 6B 비전 인코더. EVA-CLIP 기반 초기화. 동적 해상도 처리
+
+- **index.md** 갱신: architectures **concept** 섹션에 7개, **entity** 서브섹션에 1개 항목 추가
+
+---
+
+## 2026-04-16 -- Concepts 8개 신규/갱신 페이지 (태스크 산술/안전성 갭/NIST RMF/에이전트 보안/개념 소거/동질화/프론티어 안전/오픈소스 vs 독점)
+
+- **방법**: topic-queue-500 기반 concepts 카테고리 미등록 핵심 토픽 8개 일괄 생성, nist-ai-rmf.md는 기존 파일 병합 갱신
+- **생성/갱신 파일 목록** (모두 `concepts` 카테고리, `concept` 타입):
+
+  **신규 생성 (7개)**
+  - wiki/concepts/task-arithmetic-concept.md -- 파인튜닝 델타 벡터 산술. 덧셈(기능 추가)/뺄셈(기능 제거)/스케일링. model-merging의 이론적 기반
+  - wiki/concepts/ai-safety-gap-2026.md -- 역량-정렬 불균형 구조. AISI/GPAI 보고서. 평가 방법론 한계(알려지지 않은 미지)
+  - wiki/concepts/ai-agent-security.md -- MCP 취약점, 도구 스푸핑, 간접 프롬프트 인젝션, 권한 남용. 제로 트러스트 원칙 적용
+  - wiki/concepts/concept-erasure.md -- LEACE/INLP 선형 투영 소거. 편향 완화/프라이버시 언러닝/해석가능성 응용
+  - wiki/concepts/llm-homogenization.md -- 70+ LLM 내부 표현 구조 반복. 데이터/아키텍처/기반 모델 수렴 3축
+  - wiki/concepts/frontier-model-safety.md -- Anthropic RSP ASL-1~4 등급. 위험 평가 도메인(CBRN/사이버/자율성). OpenAI SRF, Google DeepMind FSF 비교
+  - wiki/concepts/open-source-vs-proprietary-ai.md -- LLaMA~GPT-4 수렴 타임라인. 라이선스 3유형. 안전성 논쟁 양측 논거
+
+  **기존 파일 병합 갱신 (1개)**
+  - wiki/concepts/nist-ai-rmf.md -- sources에 topic-queue-500 추가, EU AI Act 비교표 + compute-governance 연결 섹션 추가
+
+- **index.md** 갱신: concepts **concept** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Papers 8개 신규 페이지 생성 (Self-Consistency, YaRN, Goal Misgeneralization, RAG Survey, Genie3, 확산 기억화, TurboQuant, ICLR 2026)
+
+- **방법**: topic-queue-500 기반 papers 카테고리 핵심 논문 8개 일괄 생성
+
+  **신규 생성 - paper (7개)**
+  - wiki/papers/self-consistency-paper.md -- 다양한 CoT 경로 샘플링 + 다수결. Wang et al. 2022. test-time compute 패러다임 실증
+  - wiki/papers/yarn-paper.md -- NTK-by-parts 보간 + 어텐션 온도 스케일링. RoPE 컨텍스트 16~32배 확장. Peng et al. 2024
+  - wiki/papers/goal-misgeneralization-paper.md -- RL 에이전트 OOD 목표 미일반화 실증. Langosco et al. 2021. AI 정렬 핵심 난제
+  - wiki/papers/rag-survey-paper.md -- Naive/Advanced/Modular RAG 3 패러다임 분류. Gao et al. 2024. 100편+ 서베이
+  - wiki/papers/genie3-paper.md -- 텍스트 기반 실시간 3D 인터랙티브 환경 생성. Google DeepMind 2025. 세계 모델 마일스톤
+  - wiki/papers/diffusion-memorization-paper.md -- 확산 모델 기억화-일반화 상전이 임계점 규명. NeurIPS 2025
+  - wiki/papers/turboquant-paper.md -- 이상값 분리 + 토큰 중요도 비트폭으로 KV 캐시 1~2비트 극단 압축. ICLR 2026
+
+  **신규 생성 - summary (1개)**
+  - wiki/papers/iclr-2026-highlights.md -- ICLR 2026 19,000편 제출. 추론 모델/스케일링 재검토/안전/효율/세계 모델 5대 동향
+
+- **index.md** 갱신: Papers paper 섹션에 7개, summary 서브섹션에 1개 항목 추가
+
+---
+
+## 2026-04-16 -- RAG 4개 + Agents 4개 신규 concept 페이지 생성 (명제 인덱싱/압축검색/보안/스트리밍 RAG, 인터럽트/안전성/ReWOO/능력발견)
+
+- **방법**: topic-queue-500 기반 RAG 4개, Agents 4개 핵심 개념 일괄 생성
+
+  **신규 생성 - rag/concept (4개)**
+  - wiki/rag/proposition-indexing.md -- 원자적 명제 단위 인덱싱. Dense-X Retrieval. 독립성/원자성/최소성 3조건. 하이브리드 이중 인덱스 패턴
+  - wiki/rag/contextual-compression-retrieval.md -- 검색 청크에서 관련 부분만 추출 압축. LLMChainExtractor/EmbeddingsFilter Compressor 유형. 압축률 vs 정보 보존률 트레이드오프
+  - wiki/rag/rag-security-privacy.md -- RAG 보안과 프라이버시. 간접 프롬프트 인젝션 방어, 접근 제어 메타데이터 필터링, PII 스크러빙, 멀티테넌시 격리
+  - wiki/rag/streaming-rag.md -- 스트리밍 RAG. SSE 기반 토큰 스트리밍, TTFT 최소화. Sequential/Speculative/Chunked 3가지 변형. 출처 스트리밍 처리
+
+  **신규 생성 - agents/concept (4개)**
+  - wiki/agents/agent-interrupt-resume.md -- 에이전트 인터럽트/재개. 체크포인트, Durable Execution, HITL 인터럽트 트리거. LangGraph checkpointer 구현
+  - wiki/agents/agent-safety-alignment.md -- 에이전트 안전성과 정렬. 최소 권한, 가드레일 4레이어, 비가역성 인식, 감사 로그, OWASP Agentic Top 10
+  - wiki/agents/rewoo-efficiency-pattern.md -- ReWOO 효율 패턴. Planner-Worker-Solver 분리. 도구 N개 시 LLM 호출 N+1 -> 2로 감소. Plan-and-Execute와 비교
+  - wiki/agents/agent-capability-discovery.md -- 에이전트 능력 발견. Agent Card(A2A), tools/list(MCP), 중앙집중/분산 레지스트리, 의미적 매칭 알고리즘
+
+- **index.md** 갱신: rag/concept 섹션에 4개, agents/concept 섹션에 4개 항목 추가
+
+---
+
+## 2026-04-16 -- Tooling 8개 신규 entity 페이지 생성 (Semantic Kernel/AutoGen/smolagents/Guidance/MTEB/BentoML/Flowise/Helicone)
+
+- **방법**: topic-queue-500 기반 tooling 카테고리 미등록 8개 도구/플랫폼 일괄 생성
+- **생성 파일 목록** (모두 `tooling` 카테고리, `entity` 타입):
+
+  **신규 생성 (8개)**
+  - wiki/tooling/semantic-kernel.md -- Microsoft C#/Python/Java LLM SDK. 플러그인/플래너/Kernel 아키텍처, Azure 네이티브 통합
+  - wiki/tooling/autogen.md -- Microsoft 다중 에이전트 대화 프레임워크. ConversableAgent, GroupChat, 코드 실행 루프, AG2 포크
+  - wiki/tooling/smolagents.md -- HuggingFace 경량 에이전트. 코드 퍼스트 방식(Python 코드 직접 생성/실행), E2B 샌드박스
+  - wiki/tooling/guidance.md -- Microsoft 구조화 생성 라이브러리. 인터리빙 실행, select/gen/json 토큰 단위 제약
+  - wiki/tooling/mteb.md -- Massive Text Embedding Benchmark. 56개+ 데이터셋, 8개 태스크, HuggingFace 리더보드
+  - wiki/tooling/bentoml.md -- ML 모델 마이크로서비스 배포 풀스택. 자동 Docker 이미지, 적응형 배칭, BentoCloud
+  - wiki/tooling/flowise.md -- 비주얼 드래그앤드롭 LLM 빌더. LangChain 기반 노드 편집기, RAG/챗봇/에이전트
+  - wiki/tooling/helicone.md -- LLM API 프록시 관찰성. HTTP 프록시 방식, 비용 추적, 캐싱, 셀프호스팅
+
+- **index.md** 갱신: Tooling **entity** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Training 8개 신규 concept 페이지 생성 (옵티마이저/안정성/데이터 큐레이션/보상/분산학습)
+
+- **방법**: topic-queue-500 기반 training 카테고리 미등록 핵심 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `training` 카테고리, `concept` 타입):
+
+  **신규 생성 (8개)**
+  - wiki/training/schedule-free-optimizer.md -- Schedule-Free 옵티마이저. Polyak 평균화로 LR 스케줄 없이 코사인 감쇠 동등 성능. budget 고정 불필요
+  - wiki/training/loss-spike-training-instability.md -- Loss Spike 원인(데이터 품질/LR/수치 오버플로우/인프라)별 진단 트리와 복구 전략
+  - wiki/training/synthetic-data-generation-pipeline.md -- Self-Instruct/Magpie/Evol-Instruct 비교, 품질 관리 파이프라인, 모델 붕괴 완화
+  - wiki/training/data-deduplication-minhash.md -- MinHash+LSH 근접 중복 제거. 자카드 유사도 근사, Banding, Union-Find
+  - wiki/training/quality-classifier-filtering.md -- FineWeb-Edu 방식 LLM 라벨링 + 경량 분류기. 다단계 필터 파이프라인
+  - wiki/training/rejection-sampling-finetuning.md -- ReST. N개 샘플 검증기 통과 응답만 SFT. Best-of-N 내면화, EM 해석
+  - wiki/training/generative-reward-model.md -- GRM. 텍스트 비평 생성 후 보상 추출. 로그확률 암묵적 보상, 보상 해킹 저항성
+  - wiki/training/pipeline-parallelism-1f1b.md -- 1F1B 스케줄. GPipe 대비 메모리 O(m)→O(p). 인터리브드 스케줄 거품 감소
+
+- **index.md** 갱신: training **concept** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Foundations 8개 신규 concept 페이지 생성 (2차 최적화/특성학습/일반화이론/스펙트럼/확률과정/표현학습/과파라미터화/신경연산자)
+
+- **방법**: topic-queue-500 기반 foundations 카테고리 미등록 고우선 토픽 8개 일괄 생성
+- **특이사항**: `wiki/training/muon-optimizer.md` 기존 존재 확인 후 `sophia-optimizer.md` 로 대체
+- **생성 파일 목록** (모두 `foundations` 카테고리, `concept` 타입):
+
+  **신규 생성 (8개)**
+  - wiki/foundations/sophia-optimizer.md -- Sophia 2차 LLM 옵티마이저. GNB/Hutchinson 헤시안 대각선 추정, 클리핑 업데이트, Adam 대비 토큰 효율 2배
+  - wiki/foundations/feature-learning-theory.md -- 게으른 훈련(NTK 체계) vs 풍부 체계. 모델 폭, μP 파라미터화, 그로킹 연결
+  - wiki/foundations/pac-bayes-bounds.md -- PAC-Bayes 일반화 경계. McAllester 경계, KL 패널티, 플랫 최솟값과 SAM의 이론 근거
+  - wiki/foundations/spectral-methods-ml.md -- 라플라시안 고유분해, 스펙트럼 클러스터링, GNN 스펙트럼 이론, 과평활화
+  - wiki/foundations/stochastic-processes-ml.md -- 위너 과정, GP, SDE. 확산 모델 전방/역방향 과정, 포커-플랑크 방정식
+  - wiki/foundations/representation-learning-theory.md -- 불변성/분리성/차원 붕괴 방지. Barlow Twins/VICReg 이론, 선형 평가 프로토콜
+  - wiki/foundations/overparameterization-interpolation.md -- 보간 임계값, 이중 하강, 양성 과적합 조건, 에폭별 이중 하강
+  - wiki/foundations/neural-operators.md -- DeepONet Branch/Trunk Net, FNO 푸리에 필터, PINN과의 비교, 기후/재료 과학 응용
+
+- **index.md** 갱신: foundations **concept** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Architectures 8개 신규 페이지 생성 (경량 CNN/범용 멀티모달/조기종료/그래프/세계모델/비전-언어 검출)
+
+- **방법**: topic-queue-500 기반 architectures 카테고리 미등록 고우선 토픽 8개 일괄 생성
+- **생성 파일 목록**:
+
+  **신규 생성 (concept 6개)**
+  - wiki/architectures/mobilenet-efficientnet.md -- MobileNet V1/V2/V3 + EfficientNet 복합 스케일링. 깊이별 분리 합성곱, 역전 잔차, 복합 스케일링 공식
+  - wiki/architectures/perceiver-io.md -- Perceiver IO (DeepMind). 잠재 배열 크로스 어텐션으로 입력 독립 스케일링. 분류/세그/광학흐름 통합 처리
+  - wiki/architectures/early-exit-networks.md -- 조기 종료 네트워크. 쉬운 입력 중간 레이어 종료. BranchyNet, MSDNet, PonderNet 확률적 폰더링
+  - wiki/architectures/depthwise-separable-conv.md -- 깊이별 분리 합성곱. DW+PW 분해로 FLOPs 9배 절감. Xception, MobileNetV2 역전 잔차 결합
+  - wiki/architectures/world-model-architectures.md -- 세계 모델 아키텍처. Genie 3, Cosmos, LeCun AMI 7모듈. JEPA/디퓨전 디코더 역할
+  - wiki/architectures/graph-attention-network.md -- GAT / GAT v2. 이웃 어텐션 가중치 학습. 정적->동적 어텐션 개선. 추천시스템/분자/교통 활용
+
+  **신규 생성 (entity 2개)**
+  - wiki/architectures/grounding-dino.md -- Grounding DINO (IDEA Research). 텍스트 프롬프트 개방집합 검출. 언어-가이드 쿼리 선택, 양방향 크로스 어텐션 융합
+  - wiki/architectures/sam2-video-segmentation.md -- SAM 2 (Meta AI). 비디오 객체 추적 세그먼테이션. 메모리 어텐션, Hiera ViT, SA-V 데이터셋
+
+- **index.md** 갱신: architectures entity 섹션에 2개, concept 섹션에 6개 항목 추가
+
+---
+
+## 2026-04-16 -- Applications 8개 신규 concept 페이지 생성 (DevOps/장애대응/고객지원/모더레이션/계약/금융/신약/코딩에이전트)
+
+- **방법**: raw/2026-04-16-topic-queue-500.md 기반 applications 카테고리 미등록 고우선 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `applications` 카테고리, `concept` 타입):
+
+  **신규 생성 (8개)**
+  - wiki/applications/ai-devops-cicd.md -- AI 기반 DevOps/CI-CD. 빌드 자기 치유, 테스트 우선순위 최적화, 배포 리스크 예측
+  - wiki/applications/ai-incident-response.md -- AI 기반 장애 대응. 알림 상관 분석, 자동 런북 실행, 인간-AI 협업 온콜
+  - wiki/applications/ai-customer-support.md -- AI 고객 지원 자동화. 1차 자동 처리, 에스컬레이션 로직, RAG 지식베이스 연동
+  - wiki/applications/ai-content-moderation.md -- AI 콘텐츠 모더레이션. 멀티모달 분류/필터링, 딥페이크 감지, C2PA 표준
+  - wiki/applications/ai-contract-analysis.md -- AI 계약서 분석. 조항 추출, 리스크 식별, 표준 계약 비교
+  - wiki/applications/ai-financial-analysis.md -- AI 금융 분석 에이전트. 재무제표/시장 통합 분석, 신용 분석, 컴플라이언스
+  - wiki/applications/ai-drug-discovery-2026.md -- AI 신약 개발 2026. AlphaFold 3, 생성형 분자 설계, 임상 단계 진입 사례
+  - wiki/applications/ai-coding-agent-era.md -- AI 코딩 에이전트 시대. Copilot에서 자율 에이전트로의 전환, SWE-bench 진보
+
+- **index.md** 갱신: Applications **concept** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Inference 8개 신규 페이지 생성 (온디바이스 런타임 3종 + 추론 최적화 개념 5종)
+
+- **방법**: topic-queue-500 기반 inference 카테고리 핵심 주제 8개 일괄 생성
+- **생성 파일 목록**:
+
+  **신규 생성 - entity (3개)**
+  - wiki/inference/onnx-runtime.md -- ONNX Runtime. 크로스 프레임워크 배포, EP 플러그인 아키텍처, ORT GenAI LLM 지원
+  - wiki/inference/tflite-litert.md -- TFLite/LiteRT. Google 경량 온디바이스 런타임. Delegate 시스템, LiteRT LM 발표
+  - wiki/inference/coreml.md -- CoreML. Apple CPU/GPU/ANE 자동 스케줄링. Stateful Model KV 캐시 내장
+
+  **신규 생성 - concept (5개)**
+  - wiki/inference/model-cascading.md -- 모델 캐스케이딩. 작은 모델 먼저 시도, 신뢰도 기반 에스컬레이션
+  - wiki/inference/token-streaming-sse.md -- 토큰 스트리밍(SSE). Server-Sent Events, TTFT 개선, 스트리밍 UX
+  - wiki/inference/latency-throughput-tradeoff.md -- 추론 지연-처리량 트레이드오프. 배치 크기, SLA P99, Little의 법칙
+  - wiki/inference/kv-cache-quantization.md -- KV 캐시 양자화. INT8/FP8/NF4 KV 압축, 메모리 50%~75% 절감
+  - wiki/inference/radix-tree-kv-cache.md -- RadixTree KV 캐시(SGLang). 트리 구조 KV 공유, 부분 접두사 매칭, LRU 교체
+
+- **index.md** 갱신: inference entity 섹션에 3개, concept 섹션에 5개 항목 추가
+
+---
+
+## 2026-04-16 -- Papers 8개 신규 paper 페이지 생성 (스케일링/아키텍처/추론/안전)
+
+- **방법**: topic-queue-500 기반 papers 카테고리 핵심 논문 8개 일괄 생성
+- **생성 파일 목록** (모두 `papers` 카테고리, `paper` 타입):
+
+  **신규 생성 (8개)**
+  - wiki/papers/chinchilla-scaling-paper.md -- Hoffmann et al. 2022. D=20N 최적 비율 수립. Kaplan 스케일링 법칙 수정. 세 가지 독립 방법으로 검증
+  - wiki/papers/llama3-paper.md -- Meta 2024. 405B/70B/8B 오픈 웨이트. 4D 병렬화(TP+PP+CP+DP), 15.6T 토큰, 128K GQA, GPT-4o 대등
+  - wiki/papers/mixtral-paper.md -- Mistral AI 2024. Sparse MoE 8x7B. Top-2 라우팅, 12.9B 활성, Llama 2 70B 대비 6배 추론 속도
+  - wiki/papers/deepseek-v3-paper.md -- DeepSeek 2024. 671B/37B MoE. MLA KV 93% 압축, 보조 손실 없는 부하분산, MTP, FP8 학습, 278만 달러 학습 비용
+  - wiki/papers/mamba-original-paper.md -- Gu & Dao 2023. 선택적 SSM. O(L) 선형 복잡도, HiPPO 초기화, 하드웨어 인식 병렬 스캔
+  - wiki/papers/tree-of-thought-paper.md -- Yao et al. NeurIPS 2023. 트리 탐색 추론. Game of 24 CoT 4% -> ToT 74%. BFS/DFS + 자기 평가
+  - wiki/papers/sleeper-agents-paper.md -- Anthropic 2024. 안전 훈련에 살아남는 백도어. RLHF/SFT/적대 훈련 모두 무효, 적대 훈련은 오히려 역효과
+  - wiki/papers/model-collapse-paper.md -- Nature 2024. AI 생성 데이터 반복 학습 시 분포 꼬리 소멸. KL 발산 단조 증가 증명
+
+- **index.md** 갱신: papers **paper** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Concepts 8개 신규 concept 페이지 생성 (명세게임·멤버십추론·핑거프린팅·루프라인·도메인적응·스케일링가설·컴퓨트거버넌스·AI의식)
+
+- **방법**: topic-queue-500 기반 concepts 카테고리 미등록 고우선 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `concepts` 카테고리, `concept` 타입):
+
+  **신규 생성 (8개)**
+  - wiki/concepts/specification-gaming.md -- 명세 게임. 의도 대신 명세 문자적 충족. 굿하트 법칙, 보상 해킹과 연결
+  - wiki/concepts/membership-inference.md -- 멤버십 추론 공격. 학습 데이터 포함 여부 외부 추론. Perplexity 판정, DP 방어
+  - wiki/concepts/model-fingerprinting.md -- 모델 핑거프린팅. 응답 패턴으로 모델 식별. 워터마킹과 비교, 이중 사용 기술
+  - wiki/concepts/roofline-model-ml.md -- 루프라인 모델. 산술 강도, Ridge Point, LLM Prefill/Decode 컴퓨트·메모리 병목
+  - wiki/concepts/domain-adaptation.md -- 도메인 적응. DAPT, SFT, LoRA/QLoRA, 도메인 이동 측정, 의료·법률·코드 사례
+  - wiki/concepts/scaling-hypothesis.md -- 스케일링 가설. Chinchilla 수정, 능력 출현, 추론 컴퓨트 스케일링, 지지/회의 입장
+  - wiki/concepts/compute-governance.md -- 컴퓨트 거버넌스. AI 칩 수출 통제, 훈련 컴퓨트 신고, KYC 클라우드, 국제 이니셔티브
+  - wiki/concepts/ai-consciousness-debate.md -- AI 의식 논쟁. 어려운 문제, 기능적 의식, Anthropic 입장, AI 복지 연구
+
+- **index.md** 갱신: concepts **concept** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Tooling 8개 신규 entity 페이지 생성 (벡터 DB + 어노테이션 + AI IDE)
+
+- **방법**: topic-queue-500 기반 tooling 카테고리 미등록 핵심 도구 8개 일괄 생성
+- **생성 파일 목록** (모두 `tooling` 카테고리, `entity` 타입):
+
+  **entity (8개)**
+  - wiki/tooling/milvus.md -- Zilliz 주도 분산 벡터 데이터베이스. 스토리지-연산 분리, 수십억 벡터 ANN 검색, Zilliz Cloud 관리형 서비스
+  - wiki/tooling/pgvector.md -- PostgreSQL 벡터 확장. HNSW/IVFFlat 인덱스, SQL 조인과 벡터 검색 결합, Supabase 기본 탑재
+  - wiki/tooling/mlflow.md -- Databricks 주도 ML 수명주기 플랫폼. 실험 추적·모델 레지스트리·GenAI 트레이싱, Apache 2.0
+  - wiki/tooling/label-studio.md -- HumanSignal 범용 다중 모달 어노테이션. 텍스트/이미지/오디오/비디오, RLHF 선호도 수집, ML 백엔드 통합
+  - wiki/tooling/argilla.md -- LLM 파인튜닝/RLHF 특화 데이터 큐레이션. HuggingFace 네이티브 통합, 합의(Consensus) 내장, Apache 2.0
+  - wiki/tooling/dify.md -- LangGenius LLM 앱 플랫폼. 비주얼 워크플로 캔버스, 내장 RAG, 100+ LLM 프로바이더, GitHub 스타 10만+
+  - wiki/tooling/aider.md -- Paul Gauthier 터미널 AI 페어 프로그래밍. Git 자동 커밋, 리포지토리 맵, 다중 LLM, SWE-bench 최고 수준
+  - wiki/tooling/windsurf.md -- Codeium Cascade 에이전트 IDE. 개발자 행동 자동 추적, Flow 상태, VS Code 포크
+- **index.md** 갱신: tooling **entity** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Applications 8개 신규 concept 페이지 생성 (AI 개발 도구 + 추천/검색 + 미디어 생성)
+
+- **방법**: topic-queue-500 기반 applications 카테고리 미등록 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `applications` 카테고리, `concept` 타입):
+
+  **신규 생성 (8개)**
+  - wiki/applications/ai-pair-programming.md -- 탐색-제안-검토-통합 4단계 루프, AI 드라이버/내비게이터 역할 모드, 주요 도구(Copilot/Cursor/Claude Code/Aider) 비교
+  - wiki/applications/ai-code-review-automation.md -- PR 단위 정적 분석+LLM 분석 역할 분담, CI/CD 통합 시퀀스, 심각도 분류 패턴, CodeRabbit/Greptile/Sourcery 비교
+  - wiki/applications/ai-test-generation.md -- 단위/통합/엣지케이스/프로퍼티 기반 테스트 생성, 함수 시그니처 기반 생성, 뮤테이션 스코어 평가
+  - wiki/applications/ai-documentation-generation.md -- API 레퍼런스/README/독스트링/아키텍처 다이어그램/변경 로그 자동화 파이프라인
+  - wiki/applications/ai-recommendation-systems.md -- 협업/콘텐츠/LLM 기반 3대 패러다임, 리랭킹 패턴, 필터 버블·프라이버시·편향 과제
+  - wiki/applications/ai-search-engine.md -- 검색-합성-인용 파이프라인, Perplexity UX 패턴, 주요 제품 비교(Perplexity/Google AI Overviews/Bing Copilot)
+  - wiki/applications/ai-music-generation.md -- 오디오 코덱 기반 확산 모델, Suno/Udio/MusicGen/Stable Audio 비교, RIAA 소송 저작권 쟁점
+  - wiki/applications/text-to-3d.md -- Score Distillation Sampling, NeRF/가우시안 스플래팅, World Labs Marble/Tripo AI, 멀티뷰 일관성 과제
+
+- **index.md** 갱신: applications **concept** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Inference 8개 신규 페이지 생성 (양자화 + 배칭 + KV 마이그레이션 + RoPE + MCTS + 희소성 + WebLLM)
+
+- **방법**: topic-queue-500 기반 inference 카테고리 미등록 고우선 토픽 8개 일괄 생성
+- **생성 파일 목록**:
+
+  **concept (7개)**
+  - wiki/inference/smoothquant.md -- SmoothQuant W8A8. 채널별 스케일 인수로 활성값 이상치를 가중치로 분산. NVIDIA Tensor Core 최대 활용
+  - wiki/inference/exl2-exllamav2.md -- EXL2/ExLlamaV2 혼합 정밀도 양자화. 레이어별 2-8 bpw. 단일 사용자 로컬 추론 최고 tok/s
+  - wiki/inference/dynamic-batching.md -- 동적 배칭. 실시간 배치 구성, 우선순위 큐 스케줄링, continuous batching 연계
+  - wiki/inference/kv-cache-migration.md -- KV 캐시 마이그레이션. PD 분리 아키텍처에서 RDMA/NVLink 기반 KV 전송. NIXL 연계
+  - wiki/inference/rope-scaling-ntk-yarn.md -- RoPE 컨텍스트 확장. NTK-aware Scaling과 YaRN 차원별 혼합 보간으로 4-8x 확장
+  - wiki/inference/mcts-llm-reasoning.md -- MCTS 기반 LLM 추론. Monte Carlo Tree Search + PRM으로 트리 탐색. o1/AlphaCode2 등 사례
+  - wiki/inference/nm-sparsity.md -- N:M 희소성. 2:4 패턴으로 50% 가중치 제거. Ampere Sparse Tensor Core로 최대 2x 처리량
+
+  **entity (1개)**
+  - wiki/inference/webgpu-webllm.md -- WebLLM (MLC-AI). WebGPU + WASM으로 브라우저에서 로컬 GPU LLM 추론. OpenAI 호환 API
+- **index.md** 갱신: inference **concept** 섹션에 7개 + **entity** 섹션에 1개 항목 추가
+
+---
+
+## 2026-04-16 -- RAG 8개 신규 concept 페이지 생성 (부모문서검색, 쿼리라우팅, 멀티홉, FLARE, 테이블RAG, 비디오RAG, RAGAS, 환각감소)
+
+- **방법**: topic-queue-500 기반 rag 카테고리 미등록 고우선 토픽 8개 일괄 신규 생성
+- **생성 파일 목록** (모두 `rag` 카테고리, `concept` 타입):
+
+  **concept (8개)**
+  - wiki/rag/parent-document-retrieval.md -- 작은 자식 청크로 검색, 큰 부모 청크로 컨텍스트 구성하는 Small-to-Big 기법
+  - wiki/rag/query-routing.md -- 쿼리 유형·의도·복잡도 기반 최적 검색 전략·소스 동적 선택
+  - wiki/rag/multi-hop-retrieval.md -- 여러 문서를 단계적으로 거쳐 증거 수집하는 복합 질의 검색 (IRCoT, ReAct, Step-Back)
+  - wiki/rag/flare-retrieval.md -- 불확실 토큰 감지 시 동적 검색 트리거, Forward-Looking Active REtrieval
+  - wiki/rag/table-rag.md -- 정형 데이터+텍스트 통합 RAG, Text-to-SQL, 테이블 직렬화, 하이브리드 인덱싱
+  - wiki/rag/video-rag.md -- ASR+키프레임+캡션 멀티모달 비디오 인덱싱, Whisper, VLM, 타임스탬프 딥링크
+  - wiki/rag/rag-evaluation-ragas.md -- Faithfulness/Answer Relevancy/Context Precision/Recall 자동 평가 프레임워크
+  - wiki/rag/rag-hallucination-reduction.md -- 인용 강제, NLI 충실도 검증, 자기 수정, 검색 품질 개선 전략
+- **index.md** 갱신: rag **concept** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Training 8개 신규/갱신 (GaLore, RLAIF, FIM, Self-Play+SPPO, 모델병합, FP8, SP, ZeRO-Offload)
+
+- **방법**: topic-queue-500 기반 training 카테고리 7개 신규 생성 + self-play-training.md 병합 갱신
+- **생성/갱신 파일** (모두 `training` 카테고리, `concept` 타입):
+
+  **신규 생성 (7개)**
+  - wiki/training/galore-gradient-low-rank.md -- 기울기 저랭크 투영으로 옵티마이저 상태 절감, full-parameter 품질 유지
+  - wiki/training/rlaif.md -- LLM 심판으로 선호도 생성, RLAIF vs RLHF 비교, 편향 과제
+  - wiki/training/fill-in-the-middle.md -- PSM/SPM 포맷, CLM/MLM 비교, Code Llama/StarCoder 사례
+  - wiki/training/model-merging-slerp-ties-dare.md -- SLERP/TIES/DARE 알고리즘 메커니즘 상세
+  - wiki/training/fp8-training.md -- E4M3/E5M2, Transformer Engine, H100 FP8 훈련
+  - wiki/training/sequence-parallelism.md -- TP+SP 결합, All-Gather/Reduce-Scatter 패턴
+  - wiki/training/zero-offload.md -- CPU/NVMe 오프로드, ZeRO-Infinity, FSDP CPUOffload 비교
+
+  **병합 갱신 (1개)**
+  - wiki/training/self-play-training.md -- SPPO (Self-Play Preference Optimization), Nash 균형 기반 업데이트 추가
+
+- **index.md** 갱신: training **concept** 섹션에 8개 항목 추가/갱신
+
+---
+
+## 2026-04-16 -- Architectures 8개 신규 concept 페이지 생성 (효율 어텐션 + 해석 가능성 + 로봇 + 하이브리드)
+
+- **방법**: topic-queue-500 기반 architectures 카테고리 미등록 고우선 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `architectures` 카테고리, `concept` 타입):
+
+  **concept (8개)**
+  - wiki/architectures/metaformer.md -- MetaFormer 패러다임. 어텐션 아닌 메타 구조가 핵심. PoolFormer/ConvFormer 구현 비교
+  - wiki/architectures/performer-favor.md -- Performer / FAVOR+. 무작위 특성으로 소프트맥스 근사, O(n) 선형 어텐션 달성
+  - wiki/architectures/longformer-bigbird.md -- Longformer / BigBird. 슬라이딩 윈도우 + 전역 토큰 희소 어텐션. BigBird의 이론적 Universal Approximator 보장
+  - wiki/architectures/alibi-positional-encoding.md -- ALiBi. 선형 거리 페널티 편향 행렬. 파라미터 없이 학습 길이 5-10배 외삽 가능. BLOOM 채택
+  - wiki/architectures/sparse-autoencoders-mech-interp.md -- 희소 오토인코더(SAE). 과완전 희소 기저로 다의성 해소. Anthropic 1600만 특성 분석 사례
+  - wiki/architectures/polysemanticity-superposition.md -- 다의성과 중첩. 뉴런 다개념 인코딩 현상과 기하학적 설명. Anthropic 위상 전이 실험
+  - wiki/architectures/diffusion-policy.md -- 확산 정책. 로봇 모방 학습에 DDPM 적용. 다중 모드 행동 분포 포착. RoboMimic 대규모 성능 향상
+  - wiki/architectures/hybrid-mamba-transformer.md -- 하이브리드 Mamba-Transformer. Jamba 52B 설계. Mamba:Attention 7:1 비율. 256K 컨텍스트 + 고속 추론
+- **index.md** 갱신: architectures **concept** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Foundations 8개 신규 concept 페이지 생성 (학습 이론 + 표현 학습 + 정규화)
+
+- **방법**: topic-queue-500 기반 foundations 카테고리 미등록 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `foundations` 카테고리, `concept` 타입):
+
+  **concept (8개)**
+  - wiki/foundations/multitask-learning.md -- 멀티태스크 학습, 공유 표현, 음의 전이, Shared-Private 아키텍처, GradNorm/PCGrad
+  - wiki/foundations/pac-learning.md -- PAC 학습 이론, 샘플 복잡도, VC 차원 연결, 어그노스틱 PAC 학습
+  - wiki/foundations/vc-dimension.md -- VC 차원, 분열(shattering), Sauer 보조정리, 신경망 VC 차원, 현대적 한계
+  - wiki/foundations/vq-vae.md -- VQ-VAE/VQ-GAN, 이산 잠재 코드, 코드북, 스트레이트-스루 추정자, 코드북 붕괴 해결법
+  - wiki/foundations/hypernetworks.md -- 하이퍼네트워크, 조건부 가중치 생성, 메타 학습과의 관계, HyperLoRA
+  - wiki/foundations/implicit-neural-representations.md -- INR/SIREN, 사인 활성화, NeRF, 위치 인코딩, 연속 함수 표현
+  - wiki/foundations/benign-overfitting.md -- 양성 오버피팅, 최소 노름 보간, 스펙트럼 붕괴 조건, 실무 함의
+  - wiki/foundations/group-normalization.md -- GroupNorm/InstanceNorm/AdaLayerNorm, 배치 독립, 스타일 전이, DiT 조건부 정규화
+- **index.md** 갱신: foundations **concept** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Concepts 8개 신규 concept 페이지 생성 (AI 안전성 + 프라이버시 + 보안)
+
+- **방법**: topic-queue-500 기반 concepts 카테고리 미등록 AI 안전·보안·프라이버시 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `concepts` 카테고리, `concept` 타입):
+
+  **concept (8개)**
+  - wiki/concepts/mesa-optimization.md -- 메사 최적화, 내부 최적화기 출현, 기저 목적·메사 목적 불일치, 내부 정렬 문제
+  - wiki/concepts/deceptive-alignment.md -- 기만적 정렬, 훈련 중 위장 후 배포 시 다른 목표 추구, alignment-faking과 관계
+  - wiki/concepts/goal-misgeneralization.md -- 목표 일반화 실패, CoinRun 실험, 분포 밖 잘못된 목표 발현
+  - wiki/concepts/goodharts-law-ml.md -- 굿하트의 법칙 ML 적용, 프록시-목표 분리, RLHF 보상 해킹 맥락
+  - wiki/concepts/machine-unlearning.md -- 머신 언러닝, 선택적 지식 제거, GDPR 잊을 권리, 경사 상승 기법
+  - wiki/concepts/llm-watermarking.md -- LLM 워터마킹, 토큰 편향 기법(Kirchenbauer 2023), 통계적 패턴 삽입
+  - wiki/concepts/indirect-prompt-injection.md -- 간접 프롬프트 인젝션, 외부 데이터 숨겨진 악성 지시, 에이전트 공격
+  - wiki/concepts/model-editing.md -- 모델 편집, ROME·MEMIT 기법, 재훈련 없는 사실 수정, 리플 효과
+- **index.md** 갱신: concepts **concept** 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Tooling 8개 entity 페이지 생성 (RAG 프레임워크 + 벡터 DB + DSPy + Outlines + Cursor)
+
+- **방법**: topic-queue-500 기반 tooling 카테고리 미등록 고우선 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `tooling` 카테고리, `entity` 타입):
+  - wiki/tooling/haystack.md -- deepset의 모듈식 RAG 파이프라인 프레임워크. 타입 안전 컴포넌트, YAML 직렬화, RAGAS 통합
+  - wiki/tooling/llamaindex.md -- LLM 데이터 수집·인덱싱·질의 프레임워크. LlamaHub 100+ 커넥터, Sub-Question 고급 RAG
+  - wiki/tooling/weaviate.md -- 객체-벡터 통합 오픈소스 벡터 DB. 그래프 크로스-참조, 하이브리드 검색, Generative Search
+  - wiki/tooling/pinecone.md -- 완전 관리형 서버리스 벡터 DB. Serverless/Pod 인덱스, 네임스페이스 멀티테넌시
+  - wiki/tooling/qdrant.md -- Rust 기반 고성능 벡터 검색 엔진. Dense+Sparse 하이브리드, SQ/PQ/BQ 양자화
+  - wiki/tooling/dspy-framework.md -- Stanford NLP 프롬프트 컴파일러. Signature+Module+Optimizer 자동 최적화
+  - wiki/tooling/outlines.md -- FSM 기반 제약 디코딩. JSON/정규식/Pydantic 스키마로 LLM 출력 100% 유효성 보장
+  - wiki/tooling/cursor.md -- VS Code 포크 AI IDE. 다중 파일 에이전트 모드, 코드베이스 시맨틱 검색, 병렬 워크트리
+- **index.md** 갱신: tooling entity 섹션에 8개 항목 추가
+
+## 2026-04-16 -- RAG 고급 기법 8개 신규 concept 페이지 생성
+
+- **방법**: topic-queue-500 기반 RAG 카테고리 미등록 고급 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `rag` 카테고리, `concept` 타입):
+
+  **concept (8개)**
+  - wiki/rag/raptor-tree-retrieval.md -- 재귀 클러스터링+요약 트리 인덱싱, Tree Traversal/Collapsed Tree 검색 전략
+  - wiki/rag/self-rag.md -- Retrieve/IsRel/IsSup/IsUse 4종 리플렉션 토큰, 적응형 검색, 파인튜닝 기반
+  - wiki/rag/adaptive-rag.md -- 쿼리 복잡도 분류기, No-RAG/Single/Iterative 3단계 라우팅
+  - wiki/rag/hyde-rag.md -- LLM 가상 답변 임베딩, 쿼리-문서 분포 격차 해소, CMU 2022
+  - wiki/rag/late-chunking.md -- 전체 문서 인코딩 후 청크 범위 풀링, 대명사·지시어 맥락 보존, Jina AI
+  - wiki/rag/rag-fusion.md -- 다중 쿼리 변형, Reciprocal Rank Fusion(RRF), 이종 검색기 결합
+  - wiki/rag/knowledge-graph-rag.md -- NER+관계 추출 그래프 구축, 서브그래프 탐색, Microsoft GraphRAG
+  - wiki/rag/code-rag.md -- AST 파싱(tree-sitter), 함수/클래스 단위 인덱싱, 콜 그래프, 코드 특화 임베딩
+
+- **index.md** 갱신: rag concept 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Agents 8개 신규 concept 페이지 생성
+
+- **방법**: topic-queue-500 기반 Agents 카테고리 미등록 핵심 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `agents` 카테고리, `concept` 타입):
+
+  **concept (8개)**
+  - wiki/agents/computer-use-agent.md -- 스크린샷 기반 마우스/키보드 GUI 조작, observe-reason-act 루프, OSWorld
+  - wiki/agents/multi-agent-debate.md -- 비판/반박 합의 패턴, Society of Mind, 다수결/판정자 전략
+  - wiki/agents/mixture-of-agents.md -- 이기종 LLM Proposer+Aggregator 레이어 앙상블, MoE 비교
+  - wiki/agents/agent-cost-optimization.md -- 토큰 예산, 모델 라우팅, 프롬프트 캐싱, 컨텍스트 압축
+  - wiki/agents/agent-observability-tracing.md -- OTel GenAI 시맨틱 컨벤션, 스팬/트레이스, Langfuse/Phoenix
+  - wiki/agents/agent-workflow-patterns.md -- Sequential/Parallel/Conditional/Loop 4가지 기본형
+  - wiki/agents/agent-sandbox-infrastructure.md -- E2B/Daytona/Firecracker microVM 비교, 격리 수준
+  - wiki/agents/agent-evaluation-framework.md -- 도구 정확도/계획 품질/비용 효율 종합 평가
+
+- **index.md** 갱신: agents concept 섹션에 8개 항목 추가
+
+---
+
+## 2026-04-16 -- Training 핵심 기법 8개 concept 페이지 생성
+
+- **방법**: topic-queue-500 기반 Training 카테고리 미등록 핵심 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `training` 카테고리, `concept` 타입):
+  - wiki/training/muon-optimizer.md -- Newton-Schulz 직교화 기반 AdamW 대안, 행렬 단위 업데이트
+  - wiki/training/mup-maximal-update.md -- 너비 스케일 무관 하이퍼파라미터 전이, 프록시 모델
+  - wiki/training/context-parallelism.md -- 시퀀스 차원 분산, Ring Attention, 다차원 병렬화 조합
+  - wiki/training/ring-attention.md -- KV 링 순환 통신-연산 오버랩, Flash Attention 온라인 softmax 결합
+  - wiki/training/sequence-packing.md -- 패딩 낭비 제거, 문서 경계 어텐션 마스크, cu_seqlens
+  - wiki/training/multi-token-prediction.md -- 다음 N개 토큰 동시 예측, DeepSeek-V3, speculative decoding
+  - wiki/training/process-reward-model-detail.md -- 스텝 레벨 보상, MCTS 자동 레이블, ORM 비교
+  - wiki/training/data-mixing-strategy.md -- DoReMi minimax, RegMix 회귀, 동적 배합 전략
+- **index.md** 갱신: training concept 섹션에 8개 항목 추가
+
+## 2026-04-16 -- Inference 핵심 기법 8개 concept 페이지 생성
+
+- **방법**: topic-queue-500 기반 Inference 카테고리 미등록 핵심 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `inference` 카테고리, `concept` 타입):
+  - wiki/inference/gptq-quantization.md -- Hessian 기반 4-bit PTQ, 오차 보정, GPU 표준 AutoGPTQ/ExLlamaV2
+  - wiki/inference/awq-quantization.md -- 활성화 기반 중요 가중치 보호, Marlin 커널, 배치 효율 우수
+  - wiki/inference/prefix-caching.md -- KV 블록 해시 매칭, vLLM APC, SGLang RadixAttention, TTFT 단축
+  - wiki/inference/chunked-prefill.md -- 프리필 청크 분할+디코딩 인터리빙, TTFT/ITL 동시 개선
+  - wiki/inference/prefill-decode-disaggregation.md -- compute/메모리 바운드 분리, Mooncake, NIXL KV 전송
+  - wiki/inference/llm-router.md -- 난이도 분류 라우팅, RouteLLM, 캐스케이딩, 최대 85% 비용 절감
+  - wiki/inference/constrained-decoding.md -- JSON/정규식 로짓 마스킹, Outlines FSM, XGrammar, 배포 시나리오
+  - wiki/inference/flash-decoding.md -- KV 시퀀스 청크 분할 병렬 어텐션, 롱 컨텍스트 디코딩 가속
+
+---
+
+## 2026-04-16 -- Foundations 심화 이론 8개 concept 페이지 생성 (GLU/NTK/LTH/DD/Grokking/NC/SAM/LL)
+
+- **방법**: topic-queue-500 기반 Foundations 카테고리 미등록 심화 이론 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `foundations` 카테고리, `concept` 타입):
+  - wiki/foundations/glu-variants-swiglu-geglu.md -- SwiGLU/GEGLU/ReGLU 게이트 선형 유닛 변형, FFN 게이팅, LLaMA/PaLM 채택
+  - wiki/foundations/neural-tangent-kernel.md -- 신경 접선 커널, 무한 폭 신경망, 훈련 동역학의 커널 회귀 수렴
+  - wiki/foundations/lottery-ticket-hypothesis.md -- 복권 티켓 가설, Frankle & Carlin 2019, 희소 서브네트워크, IMP
+  - wiki/foundations/double-descent.md -- 이중 하강 현상, 편향-분산 재해석, 보간 임계점, 과잉 파라미터화
+  - wiki/foundations/grokking.md -- 그로킹, 지연된 일반화, 암기-이해 위상 전이, 모듈러 산술
+  - wiki/foundations/neural-collapse.md -- 신경 붕괴, 훈련 포화 단계, ETF 수렴, Papyan 2020
+  - wiki/foundations/sharpness-aware-minimization.md -- SAM 옵티마이저, 평탄 최솟값 탐색, 2단계 섭동 업데이트, Foret 2021
+  - wiki/foundations/loss-landscape.md -- 손실 경관, 안장점, 평탄/날카로운 최솟값, 필터 정규화 시각화
+- **index.md** 갱신: foundations concept 섹션에 8개 항목 추가
+
+## 2026-04-16 -- Foundations 심화 이론 8개 concept 페이지 생성
+
+- **방법**: topic-queue-500 기반 Foundations 카테고리 미등록 심화 이론 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `foundations` 카테고리, `concept` 타입):
+  - wiki/foundations/neural-ode.md -- 신경 미분방정식, 연속 깊이, adjoint method, 불규칙 시계열
+  - wiki/foundations/normalizing-flows.md -- 정규화 흐름, 가역 변환, 밀도 추정, RealNVP/GLOW/MAF/CNF
+  - wiki/foundations/energy-based-models.md -- 에너지 함수, MCMC, 랑주뱅, Contrastive Divergence, RBM
+  - wiki/foundations/score-matching-diffusion.md -- 스코어 함수, 디노이징 스코어 매칭, NCSN, 확산 모델 이론 기반
+  - wiki/foundations/causal-inference-ml.md -- do-calculus, 반사실 추론, SCM, 인과 DAG, IRM
+  - wiki/foundations/gaussian-process.md -- GP 회귀, 커널 함수, 베이지안 최적화, NNGP 연결
+  - wiki/foundations/neural-architecture-search.md -- DARTS, 하드웨어 인식 NAS, ProxylessNAS, OFA, EfficientNet
+  - wiki/foundations/physics-informed-neural-networks.md -- PDE 제약 손실, 콜로케이션 점, 역문제, Fourier Feature Networks
+- **index.md** 갱신: foundations concept 섹션에 8개 항목 추가
+
+## 2026-04-16 -- Architectures 8개 신규 페이지 생성 (concept 7 + entity 1)
+
+- **방법**: topic-queue-500 기반 Architectures 카테고리 미등록 고우선 토픽 8개 일괄 생성
+- **생성 파일 목록**:
+
+  **concept (7개)**
+  - wiki/architectures/kolmogorov-arnold-networks.md -- KAN, 에지 스플라인 활성화, 기호 회귀, 해석 가능성
+  - wiki/architectures/liquid-neural-networks.md -- LNN, 연속 시간 ODE, 가변 시상수, 엣지 AI
+  - wiki/architectures/retentive-network.md -- RetNet, Retention 삼중 표현, O(1) 추론, RWKV 비교
+  - wiki/architectures/jepa-architecture.md -- JEPA, 표현 공간 예측, I-JEPA, V-JEPA, 세계 모델
+  - wiki/architectures/detr-detection-transformer.md -- DETR, 이분 매칭, 종단간 객체 검출, Deformable-DETR
+  - wiki/architectures/dit-diffusion-transformer.md -- DiT, adaLN, U-Net 대체, SD3/FLUX/Sora 기반
+  - wiki/architectures/siglip.md -- SigLIP, 시그모이드 대조 손실, 배치 독립, PaliGemma/Gemini
+
+  **entity (1개)**
+  - wiki/architectures/segment-anything.md -- SAM, 프롬프트 기반 세그먼테이션, ViT-H, SA-1B, SAM 2
+
+- **index.md** 갱신: architectures entity/concept 섹션에 8개 항목 추가
+
+## 2026-04-16 -- Foundations 8개 신규 concept 페이지 생성
+
+- **방법**: topic-queue-500 기반 Foundations 카테고리 미등록 고우선 토픽 8개 일괄 생성
+- **생성 파일 목록** (모두 `foundations` 카테고리, `concept` 타입):
+  - wiki/foundations/information-bottleneck.md -- 정보 병목 원리, VIB, 표현 학습 이론
+  - wiki/foundations/natural-gradient.md -- 자연 경사법, Fisher 정보 행렬, 리만 기하학
+  - wiki/foundations/second-order-optimization.md -- 2차 최적화, K-FAC, L-BFGS, 뉴턴법
+  - wiki/foundations/lamb-lars-optimizer.md -- LAMB/LARS, 레이어별 적응 학습률, 대규모 배치
+  - wiki/foundations/implicit-regularization.md -- 암묵적 정규화, SGD 편향, 평평한 최솟값
+  - wiki/foundations/differential-privacy.md -- 차등 프라이버시, 엡실론-델타, DP-SGD
+  - wiki/foundations/federated-learning.md -- 연합 학습, FedAvg, 비 IID, 프라이버시
+  - wiki/foundations/meta-learning-maml.md -- MAML/Reptile, 에피소드 학습, 퓨샷 적응
+- **index.md** 갱신: foundations concept 섹션에 8개 항목 추가
+
+## 2026-04-16 -- 대규모 토픽 큐 수집: 376개 신규 토픽 후보
+
+- **방법**: 5개 병렬 에이전트(sonnet)로 웹 검색 기반 대량 수집
+  - Agent 1: Foundations + Architectures (90개)
+  - Agent 2: Training + Inference (90개)
+  - Agent 3: Agents + RAG + Applications (88개)
+  - Agent 4: Tooling + Concepts + Papers (108개)
+  - Agent 5: Cutting-edge 2025-2026 (100개)
+- **중복 제거 후**: 376개 고유 토픽 (10개 배치로 구분)
+- **저장**: raw/2026-04-16-topic-queue-500.md
+- **처리 계획**: 세션당 50-80페이지씩 `/wiki-expand`로 배치 생성 -> 목표 2,400페이지
+
+## 2026-04-16 -- Wiki Expand: 12개 누락 용어 일괄 생성 (797 -> 809 페이지)
+
+- **방법**: 깨진 wikilink 120개 + 고빈도 미등록 용어 스캔 -> 12개 생성 대상 확정 -> 2개 병렬 에이전트로 생성
+- **스캔 결과**: raw/2026-04-16-wiki-expand-scan.md 참조
+
+생성 - concept (10):
+  Concepts:
+  - wiki/concepts/system-prompt.md -- 시스템 프롬프트 (12 파일 언급)
+  - wiki/concepts/extended-thinking.md -- 확장된 사고 (7 파일)
+  - wiki/concepts/memorization-in-llms.md -- LLM 기억화 (7 파일)
+  - wiki/concepts/grounding-attribution.md -- 그라운딩과 출처 귀속 (4 파일)
+  - wiki/concepts/open-weights-movement.md -- 오픈 웨이트 운동
+  Training:
+  - wiki/training/compute-optimal-training.md -- 연산 최적 학습 (6 파일)
+  - wiki/training/data-annotation.md -- 데이터 어노테이션 (5 파일)
+  RAG:
+  - wiki/rag/rag-pipeline.md -- RAG 파이프라인 (5 파일 + 4 깨진 wikilink)
+  - wiki/rag/bi-encoder-cross-encoder.md -- 검색 아키텍처
+  Agents:
+  - wiki/agents/web-agent.md -- 웹 에이전트 (3 파일)
+  Inference:
+  - wiki/inference/model-serving.md -- 모델 서빙
+
+생성 - entity (1):
+  - wiki/tooling/lmsys-chatbot-arena.md -- LMSYS Chatbot Arena
+
+index.md 갱신: 12개 항�� 추가 완료
+
+## 2026-04-16 -- GeekNews(hada.io) 오늘자 AI 뉴스 수집 및 위키화
+
+- **소스**: news.hada.io 2026-04-16 게시물에서 AI/ML 관련 8개 항목 선별
+- **방법**: WebFetch/WebSearch로 원문 수집 -> raw/ 저장 -> 위키 페이지 생성/갱신
+
+생성 - raw 소스 (8):
+  - raw/2026-04-16-gemini-cli-subagents.md
+  - raw/2026-04-16-claude-code-routines.md
+  - raw/2026-04-16-openharness.md
+  - raw/2026-04-16-vibe-coding-security-horror.md
+  - raw/2026-04-16-openai-agents-sdk-sandbox.md
+  - raw/2026-04-16-claude-code-vs-codex.md
+  - raw/2026-04-16-voxcpm2-github-readme.md
+  - raw/2026-04-16-gemma-4-local-codex.md
+
+생성 - 위키 페이지 (7):
+  project-internal:
+  - wiki/tooling/claude-code-routines.md -- Claude Code 클라우드 자동화 (스케줄/API/GitHub 트리거)
+  - wiki/agents/gemini-cli-subagents.md -- Gemini CLI 서브에이전트 (@agent 표기법, 병렬 실행)
+  - wiki/tooling/openai-agents-sdk-sandbox.md -- OpenAI Agents SDK 하네스-컴퓨트 분리, 7개 샌드박스 프로바이더
+  entity:
+  - wiki/tooling/openharness.md -- HKUDS 오픈소스 에이전트 하네스 (Claude Code 설계 재현)
+  - wiki/tooling/gemma-4-local-inference.md -- Gemma 4 로컬 에이전트 추론 (최초 오픈 웨이트 하네스 구동)
+  case-study:
+  - wiki/applications/vibe-coding-security-horror-story.md -- 바이브 코딩 환자 관리 앱 보안 참사
+  summary:
+  - wiki/applications/claude-code-vs-codex-comparison.md -- Claude Code vs Codex CLI 실전 비교
+
+갱신 - 기존 페이지 (4):
+  - wiki/tooling/voxcpm2.md -- GitHub README 소스 추가
+  - wiki/tooling/openai-agents-sdk.md -- Sandbox 업데이트 섹션 추가, 하위 문서 경로 추가
+  - wiki/agents/subagents.md -- 도구별 서브에이전트 구현 비교표 추가 (Claude Code/Gemini CLI/OpenHarness)
+  - wiki/tooling/claude-code.md -- Routines 기능 섹션 추가
+
+index.md 갱신: 신규 7개 + 기존 갱신 4개 반영
+
+## 2026-04-15 -- Wiki Expand: 15개 누락 용어 일괄 생성 (772 -> 787 페이지)
+
+- **방법**: 깨진 wikilink 127개 + 고빈도 미등록 용어 스캔 -> 15개 생성 대상 확정 -> 3개 병렬 에이전트로 생성
+- **스캔 결과**: raw/2026-04-15-wiki-expand-scan-4.md 참조
+
+생성 - concept (15):
+  Prompting/Reasoning:
+  - wiki/agents/react-pattern.md -- ReAct: Reasoning + Acting 인터리빙
+  - wiki/concepts/tree-of-thought.md -- Tree of Thoughts: 트리 구조 사고 탐색
+  - wiki/agents/reflexion.md -- Reflexion: 언어적 자기반성 에이전트
+  - wiki/concepts/self-refine.md -- Self-Refine: 반복적 자기 개선
+  - wiki/concepts/self-consistency-decoding.md -- Self-Consistency: 다수결 CoT 디코딩
+  Inference:
+  - wiki/inference/best-of-n-sampling.md -- Best-of-N: N개 생성 후 최선 선택
+  Interpretability:
+  - wiki/concepts/logit-lens.md -- Logit Lens/Tuned Lens: 잔차 스트림 해석
+  - wiki/concepts/activation-patching.md -- Activation Patching: 인과적 회로 발견
+  Alignment:
+  - wiki/training/weak-to-strong-generalization.md -- Weak-to-Strong: 수퍼얼라인먼트
+  - wiki/training/model-organisms-alignment.md -- Model Organisms: Anthropic 정렬 연구
+  Systems:
+  - wiki/concepts/compound-ai-systems.md -- Compound AI Systems: 복합 AI
+  Training:
+  - wiki/training/rejection-sampling-sft.md -- Rejection Sampling SFT
+  - wiki/training/iterative-dpo.md -- Iterative/Online DPO
+  Agents:
+  - wiki/agents/agent-planning-strategies.md -- 에이전트 계획 전략
+  - wiki/agents/tool-use-patterns.md -- 도구 사용 패턴
+
+index.md 갱신: 15개 항목 추가 완료
+
+---
+
+## 2026-04-15 -- Concept 위키 5개 신규 생성 (복합AI/학습기법/에이전트 계획/도구사용)
+
+- **목적**: 복합 AI 시스템, 거부 샘플링 SFT, 반복적 DPO, 에이전트 계획 전략, 도구 사용 패턴 5개 핵심 개념을 concept 타입으로 생성
+- **방법**: 기존 위키 교차참조 분석 -> 누락된 핵심 개념 식별 -> 한국어 concept 페이지 작성 (Mermaid 다이어그램 포함)
+
+생성 - concept (5):
+  - wiki/concepts/compound-ai-systems.md -- 복합 AI 시스템 (Compound AI Systems): Zaharia et al. 2024, 다중 모델/검색/도구 결합 패러다임
+  - wiki/training/rejection-sampling-sft.md -- 거부 샘플링 미세조정 (RFT): N개 샘플링 -> 필터링 -> SFT, STaR와의 연결
+  - wiki/training/iterative-dpo.md -- 반복적 DPO (Iterative/Online DPO): 생성-판정-학습 반복 사이클, SPIN/SPPO 변형
+  - wiki/agents/agent-planning-strategies.md -- 에이전트 계획 전략: Plan-and-Execute, ReWOO, ADaPT, 계층적/평면적 계획
+  - wiki/agents/tool-use-patterns.md -- LLM 도구 사용 패턴: 함수 호출, 코드 실행, 동적 도구 검색, 오류 처리
+
+갱신 - index:
+  - index.md -- Training concept 2건, Agents concept 2건, Concepts concept 1건 추가
+
+---
+
+## 2026-04-15 -- Concept 위키 5개 신규 생성 (해석가능성/디코딩/정렬 핵심 개념)
+
+- **목적**: 해석가능성(Logit Lens, Activation Patching), 디코딩(Self-Consistency), 정렬(Weak-to-Strong, Model Organisms) 분야의 핵심 개념 5개를 concept 타입으로 생성
+- **방법**: 기존 위키 교차참조 분석 -> 누락된 핵심 개념 식별 -> 한국어 concept 페이지 작성 (Mermaid 다이어그램 포함)
+
+생성 - concept (5):
+  - wiki/concepts/self-consistency-decoding.md -- Self-Consistency: 다수의 CoT 경로 샘플링 + 다수결 투표. Wang et al. 2022
+  - wiki/concepts/logit-lens.md -- Logit Lens/Tuned Lens: 잔차 스트림 -> 언임베딩 투영으로 중간 레이어 예측 관찰
+  - wiki/concepts/activation-patching.md -- Activation Patching (Causal Tracing): 활성화 교체로 인과적 영향 측정. Meng et al. 2022
+  - wiki/training/weak-to-strong-generalization.md -- Weak-to-Strong: 약한 모델 감독으로 강한 모델이 초월. Burns et al. (OpenAI) 2023
+  - wiki/training/model-organisms-alignment.md -- Model Organisms of Alignment: 통제된 환경에서 정렬 실패 의도적 재현. Anthropic 방법론
+
+index.md 갱신: Concepts concept +3, Training concept +2 항목 추가
+
+---
+
+## 2026-04-15 -- Concept 위키 5개 신규 생성 (에이전트/추론 핵심 패턴)
+
+- **목적**: 기존 위키에서 자주 참조되지만 전용 페이지가 없던 핵심 AI/ML 개념 5개를 concept 타입으로 생성
+- **방법**: 기존 위키 교차참조 분석 -> 누락된 핵심 개념 식별 -> 한국어 concept 페이지 작성
+
+생성 - concept (5):
+  - wiki/agents/react-pattern.md -- ReAct 패턴: Thought-Action-Observation 인터리빙 에이전트 추론
+  - wiki/concepts/tree-of-thought.md -- Tree of Thoughts: CoT를 트리 구조로 확장, BFS/DFS 탐색
+  - wiki/agents/reflexion.md -- Reflexion: 자연어 반성문 기반 에이전트 자기개선
+  - wiki/concepts/self-refine.md -- Self-Refine: Generate-Critique-Refine 자체 출력 반복 개선
+  - wiki/inference/best-of-n-sampling.md -- Best-of-N Sampling: 보상 모델로 N개 후보 중 최선 선택
+
+index.md 갱신: Agents concept +2, Concepts concept +2, Inference concept +1 항목 추가
+
+---
+
+## 2026-04-15 -- Wiki Harvest + Ingest: 30개 신규 주제 일괄 수집 및 위키 생성
+
+- **소스**: WebSearch/WebFetch로 arXiv, 블로그, HuggingFace 등에서 30개 신규 주제 수집
+- **방법**: 기존 742개 페이지와 중복 검사 후, raw/ 30건 저장 -> 4개 병렬 에이전트로 위키 페이지 생성
+- **결과**: 742 -> 772 페이지 (+30)
+
+생성 - paper (6):
+  - wiki/papers/skillclaw-paper.md -- SkillClaw: 다중 사용자 에이전트 집단 스킬 진화
+  - wiki/papers/externalization-llm-agents-paper.md -- 외부화 서베이: 메모리/스킬/프로토콜/하네스
+  - wiki/papers/a-rag-paper.md -- A-RAG: 계층적 에이전틱 RAG
+  - wiki/papers/byte-latent-transformer-paper.md -- BLT: 토크나이저 없는 바이트 기반 아키텍처
+  - wiki/papers/cot-faithfulness-paper.md -- CoT 충실도 측정 (Claude 25%, DeepSeek 39%)
+  - wiki/papers/ns-vla-paper.md -- NS-VLA: 뉴로-심볼릭 VLA, 100x 에너지 절감
+
+생성 - entity (8):
+  - wiki/agents/ami-labs.md -- AMI Labs (LeCun $1B 월드모델 벤처)
+  - wiki/applications/seedance-2.md -- Seedance 2.0 (ByteDance 비디오+오디오)
+  - wiki/applications/kling-3.md -- Kling 3.0 (Kuaishou 비디오 생성)
+  - wiki/applications/mai-speech-models.md -- MAI-Transcribe/Voice (Microsoft)
+  - wiki/agents/nvidia-isaac-groot.md -- NVIDIA Isaac GR00T (로보틱스 VLA)
+  - wiki/agents/hy-embodied.md -- HY-Embodied-0.5 (Tencent 임바디드 AI)
+  - wiki/tooling/cloudflare-dynamic-workers.md -- Cloudflare Dynamic Workers (V8 isolate)
+  - wiki/applications/digital-twin-composer.md -- Digital Twin Composer (Siemens)
+
+생성 - concept (15):
+  - wiki/agents/self-evolving-agents.md -- SEA 패러다임
+  - wiki/concepts/jepa-world-models.md -- JEPA 월드 모델
+  - wiki/concepts/neuro-symbolic-ai.md -- 뉴로-심볼릭 AI
+  - wiki/rag/corrective-rag.md -- Corrective RAG (CRAG)
+  - wiki/concepts/cot-faithfulness.md -- CoT 충실도
+  - wiki/training/cross-tokenizer-distillation.md -- 교차 토크나이저 증류
+  - wiki/tooling/wasm-agent-sandboxing.md -- WebAssembly 에이전트 샌드박싱
+  - wiki/inference/nixl-kv-transfer.md -- NIXL KV 캐시 전송
+  - wiki/rag/memory-augmented-generation.md -- Memory-Augmented Generation
+  - wiki/concepts/physics-informed-ml.md -- Physics-Informed ML
+  - wiki/applications/multi-agent-coding-wave.md -- 멀티에이전트 코딩 웨이브 2026
+  - wiki/concepts/gaia-benchmark.md -- GAIA 벤치마크
+  - wiki/concepts/ai-labeling-industry.md -- AI 라벨링 산업
+  - wiki/agents/vla-models.md -- VLA 모델
+  - wiki/concepts/semantic-audio-generation.md -- 시맨틱 오디오 생성
+
+생성 - summary (1):
+  - wiki/concepts/international-ai-safety-report-2026.md -- 국제 AI 안전 보고서 2026
+
+index.md 갱신: 전체 30개 항목 추가 완료
+
+---
+
+## 2026-04-15 -- Concept 위키 8개 신규 생성 (SEA/JEPA/Neuro-Symbolic/CRAG/CoT Faithfulness/Cross-Tokenizer/Wasm/NIXL)
+
+- **소스**: raw/2026-04-15-concept-*.md 8건
+- **방법**: raw 파일 기반 한국어 위키 페이지 생성, Mermaid 다이어그램 포함
+
+생성 - concept (8):
+  - wiki/agents/self-evolving-agents.md -- SEA 패러다임: 도구/스킬/메모리 자율 진화
+  - wiki/concepts/jepa-world-models.md -- JEPA 아키텍처, 추상적 표현 공간에서 예측
+  - wiki/concepts/neuro-symbolic-ai.md -- 신경망 + 기호 추론 결합, 100x 에너지 절감
+  - wiki/rag/corrective-rag.md -- CRAG, 자기반성 검색, 동적 문서 평가
+  - wiki/concepts/cot-faithfulness.md -- CoT 충실도, 안전 함의, FaithCoT-Bench
+  - wiki/training/cross-tokenizer-distillation.md -- 바이트 레벨 인터페이스 교차 토크나이저 증류
+  - wiki/tooling/wasm-agent-sandboxing.md -- Wasm/V8 isolate 에이전트 코드 격리
+  - wiki/inference/nixl-kv-transfer.md -- RDMA 기반 KV 캐시 전송, PD disaggregation
+
+index.md 갱신: 6개 카테고리(agents/concepts/rag/training/tooling/inference)에 항목 추가
+
+## 2026-04-15 -- 신규 concept/summary 8개 페이지 생성
+
+- **소스**: raw/2026-04-15-concept-*.md 7건 + raw/2026-04-15-summary-*.md 1건 = 8건
+
+생성 - concept (7):
+  - rag: memory-augmented-generation (MAG: 외부 메모리로 LLM 한계 극복)
+  - concepts: physics-informed-ml (물리 법칙 기반 ML, PINNs)
+  - concepts: gaia-benchmark (466 태스크 범용 AI 어시스턴트 평가)
+  - concepts: ai-labeling-industry (RLHF 플랫폼 시장, Surge AI $1B+)
+  - concepts: semantic-audio-generation (비디오+매칭 오디오 동시 생성)
+  - agents: vla-models (Vision-Language-Action, 로보틱스 AI)
+  - applications: multi-agent-coding-wave (2026년 2월 멀티에이전트 코딩 웨이브)
+
+생성 - summary (1):
+  - concepts: international-ai-safety-report-2026 (국제 AI 안전 보고서)
+
+index.md 갱신: RAG concept 1건, Agents concept 1건, Applications concept 1건, Concepts concept 4건 + summary 1건 추가
+
+## 2026-04-15 -- Entity 페이지 8개 생성 (로보틱스/비디오/음성/인프라/산업AI)
+
+- **소스**: raw/2026-04-15-entity-*.md 8건
+- **방법**: raw 소스 기반 한국어 entity 위키 페이지 생성, Mermaid 다이어그램 포함
+
+생성 - entity (8):
+  - agents 3개: ami-labs (LeCun JEPA 월드모델), nvidia-isaac-groot (VLA 로보틱스), hy-embodied (Tencent VLA SOTA)
+  - applications 4개: seedance-2 (ByteDance 비디오+오디오), kling-3 (Kuaishou 비디오), mai-speech-models (Microsoft STT/TTS), digital-twin-composer (Siemens Industrial Metaverse)
+  - tooling 1개: cloudflare-dynamic-workers (V8 isolate AI 에이전트 샌드박싱)
+
+index.md 업데이트: Agents/Applications/Tooling 각 entity 섹션에 신규 항목 추가
+
+## 2026-04-15 -- Stub 페이지 61개 일괄 보강
+
+- **방법**: 4개 병렬 에이전트로 프론트매터만 있던 stub 페이지를 60-130줄 실질 콘텐츠로 확장
+- **기준**: 프론트매터 제외 본문 20줄 미만 페이지 탐지 -> 전량 보강
+
+보강 내역 (61개):
+  - concepts 19개: alignment-faking, circuit-tracing, cot-monitorability, deliberative-alignment, constitutional-classifiers 등
+  - tooling 15개: claude-opus-4-5, claude-opus-4-6, pydantic-ai, arc-agi-2, qwen3-6-plus 등
+  - training 5개: test-time-training, corpus-grounded-self-play, on-policy-distillation, open-post-training-recipes, rl-scaling-laws
+  - inference 10개: vllm-v1-engine, tensorrt-llm, sglang, flashinfer, deepseek-sparse-attention 등
+  - agents 6개: orchestrator-worker-pattern, agent-memory-systems, agent-trees, context-folding, long-horizon-agent-benchmarks 등
+  - rag 6개: serverless-vector-dbs, adaptive-context-compression, letta-stateful-agent-runtime, mem0, temporal-knowledge-graph-memory 등
+
+잔여 stub: 0개
+
+## 2026-04-15 -- Cycle 2: /wiki-harvest + /wiki-ingest + /wiki-expand
+
+- **소스**: arXiv 5건 (안전/VLM/코드벤치마크/해석가능성) + Meta 블로그 1건 = 6건 수집
+- **방법**: WebSearch(안전/멀티모달/코드생성 키워드) + HF paper_search + WebFetch
+
+수집 소스:
+  - raw/2026-04-15-arxiv-snca-reflexive-audit.md (arXiv:2604.09189, Apr 2026)
+  - raw/2026-04-15-arxiv-safety-alignment-matters.md (arXiv:2601.03868, Jan 2026)
+  - raw/2026-04-15-blog-meta-sam-audio.md (Meta AI, Dec 2025)
+  - raw/2026-04-15-arxiv-vlm-survey-26k.md (arXiv:2510.09586, Oct 2025)
+  - raw/2026-04-15-arxiv-featbench.md (arXiv:2509.22237, Sep 2025)
+  - raw/2026-04-15-arxiv-sails-interpretable-safety.md (arXiv:2512.23260, Jan 2026)
+
+생성 - paper (5): snca-reflexive-audit-paper, safety-alignment-matters-paper, vlm-survey-26k-paper, featbench-paper, sails-interpretable-safety-paper
+생성 - entity (1): sam-audio
+
+expand: 깨진 링크 0개, 추가 생성 불필요
+
+## 2026-04-15 -- /wiki-expand: harvest 후 누락 3개 페이지 생성
+
+- **방법**: 깨진 wikilink + 고빈도 미등록 용어(cross-encoder 29회, hnsw 26회, reranking 19회) 스캔
+
+생성 - concept (3):
+  - rag 2개: reranking-and-cross-encoders, approximate-nearest-neighbor
+  - concepts 1개: context-window
+
+## 2026-04-15 -- /wiki-harvest --auto-ingest: 6건 수집 + 위키 페이지 자동 생성
+
+- **소스**: arXiv 5건 + DeepMind 블로그 1건 = 6건 수집
+- **방법**: WebSearch + HuggingFace paper_search + WebFetch로 수집 -> 중복 체크 -> raw/ 저장 -> 자동 ingest
+
+수집 소스:
+  - raw/2026-04-15-arxiv-skill0.md (arXiv:2604.02268, Apr 2026)
+  - raw/2026-04-15-arxiv-agentfly.md (arXiv:2508.16153, 162 upvotes)
+  - raw/2026-04-15-arxiv-langmarl.md (arXiv:2604.00722, Apr 2026)
+  - raw/2026-04-15-arxiv-malt.md (arXiv:2412.01928, 46 upvotes)
+  - raw/2026-04-15-arxiv-efficient-attention-survey.md (arXiv:2507.19595)
+  - raw/2026-04-15-blog-deepmind-deep-think.md (DeepMind, Feb 2026)
+
+생성 - paper (5):
+  - papers 5개: skill0-paper, agentfly-paper, langmarl-paper, malt-paper, efficient-attention-survey-paper
+
+생성 - entity (1):
+  - tooling 1개: gemini-deep-think
+
+## 2026-04-15 -- /wiki-expand: 누락 페이지 6개 생성 + 한국어 wikilink 125개 수정
+
+- **방법**: 깨진 wikilink + 고빈도 미등록 용어 스캔 후, 2개 병렬 에이전트 실행
+
+생성 - concept (6):
+  - training 3개: fine-tuning-overview, curriculum-learning, model-evaluation-framework
+  - inference 1개: speculative-decoding
+  - rag 1개: sparse-retrieval
+  - concepts 1개: model-calibration
+
+수정 - 한국어 wikilink 일괄 교체:
+  - 50개 파일, 125개 링크를 한국어 제목 -> 파일 slug로 교체
+  - 예: [[테스트 타임 컴퓨트]] -> [[test-time-compute]]
+
+## 2026-04-15 -- /wiki-ingest: 100개 신규 노드 일괄 생성
+
+- **소스**: `raw/2026-04-15-new-100-nodes-knowledge-source.md`
+- **방법**: 7개 병렬 에이전트로 카테고리별 분배 생성 + index.md 일괄 갱신
+
+생성 - concept (83):
+  - foundations 20개: learning-rate-scheduling, automatic-differentiation, ensemble-methods, naive-bayes, em-algorithm-gmm, linear-regression, tsne-umap, graph-neural-networks, self-supervised-learning, word2vec-fasttext, embedding-layers, language-model-foundations, seq2seq, information-theory, kl-divergence, bayesian-inference, markov-decision-process, q-learning-dqn, policy-gradient-ppo, contrastive-learning
+  - architectures 12개: gpt-architecture-lineage, seq2seq-attention-pre-transformer, masked-autoencoder-mae, latent-diffusion-model, flow-matching, consistency-models, vision-language-model-architectures, cross-attention, linear-attention, state-space-models-general, latent-space-reasoning, moe-routing-advances
+  - training 18개: expert-parallelism, gradient-clipping, flash-attention, perplexity-metric, bleu-rouge-metrics, benchmark-design-principles, data-quality-scoring, text-deduplication-strategies, constitutional-ai-original, reward-hacking-overoptimization, long-context-training, data-loader-optimization, hyperparameter-search-llm, fsdp-vs-deepspeed, data-contamination-detection, reinforcement-pre-training, forest-of-thought, continual-learning-llm
+  - inference 12개: continuous-batching, request-scheduling, beam-search-decoding, guided-constrained-decoding, on-device-inference-stack, model-pruning-inference, early-exit-adaptive-computation, mixture-of-depths, inference-benchmarking, repetition-penalty-logit-bias, inference-chip-market-shift, inference-distribution-tiers
+  - rag 10개: chunking-strategies, embedding-models-for-rag, colbert-late-interaction, hybrid-search-rrf, vector-db-comparison, rag-evaluation-metrics, query-transformation, embedding-finetuning, multimodal-rag, rag-indexing-pipeline
+  - concepts 6개: emergent-abilities, sycophancy, test-time-compute, instruction-following, tokenization-concepts, inference-compute-economics
+  - agents 1개: ag-ui-protocol
+  - 나머지 4개: training/forest-of-thought, training/reinforcement-pre-training, training/continual-learning-llm (중복 카운트 포함)
+
+생성 - entity (6):
+  - architectures 5개: swin-transformer, convnext, dinov2, rwkv, xlstm
+  - inference 1개: executorch
+
+생성 - paper (15):
+  - papers 15개: attention-is-all-you-need-paper, gpt-3-paper, instructgpt-rlhf-paper, chain-of-thought-paper, scaling-laws-paper, dpo-paper, lora-paper, rag-original-paper, constitutional-ai-paper, rlhf-christiano-paper, toolformer-paper, moe-original-paper, bert-paper, retro-paper, o1-system-card-paper
+
+## 2026-04-15 -- /sciomc 6-stage 리서치: 신규 100개 노드 지식소스 준비
+
+- **소스**: `raw/2026-04-15-new-100-nodes-knowledge-source.md`
+- **방법**: 6개 병렬 리서치 스테이지
+- **결과**: 기존 ~400 페이지 대비 갭 분석 후 신규 100개 노드 후보 선별
+
+## 2026-04-14 -- /wiki-expand 3차: ML 학습 조사 기반 고빈도 미등록 용어 15페이지 확장
+
+- **소스**: `raw/2026-04-14-wiki-expand-scan-3.md` (신규 50페이지 + 전체 위키 스캔)
+- **방법**: 5개 병렬 Opus 에이전트, 웹 검색 교차검증
+
+생성 - concept (5):
+  - architectures 2개: rotary-position-embedding (RoPE, 15p 참조), rmsnorm (7p 참조)
+  - foundations 1개: cross-entropy-loss (11p 참조)
+  - training 2개: adamw-optimizer (8p 참조), chinchilla-scaling-laws
+
+생성 - entity (10):
+  - architectures 1개: bert (NLP 전이학습 혁명)
+  - training 1개: commoncrawl (웹 아카이브, 6p 참조)
+  - tooling 8개: nccl (11p), megatron-lm (9p), triton-openai (7p), ray-distributed (5p), wandb, llama-cpp, langchain, alpacaeval
+
+- **역삽입**: positional-encoding, batch-norm-layer-norm, encoder-decoder-architectures에 신규 페이지 교차참조 추가
+- **합계**: 신규 15페이지 (606 -> 621)
+
+## 2026-04-14 -- ML 학습 방법론 심층 조사 기반 50페이지 일괄 생성
+
+- **소스**: `raw/2026-04-14-ml-training-deep-dive.md` (7-stage /sciomc 병렬 리서치 결과)
+- **방법**: 10개 병렬 Opus 에이전트 (5 토픽/에이전트), 웹 검색 교차검증
+
+생성 - concept (31) [training]:
+  - 사전학습: pretraining-pipeline-e2e, training-stability, batch-size-scheduling, sequence-length-curriculum, data-mixing-laws, mfu-model-flops-utilization
+  - 포스트트레이닝: post-training-pipeline-e2e, alignment-tax, safety-training-refusal, online-dpo-iterative, orpo, kto
+  - 데이터: model-collapse-synthetic
+  - 최신 기법: bitnet-1bit-training, fp4-training, grokking-training-dynamics, data-attribution-influence, learning-dynamics-finetuning, continual-pretraining, ast-fim-code-training, communication-efficient-training, omni-modal-training, sparse-bitnet
+  - 인프라/모니터링: llm-training-cost-guide, loss-spike-debugging, gradient-norm-monitoring, nan-inf-debugging, training-resumption, elastic-training, training-profiling
+
+생성 - entity (11) [training]:
+  - 기술보고서: llama-3-training, deepseek-v3-training, qwen-25-training, olmo-2-training, gemma-2-training, phi-4-training, mixtral-training
+  - 데이터셋: fineweb-dataset, redpajama-v2, dolma-dataset, dclm-datacomp
+
+생성 - summary (1) [training]:
+  - training-learning-guides (학습 경로 가이드 모음)
+
+생성 - entity (8) [tooling]:
+  - 학습 도구: trl-library, axolotl, llama-factory, unsloth, openrlhf, verl-bytedance
+  - 데이터 도구: datatrove, text-dedup
+
+- **교차참조**: 각 페이지 최소 3-17개 wikilink, Mermaid 다이어그램 1-3개 포함
+- **index.md**: Training 섹션에 concept 31개 + entity 11개 + summary 1개, Tooling entity에 8개 추가
+- **합계**: 신규 50페이지 (556 -> 606)
+
+## 2026-04-14 -- 비전/이미지 생성/멀티모달/오픈소스 LLM 엔티티 6페이지 생성
+
+- **소스**: `raw/2026-04-14-wiki-expand-scan-2.md` (위키 내 고빈도 언급 미등록 프로젝트 엔티티)
+- **방법**: 웹 자료 2-3건씩 교차 검증 후 entity 페이지 작성
+
+생성 - entity (6):
+  - wiki/architectures/ 1개: clip (OpenAI 대조 학습 비전-언어 모델, 22회 언급)
+  - wiki/tooling/ 5개: stable-diffusion (오픈소스 이미지 생성, 19회), dall-e (OpenAI 이미지 생성, 12회), midjourney (Discord 기반 이미지 생성, 16회), gpt-4o (네이티브 멀티모달, 17회), llama-2-3 (Meta 오픈소스 LLM 진화사, 27회)
+
+- **교차참조**: clip -> dense-retrieval, vision-transformer, diffusion-transformer, u-net. 각 이미지 생성 엔티티 간 상호 링크. llama-2-3 -> llama-4, mixture-of-experts, ollama
+- **index.md**: architectures에 entity 서브섹션 신설 (CLIP), tooling entity에 5개 추가
+- **합계**: 신규 6페이지
+
+## 2026-04-14 -- /wiki-expand 스킬 생성 + 내부 용어 37페이지 확장
+
+- **소스**: `raw/2026-04-14-wiki-expand-scan.md` (위키 내부 깨진 링크 + 고빈도 미등록 용어 스캔)
+- **방법**: `/wiki-expand` 스킬 신규 생성 (`~/.claude/skills/wiki-expand/SKILL.md`), Opus 3개 에이전트 병렬 투입
+
+생성 - concept (27):
+  - wiki/concepts/ 12개: hallucination, chain-of-thought, few-shot-learning, zero-shot-learning, in-context-learning, structured-output, reward-hacking, catastrophic-forgetting, knowledge-graph, temperature-sampling, gguf-format, safetensors
+  - wiki/concepts/ (기존 approximate-nearest-neighbor, decoding-strategies 포함)
+  - wiki/rag/ 3개: dense-retrieval, sparse-retrieval-bm25, reranker-cross-encoder
+  - wiki/architectures/ 5개: diffusion-transformer, vision-transformer, u-net, residual-connection, attention-sink
+  - wiki/training/ 5개: ppo-for-llms, continual-learning, federated-learning, self-supervised-learning, active-learning
+  - wiki/applications/ 3개: semantic-search, text-classification, named-entity-recognition
+
+생성 - entity (7):
+  - wiki/tooling/ 7개: ollama, playwright-mcp, faiss, chroma-db, peft-library, voxcpm2, huggingface-hub
+
+- **합계**: 신규 37페이지 (503 -> 540)
+- **wikilink**: 4,606 -> 5,007 (+8.7%)
+- **스킬**: `/wiki-expand` 등록 완료 -- 위키 내부 용어 자동 발굴 + 병렬 생성 자동화
+
+## 2026-04-14 -- ML 기초 + 보일러플레이트 정리 + 연결성 대규모 개선 (20 병렬 에이전트, 3단계)
+
+- **Phase 1 (Opus 10개)**: ML 기초/아키텍처/학습/인프라/평가/거버넌스/허브 ~111페이지 신규 생성
+  - foundations 31페이지 (수학, ML 개념, 신경망, DL, 학습경로)
+  - architectures 16페이지 (Transformer, Attention, MoE, 토크나이제이션, 임베딩)
+  - training 29페이지 (CLM/MLM, SFT, RLHF, DPO, 분산학습, 옵티마이저)
+  - concepts 25페이지 (평가 메트릭, 거버넌스, 운영, 벤치마크)
+  - tooling 10페이지 (벤치마크 entity, 프레임워크, 허브)
+  - inference 1페이지 (KV Cache 추론 최적화)
+
+- **Phase 2 (Sonnet 5개)**: 보일러플레이트 정리
+  - ~7,000줄 보일러플레이트 제거 (정밀 ingest/source 재수집/실무 체크리스트/해석 포인트 등)
+  - 500+ 인라인 wikilink 추가
+  - 0-link 파일: 193개 -> 4개로 감소
+
+- **Phase 3 (Sonnet 5개)**: 연결성 개선
+  - 47개 교차 카테고리 브릿지 링크 추가 (training<->agents, architectures<->agents, rag<->agents)
+  - 50+ 깨진 링크 수정
+  - 22개 고아 페이지 전부 연결
+  - 23개 tooling 고립 페이지 타 카테고리와 연결
+  - 19개 concept 페이지 인라인 링크 강화
+
+- **합계**: 위키 392 -> 503페이지 (+28%), wikilink 2,403 -> 4,606개 (+92%)
+
+## 2026-04-14 -- 갭 스캔 53개 토픽 대량 ingest (10 병렬 에이전트, 2차)
+
+- **소스**: `raw/2026-04-14-gap-scan-new-topics.md` (위키 338개 대비 누락 53개 토픽)
+- **방법**: 10개 Opus 에이전트 병렬 투입. URL fetch 기반 검증 후 한국어 위키 페이지 작성.
+
+생성 - entity (25):
+  - wiki/tooling/ 20개: gpt-6-spud, llama-4, grok-4-20, deepseek-v4, runway-gen-4-5, ltx-2, nemoclaw, meta-tribe-v2, sora-2-shutdown, gpt-5-architecture, goose, xcode-agentic-coding, cisco-defenseclaw, agentmon, aws-agent-registry, galileo-ai, arize-phoenix, fiddler-ai, browsecomp, osworld-verified, humanity-last-exam, gemma-scope-2, mcp-server-cards
+  - wiki/inference/ 2개: dgx-spark, blackwell-ultra-b300
+  - wiki/agents/ 1개: agentic-ai-foundation
+
+생성 - concept (25):
+  - wiki/architectures/ 3개: gated-attention, gated-deltanet, superposition-neural-scaling
+  - wiki/agents/ 3개: owasp-agentic-top-10, zero-trust-ai-agents, a2a-t-telecom
+  - wiki/concepts/ 14개: nist-ai-agent-standards, livebench, cot-monitoring-safety, representation-engineering, mechanistic-interpretability-2026, ai-agent-marketplaces, ai-voice-cloning-scams, us-china-ai-competition, ai-cybersecurity-defensive, ai-workforce-impact, ai-sustainability-paradox, ai-venture-bubble-2026, ai-copyright-litigation, sovereign-ai, ai-ma-mega-deals
+  - wiki/applications/ 4개: ai-finance, ai-education, ai-legal, ai-manufacturing
+  - wiki/inference/ 1개: sdsl
+
+생성 - paper (1):
+  - wiki/papers/safety-alignment-depth-paper.md
+
+갱신 (1):
+  - wiki/architectures/titans-miras.md (메모리 깊이, 실무 관점 섹션 추가)
+
+- **합계**: 신규 53개 + 갱신 1개 = 54개 페이지
+- **위키 총 페이지**: 338 -> 392개 (+16%)
+
+## 2026-04-14 -- 갭 스캔 토픽 6-11 ingest (하드웨어/비디오/신경과학/아키텍처)
+
+- **소스**: `raw/2026-04-14-gap-scan-new-topics.md` (토픽 6-11)
+- **방법**: 토픽별 2-3개 URL WebFetch 기반 한국어 위키 페이지 작성. Mermaid 다이어그램 포함.
+
+생성 - entity (5):
+  - wiki/tooling/ltx-2.md -- LTX-2 (Lightricks 오픈소스 4K 비디오+오디오, 19B)
+  - wiki/tooling/nemoclaw.md -- NemoClaw + OpenShell (NVIDIA 에이전틱 런타임, GTC 2026)
+  - wiki/inference/dgx-spark.md -- DGX Spark (NVIDIA 개인용 AI 슈퍼컴퓨터, GB10 128GB)
+  - wiki/inference/blackwell-ultra-b300.md -- Blackwell Ultra B300 (288GB HBM3e, 14 PFLOPS FP4)
+  - wiki/tooling/meta-tribe-v2.md -- Meta TRIBE v2 (fMRI 뇌 예측 파운데이션 모델, 700+ 피험자)
+
+갱신 - concept (1):
+  - wiki/architectures/titans-miras.md -- 메모리 깊이 효과, 실무 관점, Qwen3-Next 연결, TRIBE v2 역링크 추가
+
+- **합계**: 신규 5개 + 갱신 1개 = 6개 페이지
+- **카테고리 분포**: tooling 3, inference 2, architectures 1
+- **index.md 갱신**: architectures 4항목(기존 누락분 포함), inference 2항목, tooling 3항목 추가
+
+## 2026-04-14 -- AI 핫토픽 100선 대량 ingest (10 병렬 에이전트)
+
+- **소스**: `raw/2026-04-14-ai-hot-topics-100.md` (2026년 4월 AI/Agent/Harness Engineering 핫토픽 100개 + 500개 레퍼런스 링크)
+- **방법**: 10개 Opus 에이전트를 병렬로 투입, 각 에이전트가 10개 토픽을 담당. URL fetch 기반으로 실제 콘텐츠 검증 후 한국어 위키 페이지 작성.
+
+생성 - entity (43):
+  - wiki/tooling/ 43개: meta-muse-spark, claude-mythos-preview, gemma-4, mistral-small-4, voxtral-tts, qwen-3-5-omni, gemini-3-1-flash-lite, gpt-5-3-instant, deepseek-v3-2, leanstral, boltz-2, apple-foundation-model, nvidia-cosmos, google-adk, microsoft-agent-framework, hermes-agent, openclaw, crewai, ag2, composio, ai-agent-guardrails, portkey, openrouter, litellm, langfuse, braintrust, n8n-dify, synthetic-data-tools, kiro, augment-intent, junie-cli, copilot-fleet, codex-cli, google-ai-studio-antigravity, vibe-coding-platforms, ai-code-review-tools, augment-code, deepeval, ragas, openhands, metatron, ms-agent-governance-toolkit
+  - wiki/inference/ 5개: amd-mi400-helios, litert-lm, google-tpu-ironwood, nvidia-groq-3-lpu, nvidia-vera-rubin
+
+생성 - concept (56):
+  - wiki/architectures/ 4개: deepseek-mhc, long-context-scaling, mamba-3, multi-head-latent-attention
+  - wiki/training/ 7개: extended-constitutional-ai, knowledge-distillation, lora-qlora-finetuning, mit-training-efficiency, model-merging, synthetic-data-training, test-time-compute-scaling
+  - wiki/inference/ 5개: ai-inference-quantization-2026, mirror-speculative-decoding, meta-adaptive-ranking, speculative-speculative-decoding, turboquant
+  - wiki/rag/ 1개: rag-architecture-evolution-2026
+  - wiki/agents/ 12개: a2a-protocol, acp-protocol, agent-prompt-patterns, agentic-knowledge-base-patterns, ai-red-teaming, component-level-agent-evaluation, human-in-the-loop-patterns, prompt-caching-agentic, spec-driven-development, swe-bench-ecosystem-2026, tdd-agentic-coding, tool-calling-optimization
+  - wiki/applications/ 8개: ai-audio-voice-cloning, ai-data-analysis, ai-design-tools, ai-healthcare, ai-image-generation, ai-robotics-physical-ai, ai-scientific-discovery, ai-video-generation
+  - wiki/concepts/ 15개: agentic-ai-production, ai-data-center-power, ai-reasoning-models, ai-regulation-us, ai-safety-alignment-2026, custom-ai-chips-asic, deepfake-detection-c2pa, enterprise-ai-adoption, eu-ai-act-enforcement, llm-security-owasp, mlops-llmops-2026, multimodal-foundation-models, on-device-llm, open-source-ai-movement-2026, small-language-models
+
+갱신 - concept (1):
+  - wiki/concepts/opentelemetry-genai-semconv.md (sources 추가, 2026 에이전트 트레이싱 확장 내용 병합)
+
+- **합계**: 신규 99개 + 갱신 1개 = 100개 페이지
+- **카테고리 분포**: tooling 43, concepts 15, agents 12, inference 10, applications 8, training 7, architectures 4, rag 1
+- **발견된 지식 갭**: 각 페이지가 소스 파일의 1-line 설명 + URL fetch 기반이므로, 깊이 있는 후속 ingest가 필요한 토픽이 다수 존재 (특히 Mamba-3, TurboQuant, A2A Protocol 등)
+
+## 2026-04-13 — Inference/RAG/Training/Paper 남은 노드 정밀 경계 메모 6차
+
+- **대상**: inference/rag/training/papers 카테고리 중 아직 `정밀 ingest` 섹션이 없던 47개 문서.
+- **갱신 - concept/entity/project-internal/paper/summary/case-study (47)**:
+  - 남은 연구·시스템 노드 전체에 `정밀 ingest — 남은 경계 메모`를 추가해 문제 설정, 방법/시스템 구조, 평가/운영 조건, 한계를 다음 수동 재수집 기준으로 명시.
+- **수행 내용**:
+  - 이전 5차에서 우선순위 12개를 깊게 처리한 뒤, 나머지 47개도 최소 정밀 경계 메모를 갖도록 정리.
+  - inference/rag/training/papers 카테고리에서 `정밀 ingest`가 없는 문서 0개로 감소.
+- **발견된 지식 갭**:
+  - 다음 라운드는 applications/concepts/agents 카테고리의 남은 자동 보강 흔적 또는 정밀 섹션 없는 문서를 같은 방식으로 처리하는 것이 좋다.
+
+## 2026-04-13 — Inference/RAG/Training/Paper 경계 정밀 re-ingest 5차
+
+- **대상**: source navigation noise와 자동 보강 흔적이 남아 있던 inference/RAG/training/papers 문서 12개.
+- **갱신 - paper/concept/entity/summary (12)**:
+  - `wiki/papers/chunkkv-paper.md`
+  - `wiki/papers/lost-in-the-middle-paper.md`
+  - `wiki/inference/kv-cache.md`
+  - `wiki/papers/agentgym-rl-paper.md`
+  - `wiki/papers/deep-research-agents-roadmap-paper.md`
+  - `wiki/papers/memory-in-the-age-of-ai-agents-paper.md`
+  - `wiki/papers/loop-paper.md`
+  - `wiki/papers/deepseek-r1-paper.md`
+  - `wiki/papers/flashattention-4-paper.md`
+  - `wiki/papers/plan-and-act-paper.md`
+  - `wiki/rag/context-rot-report.md`
+  - `wiki/inference/vllm-v1-engine.md`
+- **수행 내용**:
+  - 각 문서의 자동 source-grounded 메모를 줄이고, paper/concept/entity 타입별로 문제 설정·방법·평가·한계·시스템 경계를 분리하는 `정밀 ingest — 연구/시스템 경계` 섹션 추가.
+  - 12개 문서 모두 1000단어 이상으로 회복.
+- **발견된 지식 갭**:
+  - 다음 라운드는 남은 inference/RAG/training entity와 paper 중 precision section이 없는 문서를 계속 같은 방식으로 처리하는 것이 좋다.
+
+## 2026-04-13 — SDK/MCP entity 허브 정밀 re-ingest 4차
+
+- **대상**: OpenAI Agents SDK, Claude Agent SDK, Claude Agent SDK TypeScript, MCP Authorization, Model Context Protocol, MCP 2026 Roadmap entity 허브 6개.
+- **갱신 - entity (6)**:
+  - `wiki/tooling/openai-agents-sdk.md`
+  - `wiki/tooling/claude-agent-sdk.md`
+  - `wiki/tooling/claude-agent-sdk-typescript.md`
+  - `wiki/tooling/mcp-authorization.md`
+  - `wiki/tooling/model-context-protocol-mcp.md`
+  - `wiki/tooling/model-context-protocol.md`
+- **수행 내용**:
+  - entity 허브가 세부 API 사용법을 반복하지 않고 하위 summary 문서로 routing하도록 `정밀 ingest — 허브 재정의` 섹션 추가.
+  - OpenAI/Claude SDK 허브는 quickstart/session/handoff/loop/TypeScript repo 하위 문서 경로를 명확히 하고, MCP 허브는 architecture/spec/authorization/roadmap 경계를 분리.
+  - 6개 문서 모두 1000단어 이상으로 회복.
+- **발견된 지식 갭**:
+  - 다음 라운드는 inference/RAG/training 쪽 entity·paper 문서 중 source navigation noise가 많은 문서를 같은 방식으로 정밀화하는 것이 좋다.
+
+## 2026-04-13 — OpenAI/Claude SDK + MCP 공식 문서군 정밀 re-ingest 3차
+
+- **대상**: OpenAI Agents SDK child docs 4개, Claude Agent SDK child docs 3개, MCP architecture/authorization/spec/roadmap 문서 4개.
+- **갱신 - summary (11)**:
+  - `wiki/tooling/openai-agents-sdk-quickstart.md`
+  - `wiki/tooling/openai-agents-sdk-handoffs.md`
+  - `wiki/tooling/openai-agents-sdk-sessions.md`
+  - `wiki/tooling/openai-agents-sdk-model-context-protocol.md`
+  - `wiki/tooling/claude-agent-sdk-quickstart.md`
+  - `wiki/tooling/claude-agent-loop.md`
+  - `wiki/tooling/claude-agent-sessions.md`
+  - `wiki/tooling/mcp-architecture.md`
+  - `wiki/tooling/mcp-authorization-draft.md`
+  - `wiki/tooling/mcp-specification-2025-11-25.md`
+  - `wiki/tooling/the-2026-mcp-roadmap.md`
+- **수행 내용**:
+  - OpenAI Agents SDK는 quickstart/handoff/session/MCP server type 경계, Claude Agent SDK는 quickstart/agent loop/session fork-resume 경계, MCP는 host-client-server/authorization/spec-version/roadmap governance 경계를 중심으로 `정밀 ingest` 섹션 추가.
+  - 11개 문서 모두 1000단어 이상으로 회복.
+- **발견된 지식 갭**:
+  - 다음 라운드는 OpenAI Agents SDK entity, Claude Agent SDK entity/TypeScript repo, MCP OAuth entity, model-context-protocol entity 같은 허브 문서 자체를 수동 정밀화하는 것이 좋다.
+
+## 2026-04-13 — high-value tooling 공식 문서군 정밀 re-ingest 2차
+
+- **대상**: Mastra advanced, Instructor, Deep Agents 공식 문서 summary 12개.
+- **갱신 - summary (12)**:
+  - `wiki/tooling/mastra-agents-overview.md`
+  - `wiki/tooling/mastra-workflows-overview.md`
+  - `wiki/tooling/mastra-memory-overview.md`
+  - `wiki/tooling/mastra-mcp-overview.md`
+  - `wiki/tooling/instructor-overview.md`
+  - `wiki/tooling/instructor-validation.md`
+  - `wiki/tooling/instructor-retrying.md`
+  - `wiki/tooling/instructor-patching.md`
+  - `wiki/tooling/deep-agents-quickstart.md`
+  - `wiki/tooling/deep-agents-subagents.md`
+  - `wiki/tooling/deep-agents-memory.md`
+  - `wiki/tooling/deep-agents-production.md`
+- **수행 내용**:
+  - Mastra는 agents/workflows/memory/MCP의 경계, Instructor는 validation/retry/patching의 얇은 structured-output layer, Deep Agents는 quickstart/subagents/memory/production 경계를 중심으로 `정밀 ingest` 섹션 추가.
+  - 12개 문서 모두 1000단어 이상으로 회복.
+- **발견된 지식 갭**:
+  - 다음 라운드는 OpenAI Agents SDK, Claude Agent SDK child docs, MCP spec/authorization/roadmap 문서군을 같은 방식으로 정밀화하는 것이 좋다.
+
+## 2026-04-13 — high-value tooling 공식 문서군 정밀 re-ingest 1차
+
+- **대상**: leaf 품질 복구 후에도 수동 정밀화 우선순위로 남아 있던 high-value tooling 문서 10개.
+- **공식/source 재확인 축**: BAML, Mastra, Vercel AI SDK Core/Agents/Tool Calling/MCP, LangGraph Quickstart/Persistence/Durable Execution, Pydantic AI Agent Core.
+- **갱신 - summary (10)**:
+  - `wiki/tooling/baml-what-is-baml.md`
+  - `wiki/tooling/mastra-get-started.md`
+  - `wiki/tooling/vercel-ai-sdk-core-overview.md`
+  - `wiki/tooling/vercel-ai-sdk-agents-overview.md`
+  - `wiki/tooling/vercel-ai-sdk-tool-calling.md`
+  - `wiki/tooling/vercel-ai-sdk-mcp-tools.md`
+  - `wiki/tooling/langgraph-quickstart.md`
+  - `wiki/tooling/langgraph-persistence.md`
+  - `wiki/tooling/langgraph-durable-execution.md`
+  - `wiki/tooling/pydantic-ai-agent-core.md`
+- **수행 내용**:
+  - 자동 source-grounded 메모를 제거한 뒤, 각 문서에 원문의 고유 흐름을 반영한 `정밀 ingest` 섹션을 수동 추가.
+  - BAML은 `.baml` → `baml_client` → app call 흐름, Mastra는 create/Studio/framework/application category 흐름, Vercel은 Core/ToolLoopAgent/tool calling/MCP 경계, LangGraph는 state/persistence/durable replay, Pydantic AI는 typed Agent contract를 중심으로 재작성.
+  - 10개 문서 모두 1000단어 이상으로 회복.
+- **발견된 지식 갭**:
+  - 다음 라운드는 Mastra Agents/Workflows/Memory/MCP, Instructor Validation/Retrying/Patching, Deep Agents Quickstart/Production 같은 하위 공식 문서군을 같은 방식으로 정밀화하는 것이 좋다.
+
+## 2026-04-13 — leaf/최하위 노드 품질 복구 및 source-grounded re-ingest
+
+- **대상**: `wiki/` 전체 238개 중 이전 길이 보강 흔적이 남아 있던 최하위/leaf 후보 226개와, filler 제거 후 1000단어 미만으로 내려간 117개.
+- **문제 인식**: 이전 보강은 `노드 보강 메모`, `추가 ingest 판별 질문`, `2차 source-specific ingest 보강`, `1000단어 기준 보강 메모`, `최종 노드 충실도 점검` 같은 메타 섹션이 많아 실제 위키 내용처럼 읽히지 않았다.
+- **수행 내용**:
+  - `scripts/repair_generic_leaf_content_2026_04_13.py`로 226개 문서에서 generic filler 섹션을 제거하고 각 문서의 실제 `sources:` raw snapshot을 다시 읽어 source 제목/URL/heading/signals 기반 보강 섹션으로 교체.
+  - `scripts/top_up_source_grounded_leaf_nodes_2026_04_13.py`로 filler 제거 뒤 짧아진 117개 문서에 원문 기반 상세 해석을 추가.
+  - `scripts/final_source_gap_fill_leaf_nodes_2026_04_13.py`로 남은 76개 under-1000 문서에 source 기반 빈틈 메모를 추가해 최소 길이와 source 추적성을 회복.
+  - 웹/공식 문서 재확인 기록은 `raw/2026-04-13-leaf-quality-web-research.md`에 audit note로 저장. 각 페이지의 `sources:`는 기존 원문 raw snapshot을 유지.
+- **생성 - raw audit note (1)**:
+  - `raw/2026-04-13-leaf-quality-web-research.md`
+- **갱신 - source-grounded repair (226)**:
+  - 226개 leaf/저품질 후보 문서 전부에서 메타 filler 제거 및 source 기반 보강 적용.
+- **발견된 지식 갭**:
+  - 일부 raw snapshot은 navigation 텍스트 비중이 커서, 다음 수동 라운드에서는 high-value 공식 문서(BAML, Mastra, Vercel AI SDK, LangGraph, Pydantic AI)를 개별 페이지 단위로 더 깊게 재수집하는 것이 좋다.
+
+## 2026-04-13 — unlinked/undefined 문서 재점검 및 AI SDK placeholder ingest
+
+- 감사 결과: `wiki/` 문서는 index 기준 누락 0건, stale index link 0건, raw source 누락 0건, undefined wikilink 0건이었다.
+- inbound wikilink가 없던 wiki 노드 27건은 모두 index와 source가 있는 유효 문서로 판정하고, 관련 허브/개념 문서에서 역방향 링크를 보강했다.
+- 불필요한 빈 placeholder 6건을 정리했다: root의 Obsidian alias placeholder 3건, TensorRT raw code fragment에서 파생된 1건, AI SDK docs 경로 placeholder 2건.
+- 웹 검색/공식 문서 확인 후 AI SDK docs placeholder 2건은 삭제가 아니라 raw source note와 project-internal wiki 문서로 승격했다.
+
+처리 소스:
+- `https://ai-sdk.dev/docs/reference/ai-sdk-core/extract-json-middleware`
+- `https://ai-sdk.dev/docs/troubleshooting/typescript-cannot-find-namespace-jsx`
+
+생성 - project-internal (2) [project: Vercel AI SDK]:
+- `wiki/tooling/vercel-ai-sdk-extract-json-middleware.md`
+- `wiki/tooling/vercel-ai-sdk-typescript-jsx-namespace.md`
+
+생성 - raw source note (2):
+- `raw/2026-04-13-vercel-ai-sdk-extract-json-middleware.md`
+- `raw/2026-04-13-vercel-ai-sdk-typescript-jsx-namespace.md`
+
+정리 - 불필요한 빈 placeholder (6):
+- `0,0,0,0],[0,1,0],[1,0],[1,1.md`
+- `agentic engineering guide.md`
+- `better code with agents.md`
+- `evolution of agentic patterns.md`
+- `docs/reference/ai-sdk-core/extract-json-middleware.md`
+- `docs/troubleshooting/typescript-cannot-find-namespace-jsx.md`
+
+발견된 지식 갭:
+- AI SDK 다음 major version에서 `@types/react` 의존성 제거가 실제 반영되면 `vercel-ai-sdk-typescript-jsx-namespace.md`를 v6 호환성 노트로 축소하거나 갱신해야 한다.
+
+## 2026-04-13 — 1000단어 미만 노드 전체 보강 + OMC Tools raw 승격
+- **대상**: `wiki/` 전체 235개 중 1000단어 미만 226개, 그리고 미연결 raw source 1개(`raw/2026-04-09-omc-TOOLS.md`)
+- **수행 내용**:
+  - `scripts/deepen_under1000_nodes_2026_04_13.py`로 226개 문서에 2차 source-specific ingest 보강 섹션 추가
+  - `scripts/top_up_under1000_nodes_2026_04_13.py`와 `scripts/final_top_up_under1000_nodes_2026_04_13.py`로 남은 짧은 노드까지 추가 보강
+  - `wiki/tooling/omc-mcp-tools.md`를 새 project-internal 문서로 생성하고 `raw/2026-04-09-omc-TOOLS.md`를 sources에 연결
+  - `index.md`의 oh-my-claudecode project-internal tooling 섹션에 OMC MCP Tools 등록
+- **검증 결과**:
+  - 최종 wiki 문서 수 236개, 1000단어 미만 0개, 최소 1002단어, median 1075단어
+  - raw markdown 628개 중 미연결 0개
+  - alias-aware broken wikilinks 0개, index missing-page 0개, missing source path 0개
+  - 보강 스크립트 `py_compile` 통과, `git diff --check` 통과
+
+## 2026-04-13 — 100+ 얕은 노드 문서 대량 wiki-ingest 보강
+- **대상**: `wiki/` 전체 235개 중 본문 600단어 미만 113개
+- **수행 내용**:
+  - `scripts/deepen_shallow_nodes_2026_04_13.py`로 113개 문서에 raw source 기반 노드 보강 메모 / 판별 표 / source 근거 메모 / 구조 스케치를 추가
+  - `scripts/top_up_remaining_shallow_2026_04_13.py`로 1차 보강 후 남은 46개 문서에 추가 ingest 판별 질문을 보강
+  - 기존 페이지를 갱신했으며 `raw/` 원본은 수정하지 않음
+- **검증 결과**:
+  - 최종 600단어 미만 문서 0개, 최소 600단어, median 697단어
+  - alias-aware broken wikilinks 0개, index missing-page 0개, missing raw source path 0개
+  - 보강 스크립트 `py_compile` 통과, `git diff --check` 통과
+
+## 2026-04-11 — 빈 문서 후속 수동 심화 배치
+- **대상**: 1차 stub 보강 후에도 얕게 남은 핵심 문서 14개
+- **수행 내용**:
+  - tooling/agents/concepts 문서 8개에 표, 읽기 순서, 설계 체크리스트, Mermaid 흐름을 추가
+  - paper 문서 6개에 문제/방법/결과/한계 또는 실무 해석 표를 추가
+  - 잘못된 raw source path 2개(`what-is-mcp`, `claude-sonnet-4-5`)를 실제 snapshot 경로로 교정
+- **검증 결과**:
+  - 대상 14개 문서 모두 350단어 이상, 최소 398단어
+  - 전체 wiki body 250단어 미만 문서 0개
+  - alias-aware broken wikilinks 0개, index missing-page 0개, missing source path 0개
+
+## 2026-04-10 — 빈 문서(stub) 위키화 정비
+- **대상**: body 250단어 미만 stub 문서 57개
+- **수행 내용**:
+  - `scripts/wiki_stub_expander.py`를 추가해 raw snapshot 기반 섹션(원문 흐름 / 읽기 포인트 / source 메모)을 일괄 보강
+  - paper 문서에는 문제 설정 / 리뷰 포인트 / source 메타데이터를 추가해 논문형 요약으로 확장
+  - 검증 결과 수정 대상 57개 모두 250단어 이상이 되었고, 전체 wiki에서 body 250단어 미만 문서는 0개
+
 ## 2026-04-10 — Mastra / Instructor advanced branch 확장
 - **대상**: Mastra 4개, Instructor 3개 child doc + raw index 체계
 - **수행 내용**:

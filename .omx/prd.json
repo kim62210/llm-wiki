@@ -1,228 +1,60 @@
 {
   "stories": [
     {
-      "id": "US-001",
-      "title": "핵심 fetched source를 standalone wiki page로 승격",
+      "id": "US-201",
+      "title": "raw source 미연결 여부와 1000단어 미만 노드 재감사",
       "priority": 1,
       "acceptanceCriteria": [
-        "최소 5개의 새 standalone 페이지가 생성된다",
-        "새 페이지들은 올바른 frontmatter(title/category/page_type/tags/sources/created/updated)를 가진다",
-        "index.md가 새 페이지들을 올바른 섹션에 등록한다",
-        "log.md에 continuation ingest 항목이 추가된다",
-        "alias-aware broken wikilink check 결과가 0이다",
-        "index missing-page check 결과가 0이다"
+        "raw markdown source의 wiki sources 연결 여부가 계산된다",
+        "1000단어 미만 wiki 문서 수가 계산된다",
+        "100개 이상 보강 대상이 있음을 확인한다"
       ],
       "passes": true
     },
     {
-      "id": "US-002",
-      "title": "남은 고가치 fetched source를 추가 standalone page로 승격",
+      "id": "US-202",
+      "title": "1000단어 미만 기존 wiki 노드 source-specific 보강",
       "priority": 2,
       "acceptanceCriteria": [
-        "새 standalone 페이지가 추가로 5개 이상 생성된다",
-        "새 페이지들은 올바른 frontmatter를 가진다",
-        "index.md와 log.md가 새 배치를 반영한다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
+        "1000단어 미만 226개 기존 wiki 문서가 갱신된다",
+        "각 갱신 문서는 2차 source-specific ingest 보강 또는 후속 보강 섹션을 포함한다",
+        "raw/ 원본 파일은 수정하지 않는다"
       ],
       "passes": true
     },
     {
-      "id": "US-003",
-      "title": "남은 논문/로드맵/스펙 source를 추가 standalone page로 승격",
+      "id": "US-203",
+      "title": "남은 1000단어 미만 문서 최종 top-up",
       "priority": 3,
       "acceptanceCriteria": [
-        "새 standalone 페이지가 추가로 5개 이상 생성된다",
-        "각 페이지는 적절한 타입(summary/paper/entity)으로 분류된다",
-        "index.md와 log.md가 새 배치를 반영한다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
+        "2차 보강 후 남은 167개와 최종 42개 under-threshold 문서가 추가 보강된다",
+        "최종적으로 wiki 하위 모든 문서가 1000단어 이상이다",
+        "최종 최소 단어 수가 1000 이상이다"
       ],
       "passes": true
     },
     {
-      "id": "US-004",
-      "title": "남은 MCP / deep research 구현 / agent RL 소스를 추가 승격",
+      "id": "US-204",
+      "title": "미연결 raw/2026-04-09-omc-TOOLS.md를 독립 위키 노드로 승격",
       "priority": 4,
       "acceptanceCriteria": [
-        "새 standalone 페이지가 추가로 5개 이상 생성된다",
-        "새 페이지들은 적절한 타입(summary/paper/entity)으로 분류된다",
-        "index.md와 log.md가 새 배치를 반영한다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
+        "wiki/tooling/omc-mcp-tools.md가 생성된다",
+        "새 문서는 project-internal 타입과 project 필드를 가진다",
+        "index.md에 새 문서가 등록된다",
+        "raw markdown source 미연결 수가 0이 된다"
       ],
       "passes": true
     },
     {
-      "id": "US-005",
-      "title": "구현 레퍼런스와 운영 노트 source를 추가 standalone page로 승격",
+      "id": "US-205",
+      "title": "최종 무결성 검증",
       "priority": 5,
       "acceptanceCriteria": [
-        "새 standalone 페이지가 추가로 5개 이상 생성된다",
-        "새 페이지들은 적절한 타입(summary/entity/case-study)으로 분류된다",
-        "index.md와 log.md가 새 배치를 반영한다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-006",
-      "title": "남은 source-specific 고가치 문서를 summary/paper로 승격",
-      "priority": 6,
-      "acceptanceCriteria": [
-        "새 standalone 페이지가 추가로 5개 이상 생성된다",
-        "새 페이지들은 적절한 타입(summary/paper)으로 분류된다",
-        "index.md와 log.md가 새 배치를 반영한다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-007",
-      "title": "남은 duplicate fetched source provenance를 기존 standalone page에 병합",
-      "priority": 7,
-      "acceptanceCriteria": [
-        "남은 uncovered fetched source 개수가 0이 된다",
-        "대응하는 standalone 페이지의 sources 배열에 alternate raw path가 추가된다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-008",
-      "title": "핫토픽 비교 문서 2개 추가 생성",
-      "priority": 8,
-      "acceptanceCriteria": [
-        "모델 비교 summary 페이지 1개가 생성된다",
-        "에이전트 벤치마크 비교 summary 페이지 1개가 생성된다",
-        "두 페이지 모두 올바른 frontmatter를 가진다",
-        "index.md와 log.md가 새 문서를 반영한다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-009",
-      "title": "SDK/MCP 세부 문서 recursive ingest 결과를 standalone summary로 흡수",
-      "priority": 9,
-      "acceptanceCriteria": [
-        "새 standalone summary 페이지가 추가로 5개 생성된다",
-        "index.md와 log.md가 반영된다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-010",
-      "title": "상위 핵심 문서 수동 고급 편집",
-      "priority": 10,
-      "acceptanceCriteria": [
-        "핵심 문서 5개 이상이 수동 고급 편집된다",
-        "각 문서에 비교표/구조도/읽기 경로 중 최소 하나가 추가된다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-011",
-      "title": "새 standalone 문서 5개를 심화 위키 수준으로 추가 편집",
-      "priority": 11,
-      "acceptanceCriteria": [
-        "standalone 문서 5개 이상에 표/구조도/읽기 가이드 중 하나가 추가된다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-012",
-      "title": "남은 주요 framework hub의 recursive child-doc ingest 완료",
-      "priority": 12,
-      "acceptanceCriteria": [
-        "남은 주요 framework entity hub에 대해 공식 child-doc summary가 추가 생성된다",
-        "parent entity에 하위 문서 읽기 경로가 추가된다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-013",
-      "title": "최신 recursive summary를 deep-wiki 수준으로 수동 심화",
-      "priority": 13,
-      "acceptanceCriteria": [
-        "최신 recursive summary 문서 5개 이상에 비교표/읽는 순서/운영 체크리스트가 추가된다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-014",
-      "title": "원본 500-link corpus의 ingest 완결성 검증",
-      "priority": 14,
-      "acceptanceCriteria": [
-        "raw/2026-04-10-hot-ai-topics-100.md의 URL 매치 수가 계산된다",
-        "manifest refs 452개가 모두 raw snapshot 파일로 존재한다",
-        "manifest refs 452개가 모두 wiki에서 직접 참조된다",
-        "hot-topics-sources/2026-04-10 트리의 snapshot/topic packet 경로가 모두 wiki에서 참조된다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-015",
-      "title": "500-link corpus coverage evidence를 위키 문서로 고정",
-      "priority": 15,
-      "acceptanceCriteria": [
-        "coverage audit 결과가 별도 applications summary 페이지로 기록된다",
-        "index.md와 log.md가 audit 문서를 반영한다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-016",
-      "title": "필수 ingest 완료 후 다음 공식 확장 후보 backlog 문서화",
-      "priority": 16,
-      "acceptanceCriteria": [
-        "추가 공식 child-doc 후보가 applications summary 페이지로 정리된다",
-        "필수 coverage 완료와 선택적 backlog가 명확히 구분된다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-017",
-      "title": "Mastra/Instructor advanced child-doc ingest와 raw index 체계 추가",
-      "priority": 17,
-      "acceptanceCriteria": [
-        "Mastra 공식 child-doc summary 4개가 추가된다",
-        "Instructor 공식 child-doc summary 3개가 추가된다",
-        "raw 문서 탐색용 index 문서가 생성된다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
-      ],
-      "passes": true
-    },
-    {
-      "id": "US-018",
-      "title": "Mastra/Instructor 공식 child-doc branch 확장과 raw index 요구 반영",
-      "priority": 18,
-      "acceptanceCriteria": [
-        "Mastra child-doc summary 4개가 추가된다",
-        "Instructor child-doc summary 3개가 추가된다",
-        "raw index 문서가 생성되어 raw 문서 탐색 링크를 제공한다",
-        "backlog roadmap이 완료 반영 상태로 갱신된다",
-        "fresh broken wikilink check 결과가 0이다",
-        "fresh index missing-page check 결과가 0이다"
+        "alias-aware broken wikilink count가 0이다",
+        "index missing page count가 0이다",
+        "missing source path count가 0이다",
+        "생성/수정 스크립트 py_compile이 통과한다",
+        "git diff --check가 통과한다"
       ],
       "passes": true
     }
