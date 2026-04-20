@@ -1,0 +1,8 @@
+{
+  "queued_at": "2026-04-20T12:30:00",
+  "harvest_id": "harvest-2026-04-20-wave4",
+  "theme": "agent eval + long-horizon planning + LLM RL (credit assignment / value models / pretrain-space RL) + prompt archaeology",
+  "status": "completed",
+  "ingested_at": "2026-04-20T13:15:00",
+  "items": []
+}
