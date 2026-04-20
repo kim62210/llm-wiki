@@ -5,12 +5,11 @@ page_type: summary
 tags: [tooling, summary, langgraph, quickstart, graphs]
 sources: [raw/recursive-sources/2026-04-10-openai-langgraph/langgraph-quickstart.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # LangGraph Quickstart
 
-LangGraph의 공식 quickstart 요약이다. 계산기 agent 예제를 통해 도구, 상태, model node, tool node, 종료 조건, graph compile 순서를 한 번에 보여 준다.
+[[langgraph|LangGraph]]의 공식 quickstart 요약이다. 계산기 agent 예제를 통해 도구, 상태, model node, tool node, 종료 조건, graph compile 순서를 한 번에 보여 준다.
 
 ## 구조도
 
@@ -47,7 +46,7 @@ LangGraph quickstart는 “agent를 프롬프트 하나로 만드는 법”이 �
 
 ## 실무 관점
 
-- LangGraph를 도입하는 팀은 quickstart 단계에서부터 state schema를 어떻게 설계할지 고민해야 한다. 나중에 persistence와 time travel 품질이 여기서 갈린다.
+- [[langgraph|LangGraph]]를 도입하는 팀은 quickstart 단계에서부터 state schema를 어떻게 설계할지 고민해야 한다. 나중에 [[langgraph-persistence|persistence]]와 time travel 품질이 여기서 갈린다.
 - 또한 quickstart 예제는 도구 호출과 종료 조건을 명시적으로 나누므로, 장기 에이전트에서 “계속 생각만 하는 루프”를 줄이는 설계 힌트를 준다.
 - 문서가 LangChain Docs MCP server와 LangChain Skills 설치를 추천하는 점도 흥미롭다. LangGraph 자체가 agent-friendly documentation surface를 중시한다는 신호다.
 

@@ -1,21 +1,20 @@
 ---
 title: "Google Stitch DESIGN.md 가이드 (요약)"
-aliases: ["stitch design-md guide", "Stitch DESIGN.md"]
+aliases: [stitch design-md guide, Stitch DESIGN.md]
 category: applications
 page_type: summary
 tags: [stitch, design-md, design-system, google, ai-design]
 sources: [raw/2026-04-09-stitch-design-md.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Google Stitch DESIGN.md 가이드 (요약)
 
 Google Stitch 공식 문서의 DESIGN.MD 섹션 3개 페이지(overview/format/usage)를 한국어로 요약한 문서. 원본은 `raw/2026-04-09-stitch-design-md.md`에 보존.
 
 ## 왜 이 가이드가 중요한가
 
-전통적인 디자인 시스템은 Figma 파일, 브랜드 PDF, 또는 디자이너의 머릿속에 산다. 셋 다 AI 에이전트가 읽을 수 없다. [[DESIGN.md 포맷]]은 이 격차를 메우는 **사람·에이전트 공용 평문 문서**다. Google Stitch가 정의한 포맷이지만, 포맷 자체는 portable해서 [[Claude Code]] 같은 다른 에이전트에도 쓸 수 있다.
+전통적인 디자인 시스템은 Figma 파일, 브랜드 PDF, 또는 디자이너의 머릿속에 산다. 셋 다 AI 에이전트가 읽을 수 없다. [[design-md-format]]은 이 격차를 메우는 **사람·에이전트 공용 평문 문서**다. Google Stitch가 정의한 포맷이지만, 포맷 자체는 portable해서 [[claude-code]] 같은 다른 에이전트에도 쓸 수 있다.
 
 ## 세 문서의 구조
 
@@ -43,7 +42,7 @@ flowchart LR
 | AGENTS.md | 코딩 에이전트 | 프로젝트를 어떻게 빌드하는지 |
 | DESIGN.md | 디자인 에이전트 | 프로젝트가 어떻게 보이고 느껴져야 하는지 |
 
-상세는 [[ai-readable design system]] 참조.
+상세는 [[ai-readable-design-system]] 참조.
 
 ### 생성 경로 3가지
 
@@ -64,18 +63,18 @@ DESIGN.md는 다음 6개 섹션을 **고정 순서**로 가진다 (관련 없는
 
 ### 이중 표현 (Stitch 고유 메커니즘)
 
-Stitch는 DESIGN.md를 두 얼굴로 관리한다 — 이 부분은 Stitch 내부 동작이라 포맷 자체가 아니라 [[Google Stitch]] project-internal 디테일:
+Stitch는 DESIGN.md를 두 얼굴로 관리한다 — 이 부분은 Stitch 내부 동작이라 포맷 자체가 아니라 [[google-stitch]] project-internal 디테일:
 
 - **Markdown**: 사람이 읽고 편집. 근사치 허용 ("warm colors, rounded feel")
 - **Structured tokens**: hex 값, font enum, spacing scale, 전체 named color 팔레트. 에이전트의 생성 시 일관성 강제
 
 > "The markdown is for collaboration. The tokens are for enforcement."
 
-상세 섹션 명세는 [[design-md format]] concept 페이지 참조.
+상세 섹션 명세는 [[design-md-format]] concept 페이지 참조.
 
 ## 3. View, edit, and export (Stitch 내부 사용법)
 
-Stitch 제품 내부 워크플로우 — 여기는 [[Google Stitch]] 고유 동작:
+Stitch 제품 내부 워크플로우 — 여기는 [[google-stitch]] 고유 동작:
 
 - **Design System 패널**: 활성 디자인 시스템의 resolved 토큰을 볼 수 있음
 - **프로젝트 기본값 지정**: 이후 생성되는 모든 새 화면이 상속. **기존 화면은 소급 업데이트되지 않음**
@@ -91,17 +90,17 @@ Stitch 제품 내부 워크플로우 — 여기는 [[Google Stitch]] 고유 동�
 
 ## 실무 적용 관점
 
-- **Claude Code로 일관된 UI 생성**: DESIGN.md를 프로젝트에 넣어두면 Claude Code가 매 화면마다 같은 토큰을 참조 (→ [[ai-readable design system]])
+- **Claude Code로 일관된 UI 생성**: DESIGN.md를 프로젝트에 넣어두면 Claude Code가 매 화면마다 같은 토큰을 참조 (→ [[ai-readable-design-system]])
 - **기존 브랜드 마이그레이션**: Stitch의 "derive from branding" 경로를 사용하면 기존 사이트에서 DESIGN.md를 역추출 가능
 - **팀 협업 소스오브트루스**: 디자이너는 마크다운으로 의도를 적고, 에이전트는 그 의도를 토큰으로 강제
 
 ## 관련 문서
 
-- [[DESIGN.md 포맷]]
-- [[Google Stitch]]
-- [[ai-readable design system]]
-- [[design tokens]]
-- [[Claude Code]]
+- [[design-md-format]]
+- [[google-stitch]]
+- [[ai-readable-design-system]]
+- [[design-tokens]]
+- [[claude-code]]
 
 ## 출처
 - https://stitch.withgoogle.com/docs/design-md/overview/

@@ -6,7 +6,7 @@ project: Mastra
 tags: [tooling, entity, mastra, dev-tooling-and-frameworks]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/mastra.md, raw/hot-topics-sources/2026-04-10/443-mastra-official-homepage.md, raw/hot-topics-sources/2026-04-10/444-mastra-docs.md, raw/hot-topics-sources/2026-04-10/445-mastra-ai-mastra-github.md, raw/hot-topics-sources/2026-04-10/446-mastra-announcements.md, raw/hot-topics-sources/2026-04-10/447-mastra-empowers-web-devs-to-build-ai-agents-in-typescript.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
 # Mastra
 
@@ -45,49 +45,9 @@ Mastra은 단순한 제품 소개보다 **모델 능력보다 개발자 경험�
 - 직접 수집 원문: 5개
 - 주요 도메인: mastra.ai×3, github.com×1, thenewstack.io×1
 
-## 핵심 포인트
-
-Mastra는 현재 시점에서 하나의 제품/모델/프레임워크 허브로 읽는 편이 맞다. 기본 정의는 이 페이지는 Mastra를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 Gatsby 팀이 만든 TypeScript 풀스택 에이전트·워크플로우 프레임워크이기 때문이다.이며, 직접 수집한 source 5건은 mastra.ai×3, github.com×1, thenewstack.io×1처럼 여러 채널에 걸쳐 분포한다.
-
-## source로 보면
-
-수집된 source는 mastra.ai×3, github.com×1, thenewstack.io×1로 분포한다. 구현 저장소 비중이 높아 실제 사용·통합 관점이 두드러진다.
-
 ## 실무 관점
 
 도구/프레임워크 페이지는 기능 목록보다 생태계 위치가 중요하다. 어떤 모델·런타임·개발 흐름과 잘 맞는지, 그리고 팀 워크플로우에 어떤 경계 조건을 추가하는지까지 같이 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/mastra.md`
-
-### source별 핵심 신호
-
-- **TypeScript AI Agent Framework & Platform | Mastra** (`mastra.ai`): https://mastra.ai
-  - 메모: Book • PrinciplesPrinciples of Building AI AgentsBook • PatternsPatterns of Building AI AgentsPodcast • Agent HourWeekly livestreams and guests
-- **Get started with Mastra | Mastra Docs** (`mastra.ai`): https://mastra.ai/docs
-  - 메모: Build AI agents your users actually depend on. Mastra is a TypeScript framework that gives you everything you need to prototype fast and ship with confidence.
-- **GitHub - mastra-ai/mastra: From the team behind Gatsby, Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack. · GitHub** (`github.com`): https://github.com/mastra-ai/mastra
-  - 메모: To see all available qualifiers, see our documentation.
-- **The TypeScript AI Framework - Mastra** (`mastra.ai`): https://mastra.ai/categories/announcements
-  - 메모: Book • PrinciplesPrinciples of Building AI AgentsBook • PatternsPatterns of Building AI AgentsPodcast • Agent HourWeekly livestreams and guests
-- **Mastra empowers web devs to build AI agents in TypeScript - The New Stack** (`thenewstack.io`): https://thenewstack.io/mastra-empowers-web-devs-to-build-ai-agents-in-typescript/
-  - 메모: Join our community of software engineering leaders and aspirational developers. Always
-
-
-## source 종합 해석
-
-`Mastra`는 단일 발표보다 **여러 source가 어떤 관점에서 이 대상을 규정하는가**를 함께 읽을 때 의미가 커진다.
-
-이번 수집에서는 TypeScript AI Agent Framework & Platform | Mastra, Get started with Mastra | Mastra Docs, GitHub - mastra-ai/mastra: From the team behind Gatsby, Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack. · GitHub처럼 출시 공지·문서·평가 신호가 같이 모여, 기능 자체보다 생태계 위치와 운영 전제가 더 중요하다는 점이 드러난다.
-
-함께 읽을 문서로는 ai-hot-topics-2026-04, vercel-ai-sdk, instructor가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- 도입 판단 시 기능 목록만 보지 말고, 공식 문서·릴리스 노트·벤치마크가 서로 얼마나 일관되게 같은 메시지를 주는지 확인한다.
-- 비교 후보와의 차이는 API/운영 통합, 성능 수치, 생태계 성숙도 같은 기준으로 정리하는 것이 좋다.
 
 ## 하위 문서 읽기 경로
 
@@ -96,7 +56,6 @@ Mastra는 현재 시점에서 하나의 제품/모델/프레임워크 허브로 
 - [[mastra-workflows-overview|Mastra Workflows Overview]] — workflow의 core principles, state, Studio, registration 정리
 - [[mastra-memory-overview|Mastra Memory Overview]] — message history / observational memory / multi-agent memory 구조
 - [[mastra-mcp-overview|Mastra MCP Overview]] — MCP client/server, registry, static/dynamic tools 정리
-
 
 ## 관련 문서
 

@@ -6,15 +6,90 @@ project: DSPy + GEPA optimize_anything
 tags: [tooling, entity, dspy, gepa]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/dspy-gepa.md, raw/hot-topics-sources/2026-04-10/413-dspy-official-docs.md, raw/hot-topics-sources/2026-04-10/414-dspy-gepa-reflective-prompt-optimizer.md, raw/hot-topics-sources/2026-04-10/415-stanfordnlp-dspy-github.md, raw/hot-topics-sources/2026-04-10/416-optimize-anything-universal-api-for-optimizing-any-text-parameter.md, raw/hot-topics-sources/2026-04-10/417-gepa-ai-gepa-github.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # DSPy + GEPA optimize_anything
 
-프롬프트·코드·에이전트 아키텍처를 선언적으로 최적화하는 Stanford NLP 프레임워크.
+프롬프트·코드·에이전트 아키텍처를 선언적으로 최적화하는 [[prompt-engineering|Stanford NLP]] 프레임워크.
+
+## 핵심 개념
+
+DSPy(Declarative Self-improving Python)는 "프롬프트 엔지니어링 대신 프로그래밍"이라는 패러다임을 구체화한다. 개발자는 **모듈(Module)**을 정의하고 **최적화 목표(metric)**를 지정하면, 프레임워크가 프롬프트나 가중치를 자동으로 최적화한다.
+
+GEPA(Generalized Evolutionary Prompt Architecture)는 이 최적화를 유전 알고리즘 기반으로 확장한 별도 라이브러리로, 2026년 2월 공개된 `optimize_anything` API와 결합하면 프롬프트를 넘어 코드 구조·에이전트 아키텍처까지 최적화 대상으로 삼을 수 있다.
+
+## 아키텍처 흐름
+
+```mermaid
+flowchart TD
+    Dev[개발자] --> |"Module + Metric 정의"| Program[DSPy Program]
+    Program --> Compiler[DSPy Compiler]
+    Compiler --> |"Few-shot 예제 탐색"| BootstrapFewShot[BootstrapFewShot]
+    Compiler --> |"지시 최적화"| COPRO[COPRO / MIPRO]
+    Compiler --> |"진화 탐색"| GEPA[GEPA Optimizer]
+    GEPA --> |"Pareto 최적"| Result[최적화된 프롬프트/코드]
+    BootstrapFewShot --> Result
+    COPRO --> Result
+    Result --> |"평가"| Metric[Metric 함수]
+    Metric --> |"피드백"| Compiler
+```
+
+위 다이어그램은 DSPy 컴파일러가 여러 최적화 전략을 선택·조합하는 구조를 나타낸다.
+
+## 주요 컴포넌트
+
+| 컴포넌트 | 역할 |
+|---|---|
+| `dspy.Module` | LLM 호출 단위. `dspy.Predict`, `dspy.ChainOfThought`, `dspy.ReAct` 등을 상속 |
+| `dspy.Signature` | 입력/출력 타입 선언. 프롬프트 내용보다 **계약(contract)**을 명시 |
+| `dspy.Optimizer` | BootstrapFewShot, COPRO, MIPRO, GEPA 등 최적화 전략 |
+| `optimize_anything` | 임의 텍스트 파라미터(코드 스니펫, 에이전트 설정값)를 최적화 대상으로 확장 |
+| `dspy.Evaluate` | 메트릭 기반 자동 평가 루프 |
+
+## GEPA의 차별점
+
+기존 DSPy 옵티마이저(MIPRO 등)가 **지시(instruction) 문자열** 수준에서만 탐색했다면, GEPA는 다음을 추가한다:
+
+- **Pareto 최적화**: 정확도 vs. 토큰 비용을 동시에 최적화
+- **진화 연산자**: 돌연변이(mutation) + 교차(crossover)로 후보 풀 생성
+- **Reflective Scoring**: 최적화 후보가 자기 자신을 평가하는 메타 루프
+- **`optimize_anything` 인터페이스**: 프롬프트가 아닌 임의 문자열 파라미터(함수 구현체, 에이전트 계획 템플릿 등)까지 최적화 범위 확장
+
+## 사용 예시 (개념)
+
+```python
+import dspy
+
+# 1. 서명 정의
+class QA(dspy.Signature):
+    question: str = dspy.InputField()
+    answer: str = dspy.OutputField()
+
+# 2. 모듈 정의
+class SimpleQA(dspy.Module):
+    def __init__(self):
+        self.predict = dspy.Predict(QA)
+
+    def forward(self, question):
+        return self.predict(question=question)
+
+# 3. 최적화
+optimizer = dspy.MIPROv2(metric=my_metric)
+optimized = optimizer.compile(SimpleQA(), trainset=train_data)
+```
+
+## 경쟁 제품 비교
+
+| 프레임워크 | 최적화 방식 | 타입 안전 | 대상 |
+|---|---|---|---|
+| DSPy + GEPA | 자동 컴파일(프롬프트/가중치) | 선언적 Signature | 프롬프트·코드·아키텍처 |
+| [[pydantic-ai|Pydantic AI]] | 수동 프롬프트 + 타입 계약 | 강함 | 런타임 타입 검증 |
+| LangChain | 수동 체인 조합 | 약함 | 도구 연결 |
+| PromptFoo | 평가·회귀 테스트 | 없음 | 프롬프트 품질 측정 |
 
 ## 왜 지금 중요한가
 
-2026년 2월 optimize_anything API 공개로 GEPA(Genetic-Pareto) 최적화가 프롬프트를 넘어 코드·에이전트 구조까지 확장됐고, 관련 논문이 ICLR 2026 oral에 채택되며 "프롬프트가 아닌 프로그래밍" 패러다임의 구심점이 됐다.
+2026년 2월 `optimize_anything` API 공개로 GEPA(Genetic-Pareto) 최적화가 프롬프트를 넘어 코드·에이전트 구조까지 확장됐고, 관련 논문이 ICLR 2026 oral에 채택되며 "[[prompt-engineering|프롬프트가 아닌 프로그래밍]]" 패러다임의 구심점이 됐다.
 
 ## 대표 레퍼런스
 
@@ -24,65 +99,8 @@ updated: 2026-04-10
 - [optimize_anything: Universal API for Optimizing any Text Parameter](https://gepa-ai.github.io/gepa/blog/2026/02/18/introducing-optimize-anything/)
 - [gepa-ai/gepa GitHub](https://github.com/gepa-ai/gepa)
 
-## 해석 포인트
-
-DSPy + GEPA optimize_anything은 단순한 제품 소개보다 **모델 능력보다 개발자 경험과 운영 통합면이 중요한 도구 축** 으로 읽는 편이 유용하다. 이번 source 묶음에서도 `dspy.ai×2, github.com×2, gepa-ai.github.io×1`처럼 연구·문서·구현체 신호가 함께 모여 있어, 단일 발표보다 생태계 위치를 같이 봐야 한다.
-
-실무에서는 이 엔티티를 '최신인가?'보다 **어떤 운영 전제와 통합면을 요구하는가**로 평가해야 한다. 즉 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성 같은 기준으로 다른 대안과 비교해야 실제 도입 판단에 도움이 된다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 프롬프트·코드·에이전트 아키텍처를 선언적으로 최적화하는 Stanford NLP 프레임워크.
-- 왜 중요한가: 2026년 2월 optimize_anything API 공개로 GEPA(Genetic-Pareto) 최적화가 프롬프트를 넘어 코드·에이전트 구조까지 확장됐고, 관련 논문이 ICLR 2026 oral에 채택되며 "프롬프트가 아닌 프로그래밍" 패러다임의 구심점이 됐다.
-- 직접 수집 원문: 5개
-- 주요 도메인: dspy.ai×2, github.com×2, gepa-ai.github.io×1
-
-## 핵심 포인트
-
-DSPy + GEPA optimize_anything는 현재 시점에서 하나의 제품/모델/프레임워크 허브로 읽는 편이 맞다. 기본 정의는 프롬프트·코드·에이전트 아키텍처를 선언적으로 최적화하는 Stanford NLP 프레임워크.이며, 직접 수집한 source 5건은 dspy.ai×2, github.com×2, gepa-ai.github.io×1처럼 여러 채널에 걸쳐 분포한다.
-
-## source로 보면
-
-수집된 source는 dspy.ai×2, github.com×2, gepa-ai.github.io×1로 분포한다. 구현 저장소 비중이 높아 실제 사용·통합 관점이 두드러진다.
-
-## 실무 관점
-
-도구/프레임워크 페이지는 기능 목록보다 생태계 위치가 중요하다. 어떤 모델·런타임·개발 흐름과 잘 맞는지, 그리고 팀 워크플로우에 어떤 경계 조건을 추가하는지까지 같이 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/dspy-gepa.md`
-
-### source별 핵심 신호
-
-- **DSPy** (`dspy.ai`): https://dspy.ai
-  - 메모: DSPy is a declarative framework for building modular AI software.
-- **1. GEPA Overview - DSPy** (`dspy.ai`): https://dspy.ai/api/optimizers/GEPA/overview/
-  - 메모: GEPA (Genetic-Pareto) is a reflective optimizer proposed in "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning" (Agrawal et al., 2025, arxiv:2507.19457), that adaptively evolves textual components (
-- **GitHub - stanfordnlp/dspy: DSPy: The framework for programming—not prompting—language models · GitHub** (`github.com`): https://github.com/stanfordnlp/dspy
-  - 메모: To see all available qualifiers, see our documentation.
-- **optimize_anything: A Universal API for Optimizing any Text Parameter - GEPA** (`gepa-ai.github.io`): https://gepa-ai.github.io/gepa/blog/2026/02/18/introducing-optimize-anything/
-  - 메모: 1. Optimize Agent Skills: Near-Perfect Claude Code Accuracy, 47% Faster
-- **GitHub - gepa-ai/gepa: Optimize prompts, code, and more with AI-powered Reflective Text Evolution · GitHub** (`github.com`): https://github.com/gepa-ai/gepa
-  - 메모: To see all available qualifiers, see our documentation.
-
-
-## source 종합 해석
-
-`DSPy + GEPA optimize_anything`는 단일 발표보다 **여러 source가 어떤 관점에서 이 대상을 규정하는가**를 함께 읽을 때 의미가 커진다.
-
-이번 수집에서는 DSPy, 1. GEPA Overview - DSPy, GitHub - stanfordnlp/dspy: DSPy: The framework for programming—not prompting—language models · GitHub처럼 출시 공지·문서·평가 신호가 같이 모여, 기능 자체보다 생태계 위치와 운영 전제가 더 중요하다는 점이 드러난다.
-
-함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Deep Agents (LangChain Harness for Long-Running Tasks), Pydantic AI (Type-Safe Python Agent Framework)가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- 도입 판단 시 기능 목록만 보지 말고, 공식 문서·릴리스 노트·벤치마크가 서로 얼마나 일관되게 같은 메시지를 주는지 확인한다.
-- 비교 후보와의 차이는 API/운영 통합, 성능 수치, 생태계 성숙도 같은 기준으로 정리하는 것이 좋다.
-
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
-- [[deep-agents|Deep Agents (LangChain Harness for Long-Running Tasks)]]
 - [[pydantic-ai|Pydantic AI (Type-Safe Python Agent Framework)]]
+- [[prompt-engineering|프롬프트 엔지니어링]]

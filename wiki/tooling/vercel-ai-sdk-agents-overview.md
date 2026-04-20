@@ -5,12 +5,11 @@ page_type: summary
 tags: [tooling, summary, vercel-ai-sdk, agents, toolloopagent]
 sources: [raw/recursive-sources/2026-04-10-baml-instructor-vercel-mastra/vercel-ai-sdk-agents-overview.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # Vercel AI SDK Agents Overview
 
-Vercel AI SDK Agents의 공식 overview 문서 요약이다. ToolLoopAgent와 structured workflows를 중심으로 agent 레이어의 설계 의도를 정리한다.
+[[vercel-ai-sdk|Vercel AI SDK 6]] Agents의 공식 overview 문서 요약이다. ToolLoopAgent와 structured workflows를 중심으로 agent 레이어의 설계 의도를 정리한다.
 
 ## 구조도
 
@@ -26,39 +25,44 @@ Vercel AI SDK의 agent 레이어는 무거운 프레임워크라기보다, core 
 
 ## 핵심 구조
 
-- overview는 Agents를 ToolLoopAgent 중심으로 설명하며, 왜 이런 추상화가 필요한지와 structured workflow 관점을 함께 제시한다.
-- 즉 Vercel은 완전히 새로운 runtime을 만들기보다 core primitives 위에 반복 실행 제어를 얹는 방향을 택한다.
-- 이 점이 다른 agent 프레임워크와의 큰 차이다.
+`ToolLoopAgent`는 LLM, tools, loop 세 구성요소를 한 class 안에서 다룬다.
+- **LLM**: 입력을 처리하고 다음 action을 결정
+- **tools**: 파일 읽기, API 호출, database write 등 텍스트 생성 바깥의 능력
+- **loop**: context management와 stopping condition 관리
 
-## 왜 중요한가
+원문 예시는 weather tool과 Fahrenheit-to-Celsius conversion tool을 등록하고, agent가 tool 호출을 자동 진행하는 흐름을 보여 준다. 개발자가 message array와 반복 호출을 직접 관리하지 않아도 된다.
 
-- TS 개발자는 필요 이상으로 무거운 orchestration을 도입하지 않고도 agent loop를 구현하고 싶어 한다. ToolLoopAgent는 그 타협점이다.
-- 따라서 Vercel AI SDK는 “점진적 에이전트화”에 강하다. 기존 generate/stream 코드에서 agents로 올라가기 쉽다.
-- 문서가 structured workflows를 강조하는 이유도 여기에 있다.
+```mermaid
+flowchart LR
+    Prompt[사용자 목표] --> Agent[ToolLoopAgent]
+    Agent --> ToolA[weather tool]
+    ToolA --> Agent
+    Agent --> ToolB[conversion tool]
+    ToolB --> Agent
+    Agent --> Answer[최종 응답]
+```
 
-## 실무 관점
+agent는 유연하지만 non-deterministic하다. 명시적인 branch, reusable function, error handling, explicit control flow가 필요하면 core functions로 structured workflow pattern을 만들라고 안내한다.
 
-- 짧은 tool loop, UI 중심 앱, 기존 Next.js 프로젝트에는 이 얇은 agent 레이어가 잘 맞는다.
-- 반대로 복잡한 long-horizon memory/subagent isolation이 필요하면 LangGraph나 Deep Agents류가 더 적합할 수 있다.
-- 그래서 이 페이지는 [[openai-agents-sdk|OpenAI Agents SDK]], [[langgraph|LangGraph 1.0 / 2.0 (Agent Orchestration Framework)]], [[mastra|Mastra]]와 비교해 읽기 좋다.
+## 도입 판단표
+
+| 판단 축 | 내용 |
+|---|---|
+| 핵심 용어 | ToolLoopAgent, LLM/tools/loop, context management, stopping conditions, structured workflows |
+| 잘 맞는 상황 | 간단하거나 중간 규모의 tool loop를 기존 Vercel AI SDK 코드에서 점진적으로 agent화하려는 팀 |
+| 피해야 할 오해 | ToolLoopAgent를 deterministic workflow engine처럼 쓰거나, long-horizon memory/subagent isolation을 모두 맡기는 것 |
+
+## 프레임워크 비교
+
+| 프레임워크 | agent 추상화 성격 | 적합한 상황 |
+| --- | --- | --- |
+| Vercel AI SDK Agents | 얇은 ToolLoopAgent abstraction | 기존 TS 앱의 점진적 agent화 |
+| [[openai-agents-sdk|OpenAI Agents SDK]] | 공식 multi-agent runtime surface | SDK 중심 orchestration |
+| [[langgraph|LangGraph]] / Deep Agents | 더 무거운 상태/하네스 중심 | 장기 작업, 복잡한 흐름 |
+| [[mastra|Mastra]] | TypeScript app framework 성격 | TS 앱 통합 중심 |
 
 ## 관련 문서
 
 - [[vercel-ai-sdk|Vercel AI SDK 6]]
 - [[openai-agents-sdk|OpenAI Agents SDK]]
 - [[langgraph|LangGraph 1.0 / 2.0 (Agent Orchestration Framework)]]
-
-## 비교표
-
-| 프레임워크 | agent 추상화 성격 | 적합한 상황 |
-| --- | --- | --- |
-| Vercel AI SDK Agents | 얇은 ToolLoopAgent abstraction | 기존 TS 앱의 점진적 agent화 |
-| OpenAI Agents SDK | 공식 multi-agent runtime surface | SDK 중심 orchestration |
-| LangGraph / Deep Agents | 더 무거운 상태/하네스 중심 | 장기 작업, 복잡한 흐름 |
-
-## 도입 체크리스트
-
-- 기존 generate/stream 코드에서 점진적으로 올라가고 싶은가?
-- UI/Next.js 맥락이 강한가?
-- long-horizon memory보다 짧은 tool loop가 더 중요한가?
-

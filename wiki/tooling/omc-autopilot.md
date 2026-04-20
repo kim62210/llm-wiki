@@ -1,15 +1,14 @@
 ---
 title: OMC Autopilot
-aliases: ["OMC Autopilot"]
+aliases: [OMC Autopilot]
 category: tooling
 page_type: project-internal
 project: oh-my-claudecode
 tags: [omc, autopilot, autonomous, pipeline, 5-phase]
 sources: [raw/2026-04-09-omc-FEATURES.md, raw/2026-04-09-omc-README.md, raw/2026-04-09-omc-GETTING-STARTED.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC Autopilot
 
 > 아이디어 한 줄에서 검증된 동작 코드까지. 5-Phase 자율 실행 파이프라인.
@@ -117,7 +116,7 @@ interface AutopilotState {
   started_at: string;
   completed_at: string | null;
   phase_durations: Record<string, number>;
-  total_agents_spawned: number;
+  total_[[coding-agent|agent]]s_spawned: number;
   wisdom_entries: number;
   session_id?: string;
 }
@@ -235,7 +234,7 @@ if (v?.allApproved) {
 
 ## HUD 상태 표시
 
-실행 중에는 Claude Code 상태바에서 확인:
+실행 중에는 [[claude-code|Claude Code]] 상태바에서 확인:
 
 ```
 [OMC] autopilot:execution | agents:3 | todos:2/5 | ctx:45%
@@ -266,10 +265,11 @@ if (v?.allApproved) {
 
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Execution Modes]]
-- [[OMC Ralph Mode]]
-- [[OMC Ultrawork]]
-- [[OMC Deep Interview]]
-- [[OMC State Management]]
-- [[OMC Agent Catalog]]
+- [[oh-my-claudecode]]
+- [[omc-execution-modes]]
+- [[omc-ralph-mode]]
+- [[omc-ultrawork]]
+- [[omc-deep-interview]]
+- [[omc-state-management]]
+- [[omc-agent-catalog]]
+

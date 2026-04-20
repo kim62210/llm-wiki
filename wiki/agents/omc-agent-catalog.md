@@ -1,18 +1,17 @@
 ---
 title: OMC Agent Catalog
-aliases: ["OMC Agent Catalog", "Agents"]
+aliases: [OMC Agent Catalog, Agents]
 category: agents
 page_type: project-internal
 project: oh-my-claudecode
 tags: [omc, agents, catalog, lanes, delegation]
 sources: [raw/2026-04-09-omc-AGENTS.md, raw/2026-04-09-omc-ARCHITECTURE.md, raw/2026-04-09-omc-GETTING-STARTED.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC Agent Catalog
 
-> OMC의 19개 전문 에이전트를 4개 레인(Build/Analysis, Review, Domain, Coordination)으로 분류.
+> OMC의 19개 전문 에이전트를 4개 레인(Build/Analysis, Review, Domain, Coordination)으로 분류. [[orchestrator-worker-pattern|오케스트레이터-워커]] 패턴을 기반으로 하는 [[subagents|서브에이전트]] 시스템이다.
 
 ## 호출 방법
 
@@ -20,7 +19,7 @@ OMC 에이전트는 다음 중 하나로 호출한다:
 
 - **Claude Code 커스텀 프롬프트**: `/prompts:name` (예: `/prompts:architect "review auth module"`)
 - **슬래시 명령**: `/oh-my-claudecode:<agent-name>` 형태
-- **Task 툴 위임**: 부모 에이전트가 `Task(subagent_type="oh-my-claudecode:executor", model="sonnet", prompt=...)` 호출
+- **Task 툴 위임**: 부모 [[subagents|에이전트]]가 `Task(subagent_type="oh-my-claudecode:executor", model="sonnet", prompt=...)` 호출
 - **child_agent_protocol**: 부모가 `~/.codex/prompts/{role}.md` 읽어서 `spawn_agent(message: prompt)` 호출
 
 ## Build/Analysis Lane (빌드·분석)
@@ -175,8 +174,8 @@ Your custom system prompt here...
 
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[Multi-Agent Orchestration]]
-- [[OMC Model Routing]]
-- [[OMC Delegation Categories]]
-- [[OMC Execution Modes]]
+- [[oh-my-claudecode]]
+- [[multi-agent-orchestration]]
+- [[omc-model-routing]]
+- [[omc-delegation-categories]]
+- [[omc-execution-modes]]

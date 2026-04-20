@@ -1,15 +1,14 @@
 ---
 title: OMC CCG
-aliases: ["OMC CCG"]
+aliases: [OMC CCG]
 category: tooling
 page_type: project-internal
 project: oh-my-claudecode
 tags: [omc, ccg, multi-provider, claude, codex, gemini, advisor]
 sources: [raw/2026-04-09-omc-README.md, raw/2026-04-09-omc-ARCHITECTURE.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC CCG (Claude-Codex-Gemini)
 
 > 한 요청을 Codex와 Gemini에 동시 질의하고 Claude가 결과를 합성하는 삼중 자문 스킬.
@@ -114,7 +113,7 @@ CCG가 정상 동작하려면 다음이 필요:
 
 ## Team 모드와의 차이
 
-CCG는 [[OMC Team Mode]]의 `omc team N:codex` 같은 **실제 워커 프로세스**와 다르다:
+CCG는 [[omc-team-mode]]의 `omc team N:codex` 같은 **실제 워커 프로세스**와 다르다:
 
 | 항목 | CCG | omc team N:codex |
 |---|---|---|
@@ -178,7 +177,8 @@ CCG는 **3개 모델 × 각각 토큰 비용**이 든다:
 
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Execution Modes]]
-- [[OMC Team Mode]]
-- [[OMC Magic Keyword]]
+- [[oh-my-claudecode]]
+- [[omc-execution-modes]]
+- [[omc-team-mode]]
+- [[omc-magic-keyword]]
+

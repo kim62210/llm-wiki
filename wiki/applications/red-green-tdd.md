@@ -1,23 +1,22 @@
 ---
 title: Red/Green TDD with Coding Agents
-aliases: ["red-green TDD", "red-green tdd", "red/green TDD", "Red/Green TDD"]
+aliases: [red-green TDD, red-green tdd, red/green TDD, Red/Green TDD]
 category: applications
 page_type: concept
 tags: [tdd, testing, prompts, red-green, agents]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Red/Green TDD with Coding Agents
 
-Simon Willison이 [[agentic engineering guide]] Section 3의 핵심 프롬프트 패턴으로 소개한 기법.
+Simon Willison이 [[agentic-engineering-guide]] Section 3의 핵심 프롬프트 패턴으로 소개한 기법.
 
 ## 한 줄 요약
 
 > "Use red/green TDD" is a pleasingly succinct way to get better results out of a coding agent.
 
-이 네 단어는 에이전트에게 "TDD, 테스트 먼저, 실패 확인 후 구현" 전체 규율을 한 번에 전달한다.
+이 네 단어는 [[agentic-ai-foundation|에이전트]]에게 "TDD, 테스트 먼저, 실패 확인 후 구현" 전체 규율을 한 번에 전달한다. [[first-run-the-tests|First Run the Tests]]와 [[tdd-agentic-coding|TDD + Agentic Coding]]이 동일 철학의 확장이다.
 
 ## TDD 복습
 
@@ -77,7 +76,7 @@ Simon이 제시하는 최소 프롬프트:
 4. 다시 실행해서 통과 확인
 5. 필요 시 엣지 케이스 테스트 추가
 
-## [[first run the tests]]와의 조합
+## [[first-run-the-tests]]와의 조합
 
 새 세션 시작 시:
 
@@ -94,8 +93,8 @@ Simon이 제시하는 최소 프롬프트:
 
 ## 관련 문서
 
-- [[first run the tests]]
-- [[agentic manual testing]]
-- [[better code with agents]]
-- [[anti-patterns in agentic engineering]]
-- [[agentic engineering guide]]
+- [[first-run-the-tests]]
+- [[agentic-manual-testing]]
+- [[better-code-with-agents]]
+- [[anti-patterns]]
+- [[agentic-engineering-guide]]

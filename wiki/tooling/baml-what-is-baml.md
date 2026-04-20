@@ -5,9 +5,8 @@ page_type: summary
 tags: [tooling, summary, baml, structured-output, prompt-dsl]
 sources: [raw/recursive-sources/2026-04-10-baml-instructor-vercel-mastra/baml-what-is-baml.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # What is BAML?
 
 BoundaryML의 “What is BAML?” 문서 요약이다. BAML을 구조화 출력과 LLM 함수 인터페이스를 위한 전용 DSL로 보는 관점을 정리한다.
@@ -25,7 +24,7 @@ BAML의 핵심은 프롬프트 문자열을 직접 흩뿌리는 대신, 구조�
 
 ## 핵심 구조
 
-- 문서는 BAML을 LLM 함수 인터페이스와 structured output을 위한 별도 명세 언어로 소개한다.
+- 문서는 BAML을 LLM 함수 인터페이스와 [[structured-output|structured output]]을 위한 별도 명세 언어로 소개한다.
 - 핵심은 프롬프트와 출력 구조를 코드 여기저기에 흩뿌리지 않고, 명시적 계약 파일로 끌어내는 것이다.
 - 이 접근은 프롬프트 엔지니어링을 코드 생성 가능한 인터페이스 설계로 바꾼다.
 

@@ -1,24 +1,23 @@
 ---
 title: Linear Walkthroughs
-aliases: ["linear walkthroughs"]
+aliases: [linear walkthroughs]
 category: applications
 page_type: concept
 tags: [code-understanding, documentation, showboat, claude-code]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Linear Walkthroughs
 
-Simon Willison이 [[agentic engineering guide]] Section 4에서 소개하는 "에이전트가 코드를 설명하게 만드는 기법".
+Simon Willison이 [[agentic-engineering-guide]] Section 4에서 소개하는 "에이전트가 코드를 설명하게 만드는 기법".
 
 ## 언제 쓰나
 
 코딩 에이전트에게 코드베이스를 **구조화된 방식으로 설명**하게 할 때:
 - 처음 보는 기존 코드를 이해해야 할 때
 - 본인이 쓴 코드지만 세부가 기억나지 않을 때
-- "[[vibe coding|vibe coded]]"해서 구현 디테일을 보지 않은 코드
+- "[[vibe-coding|vibe coded]]"해서 구현 디테일을 보지 않은 코드
 - 동료에게 온보딩 문서를 만들어야 할 때
 
 Frontier 모델 + 제대로 된 에이전트 하네스는 상세한 walkthrough를 구성할 수 있다.
@@ -58,12 +57,12 @@ Simon의 6개 Swift 파일 앱에 대해:
 
 > "Even brief projects created through rapid iteration can become opportunities to explore new ecosystems and develop new technical skills through agent-generated explanations."
 
-빠른 iteration으로 만든 짧은 프로젝트도 에이전트 생성 설명을 통해 새 생태계 학습 기회가 된다. [[cognitive debt]]를 갚는 주요 수단이다.
+빠른 iteration으로 만든 짧은 프로젝트도 에이전트 생성 설명을 통해 새 생태계 학습 기회가 된다. [[cognitive-debt]]를 갚는 주요 수단이다.
 
 ## 선형 vs 인터랙티브 walkthrough
 
 - **Linear**: 텍스트 기반, 파일 단위로 순차적 설명. Showboat로 문서화. → 이 페이지
-- **Interactive**: 애니메이션/UI로 알고리즘의 동작을 시각화. → [[interactive explanations]]
+- **Interactive**: 애니메이션/UI로 알고리즘의 동작을 시각화. → [[interactive-explanations]]
 
 Simon은 word cloud 사례에서 이 두 단계를 순차적으로 적용했다:
 1. 먼저 linear walkthrough로 Rust 코드 구조 파악
@@ -86,9 +85,9 @@ Then use showboat note and showboat exec to build a walkthrough document.
 
 ## 관련 문서
 
-- [[interactive explanations]]
-- [[cognitive debt]]
-- [[vibe coding]]
+- [[interactive-explanations]]
+- [[cognitive-debt]]
+- [[vibe-coding]]
 - [[Showboat]]
-- [[Claude Code]]
-- [[agentic engineering guide]]
+- [[claude-code]]
+- [[agentic-engineering-guide]]

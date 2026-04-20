@@ -1,15 +1,14 @@
 ---
 title: OMC Deep Interview
-aliases: ["OMC Deep Interview"]
+aliases: [OMC Deep Interview]
 category: tooling
 page_type: project-internal
 project: oh-my-claudecode
-tags: [omc, deep-interview, socratic, requirements, ouroboros, ambiguity]
+tags: [omc, deep-interview, socratic, [[context-engineering|requirements]], ouroboros, ambiguity]
 sources: [raw/2026-04-09-omc-README.md, raw/2026-04-09-omc-AGENTS.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC Deep Interview
 
 > Socratic 질문과 **수학적 모호성 측정**으로 요구사항을 명확화하는 스킬. Ouroboros에서 영감.
@@ -186,8 +185,9 @@ omc autoresearch init --topic "benchmark onboarding flow"
 
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Execution Modes]]
-- [[OMC Autopilot]]
-- [[OMC Ralplan]]
-- [[OMC Magic Keyword]]
+- [[oh-my-claudecode]]
+- [[omc-execution-modes]]
+- [[omc-autopilot]]
+- [[omc-ralplan]]
+- [[omc-magic-keyword]]
+

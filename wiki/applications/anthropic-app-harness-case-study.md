@@ -11,9 +11,9 @@ updated: 2026-04-09
 
 # Anthropic Full-Stack Harness Case Study
 
-Anthropic의 Prithvi Rajasekaran이 [[anthropic harness design|Harness Design for Long-Running Application Development]]에서 공개한 두 개의 풀 스택 빌드 케이스. **Retro Game Maker (Opus 4.5)** 와 **Digital Audio Workstation (Opus 4.6)** 를 같은 3-agent 하네스 계보로 연속 실험한 결과.
+Anthropic의 Prithvi Rajasekaran이 [[anthropic-harness-design|Harness Design for Long-Running Application Development]]에서 공개한 두 개의 풀 스택 빌드 케이스. **Retro Game Maker (Opus 4.5)** 와 **Digital Audio Workstation (Opus 4.6)** 를 같은 3-agent 하네스 계보로 연속 실험한 결과.
 
-두 사례는 같은 저자·같은 방법론·다른 모델이라는 조건에서 하네스의 load-bearing 컴포넌트가 어떻게 이동했는지 드러낸다.
+두 사례는 같은 저자·같은 방법론·다른 모델이라는 조건에서 [[component-level-agent-evaluation|컴포넌트 수준 평가]]가 어떻게 적용되는지 보여준다. 하네스의 load-bearing 컴포넌트가 어떻게 이동했는지 드러낸다.
 
 ## 사례 1: Retro Game Maker (2026 초, Opus 4.5)
 
@@ -111,7 +111,7 @@ Planner가 **frontend design skill**에 접근해 앱의 visual design language�
 
 ### 배경 — 하네스 단순화
 
-Opus 4.6 릴리스 후 저자는 [[load-bearing harness|load-bearing test]]를 수행하며 하네스를 단순화. 변경점:
+Opus 4.6 릴리스 후 저자는 [[load-bearing-harness|load-bearing test]]를 수행하며 하네스를 단순화. 변경점:
 
 - **Sprint 구조 완전 제거** — Opus 4.6가 "sustains agentic tasks for longer"
 - **Planner 유지** — 없으면 generator가 under-scope
@@ -215,10 +215,10 @@ flowchart LR
 
 ## 관련 문서
 
-- [[anthropic harness design]] — 이 사례들의 출처인 원 글 요약
-- [[harness engineering]] — 이 사례들이 속한 패러다임
-- [[generator-evaluator architecture]] — 양 사례의 공통 기반 아키텍처
-- [[load-bearing harness]] — Opus 4.5 → 4.6 단순화의 메타 원칙
-- [[sprint contracts]] — Game Maker에서는 load-bearing, DAW에서는 제거된 컴포넌트
-- [[context anxiety]] — 두 모델 간 이 문제의 임계점이 어떻게 이동했는지
-- [[self-evaluation bias]] — Evaluator가 초기에 "poor QA agent"였던 이유
+- [[anthropic-harness-design]] — 이 사례들의 출처인 원 글 요약
+- [[harness-engineering]] — 이 사례들이 속한 패러다임
+- [[generator-evaluator-architecture]] — 양 사례의 공통 기반 아키텍처
+- [[load-bearing-harness]] — Opus 4.5 → 4.6 단순화의 메타 원칙
+- [[sprint-contracts]] — Game Maker에서는 load-bearing, DAW에서는 제거된 컴포넌트
+- [[context-anxiety]] — 두 모델 간 이 문제의 임계점이 어떻게 이동했는지
+- [[self-evaluation-bias]] — Evaluator가 초기에 "poor QA agent"였던 이유

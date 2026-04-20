@@ -2,19 +2,18 @@
 title: Effective Harnesses for Long-Running Agents
 category: tooling
 page_type: summary
-tags: [tooling, summary, anthropic, harness, long-running-agents]
+tags: [tooling, summary, anthropic, [[harness-engineering|harness]], long-running-agents]
 sources: [raw/hot-topics-sources/2026-04-10/041-effective-harnesses-for-long-running-agents.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # Effective Harnesses for Long-Running Agents
 
 Anthropic이 장기 실행 에이전트를 다루기 위해 제안한 하네스 설계 글 요약이다. 핵심은 모델이 긴 작업을 한 번에 끝내리라고 기대하는 대신, **초기 환경 설정(initializer)과 반복 실행(coding agent)** 을 분리해 세션을 이어 붙이는 것이다.
 
 ## 핵심 내용
 
-- 에이전트는 여러 context window를 넘나들며 일해야 한다.
+- 에이전트는 여러 [[context-window|context window]]를 넘나들며 일해야 한다.
 - compaction만으로는 세션 간 일관성을 보장하기 어렵다.
 - initializer agent가 환경과 작업 구조를 잡고,
 - coding agent가 한 세션마다 **작은 진전 + 깨끗한 상태**를 남기는 구조가 효과적이다.
@@ -25,7 +24,7 @@ Anthropic이 장기 실행 에이전트를 다루기 위해 제안한 하네스 
 처음 한 번만 실행되며, 프로젝트 구조와 진행 파일을 설정한다.
 
 ### progress artifact
-`claude-progress.txt` 같은 외부 상태 파일이 세션 간 기억을 이어주는 핵심이 된다.
+`claude-progress.txt` 같은 외부 상태 파일이 세션 간 기억을 이어주는 핵심이 된다. 이는 [[agent-memory-systems|에이전트 메모리]] 설계의 핵심 패턴이다.
 
 ### feature list
 작업을 구체적 기능 단위로 쪼개고, 아직 실패 상태임을 명시해 premature completion을 막는다.
@@ -43,9 +42,9 @@ Anthropic이 장기 실행 에이전트를 다루기 위해 제안한 하네스 
 
 이 문서는 이를 막기 위한 가장 실용적인 대책으로 **초기화 단계, 점진적 진전, 외부 상태 파일**을 제시한다.
 
+
 ## 관련 문서
 
 - [[long-running-agent-harnesses|Agent Harnesses for Long-Running Coding Sessions]]
 - [[generator-evaluator-architecture|Generator-Evaluator Architecture]]
 - [[claude-agent-sdk|Claude Agent SDK]]
-

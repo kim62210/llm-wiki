@@ -1,15 +1,14 @@
 ---
 title: Google Stitch
-aliases: ["Google Stitch", "Stitch", "stitch"]
+aliases: [Google Stitch, Stitch, stitch]
 category: tooling
 page_type: entity
 project: Google Stitch
 tags: [google, stitch, ai-design, design-system, ui-generation, gemini]
 sources: [raw/2026-04-09-stitch-design-md.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Google Stitch
 
 Google의 AI 기반 디자인 도구. "Stitch - Design with AI"라는 태그라인으로 제공되며, 내부 코드네임은 **Nemo**. Gemini 모델 계열(`gemini-2.5-flash-native-audio-preview-12-2025` 등)을 기반으로 UI를 생성한다.
@@ -18,7 +17,7 @@ Google의 AI 기반 디자인 도구. "Stitch - Design with AI"라는 태그라�
 
 Stitch는 자연어 프롬프트에서 시작해 다음을 생성하는 디자인 에이전트다:
 - UI 화면 (screen)
-- [[DESIGN.md 포맷|DESIGN.md]] 디자인 시스템 문서
+- [[design-md-format|DESIGN.md]] 디자인 시스템 문서
 - 디바이스별 variants
 - export 가능한 아티팩트
 
@@ -43,7 +42,7 @@ flowchart TD
 ## 주요 기능
 
 ### 1. DESIGN.md 생성·편집·export
-Stitch의 핵심 기능. 상세는 [[stitch design-md guide]] 참조. 세 가지 생성 경로:
+Stitch의 핵심 기능. 상세는 [[stitch-design-md-guide]] 참조. 세 가지 생성 경로:
 
 | 경로 | 입력 | 결과 |
 |------|------|------|
@@ -102,7 +101,7 @@ Stitch의 철학 중 가장 중요한 부분: **export된 DESIGN.md는 Stitch에
 
 > "The exported DESIGN.md is a standalone document. It doesn't depend on Stitch to be useful."
 
-→ 다른 AI 에이전트(예: [[Claude Code]])에 그대로 넘길 수 있고, 팀 소스오브트루스 파일로 git에 커밋 가능. Figma 같은 클로즈드 생태계와 대비되는 특징.
+→ 다른 AI 에이전트(예: [[claude-code]])에 그대로 넘길 수 있고, 팀 소스오브트루스 파일로 git에 커밋 가능. Figma 같은 클로즈드 생태계와 대비되는 특징.
 
 ## 경쟁·대안
 
@@ -120,9 +119,10 @@ Stitch의 철학 중 가장 중요한 부분: **export된 DESIGN.md는 Stitch에
 - [ ] Controls & Hotkeys
 
 ## 관련 문서
+- [[ai-design-tools]] -- AI 디자인 도구 (UI/UX 생성)
 
-- [[stitch design-md guide]]
-- [[DESIGN.md 포맷]]
-- [[ai-readable design system]]
-- [[design tokens]]
-- [[Claude Code]]
+- [[stitch-design-md-guide]]
+- [[design-md-format]]
+- [[ai-readable-design-system]]
+- [[design-tokens]]
+- [[claude-code]]

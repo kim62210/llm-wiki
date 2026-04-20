@@ -5,9 +5,8 @@ page_type: summary
 tags: [tooling, summary, openai-agents-sdk, mcp, tools]
 sources: [raw/recursive-sources/2026-04-10-openai-langgraph/openai-agents-sdk-model-context-protocol.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # OpenAI Agents SDK MCP
 
 OpenAI Agents SDK에서 MCP 서버를 붙이는 방법을 설명하는 공식 가이드 요약이다. hosted MCP tools, streamable HTTP, stdio 세 가지 연결 방식과 approval 흐름을 다룬다.
@@ -59,3 +58,4 @@ flowchart TD
 - [[model-context-protocol-mcp|Model Context Protocol (MCP)]]
 - [[mcp-architecture|MCP Architecture]]
 - [[mcp-authorization|MCP OAuth 2.1 + PKCE Authorization]]
+

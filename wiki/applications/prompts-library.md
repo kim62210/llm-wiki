@@ -1,21 +1,20 @@
 ---
 title: "Simon Willison's Prompts Library"
-aliases: ["prompts library", "Simon Willison's Prompts Library"]
+aliases: [prompts library, Simon Willison's Prompts Library]
 category: applications
 page_type: summary
 tags: [prompts, templates, artifacts, proofreader, alt-text]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Simon Willison's Prompts Library
 
-Simon Willison이 [[agentic engineering guide]] 부록 "Prompts I use"에 모아둔, 본인이 상시 사용하는 프롬프트 모음. 지속적으로 업데이트되는 섹션이다.
+Simon Willison이 [[agentic-engineering-guide]] 부록 "Prompts I use"에 모아둔, 본인이 상시 사용하는 프롬프트 모음. 지속적으로 업데이트되는 섹션이다. [[first-run-the-tests|First Run the Tests]]와 [[red-green-tdd|Red/Green TDD]]는 여기서 파생된 핵심 패턴이다.
 
 ## 1. Artifacts 프롬프트
 
-**맥락**: Claude의 Artifacts(또는 ChatGPT/Gemini의 Canvas)로 HTML 도구를 프로토타이핑할 때 사용.
+**맥락**: [[agentic-ai-foundation|Claude]]의 Artifacts(또는 ChatGPT/Gemini의 Canvas)로 HTML 도구를 프로토타이핑할 때 사용. [[agent-prompt-patterns|에이전트 프롬프트 패턴]]의 실용적 모음이다.
 
 **문제**: 모델이 기본적으로 React를 쓰려 하는데, React는 빌드 단계가 필요해서 static hosting으로 그대로 복사하기 어렵다.
 
@@ -122,11 +121,11 @@ Simon의 프롬프트에서 반복적으로 보이는 기법:
 이 프롬프트들을 시작점으로 삼아:
 - 프로젝트별 custom instructions에 맞게 변형
 - 자신의 스타일/제약을 추가
-- 성공한 프롬프트는 저장소/노트에 축적 → [[hoard things you know how to do]] 원칙
+- 성공한 프롬프트는 저장소/노트에 축적 → [[hoard-things-you-know-how-to-do]] 원칙
 
 ## 관련 문서
 
-- [[agentic engineering guide]]
-- [[hoard things you know how to do]]
-- [[first run the tests]]
-- [[red-green TDD]]
+- [[agentic-engineering-guide]]
+- [[hoard-things-you-know-how-to-do]]
+- [[first-run-the-tests]]
+- [[red-green-tdd]]

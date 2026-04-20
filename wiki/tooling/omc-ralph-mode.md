@@ -1,15 +1,14 @@
 ---
 title: OMC Ralph Mode
-aliases: ["OMC Ralph Mode", "omc ralph mode", "omc-ralph-mode"]
+aliases: [OMC Ralph Mode, omc ralph mode, omc-ralph-mode]
 category: tooling
 page_type: project-internal
 project: oh-my-claudecode
 tags: [omc, ralph, persistence, verification, loop]
 sources: [raw/2026-04-09-omc-HOOKS.md, raw/2026-04-09-omc-AGENTS.md, raw/2026-04-09-omc-ARCHITECTURE.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC Ralph Mode
 
 > "The boulder never stops." 검증이 완료될 때까지 중단하지 않는 지속 실행 모드.
@@ -87,7 +86,7 @@ Ralph 활성 + 구현 시작?
 
 ## Ultrawork 자동 포함
 
-Ralph 모드에는 [[OMC Ultrawork]]이 기본 포함된다. 즉 Ralph를 켜면 병렬 에이전트 오케스트레이션도 자동 활성화된다.
+Ralph 모드에는 [[omc-ultrawork]]이 기본 포함된다. 즉 Ralph를 켜면 병렬 에이전트 오케스트레이션도 자동 활성화된다.
 
 ```
 ralph = persistence + ultrawork + default execution
@@ -117,7 +116,7 @@ ralph = persistence + ultrawork + default execution
 
 **주요 필드**:
 - `iteration` / `max_iterations`: 무한 루프 방지용 카운터
-- `current_phase`: 현재 단계 (planning/execution/verification 등)
+- `current_phase`: 현재 단계 ([[context-engineering|planning]]/execution/verification 등)
 - `linked_ultrawork`: ultrawork 연동 여부
 - `last_checked_at`: staleness 감지용 (2시간 이상 stale → inactive 처리)
 
@@ -191,9 +190,10 @@ Ralph 모드가 첫 Stop 이벤트에 도달하면 Discord/Telegram/Slack 알림
 
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Execution Modes]]
-- [[OMC Ultrawork]]
-- [[OMC Hook System]]
-- [[OMC State Management]]
-- [[OMC Ralplan]]
+- [[oh-my-claudecode]]
+- [[omc-execution-modes]]
+- [[omc-ultrawork]]
+- [[omc-hook-system]]
+- [[omc-state-management]]
+- [[omc-ralplan]]
+

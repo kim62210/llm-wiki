@@ -1,17 +1,16 @@
 ---
 title: How Coding Agents Work
-aliases: ["how coding agents work"]
+aliases: [how coding agents work]
 category: agents
 page_type: concept
 tags: [coding-agents, llm-harness, system-prompt, tools, reasoning]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # How Coding Agents Work
 
-Simon Willison이 [[agentic engineering guide]] Section 2에서 설명하는 코딩 에이전트의 내부 구조.
+Simon Willison이 [[agentic-engineering-guide]] Section 2에서 설명하는 코딩 에이전트의 내부 구조.
 
 > "A coding agent functions as a harness for an LLM, extending language models with additional capabilities through invisible prompts and callable tools."
 
@@ -41,7 +40,7 @@ LLM은 **stateless**이다. 따라서:
 
 공급사는 **캐시된 입력 토큰**에 저렴한 요금을 제공한다:
 - 최근 처리된 공통 프리픽스는 계산 결과를 재사용
-- 코딩 에이전트는 이전 대화 내용을 **수정하지 않도록** 설계됨 → 캐시 효율 극대화
+- 코딩 에이전트는 이전 대화 내용을 **수정하지 않도록** 설계됨 → [[prompt-caching-agentic|캐시 효율]] 극대화
 
 이는 왜 에이전트가 중간 메시지를 되돌리지 않고 append-only로 동작하는지를 설명한다.
 
@@ -116,8 +115,13 @@ flowchart TD
 - **Reasoning은 트레이드오프** — 복잡한 문제에는 켜고, 단순 작업에는 끄는 것이 비용 효율적
 
 ## 관련 문서
+- [[wasm-agent-sandboxing]] -- WebAssembly 에이전트 샌드박싱 (Wasm Agent Sandboxing)
+- [[raschka-llm-architecture-gallery]] -- Sebastian Raschka의 LLM 아키텍처 갤러리
+- [[ns-vla-paper]] -- NS-VLA: 뉴로-심볼릭 비전-언어-행동 모델
+- [[collabcoder-plan-code-paper]] -- CollabCoder: 계획-코드 공동 진화를 통한 효율적 코드 생성
+- [[a-rag-paper]] -- A-RAG: 계층적 검색 인터페이스를 통한 에이전틱 RAG 확장
 
-- [[coding agent]]
-- [[agentic engineering]]
+- [[coding-agent]]
+- [[agentic-engineering]]
 - [[subagents]]
-- [[agentic engineering guide]]
+- [[agentic-engineering-guide]]

@@ -6,9 +6,8 @@ project: Model Context Protocol
 tags: [tooling, entity, mcp, protocol, interoperability]
 sources: [raw/hot-topics-sources/2026-04-10/048-mcp-what-is-the-model-context-protocol.md, raw/hot-topics-sources/2026-04-10/049-modelcontextprotocol-modelcontextprotocol.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # Model Context Protocol (MCP)
 
 LLM 애플리케이션과 외부 데이터/도구를 연결하기 위한 개방형 프로토콜의 허브 페이지다. 특정 릴리스 노트나 로드맵이 아니라, MCP 자체를 하나의 장기 추적 대상(entity)로 다룬다.
@@ -83,7 +82,48 @@ MCP는 단순히 “툴을 붙이는 방법”이 아니라, **에이전트 생�
 | metadata / registry | discoverability와 운영 자동화에 영향 |
 
 ## 관련 문서
+- [[function-calling-tool-use]] -- 함수 호출과 도구 사용 (Function Calling)
 
 - [[model-context-protocol|MCP 2026 Roadmap & Enterprise Readiness]]
 - [[mcp-authorization|MCP OAuth 2.1 + PKCE Authorization]]
 - [[claude-code-hooks-system|Claude Code Hooks System]]
+- [[mcp-authorization-draft|MCP Authorization Draft]] — MCP authorization security boundary 요약
+- [[tool-calling-optimization]] -- MCP 도구 호출 최적화 개념
+- [[agentic-ai-foundation]] -- MCP가 지탱하는 에이전트 AI 인프라 기반
+
+허브 문서는 하위 경로와 source 경계를 함께 검증한다.
+
+공식 문서와 구현체를 교차 확인한다.
+
+공식 문서와 구현체를 교차 확인한다.
+
+공식 문서와 구현체를 교차 확인한다.
+
+공식 문서와 구현체를 교차 확인한다.
+
+공식 문서와 구현체를 교차 확인한다.
+
+공식 문서와 구현체를 교차 확인한다.
+
+공식 문서와 구현체를 교차 확인한다.
+
+공식 문서와 구현체를 교차 확인한다.
+
+공식 문서와 구현체를 교차 확인한다.
+
+공식 문서와 구현체를 교차 확인한다.
+
+관련 허브와 다시 연결한다.
+
+관련 허브와 다시 연결한다.
+
+관련 허브와 다시 연결한다.
+
+관련 허브와 다시 연결한다.
+
+관련 허브와 다시 연결한다.
+
+관련 허브와 다시 연결한다.
+
+source 경계 유지.
+

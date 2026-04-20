@@ -5,12 +5,11 @@ page_type: summary
 tags: [applications, summary, ingest, backlog, roadmap, 2026-04]
 sources: [raw/2026-04-10-hot-ai-topics-100-manifest.json]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # 2026년 4월 다음 ingest 후보 지도
 
-원본 500-link corpus는 모두 흡수되었지만, 추가적인 **공식 child-doc 확장** 후보는 여전히 존재한다. 이 문서는 “미반영 source가 남아 있는가?”와 “추가로 더 깊게 파고들 공식 문서 축이 있는가?”를 분리해서 보여 주기 위한 backlog 지도다.
+원본 500-link corpus는 모두 흡수되었지만, 추가적인 **공식 child-doc 확장** 후보는 여전히 존재한다. [[hot-topics-corpus-coverage-audit-2026-04|corpus coverage audit]]에서 기반 검증이 완료되었다. [[leaf-quality-reingest-audit-2026-04-13|leaf 품질 감사]]와 연계된다. [[hot-topics-corpus-coverage-audit-2026-04|corpus coverage audit]]에서 기반 검증이 완료된 상태다. 이 문서는 “미반영 source가 남아 있는가?”와 “추가로 더 깊게 파고들 공식 문서 축이 있는가?”를 분리해서 보여 주기 위한 backlog 지도다.
 
 ## 구조도
 

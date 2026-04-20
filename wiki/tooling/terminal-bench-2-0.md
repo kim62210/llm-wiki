@@ -6,91 +6,78 @@ project: Terminal-Bench 2.0
 tags: [tooling, entity, terminal, bench, model-releases-and-benchmarks]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/terminal-bench-2-0.md, raw/hot-topics-sources/2026-04-10/154-terminal-bench-official-site.md, raw/hot-topics-sources/2026-04-10/119-terminal-bench-2-0-leaderboard-llm-stats.md, raw/hot-topics-sources/2026-04-10/155-terminal-bench-hard-artificial-analysis.md, raw/hot-topics-sources/2026-04-10/156-terminal-bench-vals-ai.md, raw/hot-topics-sources/2026-04-10/157-benchtalks-1-alex-shaw-snorkel-ai.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # Terminal-Bench 2.0
 
-이 페이지는 Terminal-Bench 2.0를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 Stanford-Laude Institute가 만든 터미널 환경 에이전트 평가 벤치마크이기 때문이다.
-
-## 정의
-
 Stanford-Laude Institute가 만든 터미널 환경 에이전트 평가 벤치마크.
-
-## 왜 지금 중요한가
-
-89개 고난도 태스크(코드 컴파일, 모델 훈련, 서버 셋업, 보안 등)로 구성된 2.0 버전이 2026년 에이전틱 코딩 표준으로 자리잡으며 Gemini 3.1 Pro 68.5%, Claude Opus 4.6/Sonnet 4.6가 선두권에서 각축을 벌이는 등 프론티어 모델이 핵심 자랑거리로 꼽는 수치가 됐다.
 
 ## 개요
 
-이 페이지는 **Terminal-Bench 2.0** 자체를 지속적으로 누적·갱신하기 위한 허브 페이지다.
+Terminal-Bench는 LLM 에이전트가 실제 터미널 환경에서 시스템 관리, 소프트웨어 개발, 보안 관련 작업을 얼마나 잘 수행하는지 측정하는 벤치마크다. 2.0 버전은 89개 고난도 태스크로 구성되어 있으며, Harbor 기반 벤치마크 팩토리 아키텍처를 채택해 재현 가능성과 확장성을 보장한다.
+
+## 평가 태스크 유형
+
+```mermaid
+flowchart TD
+    TBench[Terminal-Bench 2.0] --> Code[코드 컴파일/빌드]
+    TBench --> Train[모델 학습 설정]
+    TBench --> Server[서버/인프라 셋업]
+    TBench --> Sec[보안 취약점 분석]
+    TBench --> File[파일 시스템 조작]
+    TBench --> Package[패키지 관리/의존성]
+    Code --> Hard[Terminal-Bench Hard 서브셋]
+    Train --> Hard
+    Sec --> Hard
+```
+
+Hard 서브셋은 일반 태스크 중 인간 전문가도 30분 이상 소요되는 항목만 추려낸 고난도 평가다.
+
+## Harbor 아키텍처
+
+Terminal-Bench의 핵심 설계는 **Harbor 기반 벤치마크 팩토리**다. Harbor는 격리된 Docker 컨테이너 환경을 태스크별로 스핀업하고, 에이전트의 셸 명령을 실시간으로 기록하며 채점한다.
+
+- **격리성**: 태스크마다 깨끗한 환경에서 시작, 이전 태스크의 상태 오염 없음
+- **재현성**: 동일 태스크를 다른 모델/날짜에 동일 환경으로 재실행 가능
+- **확장성**: 새 태스크를 YAML 정의만으로 추가 가능
+
+## 2026년 4월 리더보드 현황
+
+| 순위 | 모델 | Terminal-Bench 2.0 점수 |
+|---|---|---|
+| 1 | Gemini 3.1 Pro | 68.5% |
+| 2 | Claude Opus 4.6 / Sonnet 4.6 | 선두권 |
+| ... | 기타 모델 | - |
+
+[교차검증 필요] 정확한 최신 점수는 [공식 리더보드](https://llm-stats.com/benchmarks/terminal-bench-2)에서 확인 필요.
+
+## SWE-bench와의 차이
+
+| 항목 | Terminal-Bench | SWE-bench |
+|---|---|---|
+| 평가 대상 | 터미널/시스템 조작 능력 | 코드 수정·패치 능력 |
+| 환경 | 실제 셸 세션 | Git 리포지토리 |
+| 태스크 유형 | 명령 실행, 인프라 설정 | 이슈 해결, PR 생성 |
+| 채점 방식 | 최종 상태/출력 검증 | 테스트 통과 여부 |
+
+## 실무 적용 관점
+
+에이전트 코딩 도구(Claude Code, Cursor 등)를 도입할 때, Terminal-Bench 점수는 단순 코드 완성 능력이 아니라 **환경 설정·빌드·배포·디버깅 전 주기를 자율 수행할 수 있는지**를 가늠하는 지표로 활용할 수 있다. vals.ai에서는 이미 포화 수준에 도달했다는 언급이 있어, [[swe-bench-pro|SWE-bench Pro]]처럼 더 어려운 버전으로 진화할 가능성이 있다.
+
+## 왜 지금 중요한가
+
+89개 고난도 태스크(코드 컴파일, 모델 훈련, 서버 셋업, 보안 등)로 구성된 2.0 버전이 2026년 에이전틱 코딩 표준으로 자리잡았다. Harbor 기반 벤치마크 팩토리 아키텍처로 새 태스크 추가가 용이한 설계가 특징이다.
 
 ## 대표 자료
 
 - [Terminal-Bench Official Site](https://www.tbench.ai/)
-- [Terminal-Bench 2.0 Leaderboard — LLM Stats](https://llm-stats.com/benchmarks/terminal-bench-2)
-- [Terminal-Bench Hard — Artificial Analysis](https://artificialanalysis.ai/evaluations/terminalbench-hard)
-- [Terminal-Bench — Vals AI](https://www.vals.ai/benchmarks/terminal-bench)
-- [Benchtalks #1: Alex Shaw — Snorkel AI](https://snorkel.ai/blog/benchtalks-alex-shaw-terminal-bench-harbor-building-the-benchmark-factory/)
-
-## 해석 포인트
-
-Terminal-Bench 2.0은 단순한 제품 소개보다 **모델 능력보다 개발자 경험과 운영 통합면이 중요한 도구 축** 으로 읽는 편이 유용하다. 이번 source 묶음에서도 `tbench.ai×1, llm-stats.com×1, artificialanalysis.ai×1, vals.ai×1`처럼 연구·문서·구현체 신호가 함께 모여 있어, 단일 발표보다 생태계 위치를 같이 봐야 한다.
-
-실무에서는 이 엔티티를 '최신인가?'보다 **어떤 운영 전제와 통합면을 요구하는가**로 평가해야 한다. 즉 평가셋 범위, 난도 분포, 실제 사용성과의 상관 같은 기준으로 다른 대안과 비교해야 실제 도입 판단에 도움이 된다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: Stanford-Laude Institute가 만든 터미널 환경 에이전트 평가 벤치마크.
-- 왜 중요한가: 89개 고난도 태스크(코드 컴파일, 모델 훈련, 서버 셋업, 보안 등)로 구성된 2.0 버전이 2026년 에이전틱 코딩 표준으로 자리잡으며 Gemini 3.1 Pro 68.5%, Claude Opus 4.6/Sonnet 4.6가 선두권에서 각축을 벌이는 등 프론티어 모델이 핵심 자랑거리로 꼽는 수치가 됐다.
-- 직접 수집 원문: 5개
-- 주요 도메인: tbench.ai×1, llm-stats.com×1, artificialanalysis.ai×1, vals.ai×1, snorkel.ai×1
-
-## 핵심 포인트
-
-Terminal-Bench 2.0는 현재 시점에서 하나의 제품/모델/프레임워크 허브로 읽는 편이 맞다. 기본 정의는 이 페이지는 Terminal-Bench 2.0를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 Stanford-Laude Institute가 만든 터미널 환경 에이전트 평가 벤치마크이기 때문이다.이며, 직접 수집한 source 5건은 artificialanalysis.ai×1, llm-stats.com×1, snorkel.ai×1, tbench.ai×1, vals.ai×1처럼 여러 채널에 걸쳐 분포한다.
-
-## source로 보면
-
-수집된 source는 artificialanalysis.ai×1, llm-stats.com×1, snorkel.ai×1, tbench.ai×1, vals.ai×1로 분포한다. source 구성이 비교적 고르게 분포해 허브형 개요 문서로 읽기 좋다.
-
-## 실무 관점
-
-도구/프레임워크 페이지는 기능 목록보다 생태계 위치가 중요하다. 어떤 모델·런타임·개발 흐름과 잘 맞는지, 그리고 팀 워크플로우에 어떤 경계 조건을 추가하는지까지 같이 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/terminal-bench-2-0.md`
-
-### source별 핵심 신호
-
-- **Terminal-Bench** (`tbench.ai`): https://www.tbench.ai
-  - 메모: terminal-bench is a collection ofharbor-native benchmarks to help agent makers quantify their agents' terminal mastery
-- **Terminal-Bench 2.0 Leaderboard** (`llm-stats.com`): https://llm-stats.com/benchmarks/terminal-bench-2
-  - 메모: Terminal-Bench 2.0 is an updated benchmark for testing AI agents' tool use ability to operate a computer via terminal.
-- **Terminal-Bench Hard Benchmark Leaderboard | Artificial Analysis** (`artificialanalysis.ai`): https://artificialanalysis.ai/evaluations/terminalbench-hard
-  - 메모: An agentic benchmark evaluating AI capabilities in terminal environments through software engineering, system administration, and data processing tasks.
-- **Terminal-Bench** (`vals.ai`): https://www.vals.ai/benchmarks/terminal-bench
-  - 메모: Since performance on this benchmark has saturated, we no
-- **Benchtalks #1: Alex Shaw (Terminal-Bench, Harbor) – Building the Benchmark Factory | Snorkel AI** (`snorkel.ai`): https://snorkel.ai/blog/benchtalks-alex-shaw-terminal-bench-harbor-building-the-benchmark-factory/
-  - 메모: We built FinQA — a financial question-answering environment with 290 expert-curated questions across 22 public companies, now available on OpenEnv.
-
-
-## source 종합 해석
-
-`Terminal-Bench 2.0`는 단일 발표보다 **여러 source가 어떤 관점에서 이 대상을 규정하는가**를 함께 읽을 때 의미가 커진다.
-
-이번 수집에서는 Terminal-Bench, Terminal-Bench 2.0 Leaderboard, Terminal-Bench Hard Benchmark Leaderboard | Artificial Analysis처럼 출시 공지·문서·평가 신호가 같이 모여, 기능 자체보다 생태계 위치와 운영 전제가 더 중요하다는 점이 드러난다.
-
-함께 읽을 문서로는 ai-hot-topics-2026-04, swe-bench-pro, arc-agi-2가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- 도입 판단 시 기능 목록만 보지 말고, 공식 문서·릴리스 노트·벤치마크가 서로 얼마나 일관되게 같은 메시지를 주는지 확인한다.
-- 비교 후보와의 차이는 API/운영 통합, 성능 수치, 생태계 성숙도 같은 기준으로 정리하는 것이 좋다.
+- [Terminal-Bench 2.0 Leaderboard -- LLM Stats](https://llm-stats.com/benchmarks/terminal-bench-2)
+- [Terminal-Bench Hard -- Artificial Analysis](https://artificialanalysis.ai/evaluations/terminalbench-hard)
+- [Terminal-Bench -- Vals AI](https://www.vals.ai/benchmarks/terminal-bench)
+- [Benchtalks #1: Alex Shaw -- Snorkel AI](https://snorkel.ai/blog/benchtalks-alex-shaw-terminal-bench-harbor-building-the-benchmark-factory/)
 
 ## 관련 문서
 
-- [[ai-hot-topics-2026-04]]
-- [[swe-bench-pro]]
-- [[arc-agi-2]]
+- [[swe-bench-pro|SWE-bench Pro]]
+- [[arc-agi-2|ARC-AGI-2]]
+- [[claude-opus-4-6|Claude Opus 4.6]]

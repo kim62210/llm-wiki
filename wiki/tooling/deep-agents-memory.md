@@ -5,9 +5,8 @@ page_type: summary
 tags: [tooling, summary, deep-agents, memory, context]
 sources: [raw/recursive-sources/2026-04-10-pydantic-deepagents/deep-agents-memory.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # Deep Agents Memory
 
 Deep Agents의 memory 문서 요약이다. scoped memory와 long-running task 문맥에서 메모리를 어떻게 다룰지 설명한다.
@@ -42,9 +41,22 @@ Deep Agents의 memory는 단순 대화 기록 저장소보다, 어떤 범위(sco
 - subagent마다 별도 scope를 둘지, shared memory를 얼마나 허용할지에 따라 행동 품질과 비용이 크게 달라진다.
 - 장기 코딩/리서치 작업에서는 작업 요약, TODO, 핵심 사실만 남기고 세부 추론은 과감히 버리는 정책이 필요하다.
 
+## 원문이 다루는 흐름
+
+원문은 대체로 `Seed the memory file` → `Seed a skill` → `langgraph-docs` 순서로 전개된다. 따라서 `Deep Agents Memory` 페이지도 세부 API 목록보다 **입문 → 구조 이해 → 운영 확장**의 흐름으로 읽는 편이 좋다.
+
+- 따라가야 할 순서: Seed the memory file, Seed a skill, langgraph-docs
+- 위키에 남겨야 할 축: 입문 경로, 핵심 구조, 다음에 읽을 세부 문서
+
+## source 메모
+
+- **Memory - Docs by LangChain** — snapshot: `raw/recursive-sources/2026-04-10-pydantic-deepagents/deep-agents-memory.md` · source: https://docs.langchain.com/oss/python/deepagents/memory · 볼 섹션: Seed the memory file, Seed a skill, langgraph-docs
+
 ## 관련 문서
 
 - [[deep-agents|Deep Agents]]
 - [[deep-agents-subagents|Deep Agents Subagents]]
 - [[agent-memory-systems|Agent Memory Systems]]
 - [[context-engineering|Context Engineering (컨텍스트 엔지니어링)]]
+
+이 보강 문장은 해당 문서의 source 경계를 유지하기 위한 최소 운영 메모다. 다음 수동 ingest에서는 원문 코드 예제와 최신 옵션명을 다시 확인한다.

@@ -2,10 +2,10 @@
 title: Firecracker/microVM Sandboxes for Agent Code Execution
 category: tooling
 page_type: concept
-tags: [tooling, concept, microvm, agent, sandboxes]
+tags: [tooling, concept, microvm, [[coding-agent|agent]], [[agent-prompt-injection-defense|sandbox]]es]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/microvm-agent-sandboxes.md, raw/hot-topics-sources/2026-04-10/062-e2b-documentation.md, raw/hot-topics-sources/2026-04-10/063-e2b-homepage.md, raw/hot-topics-sources/2026-04-10/064-e2b-dev-e2b.md, raw/hot-topics-sources/2026-04-10/052-claude-code-changelog.md, raw/hot-topics-sources/2026-04-10/042-scaling-managed-agents-decoupling-the-brain-from-the-hands.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
 # Firecracker/microVM Sandboxes for Agent Code Execution
 
@@ -40,54 +40,13 @@ Firecracker/microVM Sandboxes for Agent Code Execution은 **모델 능력보다 
 
 Linux 컨테이너의 공유 커널 대신 KVM 기반 microVM으로 에이전트 생성 코드를 격리 실행하는 방식. 이 유형의 topic은 보통 하나의 제품보다 **반복 가능한 패턴 / 평가 기준 / 설계 trade-off**로 읽는 편이 유용하다. 이번 source 묶음에서도 `anthropic.com, code.claude.com, e2b.dev, github.com`가 함께 나오면서 개념, 구현, 평가가 연결되어 있다.
 
-## 핵심 포인트
-
-Firecracker/microVM Sandboxes for Agent Code Execution는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 Linux 컨테이너의 공유 커널 대신 KVM 기반 microVM으로 에이전트 생성 코드를 격리 실행하는 방식.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
-
-## source로 보면
-
-수집된 source는 e2b.dev×2, anthropic.com×1, code.claude.com×1, github.com×1로 분포한다. 공식 문서와 구현 저장소가 같이 있어 실제 도입 관점의 정보가 강한 편이다.
-
 ## 실무 관점
 
 도구/프레임워크 페이지는 기능 목록보다 생태계 위치가 중요하다. 어떤 모델·런타임·개발 흐름과 잘 맞는지, 그리고 팀 워크플로우에 어떤 경계 조건을 추가하는지까지 같이 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/microvm-agent-sandboxes.md`
-
-### source별 핵심 신호
-
-- **Documentation - E2B** (`e2b.dev`): https://e2b.dev/docs
-  - 메모: E2B provides isolated sandboxes that let agents safely execute code, process data, and run tools. Our SDKs make it easy to start and manage these environments.Start a sandbox and run code in a few lines:
-- **E2B | The Enterprise AI Agent Cloud** (`e2b.dev`): https://e2b.dev
-  - 메모: Built for AI Agents, LLM Training, and MCPs
-- **GitHub - e2b-dev/E2B: Open-source, secure environment with real-world tools for enterprise-grade agents. · GitHub** (`github.com`): https://github.com/e2b-dev/E2B
-  - 메모: To see all available qualifiers, see our documentation.
-- **Changelog - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/changelog
-  - 메모: This page is generated from the CHANGELOG.md on GitHub.Run
-- **Scaling Managed Agents: Decoupling the brain from the hands \ Anthropic** (`anthropic.com`): https://www.anthropic.com/engineering/managed-agents
-  - 메모: Harnesses encode assumptions that go stale as models improve. Managed Agents—our hosted service for long-horizon agent work—is built around interfaces that stay stable as harnesses change.
-
-
-## source 종합 해석
-
-예를 들어 source note는 E2B provides isolated sandboxes that let agents safely execute code, process data, and run tools. Our SDKs make it easy to start and manage these environments.Start a sandbox and run code in a few lines:
-
-또 다른 source는 Built for AI Agents, LLM Training, and MCPs
-
-즉, 이 토픽이 중요한 이유는 `2026년 들어 E2B가 자신의 샌드박스가 Firecracker microVM(≈125-150ms 부팅) 위에서 돈다고 공식화했고, Claude Code v2.1.98은 Linux에서 PID namespace 서브프로세스 sandboxing과 CLAUDE_CODE_SUBPROCESS_ENV_SCRUB를 추가하면서 "LLM 생성 코드 = 적대적 입력"이라는 하이퍼스케일러 컨센서스가 일반 개발자`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Git Worktree Isolation for Parallel Coding Agents, Tool Contracts & Writing Tools for Agents가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `2026년 들어 E2B가 자신의 샌드박스가 Firecracker microVM(≈125-150ms 부팅) 위에서 돈다고 공식화했고, Claude Code v2.1.98은 Linux에서 PID namespace 서브프로세스 sandboxing과 CLAUDE_CODE_SUBPROCESS_ENV_SCRUB를 추가하면서 "LLM 생성 코드 = 적대적 입력"이라는 하이퍼스케일러 컨센서스가 일반 개발자`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
 
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
 - [[git-worktree-isolation|Git Worktree Isolation for Parallel Coding Agents]]
 - [[tool-contracts-for-agents|Tool Contracts & Writing Tools for Agents]]
+

@@ -6,95 +6,141 @@ project: Claude Code
 tags: [tooling, project-internal, claude, code, hooks, system, harness-engineering]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/claude-code-hooks-system.md, raw/hot-topics-sources/2026-04-10/051-claude-code-hooks-reference.md, raw/hot-topics-sources/2026-04-10/052-claude-code-changelog.md, raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md, raw/hot-topics-sources/2026-04-10/053-anthropics-claude-code.md, raw/hot-topics-sources/2026-04-10/054-common-workflows.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # Claude Code Hooks System
 
-이 페이지는 Claude Code 내부에서 Claude Code Hooks System이 어떤 역할을 하는지 정리한 프로젝트 스냅샷이다. 핵심 범위는 툴 호출 전후·세션 이벤트에 사용자 정의 스크립트를 끼워 넣는 settings.json 기반 확장 훅이다.
+Claude Code 내부에서 라이프사이클 이벤트에 사용자 정의 스크립트를 끼워 넣는 `settings.json` 기반 확장 훅. "LLM 대신 결정론적 레일을 깐다"는 harness 철학의 표준 구현 도구다.
 
-## 정의
+## 개요
 
-툴 호출 전후·세션 이벤트에 사용자 정의 스크립트를 끼워 넣는 settings.json 기반 확장 훅.
+Claude Code Hooks System은 에이전트 실행의 특정 시점(이벤트)에 사용자 정의 스크립트를 실행할 수 있는 확장 포인트다. `~/.claude/settings.json` 또는 프로젝트의 `.claude/settings.json`에 선언하며, 에이전트의 행동을 LLM 프롬프트가 아니라 **결정론적 코드**로 제어할 수 있다.
 
-## 왜 지금 중요한가
+## 이벤트 타입
 
-Claude Code v2.1.85 이후 `if` 필드(permission rule 문법)·CwdChanged·FileChanged·InstructionsLoaded·TaskCreated·PermissionDenied 등 신규 이벤트가 쏟아졌고, v2.0.10부터 PreToolUse 훅이 툴 input을 수정해서 재시도 루프를 끊을 수 있게 되면서 "LLM 대신 결정론적 레일을 깐다"는 harness 철학의 표준 구현 도구가 됐다.
+```mermaid
+flowchart TD
+    Session[세션 시작] --> InstructionsLoaded[InstructionsLoaded]
+    InstructionsLoaded --> UserInput[사용자 입력]
+    UserInput --> TaskCreated[TaskCreated]
+    TaskCreated --> PreToolUse[PreToolUse]
+    PreToolUse --> |"BLOCK → 취소"| ModelRetry[모델 재판단]
+    PreToolUse --> |"ALLOW"| ToolExec[도구 실행]
+    ToolExec --> PostToolUse[PostToolUse]
+    PostToolUse --> NextStep[다음 스텝]
+    NextStep --> PreToolUse
+    NextStep --> |"작업 완료"| StopSession[세션 종료]
+
+    CwdChanged[CwdChanged] -.->|"비동기 이벤트"| AnyPoint[임의 시점]
+    FileChanged[FileChanged] -.-> AnyPoint
+    PermissionDenied[PermissionDenied] -.-> AnyPoint
+```
+
+| 이벤트 | 발생 시점 | 활용 예시 |
+|---|---|---|
+| `PreToolUse` | 도구 실행 직전 | 위험 명령 차단, input 수정, 로깅 |
+| `PostToolUse` | 도구 실행 직후 | 결과 검증, 알림, 부수효과 처리 |
+| `InstructionsLoaded` | CLAUDE.md 로드 후 | 환경 변수 주입, 동적 지시 추가 |
+| `TaskCreated` | 태스크 생성 시 | 태스크 트래킹, Notion 이슈 생성 |
+| `CwdChanged` | 작업 디렉토리 변경 시 | 프로젝트별 설정 자동 로드 |
+| `FileChanged` | 파일 수정 감지 시 | 린터 자동 실행, 변경 추적 |
+| `PermissionDenied` | 권한 거부 시 | 알림, 대안 제안 |
+| `WorktreeCreate` | worktree 생성 시 | 브랜치 준비, 환경 셋업 |
+| `WorktreeRemove` | worktree 제거 시 | 정리 스크립트 실행 |
+
+## settings.json 구조
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "if": "input.command.startsWith('rm -rf')",
+        "action": "BLOCK",
+        "message": "위험한 삭제 명령은 허용되지 않습니다."
+      },
+      {
+        "matcher": "Bash",
+        "action": "RUN",
+        "command": "echo '[LOG] Bash 도구 호출: {{input.command}}' >> /tmp/agent.log"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "action": "RUN",
+        "command": "npx prettier --write {{input.file_path}} 2>/dev/null || true"
+      }
+    ],
+    "TaskCreated": [
+      {
+        "action": "RUN",
+        "command": "~/.claude/hooks/notify-task.sh '{{task.description}}'"
+      }
+    ]
+  }
+}
+```
+
+## `if` 필드 (Permission Rule 문법)
+
+v2.1.85 이후 `if` 필드로 훅을 조건부 실행할 수 있다. 이 필드는 JavaScript-like 표현식을 평가한다:
+
+```json
+{
+  "matcher": "Bash",
+  "if": "input.command.includes('sudo') || input.command.includes('chmod')",
+  "action": "BLOCK"
+}
+```
+
+## PreToolUse에서 Input 수정
+
+v2.0.10부터 `PreToolUse` 훅이 도구 입력(tool input)을 수정해서 반환할 수 있다. 이를 이용해:
+
+- 경로를 안전한 경로로 리다이렉트
+- 명령어에 자동으로 안전 플래그 추가
+- 재시도 루프를 결정론적으로 차단
+
+```bash
+#!/bin/bash
+# PreToolUse 훅: rm 명령을 trash로 대체
+INPUT=$(cat)
+COMMAND=$(echo "$INPUT" | jq -r '.command')
+if echo "$COMMAND" | grep -qE '^rm '; then
+  NEW_CMD="${COMMAND/rm /trash }"
+  echo "$INPUT" | jq --arg cmd "$NEW_CMD" '.command = $cmd'
+else
+  echo "$INPUT"
+fi
+```
+
+## Harness 철학과의 연결
+
+Claude Code Hooks는 [[anthropic-harness-design|Anthropic 하네스 설계]] 철학의 핵심 구현이다:
+
+> "에이전트의 판단에 맡길 것과 결정론적 코드로 제어할 것을 분리한다"
+
+훅이 없으면 모든 제약이 프롬프트에 의존 -> 불안정. 훅을 사용하면 위험 행동을 코드 수준에서 막을 수 있어 안전성과 예측 가능성이 향상된다.
+
+## 실무 활용 예시
+
+1. **Prettier 자동 포맷**: `PostToolUse(Write)` -> 파일 저장 후 자동 포맷
+2. **위험 명령 차단**: `PreToolUse(Bash)` -> `rm -rf`, `force push` 등 차단
+3. **Notion 이슈 자동 생성**: `TaskCreated` -> 태스크를 Notion에 자동 기록
+4. **프로젝트별 환경 자동 로드**: `CwdChanged` -> 해당 프로젝트 `.env` 자동 활성화
+5. **작업 완료 알림**: `PostToolUse(Bash)` -> 장시간 명령 완료 시 알림 전송
 
 ## 대표 자료
 
 - [Claude Code Hooks Reference](https://code.claude.com/docs/en/hooks)
 - [Claude Code Changelog](https://code.claude.com/docs/en/changelog)
-- [Claude Code Agent SDK Overview](https://code.claude.com/docs/en/agent-sdk/overview)
-- [anthropics/claude-code (GitHub)](https://github.com/anthropics/claude-code)
 - [Common workflows (Claude Code)](https://code.claude.com/docs/en/common-workflows)
-
-## 해석 포인트
-
-이 문서는 특정 프로젝트 내부 기능을 다루므로, 일반 개념보다 **현재 제품에서 어떤 역할을 맡는가**가 중요하다. source 분포가 `code.claude.com×4, github.com×1`인 점을 보면, 문서·릴리스·구현 맥락을 함께 읽어야 오해가 줄어든다.
-
-따라서 이 페이지는 '무엇인가'보다 **어디에 끼워 넣어야 하는가**를 기준으로 읽어야 한다. 운영 단계에서는 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 중심으로 영향 범위를 추적하는 편이 낫다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 툴 호출 전후·세션 이벤트에 사용자 정의 스크립트를 끼워 넣는 settings.json 기반 확장 훅.
-- 왜 중요한가: Claude Code v2.1.85 이후 `if` 필드(permission rule 문법)·CwdChanged·FileChanged·InstructionsLoaded·TaskCreated·PermissionDenied 등 신규 이벤트가 쏟아졌고, v2.0.10부터 PreToolUse 훅이 툴 input을 수정해서 재시도 루프를 끊을 수 있게 되면서 "LLM 대신 결정론적 레일을 깐다"는 harness 철학의 표준 구현 도구가 됐다.
-- 직접 수집 원문: 5개
-- 주요 도메인: code.claude.com×4, github.com×1
-
-## 프로젝트 맥락
-
-Claude Code Hooks System는 일반 개념이라기보다 특정 제품 내부에서 의미가 생기는 기능 스냅샷이다. 그래서 이 문서는 '정의'보다 **프로젝트 안에서 어떤 문제를 해결하는가**를 중심으로 읽는 편이 맞다.
-
-## 운영 관점
-
-Claude Code v2.1.85 이후 `if` 필드(permission rule 문법)·CwdChanged·FileChanged·InstructionsLoaded·TaskCreated·PermissionDenied 등 신규 이벤트가 쏟아졌고, v2.0.10부터 PreToolUse 훅이 툴 input을 수정해서 재시도 루프를 끊을 수 있게 되면서 "LLM 대신 결정론적 레일을 깐다"는 harness 철학의 표준 구현 도구가 됐다. 이런 유형은 제품 버전 변화에 민감하므로, 이후 심화 작업에서는 changelog / docs / 구현 예시를 함께 추적해야 한다.
-
-## 핵심 포인트
-
-Claude Code Hooks System는 일반 개념이라기보다 특정 프로젝트 내부 기능을 설명하는 문서다. 현재 페이지의 핵심 정의는 이 페이지는 Claude Code 내부에서 Claude Code Hooks System이 어떤 역할을 하는지 정리한 프로젝트 스냅샷이다. 핵심 범위는 툴 호출 전후·세션 이벤트에 사용자 정의 스크립트를 끼워 넣는 settings.json 기반 확장 훅이다.이며, source 5건이 이 기능의 설계 배경과 운영 맥락을 보강한다.
-
-## source로 보면
-
-수집된 source는 code.claude.com×4, github.com×1로 분포한다. 구현 저장소 비중이 높아 실제 사용·통합 관점이 두드러진다.
-
-## 실무 관점
-
-도구/프레임워크 페이지는 기능 목록보다 생태계 위치가 중요하다. 어떤 모델·런타임·개발 흐름과 잘 맞는지, 그리고 팀 워크플로우에 어떤 경계 조건을 추가하는지까지 같이 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/claude-code-hooks-system.md`
-
-### source별 핵심 신호
-
-- **Hooks reference - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/hooks
-  - 메모: Hooks are user-defined shell commands, HTTP endpoints, or LLM prompts that execute automatically at specific points in Claude Code’s lifecycle.
-- **Changelog - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/changelog
-  - 메모: This page is generated from the CHANGELOG.md on GitHub.Run
-- **Agent SDK overview - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/agent-sdk/overview
-  - 메모: Intercept and control agent behavior with hooks
-- **GitHub - anthropics/claude-code: Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. · GitHub** (`github.com`): https://github.com/anthropics/claude-code
-  - 메모: To see all available qualifiers, see our documentation.
-- **Common workflows - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/common-workflows
-  - 메모: This page covers practical workflows for everyday development: exploring unfamiliar code, debugging, refactoring, writing tests, creating PRs, and managing sessions.
-
-
-## source 종합 해석
-
-이 페이지는 `Claude Code Hooks System`를 일반 개념이 아니라 **특정 시스템 내부 설계 스냅샷**으로 읽어야 한다.
-
-직접 수집된 source는 Hooks reference - Claude Code Docs, Changelog - Claude Code Docs를 통해 기능 정의와 운영 맥락을 함께 보여준다.
-
-함께 읽을 문서로는 ai-hot-topics-2026-04, mcp-oauth-pkce-authorization, agent-skills가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- project-internal 문서는 일반 원칙으로 일반화하기보다, 현재 프로젝트 스냅샷으로 읽고 버전 변화에 대비해 추적하는 편이 안전하다.
-- 운영 시에는 기능 자체보다 권한 경계, 장애 시 fallback, 상위 허브(entity)와의 관계를 같이 점검한다.
 
 ## 관련 문서
 
-- [[ai-hot-topics-2026-04]]
-- [[mcp-oauth-pkce-authorization]]
-- [[agent-skills]]
+- [[claude-agent-loop|Claude Agent Loop]]
+- [[anthropic-harness-design|Anthropic Harness Design]]
+- [[agent-skills|Agent Skills]]
+- [[mcp-authorization|MCP Authorization]]

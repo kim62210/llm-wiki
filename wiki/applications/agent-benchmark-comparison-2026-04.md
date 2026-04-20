@@ -5,9 +5,8 @@ page_type: summary
 tags: [applications, summary, benchmarks, agents, comparison]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/swe-bench-pro.md, raw/hot-topics-sources/2026-04-10/topics/terminal-bench-2-0.md, raw/hot-topics-sources/2026-04-10/topics/arc-agi-2.md, raw/hot-topics-sources/2026-04-10/topics/metr-time-horizon-benchmark.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # 2026년 4월 에이전트 벤치마크 비교
 
 에이전트/모델 평가에서 자주 등장하는 벤치마크들을 **무엇을 재는가** 기준으로 비교한 summary다.
@@ -51,6 +50,6 @@ updated: 2026-04-10
 ## 관련 문서
 
 - [[frontier-model-comparison-2026-04|2026년 4월 Frontier Model 비교]]
+- [[livebench]] -- 오염 없는 동적 벤치마크 (벤치마크 생태계 맥락)
 - [[long-horizon-agent-benchmarks|Long-Horizon Agent Benchmarks (GAIA 2 / SWE-Bench Pro / SWE-EVO)]]
 - [[openhands-swe-bench-scaling-notes|OpenHands SWE-Bench Scaling Notes]]
-

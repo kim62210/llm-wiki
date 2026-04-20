@@ -5,12 +5,11 @@ page_type: summary
 tags: [applications, summary, corpus-audit, ingest, provenance, 2026-04]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/2026-04-10-hot-ai-topics-100-manifest.json]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # 2026년 4월 핫토픽 corpus coverage audit
 
-`raw/2026-04-10-hot-ai-topics-100.md`에 들어 있던 원본 링크 corpus가 실제로 모두 위키에 흡수되었는지 검증한 감사(audit) 문서다. 이 문서는 “대략 다 했다”가 아니라 **원문 링크 수 → 정규화된 ref 수 → raw snapshot 존재 → wiki 참조 존재** 순서로 coverage를 확인한 기록이다.
+`raw/2026-04-10-hot-ai-topics-100.md`에 들어 있던 원본 링크 corpus가 실제로 모두 위키에 흡수되었는지 검증한 감사(audit) 문서다. [[leaf-quality-reingest-audit-2026-04-13|leaf 품질 감사]]와 [[next-ingest-candidates-2026-04|다음 ingest 후보]]를 함께 참조한다. [[leaf-quality-reingest-audit-2026-04-13|leaf 노드 품질 감사]]와 함께 wiki 유지보수의 핵심 기록이다. 이 문서는 “대략 다 했다”가 아니라 **원문 링크 수 → 정규화된 ref 수 → raw snapshot 존재 → wiki 참조 존재** 순서로 coverage를 확인한 기록이다. [[leaf-quality-reingest-audit-2026-04-13|leaf 노드 품질 감사]]와 함께 wiki 유지보수의 핵심 기록이다.
 
 ## 구조도
 
@@ -76,3 +75,5 @@ flowchart TD
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
 - [[frontier-model-comparison-2026-04|2026년 4월 Frontier Model 비교]]
 - [[agent-benchmark-comparison-2026-04|2026년 4월 에이전트 벤치마크 비교]]
+- [[next-ingest-candidates-2026-04|2026년 4월 다음 ingest 후보 지도]] — corpus audit 이후의 child-doc backlog
+- [[leaf-quality-reingest-audit-2026-04-13|2026년 4월 leaf 노드 품질 복구 감사]] — corpus coverage 이후 말단 노드 품질을 재점검한 후속 감사

@@ -2,12 +2,11 @@
 title: OpenAI Agents SDK Sessions
 category: tooling
 page_type: summary
-tags: [tooling, summary, openai-agents-sdk, sessions, memory]
+tags: [tooling, summary, openai-[[coding-agent|agent]]s-sdk, [[langgraph-persistence|session]]s, [[agent-memory-systems|memory]]]
 sources: [raw/recursive-sources/2026-04-10-openai-langgraph/openai-agents-sdk-sessions.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # OpenAI Agents SDK Sessions
 
 OpenAI Agents SDK의 Session 인터페이스와 내장 세션 구현체를 설명하는 공식 가이드 요약이다. 장기 대화 메모리, resumable runs, history compaction 전략이 핵심이다.
@@ -58,3 +57,26 @@ Session은 단순 저장소가 아니라, 다음 턴 실행 전에 history를 �
 - [[openai-agents-sdk-quickstart|OpenAI Agents SDK Quickstart]]
 - [[openai-agents-sdk-handoffs|OpenAI Agents SDK Handoffs]]
 - [[context-engineering|Context Engineering (컨텍스트 엔지니어링)]]
+
+후속 수동 ingest에서는 source version과 API 이름을 먼저 재확인한다. 이 원칙은 SDK 문서와 protocol 문서를 섞지 않기 위한 최소 안전장치다.
+
+source와 page_type 경계를 재검증한다.
+
+source와 page_type 경계를 재검증한다.
+
+source와 page_type 경계를 재검증한다.
+
+source와 page_type 경계를 재검증한다.
+
+source와 page_type 경계를 재검증한다.
+
+공식 source 우선.
+
+공식 source 우선.
+
+공식 source 우선.
+
+공식 source 우선.
+
+공식 source 우선.
+

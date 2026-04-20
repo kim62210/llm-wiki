@@ -5,93 +5,90 @@ page_type: concept
 tags: [rag, concept, adaptive, context, compression]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/adaptive-context-compression.md, raw/hot-topics-sources/2026-04-10/197-developing-adaptive-context-compression-techniques-for-llms-in-long-running-inte.md, raw/hot-topics-sources/2026-04-10/198-active-context-compression-autonomous-memory-management-in-llm-agents.md, raw/hot-topics-sources/2026-04-10/199-poc-performance-oriented-context-compression-for-llms-via-performance-prediction.md, raw/hot-topics-sources/2026-04-10/200-latent-context-compilation-distilling-long-context-into-compact-portable-memory.md, raw/hot-topics-sources/2026-04-10/201-when-less-is-more-the-llm-scaling-paradox-in-context-compression.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # Adaptive Context Compression for Long-Running Agents
 
-중요도·일관성·동적 예산을 기반으로 대화/에이전트 컨텍스트를 손실압축하는 기법.
+장기 실행 에이전트(long-running agent) 또는 멀티턴(multi-turn) 대화에서 컨텍스트 윈도우(context window)가 포화되지 않도록, 중요도(importance) 기반으로 토큰(token)을 선택적으로 보존·요약·폐기하는 기법. 단순 슬라이딩 윈도우(sliding window) 방식과 달리 내용의 가치를 평가해 압축한다.
 
 ## 왜 중요한가
 
-2026년 2-3월 arXiv에 adaptive compression, PoC(Performance-oriented), Latent Context Compilation, Active Context Compression 등 신기법이 집중 투고되며, 1M+ 윈도우에서도 토큰·지연을 수십 % 절감하는 것이 agentic RAG의 실전 과제가 됐다.
+1M+ 토큰 컨텍스트 윈도우가 등장했지만 비용(cost)과 지연(latency)은 길이에 비례한다. 2026년 2-3월 arXiv에 adaptive compression, PoC(Performance-oriented Context Compression), Latent Context Compilation(LCC), Active Context Compression(ACON) 등 신기법이 집중 투고되며, 긴 윈도우에서도 토큰·지연을 수십 % 절감하는 것이 agentic RAG의 실전 과제가 됐다.
 
-## 대표 레퍼런스
+## 핵심 개념: 컨텍스트 압축의 3가지 전략
 
-- [Developing Adaptive Context Compression Techniques for LLMs in Long-Running Interactions (arXiv 2603.29193)](https://arxiv.org/abs/2603.29193)
-- [Active Context Compression: Autonomous Memory Management in LLM Agents (arXiv 2601.07190)](https://arxiv.org/abs/2601.07190)
-- [PoC: Performance-oriented Context Compression for LLMs via Performance Prediction (arXiv 2603.19733)](https://arxiv.org/abs/2603.19733)
-- [Latent Context Compilation: Distilling Long Context into Compact Portable Memory (arXiv 2602.21221)](https://arxiv.org/abs/2602.21221)
-- [When Less is More: The LLM Scaling Paradox in Context Compression (arXiv 2602.09789)](https://arxiv.org/abs/2602.09789)
+```mermaid
+flowchart LR
+    Input[원본 컨텍스트\n100% 토큰] --> A[선택적 보존\nSelective Retention]
+    Input --> B[요약\nSummarization]
+    Input --> C[잠재 표현\nLatent Compression]
+    A --> Out1[중요 청크만 유지\n구조 보존]
+    B --> Out2[요약문으로 교체\n정보 손실 최소화]
+    C --> Out3[임베딩 압축\n포터블 메모리]
+    Out1 & Out2 & Out3 --> Final[압축된 컨텍스트\n30-70% 토큰]
+```
 
-## 해석 포인트
+이 다이어그램은 압축 전략 세 가지가 병렬적으로 사용될 수 있음을 보여준다.
 
-Adaptive Context Compression for Long-Running Agents은 **검색, 문맥 구성, 장기 메모리의 결합 방식을 다루는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `arxiv.org×5`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
+## 주요 논문 및 기법
 
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 검색 정확도, 지연시간, 문맥 길이, 회수 일관성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
+### ACON (Active Context Compression)
+- arXiv 2601.07190 - 에이전트가 스스로 메모리를 관리하는 자율 메모리 관리(autonomous memory management) 방식
+- 에이전트 루프(agent loop) 내에서 매 스텝마다 컨텍스트 중요도를 재평가
+- 중요도 점수(importance score)가 임계값(threshold) 이하인 청크(chunk)를 archival memory로 이동
 
-## 2026년 4월 큐레이션 요약
+### PoC (Performance-oriented Context Compression)
+- arXiv 2603.19733 - 다운스트림 태스크(downstream task) 성능을 직접 예측해 압축 여부 결정
+- 단순 토큰 절감이 아닌 "이 정보를 제거했을 때 최종 답변 품질이 몇 % 하락하는가"를 추정
 
-- 정의: 중요도·일관성·동적 예산을 기반으로 대화/에이전트 컨텍스트를 손실압축하는 기법.
-- 왜 중요한가: 2026년 2-3월 arXiv에 adaptive compression, PoC(Performance-oriented), Latent Context Compilation, Active Context Compression 등 신기법이 집중 투고되며, 1M+ 윈도우에서도 토큰·지연을 수십 % 절감하는 것이 agentic RAG의 실전 과제가 됐다.
-- 직접 수집 원문: 5개
-- 주요 도메인: arxiv.org×5
+### Latent Context Compilation (LCC)
+- arXiv 2602.21221 - 긴 컨텍스트를 소형 latent 표현(latent representation)으로 증류(distill)
+- KV-cache(key-value cache)를 직접 압축하는 방식으로 컨텍스트를 이식 가능한(portable) 메모리로 변환
+- 모델 간 이식에 제한이 있으나 동일 아키텍처 내에서 강력한 성능
 
-## 핵심 메커니즘
+### "When Less is More" (Scaling Paradox)
+- arXiv 2602.09789 - 컨텍스트 길이를 늘려도 성능이 포화(saturation)되거나 오히려 하락하는 역설 규명
+- 압축이 단순 삭제가 아닌 "노이즈 필터링"의 효과를 내기 때문에 적절한 압축이 오히려 성능 향상 가능
 
-중요도·일관성·동적 예산을 기반으로 대화/에이전트 컨텍스트를 손실압축하는 기법. RAG 계열 토픽은 보통 하나의 검색 기법보다 **인덱싱 방식, 검색 인터페이스, 후처리·압축 전략**의 조합으로 이해해야 한다. 이번 source 묶음에서도 `arxiv.org×5`처럼 서로 다른 층위의 구현/연구 source가 함께 나타난다.
+## 중요도 평가 방법론
 
-## 운영 관점
+| 방법 | 원리 | 장점 | 단점 |
+|------|------|------|------|
+| 어텐션 가중치(Attention Weight) | 이전 레이어의 어텐션 점수로 중요도 추정 | 추가 모델 불필요 | 어텐션이 관련성과 항상 일치하지 않음 |
+| LLM 평가(LLM-as-Judge) | 별도 LLM이 각 청크 중요도 점수 부여 | 정확도 높음 | 추가 비용 발생 |
+| 휴리스틱(Heuristic) | 최신성(recency), 키워드 밀도, 엔티티(entity) 등 규칙 기반 | 빠르고 결정론적 | 도메인 의존적 |
+| 태스크 성능 예측 | 다운스트림 예측 모델로 압축 후 성능 추정 | 목적 함수와 직결 | 태스크별 미세조정 필요 |
 
-2026년 2-3월 arXiv에 adaptive compression, PoC(Performance-oriented), Latent Context Compilation, Active Context Compression 등 신기법이 집중 투고되며, 1M+ 윈도우에서도 토큰·지연을 수십 % 절감하는 것이 agentic RAG의 실전 과제가 됐다. 실제 운영에서는 retrieval quality 하나만 보는 것이 아니라 latency, index 비용, update 빈도, multi-hop 질의 대응 여부를 함께 봐야 한다.
+## 에이전트 루프에서의 적용 패턴
 
-## 핵심 포인트
+```mermaid
+stateDiagram-v2
+    [*] --> 활성_컨텍스트: 새 입력 수신
+    활성_컨텍스트 --> 중요도_평가: 컨텍스트 포화 감지
+    중요도_평가 --> 보존: 점수 높음 (상위 30%)
+    중요도_평가 --> 요약: 점수 중간 (중위 50%)
+    중요도_평가 --> 폐기: 점수 낮음 (하위 20%)
+    보존 --> 활성_컨텍스트
+    요약 --> 요약_버퍼: archival 이동
+    폐기 --> [*]
+    요약_버퍼 --> 활성_컨텍스트: 관련 쿼리 시 재소환
+```
 
-Adaptive Context Compression for Long-Running Agents는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 중요도·일관성·동적 예산을 기반으로 대화/에이전트 컨텍스트를 손실압축하는 기법.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
+이 상태 전이 다이어그램은 에이전트가 컨텍스트를 동적으로 관리하는 사이클을 보여준다.
 
-## source로 보면
+## 실무 적용 지침
 
-수집된 source는 arxiv.org×5로 분포한다. 연구 논문 비중이 높아 메커니즘·평가·한계 쪽 정보가 중심이다.
-
-## 실무 관점
-
-실무에서는 검색 품질만이 아니라 컨텍스트 예산, chunking, 메모리 구조, 재랭킹, 운영 비용까지 함께 고려해야 한다. 그래서 이 토픽은 검색 정확도보다 '어떤 상황에서 어떤 구조를 쓰는가' 관점으로 읽는 것이 유용하다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/adaptive-context-compression.md`
-
-### source별 핵심 신호
-
-- **[2603.29193] Developing Adaptive Context Compression Techniques for Large Language Models (LLMs) in Long-Running Interactions** (`arxiv.org`): https://arxiv.org/abs/2603.29193
-  - 메모: Large Language Models (LLMs) often experience performance degradation during long-running interactions due to increasing context length, memory saturation, and computational overhead.
-- **[2601.07190] Active Context Compression: Autonomous Memory Management in LLM Agents** (`arxiv.org`): https://arxiv.org/abs/2601.07190
-  - 메모: Large Language Model (LLM) agents struggle with long-horizon software engineering tasks due to "Context Bloat." As interaction history grows, computational costs explode, latency increases, and reasoning capabilities deg
-- **[2603.19733] PoC: Performance-oriented Context Compression for Large Language Models via Performance Prediction** (`arxiv.org`): https://arxiv.org/abs/2603.19733
-  - 메모: While context compression can mitigate the growing inference costs of Large Language Models (LLMs) by shortening contexts, existing methods that specify a target compression ratio or length suffer from unpredictable perf
-- **[2602.21221] Latent Context Compilation: Distilling Long Context into Compact Portable Memory** (`arxiv.org`): https://arxiv.org/abs/2602.21221
-  - 메모: Efficient long-context LLM deployment is stalled by a dichotomy between amortized compression, which struggles with out-of-distribution generalization, and Test-Time Training, which incurs prohibitive synthetic data cost
-- **[2602.09789] When Less is More: The LLM Scaling Paradox in Context Compression** (`arxiv.org`): https://arxiv.org/abs/2602.09789
-  - 메모: Scaling up model parameters has long been a prevalent training paradigm driven by the assumption that larger models yield superior generation capabilities.
-
-
-## source 종합 해석
-
-예를 들어 source note는 Large Language Models (LLMs) often experience performance degradation during long-running interactions due to increasing context length, memory saturation, and computational overhead.
-
-또 다른 source는 Large Language Model (LLM) agents struggle with long-horizon software engineering tasks due to "Context Bloat." As interaction history grows, computational costs explode, latency increases, and reasoning capabilities deg
-
-즉, 이 토픽이 중요한 이유는 `2026년 2-3월 arXiv에 adaptive compression, PoC(Performance-oriented), Latent Context Compilation, Active Context Compression 등 신기법이 집중 투고되며, 1M+ 윈도우에서도 토큰·지연을 수십 % 절감하는 것이 agentic RAG의 실전 과제가 됐다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Qwen3 / Voyage-4 Embedding Leaderboard Shakeup, GraphRAG / LightRAG / LazyGraphRAG in Production가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `2026년 2-3월 arXiv에 adaptive compression, PoC(Performance-oriented), Latent Context Compilation, Active Context Compression 등 신기법이 집중 투고되며, 1M+ 윈도우에서도 토큰·지연을 수십 % 절감하는 것이 agentic RAG의 실전 과제가 됐다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
+- **압축 트리거 시점**: 컨텍스트가 윈도우의 70-80% 도달 시 선제적으로 압축 시작
+- **요약 단위**: 대화(conversation)는 턴(turn) 단위, 문서(document)는 청크 단위로 요약
+- **중요도 보정**: 사용자의 최신 쿼리와 관련 높은 과거 청크는 중요도를 상향 조정
+- **가역성**: 요약된 원본은 archival 메모리에 보존해 필요 시 재소환 가능하도록 설계
+- **평가 지표**: ROUGE(Recall-Oriented Understudy for Gisting Evaluation) 대신 태스크 성능(task accuracy)으로 압축 품질을 측정
 
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
 - [[embedding-leaderboard-shakeup-2026|Qwen3 / Voyage-4 Embedding Leaderboard Shakeup]]
 - [[graphrag-in-production|GraphRAG / LightRAG / LazyGraphRAG in Production]]
+- [[letta-stateful-agent-runtime|Letta (MemGPT) Stateful Agent Runtime]]
+- [[mem0-universal-memory-layer|Mem0 Universal Memory Layer]]
+- [[agent-memory-systems|에이전트 메모리 시스템]]

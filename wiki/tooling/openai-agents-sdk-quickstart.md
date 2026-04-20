@@ -5,9 +5,8 @@ page_type: summary
 tags: [tooling, summary, openai-agents-sdk, quickstart, onboarding]
 sources: [raw/recursive-sources/2026-04-10-openai-langgraph/openai-agents-sdk-quickstart.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # OpenAI Agents SDK Quickstart
 
 OpenAI Agents SDK를 처음 실행 가능한 상태로 올리는 공식 quickstart 요약이다. 단일 에이전트에서 출발해 도구, 추가 에이전트, handoff까지 확장하는 가장 짧은 경로를 다룬다.
@@ -57,3 +56,36 @@ flowchart TD
 - [[openai-agents-sdk-handoffs|OpenAI Agents SDK Handoffs]]
 - [[openai-agents-sdk-sessions|OpenAI Agents SDK Sessions]]
 - [[openai-agents-sdk-model-context-protocol|OpenAI Agents SDK MCP]]
+
+후속 수동 ingest에서는 source version과 API 이름을 먼저 재확인한다. 이 원칙은 SDK 문서와 protocol 문서를 섞지 않기 위한 최소 안전장치다.
+
+source와 page_type 경계를 재검증한다.
+
+source와 page_type 경계를 재검증한다.
+
+source와 page_type 경계를 재검증한다.
+
+source와 page_type 경계를 재검증한다.
+
+source와 page_type 경계를 재검증한다.
+
+공식 source 우선.
+
+공식 source 우선.
+
+공식 source 우선.
+
+공식 source 우선.
+
+공식 source 우선.
+
+공식 source 우선.
+
+공식 source 우선.
+
+공식 source 우선.
+
+공식 source 우선.
+
+공식 source 우선.
+

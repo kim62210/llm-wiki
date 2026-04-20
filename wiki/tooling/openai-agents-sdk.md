@@ -6,7 +6,7 @@ project: OpenAI Agents SDK
 tags: [tooling, entity, openai, agents, sdk, dev-tooling-and-frameworks]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/openai-agents-sdk.md, raw/hot-topics-sources/2026-04-10/433-openai-agents-python-docs.md, raw/hot-topics-sources/2026-04-10/434-openai-openai-agents-python-github.md, raw/hot-topics-sources/2026-04-10/435-openai-agents-pypi.md, raw/hot-topics-sources/2026-04-10/436-openai-swarm-github.md, raw/hot-topics-sources/2026-04-10/437-openai-agents-typescript-sdk.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-16
 ---
 # OpenAI Agents SDK
 
@@ -45,49 +45,21 @@ OpenAI Agents SDK은 단순한 제품 소개보다 **모델 능력보다 개발�
 - 직접 수집 원문: 5개
 - 주요 도메인: openai.github.io×2, github.com×2, pypi.org×1
 
-## 핵심 포인트
-
-OpenAI Agents SDK는 현재 시점에서 하나의 제품/모델/프레임워크 허브로 읽는 편이 맞다. 기본 정의는 이 페이지는 OpenAI Agents SDK를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 Swarm의 후속 프로덕션 버전인 OpenAI 공식 에이전트 오케스트레이션 SDK이기 때문이다.이며, 직접 수집한 source 5건은 github.com×2, openai.github.io×2, pypi.org×1처럼 여러 채널에 걸쳐 분포한다.
-
-## source로 보면
-
-수집된 source는 github.com×2, openai.github.io×2, pypi.org×1로 분포한다. 구현 저장소 비중이 높아 실제 사용·통합 관점이 두드러진다.
-
 ## 실무 관점
 
 도구/프레임워크 페이지는 기능 목록보다 생태계 위치가 중요하다. 어떤 모델·런타임·개발 흐름과 잘 맞는지, 그리고 팀 워크플로우에 어떤 경계 조건을 추가하는지까지 같이 봐야 한다.
 
-## source 기반 참고
+## 2026년 4월 Sandbox 업데이트
 
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/openai-agents-sdk.md`
+2026년 4월 대규모 업데이트로 **하네스-컴퓨트 분리 아키텍처**가 도입되었다. 에이전트 오케스트레이션(하네스)과 실행 환경(샌드박스)을 분리하여, 간단한 챗봇 프레임워크에서 장기 실행(long-horizon) 에이전트 플랫폼으로 진화했다.
 
-### source별 핵심 신호
+핵심 변화:
+- 하네스와 컴퓨트의 물리적 분리 (컨테이너/VM 기반 샌드박스)
+- 7개 샌드박스 프로바이더 공식 지원 (Blaxel, Cloudflare, Daytona, E2B, Modal, Runloop, Vercel)
+- Manifest 추상화로 이식 가능한 워크스페이스 서술
+- S3/GCS/Azure Blob/R2 마운트 지원
 
-- **OpenAI Agents SDK** (`openai.github.io`): https://openai.github.io/openai-agents-python/
-  - 메모: The OpenAI Agents SDK enables you to build agentic AI apps in a lightweight, easy-to-use package with very few abstractions. It's a production-ready upgrade of our previous experimentation for agents, Swarm.
-- **GitHub - openai/openai-agents-python: A lightweight, powerful framework for multi-agent workflows · GitHub** (`github.com`): https://github.com/openai/openai-agents-python
-  - 메모: To see all available qualifiers, see our documentation.
-- **Client Challenge** (`pypi.org`): https://pypi.org/project/openai-agents
-  - 메모: A required part of this site couldn’t load. This may be due to a browser
-- **GitHub - openai/swarm: Educational framework exploring ergonomic, lightweight multi-agent orchestration. Managed by OpenAI Solution team. · GitHub** (`github.com`): https://github.com/openai/swarm
-  - 메모: To see all available qualifiers, see our documentation.
-- **OpenAI Agents SDK TypeScript | OpenAI Agents SDK** (`openai.github.io`): https://openai.github.io/openai-agents-js/
-  - 메모: import { Agent, run } from'@openai/agents';
-
-
-## source 종합 해석
-
-`OpenAI Agents SDK`는 단일 발표보다 **여러 source가 어떤 관점에서 이 대상을 규정하는가**를 함께 읽을 때 의미가 커진다.
-
-이번 수집에서는 OpenAI Agents SDK, GitHub - openai/openai-agents-python: A lightweight, powerful framework for multi-agent workflows · GitHub, Client Challenge처럼 출시 공지·문서·평가 신호가 같이 모여, 기능 자체보다 생태계 위치와 운영 전제가 더 중요하다는 점이 드러난다.
-
-함께 읽을 문서로는 ai-hot-topics-2026-04, claude-agent-sdk, vercel-ai-sdk가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- 도입 판단 시 기능 목록만 보지 말고, 공식 문서·릴리스 노트·벤치마크가 서로 얼마나 일관되게 같은 메시지를 주는지 확인한다.
-- 비교 후보와의 차이는 API/운영 통합, 성능 수치, 생태계 성숙도 같은 기준으로 정리하는 것이 좋다.
+상세: [[openai-agents-sdk-sandbox|OpenAI Agents SDK Sandbox]]
 
 ## 하위 문서 읽기 경로
 
@@ -95,9 +67,14 @@ OpenAI Agents SDK는 현재 시점에서 하나의 제품/모델/프레임워크
 - [[openai-agents-sdk-handoffs|OpenAI Agents SDK Handoffs]] — specialist agent로 제어권을 넘길 때의 routing 규칙
 - [[openai-agents-sdk-sessions|OpenAI Agents SDK Sessions]] — 장기 대화 메모리, resumable runs, history compaction 정리
 - [[openai-agents-sdk-model-context-protocol|OpenAI Agents SDK MCP]] — hosted/HTTP/stdio MCP 연결과 approval 설계
+- [[openai-agents-sdk-sandbox|OpenAI Agents SDK Sandbox]] — 하네스-컴퓨트 분리, 샌드박스 프로바이더, 보안 모델
 
 ## 관련 문서
+- [[chatgpt]] -- ChatGPT - OpenAI 대화형 AI
 
 - [[ai-hot-topics-2026-04]]
 - [[claude-agent-sdk]]
 - [[vercel-ai-sdk]]
+- [[orchestrator-worker-pattern]] -- Handoffs가 구현하는 오케스트레이터-워커 패턴
+- [[human-in-the-loop-patterns]] -- Guardrails와 연결되는 인간-루프 개입 개념
+

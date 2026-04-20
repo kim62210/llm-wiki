@@ -1,17 +1,16 @@
 ---
 title: Git with Coding Agents
-aliases: ["git with coding agents"]
+aliases: [git with coding agents]
 category: tooling
 page_type: concept
 tags: [git, version-control, coding-agents, prompts]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Git with Coding Agents
 
-Simon Willison이 [[agentic engineering guide]] Section 2에서 다루는 주제. Git을 코딩 에이전트의 "시간 여행 도구"로 활용하는 법.
+Simon Willison이 [[agentic-engineering-guide]] Section 2에서 다루는 주제. [[git-worktree-isolation|Git worktree]]을 포함한 Git을 코딩 에이전트의 "시간 여행 도구"로 활용하는 법.
 
 ## 왜 Git이 에이전트에게 중요한가
 
@@ -72,7 +71,7 @@ Simon의 중요한 관점:
 ## 실무 팁
 
 ### 작은 커밋으로 쪼개기
-[[anti-patterns in agentic engineering|안티패턴 문서]]에서 Simon이 권장하는 것: 여러 작은 PR이 하나의 큰 PR보다 낫다. 에이전트에게 "이 변경을 논리적 단위별 커밋으로 나눠라"라고 지시 가능.
+[[anti-patterns|안티패턴 문서]]에서 Simon이 권장하는 것: 여러 작은 PR이 하나의 큰 PR보다 낫다. 에이전트에게 "이 변경을 논리적 단위별 커밋으로 나눠라"라고 지시 가능.
 
 ### 리뷰 가능한 diff 유지
 에이전트가 만든 diff를 `git log -p`, `git diff` 같은 도구로 본인이 직접 검토. 커밋 메시지도 반드시 본인이 확인.
@@ -84,10 +83,10 @@ Simon의 중요한 관점:
 
 - **에이전트의 destructive Git 명령은 신중히** — `git reset --hard`, `git push --force`, `git clean -fd` 등
 - 중요한 변경 전 `git stash`, `git tag`, 또는 브랜치 백업
-- PR 설명도 에이전트가 만들면 반드시 리뷰 ([[anti-patterns in agentic engineering]])
+- PR 설명도 에이전트가 만들면 반드시 리뷰 ([[anti-patterns]])
 
 ## 관련 문서
 
-- [[anti-patterns in agentic engineering]]
-- [[how coding agents work]]
-- [[agentic engineering guide]]
+- [[anti-patterns]]
+- [[how-coding-agents-work]]
+- [[agentic-engineering-guide]]

@@ -1,23 +1,22 @@
 ---
 title: "First Run the Tests"
-aliases: ["first run the tests", "First Run the Tests"]
+aliases: [first run the tests, First Run the Tests]
 category: applications
 page_type: concept
 tags: [testing, prompts, onboarding, coding-agents]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # First Run the Tests
 
-Simon Willison이 [[agentic engineering guide]] Section 3에서 제안하는 **네 단어 프롬프트**.
+Simon Willison이 [[agentic-engineering-guide]] Section 3에서 제안하는 **네 단어 프롬프트**.
 
 ## 기본 원칙
 
 > "Automated tests are no longer optional when working with coding agents."
 
-테스트 작성이 "시간/비용이 많이 든다"는 전통적 변명은 에이전트가 분 단위로 테스트를 만들어내는 지금 더 이상 유효하지 않다.
+테스트 작성이 "시간/비용이 많이 든다"는 전통적 변명은 [[agentic-ai-foundation|에이전트]]가 분 단위로 테스트를 만들어내는 지금 더 이상 유효하지 않다. [[tdd-agentic-coding|TDD + Agentic Coding]]과 [[red-green-tdd|Red/Green TDD]]가 이 접근법의 확장이다.
 
 > "If the code has never been executed it's pure luck if it actually works when deployed to production."
 
@@ -51,7 +50,7 @@ Simon이 설명하는 효과:
 ### 4. 온보딩 가속
 기존 코드베이스를 파악하려면 테스트부터 보는 것이 빠른 경로다. Claude Code 같은 에이전트에 기존 기능을 물으면 높은 확률로 관련 테스트를 찾아 읽는다.
 
-## [[red-green TDD]]와의 시너지
+## [[red-green-tdd]]와의 시너지
 
 세션 시작 패턴:
 
@@ -81,7 +80,7 @@ Simon이 언급하는 "established software engineering discipline이 LLM에 이
 
 ## 관련 문서
 
-- [[red-green TDD]]
-- [[agentic manual testing]]
-- [[agentic engineering guide]]
-- [[prompts library]]
+- [[red-green-tdd]]
+- [[agentic-manual-testing]]
+- [[agentic-engineering-guide]]
+- [[prompts-library]]

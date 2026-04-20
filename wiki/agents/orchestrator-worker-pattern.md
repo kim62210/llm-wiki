@@ -2,18 +2,105 @@
 title: Orchestrator-Worker Multi-Agent Pattern
 category: agents
 page_type: concept
-tags: [agents, concept, orchestrator, worker, pattern]
+tags: [agents, concept, orchestrator, worker, pattern, multi-agent]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/orchestrator-worker-pattern.md, raw/hot-topics-sources/2026-04-10/006-how-we-built-our-multi-agent-research-system.md, raw/hot-topics-sources/2026-04-10/007-orchestrator-workers-workflow-cookbook.md, raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md, raw/hot-topics-sources/2026-04-10/009-building-agents-with-the-claude-agent-sdk.md, raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # Orchestrator-Worker Multi-Agent Pattern
 
-리드 에이전트가 작업을 분해해 병렬 서브에이전트에게 위임하고 결과를 합성하는 분산형 에이전트 아키텍처.
+리드 에이전트(오케스트레이터, orchestrator)가 작업을 분해하고 병렬 서브에이전트(워커, worker)에게 위임한 뒤 결과를 합성하는 분산형 멀티에이전트(multi-agent) 아키텍처.
 
 ## 왜 중요한가
 
-Anthropic이 Claude의 Research 기능 백엔드로 공개한 이 패턴이 단일 Opus 4 대비 90.2% 향상을 보인 이후 사실상 표준이 되었고, 2026년 4월 8일 출시된 Claude Managed Agents는 이 패턴을 매니지드 인프라로 제품화했다.
+Anthropic이 Claude의 Research 기능 백엔드로 공개한 이 패턴이 단일 Opus 4 대비 90.2% 향상을 보인 이후 사실상 멀티에이전트 표준이 됐다. 2026년 4월 8일 출시된 Claude Managed Agents는 이 패턴을 매니지드 인프라로 제품화했으며, [[anthropic-multi-agent-research-system|Anthropic 멀티에이전트 연구 시스템]]에서 실증됐다.
+
+## 기본 구조
+
+```mermaid
+flowchart TD
+    User[사용자 요청] --> Orch[오케스트레이터\nOrchestrator]
+    Orch -- 태스크 분해 --> Plan[실행 계획]
+    Plan --> W1[워커 1\n검색 에이전트]
+    Plan --> W2[워커 2\n분석 에이전트]
+    Plan --> W3[워커 3\n작성 에이전트]
+    W1 --> Results[결과 수집]
+    W2 --> Results
+    W3 --> Results
+    Results --> Orch
+    Orch --> Synthesis[결과 합성]
+    Synthesis --> User
+```
+
+## 역할 정의
+
+| 역할 | 책임 | 특성 |
+|------|------|------|
+| 오케스트레이터 | 목표 이해, 태스크 분해, 워커 지시, 결과 합성 | 고수준 추론 모델 (예: Claude Opus) |
+| 워커 | 특정 서브태스크 수행 (검색, 코드 실행, 문서 작성 등) | 특화 도구 보유, 더 작은 모델 가능 |
+| 검증기 (선택) | 워커 출력 품질 평가, 오케스트레이터에 피드백 | Generator-Evaluator 패턴의 평가자 |
+
+## 태스크 분해 전략
+
+```mermaid
+flowchart LR
+    Goal[최종 목표] --> Decompose[분해 전략 선택]
+    Decompose --> Parallel[병렬 분해\n독립 서브태스크]
+    Decompose --> Sequential[순차 분해\n의존관계 있는 단계]
+    Decompose --> Hierarchical[계층적 분해\n에이전트 트리]
+    Parallel --> Merge[결과 병합]
+    Sequential --> Pipeline[파이프라인 처리]
+    Hierarchical --> Tree[서브오케스트레이터 활용]
+```
+
+## 평면 패턴 vs 계층적 패턴
+
+| 항목 | 평면 오케스트레이터-워커 | 계층적 에이전트 트리 |
+|------|--------------------|--------------------|
+| 복잡도 | 낮음 | 높음 |
+| 적합한 태스크 | 독립 병렬 서브태스크 | 깊은 계획이 필요한 태스크 |
+| 오케스트레이터 부하 | 높음 (모든 조율 집중) | 분산 (서브오케스트레이터 위임) |
+| 디버깅 용이성 | 쉬움 | 어려움 |
+
+→ 복잡한 장기 계획이 필요한 경우 [[agent-trees|에이전트 트리]] 패턴으로 확장한다.
+
+## Anthropic Research 시스템 사례
+
+Anthropic의 내부 리서치 시스템 공개 수치:
+- 단일 Opus 4 대비 **90.2% 성능 향상**
+- 병렬 워커 5-10개 동시 운용
+- 오케스트레이터: Opus 4 (복잡한 추론)
+- 워커: Sonnet 4.5 (빠른 실행)
+
+이 비대칭 모델 조합이 비용과 성능의 최적 균형을 달성했다.
+
+## 구현 패턴 (Claude Agent SDK)
+
+```python
+# 오케스트레이터-워커 패턴 개요 (개념 코드)
+import anthropic
+
+client = anthropic.Anthropic()
+
+def orchestrator(goal: str):
+    # 오케스트레이터: 태스크 분해
+    plan = client.messages.create(
+        model="claude-opus-4-5",
+        messages=[{"role": "user", "content": f"분해: {goal}"}],
+        tools=[{"name": "spawn_worker", ...}]
+    )
+    # 워커: 병렬 실행
+    results = [worker(task) for task in plan.tasks]
+    # 합성
+    return synthesize(results)
+```
+
+## 실무 적용 관점
+
+- **모델 계층 선택**: 오케스트레이터에 강력한 추론 모델, 워커에 빠른 모델을 써서 비용 최적화
+- **병렬도 한계**: 워커 수가 많아질수록 오케스트레이터 컨텍스트가 길어져 합성 품질 저하 위험. 5-10개가 실용적 상한
+- **실패 복구**: 워커 실패 시 오케스트레이터가 재시도 또는 대체 전략을 선택하는 로직 필수
+- **컨텍스트 관리**: [[context-folding|컨텍스트 폴딩]]으로 워커 결과를 압축해 오케스트레이터 컨텍스트 절약
 
 ## 대표 레퍼런스
 
@@ -23,72 +110,12 @@ Anthropic이 Claude의 Research 기능 백엔드로 공개한 이 패턴이 단�
 - [Building agents with the Claude Agent SDK](https://claude.com/blog/building-agents-with-the-claude-agent-sdk)
 - [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](https://arxiv.org/abs/2509.02547)
 
-## 해석 포인트
-
-Orchestrator-Worker Multi-Agent Pattern은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `anthropic.com×1, github.com×1, code.claude.com×1, claude.com×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
-
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 리드 에이전트가 작업을 분해해 병렬 서브에이전트에게 위임하고 결과를 합성하는 분산형 에이전트 아키텍처.
-- 왜 중요한가: Anthropic이 Claude의 Research 기능 백엔드로 공개한 이 패턴이 단일 Opus 4 대비 90.2% 향상을 보인 이후 사실상 표준이 되었고, 2026년 4월 8일 출시된 Claude Managed Agents는 이 패턴을 매니지드 인프라로 제품화했다.
-- 직접 수집 원문: 5개
-- 주요 도메인: anthropic.com×1, github.com×1, code.claude.com×1, claude.com×1, arxiv.org×1
-
-## 핵심 구조
-
-리드 에이전트가 작업을 분해해 병렬 서브에이전트에게 위임하고 결과를 합성하는 분산형 에이전트 아키텍처. 에이전트 토픽은 보통 모델 자체보다 **루프 구조, 상태 관리, 작업 분해, 검증 방식**이 핵심이다. 이번 source 묶음도 `anthropic.com×1, github.com×1, code.claude.com×1, claude.com×1, arxiv.org×1`를 오가며 설계 패턴과 구현 사례를 함께 보여 준다.
-
-## 핵심 포인트
-
-Orchestrator-Worker Multi-Agent Pattern는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 리드 에이전트가 작업을 분해해 병렬 서브에이전트에게 위임하고 결과를 합성하는 분산형 에이전트 아키텍처.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
-
-## source로 보면
-
-수집된 source는 anthropic.com×1, arxiv.org×1, claude.com×1, code.claude.com×1, github.com×1로 분포한다. 연구·공식문서·구현체가 모두 섞여 있어서 개념과 운영을 함께 추적하기 좋다.
-
-## 실무 관점
-
-실무에서는 장기 실행, 상태 관리, 실패 복구, 평가 루프를 함께 설계해야 이 토픽이 효과를 낸다. 즉 개별 아이디어보다 에이전트 시스템 전체의 제약 속에서 읽는 것이 중요하다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/orchestrator-worker-pattern.md`
-
-### source별 핵심 신호
-
-- **How we built our multi-agent research system \ Anthropic** (`anthropic.com`): https://www.anthropic.com/engineering/multi-agent-research-system
-  - 메모: How we built our multi-agent research system
-- **claude-cookbooks/patterns/agents/orchestrator_workers.ipynb at main · anthropics/claude-cookbooks · GitHub** (`github.com`): https://github.com/anthropics/claude-cookbooks/blob/main/patterns/agents/orchestrator_workers.ipynb
-  - 메모: To see all available qualifiers, see our documentation.
-- **Create custom subagents - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/sub-agents
-  - 메모: Create and use specialized AI subagents in Claude Code for task-specific workflows and improved context management.
-- **Building agents with the Claude Agent SDK | Claude** (`claude.com`): https://claude.com/blog/building-agents-with-the-claude-agent-sdk
-  - 메모: Building agents with the Claude Agent SDK
-- **[2509.02547] The Landscape of Agentic Reinforcement Learning for LLMs: A Survey** (`arxiv.org`): https://arxiv.org/abs/2509.02547
-  - 메모: The emergence of agentic reinforcement learning (Agentic RL) marks a paradigm shift from conventional reinforcement learning applied to large language models (LLM RL), reframing LLMs from passive sequence generators into
-
-
-## source 종합 해석
-
-예를 들어 source note는 How we built our multi-agent research system
-
-또 다른 source는 To see all available qualifiers, see our documentation.
-
-즉, 이 토픽이 중요한 이유는 `Anthropic이 Claude의 Research 기능 백엔드로 공개한 이 패턴이 단일 Opus 4 대비 90.2% 향상을 보인 이후 사실상 표준이 되었고, 2026년 4월 8일 출시된 Claude Managed Agents는 이 패턴을 매니지드 인프라로 제품화했다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Context Engineering for Long-Horizon Agents, Generator-Evaluator Harness Architecture가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `Anthropic이 Claude의 Research 기능 백엔드로 공개한 이 패턴이 단일 Opus 4 대비 90.2% 향상을 보인 이후 사실상 표준이 되었고, 2026년 4월 8일 출시된 Claude Managed Agents는 이 패턴을 매니지드 인프라로 제품화했다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
-
 ## 관련 문서
+- [[ag-ui-protocol]] -- AG-UI Protocol (Agent-User Interface Protocol)
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
-- [[context-engineering|Context Engineering for Long-Horizon Agents]]
-- [[generator-evaluator-architecture|Generator-Evaluator Harness Architecture]]
+- [[agent-trees|Hierarchical Planning with Agent Trees]]
+- [[context-folding|Context Folding & Sub-Trajectory Compression]]
 - [[subagents|Subagents]]
+- [[agent-memory-systems|Agent Memory Systems]]
+- [[anthropic-multi-agent-research-system|Anthropic 멀티에이전트 연구 시스템]]

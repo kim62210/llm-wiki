@@ -5,12 +5,11 @@ page_type: summary
 tags: [tooling, summary, instructor, retry, reliability]
 sources: [raw/recursive-sources/2026-04-10-mastra-instructor-advanced/instructor-retrying.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # Instructor Retrying
 
-Instructor의 retrying 문서 요약이다. Tenacity 기반 exponential backoff, error-specific retry, context-based validation retry, failed attempt tracking을 정리한다.
+[[instructor|Instructor]]의 retrying 문서 요약이다. Tenacity 기반 exponential backoff, error-specific retry, context-based validation retry, failed attempt tracking을 정리한다.
 
 ## 구조도
 
@@ -22,7 +21,7 @@ flowchart TD
     D --> E[성공 또는 failed attempt tracking]
 ```
 
-Instructor의 retry는 단순 재호출이 아니라, 어떤 오류를 어떤 조건에서 얼마나 다시 시도할지 정책으로 다뤄진다.
+[[instructor|Instructor]]의 retry는 단순 재호출이 아니라, 어떤 오류를 어떤 조건에서 얼마나 다시 시도할지 정책으로 다뤄진다.
 
 ## 핵심 구조
 
@@ -38,9 +37,21 @@ Instructor의 retry는 단순 재호출이 아니라, 어떤 오류를 어떤 �
 
 ## 실무 관점
 
-- retry는 validation과 함께 설계하지 않으면 비용만 늘릴 수 있다.
+- retry는 [[instructor-validation|validation]]과 함께 설계하지 않으면 비용만 늘릴 수 있다.
 - logging/monitoring과 failed attempt tracking을 꼭 같이 붙여야 실제 운영에서 조정이 가능하다.
 - 이 문서는 [[instructor-validation|Instructor Validation]]과 함께 봐야 의미가 커진다.
+
+## 원문이 다루는 흐름
+
+원문은 대체로 `Retry on API errors with longer delays` → `Retry on validation errors with shorter delays` 순서로 전개된다.
+
+## 도입 판단표
+
+| 판단 축 | 내용 |
+|---|---|
+| 잘 맞는 상황 | structured output 실패가 재시도로 회복 가능한 운영 오류일 때 |
+| 피해야 할 오해 | 무한 재시도나 비용 폭주를 막는 stop condition과 logging 없이 retry를 켜는 것 |
+| 비교/연결 기준 | schema-validation retry 계층으로, [[instructor-validation|Instructor Validation]]과 함께 설계해야 한다. |
 
 ## 관련 문서
 

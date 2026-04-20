@@ -5,12 +5,11 @@ page_type: summary
 tags: [tooling, summary, langgraph, persistence, checkpoints]
 sources: [raw/recursive-sources/2026-04-10-openai-langgraph/langgraph-persistence.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # LangGraph Persistence
 
-LangGraph의 persistence 가이드 요약이다. thread, checkpoint, super-step, memory store를 통해 그래프 상태를 저장·조회·재생하는 구조를 설명한다.
+[[langgraph|LangGraph]]의 persistence 가이드 요약이다. thread, checkpoint, super-step, memory store를 통해 그래프 상태를 저장·조회·재생하는 구조를 설명한다.
 
 ## 구조도
 
@@ -35,7 +34,7 @@ Persistence는 LangGraph의 부가 기능이 아니라, thread 단위로 checkpo
 ## 왜 중요한가
 
 - LangGraph 문서는 persistence를 단순 캐시가 아니라 실행 기록 시스템으로 다룬다. 즉 메모리, 디버깅, 복구가 같은 저장 구조를 공유한다.
-- 특히 pending writes 개념은 일부 노드만 성공한 super-step을 다시 시작할 때 중복 실행을 줄이는 데 중요하다.
+- 특히 pending writes 개념은 [[langgraph-durable-execution|durable execution]]과 밀접하며, 일부 노드만 성공한 super-step을 다시 시작할 때 중복 실행을 줄이는 데 중요하다.
 - LangGraph Agent Server가 checkpointing을 자동 처리한다는 설명도 실무적으로 중요하다. 직접 인프라를 짜는 경우와 관리형 서버를 쓸 경우 책임 범위가 달라진다.
 
 ## 읽는 방법

@@ -5,12 +5,11 @@ page_type: summary
 tags: [tooling, summary, instructor, validation, structured-output]
 sources: [raw/recursive-sources/2026-04-10-mastra-instructor-advanced/instructor-validation.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # Instructor Validation
 
-Instructor의 validation 문서 요약이다. field validation, custom validators, semantic validation, nested validation, error handling을 중심으로 정리한다.
+[[instructor|Instructor]]의 validation 문서 요약이다. field validation, custom validators, semantic validation, nested validation, error handling을 중심으로 정리한다.
 
 ## 구조도
 
@@ -27,7 +26,7 @@ Instructor validation은 스키마 일치 여부만 보는 것이 아니라, 의
 ## 핵심 구조
 
 - 문서는 validation flow, basic validation, field/custom validators, pre-validation transformation, semantic/nested validation, error handling을 다룬다.
-- 즉 Instructor의 핵심은 “모델이 그럴듯하게 말했다”를 그대로 믿지 않고 검증 흐름을 여러 층으로 두는 데 있다.
+- 즉 [[instructor|Instructor]]의 핵심은 "모델이 그럴듯하게 말했다"를 그대로 믿지 않고 검증 흐름을 여러 층으로 두는 데 있다.
 - semantic validation이 별도 항목이라는 점은 단순 타입 체크를 넘어선다는 의미다.
 
 ## 왜 중요한가
@@ -39,8 +38,16 @@ Instructor validation은 스키마 일치 여부만 보는 것이 아니라, 의
 ## 실무 관점
 
 - 단순 extraction에서는 field validation만으로 충분할 수 있지만, 실제 제품 데이터는 semantic validation이 필요할 때가 많다.
-- 에러 처리 전략까지 같이 설계해야 retry와 연결했을 때 폭주를 막을 수 있다.
+- 에러 처리 전략까지 같이 설계해야 [[instructor-retrying|retry]]와 연결했을 때 폭주를 막을 수 있다.
 - 이 문서는 [[instructor-retrying|Instructor Retrying]]과 짝으로 읽어야 한다.
+
+## 도입 판단표
+
+| 판단 축 | 내용 |
+|---|---|
+| 잘 맞는 상황 | LLM 출력이 schema뿐 아니라 domain constraint도 만족해야 할 때 |
+| 피해야 할 오해 | validation을 prompt 문장으로만 해결하려 하고 실패 케이스를 test fixture로 남기지 않는 것 |
+| 비교/연결 기준 | [[instructor-retrying|Instructor Retrying]]과 함께 읽어 validation failure가 retry policy로 어떻게 이어지는지 본다. |
 
 ## 관련 문서
 

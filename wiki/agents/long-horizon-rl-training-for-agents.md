@@ -2,18 +2,130 @@
 title: Long-Horizon RL Training for Agents (Multi-Turn RLVR)
 category: agents
 page_type: concept
-tags: [agents, concept, long, horizon, rl, training, for]
-sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/long-horizon-rl-training-for-agents.md, raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md, raw/hot-topics-sources/2026-04-10/026-reinforcement-learning-for-long-horizon-interactive-llm-agents.md, raw/hot-topics-sources/2026-04-10/027-agentgym-rl-training-llm-agents-for-long-horizon-decision-making-through-multi-t.md, raw/hot-topics-sources/2026-04-10/014-reveal-self-evolving-code-agents-via-iterative-generation-verification.md, raw/hot-topics-sources/2026-04-10/028-research-learning-to-reason-with-search-for-llms-via-reinforcement-learning.md]
+tags: [agents, concept, long, horizon, rl, training, multi-turn, rlvr]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/long-horizon-rl-training-for-agents.md, raw/hot-topics-sources/2026-04-10/010-the-landscape-of-agentic-reinforcement-learning-for-llms-a-survey.md, raw/hot-topics-sources/2026-04-10/026-reinforcement-learning-for-long-horizon-interactive-llm-agents.md, raw/hot-topics-sources/2026-04-10/027-agentgym-rl-training-llm-agents-for-long-horizon-decision-making-through-multi-t.md, raw/hot-topics-sources/2026-04-10/014-reveal-self-evolving-code-agents-via-iterative-generation-verification.md, raw/hot-topics-sources/2026-04-10/028-research-learning-to-reason-with-search-for-llms-via-reinforcement-learning.md, raw/2026-04-20-arxiv-credit-assignment-survey.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-20
 ---
 # Long-Horizon RL Training for Agents (Multi-Turn RLVR)
 
-멀티 턴 환경에서 검증 가능한 보상으로 에이전트의 도구 사용·계획·자기수정 능력을 직접 학습시키는 강화학습 기법.
+멀티 턴(multi-turn) 환경에서 검증 가능한 보상(verifiable reward)으로 에이전트의 도구 사용·계획·자기수정 능력을 직접 학습시키는 강화학습(RL) 기법. 단일 턴 RLVR(GRPO 등)을 에이전트 루프 전체로 확장한다.
 
 ## 왜 중요한가
 
-2026년 3월 NVIDIA의 ProRL Agent (Rollout-as-a-Service), AgentGym-RL, ScalingInter-RL 등 멀티 턴 RL 인프라가 동시 공개되었고, 500편 이상을 종합한 "Landscape of Agentic RL" 서베이가 학습 가능한 에이전트로의 패러다임 시프트를 정식화하면서 학계·산업계 모두 RL 기반 에이전트 훈련을 1순위 연구 과제로 격상시켰다.
+2026년 3월 NVIDIA ProRL Agent(Rollout-as-a-Service), AgentGym-RL, ScalingInter-RL 등 멀티 턴 RL 인프라가 동시 공개됐고, 500편 이상을 종합한 "Landscape of Agentic RL" 서베이가 학습 가능한 에이전트로의 패러다임 시프트를 정식화했다.
+
+## 단일 턴 RLVR vs 멀티 턴 RLVR
+
+```mermaid
+flowchart LR
+    subgraph Single["단일 턴 RLVR (GRPO 등)"]
+        Q[질문] --> Response[단일 응답]
+        Response --> Verify[검증기]
+        Verify --> Reward[보상]
+        Reward --> Update[파라미터 갱신]
+    end
+    subgraph Multi["멀티 턴 RLVR (에이전트)"]
+        Goal[목표] --> Step1[관찰 + 행동 1]
+        Step1 --> Env1[환경 실행]
+        Env1 --> Step2[관찰 + 행동 2]
+        Step2 --> StepN[... N 스텝]
+        StepN --> FinalReward[최종 보상\n궤적 전체 평가]
+        FinalReward --> Update2[파라미터 갱신]
+    end
+```
+
+멀티 턴의 핵심 도전은 **크레딧 할당(credit assignment)** 문제: 수십 스텝 중 어느 행동이 최종 결과에 기여했는지 판단하기 어렵다.
+
+## 주요 기법 및 인프라
+
+| 기법/시스템 | 핵심 기여 |
+|-----------|---------|
+| LOOP (Anthropic/UCB) | 장기 상호작용 에이전트 RL 정식화 |
+| AgentGym-RL | 멀티 턴 의사결정 RL 훈련 환경 |
+| ReVeal | 생성-검증 반복으로 코드 에이전트 자기진화 |
+| ReSearch | 검색 정책과 추론 정책을 RL로 결합 |
+| FoldGRPO | 컨텍스트 폴딩을 RL로 학습 |
+
+## 보상 설계 전략
+
+에이전트 RL에서 보상 설계는 성패를 가르는 핵심이다.
+
+```mermaid
+flowchart TD
+    Reward[보상 설계]
+    Reward --> Sparse[희소 보상\n최종 성공/실패만]
+    Reward --> Dense[밀집 보상\n중간 단계 피드백]
+    Reward --> Process[과정 보상\nPRM 활용]
+    Sparse --> Problem1[크레딧 할당 어려움]
+    Dense --> Problem2[보상 해킹 위험]
+    Process --> Solution[PRM이 중간 단계 품질 평가]
+```
+
+실용적 접근: 희소 최종 보상 + 형식 준수(format compliance) 보상 + 도구 호출 정확성 보상의 혼합.
+
+## Rollout-as-a-Service
+
+NVIDIA ProRL의 핵심 개념: RL 학습 중 롤아웃(에이전트 시뮬레이션) 생성을 **전용 인프라로 분리**한다.
+
+```
+학습 클러스터 <--> Rollout 서버 (에이전트 실행 전용)
+                            |
+                    환경 실행 (코드 실행, 검색, 브라우저 등)
+```
+
+롤아웃 서버를 독립 확장하면 GPU 학습 시간을 롤아웃 대기로 낭비하지 않는다.
+
+## Self-Evolving Code Agents: ReVeal
+
+ReVeal(Self-Evolving Code Agents via Iterative Generation-Verification)은 코드 에이전트에 특화된 멀티 턴 RL 접근:
+
+1. 에이전트가 코드 생성 → 실행 → 오류 관찰
+2. 자기 수정 시도 (iterative self-correction)
+3. 최종 성공 궤적으로 RL 업데이트
+
+테스트 실행이라는 명확한 검증 신호 덕분에 보상 설계가 상대적으로 단순하다.
+
+## ReSearch: 검색과 추론의 RL 결합
+
+검색 정책(언제, 무엇을 검색할지)과 추론 정책(검색 결과를 어떻게 통합할지)을 하나의 RL 목표로 동시 최적화. 기존에 규칙 기반으로 처리하던 검색 시점 결정을 모델이 직접 학습한다.
+
+## 크레딧 할당 심화 (Credit Assignment)
+
+2026년 서베이 (Zhang, arXiv 2604.09459)는 LLM RL의 크레딧 할당을 **2차원 taxonomy**로 체계화했다.
+
+- **Granularity 축**: Token / Segment / Step / Turn / Multi-Agent
+- **Methodology 축**: Monte Carlo / Temporal Difference / Model-based / Game-theoretic / Information-theoretic
+
+아젠틱 RL(100+ turn, 100k~1M 토큰)은 reasoning RL(500~30k 토큰, 단일 turn)과 근본적으로 다른 접근이 필요하다:
+
+| 기법 | 적용 | 핵심 아이디어 |
+|------|------|-------------|
+| Hindsight counterfactual | Agentic RL | 에피소드 완료 후 대안 trajectory 역추적 |
+| Privileged asymmetric critic | Agentic RL | 훈련 시에만 oracle 정보를 critic에 제공 |
+| Turn-level MDP | Agentic RL | 시간 추상화 재구조화로 long-range attribution 완화 |
+| PRM | Reasoning RL | 중간 추론 스텝 단위 평가 |
+| GRPO | Reasoning RL | critic-free 그룹 비교로 어드밴티지 계산 |
+
+→ 상세 taxonomy와 방법별 비교는 [[credit-assignment-survey-paper]] 참조
+→ source-agnostic 개념 정리는 [[credit-assignment-rl]] 참조
+
+## 장기 실행 에이전트 훈련의 과제
+
+| 과제 | 설명 |
+|------|------|
+| 크레딧 할당 | 긴 궤적에서 기여 행동 특정 어려움 (→ 위 섹션 참조) |
+| 탐색 효율 | 무작위 탐색으로 성공 궤적 얻기 어려움 |
+| 환경 다양성 | 훈련 환경 다양성 부족 시 과적합 |
+| 안전성 | 실제 환경(브라우저, 코드 실행)에서 부작용 위험 |
+| 컨텍스트 관리 | 긴 궤적의 컨텍스트 오버플로 처리 |
+
+## 실무 적용 관점
+
+- **시작점**: 검증 가능한 태스크(코드 테스트, 수학)로 단순 에이전트부터 훈련. 복잡한 도구 조합은 나중에 추가
+- **롤아웃 격리**: 에이전트 실행이 실제 환경에 영향을 주지 않도록 샌드박스(sandbox) 필수
+- **보상 혼합**: 최종 보상 + 중간 형식 보상의 가중합으로 크레딧 할당 완화
+- **[[long-horizon-agent-benchmarks|벤치마크 연동]]**: SWE-Bench, GAIA 2로 훈련 진행 상황을 주기적으로 평가
 
 ## 대표 레퍼런스
 
@@ -23,72 +135,15 @@ updated: 2026-04-10
 - [ReVeal: Self-Evolving Code Agents via Iterative Generation-Verification](https://arxiv.org/abs/2506.11442)
 - [ReSearch: Learning to Reason with Search for LLMs via Reinforcement Learning](https://arxiv.org/abs/2503.19470)
 
-## 해석 포인트
-
-Long-Horizon RL Training for Agents (Multi-Turn RLVR)은 **보상 신호와 학습 루프를 어떻게 설계할지에 초점을 둔 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `arxiv.org×5`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
-
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 멀티 턴 환경에서 검증 가능한 보상으로 에이전트의 도구 사용·계획·자기수정 능력을 직접 학습시키는 강화학습 기법.
-- 왜 중요한가: 2026년 3월 NVIDIA의 ProRL Agent (Rollout-as-a-Service), AgentGym-RL, ScalingInter-RL 등 멀티 턴 RL 인프라가 동시 공개되었고, 500편 이상을 종합한 "Landscape of Agentic RL" 서베이가 학습 가능한 에이전트로의 패러다임 시프트를 정식화하면서 학계·산업계 모두 RL 기반 에이전트 훈련을 1순위 연구 과제로 격상시켰다.
-- 직접 수집 원문: 5개
-- 주요 도메인: arxiv.org×5
-
-## 핵심 구조
-
-멀티 턴 환경에서 검증 가능한 보상으로 에이전트의 도구 사용·계획·자기수정 능력을 직접 학습시키는 강화학습 기법. 에이전트 토픽은 보통 모델 자체보다 **루프 구조, 상태 관리, 작업 분해, 검증 방식**이 핵심이다. 이번 source 묶음도 `arxiv.org×5`를 오가며 설계 패턴과 구현 사례를 함께 보여 준다.
-
-## 핵심 포인트
-
-Long-Horizon RL Training for Agents (Multi-Turn RLVR)는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 멀티 턴 환경에서 검증 가능한 보상으로 에이전트의 도구 사용·계획·자기수정 능력을 직접 학습시키는 강화학습 기법.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
-
-## source로 보면
-
-수집된 source는 arxiv.org×5로 분포한다. 연구 논문 비중이 높아 메커니즘·평가·한계 쪽 정보가 중심이다.
-
-## 실무 관점
-
-실무에서는 장기 실행, 상태 관리, 실패 복구, 평가 루프를 함께 설계해야 이 토픽이 효과를 낸다. 즉 개별 아이디어보다 에이전트 시스템 전체의 제약 속에서 읽는 것이 중요하다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/long-horizon-rl-training-for-agents.md`
-
-### source별 핵심 신호
-
-- **[2509.02547] The Landscape of Agentic Reinforcement Learning for LLMs: A Survey** (`arxiv.org`): https://arxiv.org/abs/2509.02547
-  - 메모: The emergence of agentic reinforcement learning (Agentic RL) marks a paradigm shift from conventional reinforcement learning applied to large language models (LLM RL), reframing LLMs from passive sequence generators into
-- **[2502.01600] Reinforcement Learning for Long-Horizon Interactive LLM Agents** (`arxiv.org`): https://arxiv.org/abs/2502.01600
-  - 메모: Interactive digital agents (IDAs) leverage APIs of stateful digital environments to perform tasks in response to user requests.
-- **[2509.08755] AgentGym-RL: Training LLM Agents for Long-Horizon Decision Making through Multi-Turn Reinforcement Learning** (`arxiv.org`): https://arxiv.org/abs/2509.08755
-  - 메모: Developing autonomous LLM agents capable of making a series of intelligent decisions to solve complex, real-world tasks is a fast-evolving frontier.
-- **[2506.11442] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification** (`arxiv.org`): https://arxiv.org/abs/2506.11442
-  - 메모: Reinforcement learning with verifiable rewards (RLVR) has advanced the reasoning capabilities of large language models.
-- **[2503.19470] ReSearch: Learning to Reason with Search for LLMs via Reinforcement Learning** (`arxiv.org`): https://arxiv.org/abs/2503.19470
-  - 메모: Large Language Models (LLMs) have shown remarkable capabilities in reasoning, exemplified by the success of OpenAI-o1 and DeepSeek-R1.
-
-
-## source 종합 해석
-
-예를 들어 source note는 The emergence of agentic reinforcement learning (Agentic RL) marks a paradigm shift from conventional reinforcement learning applied to large language models (LLM RL), reframing LLMs from passive sequence generators into
-
-또 다른 source는 Interactive digital agents (IDAs) leverage APIs of stateful digital environments to perform tasks in response to user requests.
-
-즉, 이 토픽이 중요한 이유는 `2026년 3월 NVIDIA의 ProRL Agent (Rollout-as-a-Service), AgentGym-RL, ScalingInter-RL 등 멀티 턴 RL 인프라가 동시 공개되었고, 500편 이상을 종합한 "Landscape of Agentic RL" 서베이가 학습 가능한 에이전트로의 패러다임 시프트를 정식화하면서 학계·산업계 모두 RL 기반 에이전트 훈련을 1순위 연구 과제로 격상`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Agent Skills, Context Folding & Sub-Trajectory Compression가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `2026년 3월 NVIDIA의 ProRL Agent (Rollout-as-a-Service), AgentGym-RL, ScalingInter-RL 등 멀티 턴 RL 인프라가 동시 공개되었고, 500편 이상을 종합한 "Landscape of Agentic RL" 서베이가 학습 가능한 에이전트로의 패러다임 시프트를 정식화하면서 학계·산업계 모두 RL 기반 에이전트 훈련을 1순위 연구 과제로 격상`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
-
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
-- [[agent-skills|Agent Skills]]
 - [[context-folding|Context Folding & Sub-Trajectory Compression]]
+- [[agent-memory-systems|Agent Memory Systems]]
+- [[long-horizon-agent-benchmarks|Long-Horizon Agent Benchmarks]]
+- [[agent-trees|Hierarchical Planning with Agent Trees]]
 - [[subagents|Subagents]]
+- [[rl-scaling-laws|RL Scaling Laws (ScaleRL)]]
+- [[credit-assignment-survey-paper|Credit Assignment Survey (Zhang, 2026)]] -- 47 methods, 2D taxonomy
+- [[genac-paper|GenAC (Shan et al., 2026)]] -- Generative Critic, value-free 트렌드 반론
+- [[credit-assignment-rl|크레딧 할당 개념]] -- source-agnostic 개념 정리

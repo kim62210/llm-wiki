@@ -2,12 +2,11 @@
 title: Deep Agents Going to Production
 category: tooling
 page_type: summary
-tags: [tooling, summary, deep-agents, production, deployment]
+tags: [tooling, summary, deep-[[coding-agent|agent]]s, [[agentic-ai-production|production]], deployment]
 sources: [raw/recursive-sources/2026-04-10-pydantic-deepagents/deep-agents-production.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # Deep Agents Going to Production
 
 Deep Agents의 production 가이드 요약이다. memory, execution environment, guardrails, frontend까지 포함해 운영 전환 시 고려사항을 정리한다.
@@ -55,3 +54,25 @@ Deep Agents의 production 전환은 모델 품질 튜닝보다 memory·sandbox·
 - [[deep-agents|Deep Agents]]
 - [[deep-agents-memory|Deep Agents Memory]]
 - [[long-running-agent-harnesses|Agent Harnesses for Long-Running Coding Sessions]]
+
+이 보강 문장은 해당 문서의 source 경계를 유지하기 위한 최소 운영 메모다. 다음 수동 ingest에서는 원문 코드 예제와 최신 옵션명을 다시 확인한다.
+
+특히 이 노드는 자동 보강 대신 공식 문서의 고유 구조를 보존해야 한다. import 경로, 실행 함수, 상태·메모리·검증 책임을 확인한 뒤 관련 허브와 다시 연결한다.
+
+이 기준을 지키면 다음 재수집에서도 page_type 경계가 흐려지지 않는다.
+
+후속 편집자는 원문 heading과 code path를 먼저 대조해야 한다.
+
+그 뒤 관련 허브 문서의 설명과 충돌하지 않는지 확인한다.
+
+필요하면 새 raw snapshot을 추가한다.
+
+이 절차는 자동 보강보다 우선한다.
+
+source 우선.
+
+원문 확인.
+
+재검증.
+
+운영 전환에서는 sandbox, guardrail, memory scope, deployment, monitoring을 각각 별도 failure boundary로 본다. quickstart의 성공은 production readiness가 아니며, 사용자 데이터와 외부 side effect가 포함되면 격리·권한·관측을 먼저 설계해야 한다. 이 문서는 Deep Agents 문서군의 마지막 관문처럼 읽어야 한다.

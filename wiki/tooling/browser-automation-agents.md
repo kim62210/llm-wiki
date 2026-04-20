@@ -1,17 +1,16 @@
 ---
 title: Browser Automation for Coding Agents
-aliases: ["Playwright", "Rodney", "Showboat", "agent-browser", "browser automation", "browser automation agents"]
+aliases: [Playwright, Rodney, Showboat, agent-browser, browser automation, browser automation agents]
 category: tooling
 page_type: concept
 tags: [playwright, rodney, agent-browser, showboat, browser-automation, testing]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Browser Automation for Coding Agents
 
-Simon Willison이 [[agentic engineering guide]] Section 3 ([[agentic manual testing]])에서 언급하는 브라우저 자동화 도구 모음. 웹 UI를 에이전트가 직접 조작·검증하게 하기 위한 기반.
+Simon Willison이 [[agentic-engineering-guide]] Section 3 ([[agentic-manual-testing]])에서 언급하는 브라우저 자동화 도구 모음. 웹 UI를 에이전트가 직접 조작·검증하게 하기 위한 기반.
 
 ## 왜 필요한가
 
@@ -85,7 +84,7 @@ Rodney + Showboat 조합:
 7. 스크린샷/비디오를 PR에 첨부 → 리뷰어에게 증거 제공
 ```
 
-이 흐름은 [[anti-patterns in agentic engineering|"리뷰 안 한 PR 떠넘기기" 안티패턴]]을 방지하는 데에도 효과적이다.
+이 흐름은 [[anti-patterns|"리뷰 안 한 PR 떠넘기기" 안티패턴]]을 방지하는 데에도 효과적이다.
 
 ## 선택 가이드
 
@@ -98,8 +97,8 @@ Rodney + Showboat 조합:
 
 ## 관련 문서
 
-- [[agentic manual testing]]
-- [[gif optimization case study]]
-- [[linear walkthroughs]]
-- [[anti-patterns in agentic engineering]]
-- [[agentic engineering guide]]
+- [[agentic-manual-testing]]
+- [[gif-optimization-case-study]]
+- [[linear-walkthroughs]]
+- [[anti-patterns]]
+- [[agentic-engineering-guide]]

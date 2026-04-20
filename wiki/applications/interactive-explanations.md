@@ -1,17 +1,16 @@
 ---
 title: Interactive Explanations
-aliases: ["interactive explanations"]
+aliases: [interactive explanations]
 category: applications
 page_type: concept
 tags: [code-understanding, visualization, cognitive-debt, animations]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Interactive Explanations
 
-Simon Willison이 [[agentic engineering guide]] Section 4에서 제시하는 [[cognitive debt|인지 부채]] 상환 기법.
+Simon Willison이 [[agentic-engineering-guide]] Section 4에서 제시하는 [[cognitive-debt|인지 부채]] 상환 기법.
 
 ## 문제: Cognitive Debt
 
@@ -47,7 +46,7 @@ Claude의 보고서에 적힌 설명:
 → **이 문장만으로는 전혀 이해되지 않음.**
 
 ### 3단계: Linear Walkthrough
-[[linear walkthroughs|선형 walkthrough]]를 요청해 Rust 코드 구조를 파악. 구조는 이해했지만 "Archimedean spiral placement"가 실제로 어떻게 작동하는지 **직관적** 이해가 부족.
+[[linear-walkthroughs|선형 walkthrough]]를 요청해 Rust 코드 구조를 파악. 구조는 이해했지만 "Archimedean spiral placement"가 실제로 어떻게 작동하는지 **직관적** 이해가 부족.
 
 ### 4단계: 애니메이션 요청
 기존 walkthrough 문서 링크를 Claude Code 세션에 붙이고 다음 프롬프트:
@@ -89,7 +88,7 @@ Simon은 "인터랙티브 인터페이스와 애니메이션으로 개념을 설
 - 시스템 동작 (컴포넌트 간 메시지 흐름)
 - 수학 개념 (벡터 연산, 확률 분포)
 
-## [[linear walkthroughs]]와의 결합
+## [[linear-walkthroughs]]와의 결합
 
 권장 순서:
 1. **Linear walkthrough** — 코드 구조와 파일 간 관계 파악
@@ -98,8 +97,8 @@ Simon은 "인터랙티브 인터페이스와 애니메이션으로 개념을 설
 
 ## 관련 문서
 
-- [[cognitive debt]]
-- [[linear walkthroughs]]
-- [[vibe coding]]
-- [[Claude Code]]
-- [[agentic engineering guide]]
+- [[cognitive-debt]]
+- [[linear-walkthroughs]]
+- [[vibe-coding]]
+- [[claude-code]]
+- [[agentic-engineering-guide]]

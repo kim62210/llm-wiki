@@ -1,52 +1,51 @@
 ---
 title: Agentic Engineering Patterns 가이드 (Simon Willison)
-aliases: ["agentic engineering guide", "Agentic Engineering Patterns"]
+aliases: [agentic engineering guide, Agentic Engineering Patterns]
 category: applications
 page_type: summary
 tags: [agentic-engineering, coding-agents, simon-willison, best-practices, guide]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Agentic Engineering Patterns 가이드
 
 Simon Willison이 2026-02-23에 시작한 가이드 시리즈. 코딩 에이전트(Claude Code, OpenAI Codex, Gemini CLI 등)를 사용하는 프로페셔널 소프트웨어 엔지니어를 위한 패턴 모음이다. 1994년 GoF *Design Patterns* 책에서 영감을 받았으며, 블로그 챕터 형식으로 지속 업데이트되는 "살아있는 가이드"로 설계되었다.
 
 ## 왜 중요한가
 
-코딩 에이전트가 코드 작성 비용을 극적으로 낮추면서 기존의 엔지니어링 직관이 무너졌다. 이 가이드는 "[[vibe coding]]"과 구별되는, 프로덕션 수준의 코드를 목표로 하는 전문가 수준의 실천 패턴을 정리한다.
+코딩 에이전트가 코드 작성 비용을 극적으로 낮추면서 기존의 엔지니어링 직관이 무너졌다. 이 가이드는 "[[vibe-coding]]"과 구별되는, 프로덕션 수준의 코드를 목표로 하는 전문가 수준의 실천 패턴을 정리한다.
 
 > "Agentic Engineering represents professional software engineers using coding agents to improve and accelerate their work." — Simon Willison
 
 ## 가이드 구조
 
 ### Section 1: 원칙 (Principles)
-- [[agentic engineering]] — "코딩 에이전트의 도움을 받아 소프트웨어를 개발하는 실천"의 정의
-- [[code is cheap]] — 코드 작성 비용이 거의 0에 가까워졌다는 새로운 현실
-- [[hoard things you know how to do]] — 재사용 가능한 작동 예제를 축적하기
-- [[better code with agents]] — 에이전트로 더 나은 코드를 쓸 수도 있다는 선택
-- [[anti-patterns in agentic engineering]] — 특히 "리뷰 안 한 코드를 PR로 던지기" 금지
+- [[agentic-engineering]] — "코딩 에이전트의 도움을 받아 소프트웨어를 개발하는 실천"의 정의
+- [[code-is-cheap]] — 코드 작성 비용이 거의 0에 가까워졌다는 새로운 현실
+- [[hoard-things-you-know-how-to-do]] — 재사용 가능한 작동 예제를 축적하기
+- [[better-code-with-agents]] — 에이전트로 더 나은 코드를 쓸 수도 있다는 선택
+- [[anti-patterns]] — 특히 "리뷰 안 한 코드를 PR로 던지기" 금지
 
 ### Section 2: 코딩 에이전트와 작업하기
-- [[how coding agents work]] — LLM 하네스, 시스템 프롬프트, 도구 호출 루프
-- [[git with coding agents]] — Git을 에이전트의 시간 여행 도구로 활용
+- [[how-coding-agents-work]] — LLM 하네스, 시스템 프롬프트, 도구 호출 루프
+- [[git-with-coding-agents]] — Git을 에이전트의 시간 여행 도구로 활용
 - [[subagents]] — 컨텍스트 창을 보존하기 위한 하위 에이전트 패턴
 
 ### Section 3: 테스트와 QA
-- [[red-green TDD]] — 에이전트에게 가장 강력한 짧은 프롬프트 중 하나
-- [[first run the tests]] — 기존 코드베이스 온보딩을 위한 네 단어 프롬프트
-- [[agentic manual testing]] — Playwright/Rodney/Showboat로 수동 테스트 자동화
+- [[red-green-tdd]] — 에이전트에게 가장 강력한 짧은 프롬프트 중 하나
+- [[first-run-the-tests]] — 기존 코드베이스 온보딩을 위한 네 단어 프롬프트
+- [[agentic-manual-testing]] — Playwright/Rodney/Showboat로 수동 테스트 자동화
 
 ### Section 4: 코드 이해
-- [[linear walkthroughs]] — 에이전트가 자기 코드를 설명하게 하기
-- [[interactive explanations]] — [[cognitive debt]]를 갚기 위한 애니메이션 설명
+- [[linear-walkthroughs]] — 에이전트가 자기 코드를 설명하게 하기
+- [[interactive-explanations]] — [[cognitive-debt]]를 갚기 위한 애니메이션 설명
 
 ### Section 5: 주석 달린 프롬프트 (Annotated Prompts)
-- [[gif optimization case study]] — Gifsicle → WASM 예제
+- [[gif-optimization-case-study]] — Gifsicle → WASM 예제
 
 ### Section 6: 부록
-- [[prompts library]] — Simon Willison이 상시 사용하는 프롬프트 모음
+- [[prompts-library]] — Simon Willison이 상시 사용하는 프롬프트 모음
 
 ## 핵심 인사이트
 
@@ -60,25 +59,26 @@ Simon Willison이 2026-02-23에 시작한 가이드 시리즈. 코딩 에이전�
 
 - 새 프로젝트 시작 시: "First run the tests" → "Use red/green TDD" 조합으로 에이전트를 테스팅 마인드에 고정
 - 기존 대형 코드베이스 탐색: [[subagents]]의 Explore 패턴으로 컨텍스트 창 보호
-- UI 검증: [[Playwright]], [[Rodney]], [[agent-browser]], [[Showboat]]로 에이전트가 직접 브라우저 테스트
-- 이해가 부족할 때: 선형 walkthrough → 인터랙티브 애니메이션 단계로 [[cognitive debt]] 상환
+- UI 검증: [[playwright-mcp]], [[Rodney]], [[browser-automation-agents]], [[Showboat]]로 에이전트가 직접 브라우저 테스트
+- 이해가 부족할 때: 선형 walkthrough → 인터랙티브 애니메이션 단계로 [[cognitive-debt]] 상환
 
 ## 관련 문서
 
-- [[agentic engineering]]
-- [[vibe coding]]
-- [[coding agent]]
-- [[how coding agents work]]
-- [[code is cheap]]
-- [[red-green TDD]]
+- [[agentic-engineering]]
+- [[vibe-coding]]
+- [[coding-agent]]
+- [[how-coding-agents-work]]
+- [[code-is-cheap]]
+- [[red-green-tdd]]
 - [[subagents]]
-- [[anti-patterns in agentic engineering]]
-- [[agentic manual testing]]
-- [[interactive explanations]]
-- [[prompts library]]
-- [[Claude Code]]
+- [[anti-patterns]]
+- [[agentic-manual-testing]]
+- [[interactive-explanations]]
+- [[prompts-library]]
+- [[claude-code]]
 
 ## 출처
 - 원본: https://simonwillison.net/guides/agentic-engineering-patterns
 - 소개 포스트: https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/
 - raw 파일: `raw/2026-04-09-simon-willison-agentic-engineering-patterns.md`
+- [[writing-about-agentic-engineering-patterns|Writing about Agentic Engineering Patterns]] — Simon Willison 가이드 작성 배경 요약

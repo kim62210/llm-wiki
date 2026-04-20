@@ -1,15 +1,14 @@
 ---
 title: OMC Ralplan
-aliases: ["OMC Ralplan"]
+aliases: [OMC Ralplan]
 category: tooling
 page_type: project-internal
 project: oh-my-claudecode
 tags: [omc, ralplan, planning, consensus, planner, architect, critic]
 sources: [raw/2026-04-09-omc-AGENTS.md, raw/2026-04-09-omc-ARCHITECTURE.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC Ralplan
 
 > Planner + Architect + Critic의 반복 루프로 **컨센서스 기획**에 도달하는 스킬. Ralph 모드의 기획 게이트 역할도 함께 수행.
@@ -87,7 +86,7 @@ Ralplan의 해결:
 
 ## 에이전트 역할 경계
 
-Ralplan의 세 에이전트는 각자 하지 말아야 할 일이 명확하다 ([[OMC Agent Catalog]] 참조):
+Ralplan의 세 에이전트는 각자 하지 말아야 할 일이 명확하다 ([[omc-[[coding-agent|agent]]-catalog]] 참조):
 
 | 에이전트 | Does | Does Not |
 |---|---|---|
@@ -99,7 +98,7 @@ Ralplan의 세 에이전트는 각자 하지 말아야 할 일이 명확하다 (
 
 ## Ralph와의 관계
 
-[[OMC Ralph Mode]]에는 **ralplan-first 게이트**가 있다:
+[[omc-ralph-mode]]에는 **ralplan-first 게이트**가 있다:
 
 ```
 Ralph 활성 + 구현 단계 진입?
@@ -156,11 +155,22 @@ RALPLAN-DR 모드는 다음 조건일 때 고려:
 - **시간 비용**: opus 세 에이전트 × 여러 라운드 = 상당한 대기 시간. 긴급 작업에는 부적절
 - **사용자 개입**: Ralplan은 사람 개입 없이 돌지만, 중간 산출물을 검토해 방향을 수정하는 것도 가능
 
+## 원문 기반 상세 해석
+
+`OMC Ralplan`는 이전에는 그래프의 말단에서 짧은 요약만 제공하는 성격이 강했으므로, 이번 보강에서는 원문을 다시 열 때 바로 확인해야 할 **구체적 근거**를 본문 안에 남긴다. 1차 기준 source는 `oh-my-claudecode - Intelligent Multi-Agent Orchestration`이며, 원문 URL은 `raw snapshot`이다. 이 source가 제공하는 구조 신호는 `Working agreements, Setup, Review guidelines, Overview, Agent System, Build/Analysis Lane` 쪽에 모인다.
+
+자동 추출된 원문 단서는 `# oh-my-claudecode - Intelligent Multi-Agent Orchestration; You are running with oh-my-claudecode (OMC), a multi-agent orchestration layer for Claude Code.; Your role is to coordinate specialized agents, tools, and [[hermes-agent|skill]]s so work is completed accurately and efficiently.; <guidance_schema_contract>`이다. 이 단서들은 그대로 인용하기보다, 이 위키 문서에서 어떤 질문을 던져야 하는지로 번역해 읽어야 한다. 즉 “무엇을 설치하는가/정의하는가”보다 “이 문서가 어떤 경계와 책임을 나누는가”를 먼저 본다. 그렇게 읽으면 말단 노드가 단순 제목 카드가 아니라, 상위 개념과 실제 source 사이를 연결하는 작은 탐색 표지가 된다.
+
+편집 관점에서는 다음 원칙을 적용한다. project-internal 노드는 특정 프로젝트의 구현 스냅샷이므로 버전·날짜·운영 경계가 문서의 의미를 만든다. 따라서 이 문서의 후속 갱신에서는 source가 제공한 고유 명사·단계·제약을 먼저 확인하고, 일반적인 AI 에이전트 설명으로 문장을 부풀리지 않는다. 반대로 여러 source에서 같은 구조가 반복되면 그 구조는 별도 concept 노드 후보가 된다.
+
+실무 독자는 이 페이지를 읽은 뒤 바로 관련 문서로 이동하기보다, 먼저 source 표의 URL과 raw snapshot을 대조해 현재 문서의 정의가 아직 유효한지 확인하는 편이 좋다. 공식 문서나 논문이 업데이트되었으면 `updated` 날짜와 source 목록을 함께 갱신하고, 내용 변경이 제품별 구현 디테일인지 일반 개념인지 다시 판정해야 한다.
+
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Execution Modes]]
-- [[OMC Ralph Mode]]
-- [[OMC Autopilot]]
-- [[OMC Agent Catalog]]
-- [[OMC Deep Interview]]
+- [[oh-my-claudecode]]
+- [[omc-execution-modes]]
+- [[omc-ralph-mode]]
+- [[omc-autopilot]]
+- [[omc-agent-catalog]]
+- [[omc-deep-interview]]
+

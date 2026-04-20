@@ -69,7 +69,7 @@ updated: 2026-04-09
 }
 ```
 
-상세: [[OMC Team Mode]]
+상세: [[omc-team-mode]]
 
 ## omc team (CLI, v4.4.0+)
 
@@ -95,7 +95,7 @@ omc team shutdown auth-review
 
 ## Autopilot
 
-아이디어 → 검증된 동작 코드까지 5-phase 자율 실행. 상세는 [[OMC Autopilot]].
+아이디어 → 검증된 동작 코드까지 5-phase 자율 실행. 상세는 [[omc-autopilot]].
 
 ```bash
 /autopilot "build a REST API for managing tasks"
@@ -121,7 +121,7 @@ autopilot: build me a todo app
 
 ## Ralph
 
-"검증이 확인될 때까지 중단 금지". 상세는 [[OMC Ralph Mode]].
+"검증이 확인될 때까지 중단 금지". 상세는 [[omc-ralph-mode]].
 
 ```bash
 ralph: refactor the authentication module
@@ -133,7 +133,7 @@ ralph: refactor the authentication module
 
 ## Ultrawork
 
-최대 병렬성. 독립 태스크를 한꺼번에 spawn. 상세는 [[OMC Ultrawork]].
+최대 병렬성. 독립 태스크를 한꺼번에 spawn. 상세는 [[omc-ultrawork]].
 
 ```bash
 ultrawork implement user authentication with OAuth
@@ -156,11 +156,11 @@ ulw write all tests for this module
 - Claude가 결과를 통합·판단
 - Codex는 아키텍처/보안 강점, Gemini는 UI/대용량 컨텍스트 강점
 
-상세: [[OMC CCG]]
+상세: [[omc-ccg]]
 
 ## Ralplan
 
-Planner + Architect + Critic 루프를 돌려 컨센서스에 도달하는 반복 기획. 상세는 [[OMC Ralplan]].
+Planner + Architect + Critic 루프를 돌려 컨센서스에 도달하는 반복 기획. 상세는 [[omc-ralplan]].
 
 ```bash
 ralplan this feature
@@ -181,7 +181,7 @@ QA 사이클링 — test → verify → fix → repeat. Autopilot의 Phase 4로�
 
 ## Deep Interview
 
-Socratic 딥 인터뷰로 요구사항을 수학적으로 명확화. 상세는 [[OMC Deep Interview]].
+Socratic 딥 인터뷰로 요구사항을 수학적으로 명확화. 상세는 [[omc-deep-interview]].
 
 ```bash
 /deep-interview "I want to build a task management app"
@@ -224,7 +224,7 @@ $ecomode
 
 ## 상태 관리 통합
 
-모든 모드는 [[OMC State Management]] 규약을 지킨다:
+모든 모드는 [[omc-state-management]] 규약을 지킨다:
 - 시작 시 `state_write` (active=true)
 - 단계 전환 시 `current_phase` 업데이트
 - 종료 시 `active=false` + `completed_at`
@@ -232,12 +232,12 @@ $ecomode
 
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Autopilot]]
-- [[OMC Ralph Mode]]
-- [[OMC Ultrawork]]
-- [[OMC Team Mode]]
-- [[OMC CCG]]
-- [[OMC Ralplan]]
-- [[OMC Deep Interview]]
-- [[OMC State Management]]
+- [[oh-my-claudecode]]
+- [[omc-autopilot]]
+- [[omc-ralph-mode]]
+- [[omc-ultrawork]]
+- [[omc-team-mode]]
+- [[omc-ccg]]
+- [[omc-ralplan]]
+- [[omc-deep-interview]]
+- [[omc-state-management]]

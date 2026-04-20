@@ -1,15 +1,14 @@
 ---
 title: OMC Ultrawork
-aliases: ["OMC Ultrawork"]
+aliases: [OMC Ultrawork]
 category: tooling
 page_type: project-internal
 project: oh-my-claudecode
 tags: [omc, ultrawork, parallel, burst, execution]
 sources: [raw/2026-04-09-omc-README.md, raw/2026-04-09-omc-ARCHITECTURE.md, raw/2026-04-09-omc-HOOKS.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC Ultrawork
 
 > 최대 병렬성으로 독립 태스크를 한꺼번에 해치우는 버스트 모드.
@@ -111,7 +110,7 @@ Ultrawork로 spawn된 자식 에이전트들은 각자 자기 기본 모델을 �
 - explore가 필요하면 → haiku
 - 리뷰 단계 → opus
 
-즉 Ultrawork는 **모델을 통일하지 않는다**. [[OMC Model Routing]] 정책이 그대로 적용된다.
+즉 Ultrawork는 **모델을 통일하지 않는다**. [[omc-model-routing]] 정책이 그대로 적용된다.
 
 ## 사용 예
 
@@ -174,9 +173,10 @@ Ultrawork는 병렬성이 크기 때문에 **토큰 폭발 위험**이 있다. 6
 
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Execution Modes]]
-- [[OMC Ralph Mode]]
-- [[OMC Team Mode]]
-- [[OMC Model Routing]]
-- [[Multi-Agent Orchestration]]
+- [[oh-my-claudecode]]
+- [[omc-execution-modes]]
+- [[omc-ralph-mode]]
+- [[omc-team-mode]]
+- [[omc-model-routing]]
+- [[multi-[[coding-agent|agent]]-orchestration]]
+

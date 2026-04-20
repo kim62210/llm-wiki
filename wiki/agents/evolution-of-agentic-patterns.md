@@ -19,7 +19,7 @@ updated: 2026-04-09
 
 ## 핵심 주장
 
-이 글의 중심 명제는 Chad Fowler의 "[[relocating rigor]]" 원칙이다:
+이 글의 중심 명제는 Chad Fowler의 "[[relocating-rigor]]" 원칙이다:
 
 > "엔지니어링의 엄밀함은 사라지지 않는다 — 이동할 뿐이다."
 
@@ -65,7 +65,7 @@ flowchart LR
 **Andrew Ng의 4 Agentic Design Patterns (2024)**:
 - Reflection, Tool Use, Planning, Multi-Agent Collaboration
 
-**벽에 부딪히다**: Mitchell Hashimoto의 "[[blind prompting]]" — 엄밀한 측정 없는 trial-and-error. 구조적 문제는 프롬프트 텍스트가 아니라 **불완전한 컨텍스트**였다.
+**벽에 부딪히다**: Mitchell Hashimoto의 "[[blind-prompting]]" — 엄밀한 측정 없는 trial-and-error. 구조적 문제는 프롬프트 텍스트가 아니라 **불완전한 컨텍스트**였다.
 
 ### Era 1.5: 코딩 도구 폭발 + 바이브 코딩 숙취 (2024-2025)
 
@@ -74,7 +74,7 @@ flowchart LR
 - Devin, Windsurf, Ralph, Aider, Cline, Void Editor 등
 - GitHub AI 프레임워크: 14개 → 89개 (535% 증가)
 
-**[[Vibe Coding]] 등장**:
+**[[vibe-coding]] 등장**:
 - 2025년 2월 Karpathy: Cursor 제안을 diff 검토 없이 수락
 - 코드가 인간 이해 수준을 넘어섰다는 이유
 
@@ -87,7 +87,7 @@ flowchart LR
 
 **기원**: 2025년 6월 19일 Shopify CEO Tobi Lütke의 용어 제안. Karpathy와 Andrew Ng가 이어받음.
 
-**[[LLM as OS]] 메타포** (Karpathy):
+**[[llm-as-os]] 메타포** (Karpathy):
 - Kernel = LLM 추론 엔진
 - RAM = 컨텍스트 창
 - File system = RAG / 벡터 DB
@@ -96,11 +96,11 @@ flowchart LR
 
 **Anthropic 4전략 프레임워크**:
 - **Write**: 시스템 프롬프트 명시적 구조화
-- **Select**: 관련 있는 정보만 전달 ([[lost in the middle]] 대응)
+- **Select**: 관련 있는 정보만 전달 ([[lost-in-the-middle]] 대응)
 - **Compress**: 긴 대화를 80%+ 보존하면서 축약
 - **Isolate**: 특화 작업을 [[subagents]]에 위임
 
-**핵심 메트릭은 [[KV cache]]로 이동**:
+**핵심 메트릭은 [[kv-cache]]로 이동**:
 - 프롬프트 접두사 재사용으로 비용 90% 감소
 - 안정적 접두사(시스템 프롬프트) + 가변 접미사(사용자 입력) 구조 필수
 - 접두사 한 토큰이라도 바뀌면 캐시 무효화
@@ -121,7 +121,7 @@ flowchart LR
 **핵심 공식**:
 > Agent = Model + **Harness** (모델을 제외한 모든 것)
 
-**[[harness quadrants|하네스 4사분면]]** (Fowler/Böckeler):
+**[[harness-quadrants|하네스 4사분면]]** (Fowler/Böckeler):
 
 |  | Feedforward (사전 유도) | Feedback (사후 교정) |
 |---|---|---|
@@ -133,7 +133,7 @@ flowchart LR
 - **OpenAI Codex 5개월 실험**: 수동 코드 0줄, 100만 라인 생성, 1500 PR, 10× 속도. 엔지니어는 코드가 아닌 **컨텍스트 생성 환경**을 설계
 - **Ralph Pattern**: PRD 완료까지 자동 루프 + 반복 간 클린 컨텍스트 리셋
 
-**보안: [[lethal trifecta|치명적 3요소]] + Meta Rule of Two**:
+**보안: [[lethal-trifecta|치명적 3요소]] + Meta Rule of Two**:
 - 비신뢰 입력 + 민감 데이터 접근 + 상태 수정 = 사고 불가피
 - Meta Rule of Two: 최대 2개만 동시 보유, 3개 필요 시 human-in-the-loop
 
@@ -156,21 +156,21 @@ flowchart LR
 ## 관련 문서
 
 ### 추출된 concept
-- [[relocating rigor]] — 엄밀함 이동 원칙 (메타 원칙)
-- [[prompt engineering]] — 2022-2024 에라
-- [[context engineering]] — 2025 에라
-- [[harness engineering]] — 2026+ 에라
-- [[llm as os]] — Karpathy OS 메타포
-- [[KV cache]] — 캐시 재사용 기반 프로덕션 최적화
-- [[harness quadrants]] — Fowler/Böckeler 2×2 분류
-- [[lethal trifecta]] — Simon Willison 보안 원칙
-- [[blind prompting]] — Mitchell Hashimoto 지적
+- [[relocating-rigor]] — 엄밀함 이동 원칙 (메타 원칙)
+- [[prompt-engineering]] — 2022-2024 에라
+- [[context-engineering]] — 2025 에라
+- [[harness-engineering]] — 2026+ 에라
+- [[llm-as-os]] — Karpathy OS 메타포
+- [[kv-cache]] — 캐시 재사용 기반 프로덕션 최적화
+- [[harness-quadrants]] — Fowler/Böckeler 2×2 분류
+- [[lethal-trifecta]] — Simon Willison 보안 원칙
+- [[blind-prompting]] — Mitchell Hashimoto 지적
 
 ### 연결된 기존 concept
-- [[vibe coding]] — 2.3절 vibe coding 숙취 사례 병합
-- [[agentic engineering]] — 프로페셔널 관점
+- [[vibe-coding]] — 2.3절 vibe coding 숙취 사례 병합
+- [[agentic-engineering]] — 프로페셔널 관점
 - [[subagents]] — Isolate 전략 구현
-- [[coding agent]] — Era 1의 결과물
+- [[coding-agent]] — Era 1의 결과물
 
 ## 지식 갭 (미수집)
 

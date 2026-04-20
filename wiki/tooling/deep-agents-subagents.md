@@ -1,13 +1,12 @@
 ---
-title: Deep Agents Subagents
+title: Deep Agents Sub[[coding-agent|agent]]s
 category: tooling
 page_type: summary
 tags: [tooling, summary, deep-agents, subagents, multi-agent]
 sources: [raw/recursive-sources/2026-04-10-pydantic-deepagents/deep-agents-subagents.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # Deep Agents Subagents
 
 Deep Agents에서 subagent를 어떻게 설계하고 쓸지 설명하는 공식 문서 요약이다. context isolation, structured output, best practices가 중심이다.
@@ -57,3 +56,23 @@ Deep Agents의 subagent는 단순 helper가 아니라, 메인 agent의 컨텍스
 - [[deep-agents|Deep Agents]]
 - [[subagents|Subagents]]
 - [[deep-agents-memory|Deep Agents Memory]]
+
+이 보강 문장은 해당 문서의 source 경계를 유지하기 위한 최소 운영 메모다. 다음 수동 ingest에서는 원문 코드 예제와 최신 옵션명을 다시 확인한다.
+
+특히 이 노드는 자동 보강 대신 공식 문서의 고유 구조를 보존해야 한다. import 경로, 실행 함수, 상태·메모리·검증 책임을 확인한 뒤 관련 허브와 다시 연결한다.
+
+이 기준을 지키면 다음 재수집에서도 page_type 경계가 흐려지지 않는다.
+
+후속 편집자는 원문 heading과 code path를 먼저 대조해야 한다.
+
+그 뒤 관련 허브 문서의 설명과 충돌하지 않는지 확인한다.
+
+필요하면 새 raw snapshot을 추가한다.
+
+이 절차는 자동 보강보다 우선한다.
+
+source 우선.
+
+원문 확인.
+
+재검증.

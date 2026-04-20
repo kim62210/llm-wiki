@@ -5,12 +5,11 @@ page_type: summary
 tags: [tooling, summary, instructor, patching, providers]
 sources: [raw/recursive-sources/2026-04-10-mastra-instructor-advanced/instructor-patching.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # Instructor Patching
 
-Instructor의 patching 문서 요약이다. LLM client patching이 무엇인지, patching modes, provider별 기본 모드, manual patching을 중심으로 설명한다.
+[[instructor|Instructor]]의 patching 문서 요약이다. LLM client patching이 무엇인지, patching modes, provider별 기본 모드, manual patching을 중심으로 설명한다.
 
 ## 구조도
 
@@ -21,7 +20,7 @@ flowchart LR
     C --> D[structured output interface]
 ```
 
-Instructor patching은 새로운 런타임을 만드는 대신 기존 LLM client 위에 structured-output 동작을 덧입히는 접근이다.
+Instructor patching은 새로운 런타임을 만드는 대신 기존 LLM client 위에 [[structured-output|structured-output]] 동작을 덧입히는 접근이다.
 
 ## 핵심 구조
 
@@ -33,13 +32,25 @@ Instructor patching은 새로운 런타임을 만드는 대신 기존 LLM client
 
 - 많은 팀은 LLM client를 이미 앱 곳곳에서 사용 중이라, 완전 교체보다 patching 방식이 현실적이다.
 - 하지만 patching은 내부 동작을 부분적으로 바꾸는 만큼 provider별 차이와 mode 선택이 중요하다.
-- 따라서 “쉽다”는 인상 뒤에 있는 구현 경계를 이해해야 안정적으로 쓸 수 있다.
+- 따라서 "쉽다"는 인상 뒤에 있는 구현 경계를 이해해야 안정적으로 쓸 수 있다.
 
 ## 실무 관점
 
 - 기본 모드가 무엇인지 확인하지 않고 쓰면 provider별 미묘한 차이로 예상치 못한 동작이 생길 수 있다.
 - manual patching은 고급 옵션이므로 팀 내 표준화가 필요하다.
 - 이 문서는 Instructor를 도입할 때 실제 앱 코드에 어떤 방식으로 꽂히는지 이해하게 만든다.
+
+## 원문이 다루는 흐름
+
+원문은 대체로 `Create the base client` → `Patch it manually` → `Now use it` → `Simpler approach` 순서로 전개된다.
+
+## 도입 판단표
+
+| 판단 축 | 내용 |
+|---|---|
+| 잘 맞는 상황 | 기존 OpenAI/Anthropic 등 client 호출 코드를 크게 바꾸지 않고 structured output을 넣고 싶을 때 |
+| 피해야 할 오해 | patching을 전역 magic처럼 써서 호출 경계와 테스트 지점을 흐리게 만드는 것 |
+| 비교/연결 기준 | [[instructor-overview|Instructor Overview]]와 함께 "얇은 adapter"라는 성격을 유지한다. |
 
 ## 관련 문서
 

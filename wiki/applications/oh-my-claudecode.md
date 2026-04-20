@@ -1,15 +1,14 @@
 ---
 title: oh-my-claudecode (OMC)
-aliases: ["oh-my-claudecode", "OMC", "oh-my-claudecode (OMC)"]
+aliases: [oh-my-claudecode, OMC, oh-my-claudecode (OMC)]
 category: applications
 page_type: entity
 project: oh-my-claudecode
 tags: [claude-code, multi-agent, orchestration, plugin, framework]
 sources: [raw/2026-04-09-omc-README.md, raw/2026-04-09-omc-AGENTS.md, raw/2026-04-09-omc-ARCHITECTURE.md, raw/2026-04-09-omc-FEATURES.md, raw/2026-04-09-omc-HOOKS.md, raw/2026-04-09-omc-GETTING-STARTED.md, raw/2026-04-09-omc-REFERENCE.md, raw/2026-04-09-omc-CLAUDE.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # oh-my-claudecode (OMC)
 
 > **"Don't learn Claude Code. Just use OMC."**
@@ -31,7 +30,7 @@ Claude Code는 단일 에이전트 루프가 기본이다. 복잡한 작업(다�
 
 핵심 가치:
 - **Zero-config**: 설치 후 바로 사용. 기본값만으로 실전 투입 가능
-- **자연어 인터페이스**: `autopilot`, `ralph`, `ulw` 같은 [[매직 키워드]]가 포함된 메시지를 보내면 해당 모드가 자동 활성화
+- **자연어 인터페이스**: `autopilot`, `ralph`, `ulw` 같은 [[omc-magic-keyword]]가 포함된 메시지를 보내면 해당 모드가 자동 활성화
 - **자동 병렬화**: 복잡한 작업을 최대 6개 동시 child agent로 분산
 - **끈질긴 실행**: 검증될 때까지 멈추지 않음 (`persistent-mode` 훅이 Stop 이벤트를 가로채 재진입 유도)
 - **비용 최적화**: Haiku/Sonnet/Opus 3-tier 모델 라우팅으로 30~50% 토큰 절감
@@ -48,10 +47,10 @@ User Input → Hooks (이벤트 감지) → Skills (행동 주입)
 
 | 구성 요소 | 역할 | 수 |
 |---|---|---|
-| [[Hooks]] | Claude Code 라이프사이클 이벤트에 반응, 키워드 감지/검증/주입 | 20+ |
-| [[Skills]] | 오케스트레이터 행동을 수정하는 주입 가능한 워크플로우 | 31+ |
-| [[Agents]] | 특정 역할(아키텍트·실행자·리뷰어 등)에 특화된 하위 에이전트 | 19 |
-| [[State Management]] | `.omc/` 디렉토리 기반 지속 상태 + 컴팩션 방지 메모 | - |
+| [[claude-code-hooks-system]] | Claude Code 라이프사이클 이벤트에 반응, 키워드 감지/검증/주입 | 20+ |
+| [[agent-skills]] | 오케스트레이터 행동을 수정하는 주입 가능한 워크플로우 | 31+ |
+| [[agentic-ai-foundation]] | 특정 역할(아키텍트·실행자·리뷰어 등)에 특화된 하위 에이전트 | 19 |
+| [[omc-state-management]] | `.omc/` 디렉토리 기반 지속 상태 + 컴팩션 방지 메모 | - |
 
 ## 설치
 
@@ -80,31 +79,31 @@ omc setup
 
 | 모드 | 용도 | 링크 |
 |---|---|---|
-| **Team** (권장) | 5-stage 파이프라인으로 여러 Claude 에이전트 조율 | [[OMC Team Mode]] |
-| **Autopilot** | 아이디어→동작 코드 자동 완성 (5-phase) | [[OMC Autopilot]] |
-| **Ralph** | 검증 통과할 때까지 반복 | [[OMC Ralph Mode]] |
-| **Ultrawork** | 최대 병렬성 (non-team) | [[OMC Ultrawork]] |
-| **CCG** | Claude + Codex + Gemini 삼중 자문 | [[OMC CCG]] |
-| **Ralplan** | Planner + Architect + Critic 컨센서스 기획 | [[OMC Ralplan]] |
-| **Deep Interview** | Socratic 질문으로 요구사항 정제 | [[OMC Deep Interview]] |
+| **Team** (권장) | 5-stage 파이프라인으로 여러 Claude 에이전트 조율 | [[omc-team-mode]] |
+| **Autopilot** | 아이디어→동작 코드 자동 완성 (5-phase) | [[omc-autopilot]] |
+| **Ralph** | 검증 통과할 때까지 반복 | [[omc-ralph-mode]] |
+| **Ultrawork** | 최대 병렬성 (non-team) | [[omc-ultrawork]] |
+| **CCG** | Claude + Codex + Gemini 삼중 자문 | [[omc-ccg]] |
+| **Ralplan** | Planner + Architect + Critic 컨센서스 기획 | [[omc-ralplan]] |
+| **Deep Interview** | Socratic 질문으로 요구사항 정제 | [[omc-deep-interview]] |
 
-전체 개요는 [[OMC Execution Modes]] 참조.
+전체 개요는 [[omc-execution-modes]] 참조.
 
 ## 에이전트 카탈로그
 
-19개의 전문 에이전트가 4개 레인(Build/Analysis, Review, Domain, Coordination)으로 분류된다. 각 에이전트는 기본 모델 티어가 지정되어 있으며 [[OMC Model Routing]] 규칙에 따라 자동 선택된다.
+19개의 전문 에이전트가 4개 레인(Build/Analysis, Review, Domain, Coordination)으로 분류된다. 각 에이전트는 기본 모델 티어가 지정되어 있으며 [[omc-model-routing]] 규칙에 따라 자동 선택된다.
 
-- 전체 목록: [[OMC Agent Catalog]]
-- 모델 라우팅 정책: [[OMC Model Routing]]
+- 전체 목록: [[omc-agent-catalog]]
+- 모델 라우팅 정책: [[omc-model-routing]]
 
 ## 주요 개념
 
-- [[Multi-Agent Orchestration]] — 오케스트레이션 기본 원리
-- [[OMC Magic Keyword]] — 자연어 키워드 트리거 시스템
-- [[OMC Skill Layering]] — Guarantee/Enhancement/Execution 3-레이어 조합
-- [[OMC Hook System]] — Claude Code 11개 라이프사이클 이벤트 + 20개 훅
-- [[OMC State Management]] — Control Plane/Data Plane 분리와 컴팩션 생존 전략
-- [[OMC Delegation Categories]] — 태스크 → 모델 티어·temperature·thinking budget 매핑
+- [[multi-agent-orchestration]] — 오케스트레이션 기본 원리
+- [[omc-magic-keyword]] — 자연어 키워드 트리거 시스템
+- [[omc-skill-layering]] — Guarantee/Enhancement/Execution 3-레이어 조합
+- [[omc-hook-system]] — Claude Code 11개 라이프사이클 이벤트 + 20개 훅
+- [[omc-state-management]] — Control Plane/Data Plane 분리와 컴팩션 생존 전략
+- [[omc-delegation-categories]] — 태스크 → 모델 티어·temperature·thinking budget 매핑
 
 ## 인프라 요구사항
 
@@ -122,11 +121,12 @@ omc setup
 
 ## 관련 문서
 
-- [[OMC Agent Catalog]]
-- [[OMC Execution Modes]]
-- [[OMC Magic Keyword]]
-- [[OMC Hook System]]
-- [[OMC State Management]]
-- [[OMC Skill Layering]]
-- [[OMC Model Routing]]
-- [[Multi-Agent Orchestration]]
+- [[omc-agent-catalog]]
+- [[omc-execution-modes]]
+- [[omc-magic-keyword]]
+- [[omc-hook-system]]
+- [[omc-state-management]]
+- [[omc-skill-layering]]
+- [[omc-model-routing]]
+- [[multi-agent-orchestration]]
+- [[omc-mcp-tools|OMC MCP Tools]] — OMC 내부 MCP 도구군 스냅샷

@@ -2,12 +2,11 @@
 title: OpenAI Agents SDK Handoffs
 category: tooling
 page_type: summary
-tags: [tooling, summary, openai-agents-sdk, handoffs, multi-agent]
+tags: [tooling, summary, openai-[[coding-agent|agent]]s-sdk, [[multi-agent-orchestration|handoff]]s, multi-agent]
 sources: [raw/recursive-sources/2026-04-10-openai-langgraph/openai-agents-sdk-handoffs.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # OpenAI Agents SDK Handoffs
 
 OpenAI Agents SDK에서 handoff를 어떻게 정의하고 언제 써야 하는지 설명하는 공식 가이드 요약이다. specialist agent로 제어권을 넘기는 규칙, payload, history filtering이 핵심이다.
@@ -38,7 +37,7 @@ handoff는 단순 함수 호출이 아니라, 어떤 specialist에게 제어권�
 
 - `inputType`은 handoff 시점에 모델이 생성하는 작은 구조화 메타데이터(reason, priority, language 등)를 받는 용도다.
 - `onHandoff`는 handoff 발생 시 로깅, 감사, 상태 저장 같은 부수 작업을 연결하는 후크다.
-- `inputFilter`는 다음 agent에게 어떤 history를 넘길지 조정하는 장치라서, 긴 대화나 민감한 context 정리에 중요하다.
+- `inputFilter`는 다음 agent에게 어떤 history를 넘길지 조정하는 장치라서, 긴 대화나 민감한 [[context-engineering|context]] 정리에 중요하다.
 
 ## 비교표
 
@@ -60,3 +59,12 @@ handoff는 단순 함수 호출이 아니라, 어떤 specialist에게 제어권�
 - [[openai-agents-sdk-quickstart|OpenAI Agents SDK Quickstart]]
 - [[openai-agents-sdk-sessions|OpenAI Agents SDK Sessions]]
 - [[subagents|Subagents]]
+
+후속 수동 ingest에서는 source version과 API 이름을 먼저 재확인한다. 이 원칙은 SDK 문서와 protocol 문서를 섞지 않기 위한 최소 안전장치다.
+
+source와 page_type 경계를 재검증한다.
+
+source와 page_type 경계를 재검증한다.
+
+source와 page_type 경계를 재검증한다.
+

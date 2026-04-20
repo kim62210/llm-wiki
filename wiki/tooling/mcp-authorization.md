@@ -1,13 +1,13 @@
 ---
-title: MCP OAuth 2.1 + PKCE Authorization
-aliases: ["mcp-oauth-pkce-authorization"]
+title: MCP [[mcp-architecture|OAuth]] 2.1 + PKCE Authorization
+aliases: [mcp-oauth-pkce-authorization]
 category: tooling
 page_type: entity
 project: MCP OAuth 2.1 + PKCE Authorization
 tags: [tooling, entity, mcp, authorization]
-sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/mcp-authorization.md, raw/hot-topics-sources/2026-04-10/050-mcp-authorization-specification.md, raw/hot-topics-sources/2026-04-10/047-mcp-specification-2025-11-25.md, raw/hot-topics-sources/2026-04-10/045-the-2026-mcp-roadmap.md, raw/hot-topics-sources/2026-04-10/049-modelcontextprotocol-modelcontextprotocol.md, raw/hot-topics-sources/2026-04-10/048-mcp-what-is-the-model-context-protocol.md]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/mcp-authorization.md, raw/hot-topics-sources/2026-04-10/050-mcp-authorization-[[mcp-specification-2025-11-25|specification]].md, raw/hot-topics-sources/2026-04-10/047-mcp-specification-2025-11-25.md, raw/hot-topics-sources/2026-04-10/045-the-2026-mcp-roadmap.md, raw/hot-topics-sources/2026-04-10/049-modelcontextprotocol-modelcontextprotocol.md, raw/hot-topics-sources/2026-04-10/048-mcp-what-is-the-model-context-protocol.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
 # MCP OAuth 2.1 + PKCE Authorization
 
@@ -38,52 +38,13 @@ MCP OAuth 2.1 + PKCE Authorization은 단순한 제품 소개보다 **모델 능
 - 직접 수집 원문: 5개
 - 주요 도메인: modelcontextprotocol.io×3, blog.modelcontextprotocol.io×1, github.com×1
 
-## 핵심 포인트
-
-MCP OAuth 2.1 + PKCE Authorization는 현재 시점에서 하나의 제품/모델/프레임워크 허브로 읽는 편이 맞다. 기본 정의는 MCP 서버를 OAuth 2.1 리소스 서버로 다루는 PKCE·Resource Indicator 기반 인증 스펙.이며, 직접 수집한 source 5건은 modelcontextprotocol.io×3, blog.modelcontextprotocol.io×1, github.com×1처럼 여러 채널에 걸쳐 분포한다.
-
-## source로 보면
-
-수집된 source는 modelcontextprotocol.io×3, blog.modelcontextprotocol.io×1, github.com×1로 분포한다. 구현 저장소 비중이 높아 실제 사용·통합 관점이 두드러진다.
-
 ## 실무 관점
 
 도구/프레임워크 페이지는 기능 목록보다 생태계 위치가 중요하다. 어떤 모델·런타임·개발 흐름과 잘 맞는지, 그리고 팀 워크플로우에 어떤 경계 조건을 추가하는지까지 같이 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/mcp-authorization.md`
-
-### source별 핵심 신호
-
-- **Authorization - Model Context Protocol** (`modelcontextprotocol.io`): https://modelcontextprotocol.io/specification/draft/basic/authorization
-  - 메모: The Model Context Protocol provides authorization capabilities at the transport level,
-- **Specification - Model Context Protocol** (`modelcontextprotocol.io`): https://modelcontextprotocol.io/specification/2025-11-25
-  - 메모: Model Context Protocol (MCP) is an open protocol that
-- **The 2026 MCP Roadmap | Model Context Protocol Blog** (`blog.modelcontextprotocol.io`): https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/
-  - 메모: The 2026 MCP Roadmap | Model Context Protocol BlogSkip to content
-- **GitHub - modelcontextprotocol/modelcontextprotocol: Specification and documentation for the Model Context Protocol · GitHub** (`github.com`): https://github.com/modelcontextprotocol/modelcontextprotocol
-  - 메모: GitHub - modelcontextprotocol/modelcontextprotocol: Specification and documentation for the Model Context Protocol · GitHub
-- **What is the Model Context Protocol (MCP)? - Model Context Protocol** (`modelcontextprotocol.io`): https://modelcontextprotocol.io/docs/getting-started/intro
-  - 메모: What is the Model Context Protocol (MCP)?
-
-
-## source 종합 해석
-
-`MCP OAuth 2.1 + PKCE Authorization`는 단일 발표보다 **여러 source가 어떤 관점에서 이 대상을 규정하는가**를 함께 읽을 때 의미가 커진다.
-
-이번 수집에서는 Authorization - Model Context Protocol, Specification - Model Context Protocol, The 2026 MCP Roadmap | Model Context Protocol Blog처럼 출시 공지·문서·평가 신호가 같이 모여, 기능 자체보다 생태계 위치와 운영 전제가 더 중요하다는 점이 드러난다.
-
-함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, MCP 2026 Roadmap & Enterprise Readiness, Claude Code Hooks System가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- 도입 판단 시 기능 목록만 보지 말고, 공식 문서·릴리스 노트·벤치마크가 서로 얼마나 일관되게 같은 메시지를 주는지 확인한다.
-- 비교 후보와의 차이는 API/운영 통합, 성능 수치, 생태계 성숙도 같은 기준으로 정리하는 것이 좋다.
 
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
 - [[model-context-protocol|MCP 2026 Roadmap & Enterprise Readiness]]
 - [[claude-code-hooks-system|Claude Code Hooks System]]
+

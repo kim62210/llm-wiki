@@ -1,23 +1,140 @@
 ---
-title: Long-Horizon Agent Benchmarks (GAIA 2 / SWE-Bench Pro / SWE-EVO)
+title: Long-Horizon Agent Benchmarks (GAIA 2 / SWE-Bench Pro / SWE-EVO / YC-Bench / MLE-Bench)
 category: agents
 page_type: concept
-tags: [agents, concept, long, horizon, agent, benchmarks, agent-architecture]
-sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/long-horizon-agent-benchmarks.md, raw/hot-topics-sources/2026-04-10/034-are-scaling-up-agent-environments-and-evaluations.md, raw/hot-topics-sources/2026-04-10/035-swe-evo-benchmarking-coding-agents-in-long-horizon-software-evolution.md, raw/hot-topics-sources/2026-04-10/036-sota-on-swe-bench-verified-with-inference-time-scaling-and-critic-model.md, raw/hot-topics-sources/2026-04-10/012-introducing-claude-opus-4-5.md, raw/hot-topics-sources/2026-04-10/037-introducing-claude-sonnet-4-5.md]
+tags: [agents, concept, long, horizon, agent, benchmarks, gaia, swe-bench, swe-evo, ycbench, mle-bench]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/long-horizon-agent-benchmarks.md, raw/hot-topics-sources/2026-04-10/034-are-scaling-up-agent-environments-and-evaluations.md, raw/hot-topics-sources/2026-04-10/035-swe-evo-benchmarking-coding-agents-in-long-horizon-software-evolution.md, raw/hot-topics-sources/2026-04-10/036-sota-on-swe-bench-verified-with-inference-time-scaling-and-critic-model.md, raw/hot-topics-sources/2026-04-10/012-introducing-claude-opus-4-5.md, raw/hot-topics-sources/2026-04-10/037-introducing-claude-sonnet-4-5.md, raw/2026-04-20-arxiv-ycbench-long-horizon.md, raw/2026-04-20-arxiv-aibuildai-automl-agent.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-20
 ---
 # Long-Horizon Agent Benchmarks (GAIA 2 / SWE-Bench Pro / SWE-EVO)
 
-이 페이지는 Long-Horizon Agent Benchmarks (GAIA 2 / SWE-Bench Pro / SWE-EVO)를 다룬다. 핵심은 수십~수백 단계, 수십 파일에 걸친 실세계 과제로 에이전트의 지속 추론·도구 사용·환경 상호작용을 평가하는 벤치마크 세대이며, 2026년 4월 시점에 왜 다시 중요해졌는지 정리한다.
+수십~수백 단계, 수십 파일에 걸친 실세계 과제로 에이전트의 지속 추론·도구 사용·환경 상호작용을 평가하는 벤치마크 세대. 단발성 질문-응답 평가에서 "에이전트가 실제 업무를 얼마나 완수하는가"로 패러다임이 이동했다.
 
-## 정의
+## 왜 중요한가
 
-수십~수백 단계, 수십 파일에 걸친 실세계 과제로 에이전트의 지속 추론·도구 사용·환경 상호작용을 평가하는 벤치마크 세대.
+2025년 9월 Meta의 ARE 플랫폼과 GAIA 2가 시간·예산 제약을 도입했고, SWE-EVO가 GPT-5가 SWE-Bench Verified(65%) 대비 21%만 해결한다는 결과로 장기 실행 갭을 폭로했다. 2026년 1분기 모든 주요 랩(lab)이 평가 프레임워크를 장기 실행 중심으로 재정비 중이다.
 
-## 왜 지금 중요한가
+## 벤치마크 생태계 개요
 
-2025년 9월 Meta의 ARE 플랫폼과 GAIA 2가 시간·예산 제약을 도입했고, 2025년 12월 SWE-EVO는 GPT-5가 SWE-Bench Verified(65%) 대비 21%만 해결한다는 결과로 long-horizon 갭을 폭로했으며, 이로 인해 2026년 1분기 모든 주요 lab이 평가 프레임워크를 long-horizon 중심으로 재정비 중이다.
+```mermaid
+flowchart TD
+    Benchmarks[장기 실행 에이전트 벤치마크]
+    Benchmarks --> Web[웹·일반 태스크]
+    Benchmarks --> Coding[코딩 에이전트]
+    Benchmarks --> Research[딥 리서치]
+
+    Web --> GAIA[GAIA / GAIA 2\nMeta ARE 플랫폼]
+    Web --> OSWorld[OSWorld\nGUI 조작 61.4%]
+
+    Coding --> SWEBench[SWE-Bench Verified\nGitHub 이슈 해결]
+    Coding --> SWEBPRO[SWE-Bench Pro\n실제 시니어 개발자 수준]
+    Coding --> SWEBEVO[SWE-EVO\n장기 소프트웨어 진화]
+
+    Research --> BrowseComp[BrowseComp\n복잡 웹 리서치]
+    Research --> DeepResearch[Deep Research 평가\nGAIA 2 기반]
+```
+
+## 주요 벤치마크 비교
+
+| 벤치마크 | 평가 대상 | 난이도 특징 | SOTA (2026-04) |
+|---------|---------|-----------|---------------|
+| SWE-Bench Verified | GitHub 이슈 자동 해결 | 50-200줄 패치 | Claude Opus 4.5: 80.9% |
+| SWE-EVO | 장기 소프트웨어 진화 | 다중 파일, 수백 스텝 | GPT-5: 21% |
+| GAIA 2 / ARE | 시간·예산 제약 태스크 | 실세계 제약 포함 | 미공개 |
+| OSWorld | GUI 조작 에이전트 | 실제 데스크톱 환경 | Claude Sonnet 4.5: 61.4% |
+| BrowseComp | 복잡 웹 리서치 | 다단계 검색·종합 | AgentFold 등 |
+| **YC-Bench** | 1년 startup 시뮬레이션 | 부분 관찰, 수백 턴, adversarial | Claude Opus 4.6: $1.27M |
+| **MLE-Bench** | Kaggle ML 파이프라인 자동화 | end-to-end ML 개발 | AIBuildAI: 63.1% |
+
+## SWE-EVO: 장기 갭 폭로
+
+SWE-EVO(Benchmarking Coding Agents in Long-Horizon Software Evolution)의 핵심 발견:
+
+```
+SWE-Bench Verified 성능 vs SWE-EVO 성능 (GPT-5)
+- SWE-Bench Verified: 65%
+- SWE-EVO: 21%
+- 격차: 44%p
+
+이유: SWE-EVO는 단일 이슈 해결이 아닌
+      수개월에 걸친 소프트웨어 진화 전체를 시뮬레이션
+```
+
+SWE-EVO 태스크는 10-50개 파일이 연관되고, 이전 커밋 히스토리를 이해하며, 다른 모듈에 미치는 영향을 예측해야 한다.
+
+## GAIA 2 / ARE 플랫폼
+
+Meta의 ARE(Agent Runtime Environment) 플랫폼은 GAIA의 확장으로 **실세계 제약**을 도입한다:
+
+- **시간 예산**: 태스크당 최대 실행 시간 제한
+- **비용 예산**: API 호출 비용 상한
+- **환경 다양성**: 웹 브라우저, 터미널, 파일 시스템 통합
+
+단순히 정답을 맞히는 것이 아니라 **제약 안에서 합리적인 결과**를 내는 능력을 평가한다.
+
+## 평가 지표 진화
+
+| 세대 | 지표 | 한계 |
+|------|------|------|
+| 1세대 | 정확도(accuracy) | 단일 답변 평가. 과정 무시 |
+| 2세대 | 패스율(pass@k) | 여러 시도 중 성공률 |
+| 3세대 | 해결율 + 효율 + 비용 | 복합 지표. ARE/GAIA 2 |
+| (현재) 장기 진화 | 코드베이스 전반 영향 평가 | SWE-EVO |
+
+## Claude 모델 성능 (2026-04 기준)
+
+- **Claude Opus 4.5**: SWE-bench Verified 80.9%
+- **Claude Sonnet 4.5**: OSWorld 61.4%, 30시간+ 연속 포커스 작업 지원
+
+이 수치는 장기 실행 에이전트 훈련([[long-horizon-rl-training-for-agents|Multi-Turn RLVR]])과 직결된다.
+
+## 벤치마크가 밝히는 남은 과제
+
+```mermaid
+flowchart LR
+    Challenge[에이전트 한계]
+    Challenge --> Memory[상태 지속성\n세션 간 기억 유지]
+    Challenge --> Context[컨텍스트 관리\n긴 히스토리 처리]
+    Challenge --> Planning[장기 계획\n수백 스텝 조율]
+    Challenge --> Recovery[실패 복구\n백트래킹·재계획]
+    Challenge --> Cost[비용 효율\n제한된 예산 내 해결]
+```
+
+## YC-Bench: 1년 Startup 시뮬레이션 (2026)
+
+YC-Bench(arXiv 2604.01212)는 기존 코딩/태스크 벤치마크와 다른 차원의 장기 실행 능력을 측정한다.
+
+- **시뮬레이션 규모**: 1년 기간, 수백 턴, $200K 초기 자본
+- **핵심 과제**: 직원 관리, 계약 선택, 재정 유지, adversarial client 탐지
+- **12개 모델 평가**: 9개(75%)가 초기 자본도 보존 실패
+- **주요 발견**: adversarial client 미탐지가 파산의 47%. **Scratchpad 사용이 성공의 최강 예측 변수** — 컨텍스트 절단 너머 정보를 명시적으로 보존하는 전략의 중요성을 실증
+
+자세한 내용: [[ycbench-paper]]
+
+## MLE-Bench: ML 파이프라인 자동화 평가 (2026)
+
+MLE-Bench는 Kaggle 스타일의 현실적 ML 과제로 에이전트의 end-to-end ML 엔지니어링 능력을 측정한다.
+
+- **AIBuildAI 기록**: medal rate **63.1%** (리더보드 1위, 2026-03-18 기준)
+- **AIBuildAI 구조**: Manager + Designer + Coder + Tuner 계층적 멀티에이전트
+- **평가 범위**: visual, text, time-series, tabular 4가지 모달리티
+- **의의**: "AI가 AI를 만든다"는 패러다임을 실제 수치로 검증. 기존 AutoML(HPO/NAS 슬라이스) 대비 전체 파이프라인 자동화
+
+자세한 내용: [[aibuildai-paper]]
+
+## 평가 비용 절감: 효율적 벤치마킹
+
+에이전트 벤치마크는 interactive rollout과 도구 사용으로 인해 단일 LLM 호출 평가 대비 수십~수백 배 비싸다. [[efficient-benchmarking-paper|Efficient Benchmarking of AI Agents (2603.23749)]]는 **IRT(Item Response Theory) 영감 필터**로 이 문제를 해결한다.
+
+핵심 방법: pass rate 30-70% 구간의 중간 난이도 태스크만 선별하면, 전체 태스크의 44-70%를 제거해도 에이전트 간 **순위(rank-order)는 안정적으로 유지**된다. Terminal-Bench 2.0과 HAL 7개 벤치마크, scaffold 33개 이상에서 검증. 단, 절대 점수 예측은 불안정하므로 리더보드 목적에만 적합하다. 자세한 내용은 [[item-response-theory-benchmarking|IRT 기반 벤치마크 설계]] 참조.
+
+## 실무 적용 관점
+
+- **에이전트 개발 기준**: SWE-Bench Verified로 기본 코딩 역량 측정 후 SWE-EVO로 장기 실행 역량 확인
+- **성능 해석**: SWE-Bench 점수가 높다고 실무 에이전트로 바로 쓸 수 없음. SWE-EVO 점수를 반드시 병행 확인
+- **비용 예산 설계**: ARE/GAIA 2의 비용 제약 프레임을 프로덕션 에이전트 설계 기준으로 차용
+- **[[agent-memory-systems|메모리 시스템]] 연동**: 장기 벤치마크에서 세션 간 기억 유지 능력이 성패를 가르는 경우 많음
 
 ## 대표 자료
 
@@ -27,88 +144,19 @@ updated: 2026-04-10
 - [Introducing Claude Opus 4.5 (SWE-bench Verified 80.9%)](https://www.anthropic.com/news/claude-opus-4-5)
 - [Introducing Claude Sonnet 4.5 (OSWorld 61.4%, 30+ hour focus)](https://www.anthropic.com/news/claude-sonnet-4-5)
 
-## 해석 포인트
-
-Long-Horizon Agent Benchmarks (GAIA 2 / SWE-Bench Pro / SWE-EVO)은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `arxiv.org×2, anthropic.com×2, openhands.dev×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
-
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 평가셋 범위, 난도 분포, 실제 사용성과의 상관를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 수십~수백 단계, 수십 파일에 걸친 실세계 과제로 에이전트의 지속 추론·도구 사용·환경 상호작용을 평가하는 벤치마크 세대.
-- 왜 중요한가: 2025년 9월 Meta의 ARE 플랫폼과 GAIA 2가 시간·예산 제약을 도입했고, 2025년 12월 SWE-EVO는 GPT-5가 SWE-Bench Verified(65%) 대비 21%만 해결한다는 결과로 long-horizon 갭을 폭로했으며, 이로 인해 2026년 1분기 모든 주요 lab이 평가 프레임워크를 long-horizon 중심으로 재정비 중이다.
-- 직접 수집 원문: 5개
-- 주요 도메인: arxiv.org×2, anthropic.com×2, openhands.dev×1
-
-## 핵심 구조
-
-수십~수백 단계, 수십 파일에 걸친 실세계 과제로 에이전트의 지속 추론·도구 사용·환경 상호작용을 평가하는 벤치마크 세대. 에이전트 토픽은 보통 모델 자체보다 **루프 구조, 상태 관리, 작업 분해, 검증 방식**이 핵심이다. 이번 source 묶음도 `arxiv.org×2, anthropic.com×2, openhands.dev×1`를 오가며 설계 패턴과 구현 사례를 함께 보여 준다.
-
-| 평가 축 | 대표 문서 | 실제로 재는 것 |
-|---|---|---|
-| 환경 설계 | ARE / Gaia2 | 비동기성, 시간/예산 제약, 환경 다양성 |
-| 소프트웨어 진화 | SWE-EVO | 장기 다파일 변경과 지속 추론 |
-| 운영 전략 | OpenHands scaling note | inference-time scaling, critic 구조 |
-| 벤더 release framing | Claude Opus / Sonnet notes | 모델이 어떤 long-horizon 능력으로 포지셔닝되는가 |
-
-## 핵심 포인트
-
-Long-Horizon Agent Benchmarks (GAIA 2 / SWE-Bench Pro / SWE-EVO)는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 이 페이지는 Long-Horizon Agent Benchmarks (GAIA 2 / SWE-Bench Pro / SWE-EVO)를 다룬다. 핵심은 수십~수백 단계, 수십 파일에 걸친 실세계 과제로 에이전트의 지속 추론·도구 사용·환경 상호작용을 평가하는 벤치마크 세대이며, 2026년 4월 시점에 왜 다시 중요해졌는지 정리한다.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
-
-## source로 보면
-
-수집된 source는 anthropic.com×2, arxiv.org×2, openhands.dev×1로 분포한다. 연구 논문과 공식 문서가 함께 있어 원리와 제품화 흐름을 같이 읽을 수 있다.
-
-## 실무 관점
-
-실무에서는 장기 실행, 상태 관리, 실패 복구, 평가 루프를 함께 설계해야 이 토픽이 효과를 낸다. 즉 개별 아이디어보다 에이전트 시스템 전체의 제약 속에서 읽는 것이 중요하다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/long-horizon-agent-benchmarks.md`
-
-### source별 핵심 신호
-
-- **[2509.17158] ARE: Scaling Up Agent Environments and Evaluations** (`arxiv.org`): https://arxiv.org/abs/2509.17158
-  - 메모: We introduce Meta Agents Research Environments (ARE), a research platform for scalable creation of environments, integration of synthetic or real applications, and execution of agentic orchestrations.
-- **[2512.18470] SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios** (`arxiv.org`): https://arxiv.org/abs/2512.18470
-  - 메모: Existing benchmarks for AI coding agents focus on isolated, single-issue tasks such as fixing a bug or adding a small feature.
-- **SOTA on SWE-Bench Verified with Inference-Time Scaling and Critic Model | Nov 12, 2025** (`openhands.dev`): https://openhands.dev/blog/sota-on-swe-bench-verified-with-inference-time-scaling-and-critic-model
-  - 메모: SOTA on SWE-Bench Verified with Inference-Time Scaling and Critic Model
-- **Introducing Claude Opus 4.5 \ Anthropic** (`anthropic.com`): https://www.anthropic.com/news/claude-opus-4-5
-  - 메모: Our newest model, Claude Opus 4.5, is available today. It’s intelligent, efficient, and the best model in the world for coding, agents, and computer use.
-- **Introducing Claude Sonnet 4.5 \ Anthropic** (`anthropic.com`): https://www.anthropic.com/news/claude-sonnet-4-5
-  - 메모: Claude Sonnet 4.5 is the best coding model in the world. It's the strongest model for building complex agents. It’s the best model at using computers. And it shows substantial gains in reasoning and math.
-
-
-## source 종합 해석
-
-이 개념의 핵심은 `수십~수백 단계, 수십 파일에 걸친 실세계 과제로 에이전트의 지속 추론·도구 사용·환경 상호작용을 평가하는 벤치마크 세대.`에 있지만, 실제 의미는 원문 source들이 어떤 병목·trade-off를 반복적으로 강조하는지에서 더 또렷해진다.
-
-예를 들어 source note는 We introduce Meta Agents Research Environments (ARE), a research platform for scalable creation of environments, integration of synthetic or real applications, and execution of agentic orchestrations.
-
-또 다른 source는 Existing benchmarks for AI coding agents focus on isolated, single-issue tasks such as fixing a bug or adding a small feature.
-
-즉, 이 토픽이 중요한 이유는 `2025년 9월 Meta의 ARE 플랫폼과 GAIA 2가 시간·예산 제약을 도입했고, 2025년 12월 SWE-EVO는 GPT-5가 SWE-Bench Verified(65%) 대비 21%만 해결한다는 결과로 long-horizon 갭을 폭로했으며, 이로 인해 2026년 1분기 모든 주요 lab이 평가 프레임워크를 long-horizon 중심으로 재정비 중이다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 ai-hot-topics-2026-04, agent-trees, lethal-trifecta가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- `수십~수백 단계, 수십 파일에 걸친 실세계 과제로 에이전트의 지속 추론·도구 사용·환경 상호작용을 평가하는 벤치마크 세대.`를 실제로 적용할 때는 정의 자체보다 측정 지표와 실패 모드가 무엇인지 같이 봐야 한다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `2025년 9월 Meta의 ARE 플랫폼과 GAIA 2가 시간·예산 제약을 도입했고, 2025년 12월 SWE-EVO는 GPT-5가 SWE-Bench Verified(65%) 대비 21%만 해결한다는 결과로 long-horizon 갭을 폭로했으며, 이로 인해 2026년 1분기 모든 주요 lab이 평가 프레임워크를 long-horizon 중심으로 재정비 중이다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
-
-### 추천 읽기 순서
-
-1. [[swe-evo-paper|SWE-EVO]] — long-horizon coding gap 이해
-2. [[swe-bench-pro|SWE-bench Pro]] — production-like coding benchmark 비교
-3. [[terminal-bench-2-0|Terminal-Bench 2.0]] — terminal interaction 축 보강
-4. [[metr-time-horizon-benchmark|METR Time Horizon Benchmark]] — 시간축 자율성 해석
-
 ## 관련 문서
+- [[ycbench-paper]] -- YC-Bench: 1년 startup 시뮬레이션, adversarial client, scratchpad 기반 성공 패턴
+- [[aibuildai-paper]] -- AIBuildAI: MLE-Bench 63.1%, 계층적 멀티에이전트 ML 자동화
+- [[multi-agent-coding-wave]] -- 멀티에이전트 코딩 웨이브 (2026년 2월)
+- [[gaia-benchmark]] -- GAIA Benchmark
+- [[featbench-paper]] -- FeatBench: Realistic Feature-level Code Generation Evaluation
+- [[evaluation-contamination-dynamic]] -- 평가 데이터 오염과 동적 벤치마크
+- [[agentfly-paper]] -- AgentFly: Fine-tuning LLM Agents without Fine-tuning LLMs
 
 - [[ai-hot-topics-2026-04]]
-- [[agent-trees]]
-- [[lethal-trifecta]]
+- [[agent-trees|Hierarchical Planning with Agent Trees]]
+- [[long-horizon-rl-training-for-agents|Long-Horizon RL Training for Agents]]
+- [[agent-memory-systems|Agent Memory Systems]]
+- [[context-folding|Context Folding & Sub-Trajectory Compression]]
+- [[deep-research-agents-roadmap|Deep Research Agents Roadmap]]
+- [[skywork-deepresearchagent|SkyworkAI DeepResearchAgent]]

@@ -1,17 +1,16 @@
 ---
 title: Agentic Manual Testing
-aliases: ["agentic manual testing"]
+aliases: [agentic manual testing]
 category: applications
 page_type: concept
 tags: [testing, manual-testing, browser-automation, playwright, rodney, showboat]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Agentic Manual Testing
 
-Simon Willison이 [[agentic engineering guide]] Section 3에서 다루는 수동 테스트 자동화 패턴.
+Simon Willison이 [[agentic-engineering-guide]] Section 3에서 다루는 수동 테스트 자동화 패턴.
 
 ## 핵심 원칙
 
@@ -41,13 +40,13 @@ Simon Willison이 [[agentic engineering guide]] Section 3에서 다루는 수동
 
 ### 문제 발견 시
 
-수동 테스트가 문제를 드러내면 → 이후 [[red-green TDD]]로 수정 → 영구적 테스트 커버리지 확보
+수동 테스트가 문제를 드러내면 → 이후 [[red-green-tdd]]로 수정 → 영구적 테스트 커버리지 확보
 
 ## 브라우저 자동화 (Web UI 테스트)
 
 복잡한 웹 UI를 에이전트가 직접 조작하게 하는 것이 가능.
 
-### [[Playwright]]
+### [[playwright-mcp]]
 
 > "Most powerful browser automation tool"
 
@@ -96,20 +95,20 @@ Simon의 논리:
 - 자동 테스트는 **알려진 시나리오**만 커버
 - 수동 테스트는 "뭔가 이상한" 것들을 잡는다
 - 에이전트가 대신 수동 테스트를 할 수 있으므로 이제 부담이 현저히 낮아짐
-- 발견된 문제는 다시 자동 테스트로 굳힌다 ([[red-green TDD]])
+- 발견된 문제는 다시 자동 테스트로 굳힌다 ([[red-green-tdd]])
 
 ## 실무 통합
 
 1. 기능 완성 직후 → "Use rodney to manually test this feature, take screenshots, then fix what you find"
 2. 문제 발견 → 자동 테스트로 고정 → 영구 회귀 방지
-3. Showboat로 테스트 플로우 문서화 → PR에 첨부 → [[anti-patterns in agentic engineering|리뷰어에게 증거 제공]]
+3. Showboat로 테스트 플로우 문서화 → PR에 첨부 → [[anti-patterns|리뷰어에게 증거 제공]]
 
 ## 관련 문서
 
-- [[red-green TDD]]
-- [[first run the tests]]
-- [[Playwright]]
+- [[red-green-tdd]]
+- [[first-run-the-tests]]
+- [[playwright-mcp]]
 - [[Rodney]]
 - [[Showboat]]
-- [[anti-patterns in agentic engineering]]
-- [[agentic engineering guide]]
+- [[anti-patterns]]
+- [[agentic-engineering-guide]]

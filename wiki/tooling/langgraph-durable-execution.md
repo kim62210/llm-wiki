@@ -5,12 +5,11 @@ page_type: summary
 tags: [tooling, summary, langgraph, durable-execution, reliability]
 sources: [raw/recursive-sources/2026-04-10-openai-langgraph/langgraph-durable-execution.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # LangGraph Durable Execution
 
-LangGraph의 durable execution 가이드 요약이다. checkpointer, thread_id, deterministic replay, task wrapping, durability mode를 통해 장기 실행 그래프를 재개 가능한 워크플로우로 만드는 법을 설명한다.
+[[langgraph|LangGraph]]의 durable execution 가이드 요약이다. checkpointer, thread_id, deterministic replay, task wrapping, durability mode를 통해 장기 실행 그래프를 재개 가능한 워크플로우로 만드는 법을 설명한다.
 
 ## 구조도
 
@@ -44,7 +43,7 @@ Durable execution의 핵심은 “중단된 줄 번호에서 이어서 실행”
 ## 실무 설계 포인트
 
 - human-in-the-loop, long-running task, flaky external API처럼 “언젠가 끊길 수밖에 없는” 흐름에는 durable execution이 사실상 필수다.
-- 하지만 기능을 켜는 것만으로 충분하지 않다. 어떤 작업을 task 단위로 분리할지, 어떤 side effect를 idempotent하게 만들지까지 함께 설계해야 한다.
+- 하지만 기능을 켜는 것만으로 충분하지 않다. 어떤 작업을 task 단위로 분리할지, 어떤 side effect를 idempotent하게 만들지까지 함께 설계해야 한다. [[long-running-agent-harnesses|Long-running agent harness]] 관점에서 보면 세션 재개 artifact 설계와 연결된다.
 - 따라서 이 문서는 [[langgraph-persistence|LangGraph Persistence]]와 짝으로 읽어야 한다. persistence는 저장 구조를, durable execution은 재개 규율을 설명한다.
 
 ## 도입 체크리스트

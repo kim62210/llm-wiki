@@ -13,7 +13,7 @@ updated: 2026-04-09
 
 **저자**: Prithvi Rajasekaran (Anthropic Labs) · **발행**: 2026-03-24 · **출처**: [anthropic.com/engineering/harness-design-long-running-apps](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
-[[harness engineering|하네스 엔지니어링]] 시대를 대표하는 Anthropic 공식 엔지니어링 포스트. GAN(Generative Adversarial Networks)에서 영감받은 **generator-evaluator 분리** 패턴으로 Claude가 장시간 고품질 애플리케이션을 자율 구축하도록 만든 실험 기록. 저자는 프론트엔드 디자인 하네스에서 출발해 풀 스택 3-agent 아키텍처로 확장하고, Opus 4.6 릴리스와 함께 하네스를 단순화한 과정을 시간 순서로 공유한다.
+[[harness-engineering|하네스 엔지니어링]] 시대를 대표하는 Anthropic 공식 엔지니어링 포스트. GAN(Generative Adversarial Networks)에서 영감받은 **generator-evaluator 분리** 패턴으로 Claude가 장시간 고품질 애플리케이션을 자율 구축하도록 만든 실험 기록. 저자는 프론트엔드 디자인 하네스에서 출발해 풀 스택 3-agent 아키텍처로 확장하고, Opus 4.6 릴리스와 함께 하네스를 단순화한 과정을 시간 순서로 공유한다.
 
 ## 글의 구조
 
@@ -30,7 +30,7 @@ flowchart TD
 
 두 가지 지속적 실패 모드:
 
-### Context Degradation & [[context anxiety|"Context Anxiety"]]
+### Context Degradation & [[context-anxiety|"Context Anxiety"]]
 
 긴 작업에서 컨텍스트 창이 채워질수록 모델이 일관성을 잃는다. 저자는 특히 **Claude Sonnet 4.5에서 "context anxiety"** 현상을 관찰했다 — 모델이 자신이 컨텍스트 한계에 가까워졌다고 *믿고* 작업을 조기 종료한다.
 
@@ -44,7 +44,7 @@ flowchart TD
 
 리셋은 필수지만 "orchestration complexity, token overhead, and latency"를 추가한다.
 
-### [[self-evaluation bias|Self-Evaluation Bias]]
+### [[self-evaluation-bias|Self-Evaluation Bias]]
 
 에이전트는 자기 작업을 자신 있게 칭찬한다. 품질이 평범할 때도 그렇다. 특히 바이너리 검증이 없는 **주관적 작업(디자인 등)** 에서 심각하다. 해법은 작업 에이전트와 평가 에이전트를 분리하는 것:
 
@@ -52,7 +52,7 @@ flowchart TD
 
 ## 2. 프론트엔드 디자인: 주관적 품질을 채점 가능하게 만들기
 
-[[generator-evaluator architecture|Generator-evaluator 루프]]를 Claude Agent SDK 위에 구축. 4개 채점 기준:
+[[generator-evaluator-architecture|Generator-evaluator 루프]]를 Claude Agent SDK 위에 구축. 4개 채점 기준:
 
 | 기준 | 핵심 질문 |
 |---|---|
@@ -119,7 +119,7 @@ flowchart LR
 - "product depth, functionality, visual design, and code quality" 기준 채점
 - 각 기준 hard threshold; 실패 시 상세 피드백
 
-### [[sprint contracts|Sprint Contracts]]
+### [[sprint-contracts|Sprint Contracts]]
 
 각 sprint 코딩 전, generator와 evaluator가 "sprint contract" 협상 — "done"의 정의와 검증 방법. Generator가 구현 접근법 제안, evaluator가 review, "iterated until they agreed". 고수준 user story와 testable 구현 간 간극을 upfront over-specification 없이 연결.
 
@@ -160,7 +160,7 @@ Claude는 초기에 "a poor QA agent"였다:
 
 > "find the simplest solution possible, and only increase complexity when needed"
 
-저자는 Opus 4.6 릴리스와 함께 **한 번에 한 컴포넌트씩** 제거하는 [[load-bearing harness|load-bearing test]]를 수행.
+저자는 Opus 4.6 릴리스와 함께 **한 번에 한 컴포넌트씩** 제거하는 [[load-bearing-harness|load-bearing test]]를 수행.
 
 ### Opus 4.6가 바꾼 것
 
@@ -215,14 +215,15 @@ Builder는 "ran coherently for over two hours without the sprint decomposition t
 모델이 개선되어도 하네스 디자인 문제는 사라지지 않는다 — **scaffolding이 필요한 경계가 이동할 뿐**. 그 경계의 반대편에는 항상 새로운 불가능한 태스크가 있고, 엔지니어링의 재미는 거기에 있다.
 
 ## 관련 문서
+- [[agent-interrupt-resume]] -- 에이전트 인터럽트/재개 패턴 (Agent Interrupt & Resume)
 
-- [[harness engineering]] — 2026+ 패러다임 전체
-- [[generator-evaluator architecture]] — 이 글이 도입한 핵심 패턴
-- [[context anxiety]] — Sonnet 4.5 failure mode
-- [[self-evaluation bias]] — 분리의 동기
-- [[sprint contracts]] — pre-coding 협상 패턴
-- [[load-bearing harness]] — 하네스 단순화 메타 원칙
-- [[anthropic app harness case study]] — Game Maker + DAW 상세 비교
+- [[harness-engineering]] — 2026+ 패러다임 전체
+- [[generator-evaluator-architecture]] — 이 글이 도입한 핵심 패턴
+- [[context-anxiety]] — Sonnet 4.5 failure mode
+- [[self-evaluation-bias]] — 분리의 동기
+- [[sprint-contracts]] — pre-coding 협상 패턴
+- [[load-bearing-harness]] — 하네스 단순화 메타 원칙
+- [[anthropic-app-harness-case-study]] — Game Maker + DAW 상세 비교
 - [[subagents]] — 관련이지만 다른 동기(컨텍스트 창)에서 출발한 패턴
-- [[harness quadrants]] — Fowler/Böckeler 4사분면 중 "Inferential" 에 해당
-- [[evolution of agentic patterns]] — 3 에라 연대기에서 Era 3
+- [[harness-quadrants]] — Fowler/Böckeler 4사분면 중 "Inferential" 에 해당
+- [[evolution-of-agentic-patterns]] — 3 에라 연대기에서 Era 3

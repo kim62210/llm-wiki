@@ -5,89 +5,103 @@ page_type: concept
 tags: [tooling, concept, git, worktree, isolation]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/git-worktree-isolation.md, raw/hot-topics-sources/2026-04-10/054-common-workflows.md, raw/hot-topics-sources/2026-04-10/051-claude-code-hooks-reference.md, raw/hot-topics-sources/2026-04-10/008-create-custom-subagents.md, raw/hot-topics-sources/2026-04-10/057-cursor-3-0-changelog.md, raw/hot-topics-sources/2026-04-10/052-claude-code-changelog.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # Git Worktree Isolation for Parallel Coding Agents
 
 각 에이전트에게 독립된 git worktree를 할당해 파일 충돌 없이 병렬 작업하게 하는 격리 패턴.
 
+## 개념
+
+`git worktree`는 하나의 git 리포지토리에서 여러 브랜치를 **동시에 서로 다른 디렉토리에** 체크아웃하는 기능이다. 코딩 에이전트 맥락에서는 "에이전트 하나 = worktree 하나 = 독립 브랜치"로 매핑하면 에이전트 간 파일 충돌이 완전히 사라진다.
+
+```mermaid
+flowchart TD
+    Repo[.git 원본 리포지토리] --> Main[main/ - 메인 브랜치]
+    Repo --> WT1[worktrees/feature-auth/ - 에이전트 A]
+    Repo --> WT2[worktrees/fix-cache/ - 에이전트 B]
+    Repo --> WT3[worktrees/refactor-api/ - 에이전트 C]
+
+    Main --> |"공유 Git 오브젝트"| Repo
+    WT1 --> |"독립 작업 트리"| Repo
+    WT2 --> |"독립 작업 트리"| Repo
+    WT3 --> |"독립 작업 트리"| Repo
+```
+
+각 worktree는 자체 작업 디렉토리를 가지지만 `.git` 오브젝트 저장소는 공유한다. 따라서 디스크 공간 낭비 없이 완전한 파일 시스템 격리를 달성한다.
+
+## 기본 명령
+
+```bash
+# worktree 생성
+git worktree add ../worktrees/feature-auth -b feature/auth
+
+# 현재 worktree 목록
+git worktree list
+
+# worktree 제거 (브랜치 작업 완료 후)
+git worktree remove ../worktrees/feature-auth
+```
+
+## Claude Code에서의 지원
+
+Claude Code는 worktree 기반 병렬 에이전트 실행을 공식 지원한다:
+
+- **`--worktree` 플래그**: 서브에이전트 실행 시 자동 worktree 생성
+- **`.claude/worktrees/` 디렉토리**: worktree 구성을 선언적으로 관리
+- **`WorktreeCreate` / `WorktreeRemove` 훅**: worktree 생성·삭제 이벤트에 스크립트 연결
+- **`isolation: worktree`** 서브에이전트 프론트매터: 해당 서브에이전트가 자체 worktree에서 실행됨을 선언
+
+## Cursor 3.0에서의 지원
+
+[[cursor-cloud-agents-and-parallel-worktree-agents|Cursor 3.0]]은 `/worktree` 명령을 코어 기능으로 내장했다. UI에서 명령 하나로 worktree 생성 + 에이전트 할당이 완료된다.
+
+## 병렬 에이전트 격리 전략 비교
+
+| 전략 | 격리 수준 | 설정 복잡도 | 컨텍스트 공유 |
+|---|---|---|---|
+| Git Worktree | 파일 시스템 | 낮음 | Git 오브젝트 공유 |
+| 별도 클론 | 완전 격리 | 중간 | 없음 |
+| microVM / 컨테이너 | OS 수준 | 높음 | 없음 |
+| 단일 디렉토리 | 없음 | 없음 | 완전 공유 (충돌 위험) |
+
+## 실무 패턴
+
+### 패턴 1: 기능 병렬 개발
+```
+main/           <- 안정 브랜치
+worktrees/
+  feature-auth/ <- 에이전트 A: 인증 구현
+  feature-search/ <- 에이전트 B: 검색 구현
+  feature-dashboard/ <- 에이전트 C: 대시보드 구현
+```
+각 에이전트가 완료되면 `git merge` 또는 PR로 통합.
+
+### 패턴 2: best-of-n 경쟁
+동일 태스크를 여러 에이전트가 독립 worktree에서 시도한 후, 평가 기준(테스트 통과, 코드 품질 등)으로 최선 선택.
+
+### 패턴 3: 검토(review) 에이전트 격리
+구현 에이전트의 worktree를 읽기 전용으로 마운트하여 별도 검토 에이전트가 코드를 분석하되 수정하지 못하게 제한.
+
+## 주의사항
+
+- **브랜치 충돌**: 같은 브랜치를 두 worktree에서 체크아웃하면 오류 발생. 각 worktree마다 고유 브랜치 필수.
+- **공유 설정 파일**: `.env`, `settings.json` 등 리포 루트의 공유 파일은 worktree 간에도 공유된다. 에이전트별 설정이 필요하면 worktree 내 오버라이드 파일 사용.
+- **정리(cleanup)**: 작업 완료 후 `git worktree remove`로 정리하지 않으면 스테일(stale) worktree가 누적된다.
+
 ## 왜 중요한가
 
-Claude Code가 `--worktree` 플래그·`.claude/worktrees/`·`WorktreeCreate`/`WorktreeRemove` 훅·`isolation: worktree` 서브에이전트 프론트매터를 정식 지원하고, Cursor 3.0도 `/worktree` 명령을 코어로 흡수하면서 "서브에이전트 하나당 worktree 하나" 패턴이 2026년 표준 병렬 실행 방식으로 굳어졌다.
+Claude Code가 공식 지원하고, Cursor 3.0도 `/worktree` 명령을 코어로 흡수하면서 "서브에이전트 하나당 worktree 하나" 패턴이 2026년 표준 병렬 실행 방식으로 굳어졌다.
 
 ## 대표 레퍼런스
 
-- [Claude Code Common Workflows — Worktrees](https://code.claude.com/docs/en/common-workflows)
+- [Claude Code Common Workflows -- Worktrees](https://code.claude.com/docs/en/common-workflows)
 - [Claude Code Hooks Reference](https://code.claude.com/docs/en/hooks)
 - [Create custom subagents (Claude Code)](https://code.claude.com/docs/en/sub-agents)
 - [Cursor 3.0 Changelog](https://cursor.com/changelog/3-0)
-- [Claude Code Changelog](https://code.claude.com/docs/en/changelog)
-
-## 해석 포인트
-
-Git Worktree Isolation for Parallel Coding Agents은 **모델 능력보다 개발자 경험과 운영 통합면이 중요한 도구 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `code.claude.com×4, cursor.com×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
-
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 각 에이전트에게 독립된 git worktree를 할당해 파일 충돌 없이 병렬 작업하게 하는 격리 패턴.
-- 왜 중요한가: Claude Code가 `--worktree` 플래그·`.claude/worktrees/`·`WorktreeCreate`/`WorktreeRemove` 훅·`isolation: worktree` 서브에이전트 프론트매터를 정식 지원하고, Cursor 3.0도 `/worktree` 명령을 코어로 흡수하면서 "서브에이전트 하나당 worktree 하나" 패턴이 2026년 표준 병렬 실행 방식으로 굳어졌다.
-- 직접 수집 원문: 5개
-- 주요 도메인: code.claude.com×4, cursor.com×1
-
-## 핵심 메커니즘
-
-각 에이전트에게 독립된 git worktree를 할당해 파일 충돌 없이 병렬 작업하게 하는 격리 패턴. 이 유형의 topic은 보통 하나의 제품보다 **반복 가능한 패턴 / 평가 기준 / 설계 trade-off**로 읽는 편이 유용하다. 이번 source 묶음에서도 `code.claude.com, cursor.com`가 함께 나오면서 개념, 구현, 평가가 연결되어 있다.
-
-## 핵심 포인트
-
-Git Worktree Isolation for Parallel Coding Agents는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 각 에이전트에게 독립된 git worktree를 할당해 파일 충돌 없이 병렬 작업하게 하는 격리 패턴.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
-
-## source로 보면
-
-수집된 source는 code.claude.com×4, cursor.com×1로 분포한다. source 구성이 비교적 고르게 분포해 허브형 개요 문서로 읽기 좋다.
-
-## 실무 관점
-
-도구/프레임워크 페이지는 기능 목록보다 생태계 위치가 중요하다. 어떤 모델·런타임·개발 흐름과 잘 맞는지, 그리고 팀 워크플로우에 어떤 경계 조건을 추가하는지까지 같이 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/git-worktree-isolation.md`
-
-### source별 핵심 신호
-
-- **Common workflows - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/common-workflows
-  - 메모: This page covers practical workflows for everyday development: exploring unfamiliar code, debugging, refactoring, writing tests, creating PRs, and managing sessions.
-- **Hooks reference - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/hooks
-  - 메모: Hooks are user-defined shell commands, HTTP endpoints, or LLM prompts that execute automatically at specific points in Claude Code’s lifecycle.
-- **Create custom subagents - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/sub-agents
-  - 메모: Create and use specialized AI subagents in Claude Code for task-specific workflows and improved context management.
-- **New Cursor Interface · Cursor** (`cursor.com`): https://cursor.com/changelog/3-0
-  - 메모: This allows you to give more precise feedback and iterate faster by pointing the agent to exactly the part of the interface you're referring to.
-- **Changelog - Claude Code Docs** (`code.claude.com`): https://code.claude.com/docs/en/changelog
-  - 메모: This page is generated from the CHANGELOG.md on GitHub.Run
-
-
-## source 종합 해석
-
-예를 들어 source note는 This page covers practical workflows for everyday development: exploring unfamiliar code, debugging, refactoring, writing tests, creating PRs, and managing sessions.
-
-또 다른 source는 Hooks are user-defined shell commands, HTTP endpoints, or LLM prompts that execute automatically at specific points in Claude Code’s lifecycle.
-
-즉, 이 토픽이 중요한 이유는 `Claude Code가 --worktree 플래그·.claude/worktrees/·WorktreeCreate/WorktreeRemove 훅·isolation: worktree 서브에이전트 프론트매터를 정식 지원하고, Cursor 3.0도 /worktree 명령을 코어로 흡수하면서 "서브에이전트 하나당 worktree 하나" 패턴이 2026년 표준 병렬 실행 방식으로 굳어졌다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Cursor Cloud Agents & Parallel Worktree Agents, Firecracker/microVM Sandboxes for Agent Code Execution가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `Claude Code가 --worktree 플래그·.claude/worktrees/·WorktreeCreate/WorktreeRemove 훅·isolation: worktree 서브에이전트 프론트매터를 정식 지원하고, Cursor 3.0도 /worktree 명령을 코어로 흡수하면서 "서브에이전트 하나당 worktree 하나" 패턴이 2026년 표준 병렬 실행 방식으로 굳어졌다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
 
 ## 관련 문서
 
-- [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
 - [[cursor-cloud-agents-and-parallel-worktree-agents|Cursor Cloud Agents & Parallel Worktree Agents]]
-- [[microvm-agent-sandboxes|Firecracker/microVM Sandboxes for Agent Code Execution]]
+- [[subagents|Subagents & Multi-Agent Orchestration]]
+- [[claude-code-hooks-system|Claude Code Hooks System]]

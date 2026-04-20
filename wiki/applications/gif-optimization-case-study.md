@@ -1,17 +1,16 @@
 ---
 title: "GIF Optimization with WebAssembly — Case Study"
-aliases: ["gif optimization case study", "GIF optimization case study"]
+aliases: [gif optimization case study, GIF optimization case study]
 category: applications
 page_type: case-study
 tags: [case-study, wasm, gifsicle, claude-code, prompts]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # GIF Optimization with WebAssembly — Case Study
 
-Simon Willison이 [[agentic engineering guide]] Section 5 "Annotated Prompts"에 실은 실전 사례. [[Claude Code]]에게 Gifsicle을 WebAssembly로 컴파일하고 브라우저 인터페이스를 만들게 하는 과정을 주석 달린 프롬프트로 보여준다.
+Simon Willison이 [[agentic-engineering-guide]] Section 5 "Annotated Prompts"에 실은 실전 사례. [[claude-code]]에게 Gifsicle을 WebAssembly로 컴파일하고 브라우저 인터페이스를 만들게 하는 과정을 주석 달린 프롬프트로 보여준다.
 
 ## 목표
 
@@ -49,11 +48,11 @@ WASM 컴파일은 Emscripten 툴체인 작업이 필요하다. Simon의 관찰:
 
 ### 4. 과소명세(Under-specification)
 
-Simon은 세부 설정을 과도하게 지정하지 않는다. Claude의 "적절한 기본값 판단 능력"을 믿고 맡긴다. 이는 [[hoard things you know how to do|기존 도구 패턴의 재사용]]과도 연결된다.
+Simon은 세부 설정을 과도하게 지정하지 않는다. Claude의 "적절한 기본값 판단 능력"을 믿고 맡긴다. 이는 [[hoard-things-you-know-how-to-do|기존 도구 패턴의 재사용]]과도 연결된다.
 
 ## 테스트
 
-Simon은 브라우저 테스트 단계에서 `uvx rodney --help`를 실행하게 해 [[Rodney]]를 설치/활용하게 했다. 세션 transcript를 보면 Claude가 **CSS 이슈를 스스로 식별하고 수정**하는 모습이 나온다 — [[agentic manual testing|에이전트에 의한 수동 테스트]]의 실전 예시.
+Simon은 브라우저 테스트 단계에서 `uvx rodney --help`를 실행하게 해 [[Rodney]]를 설치/활용하게 했다. 세션 transcript를 보면 Claude가 **CSS 이슈를 스스로 식별하고 수정**하는 모습이 나온다 — [[agentic-manual-testing|에이전트에 의한 수동 테스트]]의 실전 예시.
 
 ## Follow-up 프롬프트
 
@@ -76,7 +75,7 @@ Simon은 브라우저 테스트 단계에서 `uvx rodney --help`를 실행하게
 - **크레딧/라이선스를 지시하라** — 에이전트는 시키면 잘 지킨다
 - **Follow-up으로 세부 조정** — 한 번에 모든 것을 지시하지 않는다
 
-## [[code is cheap]]과의 연결
+## [[code-is-cheap]]과의 연결
 
 Simon이 이 사례에서 재확인하는 원칙:
 > "Writing code is cheap now... providing testing capabilities significantly improves agent performance during development."
@@ -85,10 +84,10 @@ Simon이 이 사례에서 재확인하는 원칙:
 
 ## 관련 문서
 
-- [[code is cheap]]
-- [[hoard things you know how to do]]
-- [[agentic manual testing]]
+- [[code-is-cheap]]
+- [[hoard-things-you-know-how-to-do]]
+- [[agentic-manual-testing]]
 - [[Rodney]]
-- [[Claude Code]]
-- [[prompts library]]
-- [[agentic engineering guide]]
+- [[claude-code]]
+- [[prompts-library]]
+- [[agentic-engineering-guide]]

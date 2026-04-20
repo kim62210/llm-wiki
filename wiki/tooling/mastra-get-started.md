@@ -5,12 +5,11 @@ page_type: summary
 tags: [tooling, summary, mastra, quickstart, typescript]
 sources: [raw/recursive-sources/2026-04-10-baml-instructor-vercel-mastra/mastra-get-started.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # Mastra Get Started
 
-Mastra 공식 docs의 get started 페이지 요약이다. TypeScript 기반 agent·workflow 프레임워크로서 Mastra가 어떤 출발점을 제공하는지 정리한다.
+Mastra 공식 docs의 get started 페이지 요약이다. [[vercel-ai-sdk|TypeScript]] 기반 [[coding-agent|agent]]·[[langgraph-quickstart|workflow]] 프레임워크로서 Mastra가 어떤 출발점을 제공하는지 정리한다.
 
 ## 구조도
 
@@ -60,4 +59,3 @@ Mastra docs의 출발점은 단일 API 설명보다 “어떤 종류의 agent/wo
 | 출발점 | 빠른 quickstart + framework integration | Vercel AI SDK보다 더 framework-like한 인상 |
 | 개발 경험 | 앱 유형 중심 onboarding | 단일 primitive보다 전체 app composition 지향 |
 | 도입 판단 | 어떤 앱을 만들지 먼저 정함 | TS agent stack 선택 시 Mastra/AI SDK 비교에 유용 |
-

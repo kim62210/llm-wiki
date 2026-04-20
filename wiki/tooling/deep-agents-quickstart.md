@@ -5,9 +5,8 @@ page_type: summary
 tags: [tooling, summary, deep-agents, quickstart, langgraph]
 sources: [raw/recursive-sources/2026-04-10-pydantic-deepagents/deep-agents-quickstart.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # Deep Agents Quickstart
 
 Deep Agents의 공식 quickstart 요약이다. planning, filesystem, subagents가 결합된 deep agent를 가장 짧게 실행하는 흐름을 다룬다.
@@ -41,6 +40,17 @@ Deep Agents quickstart는 단순 챗봇 예제가 아니라, 복잡한 다단계
 - quickstart를 따라 하면서 가장 먼저 확인해야 할 것은 모델 품질보다 sandbox/filesystem 경계다. 실제 운영 리스크가 여기서 먼저 드러난다.
 - 또한 streaming 지원은 장기 작업 가시성을 높이므로, UI나 ops console과 연결할 여지가 크다.
 - 이 문서는 이후 [[deep-agents-subagents|Deep Agents Subagents]], [[deep-agents-memory|Deep Agents Memory]], [[deep-agents-production|Deep Agents Going to Production]]으로 내려가기 위한 입문 경로다.
+
+## 원문이 다루는 흐름
+
+원문은 대체로 `Local: Ollama must be running on your machine` → `Cloud: Set your Ollama API key for hosted inference` → `Set the API key for your provider` → `System prompt to steer the agent to be an expert researcher` → ``internet_search`` 순서로 전개된다. 따라서 `Deep Agents Quickstart` 페이지도 세부 API 목록보다 **입문 → 구조 이해 → 운영 확장**의 흐름으로 읽는 편이 좋다.
+
+- 따라가야 할 순서: Local: Ollama must be running on your machine, Cloud: Set your Ollama API key for hosted inference, Set the API key for your provider, System prompt to steer the agent to be an expert researcher, `internet_search`
+- 위키에 남겨야 할 축: 입문 경로, 핵심 구조, 다음에 읽을 세부 문서
+
+## source 메모
+
+- **Quickstart - Docs by LangChain** — snapshot: `raw/recursive-sources/2026-04-10-pydantic-deepagents/deep-agents-quickstart.md` · source: https://docs.langchain.com/oss/python/deepagents/quickstart · 볼 섹션: Local: Ollama must be running on your machine, Cloud: Set your Ollama API key for hosted inference, Set the API key for your provider, System prompt to steer the agent to be an expert researcher
 
 ## 관련 문서
 

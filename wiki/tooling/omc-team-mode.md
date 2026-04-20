@@ -1,15 +1,14 @@
 ---
 title: OMC Team Mode
-aliases: ["OMC Team Mode"]
+aliases: [OMC Team Mode]
 category: tooling
 page_type: project-internal
 project: oh-my-claudecode
 tags: [omc, team, pipeline, orchestration, canonical]
 sources: [raw/2026-04-09-omc-README.md, raw/2026-04-09-omc-AGENTS.md, raw/2026-04-09-omc-ARCHITECTURE.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC Team Mode
 
 > OMC v4.1.7부터의 **canonical 오케스트레이션 표면**. `swarm` 키워드를 대체한 공식 다중 에이전트 표준.
@@ -22,7 +21,7 @@ v4.1.7부터 legacy `swarm` 키워드·스킬은 제거됨. `team`만 사용.
 
 ## 호출 방법
 
-### In-session (Claude Code 내부)
+### In-session ([[claude-code|Claude Code]] 내부)
 
 ```bash
 /team 3:executor "fix all TypeScript errors"
@@ -45,7 +44,7 @@ omc team shutdown auth-review
 
 ## 왜 팀 키워드는 자동 감지 안 되나
 
-`team` 키워드는 [[OMC Magic Keyword]] 감지 대상이 **아니다**. 이유는 **무한 재귀 방지**: 팀 모드 안에서 매직 키워드 감지가 또 `team`을 트리거하면 worker가 계속 spawn되며 폭주한다.
+`team` 키워드는 [[omc-magic-keyword]] 감지 대상이 **아니다**. 이유는 **무한 재귀 방지**: 팀 모드 안에서 매직 키워드 감지가 또 `team`을 트리거하면 worker가 계속 spawn되며 폭주한다.
 
 따라서 반드시 `/team` 슬래시 명령이나 `omc team` CLI로 명시 호출해야 한다.
 
@@ -131,7 +130,7 @@ stateDiagram-v2
 ## 워커 수 지정 문법
 
 ```bash
-/team <N>:<agent-type> "<task description>"
+/team <N>:<[[coding-agent|agent]]-type> "<task description>"
 ```
 
 예:
@@ -230,9 +229,10 @@ Team/Swarm 워커 시작 시 **shared agentType**과 **shared launch-arg set** �
 
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Execution Modes]]
-- [[OMC Ultrawork]]
-- [[OMC Autopilot]]
-- [[OMC Magic Keyword]]
-- [[Multi-Agent Orchestration]]
+- [[oh-my-claudecode]]
+- [[omc-execution-modes]]
+- [[omc-ultrawork]]
+- [[omc-autopilot]]
+- [[omc-magic-keyword]]
+- [[multi-agent-orchestration]]
+

@@ -5,9 +5,8 @@ page_type: summary
 tags: [applications, summary, models, comparison, 2026-04]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/claude-opus-4-6.md, raw/hot-topics-sources/2026-04-10/topics/gpt-5-4.md, raw/hot-topics-sources/2026-04-10/topics/gemini-3-1-pro.md, raw/hot-topics-sources/2026-04-10/topics/qwen3-6-plus.md, raw/hot-topics-sources/2026-04-10/topics/kimi-k2-5.md, raw/hot-topics-sources/2026-04-10/topics/minimax-m2-5.md, raw/hot-topics-sources/2026-04-10/topics/glm-5-1.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-13
 ---
-
 # 2026년 4월 Frontier Model 비교
 
 2026년 4월 시점 주요 frontier 모델을 **성능 수치 그 자체보다 어떤 작업에 더 잘 맞는가** 중심으로 비교한 summary다.
@@ -48,4 +47,3 @@ Opus / GPT 계열은 최고 성능과 통합 완성도에서 강하고, Qwen / M
 - [[terminal-bench-2-0|Terminal-Bench 2.0]]
 - [[arc-agi-2|ARC-AGI-2]]
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
-

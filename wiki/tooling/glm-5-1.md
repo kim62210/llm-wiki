@@ -6,91 +6,92 @@ project: GLM-5.1
 tags: [tooling, entity, glm, model-releases-and-benchmarks]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/glm-5-1.md, raw/hot-topics-sources/2026-04-10/140-zai-org-glm-5-1-hugging-face.md, raw/hot-topics-sources/2026-04-10/141-glm-5-1-collection-hugging-face.md, raw/hot-topics-sources/2026-04-10/142-glm-5-1-unsloth-documentation.md, raw/hot-topics-sources/2026-04-10/143-swe-bench-pro-leaderboard-scale-labs.md, raw/hot-topics-sources/2026-04-10/144-zai-org-glm-5-hugging-face.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # GLM-5.1
 
-이 페이지는 GLM-5.1를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 2026년 4월 Z.ai(구 Zhipu)가 공개한 754B MoE 오픈소스 에이전틱 엔지니어링 모델이기 때문이다.
-
-## 정의
-
 2026년 4월 Z.ai(구 Zhipu)가 공개한 754B MoE 오픈소스 에이전틱 엔지니어링 모델.
-
-## 왜 지금 중요한가
-
-2026년 4월 7일 MIT 라이선스로 공개되어 SWE-bench Pro 58.4점으로 GPT-5.4(57.7)와 Claude Opus 4.6(57.3)을 꺾고 오픈소스 최초 1위에 올랐으며, 8시간 장시간 자율 코딩과 수백 라운드 반복 RL 튜닝이 핵심이다.
 
 ## 개요
 
-이 페이지는 **GLM-5.1** 자체를 지속적으로 누적·갱신하기 위한 허브 페이지다.
+GLM-5.1은 중국 AI 기업 Z.ai(前 Zhipu AI)가 2026년 4월 7일 MIT 라이선스로 공개한 대규모 언어 모델이다. 총 754B 파라미터의 MoE(Mixture of Experts) 아키텍처를 채택했으며, 에이전틱 코딩에 특화된 장기 자율 실행 능력을 핵심 강점으로 내세운다.
+
+## 핵심 사양
+
+| 항목 | 값 |
+|---|---|
+| 총 파라미터 | 754B (MoE) |
+| 라이선스 | MIT (완전 오픈소스) |
+| 공개일 | 2026년 4월 7일 |
+| SWE-bench Pro 점수 | 58.4점 (오픈소스 최초 1위) |
+| 주요 특징 | 8시간 장시간 자율 코딩, 수백 라운드 RL 튜닝 |
+
+[교차검증 필요] 활성화 파라미터 수, 정확한 컨텍스트 길이는 공식 HuggingFace 모델 카드에서 확인 권장.
+
+## MoE 아키텍처 특성
+
+```mermaid
+flowchart LR
+    Input[입력] --> SharedLayers[공유 레이어 Attention]
+    SharedLayers --> Router[Expert Router]
+    Router --> |"활성화"| E1[Expert 그룹 1]
+    Router --> |"활성화"| E2[Expert 그룹 2]
+    Router --> |"비활성화"| EN[Expert 그룹 N...]
+    E1 --> Output[출력]
+    E2 --> Output
+```
+
+754B 전체 파라미터 중 추론 시 일부 expert만 활성화하여 실제 연산량을 줄인다. 이는 모델 크기 대비 실용적인 추론 비용을 달성하는 MoE의 핵심 이점이다.
+
+## 에이전틱 코딩 특화 설계
+
+GLM-5.1의 차별점은 단순 코드 생성이 아닌 **장기 자율 실행(long-horizon autonomous coding)**이다:
+
+- **8시간 자율 코딩**: 단발 생성이 아니라 실제 소프트웨어 개발 사이클(분석 -> 구현 -> 테스트 -> 디버깅)을 자율 수행
+- **수백 라운드 RL 튜닝**: 단순 SFT(Supervised Fine-Tuning)를 넘어 강화학습(RL)으로 에이전틱 행동을 반복 최적화
+- **도구 사용 능력**: 코드 실행, 파일 조작, 웹 검색 등 에이전트 도구 체인 운용
+
+## SWE-bench Pro 성과
+
+2026년 4월 기준 SWE-bench Pro 리더보드에서 오픈소스 최초 1위를 기록했다. 비교:
+
+| 모델 | SWE-bench Pro | 상태 |
+|---|---|---|
+| GLM-5.1 | 58.4점 | 오픈소스 1위 |
+| GPT-5.4 | 57.7점 | 상용 |
+| [[claude-opus-4-6|Claude Opus 4.6]] | 57.3점 | 상용 |
+
+[교차검증 필요] 리더보드는 시시각각 변동하므로 [Scale Labs 공식 리더보드](https://labs.scale.com/leaderboard/swe_bench_pro_public)에서 최신 수치 확인 필요.
+
+## MIT 라이선스의 의미
+
+상용 폐쇄 모델(GPT-5.4, Claude Opus 4.6)과 달리 MIT 라이선스는 다음을 허용한다:
+- 로컬 호스팅 및 상업적 사용
+- 모델 가중치 수정 및 재배포
+- 사내 보안 요구사항이 있는 기업 도입
+
+754B 규모 모델을 로컬 실행하려면 대규모 GPU 인프라가 필요하지만, [[교차검증 필요] Unsloth 등 양자화 도구를 통해 소비자급 하드웨어에서도 실험 가능한 버전 제공을 검토 중이라고 알려져 있다.
+
+## 중국 빅테크 오픈소스 경쟁
+
+[[qwen3-6-plus|Qwen3.6-Plus]](Alibaba)와 GLM-5.1(Z.ai)은 중국 빅테크 두 진영의 플래그십 경쟁을 보여준다:
+
+| 항목 | GLM-5.1 | Qwen3.6-Plus |
+|---|---|---|
+| 라이선스 | MIT (완전 오픈소스) | 상용 API |
+| 컨텍스트 | [교차검증 필요] | 1M 토큰 |
+| 강점 | 에이전틱 코딩 | 멀티모달, Always-on Reasoning |
+| 접근 방식 | 오픈소스 생태계 | 클라우드 API |
 
 ## 대표 자료
 
-- [zai-org/GLM-5.1 — Hugging Face](https://huggingface.co/zai-org/GLM-5.1)
-- [GLM-5.1 Collection — Hugging Face](https://huggingface.co/collections/zai-org/glm-51)
-- [GLM-5.1 — Unsloth Documentation](https://unsloth.ai/docs/models/glm-5.1)
-- [SWE-Bench Pro Leaderboard — Scale Labs](https://labs.scale.com/leaderboard/swe_bench_pro_public)
-- [zai-org GLM-5 — Hugging Face](https://huggingface.co/zai-org/GLM-5)
-
-## 해석 포인트
-
-GLM-5.1은 단순한 제품 소개보다 **모델 능력보다 개발자 경험과 운영 통합면이 중요한 도구 축** 으로 읽는 편이 유용하다. 이번 source 묶음에서도 `huggingface.co×3, unsloth.ai×1, labs.scale.com×1`처럼 연구·문서·구현체 신호가 함께 모여 있어, 단일 발표보다 생태계 위치를 같이 봐야 한다.
-
-실무에서는 이 엔티티를 '최신인가?'보다 **어떤 운영 전제와 통합면을 요구하는가**로 평가해야 한다. 즉 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성 같은 기준으로 다른 대안과 비교해야 실제 도입 판단에 도움이 된다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 2026년 4월 Z.ai(구 Zhipu)가 공개한 754B MoE 오픈소스 에이전틱 엔지니어링 모델.
-- 왜 중요한가: 2026년 4월 7일 MIT 라이선스로 공개되어 SWE-bench Pro 58.4점으로 GPT-5.4(57.7)와 Claude Opus 4.6(57.3)을 꺾고 오픈소스 최초 1위에 올랐으며, 8시간 장시간 자율 코딩과 수백 라운드 반복 RL 튜닝이 핵심이다.
-- 직접 수집 원문: 5개
-- 주요 도메인: huggingface.co×3, unsloth.ai×1, labs.scale.com×1
-
-## 핵심 포인트
-
-GLM-5.1는 현재 시점에서 하나의 제품/모델/프레임워크 허브로 읽는 편이 맞다. 기본 정의는 이 페이지는 GLM-5.1를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 2026년 4월 Z.ai(구 Zhipu)가 공개한 754B MoE 오픈소스 에이전틱 엔지니어링 모델이기 때문이다.이며, 직접 수집한 source 5건은 huggingface.co×3, labs.scale.com×1, unsloth.ai×1처럼 여러 채널에 걸쳐 분포한다.
-
-## source로 보면
-
-수집된 source는 huggingface.co×3, labs.scale.com×1, unsloth.ai×1로 분포한다. source 구성이 비교적 고르게 분포해 허브형 개요 문서로 읽기 좋다.
-
-## 실무 관점
-
-도구/프레임워크 페이지는 기능 목록보다 생태계 위치가 중요하다. 어떤 모델·런타임·개발 흐름과 잘 맞는지, 그리고 팀 워크플로우에 어떤 경계 조건을 추가하는지까지 같이 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/glm-5-1.md`
-
-### source별 핵심 신호
-
-- **zai-org/GLM-5.1 · Hugging Face** (`huggingface.co`): https://huggingface.co/zai-org/GLM-5.1
-  - 메모: GLM-5.1 is our next-generation flagship model for agentic engineering, with significantly stronger coding capabilities than its predecessor.
-- **GLM-5.1 - a zai-org Collection** (`huggingface.co`): https://huggingface.co/collections/zai-org/glm-51
-  - 메모: Text Generation • 754B•Updated 1 day ago• 8.47k•• 850
-- **GLM-5.1 — Unsloth Documentation** (`unsloth.ai`): https://unsloth.ai/docs/models/glm-5.1
-  - 메모: GLM-5.1 is Z.ai’s new open model. Compared with , it delivers major improvements in coding, agentic tool use, reasoning, role-play, long-horizon agentic tasks, and overall chat quality.
-- **SWE-Bench Pro Leaderboard AI Coding Benchmark (Public Dataset) | Scale** (`labs.scale.com`): https://labs.scale.com/leaderboard/swe_bench_pro_public
-  - 메모: SWE-Bench Pro is a benchmark designed to provide a rigorous and realistic evaluation of AI agents for software engineering.
-- **zai-org/GLM-5 · Hugging Face** (`huggingface.co`): https://huggingface.co/zai-org/GLM-5
-  - 메모: We are launching GLM-5, targeting complex systems engineering and long-horizon agentic tasks.
-
-
-## source 종합 해석
-
-`GLM-5.1`는 단일 발표보다 **여러 source가 어떤 관점에서 이 대상을 규정하는가**를 함께 읽을 때 의미가 커진다.
-
-이번 수집에서는 zai-org/GLM-5.1 · Hugging Face, GLM-5.1 - a zai-org Collection, GLM-5.1 — Unsloth Documentation처럼 출시 공지·문서·평가 신호가 같이 모여, 기능 자체보다 생태계 위치와 운영 전제가 더 중요하다는 점이 드러난다.
-
-함께 읽을 문서로는 ai-hot-topics-2026-04, minimax-m2-5, qwen3-6-plus가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- 도입 판단 시 기능 목록만 보지 말고, 공식 문서·릴리스 노트·벤치마크가 서로 얼마나 일관되게 같은 메시지를 주는지 확인한다.
-- 비교 후보와의 차이는 API/운영 통합, 성능 수치, 생태계 성숙도 같은 기준으로 정리하는 것이 좋다.
+- [zai-org/GLM-5.1 -- Hugging Face](https://huggingface.co/zai-org/GLM-5.1)
+- [GLM-5.1 Collection -- Hugging Face](https://huggingface.co/collections/zai-org/glm-51)
+- [GLM-5.1 -- Unsloth Documentation](https://unsloth.ai/docs/models/glm-5.1)
+- [SWE-Bench Pro Leaderboard -- Scale Labs](https://labs.scale.com/leaderboard/swe_bench_pro_public)
 
 ## 관련 문서
 
-- [[ai-hot-topics-2026-04]]
-- [[minimax-m2-5]]
-- [[qwen3-6-plus]]
+- [[qwen3-6-plus|Qwen3.6-Plus]]
+- [[claude-opus-4-6|Claude Opus 4.6]]
+- [[long-horizon-agent-benchmarks|Long-Horizon Agent Benchmarks]]
