@@ -5,19 +5,62 @@ page_type: concept
 tags: [training, concept, scaling, laws, training-and-post-training]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/rl-scaling-laws.md, raw/hot-topics-sources/2026-04-10/286-the-art-of-scaling-reinforcement-learning-compute-for-llms.md, raw/hot-topics-sources/2026-04-10/287-how-to-scale-rl.md, raw/hot-topics-sources/2026-04-10/288-scaling-laws-for-robotics-and-rl-not-quite-yet.md, raw/hot-topics-sources/2026-04-10/289-scaling-laws-for-value-based-rl.md, raw/hot-topics-sources/2026-04-10/290-what-comes-next-with-reinforcement-learning.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # RL Scaling Laws (ScaleRL)
 
-이 페이지는 RL Scaling Laws (ScaleRL)를 다룬다. 핵심은 RL 컴퓨트 규모에 따른 성능을 예측 가능한 곡선으로 모델링하는 방법론이며, 2026년 4월 시점에 왜 다시 중요해졌는지 정리한다.
+강화학습(RL) 컴퓨트 규모에 따른 성능을 예측 가능한 곡선으로 모델링하는 방법론. 사전학습(pre-training)에서 성립한 스케일링 법칙(scaling laws)을 포스트 트레이닝(post-training) RL 단계로 확장한다.
 
-## 정의
+## 왜 중요한가
 
-RL 컴퓨트 규모에 따른 성능을 예측 가능한 곡선으로 모델링하는 방법론.
+Chinchilla 이후 사전학습 스케일링 법칙은 업계 표준이 됐지만, RL 포스트 트레이닝에서는 "얼마나 오래 훈련하면 얼마나 나아지는가"를 예측하는 공식이 없었다. Meta 주도의 40만 GPU-시간 규모 연구가 RL을 "예술"에서 "과학"으로 전환시키며 2026년 포스트 트레이닝 연구의 핵심 프레임워크로 자리잡았다.
 
-## 왜 지금 중요한가
+## RL 스케일링의 주요 축
 
-Meta 주도의 40만 GPU-시간 규모 연구가 RL을 "예술"에서 "과학"으로 전환시키며, 2026년 post-training 연구의 핵심 프레임워크로 자리잡고 있다.
+```mermaid
+flowchart TD
+    RL스케일링[RL 스케일링 축]
+    RL스케일링 --> Compute[컴퓨트\n더 많은 GPU-시간]
+    RL스케일링 --> ModelSize[모델 크기\n파라미터 수]
+    RL스케일링 --> EnvSteps[환경 스텝\n롤아웃 수]
+    RL스케일링 --> RewardQuality[보상 품질\n검증기 정확도]
+    Compute --> PowerLaw[멱함수 곡선]
+    ModelSize --> PowerLaw
+    EnvSteps --> PowerLaw
+    RewardQuality --> Saturation[수확 체감]
+```
+
+RL 스케일링은 단순히 컴퓨트를 늘리는 것이 아니라 네 축의 균형을 맞추는 문제다.
+
+## 사전학습 vs RL 스케일링 차이
+
+| 항목 | 사전학습 스케일링 | RL 스케일링 |
+|------|-----------------|------------|
+| 데이터 | 토큰 수 | 환경 스텝(롤아웃) 수 |
+| 손실 함수 | 교차 엔트로피 | 보상 기대값 |
+| 법칙 성립 조건 | 비교적 명확 | 태스크·보상 함수 의존성 높음 |
+| 수확 체감 시점 | 예측 가능 | 태스크별 상이 |
+| 로봇공학 적용 | - | 아직 불확실 (2025 기준) |
+
+## 핵심 발견
+
+- **멱함수 관계**: 컴퓨트를 $C$ 배 늘릴 때 성능은 $C^\alpha$ ($\alpha < 1$) 비율로 향상. 수확 체감 존재
+- **보상 품질이 상한**: 보상 함수(검증기)가 부정확하면 컴퓨트를 아무리 늘려도 효과 없음
+- **가치 기반 RL**: 가치 함수(value function) 크기와 정책(policy) 크기를 별도로 스케일해야 최적
+- **로봇공학**: 연속 행동 공간(continuous action space)에서는 LLM RL과 다른 스케일링 거동 보임 (2025 기준 법칙 불명확)
+
+## 실무 적용 관점
+
+- **훈련 예산 배분**: RL 스케일링 곡선으로 "추가 컴퓨트 투자 대비 기대 성능 향상" 사전 추정 가능
+- **조기 중단 기준**: 멱함수 곡선에서 수확 체감 진입 시점을 탐지해 불필요한 GPU 소비 방지
+- **보상 설계 우선**: 검증기 정확도가 성능 상한을 결정하므로 컴퓨트 확장 전 보상 함수 품질 점검 필수
+- **모델 크기 × 컴퓨트 균형**: 소형 모델에 과도한 RL 컴퓨트 투자보다 모델 크기를 먼저 확보하는 것이 효율적
+
+## 미해결 문제
+
+- 멀티 에이전트(multi-agent) 설정에서의 스케일링 거동
+- 도구 사용(tool-use) 에이전트에 특화된 보상 스케일링
+- 로봇공학에서의 RL 스케일링 (2025 기준 아직 초기)
 
 ## 대표 자료
 
@@ -27,74 +70,10 @@ Meta 주도의 40만 GPU-시간 규모 연구가 RL을 "예술"에서 "과학"�
 - [Scaling Laws for Value-Based RL](https://value-scaling.github.io/)
 - [What comes next with reinforcement learning (Interconnects)](https://www.interconnects.ai/p/what-comes-next-with-reinforcement)
 
-## 해석 포인트
-
-RL Scaling Laws (ScaleRL)은 **보상 신호와 학습 루프를 어떻게 설계할지에 초점을 둔 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `interconnects.ai×3, arxiv.org×1, value-scaling.github.io×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
-
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 학습 안정성, 보상 품질, compute 효율, 일반화를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: RL 컴퓨트 규모에 따른 성능을 예측 가능한 곡선으로 모델링하는 방법론.
-- 왜 중요한가: Meta 주도의 40만 GPU-시간 규모 연구가 RL을 "예술"에서 "과학"으로 전환시키며, 2026년 post-training 연구의 핵심 프레임워크로 자리잡고 있다.
-- 직접 수집 원문: 5개
-- 주요 도메인: interconnects.ai×3, arxiv.org×1, value-scaling.github.io×1
-
-## 핵심 메커니즘
-
-RL 컴퓨트 규모에 따른 성능을 예측 가능한 곡선으로 모델링하는 방법론. 이 유형의 topic은 보통 하나의 제품보다 **반복 가능한 패턴 / 평가 기준 / 설계 trade-off**로 읽는 편이 유용하다. 이번 source 묶음에서도 `arxiv.org, interconnects.ai, value-scaling.github.io`가 함께 나오면서 개념, 구현, 평가가 연결되어 있다.
-
-## 핵심 포인트
-
-RL Scaling Laws (ScaleRL)는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 이 페이지는 RL Scaling Laws (ScaleRL)를 다룬다. 핵심은 RL 컴퓨트 규모에 따른 성능을 예측 가능한 곡선으로 모델링하는 방법론이며, 2026년 4월 시점에 왜 다시 중요해졌는지 정리한다.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
-
-## source로 보면
-
-수집된 source는 interconnects.ai×3, arxiv.org×1, value-scaling.github.io×1로 분포한다. 연구 논문 비중이 높아 메커니즘·평가·한계 쪽 정보가 중심이다.
-
-## 실무 관점
-
-학습/후학습 기법은 이름보다 목적 함수와 검증 방식이 중요하다. 보상 신호를 어떻게 만들고 어떤 실패 모드를 줄이는지, 그리고 추론 성능과 운영 비용이 어떻게 바뀌는지를 함께 봐야 실무 의미가 생긴다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/rl-scaling-laws.md`
-
-### source별 핵심 신호
-
-- **[2510.13786] The Art of Scaling Reinforcement Learning Compute for LLMs** (`arxiv.org`): https://arxiv.org/abs/2510.13786
-  - 메모: Reinforcement learning (RL) has become central to training large language models (LLMs), yet the field lacks predictive scaling methodologies comparable to those established for pre-training.
-- **How to scale RL - by Nathan Lambert - Interconnects AI** (`interconnects.ai`): https://www.interconnects.ai/p/the-new-rl-scaling-laws
-  - 메모: 1. I’ll be in SF this week for the PyTorch conference (22-23), AI Infra Summit (21st), and other local events. Come say hi.
-- **Scaling laws for robotics & RL: Not quite yet** (`interconnects.ai`): https://www.interconnects.ai/p/scaling-rl-axes
-  - 메모: Co-authored another blog post on dialog agents: What Makes a Dialog Agent Useful?
-- **Scaling Laws for Value-Based RL** (`value-scaling.github.io`): https://value-scaling.github.io
-  - 메모: In the era of large-scale AI, it is important to prototype new training methodologies at small scales before running at large scales or datasets.
-- **What comes next with reinforcement learning** (`interconnects.ai`): https://www.interconnects.ai/p/what-comes-next-with-reinforcement
-  - 메모: First, some housekeeping. The blog’s paid discord (access or upgrade here) has been very active and high-quality recently, especially parsing recent AI training tactics like RLVR for agents/planning.
-
-
-## source 종합 해석
-
-이 개념의 핵심은 `RL 컴퓨트 규모에 따른 성능을 예측 가능한 곡선으로 모델링하는 방법론.`에 있지만, 실제 의미는 원문 source들이 어떤 병목·trade-off를 반복적으로 강조하는지에서 더 또렷해진다.
-
-예를 들어 source note는 Reinforcement learning (RL) has become central to training large language models (LLMs), yet the field lacks predictive scaling methodologies comparable to those established for pre-training.
-
-또 다른 source는 1. I’ll be in SF this week for the PyTorch conference (22-23), AI Infra Summit (21st), and other local events. Come say hi.
-
-즉, 이 토픽이 중요한 이유는 `Meta 주도의 40만 GPU-시간 규모 연구가 RL을 "예술"에서 "과학"으로 전환시키며, 2026년 post-training 연구의 핵심 프레임워크로 자리잡고 있다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 ai-hot-topics-2026-04, on-policy-distillation, corpus-grounded-self-play가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- `RL 컴퓨트 규모에 따른 성능을 예측 가능한 곡선으로 모델링하는 방법론.`를 실제로 적용할 때는 정의 자체보다 측정 지표와 실패 모드가 무엇인지 같이 봐야 한다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `Meta 주도의 40만 GPU-시간 규모 연구가 RL을 "예술"에서 "과학"으로 전환시키며, 2026년 post-training 연구의 핵심 프레임워크로 자리잡고 있다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
-
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04]]
-- [[on-policy-distillation]]
-- [[corpus-grounded-self-play]]
+- [[on-policy-distillation|On-Policy Distillation]]
+- [[corpus-grounded-self-play|Corpus-Grounded Self-Play (SPICE 계열)]]
+- [[open-post-training-recipes|Open Post-Training Recipes (Tülu 3 / OLMo 3)]]
+- [[test-time-training-and-self-improvement|Test-Time Training & Self-Improvement]]

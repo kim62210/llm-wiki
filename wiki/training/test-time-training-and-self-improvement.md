@@ -1,20 +1,58 @@
 ---
 title: Test-Time Training & Self-Improvement
-aliases: ["test-time-training"]
+aliases: [test-time-training]
 category: training
 page_type: concept
 tags: [training, concept, test, time, training, and, self]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/test-time-training-and-self-improvement.md, raw/hot-topics-sources/2026-04-10/300-self-improving-llm-agents-at-test-time.md, raw/hot-topics-sources/2026-04-10/301-in-place-test-time-training.md, raw/hot-topics-sources/2026-04-10/302-test-time-learning-for-large-language-models.md, raw/hot-topics-sources/2026-04-10/303-continuous-self-improvement-of-llms-by-test-time-training-with-verifier-driven-s.md, raw/hot-topics-sources/2026-04-10/304-why-we-think.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # Test-Time Training & Self-Improvement
 
-추론 시점에 모델 파라미터를 실시간으로 업데이트해 성능을 높이는 기법.
+추론 시점에 모델 파라미터를 실시간으로 업데이트해 성능을 높이는 기법. 오프라인 파인튜닝(fine-tuning) 없이 테스트 분포(test distribution)에 즉시 적응하는 것이 핵심 목표다.
 
 ## 왜 중요한가
 
-오프라인 fine-tuning 없이 테스트 분포에 즉시 적응하는 TTT가 장기 컨텍스트와 에이전트 태스크에서 검증되며, 2026년 In-Place TTT 등 후속 논문이 쏟아지고 있다.
+기존 사전학습(pre-training) + 파인튜닝(fine-tuning) 패러다임은 모델이 배포된 이후 분포 이동(distribution shift)에 적응하지 못하는 정적 특성을 가진다. TTT(Test-Time Training)는 입력 데이터 자체를 일시적 학습 신호로 삼아 파라미터를 갱신함으로써 이 한계를 극복한다.
+
+2026년 초 In-Place TTT가 메모리 오버헤드 없이 배치 단위 가중치 갱신을 구현하면서, 에이전트(agent) 태스크와 장기 컨텍스트(long-context) 추론 양쪽에서 검증됐다.
+
+## 핵심 메커니즘
+
+```mermaid
+flowchart TD
+    Input[테스트 입력] --> SelfSupervise[자기지도 보조 태스크 생성]
+    SelfSupervise --> GradUpdate[온라인 그래디언트 갱신]
+    GradUpdate --> UpdatedModel[임시 업데이트 모델]
+    UpdatedModel --> Inference[최종 추론]
+    Inference --> Verifier{검증기}
+    Verifier -- 실패 --> SelfSupervise
+    Verifier -- 성공 --> Output[출력]
+```
+
+위 루프는 **검증기(verifier) 기반 자기개선** 패턴의 전형이다. 검증 가능한 태스크(코드 실행, 수학 풀이)에서 특히 효과가 크다.
+
+## 주요 변형
+
+| 변형 | 설명 | 비고 |
+|------|------|------|
+| In-Place TTT | 배치 내에서 임시 가중치 갱신 후 폐기. 메모리 최소화 | 2026-04 기준 최신 |
+| Self-Improving LLM Agents | 에이전트가 실행 궤적(trajectory)을 보상 신호로 삼아 자기개선 | 멀티 턴 루프 |
+| Verifier-Driven TTT | 외부 검증기 피드백으로 가중치 갱신 샘플 필터링 | 품질 보장에 유리 |
+| 연속 자기개선 | 추론 중 검증기가 거른 고품질 롤아웃(rollout)으로 지속 업데이트 | 배포 후 드리프트 방지 |
+
+## 기술적 고려사항
+
+- **수렴 안정성**: 온라인 갱신은 학습률(learning rate)이 너무 크면 기존 지식을 망각(catastrophic forgetting). 소규모 LoRA(Low-Rank Adaptation) 어댑터에만 적용하는 방식이 실용적
+- **연산 오버헤드**: 역전파(backpropagation)가 추론 지연(latency)을 수 배 증가시킬 수 있음. 스텝 수 제한 필수
+- **보조 태스크 설계**: 마스킹(masking)·재구성(reconstruction) 같은 자기지도(self-supervised) 태스크가 공통으로 사용됨
+
+## 실무 적용 관점
+
+- **추론 비용이 민감한 서비스**: 온라인 그래디언트 갱신 비용 대비 성능 향상 ROI 사전 측정 필수
+- **에이전트 루프**: 검증 가능한 보상이 있는 코드 생성·수학 풀이 에이전트에서 TTT 효과 극대화
+- **장기 컨텍스트**: 수십만 토큰 입력에서 어텐션(attention) 분포가 달라질 때 입력 적응 TTT가 효과적
 
 ## 대표 레퍼런스
 
@@ -24,71 +62,10 @@ updated: 2026-04-10
 - [Continuous Self-Improvement of LLMs by Test-time Training with Verifier-Driven Sample Selection](https://arxiv.org/abs/2505.19475)
 - [Why We Think (Lilian Weng, Lil'Log)](https://lilianweng.github.io/posts/2025-05-01-thinking/)
 
-## 해석 포인트
-
-Test-Time Training & Self-Improvement은 **학습 데이터·보상·안정성의 트레이드오프를 다루는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `arxiv.org×4, lilianweng.github.io×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
-
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 학습 안정성, 보상 품질, compute 효율, 일반화를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 추론 시점에 모델 파라미터를 실시간으로 업데이트해 성능을 높이는 기법.
-- 왜 중요한가: 오프라인 fine-tuning 없이 테스트 분포에 즉시 적응하는 TTT가 장기 컨텍스트와 에이전트 태스크에서 검증되며, 2026년 In-Place TTT 등 후속 논문이 쏟아지고 있다.
-- 직접 수집 원문: 5개
-- 주요 도메인: arxiv.org×4, lilianweng.github.io×1
-
-## 핵심 메커니즘
-
-추론 시점에 모델 파라미터를 실시간으로 업데이트해 성능을 높이는 기법. 이 유형의 topic은 보통 하나의 제품보다 **반복 가능한 패턴 / 평가 기준 / 설계 trade-off**로 읽는 편이 유용하다. 이번 source 묶음에서도 `arxiv.org, lilianweng.github.io`가 함께 나오면서 개념, 구현, 평가가 연결되어 있다.
-
-## 핵심 포인트
-
-Test-Time Training & Self-Improvement는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 추론 시점에 모델 파라미터를 실시간으로 업데이트해 성능을 높이는 기법.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
-
-## source로 보면
-
-수집된 source는 arxiv.org×4, lilianweng.github.io×1로 분포한다. 연구 논문 비중이 높아 메커니즘·평가·한계 쪽 정보가 중심이다.
-
-## 실무 관점
-
-학습/후학습 기법은 이름보다 목적 함수와 검증 방식이 중요하다. 보상 신호를 어떻게 만들고 어떤 실패 모드를 줄이는지, 그리고 추론 성능과 운영 비용이 어떻게 바뀌는지를 함께 봐야 실무 의미가 생긴다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/test-time-training-and-self-improvement.md`
-
-### source별 핵심 신호
-
-- **[2510.07841] Self-Improving LLM Agents at Test-Time** (`arxiv.org`): https://arxiv.org/abs/2510.07841
-  - 메모: One paradigm of language model (LM) fine-tuning relies on creating large training datasets, under the assumption that high quantity and diversity will enable models to generalize to novel tasks after post-training.
-- **[2604.06169] In-Place Test-Time Training** (`arxiv.org`): https://arxiv.org/abs/2604.06169
-  - 메모: The static ``train then deploy" paradigm fundamentally limits Large Language Models (LLMs) from dynamically adapting their weights in response to continuous streams of new information inherent in real-world tasks.
-- **[2505.20633] Test-Time Learning for Large Language Models** (`arxiv.org`): https://arxiv.org/abs/2505.20633
-  - 메모: While Large Language Models (LLMs) have exhibited remarkable emergent capabilities through extensive pre-training, they still face critical limitations in generalizing to specialized domains and handling diverse linguist
-- **[2505.19475] Continuous Self-Improvement of Large Language Models by Test-time Training with Verifier-Driven Sample Selection** (`arxiv.org`): https://arxiv.org/abs/2505.19475
-  - 메모: Learning to adapt pretrained language models to unlabeled, out-of-distribution data is a critical challenge, as models often falter on structurally novel reasoning tasks even while excelling within their training distrib
-- **Why We Think | Lil'Log** (`lilianweng.github.io`): https://lilianweng.github.io/posts/2025-05-01-thinking/
-  - 메모: Does the Model Tell What it Thinks Faithfully
-
-
-## source 종합 해석
-
-예를 들어 source note는 One paradigm of language model (LM) fine-tuning relies on creating large training datasets, under the assumption that high quantity and diversity will enable models to generalize to novel tasks after post-training.
-
-또 다른 source는 The static ``train then deploy" paradigm fundamentally limits Large Language Models (LLMs) from dynamically adapting their weights in response to continuous streams of new information inherent in real-world tasks.
-
-즉, 이 토픽이 중요한 이유는 `오프라인 fine-tuning 없이 테스트 분포에 즉시 적응하는 TTT가 장기 컨텍스트와 에이전트 태스크에서 검증되며, 2026년 In-Place TTT 등 후속 논문이 쏟아지고 있다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Agentic RL (Tool-Integrated Reasoning 학습), Open Post-Training Recipes (Tülu 3 / OLMo 3)가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `오프라인 fine-tuning 없이 테스트 분포에 즉시 적응하는 TTT가 장기 컨텍스트와 에이전트 태스크에서 검증되며, 2026년 In-Place TTT 등 후속 논문이 쏟아지고 있다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
-
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
 - [[agentic-rl|Agentic RL (Tool-Integrated Reasoning 학습)]]
 - [[open-post-training-recipes|Open Post-Training Recipes (Tülu 3 / OLMo 3)]]
+- [[corpus-grounded-self-play|Corpus-Grounded Self-Play (SPICE 계열)]]
+- [[rl-scaling-laws|RL Scaling Laws (ScaleRL)]]

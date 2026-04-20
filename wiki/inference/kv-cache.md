@@ -1,21 +1,20 @@
 ---
 title: KV Cache (Key-Value 캐시)
-aliases: ["KV cache", "kv-cache", "key-value cache"]
+aliases: [KV cache, kv-cache, key-value cache]
 category: inference
 page_type: concept
 tags: [kv-cache, inference-optimization, context-engineering, production-metric]
 sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # KV Cache (Key-Value 캐시)
 
 ## 정의
 
-**KV Cache** (Key-Value Cache)는 LLM 추론 과정에서 계산된 **Transformer 어텐션의 Key와 Value 가중치**를 저장하는 메커니즘이다. 프롬프트 접두사가 이전 요청과 일치하면 캐시를 재사용하여 토큰 재계산을 피할 수 있다.
+**KV Cache** (Key-Value Cache)는 LLM 추론 과정에서 계산된 **[[multi-head-latent-attention|Transformer]] 어텐션의 Key와 Value 가중치**를 저장하는 메커니즘이다. 프롬프트 접두사가 이전 요청과 일치하면 캐시를 재사용하여 토큰 재계산을 피할 수 있다.
 
-[[context engineering]] 시대에 KV-캐시 히트율은 **프로덕션 핵심 메트릭**으로 부상했다.
+[[context-engineering]] 시대에 KV-캐시 히트율은 **프로덕션 핵심 메트릭**으로 부상했다.
 
 ## 왜 중요한가
 
@@ -60,7 +59,7 @@ Google ADK 아키텍처가 대표하는 설계 패턴:
 
 ## 컨텍스트 엔지니어링과의 관계
 
-[[context engineering]]의 4전략 (Write/Select/Compress/Isolate)은 모두 KV 캐시 효율과 연관된다:
+[[context-engineering]]의 4전략 (Write/Select/Compress/Isolate)은 모두 KV 캐시 효율과 연관된다:
 
 - **Write**: 안정적이고 재사용 가능한 시스템 프롬프트 구조화
 - **Select**: 관련 없는 정보를 배제하여 접두사 안정성 유지
@@ -77,16 +76,22 @@ Google ADK 아키텍처가 대표하는 설계 패턴:
 - **Cost per task**: 캐시 효율이 반영된 실질 비용
 
 ## 관련 문서
+- [[speculative-speculative-decoding]]
+- [[mirror-speculative-decoding]]
+- [[turboquant]]
+- [[sparse-attention-patterns]]
+- [[long-context-scaling]]
+- [[mixture-of-experts]]
 
-- [[evolution of agentic patterns]] — KV 캐시가 핵심 메트릭으로 떠오른 맥락
-- [[context engineering]] — 컨텍스트 엔지니어링 4전략과의 연결
-- [[llm as os]] — RAM(컨텍스트 창)의 비용 최적화 계층
-- [[lost in the middle]] — 컨텍스트 위치에 따른 별도 현상 (관련이지만 다른 문제)
-- [[prompt engineering]] — KV 캐시를 고려하지 않던 초기 패러다임
+- [[evolution-of-agentic-patterns]] — KV 캐시가 핵심 메트릭으로 떠오른 맥락
+- [[context-engineering]] — 컨텍스트 엔지니어링 4전략과의 연결
+- [[llm-as-os]] — RAM(컨텍스트 창)의 비용 최적화 계층
+- [[lost-in-the-middle]] — 컨텍스트 위치에 따른 별도 현상 (관련이지만 다른 문제)
+- [[prompt-engineering]] — KV 캐시를 고려하지 않던 초기 패러다임
 
 ## 지식 갭
 
 - [ ] Lost-in-the-Middle 전용 페이지 (Liu et al., 2023 논문 paper 타입)
-- [ ] vLLM / TensorRT-LLM 같은 실제 KV 캐시 구현체 비교
+- [ ] [[vllm-v1-engine|vLLM]] / TensorRT-LLM 같은 실제 KV 캐시 구현체 비교
 - [ ] Paged Attention 같은 메모리 관리 기법
 - [ ] PagedAttention / prefix caching 상세
