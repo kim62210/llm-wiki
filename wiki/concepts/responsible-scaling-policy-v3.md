@@ -1,28 +1,96 @@
 ---
 title: Responsible Scaling Policy v3 & Frontier Safety Roadmap
-aliases: ["responsible-scaling-policy-v3-and-frontier-safety-roadmap"]
+aliases: [responsible-scaling-policy-v3-and-frontier-[[ai-safety-[[deliberative-alignment|alignment]]-2026|safety]]-roadmap]
 category: concepts
 page_type: summary
 tags: [concepts, summary, responsible, scaling, policy, safety-and-alignment]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/responsible-scaling-policy-v3.md, raw/hot-topics-sources/2026-04-10/383-responsible-scaling-policy-version-3-0.md, raw/hot-topics-sources/2026-04-10/384-anthropic-s-frontier-safety-roadmap.md, raw/hot-topics-sources/2026-04-10/385-anthropic-s-responsible-scaling-policy.md, raw/hot-topics-sources/2026-04-10/386-responsible-scaling-policy-v3-1.md, raw/hot-topics-sources/2026-04-10/387-anthropic-s-rsp-v3-0-analysis.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # Responsible Scaling Policy v3 & Frontier Safety Roadmap
 
-이 페이지는 Responsible Scaling Policy v3 & Frontier Safety Roadmap를 요약하고, 지금 시점에 왜 중요한지 빠르게 따라잡기 위한 페이지다. 핵심 범위는 역량 임계치별 위험 완화를 명문화하고 공개 로드맵으로 진척도를 투명화하는 거버넌스이다.
+AI 역량 임계치마다 요구되는 안전 조치를 명문화하고, 공개 로드맵으로 진척도를 투명화하는 Anthropic의 거버넌스 문서. 2026년 2월 v3.0, 4월 v3.1이 공표되었다.
 
 ## 정의
 
-역량 임계치별 위험 완화를 명문화하고 공개 로드맵으로 진척도를 투명화하는 거버넌스.
+**책임 있는 스케일링 정책(Responsible Scaling Policy, RSP)**은 모델 능력이 특정 임계치에 도달하기 전에 충족해야 할 안전 조건을 사전에 공개하는 자율 거버넌스 문서다. "능력이 증가할수록 의무도 증가한다"는 원칙을 구체적 트리거와 요건으로 구현한다.
 
-## 왜 지금 중요한가
+## ASL(AI Safety Level) 체계
 
-2026년 2월 24일 RSP v3.0 공개 후 4월 2일 v3.1과 Frontier Safety Roadmap이 정식 공표되면서 "하드 일시중지" 조항 철회 논란이 일었고, SaferAI·GovAI 등이 비판하는 가운데 산업 표준 거버넌스 논쟁의 중심이 되었다.
+```mermaid
+flowchart TD
+    A[ASL-1\n비전문가 수준] --> B[ASL-2\n전문가 지식 수준\n현재 Claude 3.x]
+    B --> C[ASL-3\n대량살상무기 지원 가능\n 국가 수준 사이버 공격 지원]
+    C --> D[ASL-4\n단독 위험 연구 가능\n자율 확산 가능]
+    D --> E[ASL-5\n완전 자율 위험\n현재 미정의]
 
-## 읽는 법
+    B --> B1[현재 요건:\n기본 정보 보안\n접근 제어]
+    C --> C1[요건:\n격리된 학습 환경\n엄격한 접근 제어\n비상 대응 계획]
+    D --> D1[요건:\n하드 일시중지 조항\n정부 기관 사전 통보\n외부 감사]
 
-이 문서는 하나 이상의 문서·정책·레시피 묶음을 빠르게 이해하기 위한 요약 페이지다. 세부 구현은 관련 문서를 따라가며 확장하는 방식으로 읽는다.
+    style C fill:#ffa94d,color:#000
+    style D fill:#ff6b6b,color:#fff
+```
+
+## v3.0 vs v3.1 주요 변화
+
+### RSP v3.0 (2026년 2월 24일)
+- CBRN(화학·생물·방사선·핵) 능력 임계치 정의 갱신
+- 사이버 공격 지원 능력 임계치 추가
+- 자율적 복제(self-replication) 능력 트리거 명문화
+- **"하드 일시중지(hard pause)" 조항**: ASL-4 도달 시 외부 감사 없이는 배포 불가
+
+### RSP v3.1 (2026년 4월 2일)
+- **하드 일시중지 조항 완화**: "외부 감사 필수" -> "외부 감사 권장 + 내부 감사 허용"
+- Frontier Safety Roadmap과 동시 공표
+- 비판 대응: SaferAI, GovAI에서 완화를 "뒤로 물러섬(backsliding)"으로 비판
+
+## Frontier Safety Roadmap
+
+RSP와 별도로 공개된 **프론티어 안전 로드맵**은 Anthropic이 달성해야 할 안전 연구 이정표를 시간축으로 제시한다:
+
+| 연구 영역 | 2026 목표 | 현황 |
+|---------|---------|------|
+| 해석성(Interpretability) | 회로 추적으로 위험 능력 사전 탐지 | [[circuit-tracing|진행 중]] |
+| 정렬 검증(Alignment Verification) | 정렬 위장 탐지 AUROC 0.95+ | 0.92 달성 |
+| 자율 복제 평가 | ASL-4 트리거 정의 완성 | 초안 |
+| 거버넌스 표준화 | 업계 공통 ASL 기준 수립 | 논의 중 |
+
+## 능력 평가 방법
+
+RSP 트리거를 판단하는 구체적 평가:
+
+- **CBRN 임계치**: 전문가가 설계한 위험 시나리오에서 모델의 지원 능력 측정
+- **사이버 공격 임계치**: 실제 취약점 발견, 익스플로잇 개발 능력 측정
+- **자율성 임계치**: [[metr-time-horizon-benchmark|METR Time Horizon]]으로 장기 독립 작업 능력 측정
+- **자기 복제**: 모델이 자신을 다른 시스템에 복사할 수 있는지
+
+## 비판과 논쟁
+
+### v3.1 완화에 대한 비판 (GovAI, SaferAI)
+- "하드 일시중지 철회는 자체 경찰(self-policing)으로의 후퇴"
+- "경쟁 압박에 굴복해 안전 기준을 낮춘 것"
+- "정부 기관 사전 통보 의무가 약화"
+
+### Anthropic의 입장
+- "내부 안전 팀이 성숙해 외부 감사 의존도를 줄일 수 있음"
+- "딱딱한 일시중지보다 지속적 평가와 점진적 배포가 더 효과적"
+
+## 다른 연구소의 RSP 대응
+
+| 기관 | 정책 | 비교 |
+|------|------|------|
+| Anthropic | RSP v3 (ASL 체계) | 가장 상세한 공개 문서 |
+| OpenAI | Preparedness Framework | 유사 구조, 덜 상세 |
+| Google DeepMind | Frontier Safety Framework | 비슷한 접근 |
+| Meta | 없음 (오픈소스 모델) | 별도 거버넌스 체계 |
+
+## 실전 함의
+
+- **모델 선택**: 프로덕션에서 사용하는 모델의 ASL 수준과 해당 보안 요건 확인
+- **감사 준비**: ASL-3 이상 모델 사용 시 내부 보안 감사 체계 마련 권장
+- **능력 모니터링**: 파인튜닝 후 능력 임계치 이탈 여부 주기적 평가
 
 ## 대표 자료
 
@@ -32,69 +100,10 @@ updated: 2026-04-10
 - [Responsible Scaling Policy v3.1 (PDF, April 2 2026)](https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf)
 - [Anthropic's RSP v3.0 analysis (GovAI)](https://www.governance.ai/analysis/anthropics-rsp-v3-0-how-it-works-whats-changed-and-some-reflections)
 
-## 해석 포인트
-
-Responsible Scaling Policy v3 & Frontier Safety Roadmap은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `anthropic.com×3, www-cdn.anthropic.com×1, governance.ai×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
-
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 역량 임계치별 위험 완화를 명문화하고 공개 로드맵으로 진척도를 투명화하는 거버넌스.
-- 왜 중요한가: 2026년 2월 24일 RSP v3.0 공개 후 4월 2일 v3.1과 Frontier Safety Roadmap이 정식 공표되면서 "하드 일시중지" 조항 철회 논란이 일었고, SaferAI·GovAI 등이 비판하는 가운데 산업 표준 거버넌스 논쟁의 중심이 되었다.
-- 직접 수집 원문: 5개
-- 주요 도메인: anthropic.com×3, www-cdn.anthropic.com×1, governance.ai×1
-
-## 핵심 메커니즘
-
-역량 임계치별 위험 완화를 명문화하고 공개 로드맵으로 진척도를 투명화하는 거버넌스. 이 개념은 단일 문장 정의보다 **어떤 failure mode를 설명하는지, 어떤 구조적 trade-off를 드러내는지**를 함께 볼 때 가치가 커진다.
-
-## 핵심 포인트
-
-Responsible Scaling Policy v3 & Frontier Safety Roadmap는 개별 source를 빠르게 따라잡기 위한 요약 허브다. 현재 본문은 이 페이지는 Responsible Scaling Policy v3 & Frontier Safety Roadmap를 요약하고, 지금 시점에 왜 중요한지 빠르게 따라잡기 위한 페이지다. 핵심 범위는 역량 임계치별 위험 완화를 명문화하고 공개 로드맵으로 진척도를 투명화하는 거버넌스이다.를 중심으로 구성되어 있고, 수집된 근거 5건이 요약의 배경을 받쳐준다.
-
-## source로 보면
-
-수집된 source는 anthropic.com×3, governance.ai×1, www-cdn.anthropic.com×1로 분포한다. 공식 문서/엔지니어링 글 비중이 높아 운영·제품 맥락이 강하다.
-
-## 실무 관점
-
-개념 페이지는 용어 정의에서 끝나지 않고, 어떤 시스템 설계 문제를 해결하려고 등장했는지와 어디까지가 적용 범위인지까지 함께 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/responsible-scaling-policy-v3.md`
-
-### source별 핵심 신호
-
-- **Responsible Scaling Policy Version 3.0 \ Anthropic** (`anthropic.com`): https://www.anthropic.com/news/responsible-scaling-policy-v3
-  - 메모: We’re releasing the third version of our Responsible Scaling Policy (RSP), the voluntary framework we use to mitigate catastrophic risks from AI systems.
-- **Frontier Safety Roadmap \ Anthropic** (`anthropic.com`): https://www.anthropic.com/responsible-scaling-policy/roadmap
-  - 메모: We believe that AI capabilities will improve rapidly in the coming years. We will need to quickly and dramatically improve our state of preparedness in a number of areas, especially:
-- **Responsible Scaling Policy Updates \ Anthropic** (`anthropic.com`): https://www.anthropic.com/responsible-scaling-policy
-  - 메모: As frontier AI models advance, we believe they will bring about transformative benefits for our society and economy.
-- **Responsible Scaling Policy v3.1 (PDF, April 2 2026)** (`www-cdn.anthropic.com`): https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf
-  - 메모: <</Title <FEFF0041006E007400680072006F0070006900632019007300200052006500730070006F006E007300690062006C00650020005300630061006C0069006E006700200050006F006C0069006300790020002800760065007200730069006F006E00200033002E003100
-- **Anthropic’s RSP v3.0: How it Works, What’s Changed, and Some Reflections | GovAI** (`governance.ai`): https://www.governance.ai/analysis/anthropics-rsp-v3-0-how-it-works-whats-changed-and-some-reflections
-  - 메모: Anthropic’s Responsible Scaling Policy (RSP) – its framework for managing catastrophic risks – has undergone its most significant update yet.
-
-
-## source 종합 해석
-
-이 summary는 하나의 주장보다 **여러 원문을 묶어 읽는 순서와 맥락**을 제공하는 데 가치가 있다.
-
-대표 source를 보면 Responsible Scaling Policy Version 3.0 \ Anthropic, Frontier Safety Roadmap \ Anthropic, Responsible Scaling Policy Updates \ Anthropic처럼 서로 다른 종류의 근거가 한 토픽 묶음으로 엮여 있다.
-
-함께 읽을 문서로는 ai-hot-topics-2026-04, agent-prompt-injection-defense, metr-time-horizon-benchmark가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- summary 문서는 결론 고정본이 아니라 탐색 지도이므로, 중요한 판단은 반드시 하단 source 참고 섹션으로 내려가 확인한다.
-- 같은 묶음 안에서도 공식 문서, 논문, 구현 저장소가 어떤 역할을 맡는지 구분해 읽어야 한다.
-
 ## 관련 문서
 
-- [[ai-hot-topics-2026-04]]
-- [[agent-prompt-injection-defense]]
-- [[metr-time-horizon-benchmark]]
+- [[agent-prompt-injection-defense|Agent Prompt Injection Defense]]
+- [[metr-time-horizon-benchmark|METR Time Horizon Benchmark]]
+- [[deliberative-alignment|Deliberative Alignment]]
+- [[circuit-tracing|Circuit Tracing & Attribution Graphs]]
+- [[emergent-misalignment|Natural Emergent Misalignment]]

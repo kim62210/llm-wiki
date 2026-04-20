@@ -1,15 +1,14 @@
 ---
 title: OMC Skill Layering
-aliases: ["OMC Skill Layering", "Skills"]
+aliases: [OMC Skill Layering, Skills]
 category: concepts
 page_type: project-internal
 project: oh-my-claudecode
-tags: [omc, skills, composition, layering]
+tags: [omc, [[hermes-[[coding-agent|agent]]|skill]]s, composition, layering]
 sources: [raw/2026-04-09-omc-ARCHITECTURE.md, raw/2026-04-09-omc-AGENTS.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC Skill Layering
 
 > 스킬은 에이전트를 교체하는 게 아니라 **행동을 주입(behavior injection)** 한다.
@@ -82,7 +81,7 @@ OMC의 스킬은 플러그인이 아니라 **오케스트레이터의 행동을 
 ## 스킬 호출 방법
 
 1. **슬래시 명령**: `/oh-my-claudecode:autopilot ...`
-2. **[[OMC Magic Keyword]]**: 자연어 키워드가 포함된 메시지
+2. **[[omc-magic-keyword]]**: 자연어 키워드가 포함된 메시지
 3. **브라우징**: `/skills` 대화형 목록
 
 ## 스킬 학습 시스템
@@ -146,7 +145,7 @@ Wrap handler at server.py:42 in try/except ClientDisconnectedError...
 
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Magic Keyword]]
-- [[OMC Execution Modes]]
-- [[Multi-Agent Orchestration]]
+- [[oh-my-claudecode]]
+- [[omc-magic-keyword]]
+- [[omc-execution-modes]]
+- [[multi-agent-orchestration]]

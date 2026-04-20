@@ -1,22 +1,21 @@
 ---
 title: OMC Delegation Categories
-aliases: ["OMC Delegation Categories"]
+aliases: [OMC Delegation Categories]
 category: concepts
 page_type: project-internal
 project: oh-my-claudecode
 tags: [omc, delegation, category, temperature, thinking-budget]
 sources: [raw/2026-04-09-omc-FEATURES.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC Delegation Categories
 
 > 태스크 프롬프트를 자동 분류해 모델 티어 + temperature + thinking budget을 한 번에 결정하는 시스템.
 
 ## 핵심 아이디어
 
-에이전트별 기본 모델 매핑([[OMC Model Routing]])은 **역할 기준**이다. 하지만 같은 executor 에이전트라도 단순 텍스트 수정 vs 복잡한 race condition 디버깅은 다른 처리가 필요하다. Delegation Categories는 **태스크 내용**을 보고 실행 파라미터를 동적으로 결정한다.
+에이전트별 기본 모델 매핑([[omc-model-routing]])은 **역할 기준**이다. 하지만 같은 executor 에이전트라도 단순 텍스트 수정 vs 복잡한 race condition 디버깅은 다른 처리가 필요하다. Delegation Categories는 **태스크 내용**을 보고 실행 파라미터를 동적으로 결정한다.
 
 ## 7개 카테고리
 
@@ -32,7 +31,7 @@ updated: 2026-04-09
 
 ## 파라미터 해석
 
-- **Tier**: LOW=haiku, MEDIUM=sonnet, HIGH=opus ([[OMC Model Routing]])
+- **Tier**: LOW=haiku, MEDIUM=sonnet, HIGH=opus ([[omc-model-routing]])
 - **Temperature**: 낮을수록 결정론적(0.1), 높을수록 창의적(0.9)
   - `ultrabrain` 0.3: 논리적 추론은 변덕 없이 정확하게
   - `artistry` 0.9: 창의적 해법은 확률 분포 넓게
@@ -99,7 +98,7 @@ interface ResolvedCategory {
 
 interface CategoryContext {
   taskPrompt: string;
-  agentType?: string;
+  [[coding-agent|agent]]Type?: string;
   explicitCategory?: DelegationCategory;
   explicitTier?: ComplexityTier;
 }
@@ -154,7 +153,7 @@ const enhancedPrompt = enhancePromptWithCategory(userRequest, resolved.category)
 
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Model Routing]]
-- [[OMC Magic Keyword]]
-- [[Multi-Agent Orchestration]]
+- [[oh-my-claudecode]]
+- [[omc-model-routing]]
+- [[omc-magic-keyword]]
+- [[multi-agent-orchestration]]

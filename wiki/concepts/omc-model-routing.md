@@ -1,15 +1,14 @@
 ---
 title: OMC Model Routing
-aliases: ["OMC Model Routing"]
+aliases: [OMC Model Routing]
 category: concepts
 page_type: project-internal
 project: oh-my-claudecode
 tags: [omc, model-routing, haiku, sonnet, opus, cost-optimization]
 sources: [raw/2026-04-09-omc-ARCHITECTURE.md, raw/2026-04-09-omc-FEATURES.md, raw/2026-04-09-omc-GETTING-STARTED.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC Model Routing (모델 라우팅)
 
 > 태스크 복잡도에 맞춰 Haiku/Sonnet/Opus 중 하나를 자동 선택. 비용 30~50% 절감의 핵심.
@@ -104,7 +103,7 @@ Team/Swarm 워커 시작 시 적용되는 모델 선정 순서 (높음 → 낮�
 
 ```jsonc
 {
-  "agents": {
+  "[[coding-agent|agent]]s": {
     // explore 에이전트를 더 강력하게
     "explore": { "model": "sonnet" },
 
@@ -119,7 +118,7 @@ Team/Swarm 워커 시작 시 적용되는 모델 선정 순서 (높음 → 낮�
 
 ## Delegation Categories와의 관계
 
-OMC는 태스크 프롬프트에서 [[OMC Delegation Categories]]를 감지해 모델 티어, temperature, thinking budget을 함께 결정한다.
+OMC는 태스크 프롬프트에서 [[omc-delegation-categories]]를 감지해 모델 티어, temperature, thinking budget을 함께 결정한다.
 
 | 카테고리 | 티어 | Temperature | Thinking Budget |
 |---|---|---|---|
@@ -166,7 +165,7 @@ OMC의 "30~50% 토큰 절감" 주장은 다음에서 나온다:
 
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Agent Catalog]]
-- [[OMC Delegation Categories]]
-- [[Multi-Agent Orchestration]]
+- [[oh-my-claudecode]]
+- [[omc-agent-catalog]]
+- [[omc-delegation-categories]]
+- [[multi-agent-orchestration]]

@@ -1,15 +1,14 @@
 ---
 title: OMC Magic Keyword
-aliases: ["OMC Magic Keyword", "매직 키워드", "Magic Keyword"]
+aliases: [OMC Magic Keyword, 매직 키워드, Magic Keyword]
 category: concepts
 page_type: project-internal
 project: oh-my-claudecode
 tags: [omc, keyword-detection, user-prompt, hook]
 sources: [raw/2026-04-09-omc-HOOKS.md, raw/2026-04-09-omc-AGENTS.md, raw/2026-04-09-omc-ARCHITECTURE.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC Magic Keyword
 
 > 자연어 입력에 특정 단어가 포함되면 해당 스킬/모드를 자동 활성화하는 OMC의 핵심 UX.
@@ -55,7 +54,7 @@ keyword-detector.mjs 실행 (timeout 5s)
 
 ```
 [MAGIC KEYWORD: autopilot detected]
-→ Read ~/.agents/skills/autopilot/SKILL.md and execute the autonomous pipeline
+→ Read ~/.[[coding-agent|agent]]s/skills/autopilot/SKILL.md and execute the autonomous pipeline
 ```
 
 ## 키워드 카탈로그
@@ -168,10 +167,14 @@ Ralph가 활성 상태일 때는 **ralplan-first** 게이트가 적용된다:
 - `.omc/plans/prd-*.md`와 `.omc/plans/test-spec-*.md`가 모두 존재해야 구현 시작 허용
 - 없으면 planning 단계에서 먼저 생성
 
+## What Are Hooks? 쪽에 모인다 |
+| oh-my-claudecode - Intelligent [[multi-agent-orchestration|multi-agent orchestration]] | `raw/2026-04-09-omc-AGENTS.md` | raw snapshot | 주요 헤딩은 Working agreements, Setup, Review guidelines이다 / 본문 단서는 # oh-my-claudecode - Intelligent Multi-Agent Orchestration; You are running with oh-my-claudecode (OMC), a multi-agent orchestration layer for [[claude-code|Claude Code]]. 쪽에 모인다 |
+| Architecture | `raw/2026-04-09-omc-ARCHITECTURE.md` | raw snapshot | 주요 헤딩은 Overview, Agent System, Build/Analysis Lane, Review Lane이다 / 본문 단서는 > How oh-my-claudecode orchestrates multi-agent workflows.; ┌─────────────────────────────────────────────────────────────────────────┐ 쪽에 모인다 |
+
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Hook System]]
-- [[OMC Execution Modes]]
-- [[OMC Ralph Mode]]
-- [[OMC Autopilot]]
+- [[oh-my-claudecode]]
+- [[omc-hook-system]]
+- [[omc-execution-modes]]
+- [[omc-ralph-mode]]
+- [[omc-autopilot]]

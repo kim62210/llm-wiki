@@ -1,17 +1,16 @@
 ---
 title: "Writing Code is Cheap Now"
-aliases: ["code is cheap", "Writing Code is Cheap Now"]
+aliases: [code is cheap, Writing Code is Cheap Now]
 category: concepts
 page_type: concept
 tags: [agentic-engineering, economics, habits, simon-willison]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Writing Code is Cheap Now
 
-Simon Willison이 [[agentic engineering guide]] Section 1에서 제시한 핵심 원칙.
+Simon Willison이 [[agentic-engineering-guide]] Section 1에서 제시한 핵심 원칙.
 
 ## 기본 주장
 
@@ -53,7 +52,7 @@ Simon이 정의하는 "good code" 체크리스트:
 
 ## 새로운 습관 형성
 
-> "Any time our instinct says 'don't build that, it's not worth the time' fire off a prompt anyway, in an asynchronous agent session where the worst that can happen is you check ten minutes later and find that it wasn't worth the tokens."
+> "Any time our instinct says 'don't build that, it's not worth the time' fire off a prompt anyway, in an asynchronous agent session where the worst that can happen is you check ten minutes later and find that it wasn't worth the [[token-economics|token]]s."
 
 핵심 전환:
 - **Old**: 시간 없으니 안 함
@@ -63,12 +62,12 @@ Simon이 정의하는 "good code" 체크리스트:
 
 - 리팩토링, 테스트 커버리지 확대, 문서 업데이트 같은 "좋지만 시간 없던 일들"이 다시 economically feasible해진다
 - 탐색적 프로토타이핑이 값싸지면서 의사결정 전에 여러 접근을 실험 가능
-- 단, 이 낮아진 비용이 *품질 하락*의 변명이 되면 안 된다 → [[better code with agents]]
+- 단, 이 낮아진 비용이 *품질 하락*의 변명이 되면 안 된다 → [[better-code-with-agents]]
 
 ## 관련 문서
 
-- [[agentic engineering]]
-- [[agentic engineering guide]]
-- [[better code with agents]]
-- [[anti-patterns in agentic engineering]]
-- [[hoard things you know how to do]]
+- [[agentic-engineering]]
+- [[agentic-engineering-guide]]
+- [[better-code-with-agents]]
+- [[anti-patterns]]
+- [[hoard-things-you-know-how-to-do]]

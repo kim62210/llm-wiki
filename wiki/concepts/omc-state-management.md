@@ -1,22 +1,21 @@
 ---
 title: OMC State Management
-aliases: ["OMC State Management", "State Management"]
+aliases: [OMC State Management, State Management]
 category: concepts
 page_type: project-internal
 project: oh-my-claudecode
-tags: [omc, state, notepad, project-memory, compaction, control-plane]
+tags: [omc, [[langgraph-persistence|state]], notepad, project-memory, compaction, control-plane]
 sources: [raw/2026-04-09-omc-ARCHITECTURE.md, raw/2026-04-09-omc-HOOKS.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC State Management
 
 > `.omc/` 디렉토리 기반 지속 상태 시스템. 컨텍스트 컴팩션을 이겨내고 장기 작업을 재개할 수 있게 한다.
 
 ## 왜 중요한가
 
-LLM의 컨텍스트 윈도우는 유한하다. Claude Code는 한계에 가까워지면 **컴팩션(compaction)**을 수행해 이전 대화를 요약한다. 이 과정에서 중요한 작업 상태, 결정, 진행 중인 TODO가 사라질 수 있다. OMC의 상태 관리 시스템은 이를 방지한다:
+LLM의 컨텍스트 윈도우는 유한하다. [[claude-code|Claude Code]]는 한계에 가까워지면 **컴팩션(compaction)**을 수행해 이전 대화를 요약한다. 이 과정에서 중요한 작업 상태, 결정, 진행 중인 TODO가 사라질 수 있다. OMC의 상태 관리 시스템은 이를 방지한다:
 
 1. **컴팩션 전** 중요 정보를 파일 시스템에 저장
 2. **컴팩션 후** 저장된 정보를 컨텍스트에 재주입
@@ -192,7 +191,7 @@ export OMC_STATE_DIR="$HOME/.claude/omc"
 - `ralph`: `active`, `iteration`, `max_iterations`, `current_phase`, `started_at`, `completed_at`
 - `autopilot`: `active`, `current_phase` (`expansion|planning|execution|qa|validation|complete`), `started_at`, `completed_at`
 - `ultrawork`: `active`, `reinforcement_count`, `started_at`
-- `team`: `active`, `current_phase` (`team-plan|team-prd|team-exec|team-verify|team-fix|complete`), `agent_count`, `team_name`
+- `team`: `active`, `current_phase` (`team-plan|team-prd|team-exec|team-verify|team-fix|complete`), `[[coding-agent|agent]]_count`, `team_name`
 - `ecomode`: `active`
 - `ultraqa`: `active`, `current_phase`, `iteration`, `started_at`, `completed_at`
 
@@ -212,9 +211,11 @@ export OMC_STATE_DIR="$HOME/.claude/omc"
 - **다중 세션**: 같은 프로젝트에 여러 Claude Code 세션 열 때 `sessions/{sessionId}/` 격리에 의존
 - **Worktree 전환**: `OMC_STATE_DIR` 없이 worktree 삭제하면 진행 중인 작업 증발
 
+## What Are Hooks? 쪽에 모인다 |
+
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Hook System]]
-- [[OMC Execution Modes]]
-- [[OMC Autopilot]]
+- [[oh-my-claudecode]]
+- [[omc-hook-system]]
+- [[omc-execution-modes]]
+- [[omc-autopilot]]

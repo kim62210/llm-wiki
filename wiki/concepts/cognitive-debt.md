@@ -1,30 +1,29 @@
 ---
 title: Cognitive Debt
-aliases: ["cognitive debt"]
+aliases: [cognitive debt]
 category: concepts
 page_type: concept
 tags: [cognitive-debt, code-understanding, agentic-engineering]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Cognitive Debt
 
-Simon Willison이 [[agentic engineering guide]]에서 소개한 개념. 기술 부채(technical debt)와 쌍을 이루는 새로운 용어.
+Simon Willison이 [[agentic-engineering-guide]]에서 소개한 개념. 기술 부채(technical debt)와 쌍을 이루는 새로운 용어.
 
 ## 정의
 
 > "When we lose track of how code written by our agents works we take on cognitive debt."
 
-**Cognitive debt** = 에이전트가 쓴 코드가 어떻게 동작하는지 내가 이해하지 못할 때 쌓이는 부채.
+**Cognitive debt** = [[agentic-engineering|에이전트]]가 쓴 코드가 어떻게 동작하는지 내가 이해하지 못할 때 쌓이는 부채. 이 불안이 지속되면 [[context-anxiety|context anxiety]]로 이어질 수 있다.
 
 ## 왜 발생하는가
 
 코딩 에이전트 시대에 특히 심각해지는 이유:
 - 에이전트가 수백~수천 줄 코드를 단번에 생성
 - 그 결과물을 읽지 않고 실행 → 작동하면 넘어감
-- [[vibe coding|Vibe coding]] 워크플로우가 대표적 원인
+- [[vibe-coding|Vibe coding]] 워크플로우가 대표적 원인
 - 코드량이 늘어날수록 "이해 안 한 코드"의 양이 복리로 증가
 
 ## 왜 문제인가
@@ -49,10 +48,10 @@ Simon의 구분:
 
 Simon이 제시하는 구체적 기법:
 
-### 1. [[linear walkthroughs|Linear Walkthroughs]]
+### 1. [[linear-walkthroughs|Linear Walkthroughs]]
 에이전트에게 코드베이스를 구조화된 형태로 설명하게 한다. [[Showboat]]로 문서화. 파일 단위, 함수 단위의 텍스트 설명.
 
-### 2. [[interactive explanations|Interactive Explanations]]
+### 2. [[interactive-explanations|Interactive Explanations]]
 정적 설명으로 부족한 부분(알고리즘, 기하, 공간 배치 등)은 인터랙티브 애니메이션/시뮬레이션으로 시각화. 예: Archimedean spiral word cloud 애니메이션.
 
 ### 3. (암묵적) 자신이 직접 읽기
@@ -65,21 +64,21 @@ Simon이 제시하는 구체적 기법:
 | 무엇 | 코드가 나쁘다 | 내가 코드를 모른다 |
 | 상환 | 리팩토링 | 이해 쌓기 |
 | 증상 | 변경이 느려짐 | 변경 기획이 느려짐 |
-| 원인 | 타협/쇼트컷 | 리뷰 안 함 / [[vibe coding]] |
+| 원인 | 타협/쇼트컷 | 리뷰 안 함 / [[vibe-coding]] |
 
-두 부채는 겹칠 수 있지만 개념적으로 분리된다. 깨끗한 코드여도 이해하지 못하면 cognitive debt이다.
+두 부채는 겹칠 수 있지만 개념적으로 분리된다. [[code-is-cheap|코드 생성이 싸진 지금]], 깨끗한 코드여도 이해하지 못하면 cognitive debt이다.
 
 ## 실무 함의
 
 - 모든 에이전트 작업 후 이해 체크: "이 코드를 한 문장으로 설명할 수 있나?"
 - 코어 기능일수록 이해 우선도 높임
-- 주기적으로 [[linear walkthroughs]]로 전체 앱 복습
-- 막히면 [[interactive explanations]]
+- 주기적으로 [[linear-walkthroughs]]로 전체 앱 복습
+- 막히면 [[interactive-explanations]]
 
 ## 관련 문서
 
-- [[linear walkthroughs]]
-- [[interactive explanations]]
-- [[vibe coding]]
-- [[anti-patterns in agentic engineering]]
-- [[agentic engineering guide]]
+- [[linear-walkthroughs]]
+- [[interactive-explanations]]
+- [[vibe-coding]]
+- [[anti-patterns]]
+- [[agentic-engineering-guide]]

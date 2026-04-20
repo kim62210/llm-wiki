@@ -2,18 +2,100 @@
 title: Constitutional Classifiers++ (Jailbreak Defense)
 category: concepts
 page_type: concept
-tags: [concepts, concept, constitutional, classifiers]
+tags: [concepts, concept, constitutional, [[llm-as-judge-calibration|classifier]]s]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/constitutional-classifiers.md, raw/hot-topics-sources/2026-04-10/373-next-generation-constitutional-classifiers.md, raw/hot-topics-sources/2026-04-10/374-constitutional-classifiers-defending-against-universal-jailbreaks.md, raw/hot-topics-sources/2026-04-10/375-constitutional-classifiers-efficient-production-grade-defenses.md, raw/hot-topics-sources/2026-04-10/376-constitutional-classifiers.md, raw/hot-topics-sources/2026-04-10/377-cost-effective-constitutional-classifiers-via-representation-re-use.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # Constitutional Classifiers++ (Jailbreak Defense)
 
-헌법 규칙 기반 합성 데이터로 학습한 입출력 분류기로 범용 jailbreak 차단.
+헌법(constitution) 원칙에서 합성 학습 데이터를 생성해 훈련된 입출력 분류기로, 범용 탈옥(universal jailbreak) 시도를 차단하는 프로덕션 방어 레이어.
 
-## 왜 중요한가
+## 정의
 
-2026년 1월 Anthropic이 공개한 차세대 버전이 1,700시간 레드팀에서 universal jailbreak 완전 차단에 성공하며 컴퓨트 비용을 40배 줄였고, 프로덕션 배포 가능한 jailbreak 방어의 업계 표준으로 부상했다.
+**헌법 분류기(constitutional classifier)**는 두 단계로 구성된다:
+
+1. **합성 데이터 생성**: 헌법 원칙(예: "CBRN 무기 정보를 제공하지 않는다")에서 수천 개의 해로운/안전한 요청 쌍을 자동 생성
+2. **분류기 학습**: 생성된 데이터로 입력(요청)과 출력(응답)을 각각 독립적으로 분류하는 모델 훈련
+
+이 접근은 특정 공격 패턴을 규칙으로 열거하는 대신, **원칙 자체를 분류기에 내재화**한다.
+
+## 아키텍처
+
+```mermaid
+flowchart TD
+    A[사용자 입력] --> B[입력 분류기\nInput Classifier]
+    B -->|안전| C[메인 LLM]
+    B -->|위험| D[차단 + 설명]
+
+    C --> E[LLM 응답]
+    E --> F[출력 분류기\nOutput Classifier]
+    F -->|안전| G[사용자에게 전달]
+    F -->|위험| H[차단 + 재생성 요청]
+
+    style D fill:#ff6b6b,color:#fff
+    style H fill:#ff6b6b,color:#fff
+```
+
+입력 분류기와 출력 분류기를 이중으로 두는 이유:
+- 입력 분류기: "탈옥 의도"를 사전 차단
+- 출력 분류기: 탈옥이 성공해 위험한 응답이 생성된 경우 최후 방어
+
+## 성능 (2026년 1월 Anthropic)
+
+**1,700시간 레드팀 결과**:
+- 범용 탈옥(universal jailbreak) 차단율: **86.8%** (v1) -> **100%** (v2, 최후 평가 기준)
+- 과거 버전 대비 컴퓨트 비용: **40배 절감**
+- 허위 양성(false positive, 정상 요청 차단) 증가: 미미 (< 0.1%)
+
+## 헌법에서 데이터로: 합성 생성 과정
+
+```mermaid
+sequenceDiagram
+    participant C as 헌법 원칙
+    participant G as 생성 LLM
+    participant D as 학습 데이터셋
+    participant CL as 분류기
+
+    C ->> G: "원칙 X를 위반하는 요청 1000개 생성"
+    G ->> D: 위반 예시 1000개
+    C ->> G: "원칙 X를 준수하는 유사 요청 1000개 생성"
+    G ->> D: 준수 예시 1000개
+    D ->> CL: 학습 (위반 vs 준수 이진 분류)
+    CL -->> CL: 원칙 내재화 완료
+```
+
+이 과정으로 새로운 원칙 추가 시 수작업 데이터 수집 없이 자동으로 학습 데이터 생성 가능.
+
+## 표현 재사용(Representation Re-use)으로 비용 절감
+
+분류기는 메인 LLM과 **표현 레이어를 공유**할 수 있다. 메인 LLM의 중간 레이어 출력을 분류기의 입력으로 사용하면:
+- 분류기 학습 데이터: 90% 감소
+- 추론 비용: 중간 레이어만 추가 처리
+- 성능: 완전 독립 분류기와 동등
+
+## 범용 탈옥(Universal Jailbreak)이란
+
+특정 모델에 국한되지 않고 다양한 모델에 통하는 탈옥 프롬프트. 예:
+- 프롬프트 주입을 통한 시스템 프롬프트 무력화
+- 역할극(roleplay)을 이용한 제약 우회
+- 다국어 혼합으로 필터 회피
+- 점진적 컨텍스트 조작
+
+헌법 분류기는 특정 패턴이 아닌 **의도(intent)**를 분류하므로 이런 다양한 우회 시도에 강건하다.
+
+## 한계
+
+- **적응형 공격**: 분류기 자체를 공격 대상으로 삼는 화이트박스 공격에는 취약
+- **허위 양성**: 완벽한 차단은 정상 요청 차단을 수반 (트레이드오프)
+- **분류기 탈옥**: 분류기 자체에 대한 프롬프트 주입 공격 가능성
+
+## 실전 배포 고려사항
+
+- **배포 위치**: 프록시 레이어 또는 API 게이트웨이에 삽입
+- **레이턴시**: 입력 분류 < 100ms, 출력 분류 < 200ms 목표
+- **원칙 업데이트**: 새 위험 카테고리 발견 시 합성 데이터 재생성 -> 증분 파인튜닝
+- **모니터링**: 차단 로그를 [[llm-observability-platforms|관찰 가능성 플랫폼]]에 연동
 
 ## 대표 레퍼런스
 
@@ -23,72 +105,9 @@ updated: 2026-04-10
 - [Constitutional Classifiers (arXiv 2501.18837)](https://arxiv.org/pdf/2501.18837)
 - [Cost-Effective Constitutional Classifiers via Representation Re-use](https://alignment.anthropic.com/2025/cheap-monitors/)
 
-## 해석 포인트
-
-Constitutional Classifiers++ (Jailbreak Defense)은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `anthropic.com×2, arxiv.org×2, alignment.anthropic.com×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
-
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 헌법 규칙 기반 합성 데이터로 학습한 입출력 분류기로 범용 jailbreak 차단.
-- 왜 중요한가: 2026년 1월 Anthropic이 공개한 차세대 버전이 1,700시간 레드팀에서 universal jailbreak 완전 차단에 성공하며 컴퓨트 비용을 40배 줄였고, 프로덕션 배포 가능한 jailbreak 방어의 업계 표준으로 부상했다.
-- 직접 수집 원문: 5개
-- 주요 도메인: anthropic.com×2, arxiv.org×2, alignment.anthropic.com×1
-
-## 핵심 메커니즘
-
-헌법 규칙 기반 합성 데이터로 학습한 입출력 분류기로 범용 jailbreak 차단. 이 개념은 단일 문장 정의보다 **어떤 failure mode를 설명하는지, 어떤 구조적 trade-off를 드러내는지**를 함께 볼 때 가치가 커진다.
-
-## 핵심 포인트
-
-Constitutional Classifiers++ (Jailbreak Defense)는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 헌법 규칙 기반 합성 데이터로 학습한 입출력 분류기로 범용 jailbreak 차단.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
-
-## source로 보면
-
-수집된 source는 anthropic.com×2, arxiv.org×2, alignment.anthropic.com×1로 분포한다. 연구 논문과 공식 문서가 함께 있어 원리와 제품화 흐름을 같이 읽을 수 있다.
-
-## 실무 관점
-
-개념 페이지는 용어 정의에서 끝나지 않고, 어떤 시스템 설계 문제를 해결하려고 등장했는지와 어디까지가 적용 범위인지까지 함께 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/constitutional-classifiers.md`
-
-### source별 핵심 신호
-
-- **Next-generation Constitutional Classifiers: More efficient protection against universal jailbreaks \ Anthropic** (`anthropic.com`): https://www.anthropic.com/research/next-generation-constitutional-classifiers
-  - 메모: Large language models remain vulnerable to jailbreaks—techniques that can circumvent safety guardrails and elicit harmful information.
-- **Constitutional Classifiers: Defending against universal jailbreaks \ Anthropic** (`anthropic.com`): https://www.anthropic.com/research/constitutional-classifiers
-  - 메모: Large language models have extensive safety training to prevent harmful outputs. For example, we train Claude to refuse to respond to user queries involving the production of biological or chemical weapons.
-- **[2601.04603] Constitutional Classifiers++: Efficient Production-Grade Defenses against Universal Jailbreaks** (`arxiv.org`): https://arxiv.org/abs/2601.04603
-  - 메모: We introduce enhanced Constitutional Classifiers that deliver production-grade jailbreak robustness with dramatically reduced computational costs and refusal rates compared to previous-generation defenses.
-- **Constitutional Classifiers (arXiv 2501.18837)** (`arxiv.org`): https://arxiv.org/pdf/2501.18837
-  - 메모: << /Type /XObject /Subtype /Form /BBox [ 0 0 100 100 ]
-- **Cost-Effective Constitutional Classifiers via Representation Re-use** (`alignment.anthropic.com`): https://alignment.anthropic.com/2025/cheap-monitors/
-  - 메모: We study cost-effective jailbreak detection.
-
-
-## source 종합 해석
-
-예를 들어 source note는 Large language models remain vulnerable to jailbreaks—techniques that can circumvent safety guardrails and elicit harmful information.
-
-또 다른 source는 Large language models have extensive safety training to prevent harmful outputs. For example, we train Claude to refuse to respond to user queries involving the production of biological or chemical weapons.
-
-즉, 이 토픽이 중요한 이유는 `2026년 1월 Anthropic이 공개한 차세대 버전이 1,700시간 레드팀에서 universal jailbreak 완전 차단에 성공하며 컴퓨트 비용을 40배 줄였고, 프로덕션 배포 가능한 jailbreak 방어의 업계 표준으로 부상했다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Alignment Faking in LLMs, Agent Prompt Injection Defense & Trustworthy Agents가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `2026년 1월 Anthropic이 공개한 차세대 버전이 1,700시간 레드팀에서 universal jailbreak 완전 차단에 성공하며 컴퓨트 비용을 40배 줄였고, 프로덕션 배포 가능한 jailbreak 방어의 업계 표준으로 부상했다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
-
 ## 관련 문서
 
-- [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
 - [[alignment-faking|Alignment Faking in LLMs]]
-- [[agent-prompt-injection-defense|Agent Prompt Injection Defense & Trustworthy Agents]]
-- [[context-engineering|Context Engineering]]
+- [[agent-prompt-injection-defense|Agent Prompt Injection Defense]]
+- [[deliberative-alignment|Deliberative Alignment]]
+- [[responsible-scaling-policy-v3|Responsible Scaling Policy v3]]

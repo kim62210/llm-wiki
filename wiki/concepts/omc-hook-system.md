@@ -1,18 +1,17 @@
 ---
 title: OMC Hook System
-aliases: ["OMC Hook System", "Hooks"]
+aliases: [OMC Hook System, Hooks]
 category: concepts
 page_type: project-internal
 project: oh-my-claudecode
 tags: [omc, hooks, lifecycle, claude-code, keyword-detector, persistent-mode]
 sources: [raw/2026-04-09-omc-HOOKS.md, raw/2026-04-09-omc-ARCHITECTURE.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # OMC Hook System
 
-> Claude Code의 라이프사이클 이벤트에 Node.js 스크립트를 붙여 오케스트레이션, 상태 관리, 키워드 감지를 구현.
+> [[claude-code|Claude Code]]의 라이프사이클 이벤트에 Node.js 스크립트를 붙여 오케스트레이션, 상태 관리, 키워드 감지를 구현.
 
 ## 훅이란
 
@@ -58,7 +57,7 @@ OMC는 총 **20개+ 훅**을 등록한다.
 | `PermissionRequest` | 권한 요청 | Bash 명령 권한 처리 |
 | `PostToolUse` | 툴 사용 직후 | 결과 검증, 프로젝트 메모리 업데이트 |
 | `PostToolUseFailure` | 툴 실패 | 에러 복구 가이드 |
-| `SubagentStart` | 자식 에이전트 스폰 | 에이전트 추적 |
+| `Sub[[coding-agent|agent]]Start` | 자식 에이전트 스폰 | 에이전트 추적 |
 | `SubagentStop` | 자식 에이전트 종료 | 결과 검증 |
 | `PreCompact` | 컨텍스트 컴팩션 직전 | 중요 정보 보존, 프로젝트 메모리 저장 |
 | `Stop` | Claude 응답 종료 직전 | persistent-mode 유지, 코드 단순화 |
@@ -201,9 +200,12 @@ flowchart TD
 - **디버깅**: `OMC_SKIP_HOOKS`로 의심 훅만 끄고 재현
 - **훅이 느리면 세션 끊김**: 외부 네트워크 호출이 포함된 훅은 timeout 넉넉히 설정
 
+## What Are Hooks? 쪽에 모인다 |
+| Architecture | `raw/2026-04-09-omc-ARCHITECTURE.md` | raw snapshot | 주요 헤딩은 Overview, Agent System, Build/Analysis Lane, Review Lane이다 / 본문 단서는 > How oh-my-claudecode orchestrates multi-agent workflows.; ┌─────────────────────────────────────────────────────────────────────────┐ 쪽에 모인다 |
+
 ## 관련 문서
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Magic Keyword]]
-- [[OMC State Management]]
-- [[OMC Execution Modes]]
+- [[oh-my-claudecode]]
+- [[omc-magic-keyword]]
+- [[omc-state-management]]
+- [[omc-execution-modes]]

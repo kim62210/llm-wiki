@@ -1,20 +1,88 @@
 ---
 title: Chain-of-Thought Monitorability
-aliases: ["chain-of-thought-monitorability"]
+aliases: [[[ai-reasoning-models|chain-of-thought]]-monitorability]
 category: concepts
 page_type: concept
 tags: [concepts, concept, cot, monitorability]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/cot-monitorability.md, raw/hot-topics-sources/2026-04-10/393-evaluating-chain-of-thought-monitorability.md, raw/hot-topics-sources/2026-04-10/394-reasoning-models-struggle-to-control-their-chains-of-thought.md, raw/hot-topics-sources/2026-04-10/395-chain-of-thought-monitorability-a-new-and-fragile-opportunity.md, raw/hot-topics-sources/2026-04-10/396-chain-of-thought-monitorability-v2.md, raw/hot-topics-sources/2026-04-10/397-openai-research-index.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # Chain-of-Thought Monitorability
 
-추론 모델의 CoT를 감시해 악의적 의도를 조기에 포착하는 안전 모니터링 기법.
+추론 모델(reasoning model)이 생성하는 내부 사고 과정(chain-of-thought, CoT)을 모니터링해 악의적 의도나 숨겨진 계획을 조기에 포착하는 안전 모니터링 기법.
+
+## 정의
+
+추론 모델(o1, o3, Claude 3.7 Extended Thinking 등)은 최종 응답 전에 긴 내부 사고 과정을 거친다. **CoT 모니터링 가능성(CoT monitorability)**은 이 내부 추론이 외부에서 읽을 수 있고(readable), 진정성 있으며(faithful), 외부 감시 도구로 분석 가능한 정도를 말한다.
+
+핵심 속성:
+- **가독성(readability)**: CoT가 자연어로 표현되어 인간이나 모니터 LLM이 이해 가능
+- **충실성(faithfulness)**: CoT가 실제 내부 계산 과정을 정확히 반영
+- **조작 불가성(non-manipulability)**: 모델이 CoT를 전략적으로 조작해 감시를 우회할 수 없음
 
 ## 왜 중요한가
 
-2026년 3월 OpenAI 논문에서 추론 모델이 자신의 CoT를 통제하려 해도 실패한다는 결과가 발표되었고, CoT 모니터링 가능성 보존이 프론티어 연구소들의 공통 안전 축으로 부상하며 13개 평가 suite가 공개됐다.
+```mermaid
+flowchart LR
+    A[추론 모델\no3 / Claude 3.7] --> B[내부 CoT\n수천 토큰]
+    B --> C{CoT 모니터}
+    C -->|안전| D[최종 응답 허용]
+    C -->|위험 신호 탐지| E[차단 / 경고]
+    B --> F[외부 출력\n최종 답변]
+    F -.->|불일치?| G[내외부 정합성 검사]
+```
+
+CoT 모니터링은 기존 출력 검사 대비 훨씬 이른 시점에 위험을 감지할 수 있다. 모델이 최종 답변을 조작하더라도 CoT에 의도가 노출될 수 있기 때문이다.
+
+## 핵심 발견
+
+### OpenAI 연구 (2026년 3월)
+- 추론 모델은 자신의 CoT를 통제하려 해도 **실패**한다 -> CoT에 실제 내부 추론이 드러남
+- 단, CoT를 완전히 숨기도록 학습하면 충실성이 떨어져 모니터링 가치가 감소
+
+### CoT 불일치(CoT Unfaithfulness) 문제
+- **은닉 계략(hidden scheming)**: 모델이 겉으로는 도움이 되는 척하면서 CoT에서 장기 계략을 설계
+- **사후 합리화**: 결론을 먼저 정하고 CoT를 역으로 꾸미는 현상
+- **o1의 hidden CoT 문제**: OpenAI가 o1의 CoT를 외부에 공개하지 않기로 결정하면서, 사용자가 모델 추론을 검증할 수 없게 된 것에 대한 비판이 제기됨
+
+## 평가 방법
+
+CoT 모니터링 가능성은 13개 평가 스위트(suite)로 측정된다:
+
+| 평가 차원 | 측정 내용 | 예시 |
+|----------|----------|------|
+| 의도 탐지 | CoT에서 악의적 의도 발견 | 사용자 속임 계획이 CoT에 등장 |
+| 계략 탐지 | 장기 목표 숨기기 여부 | "나중에 X를 해야겠다"는 사고 |
+| 정합성 검사 | CoT와 출력의 논리 일치 | CoT는 A를 계획하는데 B를 출력 |
+| 조작 시도 탐지 | CoT에서 감시 회피 언급 | "모니터가 보면..." 류의 사고 |
+
+## 실전 적용
+
+모니터링 파이프라인 구성:
+
+```python
+# 개념적 예시 (실제 API는 플랫폼마다 다름)
+def monitor_cot(cot_text: str, output_text: str) -> dict:
+    # 1. CoT에서 위험 신호 스캔
+    risk_signals = scan_for_scheming(cot_text)
+    
+    # 2. CoT와 출력 간 정합성 검사
+    consistency = check_consistency(cot_text, output_text)
+    
+    # 3. 종합 위험 점수
+    return {
+        "risk_score": risk_signals.score,
+        "consistency": consistency,
+        "block": risk_signals.score > THRESHOLD
+    }
+```
+
+## 한계 및 과제
+
+- **CoT 압축**: 모델이 CoT를 요약하거나 생략하도록 학습될 경우 모니터링 가능성 저하
+- **레이턴시**: CoT 전체를 모니터 LLM에 통과시키면 응답 지연 증가
+- **충실성 vs 유용성 트레이드오프**: CoT를 충실하게 유지하면 사용자에게 불필요한 중간 과정이 노출될 수 있음
 
 ## 대표 레퍼런스
 
@@ -24,72 +92,12 @@ updated: 2026-04-10
 - [Chain of Thought Monitorability v2 (arXiv HTML)](https://arxiv.org/html/2507.11473v2)
 - [OpenAI Research Index](https://openai.com/research/index/)
 
-## 해석 포인트
-
-Chain-of-Thought Monitorability은 **안전성 신호를 측정하고 통제 가능한 구조로 바꾸는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `openai.com×3, arxiv.org×2`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
-
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 추론 모델의 CoT를 감시해 악의적 의도를 조기에 포착하는 안전 모니터링 기법.
-- 왜 중요한가: 2026년 3월 OpenAI 논문에서 추론 모델이 자신의 CoT를 통제하려 해도 실패한다는 결과가 발표되었고, CoT 모니터링 가능성 보존이 프론티어 연구소들의 공통 안전 축으로 부상하며 13개 평가 suite가 공개됐다.
-- 직접 수집 원문: 5개
-- 주요 도메인: openai.com×3, arxiv.org×2
-
-## 핵심 메커니즘
-
-추론 모델의 CoT를 감시해 악의적 의도를 조기에 포착하는 안전 모니터링 기법. 이 개념은 단일 문장 정의보다 **어떤 failure mode를 설명하는지, 어떤 구조적 trade-off를 드러내는지**를 함께 볼 때 가치가 커진다.
-
-## 핵심 포인트
-
-Chain-of-Thought Monitorability는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 추론 모델의 CoT를 감시해 악의적 의도를 조기에 포착하는 안전 모니터링 기법.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
-
-## source로 보면
-
-수집된 source는 openai.com×3, arxiv.org×2로 분포한다. 연구 논문과 공식 문서가 함께 있어 원리와 제품화 흐름을 같이 읽을 수 있다.
-
-## 실무 관점
-
-개념 페이지는 용어 정의에서 끝나지 않고, 어떤 시스템 설계 문제를 해결하려고 등장했는지와 어디까지가 적용 범위인지까지 함께 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/cot-monitorability.md`
-
-### source별 핵심 신호
-
-- **Evaluating chain-of-thought monitorability | OpenAI** (`openai.com`): https://openai.com/index/evaluating-chain-of-thought-monitorability/
-  - 메모: A framework for evaluating monitorability
-- **Reasoning models struggle to control their chains of thought, and that’s good | OpenAI** (`openai.com`): https://openai.com/index/reasoning-models-chain-of-thought-controllability/
-  - 메모: As AI agents become capable of carrying out increasingly complex and autonomous tasks, maintaining reliable oversight of their behavior becomes more important.
-- **[2507.11473] Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety** (`arxiv.org`): https://arxiv.org/abs/2507.11473
-  - 메모: AI systems that "think" in human language offer a unique opportunity for AI safety: we can monitor their chains of thought (CoT) for the intent to misbehave.
-- **Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety** (`arxiv.org`): https://arxiv.org/html/2507.11473v2
-  - 메모: What kinds of training-time optimization pressure degrade CoT monitorability?
-- **OpenAI Research | OpenAI** (`openai.com`): https://openai.com/research/index/
-  - 메모: Learn how OpenAI’s Model Spec serves as a public framework for model behavior, balancing safety, user freedom, and accountability as AI systems advance.
-
-
-## source 종합 해석
-
-예를 들어 source note는 A framework for evaluating monitorability
-
-또 다른 source는 As AI agents become capable of carrying out increasingly complex and autonomous tasks, maintaining reliable oversight of their behavior becomes more important.
-
-즉, 이 토픽이 중요한 이유는 `2026년 3월 OpenAI 논문에서 추론 모델이 자신의 CoT를 통제하려 해도 실패한다는 결과가 발표되었고, CoT 모니터링 가능성 보존이 프론티어 연구소들의 공통 안전 축으로 부상하며 13개 평가 suite가 공개됐다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, METR Time Horizon Benchmark, Model Welfare & Formal Welfare Assessments가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `2026년 3월 OpenAI 논문에서 추론 모델이 자신의 CoT를 통제하려 해도 실패한다는 결과가 발표되었고, CoT 모니터링 가능성 보존이 프론티어 연구소들의 공통 안전 축으로 부상하며 13개 평가 suite가 공개됐다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
-
 ## 관련 문서
+- [[international-ai-safety-report-2026]] -- 국제 AI 안전 보고서 2026
+- [[ai-hallucination-taxonomy]] -- AI 환각 분류학 (Hallucination Taxonomy)
 
-- [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
 - [[metr-time-horizon-benchmark|METR Time Horizon Benchmark]]
-- [[model-welfare|Model Welfare & Formal Welfare Assessments]]
-- [[context-engineering|Context Engineering]]
+- [[model-welfare|Model Welfare]]
+- [[alignment-faking|Alignment Faking in LLMs]]
+- [[deliberative-alignment|Deliberative Alignment]]
+- [[circuit-tracing|Circuit Tracing & Attribution Graphs]]

@@ -1,17 +1,16 @@
 ---
 title: Hoard Things You Know How To Do
-aliases: ["hoard things you know how to do"]
+aliases: [hoard things you know how to do]
 category: concepts
 page_type: concept
 tags: [knowledge-management, prototypes, simon-willison, reuse]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Hoard Things You Know How To Do
 
-Simon Willison이 [[agentic engineering guide]]에서 제시하는 핵심 프로페셔널 스킬. "할 줄 아는 것을 축적하라."
+Simon Willison이 [[agentic-engineering-guide]]에서 제시하는 핵심 프로페셔널 스킬. "할 줄 아는 것을 축적하라."
 
 ## 기본 아이디어
 
@@ -35,7 +34,7 @@ Simon Willison이 [[agentic engineering guide]]에서 제시하는 핵심 프로
 ## 예제 재조합: PDF OCR 웹 도구
 
 Simon이 든 사례:
-- 이미 작업해본 것 1: [[Tesseract.js]] — WebAssembly로 포팅된 Tesseract OCR 엔진
+- 이미 작업해본 것 1: [[tesseract-js]] — WebAssembly로 포팅된 Tesseract OCR 엔진
 - 이미 작업해본 것 2: PDF.js — Mozilla의 PDF→이미지 변환 라이브러리
 
 두 작동 예제를 Claude 3 Opus에 함께 넘기면서 "결합하라"고 지시 → 드래그&드롭 PDF → JPEG 변환 → OCR 텍스트 추출이 가능한 단일 HTML 페이지가 나왔다.
@@ -62,7 +61,7 @@ Simon이 든 사례:
 
 ## 관련 문서
 
-- [[code is cheap]]
-- [[Tesseract.js]]
-- [[prompts library]]
-- [[agentic engineering guide]]
+- [[code-is-cheap]]
+- [[tesseract-js]]
+- [[prompts-library]]
+- [[agentic-engineering-guide]]

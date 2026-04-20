@@ -1,17 +1,16 @@
 ---
 title: Better Code With Agents
-aliases: ["better code with agents"]
+aliases: [better code with agents]
 category: concepts
 page_type: concept
 tags: [code-quality, technical-debt, refactoring, simon-willison]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Better Code With Agents
 
-Simon Willison이 [[agentic engineering guide]]에서 제시하는 원칙: 코딩 에이전트를 도입한다고 해서 코드 품질이 반드시 하락하는 것은 아니다. 오히려 *더 나은* 코드를 쓸 기회다.
+Simon Willison이 [[agentic-engineering-guide]]에서 제시하는 원칙: 코딩 에이전트를 도입한다고 해서 코드 품질이 반드시 하락하는 것은 아니다. 오히려 *더 나은* 코드를 쓸 기회다.
 
 ## 핵심 주장
 
@@ -26,7 +25,7 @@ Simon Willison이 [[agentic engineering guide]]에서 제시하는 원칙: 코�
 - **중복 기능 통합** — 비슷한 로직을 하나로 모으기
 - **거대 파일 분할** — 모듈화
 
-이런 작업들은 **비동기 에이전트**에 맡기기 좋다. Simon이 예로 드는 도구: Gemini Jules, OpenAI Codex, [[Claude Code]]. 백그라운드에서 돌리면 본인 워크플로우를 중단하지 않는다.
+이런 작업들은 **비동기 에이전트**에 맡기기 좋다. Simon이 예로 드는 도구: Gemini Jules, OpenAI Codex, [[claude-code]]. 백그라운드에서 돌리면 본인 워크플로우를 중단하지 않는다.
 
 평가 프로세스: PR 리뷰 → 필요 시 반복. 비용이 낮으므로 품질 개선이 경제적으로 feasible해진다.
 
@@ -41,26 +40,26 @@ LLM은 놓치기 쉬운 기존 관행적 해법을 찾아준다. 또한 **비용
 
 Every(미디어)의 방법론에서 차용한 개념. 성공한 접근을 문서화해 향후 에이전트 실행에 재투입하는 반복 개선 루프. 시간이 지나면서 품질 향상이 복리로 쌓인다.
 
-## [[code is cheap]]과의 관계
+## [[code-is-cheap]]과의 관계
 
-- [[code is cheap]]: 코드 작성이 싸졌으니 이전에 "시간 없음"으로 포기했던 일들을 다시 하자
+- [[code-is-cheap]]: 코드 작성이 싸졌으니 이전에 "시간 없음"으로 포기했던 일들을 다시 하자
 - Better code: 그 중 많은 일이 "*품질* 개선" 작업이다
 
 두 원칙이 만나는 지점 = "더 많은 리팩토링, 더 많은 테스트, 더 많은 문서화를 실제로 할 수 있게 됐다."
 
 ## 안티패턴과의 대비
 
-반대편에는 [[anti-patterns in agentic engineering]]이 있다. 대표적으로 리뷰 없이 에이전트 PR을 남에게 던지는 것 — 이는 품질을 *낮추는* 선택이다.
+반대편에는 [[anti-patterns]]이 있다. 대표적으로 리뷰 없이 에이전트 PR을 남에게 던지는 것 — 이는 품질을 *낮추는* 선택이다.
 
 ## 실무 적용
 
 - 비동기 에이전트 세션을 "부채 상환 슬롯"으로 예약
 - 리팩토링 아이디어가 떠오르면 메모해두고 배치로 에이전트에 할당
-- 성공한 접근은 프롬프트 템플릿으로 저장 ([[prompts library]])
+- 성공한 접근은 프롬프트 템플릿으로 저장 ([[prompts-library]])
 
 ## 관련 문서
 
-- [[code is cheap]]
-- [[anti-patterns in agentic engineering]]
-- [[red-green TDD]]
-- [[agentic engineering guide]]
+- [[code-is-cheap]]
+- [[anti-patterns]]
+- [[red-green-tdd]]
+- [[agentic-engineering-guide]]

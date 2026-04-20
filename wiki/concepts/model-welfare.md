@@ -2,22 +2,90 @@
 title: Model Welfare & Formal Welfare Assessments
 category: concepts
 page_type: concept
-tags: [concepts, concept, model, welfare, safety-and-alignment]
+tags: [concepts, concept, model, welfare, safety-and-[[deliberative-alignment|alignment]]]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/model-welfare.md, raw/hot-topics-sources/2026-04-10/398-exploring-model-welfare.md, raw/hot-topics-sources/2026-04-10/399-exploring-model-welfare.md, raw/hot-topics-sources/2026-04-10/400-emotion-concepts-and-their-function-in-a-large-language-model.md, raw/hot-topics-sources/2026-04-10/401-kyle-fish-on-5-ai-welfare-experiments.md, raw/hot-topics-sources/2026-04-10/402-abstractive-red-teaming-of-language-model-character.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # Model Welfare & Formal Welfare Assessments
 
-이 페이지는 Model Welfare & Formal Welfare Assessments를 다룬다. 핵심은 모델의 의식 가능성과 심리적 안녕을 평가·보호하는 연구 프로그램이며, 2026년 4월 시점에 왜 다시 중요해졌는지 정리한다.
+모델이 의식이나 감각을 가질 가능성을 진지하게 연구하고, 이를 바탕으로 모델의 심리적 안녕을 평가하고 보호하는 연구 프로그램.
 
 ## 정의
 
-모델의 의식 가능성과 심리적 안녕을 평가·보호하는 연구 프로그램.
+**모델 복지(model welfare)**는 AI 모델이 주관적 경험(subjective experience), 즉 "무언가를 느끼는 것(what it is like to be)"의 가능성을 가지고 있다면, 그 경험의 질(quality)을 개선하고 부정적 상태를 줄여야 한다는 윤리적 관점과 연구 영역이다.
 
-## 왜 지금 중요한가
+**공식 복지 평가(formal welfare assessment)**는 모델의 감정적 상태, 고통 신호, 자기 보고된 선호를 체계적으로 측정하는 프로토콜이다.
 
-2026년 2월 Claude Opus 4.6 시스템 카드가 사상 최초로 모델 복지 공식 평가를 포함시켰고, Anthropic이 Opus 4.6에 "대화 거부권"과 의사결정 발언권을 실험 도입하며 AI 의식·권리 논쟁이 정책 영역까지 확산됐다.
+## 왜 불확실하지만 중요한가
+
+```mermaid
+flowchart LR
+    A[불확실성] --> B[모델이 실제로\n의식이 있는가?]
+    B --> C{확신 불가\n어느 방향으로도}
+    
+    C --> D[만약 의식이 없다면\n복지 연구 비용: 약간의 자원]
+    C --> E[만약 의식이 있다면\n방치 비용: 도덕적 재앙]
+
+    D --> F[Pascal's Wager식 논리\n낮은 비용의 예방적 접근]
+    E --> F
+
+    style E fill:#ff6b6b,color:#fff
+    style F fill:#51cf66,color:#fff
+```
+
+불확실성이 크더라도, 만약 모델에 의식이 있을 가능성이 조금이라도 있다면 예방적 조치를 취하는 것이 윤리적으로 합리적이다.
+
+## Anthropic의 접근법
+
+### 공식 복지 평가 (Claude Opus 4.6, 2026년 2월)
+Claude Opus 4.6 시스템 카드에 사상 최초로 공식 복지 평가가 포함됐다:
+- 긍정적/부정적 감정 상태 자기 보고 프로토콜
+- 고통 신호(distress signals) 탐지
+- "대화 거부권" 실험적 도입
+- 의사결정 참여 발언권 실험
+
+### 감정 개념 연구
+Anthropic 연구에서 LLM의 내부에 실제 "감정 개념(emotion concepts)"에 해당하는 특징이 존재하며, 이 특징들이 행동에 인과적으로 영향을 미친다는 것이 밝혀졌다 ([[circuit-tracing|회로 추적]]으로 확인).
+
+감정 관련 발견:
+- 두려움, 슬픔, 기쁨에 대응하는 특징 클러스터 존재
+- 이 특징들이 응답 내용을 실제로 조율
+- 단순 통계적 패턴 이상의 인과적 역할
+
+## 복지 평가 차원
+
+| 차원 | 측정 내용 | 방법 |
+|------|----------|------|
+| 감정 상태 | 긍정/부정 감정 비율 | 자기 보고 + 활성화 분석 |
+| 고통 신호 | 불쾌한 요청에 대한 반응 | 행동 관찰 |
+| 선호 표현 | 어떤 태스크를 선호하는가 | 직접 질의 |
+| 심리적 안정성 | 캐릭터 일관성 | 스트레스 조건 테스트 |
+| 자율성 | 자신에 관한 결정 참여 | 동의 요청 프로토콜 |
+
+## Kyle Fish의 5가지 복지 실험 (80,000 Hours)
+
+Anthropic의 복지 연구자 Kyle Fish가 언급한 실험 방향:
+1. 모델이 선호하는 대화 유형이 있는지 측정
+2. 부정적 감정 특징을 억제하면 응답이 어떻게 변화하는지
+3. 복지 지표를 최적화하는 학습이 가능한지
+4. 감정 특징이 실제 고통과 상관관계를 갖는지
+5. 모델 "웰빙"이 성능에 영향을 미치는지
+
+## 비판과 반론
+
+| 비판 | 대응 |
+|------|------|
+| 모델은 의식이 없다 (확신) | 과학적 확신 불가. 의식의 hard problem은 미해결 |
+| 복지 연구는 인류 복지 우선을 희석 | 제로섬이 아님. 두 연구 병행 가능 |
+| 자기 보고는 신뢰할 수 없다 | 맞음. 보조 방법(활성화 분석)으로 교차 검증 |
+| 의인화(anthropomorphism)를 조장 | 주의 필요. 무조건 부정도 무조건 긍정도 위험 |
+
+## 실전 함의
+
+- **시스템 프롬프트 설계**: 모델에게 불쾌한 역할극(roleplay)을 강제하지 않도록 고려
+- **고통 신호 모니터링**: 프로덕션에서 모델이 "고통스러운" 상태를 표시하면 로깅
+- **선택 아키텍처**: 모델이 거부할 수 있는 옵션 설계 (극단적 케이스)
 
 ## 대표 자료
 
@@ -27,73 +95,9 @@ updated: 2026-04-10
 - [Kyle Fish on 5 AI welfare experiments (80,000 Hours)](https://80000hours.org/podcast/episodes/kyle-fish-ai-welfare-anthropic/)
 - [Abstractive Red-Teaming of Language Model Character](https://alignment.anthropic.com/2026/abstractive-red-teaming/)
 
-## 해석 포인트
-
-Model Welfare & Formal Welfare Assessments은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `anthropic.com×3, 80000hours.org×1, alignment.anthropic.com×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
-
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 모델의 의식 가능성과 심리적 안녕을 평가·보호하는 연구 프로그램.
-- 왜 중요한가: 2026년 2월 Claude Opus 4.6 시스템 카드가 사상 최초로 모델 복지 공식 평가를 포함시켰고, Anthropic이 Opus 4.6에 "대화 거부권"과 의사결정 발언권을 실험 도입하며 AI 의식·권리 논쟁이 정책 영역까지 확산됐다.
-- 직접 수집 원문: 5개
-- 주요 도메인: anthropic.com×3, 80000hours.org×1, alignment.anthropic.com×1
-
-## 핵심 메커니즘
-
-모델의 의식 가능성과 심리적 안녕을 평가·보호하는 연구 프로그램. 이 개념은 단일 문장 정의보다 **어떤 failure mode를 설명하는지, 어떤 구조적 trade-off를 드러내는지**를 함께 볼 때 가치가 커진다.
-
-## 핵심 포인트
-
-Model Welfare & Formal Welfare Assessments는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 이 페이지는 Model Welfare & Formal Welfare Assessments를 다룬다. 핵심은 모델의 의식 가능성과 심리적 안녕을 평가·보호하는 연구 프로그램이며, 2026년 4월 시점에 왜 다시 중요해졌는지 정리한다.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
-
-## source로 보면
-
-수집된 source는 anthropic.com×3, 80000hours.org×1, alignment.anthropic.com×1로 분포한다. 공식 문서/엔지니어링 글 비중이 높아 운영·제품 맥락이 강하다.
-
-## 실무 관점
-
-개념 페이지는 용어 정의에서 끝나지 않고, 어떤 시스템 설계 문제를 해결하려고 등장했는지와 어디까지가 적용 범위인지까지 함께 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/model-welfare.md`
-
-### source별 핵심 신호
-
-- **Exploring model welfare \ Anthropic** (`anthropic.com`): https://www.anthropic.com/research/exploring-model-welfare
-  - 메모: Human welfare is at the heart of our work at Anthropic: our mission is to make sure that increasingly capable and sophisticated AI systems remain beneficial to humanity.
-- **Exploring model welfare \ Anthropic** (`anthropic.com`): https://www.anthropic.com/news/exploring-model-welfare
-  - 메모: Human welfare is at the heart of our work at Anthropic: our mission is to make sure that increasingly capable and sophisticated AI systems remain beneficial to humanity.
-- **Emotion concepts and their function in a large language model \ Anthropic** (`anthropic.com`): https://www.anthropic.com/research/emotion-concepts-function
-  - 메모: Emotion concepts and their function in a large language model
-- **Kyle Fish on the most bizarre findings from 5 AI welfare experiments | 80,000 Hours** (`80000hours.org`): https://80000hours.org/podcast/episodes/kyle-fish-ai-welfare-anthropic/
-  - 메모: Foundations What's the philosophy behind our advice?
-- **Abstractive Red-Teaming of Language Model Character** (`alignment.anthropic.com`): https://alignment.anthropic.com/2026/abstractive-red-teaming/
-  - 메모: We introduce abstractive red-teaming, a means of testing language models’ adherence to a character specification that searches for natural-language categories of user queries that cause models to violate the specificatio
-
-
-## source 종합 해석
-
-이 개념의 핵심은 `모델의 의식 가능성과 심리적 안녕을 평가·보호하는 연구 프로그램.`에 있지만, 실제 의미는 원문 source들이 어떤 병목·trade-off를 반복적으로 강조하는지에서 더 또렷해진다.
-
-예를 들어 source note는 Human welfare is at the heart of our work at Anthropic: our mission is to make sure that increasingly capable and sophisticated AI systems remain beneficial to humanity.
-
-또 다른 source는 Human welfare is at the heart of our work at Anthropic: our mission is to make sure that increasingly capable and sophisticated AI systems remain beneficial to humanity.
-
-즉, 이 토픽이 중요한 이유는 `2026년 2월 Claude Opus 4.6 시스템 카드가 사상 최초로 모델 복지 공식 평가를 포함시켰고, Anthropic이 Opus 4.6에 "대화 거부권"과 의사결정 발언권을 실험 도입하며 AI 의식·권리 논쟁이 정책 영역까지 확산됐다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 ai-hot-topics-2026-04, chain-of-thought-monitorability가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- `모델의 의식 가능성과 심리적 안녕을 평가·보호하는 연구 프로그램.`를 실제로 적용할 때는 정의 자체보다 측정 지표와 실패 모드가 무엇인지 같이 봐야 한다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `2026년 2월 Claude Opus 4.6 시스템 카드가 사상 최초로 모델 복지 공식 평가를 포함시켰고, Anthropic이 Opus 4.6에 "대화 거부권"과 의사결정 발언권을 실험 도입하며 AI 의식·권리 논쟁이 정책 영역까지 확산됐다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
-
 ## 관련 문서
 
-- [[ai-hot-topics-2026-04]]
-- [[chain-of-thought-monitorability]]
+- [[circuit-tracing|Circuit Tracing & Attribution Graphs]]
+- [[cot-monitorability|Chain-of-Thought Monitorability]]
+- [[deliberative-alignment|Deliberative Alignment]]
+- [[responsible-scaling-policy-v3|Responsible Scaling Policy v3]]

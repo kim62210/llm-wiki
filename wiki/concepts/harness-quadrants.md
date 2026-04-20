@@ -1,19 +1,18 @@
 ---
 title: Harness Quadrants (하네스 4사분면)
-aliases: ["harness quadrants", "하네스 4사분면", "harness 2x2"]
+aliases: [harness quadrants, 하네스 4사분면, harness 2x2]
 category: concepts
 page_type: concept
 tags: [harness-engineering, fowler, bockeler, taxonomy, 2x2-framework]
 sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Harness Quadrants (하네스 4사분면)
 
 ## 정의
 
-**Harness Quadrants**는 Martin Fowler와 Birgitta Böckeler(ThoughtWorks)가 2026년 2월에 제시한 **하네스 구성요소의 2×2 분류 체계**다. [[harness engineering]]에서 "모델을 제외한 모든 것"에 해당하는 하네스를 네 영역으로 쪼개 어떤 레버를 선택할지 판단할 수 있게 해준다.
+**Harness Quadrants**는 Martin Fowler와 Birgitta Böckeler(ThoughtWorks)가 2026년 2월에 제시한 **하네스 구성요소의 2×2 분류 체계**다. [[harness-engineering]]에서 "모델을 제외한 모든 것"에 해당하는 하네스를 네 영역으로 쪼개 어떤 레버를 선택할지 판단할 수 있게 해준다.
 
 ## 두 축
 
@@ -66,7 +65,7 @@ flowchart LR
   - few-shot 예시
   - 출력 포맷 명세
 - **특성**: 뉘앙스를 다룰 수 있지만 **비결정적**. 지키지 않을 수 있다
-- **역할**: [[prompt engineering]] 시대의 레거시. 여전히 필요하지만 전부가 아니다
+- **역할**: [[prompt-engineering]] 시대의 레거시. 여전히 필요하지만 전부가 아니다
 
 ### 우하: Inferential (추론적)
 
@@ -93,7 +92,7 @@ flowchart TB
 
 - 비어 있는 사분면이 약점이다. 네 영역을 모두 갖춘 하네스가 견고하다
 - **가이드만 있는 하네스**는 강제력이 없어 금방 무너진다
-- **시스템 프롬프트만 있는 하네스**는 [[prompt engineering]] 시대의 한계를 답습한다
+- **시스템 프롬프트만 있는 하네스**는 [[prompt-engineering]] 시대의 한계를 답습한다
 - **연산적 피드백이 없는 하네스**는 타입 에러와 컴파일 에러를 사람이 잡아줘야 한다
 - **추론적 피드백이 없는 하네스**는 의미가 틀린 코드를 잡지 못한다
 
@@ -118,26 +117,15 @@ flowchart TB
 
 ## 관련 개념
 
-- **[[prompt engineering]]의 레거시**: 좌하 사분면만 있던 시대
-- **[[context engineering]]의 레거시**: 좌하 + 부분적인 우하
-- **[[harness engineering]]의 핵심**: 네 사분면 전체 조합
-
-## 실무 체크리스트
-
-새 에이전트 시스템을 설계할 때 각 사분면이 채워졌는지 점검한다:
-
-- [ ] **Guides**: `AGENTS.md`/`CLAUDE.md`/컨벤션 문서가 있는가?
-- [ ] **System Prompts**: 역할, 제약, 예시가 명확히 정의되어 있는가?
-- [ ] **Computational**: 린터/타입 체커/테스트가 CI에 연결되어 있는가?
-- [ ] **Inferential**: LLM-as-judge나 시맨틱 리뷰 단계가 있는가?
-
-네 칸이 모두 채워져 있지 않으면 그 빈칸이 가장 약한 고리다.
+- **[[prompt-engineering]]의 레거시**: 좌하 사분면만 있던 시대
+- **[[context-engineering]]의 레거시**: 좌하 + 부분적인 우하
+- **[[harness-engineering]]의 핵심**: 네 사분면 전체 조합
 
 ## 관련 문서
 
-- [[harness engineering]] — 이 분류의 부모 개념
-- [[evolution of agentic patterns]] — 3 에라 연대기
-- [[prompt engineering]] — 좌하 사분면만 있던 시대
-- [[context engineering]] — 이 분류 직전의 패러다임
-- [[relocating rigor]] — 엄밀함이 네 사분면에 분산되는 원리
-- [[lethal trifecta]] — 보안 사분면이 필요한 이유
+- [[harness-engineering]] — 이 분류의 부모 개념
+- [[evolution-of-agentic-patterns]] — 3 에라 연대기
+- [[prompt-engineering]] — 좌하 사분면만 있던 시대
+- [[context-engineering]] — 이 분류 직전의 패러다임
+- [[relocating-rigor]] — 엄밀함이 네 사분면에 분산되는 원리
+- [[lethal-trifecta]] — 보안 사분면이 필요한 이유

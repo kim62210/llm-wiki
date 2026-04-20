@@ -1,17 +1,16 @@
 ---
 title: "AI 친화적 디자인 시스템 문서화"
-aliases: ["ai-readable design system", "AI-readable design system", "디자인 시스템 AI 문서화"]
+aliases: [ai-readable design system, AI-readable design system, 디자인 시스템 AI 문서화]
 category: concepts
 page_type: concept
 tags: [design-system, ai-agents, agents-md, design-md, readme, documentation]
 sources: [raw/2026-04-09-stitch-design-md.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # AI 친화적 디자인 시스템 문서화
 
-AI 에이전트가 UI를 생성하는 시대에, 디자인 시스템은 **사람뿐 아니라 에이전트도 읽을 수 있는** 형태여야 한다는 관점. Google Stitch가 [[DESIGN.md 포맷]]을 제안하면서 구체화된 개념이지만, 원리 자체는 source-agnostic하다.
+AI 에이전트가 UI를 생성하는 시대에, 디자인 시스템은 **사람뿐 아니라 에이전트도 읽을 수 있는** 형태여야 한다는 관점. Google Stitch가 [[design-md-format]]을 제안하면서 구체화된 개념이지만, 원리 자체는 source-agnostic하다.
 
 ## 왜 이 개념이 필요한가
 
@@ -48,8 +47,8 @@ flowchart TD
 | 파일 | 독자 | 정의 | 관례 |
 |------|------|------|------|
 | **README.md** | 사람 | 프로젝트의 목적·기능·설치 방법 | GitHub 1995년부터 보편화 |
-| **AGENTS.md** | 코딩 에이전트 | 빌드·테스트·실행 방법, 프로젝트별 규약, 주의사항 | OpenAI·Claude Code 생태계 2025~ 채택, [[Claude Code]]는 CLAUDE.md도 사용 |
-| **DESIGN.md** | 디자인 에이전트 | 색상, 타이포, 컴포넌트, do/don'ts | Google Stitch 2026 제안, [[DESIGN.md 포맷]] 참조 |
+| **AGENTS.md** | 코딩 에이전트 | 빌드·테스트·실행 방법, 프로젝트별 규약, 주의사항 | OpenAI·Claude Code 생태계 2025~ 채택, [[claude-code]]는 CLAUDE.md도 사용 |
+| **DESIGN.md** | 디자인 에이전트 | 색상, 타이포, 컴포넌트, do/don'ts | Google Stitch 2026 제안, [[design-md-format]] 참조 |
 
 ### 세 파일의 공통 원칙
 
@@ -81,7 +80,7 @@ AI 에이전트가 디자인 시스템 문서를 "읽을 수 있다"는 것의 �
 
 ## AGENTS.md / CLAUDE.md와의 연결
 
-[[agentic engineering]] 생태계에는 이미 에이전트용 지침 파일 관례가 있다:
+[[agentic-engineering]] 생태계에는 이미 에이전트용 지침 파일 관례가 있다:
 
 - **AGENTS.md**: OpenAI/Cursor/Claude Code 등 다수 도구가 채택한 "에이전트에게 전하는 프로젝트 규약" 파일
 - **CLAUDE.md**: Claude Code 고유 버전 (역사적 유래로 존재, 최근에는 AGENTS.md로 수렴 추세)
@@ -99,14 +98,14 @@ DESIGN.md는 이 흐름의 자연스러운 확장이다. 코딩 규약이 문서
 
 1. **기존 Figma 파일이 있는 팀**: Stitch의 "derive from branding" 경로 또는 수동 추출로 DESIGN.md 초안 생성 → git에 커밋
 2. **새 프로젝트**: 분위기 프롬프트로 에이전트에게 생성 맡기기 → 팀이 리뷰 → DESIGN.md를 AGENTS.md와 함께 루트에 배치
-3. **기존 AGENTS.md + Claude Code 사용자**: DESIGN.md를 추가로 작성. Claude Code는 [[DESIGN.md 포맷]]을 읽고 UI 작성 시 참조
+3. **기존 AGENTS.md + Claude Code 사용자**: DESIGN.md를 추가로 작성. Claude Code는 [[design-md-format]]을 읽고 UI 작성 시 참조
 
 ## 관련 문서
 
-- [[DESIGN.md 포맷]]
-- [[stitch design-md guide]]
-- [[Google Stitch]]
-- [[design tokens]]
-- [[Claude Code]]
-- [[agentic engineering]]
-- [[better code with agents]]
+- [[design-md-format]]
+- [[stitch-design-md-guide]]
+- [[google-stitch]]
+- [[design-tokens]]
+- [[claude-code]]
+- [[agentic-engineering]]
+- [[better-code-with-agents]]

@@ -1,19 +1,103 @@
 ---
-title: LLM-as-Judge Calibration & Reliability
+title: [[ai-reasoning-models|LLM]]-as-Judge Calibration & Reliability
 category: concepts
 page_type: concept
-tags: [concepts, concept, llm, as, judge, calibration]
-sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/llm-as-judge-calibration.md, raw/hot-topics-sources/2026-04-10/212-calibrating-llm-judges-linear-probes-for-fast-and-reliable-uncertainty-estimatio.md, raw/hot-topics-sources/2026-04-10/213-how-to-correctly-report-llm-as-a-judge-evaluations.md, raw/hot-topics-sources/2026-04-10/214-overconfidence-in-llm-as-a-judge-diagnosis-and-confidence-driven-solution.md, raw/hot-topics-sources/2026-04-10/215-evaluating-the-effectiveness-of-llm-evaluators.md, raw/hot-topics-sources/2026-04-10/216-a-survey-on-llm-as-a-judge.md]
+tags: [concepts, concept, llm, as, judge, [[self-evaluation-bias|calibration]]]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/llm-as-judge-calibration.md, raw/hot-topics-sources/2026-04-10/212-calibrating-llm-judges-linear-probes-for-fast-and-reliable-uncertainty-estimatio.md, raw/hot-topics-sources/2026-04-10/213-how-to-correctly-report-llm-as-a-judge-[[rubric-based-evals|evaluation]]s.md, raw/hot-topics-sources/2026-04-10/214-overconfidence-in-llm-as-a-judge-diagnosis-and-confidence-driven-solution.md, raw/hot-topics-sources/2026-04-10/215-evaluating-the-effectiveness-of-llm-evaluators.md, raw/hot-topics-sources/2026-04-10/216-a-survey-on-llm-as-a-judge.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # LLM-as-Judge Calibration & Reliability
 
-LLM 평가자의 과신·편향을 진단하고 확신도를 보정하는 기법.
+LLM을 평가자(judge)로 사용할 때 발생하는 편향과 과신(overconfidence)을 진단하고, 평가자의 신뢰도를 인간 판단 기준으로 보정(calibrate)하는 기법.
 
-## 왜 중요한가
+## 정의
 
-2025-2026년 LLM 심사관의 과잉 확신(overconfidence)과 비전이적(non-transitive) 선호가 프로덕션 eval의 가장 큰 병목으로 부각되면서, 선형 프로브·Brier 스코어·통계적 보정 프레임워크가 연달아 제안되고 있다.
+**LLM-as-Judge**는 인간 평가자 대신 LLM을 사용해 다른 LLM의 응답 품질을 자동으로 채점하는 방법이다. 비용과 속도 면에서 인간 평가 대비 압도적이지만, 체계적 편향(systematic bias)과 과신이 핵심 문제로 남아 있다.
+
+**보정(calibration)**이란 평가자의 "확신 점수"가 실제 정확도와 얼마나 일치하는지를 측정하고 수정하는 과정이다. 완벽하게 보정된 평가자는 "90% 확신"이라고 할 때 실제로 90%의 케이스에서 맞는다.
+
+## 주요 편향 분류
+
+```mermaid
+flowchart TD
+    A[LLM 평가자 편향] --> B[위치 편향\nPosition Bias]
+    A --> C[길이 편향\nVerbosity Bias]
+    A --> D[자기강화 편향\nSelf-Enhancement Bias]
+    A --> E[과신\nOverconfidence]
+    A --> F[권위 편향\nAuthority Bias]
+
+    B --> B1[페어와이즈에서\n먼저 보인 응답 선호]
+    C --> C1[더 긴 응답을\n무조건 선호]
+    D --> D1[자사 모델 생성\n응답에 높은 점수]
+    E --> E1[경계 케이스에서도\n극단 점수 부여]
+    F --> F1[권위 있어 보이는\n어조를 선호]
+```
+
+## 과신(Overconfidence) 문제
+
+LLM 평가자의 과신은 두 가지 형태로 나타난다:
+
+1. **점수 극단화**: 애매한 케이스에서도 1점 또는 5점 같은 극단 점수를 부여
+2. **확신 오보정**: "매우 확신한다"고 표현했지만 실제 정확도는 낮음
+
+**Brier 스코어**로 측정:
+$$\text{Brier} = \frac{1}{N}\sum_{i=1}^{N}(f_i - o_i)^2$$
+- $f_i$: 평가자의 확신 점수 (0-1)
+- $o_i$: 실제 정답 여부 (0 or 1)
+- 낮을수록 보정이 잘 됨
+
+## 보정 방법
+
+### 1. 선형 프로브(Linear Probe) 보정
+LLM의 내부 표현에서 평가 불확실성을 추출하는 방법. 평가자 LLM의 숨겨진 상태(hidden state)로 훈련한 선형 분류기가 단순 소프트맥스(softmax) 확신보다 신뢰도가 높다.
+
+### 2. 온도 스케일링(Temperature Scaling)
+소프트맥스 출력에 보정 온도 T를 적용:
+$$\hat{p} = \text{softmax}(z / T)$$
+T > 1이면 더 부드럽고 보수적인 확신 분포 생성.
+
+### 3. 앙상블 보정
+복수의 약한 평가자를 앙상블:
+- 과신을 집계로 평균화
+- 평가자 간 불일치를 "불확실 구간"으로 처리
+
+## 올바른 보고 방법
+
+LLM-as-Judge 평가를 논문이나 보고서에 기술할 때:
+
+```markdown
+# 권장 보고 형식
+
+- 평가자 모델: Claude 3.5 Sonnet (2025-10-22)
+- 평가 프로토콜: 포인트와이즈, 5점 척도
+- 루브릭: [링크] (행동 앵커 포함)
+- 인간-LLM 일치율: Cohen's kappa = 0.72 (n=200)
+- 위치 편향 검사: 페어와이즈 순서 교환 일치율 89%
+- 보정 방법: 없음 / 온도 스케일링 T=1.3 적용
+```
+
+포함해야 할 정보:
+- [ ] 평가자 모델 버전 명시
+- [ ] 인간 골든 셋과의 상관 계수
+- [ ] 위치 편향 검사 결과
+- [ ] 루브릭 또는 프롬프트 공개
+- [ ] 샘플 크기 및 신뢰 구간
+
+## 자기강화 편향 완화
+
+- **제3자 모델 사용**: 평가 대상과 다른 회사의 모델을 평가자로 사용
+- **블라인드 평가**: 어떤 모델이 생성했는지 메타데이터를 제거 후 평가
+- **교차 평가**: A 모델이 B 모델을, B 모델이 A 모델을 평가하고 평균
+
+## LLM-as-Judge가 잘 작동하는 영역
+
+| 잘 작동 | 어려운 영역 |
+|--------|-----------|
+| 포맷/구조 준수 | 사실적 정확성 |
+| 언어 유창성 | 전문 도메인 지식 |
+| 지시 준수 | 주관적 창의성 |
+| 안전성 판단 | 문화적 뉘앙스 |
 
 ## 대표 레퍼런스
 
@@ -23,71 +107,9 @@ LLM 평가자의 과신·편향을 진단하고 확신도를 보정하는 기법
 - [Evaluating the Effectiveness of LLM-Evaluators (Eugene Yan)](https://eugeneyan.com/writing/llm-evaluators/)
 - [A Survey on LLM-as-a-Judge (arXiv:2411.15594)](https://arxiv.org/abs/2411.15594)
 
-## 해석 포인트
-
-LLM-as-Judge Calibration & Reliability은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `arxiv.org×4, eugeneyan.com×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
-
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: LLM 평가자의 과신·편향을 진단하고 확신도를 보정하는 기법.
-- 왜 중요한가: 2025-2026년 LLM 심사관의 과잉 확신(overconfidence)과 비전이적(non-transitive) 선호가 프로덕션 eval의 가장 큰 병목으로 부각되면서, 선형 프로브·Brier 스코어·통계적 보정 프레임워크가 연달아 제안되고 있다.
-- 직접 수집 원문: 5개
-- 주요 도메인: arxiv.org×4, eugeneyan.com×1
-
-## 핵심 메커니즘
-
-LLM 평가자의 과신·편향을 진단하고 확신도를 보정하는 기법. 이 개념은 단일 문장 정의보다 **어떤 failure mode를 설명하는지, 어떤 구조적 trade-off를 드러내는지**를 함께 볼 때 가치가 커진다.
-
-## 핵심 포인트
-
-LLM-as-Judge Calibration & Reliability는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 LLM 평가자의 과신·편향을 진단하고 확신도를 보정하는 기법.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
-
-## source로 보면
-
-수집된 source는 arxiv.org×4, eugeneyan.com×1로 분포한다. 연구 논문 비중이 높아 메커니즘·평가·한계 쪽 정보가 중심이다.
-
-## 실무 관점
-
-개념 페이지는 용어 정의에서 끝나지 않고, 어떤 시스템 설계 문제를 해결하려고 등장했는지와 어디까지가 적용 범위인지까지 함께 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/llm-as-judge-calibration.md`
-
-### source별 핵심 신호
-
-- **[2512.22245] Calibrating LLM Judges: Linear Probes for Fast and Reliable Uncertainty Estimation** (`arxiv.org`): https://arxiv.org/abs/2512.22245
-  - 메모: As LLM-based judges become integral to industry applications, obtaining well-calibrated uncertainty estimates efficiently has become critical for production deployment.
-- **[2511.21140] How to Correctly Report LLM-as-a-Judge Evaluations** (`arxiv.org`): https://arxiv.org/abs/2511.21140
-  - 메모: Large language models (LLMs) are widely used as scalable evaluators of model responses in lieu of human annotators.
-- **[2508.06225] Overconfidence in LLM-as-a-Judge: Diagnosis and Confidence-Driven Solution** (`arxiv.org`): https://arxiv.org/abs/2508.06225
-  - 메모: Large Language Models (LLMs) are widely used as automated judges, where practical value depends on both accuracy and trustworthy, risk-aware judgments.
-- **Evaluating the Effectiveness of LLM-Evaluators (aka LLM-as-Judge)** (`eugeneyan.com`): https://eugeneyan.com/writing/llm-evaluators/
-  - 메모: Their growing adoption is partly driven by necessity. LLMs can now solve increasingly complex and open-ended tasks such as long-form summarization, translation, and multi-turn dialogue.
-- **[2411.15594] A Survey on LLM-as-a-Judge** (`arxiv.org`): https://arxiv.org/abs/2411.15594
-  - 메모: Accurate and consistent evaluation is crucial for decision-making across numerous fields, yet it remains a challenging task due to inherent subjectivity, variability, and scale.
-
-
-## source 종합 해석
-
-예를 들어 source note는 As LLM-based judges become integral to industry applications, obtaining well-calibrated uncertainty estimates efficiently has become critical for production deployment.
-
-또 다른 source는 Large language models (LLMs) are widely used as scalable evaluators of model responses in lieu of human annotators.
-
-즉, 이 토픽이 중요한 이유는 `2025-2026년 LLM 심사관의 과잉 확신(overconfidence)과 비전이적(non-transitive) 선호가 프로덕션 eval의 가장 큰 병목으로 부각되면서, 선형 프로브·Brier 스코어·통계적 보정 프레임워크가 연달아 제안되고 있다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Error Analysis as the Eval Foundation, Context Engineering가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `2025-2026년 LLM 심사관의 과잉 확신(overconfidence)과 비전이적(non-transitive) 선호가 프로덕션 eval의 가장 큰 병목으로 부각되면서, 선형 프로브·Brier 스코어·통계적 보정 프레임워크가 연달아 제안되고 있다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
-
 ## 관련 문서
 
-- [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
-- [[error-analysis-for-evals|Error Analysis as the Eval Foundation]]
-- [[context-engineering|Context Engineering]]
+- [[error-analysis-for-evals|Error Analysis for Evals]]
+- [[rubric-based-evals|Rubric-Based Evaluation Frameworks]]
+- [[pairwise-vs-pointwise-evals|Pairwise vs Pointwise Evals]]
+- [[llm-observability-platforms|LLM Observability Platforms]]

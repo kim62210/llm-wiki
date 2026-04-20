@@ -1,14 +1,13 @@
 ---
 title: Self-Evaluation Bias (자기평가 편향)
-aliases: ["self-evaluation bias", "self evaluation bias", "자기평가 편향", "self-critique failure"]
+aliases: [self-evaluation bias, self evaluation bias, 자기평가 편향, self-critique failure]
 category: concepts
 page_type: concept
 tags: [failure-mode, llm-as-judge, evaluator, bias, multi-agent]
 sources: [raw/2026-04-09-anthropic-harness-design-long-running-apps.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Self-Evaluation Bias (자기평가 편향)
 
 ## 정의
@@ -38,7 +37,7 @@ Anthropic 사례에서 관찰된 초기 동작:
 
 > "Claude was initially a poor QA agent ... it would talk itself into deciding they weren't a big deal and approve the work anyway."
 
-## 해법: [[generator-evaluator architecture|작업과 평가의 분리]]
+## 해법: [[generator-evaluator-architecture|작업과 평가의 분리]]
 
 가장 효과적인 완화책은 **작업 에이전트(generator)와 평가 에이전트(evaluator)를 구조적으로 분리**하는 것이다. 두 에이전트가 같은 모델을 써도 된다 — 핵심은 **역할 분리**다.
 
@@ -71,13 +70,14 @@ Self-evaluation bias를 회피하기 위해 generator-evaluator를 도입했어�
 - **Adversarial 프롬프팅**: "이 작업의 최악의 실패 모드 5가지를 찾아라"
 - **Role injection**: Evaluator에게 "skeptical senior reviewer" 같은 역할 부여
 - **Cross-validation**: 여러 evaluator가 독립적으로 평가하고 disagreement 발생 시 human escalation
-- **Execution-based verification**: 가능한 곳은 모두 실제 실행 결과 기반 ([[red-green tdd|TDD]], 컴파일러, 린터 — [[harness quadrants|Computational 사분면]])
+- **Execution-based verification**: 가능한 곳은 모두 실제 실행 결과 기반 ([[red-green-tdd|TDD]], 컴파일러, 린터 — [[harness-quadrants|Computational 사분면]])
 
 ## 관련 문서
+- [[model-calibration]] -- 모델 캘리브레이션 (Model Calibration)
 
-- [[generator-evaluator architecture]] — self-evaluation bias의 대표 완화 패턴
-- [[harness engineering]] — 이 편향은 하네스 엔지니어링이 해결하는 핵심 문제 중 하나
-- [[harness quadrants]] — Inferential 사분면은 이 문제를 정면으로 다룬다
-- [[anthropic harness design]] — Evaluator tuning 사례 포함
-- [[blind prompting]] — 관련 프롬프트 안티패턴 (경험적 검증 없는 자신감)
-- [[red-green tdd]] — 바이너리 verifier가 가능할 때의 대안
+- [[generator-evaluator-architecture]] — self-evaluation bias의 대표 완화 패턴
+- [[harness-engineering]] — 이 편향은 하네스 엔지니어링이 해결하는 핵심 문제 중 하나
+- [[harness-quadrants]] — Inferential 사분면은 이 문제를 정면으로 다룬다
+- [[anthropic-harness-design]] — Evaluator tuning 사례 포함
+- [[blind-prompting]] — 관련 프롬프트 안티패턴 (경험적 검증 없는 자신감)
+- [[red-green-tdd]] — 바이너리 verifier가 가능할 때의 대안

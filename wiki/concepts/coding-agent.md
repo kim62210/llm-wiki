@@ -1,19 +1,18 @@
 ---
 title: Coding Agent
-aliases: ["coding agent"]
+aliases: [coding agent]
 category: concepts
 page_type: concept
 tags: [coding-agent, agent, llm-harness, definition]
 sources: [raw/2026-04-09-simon-willison-agentic-engineering-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Coding Agent
 
 ## 정의
 
-**Coding agent**는 코드를 *작성*하고 *실행*할 수 있는 에이전트다. Simon Willison은 이를 [[how coding agents work|LLM을 감싼 하네스(harness)]]로 설명한다.
+**Coding agent**는 코드를 *작성*하고 *실행*할 수 있는 에이전트다. Simon Willison은 이를 [[how-coding-agents-work|LLM을 감싼 하네스(harness)]]로 설명한다.
 
 에이전트의 일반 정의:
 > "An agent is software that runs tools in a loop to achieve a goal."
@@ -23,11 +22,11 @@ updated: 2026-04-09
 
 ## 대표 코딩 에이전트
 
-Simon Willison이 [[agentic engineering guide]]에서 언급한 예:
+Simon Willison이 [[agentic-engineering-guide]]에서 언급한 예:
 
 | 에이전트 | 제공사 | 비고 |
 |----------|--------|------|
-| [[Claude Code]] | Anthropic | 터미널 CLI, 웹, 데스크탑, IDE |
+| [[claude-code]] | Anthropic | 터미널 CLI, 웹, 데스크탑, IDE |
 | OpenAI Codex | OpenAI | 비동기 에이전트 |
 | Gemini CLI | Google | |
 | Gemini Jules | Google | 비동기 리팩토링 |
@@ -43,7 +42,7 @@ Simon Willison이 [[agentic engineering guide]]에서 언급한 예:
 
 대표 도구: `Bash()` (터미널 실행), `Python()` (코드 실행), 파일 읽기/쓰기, 웹 fetch.
 
-상세는 [[how coding agents work]] 참조.
+상세는 [[how-coding-agents-work]] 참조.
 
 ## 컨텍스트 창 한계
 
@@ -54,14 +53,20 @@ LLM은 동시에 처리할 수 있는 토큰 수(컨텍스트 제한)가 있다.
 Simon이 암시하는 좋은 코딩 에이전트의 조건:
 - 강력한 도구 세트 (bash, 파일 편집, 웹 fetch)
 - 서브에이전트 지원 (컨텍스트 보존)
-- 코드 실행 결과를 보고 반복하는 능력 ([[agentic manual testing]])
-- 테스트 지향적 행동 ([[red-green TDD]], [[first run the tests]])
+- 코드 실행 결과를 보고 반복하는 능력 ([[agentic-manual-testing]])
+- 테스트 지향적 행동 ([[red-green-tdd]], [[first-run-the-tests]])
 
 ## 관련 문서
+- [[aider]] -- Aider (터미널 AI 페어 프로그래밍 도구)
+- [[ai-documentation-generation]] -- AI 문서 생성 자동화 (AI Documentation Generation)
+- [[coding-agents-general-agents-paper]] -- 코딩 에이전트는 범용 에이전트가 될 수 있는가?
+- [[pydantic-ai-agent-core]] -- Pydantic AI Agent Core Concepts
+- [[ai-code-migration]] -- AI 코드 마이그레이션
 
-- [[how coding agents work]]
-- [[agentic engineering]]
+- [[how-coding-agents-work]]
+- [[agentic-engineering]]
+- [[anti-patterns]] — 코딩 에이전트 사용 시 흔히 빠지는 안티패턴
 - [[subagents]]
-- [[Claude Code]]
-- [[agentic manual testing]]
-- [[agentic engineering guide]]
+- [[claude-code]]
+- [[agentic-manual-testing]]
+- [[agentic-engineering-guide]]

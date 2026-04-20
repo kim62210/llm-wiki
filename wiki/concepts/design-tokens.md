@@ -1,14 +1,13 @@
 ---
 title: "디자인 토큰"
-aliases: ["design tokens", "design token", "디자인 토큰"]
+aliases: [design tokens, design token, 디자인 토큰]
 category: concepts
 page_type: concept
 tags: [design-tokens, design-system, color, typography, primitive, semantic, component]
 sources: [raw/2026-04-09-stitch-design-md.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # 디자인 토큰 (Design Tokens)
 
 디자인 시스템의 **원자적 값**을 이름이 붙은 토큰으로 관리하는 패턴. 색상 hex, 폰트 패밀리, spacing 단위, corner radius 등을 직접 하드코딩하지 않고 의미 있는 이름으로 추상화해 참조한다.
@@ -59,7 +58,7 @@ flowchart TD
 ### 2. Semantic Tokens (시맨틱 토큰)
 - **역할**: 프리미티브에 의미 부여. "이 색을 어디에 쓰는가"
 - **이름 예시**: `bg-primary`, `text-body`, `border-subtle`, `color-success`
-- **Material 스타일**: `surface`, `on-surface`, `on-primary`, `outline`, `error` 등 — [[DESIGN.md 포맷]]의 Colors 섹션이 명시하는 named colors
+- **Material 스타일**: `surface`, `on-surface`, `on-primary`, `outline`, `error` 등 — [[design-md-format]]의 Colors 섹션이 명시하는 named colors
 - **변경**: 브랜드 리뉴얼 시 변경
 - **다크 모드**: 모드별로 다른 primitive를 가리킴 (`bg-primary` → 라이트 모드는 `gray-50`, 다크 모드는 `gray-900`)
 
@@ -71,7 +70,7 @@ flowchart TD
 
 ## AI 에이전트 관점
 
-AI 디자인/UI 생성 에이전트에게 디자인 토큰은 **"정확한 값"의 강제 수단**이다. [[DESIGN.md 포맷]]에서 토큰이 어떻게 다뤄지는지 보면:
+AI 디자인/UI 생성 에이전트에게 디자인 토큰은 **"정확한 값"의 강제 수단**이다. [[design-md-format]]에서 토큰이 어떻게 다뤄지는지 보면:
 
 - 마크다운에 `**Primary** (#2665fd): CTAs, ...` 형태로 씀
 - 에이전트가 이걸 읽어 "primary" 토큰으로 등록
@@ -89,7 +88,7 @@ AI 디자인/UI 생성 에이전트에게 디자인 토큰은 **"정확한 값"�
 
 1. **에이전트가 매 화면마다 스타일을 재발명하면** 전체 UI 일관성이 무너짐
 2. **토큰이 있으면 에이전트가 참조할 수 있는 소스오브트루스** 가 생김
-3. **[[DESIGN.md 포맷]]처럼 평문 포맷**이면 git diff, 협업, 이식이 모두 가능
+3. **[[design-md-format]]처럼 평문 포맷**이면 git diff, 협업, 이식이 모두 가능
 
 ## 토큰 명명 규칙 (권장)
 
@@ -111,12 +110,12 @@ AI 디자인/UI 생성 에이전트에게 디자인 토큰은 **"정확한 값"�
 - **Design Tokens Community Group (W3C)** — 공식 Design Tokens JSON 표준화 작업
 - **Style Dictionary (Amazon)** — 토큰 → 플랫폼별 CSS/iOS/Android 코드 생성
 - **Tokens Studio (Figma 플러그인)** — Figma에서 토큰 정의·관리
-- **[[DESIGN.md 포맷]]** — 평문 마크다운으로 토큰 기술 (AI 에이전트 친화)
+- **[[design-md-format]]** — 평문 마크다운으로 토큰 기술 (AI 에이전트 친화)
 
 ## 관련 문서
 
-- [[DESIGN.md 포맷]]
-- [[ai-readable design system]]
-- [[stitch design-md guide]]
-- [[Google Stitch]]
-- [[better code with agents]]
+- [[design-md-format]]
+- [[ai-readable-design-system]]
+- [[stitch-design-md-guide]]
+- [[google-stitch]]
+- [[better-code-with-agents]]

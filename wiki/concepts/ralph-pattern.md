@@ -1,14 +1,13 @@
 ---
 title: Ralph Pattern (랠프 패턴)
-aliases: ["ralph pattern", "랠프 패턴", "ralph loop"]
+aliases: [ralph pattern, 랠프 패턴, ralph loop]
 category: concepts
 page_type: concept
 tags: [agentic-loop, geoffrey-huntley, clean-context, harness-engineering, persistence-loop]
 sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Ralph Pattern (랠프 패턴)
 
 ## 정의
@@ -37,10 +36,10 @@ flowchart TD
 
 ## 왜 이 패턴이 필요한가
 
-### [[context engineering]] 시대의 문제
+### [[context-engineering]] 시대의 문제
 
 긴 대화가 누적되면 다음 문제가 발생한다:
-- **Lost-in-the-Middle**: 컨텍스트 중간 정보 망각 (Liu et al., 2023)
+- **[[lost-in-the-middle|lost-in-the-middle]]**: 컨텍스트 중간 정보 망각 (Liu et al., 2023)
 - **컨텍스트 오염**: 초기 실수가 후속 결정을 오도
 - **비용 폭증**: 매 호출마다 긴 history 전달
 - **주의 분산**: 모델이 오래된 계획과 새 관찰 사이에서 표류
@@ -67,9 +66,9 @@ flowchart LR
 4. **검증** — 단계 완료 조건이 프로그래밍적으로 검증 가능한지 확인 (테스트 통과, 린터 통과, 파일 존재 등)
 5. **종료 조건** — 모든 PRD 항목이 완료되면 루프 탈출
 
-## [[harness engineering|하네스 엔지니어링]]에서의 위치
+## [[harness-engineering|하네스 엔지니어링]]에서의 위치
 
-Ralph는 [[harness quadrants|하네스 4사분면]]을 명시적으로 활용한다:
+Ralph는 [[harness-quadrants|하네스 4사분면]]을 명시적으로 활용한다:
 
 | 사분면 | Ralph의 활용 |
 |---|---|
@@ -95,19 +94,19 @@ Ralph는 "컨텍스트는 한 번 쓰고 버리는 1회용 자원"이라는 철�
 
 - **프로그래밍 검증이 약한 작업**에는 맞지 않는다. 단계 완료를 기계적으로 체크할 수 없으면 무한 루프에 빠진다
 - **단계 간 뉘앙스가 중요한 작업**에는 부적합. 매번 컨텍스트를 리셋하므로 누적 추론이 어렵다
-- **인간 개입이 필수인 작업**에는 맞지 않는다. Lethal trifecta에 해당하는 작업([[lethal trifecta]] 참조)은 human-in-the-loop로 처리해야 함
+- **인간 개입이 필수인 작업**에는 맞지 않는다. Lethal trifecta에 해당하는 작업([[lethal-trifecta]] 참조)은 human-in-the-loop로 처리해야 함
 
 ## 영향과 확산
 
 - 공개 2개월 내 GitHub 스타 12,000+
-- [[oh-my-claudecode]]에 "Ralph 모드"로 구현됨 ([[omc ralph mode]])
+- [[oh-my-claudecode]]에 "Ralph 모드"로 구현됨 ([[omc-ralph-mode]])
 - OpenAI Codex 5개월 실험과 마찬가지로 "엔지니어가 코드 대신 루프 환경을 설계한다"는 철학의 대표 사례
 
 ## 관련 문서
 
-- [[harness engineering]] — Ralph가 속한 패러다임
-- [[harness quadrants]] — Ralph가 모든 사분면을 활용하는 방식
-- [[context engineering]] — Ralph가 해결하려 한 문제의 뿌리
-- [[evolution of agentic patterns]] — 이 패턴이 등장한 연대기 맥락
+- [[harness-engineering]] — Ralph가 속한 패러다임
+- [[harness-quadrants]] — Ralph가 모든 사분면을 활용하는 방식
+- [[context-engineering]] — Ralph가 해결하려 한 문제의 뿌리
+- [[evolution-of-agentic-patterns]] — 이 패턴이 등장한 연대기 맥락
 - [[subagents]] — 대안적인 컨텍스트 격리 전략
-- [[omc ralph mode]] — OMC의 Ralph 패턴 구현체
+- [[omc-ralph-mode]] — OMC의 Ralph 패턴 구현체

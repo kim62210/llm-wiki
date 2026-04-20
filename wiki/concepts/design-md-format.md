@@ -1,17 +1,16 @@
 ---
 title: "DESIGN.md 포맷"
-aliases: ["DESIGN.md 포맷", "design-md format", "DESIGN.md", "design.md", "design-md"]
+aliases: [DESIGN.md 포맷, design-md format, DESIGN.md, design.md, design-md]
 category: concepts
 page_type: concept
 tags: [design-md, design-system, markdown, ai-agents, portability]
 sources: [raw/2026-04-09-stitch-design-md.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # DESIGN.md 포맷
 
-AI 디자인 에이전트가 읽을 수 있는 **평문 디자인 시스템 문서 포맷**. Google Stitch가 정의했지만 포맷 자체는 portable하며 다른 AI 에이전트(예: [[Claude Code]])도 읽고 활용할 수 있다.
+AI 디자인 에이전트가 읽을 수 있는 **평문 디자인 시스템 문서 포맷**. Google Stitch가 정의했지만 포맷 자체는 portable하며 다른 AI 에이전트(예: [[claude-code]])도 읽고 활용할 수 있다.
 
 ## 포맷의 철학
 
@@ -99,7 +98,7 @@ atom 컴포넌트의 스타일 가이드. 프로젝트에 가장 관련 있는 �
 - Don't use more than two font weights on a single screen
 ```
 
-이 섹션은 [[better code with agents|선택으로서의 품질]] 원칙과 맞닿아 있다 — 구체적 규칙이 있어야 에이전트가 생성한 결과물의 품질이 흔들리지 않는다.
+이 섹션은 [[better-code-with-agents|선택으로서의 품질]] 원칙과 맞닿아 있다 — 구체적 규칙이 있어야 에이전트가 생성한 결과물의 품질이 흔들리지 않는다.
 
 ## 생성·편집 방식
 
@@ -131,7 +130,7 @@ DESIGN.md는 AI 에이전트 시대의 **"세 번째 file convention"**이다. �
 | AGENTS.md | 코딩 에이전트 | 프로젝트를 어떻게 빌드하는지 |
 | DESIGN.md | 디자인 에이전트 | 프로젝트가 어떻게 보이고 느껴져야 하는지 |
 
-상세 논의는 [[ai-readable design system]] 참조.
+상세 논의는 [[ai-readable-design-system]] 참조.
 
 ## 언제 이 포맷을 쓰는가
 
@@ -148,9 +147,9 @@ DESIGN.md는 AI 에이전트 시대의 **"세 번째 file convention"**이다. �
 
 ## 관련 문서
 
-- [[stitch design-md guide]]
-- [[Google Stitch]]
-- [[ai-readable design system]]
-- [[design tokens]]
-- [[better code with agents]]
-- [[agentic engineering]]
+- [[stitch-design-md-guide]]
+- [[google-stitch]]
+- [[ai-readable-design-system]]
+- [[design-tokens]]
+- [[better-code-with-agents]]
+- [[agentic-engineering]]

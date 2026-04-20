@@ -2,18 +2,107 @@
 title: Tool Selection & Tool Invocation Evaluators
 category: concepts
 page_type: concept
-tags: [concepts, concept, tool, invocation, evaluators]
-sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/tool-invocation-evaluators.md, raw/hot-topics-sources/2026-04-10/232-tool-selection-and-tool-invocation-evaluators-release-notes.md, raw/hot-topics-sources/2026-04-10/233-how-to-evaluate-tool-calling-agents.md, raw/hot-topics-sources/2026-04-10/234-tool-invocation-evaluator-docs.md, raw/hot-topics-sources/2026-04-10/235-agent-tool-selection.md, raw/hot-topics-sources/2026-04-10/236-phoenix-github-repository.md]
+tags: [concepts, concept, [[model-context-protocol|tool]], invocation, evaluators]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/tool-invocation-evaluators.md, raw/hot-topics-sources/2026-04-10/232-tool-selection-and-tool-invocation-evaluators-release-notes.md, raw/hot-topics-sources/2026-04-10/233-how-to-evaluate-tool-calling-[[coding-agent|agent]]s.md, raw/hot-topics-sources/2026-04-10/234-tool-invocation-evaluator-docs.md, raw/hot-topics-sources/2026-04-10/235-agent-tool-selection.md, raw/hot-topics-sources/2026-04-10/236-phoenix-github-repository.md]
 created: 2026-04-10
-updated: 2026-04-10
+updated: 2026-04-15
 ---
 # Tool Selection & Tool Invocation Evaluators
 
-올바른 도구 선택과 올바른 파라미터 호출을 분리해 평가.
+에이전트의 도구 사용(tool calling)을 **도구 선택의 정확도**와 **도구 파라미터의 정확도**로 분리해 평가하는 전용 평가자.
 
-## 왜 중요한가
+## 왜 분리해야 하는가
 
-Arize Phoenix가 2026년 1-2월 두 개의 전용 평가자를 출시하면서, "잘못된 도구 선택"과 "올바른 도구+잘못된 인자"를 분리 진단하는 것이 tool-calling 에이전트 디버깅의 표준 패턴이 되었다.
+함수 호출(function calling) 에이전트의 실패는 두 가지 다른 원인에서 발생한다:
+
+1. **잘못된 도구 선택**: 올바른 파라미터를 넣었지만 완전히 틀린 도구를 선택
+2. **잘못된 파라미터**: 올바른 도구를 선택했지만 인자(argument)가 틀림
+
+이 두 실패를 하나의 지표로 뭉개면 진단이 불가능하다. 도구 선택은 완벽한데 파라미터 포맷 문제 때문에 실패하는 케이스를 "도구 사용 실패"로만 기록하면 잘못된 수정 방향으로 이어진다.
+
+## 두 평가자의 구조
+
+```mermaid
+flowchart LR
+    A[에이전트 실행\nTrace] --> B[호출한 도구 목록\n+ 파라미터]
+
+    B --> C[도구 선택 평가자\nTool Selection Evaluator]
+    B --> D[도구 호출 평가자\nTool Invocation Evaluator]
+
+    C --> C1{올바른 도구를\n선택했는가?}
+    C1 -->|Yes| C2[선택 정확도 +1]
+    C1 -->|No| C3[선택 오류 기록\n어느 도구를 골랐나]
+
+    D --> D1{파라미터가\n올바른가?}
+    D1 -->|Yes| D2[호출 정확도 +1]
+    D1 -->|No| D3[파라미터 오류 기록\n무엇이 틀렸나]
+
+    C2 --> E[종합 리포트]
+    C3 --> E
+    D2 --> E
+    D3 --> E
+```
+
+## 주요 메트릭
+
+### 도구 선택 메트릭
+- **도구 선택 정밀도(Tool Selection Precision)**: `올바른 도구 호출 수 / 전체 도구 호출 수`
+- **도구 선택 재현율(Tool Selection Recall)**: `올바른 도구 호출 수 / 필요한 도구 호출 수`
+- **불필요 호출률**: 목표와 무관한 도구를 호출한 비율
+
+### 도구 호출(파라미터) 메트릭
+- **정확 일치(Exact Match)**: 파라미터 값이 예상값과 완전히 일치
+- **퍼지 일치(Fuzzy Match)**: 의미적으로 동등한 파라미터 (날짜 형식, 대소문자 등)
+- **스키마 준수율**: 필수 파라미터 누락, 타입 오류 여부
+
+## Arize Phoenix 구현
+
+Arize AI는 2026년 1-2월에 두 개의 전용 평가자를 출시했다:
+
+```python
+# Phoenix 도구 선택 평가자 (개념적 예시)
+from phoenix.evals import ToolSelectionEvaluator, ToolInvocationEvaluator
+
+tool_selection_eval = ToolSelectionEvaluator(
+    llm="claude-3-5-sonnet",
+    tools=AVAILABLE_TOOLS,
+    golden_tool_sequence=EXPECTED_CALLS
+)
+
+tool_invocation_eval = ToolInvocationEvaluator(
+    llm="claude-3-5-sonnet",
+    param_matching="fuzzy"
+)
+
+# 트레이스에 적용
+selection_score = tool_selection_eval.evaluate(trace)
+invocation_score = tool_invocation_eval.evaluate(trace)
+```
+
+## 실패 패턴 분류
+
+| 실패 유형 | 도구 선택 | 파라미터 | 진단 방향 |
+|---------|---------|---------|---------|
+| 완전 실패 | 틀림 | N/A | 도구 설명 개선, 프롬프트 수정 |
+| 파라미터 형식 오류 | 맞음 | 형식 틀림 | 도구 스키마 명확화 |
+| 파라미터 값 오류 | 맞음 | 값 틀림 | 컨텍스트 추출 개선 |
+| 불필요한 추가 호출 | 과잉 | N/A | 종료 조건 강화 |
+| 필요한 도구 누락 | 누락 | N/A | 계획 능력 개선 |
+
+## [[agent-trajectory-evaluation|궤적 평가]]와의 관계
+
+도구 호출 평가자는 에이전트 궤적 평가의 핵심 하위 구성 요소다:
+- 궤적 평가: 전체 경로의 효율성, 안전성, 목표 달성 여부
+- 도구 호출 평가: 각 스텝의 도구 선택 + 파라미터 정확도
+
+두 레벨을 함께 분석하면 "어느 스텝에서 어떤 종류의 실수가 났는가"를 정밀 진단할 수 있다.
+
+## 실전 적용
+
+- **디버깅**: 실패한 에이전트 실행을 두 메트릭으로 빠르게 분류
+- **모델 비교**: 같은 태스크에서 두 모델의 도구 사용 정밀도 비교
+- **도구 설명 최적화**: 선택 오류가 많은 도구는 description을 개선
+- **스키마 설계**: 파라미터 오류가 많은 도구는 타입 힌트, 예시값 추가
 
 ## 대표 레퍼런스
 
@@ -23,72 +112,8 @@ Arize Phoenix가 2026년 1-2월 두 개의 전용 평가자를 출시하면서, 
 - [Agent Tool Selection (Arize AX Docs)](https://arize.com/docs/ax/evaluate/evaluation-concepts/agent-evaluation)
 - [Phoenix GitHub Repository](https://github.com/Arize-ai/phoenix)
 
-## 해석 포인트
-
-Tool Selection & Tool Invocation Evaluators은 **성능만이 아니라 운영 설계까지 함께 봐야 하는 축** 으로 이해할 때 가장 명확하다. 이번 source 묶음이 `arize.com×4, github.com×1`처럼 분산돼 있다는 것은, 이 주제가 단일 주장보다 여러 층위의 검증을 거치고 있다는 뜻이다.
-
-실무적으로는 개념 정의 자체보다 **어떤 병목을 해결하고 어떤 비용을 새로 만들까**를 묻는 편이 유익하다. 그래서 이 토픽은 통합 난이도, 관측 가능성, 운영 비용, 교체 가능성를 기준으로 비교·실험하는 식으로 다루는 것이 좋다.
-
-## 2026년 4월 큐레이션 요약
-
-- 정의: 올바른 도구 선택과 올바른 파라미터 호출을 분리해 평가.
-- 왜 중요한가: Arize Phoenix가 2026년 1-2월 두 개의 전용 평가자를 출시하면서, "잘못된 도구 선택"과 "올바른 도구+잘못된 인자"를 분리 진단하는 것이 tool-calling 에이전트 디버깅의 표준 패턴이 되었다.
-- 직접 수집 원문: 5개
-- 주요 도메인: arize.com×4, github.com×1
-
-## 핵심 메커니즘
-
-올바른 도구 선택과 올바른 파라미터 호출을 분리해 평가. 이 개념은 단일 문장 정의보다 **어떤 failure mode를 설명하는지, 어떤 구조적 trade-off를 드러내는지**를 함께 볼 때 가치가 커진다.
-
-## 핵심 포인트
-
-Tool Selection & Tool Invocation Evaluators는 현재 시점의 핵심 개념을 정리한 페이지다. 출발점은 올바른 도구 선택과 올바른 파라미터 호출을 분리해 평가.이며, 직접 수집한 source 5건은 이 개념이 연구·문서·구현으로 어떻게 확장되는지 보여준다.
-
-## source로 보면
-
-수집된 source는 arize.com×4, github.com×1로 분포한다. 구현 저장소 비중이 높아 실제 사용·통합 관점이 두드러진다.
-
-## 실무 관점
-
-개념 페이지는 용어 정의에서 끝나지 않고, 어떤 시스템 설계 문제를 해결하려고 등장했는지와 어디까지가 적용 범위인지까지 함께 봐야 한다.
-
-## source 기반 참고
-
-- topic packet: `raw/hot-topics-sources/2026-04-10/topics/tool-invocation-evaluators.md`
-
-### source별 핵심 신호
-
-- **Release Notes - Phoenix** (`arize.com`): https://arize.com/docs/phoenix/release-notes/02-2026/02-01-2026-tool-selection-and-tool-invocation-evaluators
-  - 메모: January 31, 2026Available in arize-phoenix-evals 0.16.0+ (Python) and @arizeai/phoenix-evals 1.3.0+ (TypeScript)Phoenix now provides two specialized evaluators for assessing AI agent tool usage.
-- **How to Evaluate Tool-Calling Agents - Arize AI** (`arize.com`): https://arize.com/blog/how-to-evaluate-tool-calling-agents/
-  - 메모: The model selects the wrong tool (or calls a tool when it should have answered directly).
-- **Tool Invocation - Phoenix** (`arize.com`): https://arize.com/docs/phoenix/evaluation/pre-built-metrics/tool-invocation
-  - 메모: The Tool Invocation evaluator determines whether an LLM invoked a tool correctly with proper arguments, formatting, and safe content.
-- **Agent evaluation - Arize AX Docs** (`arize.com`): https://arize.com/docs/ax/evaluate/evaluation-concepts/agent-evaluation
-  - 메모: Getting agents to work is hard. LLMs are non-deterministic. A bad response upstream leads to a strange response downstream. Agents can take inefficient paths and still get to the right solution.
-- **GitHub - Arize-ai/phoenix: AI Observability & Evaluation · GitHub** (`github.com`): https://github.com/Arize-ai/phoenix
-  - 메모: To see all available qualifiers, see our documentation.
-
-
-## source 종합 해석
-
-예를 들어 source note는 January 31, 2026Available in arize-phoenix-evals 0.16.0+ (Python) and @arizeai/phoenix-evals 1.3.0+ (TypeScript)Phoenix now provides two specialized evaluators for assessing AI agent tool usage.
-
-또 다른 source는 The model selects the wrong tool (or calls a tool when it should have answered directly).
-
-즉, 이 토픽이 중요한 이유는 `Arize Phoenix가 2026년 1-2월 두 개의 전용 평가자를 출시하면서, "잘못된 도구 선택"과 "올바른 도구+잘못된 인자"를 분리 진단하는 것이 tool-calling 에이전트 디버깅의 표준 패턴이 되었다.`라는 한 문장보다, 여러 source가 같은 문제를 서로 다른 층위(개념·측정·구현)에서 지지한다는 데 있다.
-
-함께 읽을 문서로는 2026년 4월 AI 개발 핫토픽 100선, Multi-Turn Agent Evaluation, Rubric-Based Evaluation Frameworks가 유용하다. 이 페이지가 다루는 주제의 인접 개념·구현·평가 층위를 보강해 준다.
-
-## 실무 체크리스트
-
-- 이 문서를 읽을 때는 이름보다 **어떤 병목을 해결하고 어떤 비용을 새로 만드는지**를 먼저 본다.
-- source note가 추상 개념/실험 결과/운영 사례 중 어디에 치우쳐 있는지 보면, 이 토픽을 실무에서 어떻게 다뤄야 하는지가 드러난다.
-- `Arize Phoenix가 2026년 1-2월 두 개의 전용 평가자를 출시하면서, "잘못된 도구 선택"과 "올바른 도구+잘못된 인자"를 분리 진단하는 것이 tool-calling 에이전트 디버깅의 표준 패턴이 되었다.`라는 중요도 설명은 보통 과장되기 쉬우므로, 구체적 수치·벤치마크·운영 사례를 같이 확인해야 한다.
-
 ## 관련 문서
 
-- [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
 - [[multi-turn-agent-evaluation|Multi-Turn Agent Evaluation]]
 - [[rubric-based-evals|Rubric-Based Evaluation Frameworks]]
-- [[context-engineering|Context Engineering]]
+- [[agent-trajectory-evaluation|Agent Trajectory Evaluation]]

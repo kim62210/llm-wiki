@@ -1,14 +1,13 @@
 ---
 title: Relocating Rigor (엄밀함의 이동)
-aliases: ["relocating rigor", "엔지니어링 엄밀함 이동"]
+aliases: [relocating rigor, 엔지니어링 엄밀함 이동]
 category: concepts
 page_type: concept
 tags: [engineering-principle, chad-fowler, paradigm-shift, meta-principle]
 sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Relocating Rigor (엄밀함의 이동)
 
 ## 정의
@@ -24,9 +23,9 @@ updated: 2026-04-09
 
 이 원칙은 **AI 에이전틱 개발 4년의 패러다임 전환을 이해하는 메타 프레임**이다. 2022-2026 사이 AI 개발 패러다임은 세 번 이동했다:
 
-1. [[prompt engineering]] (2022-2024): 엄밀함이 **프롬프트 텍스트**에 있었다
-2. [[context engineering]] (2025): 엄밀함이 **컨텍스트 창 구성**으로 이동
-3. [[harness engineering]] (2026+): 엄밀함이 **시스템 아키텍처**로 이동
+1. [[prompt-engineering]] (2022-2024): 엄밀함이 **프롬프트 텍스트**에 있었다
+2. [[context-engineering]] (2025): 엄밀함이 **컨텍스트 창 구성**으로 이동
+3. [[harness-engineering]] (2026+): 엄밀함이 **시스템 아키텍처**로 이동
 
 각 전환은 전임자의 엄밀함을 "없애"지 않는다 — 한 층 위로 올린다.
 
@@ -51,7 +50,7 @@ Chad Fowler의 [Relocating Rigor](https://www.honeycomb.io/blog/production-is-wh
 
 ## 포함 관계 (Subsumption)
 
-[[evolution of agentic patterns|3 에라 연대기]]에서 각 에라는 전임자를 **대체하지 않고 포함**한다:
+[[evolution-of-agentic-patterns|3 에라 연대기]]에서 각 에라는 전임자를 **대체하지 않고 포함**한다:
 
 - 좋은 하네스는 좋은 컨텍스트를 전제로 한다
 - 좋은 컨텍스트는 좋은 프롬프트를 전제로 한다
@@ -67,8 +66,8 @@ Chad Fowler의 [Relocating Rigor](https://www.honeycomb.io/blog/production-is-wh
 
 ## 관련 문서
 
-- [[evolution of agentic patterns]] — 이 원칙을 배경으로 삼은 3 에라 연대기
-- [[prompt engineering]] — Era 1의 엄밀함 위치
-- [[context engineering]] — Era 2의 엄밀함 위치
-- [[harness engineering]] — Era 3의 엄밀함 위치
-- [[vibe coding]] — 엄밀함이 이동하지 않은 "외양"의 사례
+- [[evolution-of-agentic-patterns]] — 이 원칙을 배경으로 삼은 3 에라 연대기
+- [[prompt-engineering]] — Era 1의 엄밀함 위치
+- [[context-engineering]] — Era 2의 엄밀함 위치
+- [[harness-engineering]] — Era 3의 엄밀함 위치
+- [[vibe-coding]] — 엄밀함이 이동하지 않은 "외양"의 사례

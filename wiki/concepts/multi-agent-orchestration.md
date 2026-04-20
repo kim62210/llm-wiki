@@ -1,15 +1,14 @@
 ---
 title: Multi-Agent Orchestration
-aliases: ["Multi-Agent Orchestration", "multi-agent orchestration"]
+aliases: [Multi-Agent Orchestration, multi-agent [[scaling-managed-agents|orchestration]]]
 category: concepts
 page_type: project-internal
 project: oh-my-claudecode
 tags: [multi-agent, orchestration, delegation, claude-code]
 sources: [raw/2026-04-09-omc-ARCHITECTURE.md, raw/2026-04-09-omc-AGENTS.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Multi-Agent Orchestration (멀티 에이전트 오케스트레이션)
 
 > 단일 LLM 에이전트를 여러 전문 에이전트의 협업 시스템으로 확장하는 패턴.
@@ -29,7 +28,7 @@ updated: 2026-04-09
 오케스트레이션이 해결하는 것:
 - **역할 분리**: 각 자식 에이전트는 자기 롤 프롬프트 + 격리된 컨텍스트
 - **병렬 위임**: 독립 태스크는 동시 실행 (OMC 기준 최대 6개)
-- **스마트 라우팅**: 태스크 복잡도에 맞는 모델 티어 자동 선택 ([[OMC Model Routing]])
+- **스마트 라우팅**: 태스크 복잡도에 맞는 모델 티어 자동 선택 ([[omc-model-routing]])
 - **독립 검증**: writer ≠ reviewer 원칙
 
 ## 동작 모델 (OMC 기준)
@@ -114,9 +113,11 @@ OMC가 제공하는 전형적인 팀 구성:
 - **에이전트 역할 경계**: `architect ≠ analyst ≠ planner`. OMC 문서는 각 에이전트가 하지 말아야 할 일도 명시
 
 ## 관련 문서
+- [[multi-agent-rl]] -- 멀티에이전트 강화학습 (MARL)
+- [[agent-negotiation]] -- 에이전트 협상 (Agent Negotiation)
 
-- [[oh-my-claudecode (OMC)]]
-- [[OMC Agent Catalog]]
-- [[OMC Model Routing]]
-- [[OMC Delegation Categories]]
-- [[OMC Skill Layering]]
+- [[oh-my-claudecode]]
+- [[omc-agent-catalog]]
+- [[omc-model-routing]]
+- [[omc-delegation-categories]]
+- [[omc-skill-layering]]

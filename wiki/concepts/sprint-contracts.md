@@ -1,25 +1,24 @@
 ---
 title: Sprint Contracts (스프린트 계약)
-aliases: ["sprint contracts", "sprint contract", "스프린트 계약"]
+aliases: [sprint contracts, sprint contract, 스프린트 계약]
 category: concepts
 page_type: concept
 tags: [multi-agent, negotiation, harness-engineering, sprint, contract]
 sources: [raw/2026-04-09-anthropic-harness-design-long-running-apps.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Sprint Contracts (스프린트 계약)
 
 ## 정의
 
-**Sprint Contract**는 구현을 시작하기 전에 **Generator와 Evaluator가 "이 sprint에서 무엇을 만들고, 어떻게 성공을 검증할지" 를 명시적으로 협상해 문서화하는 pre-coding 합의**다. Anthropic의 Prithvi Rajasekaran이 [[anthropic harness design|Harness Design for Long-Running Application Development]] 에서 도입한 용어.
+**Sprint Contract**는 구현을 시작하기 전에 **Generator와 Evaluator가 "이 sprint에서 무엇을 만들고, 어떻게 성공을 검증할지" 를 명시적으로 협상해 문서화하는 pre-coding 합의**다. Anthropic의 Prithvi Rajasekaran이 [[anthropic-harness-design|Harness Design for Long-Running Application Development]] 에서 도입한 용어.
 
 > "Before coding each sprint, generator and evaluator negotiated a 'sprint contract' defining what 'done' looked like and how success would be verified."
 
 ## 왜 필요한가
 
-[[generator-evaluator architecture|Generator-evaluator 패턴]]을 순진하게 돌리면 두 가지 문제가 생긴다:
+[[generator-evaluator-architecture|Generator-evaluator 패턴]]을 순진하게 돌리면 두 가지 문제가 생긴다:
 
 1. **Over-specification**: Planner가 upfront에 세부 구현까지 명시하면 작은 실수가 downstream에 cascade된다
 2. **Under-specification**: 높은 수준의 user story만으로는 "done"의 의미가 모호해 evaluator가 공정하게 채점할 수 없다
@@ -96,7 +95,7 @@ Sprint contract는 보통 **파일**로 구현된다. Generator가 contract 초�
 
 ## 모델 capability와의 관계
 
-[[load-bearing harness|load-bearing test]] 관점에서, sprint contract는 **특정 capability boundary에서만 가치 있다**:
+[[load-bearing-harness|load-bearing test]] 관점에서, sprint contract는 **특정 capability boundary에서만 가치 있다**:
 
 - **낮은 capability**: Generator가 스펙 해석을 실수로 crashes → contract 필수
 - **중간 capability** (Opus 4.5 수준): Generator가 지시만으로는 under-scope → contract 여전히 필요
@@ -106,8 +105,8 @@ Sprint contract는 보통 **파일**로 구현된다. Generator가 contract 초�
 
 ## 관련 문서
 
-- [[generator-evaluator architecture]] — sprint contract는 이 아키텍처의 핵심 조율 메커니즘
-- [[anthropic harness design]] — 용어가 도입된 원 출처
-- [[load-bearing harness]] — contract 자체의 필요성도 모델 capability에 따라 변한다
-- [[harness engineering]] — pre-coding 합의는 "feedforward" 하네스 요소
-- [[harness quadrants]] — contract는 deterministic/feedforward (Guides) 방향에 가깝지만 non-deterministic 생성이 뒤따른다
+- [[generator-evaluator-architecture]] — sprint contract는 이 아키텍처의 핵심 조율 메커니즘
+- [[anthropic-harness-design]] — 용어가 도입된 원 출처
+- [[load-bearing-harness]] — contract 자체의 필요성도 모델 capability에 따라 변한다
+- [[harness-engineering]] — pre-coding 합의는 "feedforward" 하네스 요소
+- [[harness-quadrants]] — contract는 deterministic/feedforward (Guides) 방향에 가깝지만 non-deterministic 생성이 뒤따른다

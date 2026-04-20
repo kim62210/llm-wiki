@@ -1,19 +1,18 @@
 ---
 title: Load-Bearing Harness (하네스 load-bearing 테스트)
-aliases: ["load-bearing harness", "load bearing test", "harness load bearing", "harness simplification"]
+aliases: [load-bearing harness, load bearing test, harness load bearing, harness simplification]
 category: concepts
 page_type: concept
 tags: [harness-engineering, simplification, meta-principle, model-capability, iteration]
 sources: [raw/2026-04-09-anthropic-harness-design-long-running-apps.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-13
 ---
-
 # Load-Bearing Harness (하네스 load-bearing 테스트)
 
 ## 정의
 
-**Load-Bearing Harness**는 [[harness engineering|하네스 엔지니어링]]의 메타 원칙이다: **하네스의 어떤 컴포넌트가 정말로 성능을 떠받치고 있는지는 오직 그것을 제거해봐야 알 수 있다**. 그리고 그 답은 모델 버전이 바뀔 때마다 달라진다.
+**Load-Bearing Harness**는 [[harness-engineering|하네스 엔지니어링]]의 메타 원칙이다: **하네스의 어떤 컴포넌트가 정말로 성능을 떠받치고 있는지는 오직 그것을 제거해봐야 알 수 있다**. 그리고 그 답은 모델 버전이 바뀔 때마다 달라진다.
 
 핵심 문장:
 
@@ -72,14 +71,14 @@ stateDiagram-v2
 | Evaluator | "모델이 자기 작업을 정직하게 평가 못한다" |
 | Planner | "모델이 짧은 프롬프트를 온전한 스펙으로 확장 못한다" |
 | Sprint 구조 | "모델이 큰 태스크를 native하게 decompose 못한다" |
-| Context reset | "모델이 긴 컨텍스트에서 coherence를 유지 못한다" ([[context anxiety]]) |
+| Context reset | "모델이 긴 컨텍스트에서 coherence를 유지 못한다" ([[context-anxiety]]) |
 | Few-shot 예시 | "모델이 제로샷으로 원하는 스타일을 내지 못한다" |
 
 모델이 그 capability를 획득하면, 해당 컴포넌트는 load-bearing에서 벗어난다.
 
 ## Anthropic 실전 사례: Opus 4.5 → 4.6
 
-저자는 3-agent 하네스를 Opus 4.5 기준으로 구축했다. Opus 4.6 릴리스 후 하나씩 제거:
+저자는 3-[[coding-agent|agent]] 하네스를 Opus 4.5 기준으로 구축했다. Opus 4.6 릴리스 후 하나씩 제거:
 
 ### Sprint 구조 — 제거됨
 
@@ -124,20 +123,12 @@ stateDiagram-v2
 
 5번이 load-bearing test의 의례화(ritualization)다. 모든 모델 업그레이드는 하네스의 load-bearing 재검증 기회다.
 
-## 실무 체크리스트
-
-- [ ] 새 모델이 릴리스되면 current baseline을 먼저 측정했는가?
-- [ ] 컴포넌트를 하나씩 제거하고 있는가 (한꺼번에 여러 개 X)?
-- [ ] 같은 태스크, 같은 metric으로 비교하고 있는가?
-- [ ] "관성으로 남아 있는 컴포넌트"가 있는지 의심하고 있는가?
-- [ ] 단순화로 얻은 여유분을 **더 어려운 태스크**로 투자했는가?
-
 ## 관련 문서
 
-- [[harness engineering]] — load-bearing test는 하네스 엔지니어링의 메타 원칙
-- [[generator-evaluator architecture]] — evaluator의 load-bearing 여부는 모델 capability에 달려 있음
-- [[sprint contracts]] — sprint 자체도 load-bearing test의 대상
-- [[context anxiety]] — reset 메커니즘의 load-bearing 여부도 모델 버전에 따라 변동
-- [[anthropic harness design]] — Opus 4.5 → 4.6 load-bearing 재평가 실전 사례
-- [[relocating rigor]] — 엄밀함의 이동 원칙과 호응 (사라지지 않고 이동)
-- [[evolution of agentic patterns]] — 3 에라 패러다임 전환 관점
+- [[harness-engineering]] — load-bearing test는 하네스 엔지니어링의 메타 원칙
+- [[generator-evaluator-architecture]] — evaluator의 load-bearing 여부는 모델 capability에 달려 있음
+- [[sprint-contracts]] — sprint 자체도 load-bearing test의 대상
+- [[context-anxiety]] — reset 메커니즘의 load-bearing 여부도 모델 버전에 따라 변동
+- [[anthropic-harness-design]] — Opus 4.5 → 4.6 load-bearing 재평가 실전 사례
+- [[relocating-rigor]] — 엄밀함의 이동 원칙과 호응 (사라지지 않고 이동)
+- [[evolution-of-agentic-patterns]] — 3 에라 패러다임 전환 관점
