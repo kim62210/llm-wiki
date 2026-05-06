@@ -79,7 +79,7 @@ flowchart TD
 ## 관련 문서
 
 - [[Attention Is All You Need (Transformer 원논문)]]
-- [[GPT-3 퓨샷 학습]]
+- [[gpt-3-paper|GPT-3 퓨샷 학습]]
 - [[RAG 원논문 (Lewis et al.)]]
 - [[self-supervised-learning]]
 - [[encoder-decoder-architectures]]

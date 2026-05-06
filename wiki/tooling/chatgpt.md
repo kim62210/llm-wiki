@@ -94,7 +94,7 @@ ChatGPT 출시는 AI 산업에 몇 가지 연쇄 반응을 일으켰다:
 
 - [[GPT-3 아키텍처]]
 - [[GPT-4 아키텍처]]
-- [[RLHF (인간 피드백 강화학습)]]
-- [[추론 시점 계산 스케일링 (Test-Time Compute)]]
+- [[rlhf|RLHF (인간 피드백 강화학습)]]
+- [[test-time-compute|추론 시점 계산 스케일링 (Test-Time Compute)]]
 - [[OpenAI Agents SDK]]
 - [[Claude - Anthropic의 AI 어시스턴트]]

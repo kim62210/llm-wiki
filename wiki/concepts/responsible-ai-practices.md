@@ -141,4 +141,4 @@ Google의 AI 원칙 (2018년 공개):
 - [[AI 거버넌스와 규제]] - 규제 환경과 법적 프레임워크
 - [[정렬]] - AI가 인간 의도에 맞게 행동하도록 하는 기술적 접근
 - [[AI 레드 팀과 적대적 테스트]] - 안전 평가의 실천적 방법론
-- [[Constitutional AI]] - 원칙 기반 AI 안전 학습 방법
+- [[constitutional-ai|Constitutional AI]] - 원칙 기반 AI 안전 학습 방법

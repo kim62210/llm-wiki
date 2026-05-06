@@ -1,6 +1,6 @@
 ---
 title: AI Development Study Wiki - Index
-updated: 2026-04-20
+updated: 2026-05-06
 ---
 
 # AI Development Study Wiki
@@ -53,6 +53,10 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [편향-분산 트레이드오프 (Bias-Variance Tradeoff)](wiki/foundations/bias-variance-tradeoff.md) -- 일반화 오류, 과적합/과소적합 구조
 - [ML을 위한 선형대수 (Linear Algebra for ML)](wiki/foundations/linear-algebra-for-ml.md) -- 벡터/행렬, 고유값, SVD
 - [경사 하강법과 역전파 (Gradient Descent & Backpropagation)](wiki/foundations/gradient-descent-backpropagation.md) -- 체인룰, 자동미분, 소멸 그래디언트
+- [신경망 (Neural Network)](wiki/foundations/neural-network.md) -- 퍼셉트론에서 딥러닝까지, MLP/CNN/RNN/Transformer 계보, 학습 기초
+- [경사하강법 (Gradient Descent)](wiki/foundations/gradient-descent.md) -- Vanilla/SGD/Mini-batch, 학습률, 모멘텀, Adam/AdamW, 수렴 이론
+- [역전파 (Backpropagation)](wiki/foundations/backpropagation.md) -- 연쇄법칙, 계산 그래프, 자동 미분, 기울기 소실/폭발
+- [소프트맥스 (Softmax)](wiki/foundations/softmax.md) -- 확률 분포 변환, 수치 안정성, 온도 스케일링, Attention/분류 핵심
 - [손실 함수 (Loss Functions)](wiki/foundations/loss-functions.md) -- Cross-Entropy, MSE, Focal Loss
 - [Distributed Training Overview (분산 학습 개요)](wiki/foundations/distributed-training-overview.md) -- 데이터/모델/파이프라인/텐서 병렬화 개요
 - [확산 모델 (Diffusion Models)](wiki/foundations/diffusion-models.md) -- DDPM, DDIM, Stable Diffusion, 잠재 확산
@@ -87,6 +91,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [그로킹 (Grokking)](wiki/foundations/grokking.md) -- 지연된 일반화, 암기에서 이해로의 위상 전이
 - [신경 붕괴 (Neural Collapse)](wiki/foundations/neural-collapse.md) -- 훈련 포화 후 최종 레이어 ETF 구조 수렴
 - [SAM 옵티마이저 (Sharpness-Aware Minimization)](wiki/foundations/sharpness-aware-minimization.md) -- 평탄 최솟값 탐색, 2단계 업데이트로 일반화 개선
+- [커널 방법 (Kernel Methods)](wiki/foundations/kernel-methods.md) -- SVM 커널 트릭, RBF/다항식 커널, RKHS 이론, NTK와 딥러닝 연결
 - [손실 경관 (Loss Landscape)](wiki/foundations/loss-landscape.md) -- 고차원 손실 표면, 안장점, 평탄/날카로운 최솟값 기하학
 - [멀티태스크 학습 (Multi-Task Learning)](wiki/foundations/multitask-learning.md) -- 공유 표현으로 다수 태스크 동시 학습, 음의 전이, Shared-Private 아키텍처
 - [PAC 학습 이론](wiki/foundations/pac-learning.md) -- 아마도 근사적으로 정확한 학습, 샘플 복잡도, 어그노스틱 PAC 학습
@@ -118,6 +123,48 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [지식 증류 이론 (Knowledge Distillation Theory)](wiki/foundations/knowledge-distillation-theory.md)
 - [캡슐 네트워크 (Capsule Networks)](wiki/foundations/capsule-networks.md)
 - [테이블 데이터 ML (Tabular ML)](wiki/foundations/tabular-ml.md)
+- [라데마허 복잡도와 일반화 경계](wiki/foundations/rademacher-complexity.md) -- 가설 클래스 표현력의 데이터 의존 측도, 분포 의존 일반화
+- [경험적 위험 최소화 (ERM) 이론](wiki/foundations/empirical-risk-minimization.md) -- 일관성, 균등 수렴, 통계학습이론 핵심 프레임
+- [딥러닝을 위한 행렬 미적분](wiki/foundations/matrix-calculus-deep-learning.md) -- 분자-분모 레이아웃, 야코비안, 헤시안, 역전파 수식
+- [피셔 정보 행렬과 자연 경사](wiki/foundations/fisher-information-matrix.md) -- 분포 곡률, KFAC 근사, 정보기하 해석
+- [희소 코딩과 사전 학습](wiki/foundations/sparse-coding-dictionary-learning.md) -- L1 정규화 표현, K-SVD, ISTA/FISTA
+- [위상 데이터 분석 (TDA)](wiki/foundations/topological-data-analysis.md) -- 지속 호몰로지, 마퍼 알고리즘, ML 표현 학습 결합
+- [비음수 행렬 분해 (NMF)](wiki/foundations/nonnegative-matrix-factorization.md) -- 부품 기반 표현, 토픽 모델링, ALS/MU 업데이트
+- [베이지안 신경망 (BNN)](wiki/foundations/bayesian-neural-networks.md) -- 가중치 사후 분포, 변분 추론, MC Dropout, 불확실성 정량화
+- [SWAG와 SWA - 가중치 평균화](wiki/foundations/swag-stochastic-weight-averaging.md) -- SGD 궤적 가우시안 근사, 평탄 최솟값
+- [인메모리 컴퓨팅 (In-Memory Computing)](wiki/foundations/in-memory-computing.md) -- 메모리 내 연산으로 메모리 월 극복. DIMC, d-Matrix, 아날로그 IMC
+- [RISC-V](wiki/foundations/risc-v.md) -- 오픈소스 명령어 집합 아키텍처. 무료 라이선스, 커스텀 AI 확장, Tenstorrent 채택
+- [딥 앙상블](wiki/foundations/deep-ensembles.md) -- 무작위 초기화 다수 모델 평균, 캘리브레이션, BNN 비교
+- [Adagrad/RMSProp 옵티마이저 계보](wiki/foundations/adagrad-rmsprop-history.md) -- 적응적 학습률 시초, Adam 직접 조상
+- [네스테로프 가속 그래디언트](wiki/foundations/nesterov-momentum.md) -- 추측 후 보정, 볼록 최적화 최적 수렴률
+- [변분 추론 심화 (ELBO/Reparametrization)](wiki/foundations/variational-inference-deep.md) -- ELBO 분해, 재매개변수화 트릭
+- [BALD/BatchBALD 베이지안 능동학습](wiki/foundations/bald-batchbald-active-learning.md) -- 정보 획득 기반 샘플 선택, 배치 다양성
+- [연속 정규화 흐름 (CNF)](wiki/foundations/continuous-normalizing-flows.md) -- Neural ODE 가역 변환, FFJORD, 흐름 매칭 이론 배경
+- [현대 홉필드 네트워크](wiki/foundations/modern-hopfield-networks.md) -- 어텐션 등가성 증명, 지수 저장 용량, Hopfield Layers
+- [제한 볼츠만 머신 (RBM)](wiki/foundations/restricted-boltzmann-machines.md) -- 에너지 기반 생성 모델, 대조 발산, DBN 빌딩 블록
+- [스파이킹 신경망 (SNN)](wiki/foundations/spiking-neural-networks.md) -- LIF 모델, 시간 부호화, 뉴로모픽 칩
+- [리저버 컴퓨팅과 ESN](wiki/foundations/reservoir-computing-esn.md) -- 무작위 고차원 RNN, 출력 레이어만 학습, 시계열 예측
+- [양자 기계학습 (QML) 기초](wiki/foundations/quantum-machine-learning.md) -- 변분 양자 회로, NISQ 시대, PennyLane/Qiskit
+- [등변 신경망](wiki/foundations/equivariant-neural-networks.md) -- 군 등변성, SE(3)-Transformers, EGNN, 분자/단백질
+- [텐서 네트워크와 ML](wiki/foundations/tensor-networks-ml.md) -- MPS/PEPS, 양자 영감 압축, TT 분해
+- [범용 근사 정리 심화](wiki/foundations/universal-approximation-theorem.md) -- Cybenko/Hornik, 너비-깊이 트레이드오프
+- [SGD 수렴 이론](wiki/foundations/sgd-convergence-theory.md) -- 볼록/비볼록 수렴률, Robbins-Monro, 분산 감소
+- [확률적 그래디언트 랑주뱅 동역학 (SGLD)](wiki/foundations/sgld-langevin-dynamics.md) -- SGD + 노이즈 = 사후 분포 샘플링, MCMC 베이지안
+- [재생 커널 힐베르트 공간 (RKHS)](wiki/foundations/rkhs-kernel-methods.md) -- 커널 트릭 이론적 기반, 표현 정리
+- [재현 핵 힐베르트 공간 (RKHS) 심화](wiki/foundations/reproducing-kernel-hilbert-space.md) -- RKHS 구조, Mercer 정리, SVM/GP/NTK 연결, MMD, Representer Theorem
+- [매니폴드 학습 - Isomap/LLE](wiki/foundations/manifold-learning-isomap-lle.md) -- 비선형 차원 축소, 측지 거리, 국소 선형 임베딩
+- [그래프 신호 처리 (GSP)](wiki/foundations/graph-signal-processing.md) -- 그래프 푸리에 변환, 라플라시안 스펙트럼
+- [알고리즘 공정성 수학 기초](wiki/foundations/fairness-mathematical-foundations.md) -- 인구통계 균형, 등화 odds, 불가능성 정리
+- [ML 수치 안정성 기초](wiki/foundations/ml-numerical-stability.md) -- log-sum-exp 트릭, 소프트맥스 수치, 오버/언더플로우
+- [MCMC (Markov Chain Monte Carlo)](wiki/foundations/mcmc.md) -- Metropolis-Hastings, Gibbs, HMC, NUTS. 베이지안 추론의 정확한 샘플링 방법론
+- [변분 오토인코더 (VAE)](wiki/foundations/vae.md) -- 잠재 공간 확률 분포, ELBO 손실, 재매개화 트릭, 생성 모델 계보
+- [활성화 함수 (Activation Functions)](wiki/foundations/activation-functions.md) -- Sigmoid/Tanh/ReLU/Leaky ReLU/ELU/GELU/SiLU/SwiGLU 전체 비교, 죽은 ReLU 문제, 실무 선택 가이드
+- [손실 함수 (Loss Functions)](wiki/foundations/loss-functions.md) -- 회귀/분류/메트릭/생성 손실 전체 카탈로그, Focal Loss, InfoNCE, RLHF 파이프라인
+- [교차 검증 (Cross-Validation)](wiki/foundations/cross-validation.md) -- K-Fold/Stratified/시계열 CV/Nested CV, 데이터 누출 방지 Pipeline 패턴
+- [정규화 (Regularization)](wiki/foundations/regularization.md) -- L1/L2/Dropout/Early Stopping/Data Augmentation 정규화 기법 통합 개요
+- [그래디언트 체크포인팅 (Gradient Checkpointing)](wiki/foundations/gradient-checkpointing.md) -- Chen 2016 Sublinear Memory. 메모리 O(L)→O(√L), 시간 +30%. PyTorch torch.utils.checkpoint
+- [베이지안 딥러닝 (Bayesian Deep Learning)](wiki/foundations/bayesian-deep-learning.md) -- BNN/MC Dropout/Deep Ensembles/SWAG/Laplace, uncertainty quantification
+- [AdaGrad와 RMSProp](wiki/foundations/adagrad-rmsprop.md) -- Duchi 2011 / Hinton 2012, Adam 이전 적응형 학습률 옵티마이저 두 알고리즘
 
 **summary**
 - [ML Learning Path (머신러닝 학습 경로 가이드)](wiki/foundations/ml-learning-path.md) -- ML 기초부터 LLM까지 단계별 학습 커리큘럼 가이드
@@ -137,12 +184,16 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Grounding DINO - 개방 집합 객체 검출](wiki/architectures/grounding-dino.md) -- 텍스트 프롬프트로 임의 객체 검출. DETR 기반 + 비전-언어 크로스 어텐션 융합. COCO 제로샷 46.7 AP
 - [SAM 2 - 비디오 세그먼테이션](wiki/architectures/sam2-video-segmentation.md) -- SAM 1 비디오 확장. 메모리 어텐션으로 객체 추적. SAM 1 대비 6배 빠름, 이미지 세그 23 AP 향상
 
+**concept (비디오/세그먼테이션)**
+- [Meta SAM 3.1 - 실시간 멀티 오브젝트 비디오 트래킹](wiki/architectures/sam-3-1-video-tracking.md) -- 공유 메모리 Object Multiplex. 단일 H100에서 32FPS, 16객체 동시 트래킹. Promptable Concept Segmentation
+
 **concept (시계열 아키텍처)**
 - [Moirai 통합 예측 모델](wiki/architectures/moirai-unified-forecasting.md) -- Salesforce 시계열 파운데이션 모델. 다변량+가변빈도 통합, 마스크 인코더, LOTSA 데이터셋
 - [Informer 희소 어텐션](wiki/architectures/informer-sparse-attention.md) -- ProbSparse 어텐션으로 O(L log L) 복잡도 달성. 장기 시계열 예측 선구적 연구, AAAI 2021 Best Paper
 - [N-BEATS / N-HiTS](wiki/architectures/n-beats-n-hits.md) -- 순수 MLP 기반 시계열 예측. 기저 확장 원리, M4 대회 SOTA, N-HiTS 계층적 보간
 
 **concept**
+- [멀티모달 LLM (Multimodal LLM)](wiki/architectures/multimodal-llm.md) -- 시각-언어 통합 개요. Q-Former/MLP 프로젝터/교차 어텐션 3대 연결 방식, BLIP/LLaVA/Flamingo 계보
 - [MoE (Mixture of Experts)](wiki/architectures/moe.md) -- 희소 활성화·전문가 라우팅 허브 개념, Top-K gating, load balancing
 - [RoPE (Rotary Position Embedding)](wiki/architectures/rotary-position-embedding.md) -- 회전 행렬 기반 상대적 위치 인코딩. 현대 LLM 사실상 표준
 - [RMSNorm](wiki/architectures/rmsnorm.md) -- Root Mean Square 정규화. LayerNorm 대비 연산 절감, Llama/DeepSeek 표준
@@ -180,7 +231,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [문맥적 임베딩 (Contextual Embeddings)](wiki/architectures/contextual-embeddings.md) -- ELMo, BERT, 전이학습 기반 문맥 표현
 - [U-Net](wiki/architectures/u-net.md) -- 인코더-디코더 + 스킵 연결, 확산 모델 노이즈 예측
 - [셀프 어텐션 메커니즘 (Self-Attention)](wiki/architectures/self-attention-mechanism.md) -- QKV, 스케일드 닷프로덕트, Softmax
-- [Transformer 피드포워드 네트워크 (FFN)](wiki/architectures/transformer-ffn.md) -- SwiGLU, GeGLU, GLU 변형 활성화
+- [Transformer 피드포워드 네트워크 (FFN)](wiki/architectures/transformer-ffn.md) -- SwiGLU, GeGLU, GLU 변형 활성화, 키-값 메모리 해석, MoE 확장 (2026-04-27 갱신)
 - [Attention Sink (어텐션 싱크 현상)](wiki/architectures/attention-sink.md) -- StreamingLLM, KV 캐시 스트리밍 추론
 - [Transformer 아키텍처](wiki/architectures/transformer-architecture.md) -- Vaswani et al. 원논문, 인코더-디코더, 셀프어텐션
 - [멀티헤드 어텐션 (Multi-Head Attention)](wiki/architectures/multi-head-attention.md) -- MHA, GQA, MQA, 헤드 프루닝
@@ -194,7 +245,10 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Mixture of Experts (MoE)](wiki/architectures/mixture-of-experts.md) -- 희소 활성화, 라우팅, 부하 분산
 - [잔차 연결 (Residual Connection)](wiki/architectures/residual-connection.md) -- Skip Connection, ResNet, 그래디언트 흐름
 - [인코더-디코더 아키텍처 (BERT / GPT / T5)](wiki/architectures/encoder-decoder-architectures.md) -- 인코더 전용/디코더 전용/인코더-디코더 비교
+- [정규화 레이어 (Normalization Layers)](wiki/architectures/normalization-layers.md) -- BatchNorm/LayerNorm/RMSNorm/GroupNorm/InstanceNorm 비교, Pre-Norm vs Post-Norm 위치
+- [어텐션 메커니즘 (Attention Mechanism)](wiki/architectures/attention-mechanism.md) -- Additive vs Scaled Dot-Product, 자기/교차 어텐션, 멀티헤드 어텐션 전체 개요
 - [MetaFormer - 토큰 믹서 추상화 패러다임](wiki/architectures/metaformer.md) -- 어텐션이 아닌 메타 구조가 핵심. PoolFormer/ConvFormer로 검증
+- [두 타워 모델 (Two-Tower Model)](wiki/architectures/two-tower-model.md) -- 쿼리/아이템 분리 인코더, 추천 시스템 후보 검색 표준, in-batch negatives, ANN 연동
 - [비디오 생성 아키텍처 (Video Generation Architecture)](wiki/architectures/video-generation-architecture.md) -- DiT/U-Net 비디오 확장, 시간 어텐션, Flow Matching 기반 텍스트-투-비디오
 - [Performer / FAVOR+ (무작위 특성 어텐션)](wiki/architectures/performer-favor.md) -- 소프트맥스 어텐션 커널 근사로 O(n) 선형 복잡도 달성
 - [Longformer / BigBird (희소 어텐션)](wiki/architectures/longformer-bigbird.md) -- 슬라이딩 윈도우 + 전역 토큰. 4K+ 문서 처리
@@ -220,6 +274,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [NaturalSpeech 3 - 분해 기반 고품질 TTS](wiki/architectures/naturalspeech3-tts.md) -- FACodec 4-속성 분해(운율/내용/음향/화자) + 비자기회귀 확산 생성. 제로샷 화자 복제
 - [Mip-NeRF - 안티앨리어싱 신경 방사 필드](wiki/architectures/mip-nerf.md) -- 원뿔 캐스팅 + 적분 위치 인코딩(IPE)으로 멀티스케일 앨리어싱 해결. 단일 MLP
 - [3D Gaussian Splatting](wiki/architectures/3d-gaussian-splatting.md)
+- [3D Gaussian Splatting (3DGS) - 개념 상세](wiki/architectures/gaussian-splatting.md) -- 명시적 가우시안 표현, 실시간 렌더링 원리, NeRF 대비 분석, SIGGRAPH 2023 이후 생태계
 - [AudioLM 프레임워크](wiki/architectures/audiolm-framework.md)
 - [ConvMixer - 패치 임베딩과 분리 합성곱](wiki/architectures/convmixer-patchify.md)
 - [EfficientFormer-v2 - 레이턴시 최적화 비전 트랜스포머](wiki/architectures/efficientformer-v2.md)
@@ -233,6 +288,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [PatchTST](wiki/architectures/patchtst.md)
 - [RepVGG / Re-Parameterization 설계](wiki/architectures/repvgg.md)
 - [ResNet과 스킵 연결 (Residual Networks & Skip Connections)](wiki/architectures/resnet-skip-connections.md)
+- [추론 모델 (Reasoning LLM)](wiki/architectures/reasoning-llm.md) -- o1/o3/DeepSeek R1/Claude 확장 사고, 테스트 시간 컴퓨팅 스케일링, 강화학습 기반 추론 학습
 - [SAINT - 셀프어텐션 테이블 데이터 학습](wiki/architectures/saint-attention-tabular.md)
 - [SigLIP2 - 다국어 비전-언어 모델](wiki/architectures/siglip2-multilingual.md)
 - [SIREN (사인파 암묵적 신경 표현)](wiki/architectures/siren-periodic-activation.md)
@@ -256,8 +312,50 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [선형 RNN 통합 관점 (Unified Linear Recurrence)](wiki/architectures/linear-recurrence-unified.md)
 - [재귀 혼합 (Mixture of Recursions)](wiki/architectures/mixture-of-recursions.md)
 - [포인트 클라우드 네트워크 (PointNet / Point Transformer)](wiki/architectures/point-cloud-networks.md)
+- [DenseNet 밀집 연결](wiki/architectures/densenet-dense-connections.md) -- 모든 이전 레이어 직접 연결, 그래디언트 흐름 강화
+- [ResNeXt 카디널리티](wiki/architectures/resnext-cardinality.md) -- 분할-변환-병합, 그룹 합성곱, 깊이/너비보다 효과적 차원
+- [NFNet 정규화 없는 네트워크](wiki/architectures/nfnet-normalizer-free.md) -- BatchNorm 제거 + 적응적 그래디언트 클리핑
+- [RegNet 설계 공간 탐색](wiki/architectures/regnet-design-spaces.md) -- 양적 네트워크 설계, NAS 대안, 선형 깊이/너비 규칙
+- [BiT (Big Transfer) 사전학습](wiki/architectures/bit-big-transfer.md) -- GroupNorm + 가중치 표준화, 대규모 사전학습 + 단순 fine-tune
+- [Wide ResNet](wiki/architectures/wide-resnet.md) -- 깊이보다 너비, WRN-28-10이 ResNet-1001 능가
+- [하이웨이 네트워크](wiki/architectures/highway-networks.md) -- LSTM 게이팅 영감 스킵 연결, ResNet 직계 조상
+- [Wav2Vec 2.0 자기지도 음성 표현](wiki/architectures/wav2vec-2-speech.md) -- 마스킹 + 대조 학습, 양자화 코드북
+- [HuBERT 클러스터링 음성 사전학습](wiki/architectures/hubert-speech-representation.md) -- k-means 의사 레이블, BERT-like MLM
+- [WavLM 통합 음성 처리](wiki/architectures/wavlm-speech-processing.md) -- 화자/내용/발화 분리, SUPERB SOTA
+- [Conformer - 음성 인식 트랜스포머](wiki/architectures/conformer-speech-recognition.md) -- 컨볼루션 + 셀프어텐션, 지역+전역 모델링
+- [Tacotron 2 신경 TTS](wiki/architectures/tacotron-2-tts.md) -- 인코더-어텐션-디코더 + WaveNet 보코더
+- [마스킹 이미지 모델링 (Masked Image Modeling)](wiki/architectures/masked-image-modeling.md) -- MAE/BEiT/SimMIM 비교. 높은 마스킹 비율로 시각 표현 자기지도 학습
+- [LLM을 위한 Mixture of Experts (MoE)](wiki/architectures/mixture-of-experts-moe-llms.md) -- 희소 활성화·라우팅·전문가 분업 허브. Mixtral/DeepSeek-V3/Switch Transformer 계보
+- [Q-Former (Querying Transformer)](wiki/architectures/q-former.md) -- BLIP-2 시각-언어 브릿지 모듈. 32 쿼리 토큰으로 시각 특성 압축
+- [Perceiver Resampler](wiki/architectures/perceiver-resampler.md) -- Flamingo 시각 압축기. 가변 크기 입력을 64 잠재 토큰으로 리샘플링
+- [FastSpeech 2 비자기회귀 TTS](wiki/architectures/fastspeech-2-tts.md) -- 가변 어댑터, Tacotron 2 대비 270배 빠름
+- [Imagen - Google 텍스트-이미지](wiki/architectures/imagen-text-to-image.md) -- T5 텍스트 인코더 + 캐스케이드 확산
+- [DALL-E 3 아키텍처](wiki/architectures/dalle-3-architecture.md) -- OpenAI 캡션 재작성 LLM + 확산 디코더
+- [Stable Diffusion 3 MMDiT](wiki/architectures/stable-diffusion-3-mmdit.md) -- 멀티모달 DiT, 흐름 매칭, 이미지/텍스트 동등 처리
+- [Parti - 자기회귀 텍스트-이미지](wiki/architectures/parti-autoregressive-image.md) -- ViT-VQGAN + autoregressive Transformer, 20B 스케일
+- [Muse - 마스크 생성 트랜스포머](wiki/architectures/muse-masked-image.md) -- VQ 토큰 병렬 생성, 확산 대비 10배 빠른 추론
+- [ControlNet 조건부 확산 제어](wiki/architectures/controlnet-conditioning.md) -- SD 동결 + 학습 가능 복사, Canny/depth/pose 조건
+- [IP-Adapter 이미지 프롬프팅](wiki/architectures/ip-adapter-image-prompting.md) -- 이미지를 프롬프트로, decoupled 크로스어텐션
+- [AnimateDiff 모션 모듈](wiki/architectures/animatediff-motion-modules.md) -- T2I 모델에 시간 어텐션 모듈 삽입, 모션 LoRA
+- [CogVideoX 비디오 생성](wiki/architectures/cogvideox-architecture.md) -- 3D 인과 VAE + Expert MMDiT, Tsinghua/Zhipu
+- [GraphSAGE 귀납 GNN](wiki/architectures/graphsage-inductive-gnn.md) -- 노드 샘플링 집계, 미본 노드 일반화
+- [GIN - 그래프 동형 네트워크](wiki/architectures/gin-graph-isomorphism.md) -- WL 테스트 등가 GNN, 합 집계 + MLP
+- [PNA - 다중 집계 GNN](wiki/architectures/pna-aggregation.md) -- mean/max/min/std + degree scaler, 표현력 정량 분석
+- [ClusterGCN 서브샘플링 학습](wiki/architectures/clustergcn-subsampling.md) -- METIS 그래프 클러스터링 + 미니배치
+- [DINO 자기 증류 비전](wiki/architectures/dino-self-distillation.md) -- 교사-학생 동일 구조 + EMA, ViT 비지도 사전학습
+- [BYOL - Bootstrap Your Own Latent](wiki/architectures/byol-bootstrap.md) -- 음수 샘플 없는 자기지도, 타겟 네트워크
+- [MoCo - 모멘텀 대조 학습](wiki/architectures/moco-momentum-contrast.md) -- 동적 사전 큐 + 모멘텀 인코더
+- [SimCLR 강한 증강 대조 학습](wiki/architectures/simclr-augmentation.md) -- 큰 배치 + 강한 증강 + 투영 헤드
+- [SwAV - 클러스터링 기반 비전 표현](wiki/architectures/swav-clustering-features.md) -- 온라인 클러스터링 + 멀티뷰 일관성
+- [VICReg 분산-불변-공분산 정규화](wiki/architectures/vicreg-variance-invariance.md) -- 명시적 정규화 항으로 모드 붕괴 방지
+- [Barlow Twins 중복 감소](wiki/architectures/barlow-twins-redundancy.md) -- 교차 상관 행렬 항등 매트릭스 근접
+- [Vision Transformer (ViT)](wiki/architectures/vit.md) -- Dosovitskiy 2020 ICLR. 16×16 patch + position embedding + [CLS] + 표준 Transformer encoder
+- [Domain Expert MoE](wiki/architectures/domain-expert-moe.md) -- Branch-Train-Merge / Branch-Train-MiX, expert를 도메인별 specialize
 
 **entity**
+- [Whisper - OpenAI 범용 음성 인식](wiki/architectures/whisper.md) -- OpenAI 다국어 ASR. 680K hours weak supervision, encoder-decoder Transformer, robust 잡음/억양
+- [Sora - OpenAI 비디오 모델 아키텍처](wiki/architectures/sora-architecture.md) -- 시공간 패치 + DiT 백본, 시각 토큰화, 1분 비디오
+- [Veo - Google 비디오 생성](wiki/architectures/veo-google-video.md) -- DeepMind 1080p 영상 생성, 카메라/조명 제어
 - [InternViT-6B](wiki/architectures/internvit-6b.md) -- InternVL의 6B 비전 인코더. EVA-CLIP 기반 초기화. 동적 해상도 처리. 문서/차트 이해 강점
 - [InternVideo2 - 멀티모달 비디오 파운데이션 모델](wiki/architectures/internvideo2-video-foundation.md)
 - [RecurrentGemma / Griffin](wiki/architectures/recurrentgemma-griffin.md)
@@ -268,12 +366,16 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [KA-GNN - 콜모고로프-아놀드 분자 GNN](wiki/architectures/ka-gnn-molecular.md) -- KAN 활성화 기반 분자 특성 예측. Nature MI 2025
 - [PatchTST - 패치 기반 시계열 Transformer](wiki/architectures/patchtst-timeseries.md) -- 시계열 패치 분할 + 채널 독립. ICLR 2023
 - [DCN-v2 - 심층 교차 네트워크](wiki/architectures/dcn-deep-crossing-network.md) -- 명시적 특성 교차 + DNN. 추천 순위 모델 표준
+- [Sentence Transformer (SBERT)](wiki/architectures/sentence-transformer.md) -- Siamese BERT + Mean Pooling으로 문장 임베딩 생성. MTEB 표준 평가, RAG 임베딩 기반
+- [Transformer 아키텍처 일반 개요](wiki/architectures/transformer.md) -- 인코더-디코더, self-attention, positional encoding, FFN, layer norm, 핵심 변형 카탈로그
+- [LLaDA 2.0-Uni - 멀티모달 이산 확산 언어 모델](wiki/architectures/llada-2-uni.md) -- Ant Group. 100B 스케일 이산 확산 LLM, 멀티모달 이해+생성 통합, 535 tokens/s 병렬 디코딩
 
 ### Training (학습)
 
 **concept**
 - [강화학습 (Reinforcement Learning)](wiki/training/reinforcement-learning.md) -- RL 기초 허브. MDP·policy/value·on/off-policy·model-based/free, LLM RL 연결
 - [지식 증류 (Knowledge Distillation)](wiki/training/distillation.md) -- teacher-student·soft targets·temperature, black-box/sequence-level LLM 증류
+- [LLM 지식 증류 (Knowledge Distillation for LLMs)](wiki/training/distillation-llm.md) -- 교사-학생 모델, 소프트 타겟, MiniLLM 리버스 KL, 시퀀스 증류, 추론 능력 증류
 - [RLHF와 정렬 (RLHF and Alignment)](wiki/training/rlhf-and-alignment.md) -- SFT→RM→PPO 3단계, reward hacking 한계, outer/inner/intent alignment
 - [양자화 인식 학습 (QAT)](wiki/training/quantization-aware-training.md) -- 훈련 중 양자화 시뮬레이션, STE, PTQ 대비 높은 정확도
 - [Agentic RL (Tool-Integrated Reasoning 학습)](wiki/training/agentic-rl.md) — 이 페이지는 Agentic RL (Tool-Integrated Reasoning 학습)를 다룬다. 핵심은 도구 호출 궤적 전체를 RL로 최적화하는 에이전트 post-training 패러다임이며, 2026년 4월 시점에 왜 다시 중요해졌는지 정리한다.
@@ -306,6 +408,15 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [ORPO (Odds Ratio Preference Optimization)](wiki/training/orpo.md) -- SFT+선호도 최적화 통합 (Hong et al. EMNLP 2024)
 - [KTO (Kahneman-Tversky Optimization)](wiki/training/kto.md) -- 개별 좋음/나쁨 라벨 최적화 (Ethayarajh et al. ICML 2024)
 - [BitNet 1-bit 학습](wiki/training/bitnet-1bit-training.md) -- 1.58-bit 네이티브 LLM 학습 (Microsoft BitNet b1.58)
+- [DPO (Direct Preference Optimization)](wiki/training/dpo.md) -- Rafailov 2023. reference policy logit 비율 loss로 reward model 없이 선호도 직접 최적화. IPO/KTO/ORPO/SimPO/GRPO 변형
+- [Constitutional AI (CAI)](wiki/training/constitutional-ai.md) -- Bai 2022 Anthropic. SL stage(self-critique→revision) + RL stage(RLAIF) 2단계, RLHF의 H를 AI로 대체
+- [그래디언트 누적 (Gradient Accumulation)](wiki/training/gradient-accumulation.md) -- 미니배치 gradient 누적으로 effective batch size 확대, 메모리 부족 환경에서 대형 배치 학습
+- [활성화 재계산 (Activation Recomputation)](wiki/training/activation-recomputation.md) -- gradient checkpointing 심화. Selective recomputation, FlashAttention 통합
+- [적대적 학습 (Adversarial Training)](wiki/training/adversarial-training.md) -- FGSM/PGD adversarial example 학습으로 robustness 강화
+- [프로세스 보상 모델 (PRM)](wiki/training/process-reward-model.md) -- step-level reward로 reasoning chain 평가, OpenAI Let's Verify Step by Step
+
+**entity**
+- [BitNet b1.58 2B4T](wiki/training/bitnet-b158-2b4t.md) -- Microsoft 최초 대규모 네이티브 1비트 LLM, 4조 토큰 학습. CPU에서 100B 모델 5-7 tok/s, 에너지 82% 절감
 - [FP4 네이티브 학습](wiki/training/fp4-training.md) -- NVFP4/Quartet 네이티브 4-bit 학습
 - [그로킹과 학습 동역학](wiki/training/grokking-training-dynamics.md) -- 지연된 일반화, 위상 전이, emergent abilities 통합
 - [데이터 귀속과 영향 분석](wiki/training/data-attribution-influence.md) -- Data Shapley, TRAK, TrackStar
@@ -408,6 +519,9 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [품질 분류기 필터링](wiki/training/quality-classifier-filtering.md) -- FineWeb-Edu 방식 LLM 라벨링 + 경량 분류기 훈련으로 교육적 문서 선별
 - [Rejection Sampling Fine-Tuning (ReST)](wiki/training/rejection-sampling-finetuning.md) -- N개 샘플 검증기 통과 응답만으로 SFT, EM 해석으로 자기 개선 반복
 - [Generative Reward Model (GRM)](wiki/training/generative-reward-model.md) -- 텍스트 비평 생성 후 보상 추출, LLM-as-Judge 파인튜닝, 해석 가능한 보상
+- [RLHF (Reinforcement Learning from Human Feedback)](wiki/training/rlhf.md) -- SFT→보상모델→PPO 3단계 파이프라인, InstructGPT/Claude 정렬 방법론. DPO·GRPO 파생 출발점
+- [LoRA 일반 개요](wiki/training/lora.md) -- 저차원 분해 어댑터, 메모리 효율 fine-tune 표준, DoRA/AdaLoRA 진화 hub
+- [Fine-tuning 일반 개요](wiki/training/fine-tuning.md) -- Full FT vs PEFT, SFT/RLHF/DPO 워크플로우, 데이터 준비, 평가, 도메인 적응
 - [1F1B 파이프라인 병렬 스케줄](wiki/training/pipeline-parallelism-1f1b.md) -- GPipe 거품 유지하며 메모리 O(m)→O(p) 감소, 인터리브드 스케줄로 거품 추가 감소
 - [SAC (Soft Actor-Critic)](wiki/training/sac-soft-actor-critic.md) -- 엔트로피 정규화 오프-폴리시 RL. 연속 행동 공간 SOTA, 자동 온도 조정
 - [TD3 (Twin Delayed DDPG)](wiki/training/td3-twin-delayed-ddpg.md) -- 쌍둥이 Q + 지연 업데이트 + 타겟 평활화로 DDPG 안정화
@@ -435,8 +549,41 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [오프라인 강화학습 (Offline RL)](wiki/training/offline-reinforcement-learning.md)
 - [퍼플렉시티 기반 필터링 (Perplexity-Based Filtering)](wiki/training/perplexity-based-filtering.md)
 - [혼합 정밀도 학습 상세 (FP16/BF16/FP8 비교)](wiki/training/mixed-precision-training-detail.md)
+- [DoRA - 가중치 분해 LoRA](wiki/training/dora-weight-decomposed-lora.md) -- 크기-방향 분해, LoRA 대비 표현력 강화
+- [P-Tuning 연속 프롬프트](wiki/training/p-tuning-soft-prompts.md) -- 입력 임베딩 공간 학습 가능 프롬프트
+- [AdaLoRA 적응적 랭크 할당](wiki/training/adalora-adaptive-rank.md) -- SVD 기반 동적 랭크 분배
+- [IA3 - 활성값 스케일링 어댑터](wiki/training/ia3-injection-adapters.md) -- learned vectors로 활성값 스케일링, LoRA 1/100 파라미터
+- [소프트 프롬프트 튜닝 (Lester)](wiki/training/prompt-tuning-soft-only.md) -- 입력 학습 가능 토큰만 추가
+- [Prefix-Tuning 딥 프롬프트](wiki/training/prefix-tuning-deep-prompts.md) -- 모든 레이어에 키-값 프리픽스 주입
+- [Compacter - 초복소수 어댑터](wiki/training/compacter-hypercomplex.md) -- 크로네커 곱 + 저랭크 분해
+- [UniPELT 통합 PEFT](wiki/training/unipelt-mixed-peft.md) -- 다중 PEFT 방법 동적 게이팅, 적응적 선택
+- [SimPO - 단순 선호 최적화](wiki/training/simpo-simple-preference.md) -- 길이 정규화 보상, 참조 모델 불필요
+- [IPO - Identity Preference Optimization](wiki/training/ipo-identity-preference.md) -- DPO 과적합 해결, 신원 손실 형식
+- [CPO 대조적 선호 최적화](wiki/training/cpo-contrastive-preference.md) -- SimPO + SFT 결합, 번역/요약 SOTA
+- [SPIN - 자기 대국 파인튜닝](wiki/training/spin-self-play-finetuning.md) -- 모델 vs 모델 대결, 합성 패자 데이터
+- [Magpie 합성 지시문 데이터](wiki/training/magpie-synthetic-instruction.md) -- 정렬 모델에 빈 템플릿 주입 자기 생성
+- [Evol-Instruct - 진화적 지시문 합성](wiki/training/evol-instruct-method.md) -- LLM이 지시문 복잡화/심화, WizardLM
+- [Self-Instruct 원본 방법론](wiki/training/self-instruct-original.md) -- 175 시드 -> 52K 합성, Stanford
+- [Orca 점진적 학습](wiki/training/orca-progressive-learning.md) -- 교사 추론 과정 모방, 단순->복잡 라벨, GPT-4 trajectory 학습
+- [WebInstruct 웹 지시문 마이닝](wiki/training/webinstruct-mining.md) -- 인터넷에서 자연 발생 QA/지시문 수집, 합성 데이터 대안
+- [DistilBERT 트랜스포머 증류](wiki/training/distilbert-distillation.md) -- BERT 40% 작게 60% 빠르게 97% 성능
+- [시퀀스 레벨 지식 증류](wiki/training/seq-knowledge-distillation.md) -- 토큰 레벨 vs 시퀀스 레벨 KL, 빔 서치로 교사 출력
+- [MiniLLM - LLM 텍스트 증류](wiki/training/minillm-text-distillation.md) -- 역KL 발산, on-policy 증류, 학생이 교사 능가
+- [Branch-Train-Merge](wiki/training/branch-train-merge.md) -- 도메인별 분기 학습 후 가중치 평균, 통신 없는 분산 사전학습
+- [Branch-Train-Mix (BTX)](wiki/training/branch-train-mix-btx.md) -- 도메인 전문가 학습 후 MoE로 통합
+- [FlashAttention-2 내부 구조](wiki/training/flash-attention-2-internals.md) -- 워프 분할 최적화, FA-1 대비 2x
+- [Mixup 데이터 증강](wiki/training/mixup-data-augmentation.md) -- 두 샘플 + 라벨 선형 결합, 일반화/캘리브레이션
+- [CutMix 패치 교체 증강](wiki/training/cutmix-augmentation.md) -- 이미지 패치 교체 + 라벨 비례, Cutout + Mixup 결합
+- [RandAugment 자동 증강](wiki/training/randaugment-policy.md) -- 검색 없는 단순 증강 정책, N개 변환 무작위 + 강도 M
+- [AutoAugment 정책 탐색](wiki/training/autoaugment-search.md) -- RL/Population 기반 증강 정책 탐색
+- [PPO RLHF 구현 디테일](wiki/training/ppo-rlhf-implementation.md) -- trl/Open-RLHF, value head, GAE λ, KL coefficient
+- [Magpie-Pro 지시문 합성 반복](wiki/training/iterative-magpie-instruction.md) -- 첫 데이터로 미세조정 -> 더 좋은 합성, 부트스트래핑
+- [근접 정책 최적화 (PPO)](wiki/training/ppo.md) -- clipped surrogate objective, GAE, importance sampling, RLHF 핵심 RL 알고리즘 전체 개요
+- [Frontier Lab RL Infrastructure](wiki/training/frontier-lab-rl-infra.md) -- Anthropic Project Rainier + OpenAI Azure 산업 분석
+- [RL Harness Frameworks 비교](wiki/training/rl-harness-frameworks-comparison.md) -- 12개 RL harness 4-axis 통합 비교 hub
 
 **entity**
+- [UltraFeedback 다중 모델 선호도](wiki/training/ultrafeedback-dataset.md) -- 1M+ GPT-4 평가 선호 쌍, 4축 평가
 - [Llama 3 학습 상세](wiki/training/llama-3-training.md) -- Meta 405B, 4D 병렬, 15.6T 토큰, 6라운드 PT
 - [DeepSeek V3 학습 상세](wiki/training/deepseek-v3-training.md) -- 671B MoE, FP8, 보조손실 없는 부하분산, $5.6M
 - [Qwen 2.5 학습 상세](wiki/training/qwen-25-training.md) -- 18T 토큰, 다국어, 4단계 long-context 확장
@@ -451,6 +598,11 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Dolma 데이터셋](wiki/training/dolma-dataset.md) -- AI2 3T 토큰 OLMo 학습용
 - [DCLM (DataComp-LM)](wiki/training/dclm-datacomp.md) -- 25개 기관 참여 데이터 큐레이션 벤치마크
 - [Common Crawl](wiki/training/commoncrawl.md) -- 비영리 웹 아카이브. 거의 모든 LLM 학습 데이터의 원천
+- [Anakin Podracer (DeepMind)](wiki/training/anakin-podracer.md) -- fully on-device JAX RL
+- [Sebulba Podracer (DeepMind)](wiki/training/sebulba-podracer.md) -- actor-learner 분리 단일 TPU 호스트
+
+**paper**
+- [IMPALA + V-trace (Espeholt et al., 2018)](wiki/training/impala-vtrace.md) -- V-trace off-policy correction 분산 actor-learner 원조
 
 **summary**
 - [Open Post-Training Recipes (Tülu 3 / OLMo 3)](wiki/training/open-post-training-recipes.md) — 이 페이지는 Open Post-Training Recipes (Tülu 3 / OLMo 3)를 요약하고, 지금 시점에 왜 중요한지 빠르게 따라잡기 위한 페이지다. 핵심 범위는 SFT → DPO → RLVR 전체 파이프라인을 완전 공개한 오픈소스 post-training 레시피이다.
@@ -474,7 +626,9 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Google TPU Ironwood / Trillium](wiki/inference/google-tpu-ironwood.md) -- TPU v7 듀얼칩렛. Agentic AI 네이티브 최적화
 - [NVIDIA Groq 3 LPU](wiki/inference/nvidia-groq-3-lpu.md) -- NVIDIA $20B 인수 Groq SRAM 추론 가속기. Vera Rubin 코프로세서
 - [NVIDIA Vera Rubin Platform](wiki/inference/nvidia-vera-rubin.md) -- Blackwell 후속. 추론 10x, MoE 학습 4x 비용 절감
+- [NVIDIA Vera Rubin NVL72 랙 스케일 시스템](wiki/inference/nvidia-vera-rubin-nvl72.md) -- 72x Rubin GPU + NVLink 6, FP4 50 PFLOPS, HBM4 288GB. H2 2026 출시
 - [Blackwell Ultra B300](wiki/inference/blackwell-ultra-b300.md) -- 288GB HBM3e, 8TB/s, 14 PFLOPS FP4. DGX B300 시스템 192 PFLOPS
+- [NVIDIA Blackwell Ultra B300 추론 성능 분석](wiki/inference/nvidia-blackwell-ultra-b300-inference.md) -- MLPerf v6.0 GPU당 5x Hopper, DeepSeek-R1 1000 tok/s, $0.24/백만 토큰
 - [DGX Spark (개인용 AI 슈퍼컴퓨터)](wiki/inference/dgx-spark.md) -- GB10 Grace Blackwell, 128GB 통합 메모리, 1 PFLOPS FP4. 200B 모델 로컬 추론
 - [SDSL (Speculative Decoding Scaling Laws)](wiki/inference/sdsl.md) -- ICLR 2026. 사전학습 파라미터로 추측적 디코딩 최적 설정 예측
 - [ExecuTorch 1.0 GA](wiki/inference/executorch.md) -- Meta PyTorch on-device 추론. 50KB, 12+ 하드웨어 백엔드
@@ -512,6 +666,8 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [추론 분산 계층화 (4-Tier Distribution)](wiki/inference/inference-distribution-tiers.md) -- 글로벌/지역/엣지/로컬 4계층
 - [추측적 디코딩 (Speculative Decoding)](wiki/inference/speculative-decoding.md) -- 드래프트-검증 패러다임, Medusa/EAGLE/Lookahead 변형
 - [KV 캐시 추론 최적화 (Paged Attention, 메모리 관리)](wiki/inference/kv-cache-inference.md) -- Paged Attention, vLLM, 연속 배치, 프리픽스 캐싱
+- [KV 캐시 최적화 종합 (KV Cache Optimization)](wiki/inference/kv-cache-optimization.md) -- PagedAttention, 프리픽스 캐싱, Radix Tree, 슬라이딩 윈도우, MLA 압축 종합 가이드
+- [양자화 일반 개요 (Quantization)](wiki/inference/quantization.md) -- INT8/INT4/FP4/FP8/FP6, PTQ vs QAT, GPTQ/AWQ/SmoothQuant, 정확도-크기 trade-off
 - [NIXL KV 캐시 전송 (RDMA 기반 KV Transfer)](wiki/inference/nixl-kv-transfer.md) -- RDMA 기반 sub-ms KV 캐시 전송, PD disaggregation 핵심
 - [Best-of-N Sampling (Rejection Sampling)](wiki/inference/best-of-n-sampling.md) -- N개 후보 생성 후 보상 모델로 최선 선택. 테스트 타임 컴퓨트의 기본 형태
 - [모델 서빙 (Model Serving)](wiki/inference/model-serving.md) -- 추론 서빙 스택, vLLM/SGLang/TRT-LLM, 연속 배치, PagedAttention
@@ -543,10 +699,38 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [위치 보간 (Position Interpolation)](wiki/inference/positional-interpolation.md)
 - [추론 시간 스케일링 (Inference-Time Scaling)](wiki/inference/inference-time-scaling.md)
 - [텐서 병렬화 추론 (Tensor Parallelism for Inference)](wiki/inference/tensor-parallelism-inference.md)
+- [블록단위 병렬 디코딩 (Blockwise Parallel Decoding)](wiki/inference/blockwise-parallel-decoding.md) -- 고정 블록 사이즈 병렬 예측 후 검증·채택, 보조 헤드 기반 단순 가속
+- [Self-Speculative Decoding](wiki/inference/self-speculative-decoding.md) -- 동일 모델 레이어 스킵으로 자기 드래프트 생성, 별도 드래프트 모델 불필요
+- [Hydra 캐스케이딩 추측 디코딩](wiki/inference/hydra-speculation-cascade.md) -- 다중 드래프트 모델 계층, 엔트로피 기반 동적 캐스케이드 선택
+- [연속 배치 내부 구조 (Continuous Batching Internals)](wiki/inference/continuous-batching-internals.md) -- iteration-level 스케줄링, vLLM/TGI 구현, 요청 동적 합류·이탈 메커니즘
+- [선택적 배치 처리 (Selective Batching)](wiki/inference/selective-batching.md) -- 비균질 시퀀스 배치, 패딩 최소화, 처리량 30-50% 개선
+- [트리 어텐션 디코딩 (Tree Attention Decoding)](wiki/inference/tree-attention-decoding.md) -- 추측 디코딩 시 트리 구조 동시 검증, KV 공유 마스크, Medusa/Eagle 핵심
+- [Logits 프로세서 내부 구조](wiki/inference/logits-processor-internals.md) -- 논리 후처리 파이프라인, 반복패널티·온도 순서, HuggingFace API 구조
+- [Top-p (Nucleus) 샘플링](wiki/inference/nucleus-top-p-sampling.md) -- 누적 확률 임계값 기반 동적 후보 수, Holtzman et al., Top-k 대비 장단점
+- [HQQ - 반2차 양자화](wiki/inference/hqq-half-quadratic-quant.md) -- 캘리브레이션 데이터 불필요, GPTQ 대비 100배 빠른 양자화
+- [FP6-LLM 6비트 부동소수점 추론](wiki/inference/fp6-llm-quantization.md) -- TC-FPx 커널, INT4 정확도 + INT8 속도
+- [Atom INT8 LLM 추론](wiki/inference/atom-int8-quant.md) -- KV/Activation/Weight 모두 INT8, outlier 처리
+- [SPQR 희소-양자화 표현](wiki/inference/spqr-sparse-quantized.md) -- 1% outlier FP16 + 99% INT3, 손실 없는 압축
+- [SqueezeLLM 압축 LLM](wiki/inference/squeezellm-quantization.md) -- 가중치 그룹 클러스터링 + 민감 부분 dense, 3비트 손실 제로
+- [OmniQuant 학습 가능 양자화](wiki/inference/omniquant-calibration.md) -- LWC + LET, calibration 효율, W4A4 SOTA
+- [Medusa - 다중 헤드 추측 디코딩](wiki/inference/medusa-multi-head-decoding.md) -- 병렬 다중 헤드 + 트리 디코딩, 2-3x 가속
+- [Lookahead Decoding](wiki/inference/lookahead-decoding.md) -- Jacobi 반복 + n-gram 캐시, 드래프트 모델 없이 가속
+- [병렬 자코비 디코딩](wiki/inference/parallel-decoding-jacobi.md) -- 모든 위치 동시 업데이트 반복, 병렬화 가능, 수렴 보장
+- [Typical Sampling](wiki/inference/typical-sampling.md) -- 정보량 기반 샘플링, 평균 정보량 근접 토큰 선택
+- [Eta Sampling 국소 적응](wiki/inference/eta-sampling-locally.md) -- 엔트로피 기반 동적 임계값
+- [Mirostat - 퍼플렉시티 제어 샘플링](wiki/inference/mirostat-perplexity.md) -- 목표 perplexity 제어, 반복 회피 + 일관성 균형
+- [Min-P 샘플링](wiki/inference/min-p-sampling.md) -- 최대 확률 비율 임계값, top-p의 분포 적응 변형
+- [DRY 반복 페널티](wiki/inference/dry-sampling-repetition.md) -- 최근 매칭 시퀀스 검출 페널티
+- [XTC - 다양성 샘플링](wiki/inference/xtc-exclude-top-choices.md) -- 가장 가능성 높은 토큰 의도적 제외, 창의적 출력
+- [SSE 기반 LLM 스트리밍](wiki/inference/server-sent-events-llm.md) -- HTTP/1.1 단방향 텍스트 스트림, 토큰 단위 push
+- [웹소켓 LLM 스트리밍](wiki/inference/websocket-llm-streaming.md) -- 양방향 통신, 인터럽트/캔슬, 멀티모달 스트리밍
 
 **entity**
 - [WebGPU / WebLLM (브라우저 내 LLM 추론)](wiki/inference/webgpu-webllm.md) -- MLC-AI WebLLM, WebGPU로 브라우저에서 로컬 GPU LLM 실행
 - [MLC-LLM](wiki/inference/mlc-llm.md)
+
+**concept**
+- [DFlash - 블록 확산 기반 스펙울레이티브 디코딩 가속](wiki/inference/dflash-block-diffusion-decoding.md) -- arXiv:2602.06036. 블록 확산 드래프트 모델로 EAGLE-3 대비 2.5배 추가 가속, 총 6배 무손실 가속. vLLM/SGLang 통합
 
 **project-internal · `vLLM`**
 - [vLLM Semantic Router](wiki/inference/vllm-semantic-router.md) — 이 페이지는 vLLM 내부에서 vLLM Semantic Router이 어떤 역할을 하는지 정리한 프로젝트 스냅샷이다. 핵심 범위는 mmBERT 기반 신경 분류기로 요청을 적절한 모델에 라우팅하는 시스템 레벨 Mixture-of-Models이다.
@@ -559,6 +743,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Serverless Object-Storage Vector DBs (Turbopuffer 등)](wiki/rag/serverless-vector-dbs.md) — title: Serverless Object-Storage Vector DBs (Turbopuffer 등)
 
 **concept**
+- [검색 증강 생성 (Retrieval-Augmented Generation, RAG)](wiki/rag/retrieval-augmented-generation.md) -- Naive/Advanced/Modular RAG 패턴, 청킹·임베딩·하이브리드 검색·재순위, 정확성-신선도 균형, RAGAS 평가
 - [RAG (Retrieval-Augmented Generation)](wiki/rag/rag.md) -- 검색 증강 생성 허브 개념, 파이프라인·구성요소·고도화 경로
 - [밀집-희소 하이브리드 검색](wiki/rag/dense-sparse-hybrid-retrieval.md) -- Dense + Sparse 검색 결합, RRF/선형 가중, 상호 보완
 - [Adaptive Context Compression for Long-Running Agents](wiki/rag/adaptive-context-compression.md) — title: Adaptive Context Compression for Long-Running Agents
@@ -570,6 +755,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [RAG Architecture Evolution (2026)](wiki/rag/rag-architecture-evolution-2026.md) -- LazyGraphRAG 0.1% 비용, 하이브리드(벡터+KG+계층) 엔터프라이즈 표준화
 - [청킹 전략 (Chunking Strategies)](wiki/rag/chunking-strategies.md) -- Fixed/Recursive/Semantic 청킹, 최적 크기 가이드
 - [RAG용 임베딩 모델 비교](wiki/rag/embedding-models-for-rag.md) -- SBERT/BGE/E5/Voyage, MTEB 리더보드
+- [임베딩 모델 (Embedding Models)](wiki/rag/embedding-models.md) -- Dense/Sparse 비교, MTEB 평가, 다국어, 도메인 특화, 차원-품질 트레이드오프
 - [ColBERT / 레이트 인터랙션](wiki/rag/colbert-late-interaction.md) -- MaxSim, cross-encoder와 bi-encoder 사이
 - [하이브리드 검색과 RRF](wiki/rag/hybrid-search-rrf.md) -- BM25 + Dense, Reciprocal Rank Fusion
 - [벡터 데이터베이스 비교](wiki/rag/vector-db-comparison.md) -- Pinecone/Weaviate/Qdrant/Chroma/pgvector/LanceDB
@@ -616,6 +802,33 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [스텝백 프롬프팅 (Step-Back Prompting)](wiki/rag/step-back-prompting.md)
 - [오디오 RAG (Audio RAG)](wiki/rag/audio-rag.md)
 - [임베딩 양자화 (Embedding Quantization)](wiki/rag/embedding-quantization.md)
+- [마지막 토큰 풀링 (디코더 기반 임베딩)](wiki/rag/last-token-pooling-decoder.md) -- LLM 기반 임베딩 표준, 인과적 어텐션에서 마지막 히든 스테이트 활용
+- [어텐션 풀링 전략 (가중치 기반)](wiki/rag/weighted-attention-pooling.md) -- 학습 가능한 어텐션 가중치로 토큰 중요도 반영, 다중 헤드 변형
+- [고정 길이 청킹 전략](wiki/rag/fixed-length-chunking.md) -- 토큰/문자 단위 균일 분할, 빠른 베이스라인, 의미 절단 위험
+- [의미적 청킹 전략](wiki/rag/semantic-chunking-strategies.md) -- 임베딩 유사도 급변점에서 청크 경계 결정, 토픽 일관성 보장
+- [재귀적 문자 분할](wiki/rag/recursive-character-splitting.md) -- 단락->문장->단어 점진 분할, LangChain 표준, 구조 보존
+- [명제 단위 청킹](wiki/rag/propositional-chunking.md) -- LLM으로 원자적 사실 추출, 자기 완결적 명제 단위, 고정밀 검색
+- [에이전트 청킹](wiki/rag/agentic-chunking.md) -- LLM 에이전트가 청크 경계를 추론으로 결정, 최고 품질 RAG
+- [컨텍스트 인식 청킹](wiki/rag/context-aware-chunking.md) -- 헤딩/메타데이터 보존, 청크 주변 컨텍스트 주입, Anthropic Contextual Retrieval
+- [HNSW 그래프 인덱스](wiki/rag/hnsw-graph-index.md) -- 계층적 탐색 가능 작은 세계 그래프, log 검색, 벡터 DB 표준
+- [IVF-PQ 벡터 인덱스](wiki/rag/ivf-pq-vector-index.md) -- 역인덱스 + 곱 양자화, 메모리 효율 + 빠른 검색, FAISS 핵심
+- [Matryoshka 임베딩 - 가변 차원](wiki/rag/matryoshka-embeddings.md) -- 단일 모델로 다양한 차원, 잘라써도 품질 유지
+- [임베딩 풀링 전략 비교](wiki/rag/token-pooling-strategies.md) -- mean/max/cls/last/weighted, 모델별 권장 풀링
+- [Mean Pooling vs CLS 토큰](wiki/rag/mean-vs-cls-pooling.md) -- BERT 사전학습 vs 임베딩 fine-tune, 평균 풀링 우위
+- [문서 계층 청킹](wiki/rag/document-hierarchy-chunking.md) -- 섹션/하위섹션 구조 보존, 계층적 검색
+
+**entity (벡터 인덱스/임베딩 모델)**
+- [Annoy - Spotify ANN 라이브러리](wiki/rag/annoy-spotify.md) -- 무작위 투영 트리 앙상블, 메모리 매핑
+- [ScaNN - Google 정량화 ANN](wiki/rag/scann-google-search.md) -- 비대칭 해싱, anisotropic 양자화, GPU 가속
+- [DiskANN - Microsoft 십억 규모 ANN](wiki/rag/diskann-microsoft.md) -- SSD 활용, 메모리 1/100, Vamana 그래프
+- [Cohere Embed v4](wiki/rag/cohere-embed-v4.md) -- 다국어 + 코드, 검색/분류 멀티태스크
+- [Voyage AI 임베딩 모델군](wiki/rag/voyage-ai-embeddings.md) -- 도메인 특화, 8K 컨텍스트, MTEB 상위
+- [Nomic Embed - 오픈소스 임베딩](wiki/rag/nomic-embed-text.md) -- 137M 오픈소스, OpenAI 능가, 8K 컨텍스트
+- [mxbai-embed-large](wiki/rag/mxbai-embed-large.md) -- mixedbread.ai, MTEB 상위, AnglE 학습
+- [GTE - Alibaba 일반 임베딩](wiki/rag/gte-text-embeddings.md) -- mGTE 다국어 + 다중 사이즈
+- [Instructor 임베딩](wiki/rag/instructor-embedding-model.md) -- 태스크별 지시문 임베딩
+- [E5 - Microsoft Embeddings](wiki/rag/e5-text-embeddings.md) -- mE5 다국어, 약지도 + 지도 fine-tune
+- [BGE-M3 - BAAI 다기능 임베딩](wiki/rag/bge-m3-embedding.md) -- 다국어 + dense/sparse/multi-vector
 
 **summary**
 - [Context Rot Report (Chroma)](wiki/rag/context-rot-report.md) — context window 크기와 실제 유효 컨텍스트 사이의 차이를 강조한 Chroma 기술 보고서 요약
@@ -649,6 +862,10 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [TDD + Agentic Coding](wiki/agents/tdd-agentic-coding.md) -- TDD와 AI 에이전트 결합. 마크다운 스펙 -> Red/Green 루프 자율 실행
 - [Tool Calling Optimization](wiki/agents/tool-calling-optimization.md) -- 도구 정의 토큰 절약, strict 스키마, 정확도 저하 방지
 - [A2A-T (텔레콤 에이전트 프로토콜)](wiki/agents/a2a-t-telecom.md) -- Huawei MWC 2026. 텔레콤 특화 에이전트 간 통신
+- [Magentic-UI (Microsoft 인간 중심 웹 에이전트)](wiki/agents/magentic-ui.md) -- Plan Preview + Co-tasking + 명시적 승인. AutoGen 기반, Fara-7B 통합. MIT 라이선스
+
+**summary**
+- [A2A 프로토콜 v1.2 업그레이드](wiki/agents/a2a-protocol-v12-upgrade.md) -- 암호화 서명 에이전트 카드, Linux Foundation 이관, 150+ 조직 프로덕션. 5개 프레임워크 네이티브 지원
 - [OWASP Top 10 for Agentic Applications](wiki/agents/owasp-agentic-top-10.md) -- 100+ 전문가. Agent Goal Hijack, Rogue Agents 등
 - [Zero Trust for AI Agents](wiki/agents/zero-trust-ai-agents.md) -- NHI 80:1. Microsoft/Cisco/CSA 프레임워크
 - [AG-UI Protocol (Agent-User Interface)](wiki/agents/ag-ui-protocol.md) -- 에이전트-프론트엔드 통신 표준. MCP/A2A에 이은 3번째 레이어
@@ -689,12 +906,62 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [최소 발자국 원칙 (Minimal Footprint Principle)](wiki/agents/minimal-footprint-principle.md)
 - [컨트랙트 넷 프로토콜 (Contract Net Protocol)](wiki/agents/contract-net-protocol.md)
 - [플랜-앤-익스큐트 패턴](wiki/agents/plan-and-execute-pattern.md)
+- [도구 생성 메타 에이전트 (Tool-Creator Meta-Agent)](wiki/agents/tool-creator-meta-agent.md) -- LLM이 자체 도구 작성+사용, Code Interpreter 패턴 일반화, 샌드박스 실행 루프
+- [Self-Ask 분해 패턴](wiki/agents/selfask-decomposition.md) -- "후속 질문이 필요한가?" 메타 인지, 검색 통합, ReAct 선행 패턴
+- [Plan-and-Solve 프롬프팅](wiki/agents/plan-and-solve-prompting.md) -- 계획 단계 명시 + 단계별 해결, CoT 강화, EMNLP 2023 제로샷 추론
+- [XoT - 외부 탐색 사고 (Explorer of Thought)](wiki/agents/xot-explorer-of-thought.md) -- MCTS + RL 통합 탐색, ToT/GoT 진화, 게임/수학 추론 SOTA
+- [Graph of Thoughts (GoT)](wiki/agents/graph-of-thoughts-got.md) -- 사고 노드 그래프 구조, 병합/역추적, 비선형 추론 패턴
+- [누적 추론 (Cumulative Reasoning)](wiki/agents/cumulative-reasoning.md) -- 검증된 명제 누적, 오류 전파 차단, 24 Game/MATH SOTA
+- [Critic-Revise 패턴](wiki/agents/critic-revise-pattern.md) -- 비평자+수정자 반복 루프, 자기 비평, Constitutional AI 영감
+- [비대칭 에이전트-어시스턴트 패턴](wiki/agents/agent-assistant-asymmetric.md) -- 강한 에이전트가 약한 어시스턴트 활용, 비용 최적화, 라우팅 패턴
+- [함수 호출 진화사](wiki/agents/function-call-evolution.md) -- OpenAI Functions -> Tool Use -> 구조화 호출 -> MCP, 4세대 변천
+- [함수 호출 (Function Calling)](wiki/agents/function-calling.md) -- LLM 도구 실행 메커니즘 종합. JSON Schema, 병렬 호출, 구조화 출력, MCP 진화
+- [에이전트 웹 검색 패턴](wiki/agents/agentic-web-search-pattern.md) -- 쿼리 변형 + 다중 검색 + 결과 종합. Perplexity/SearchGPT 패턴
+- [문서 QA 에이전트 패턴](wiki/agents/document-qa-agent.md) -- PDF/문서 다단계 QA, 표/이미지 처리, 인용 생성
+- [TDD 기반 코딩 에이전트](wiki/agents/coding-agent-tdd.md) -- 테스트 먼저 → 구현 → 검증 Red-Green-Refactor 사이클. Aider/Claude Code
+- [에이전트 자기 교정](wiki/agents/agent-self-correction.md) -- 실행 결과 → 오류 분석 → 재시도, 환각 억제, 견고성 향상
+- [에이전트 폴백 전략](wiki/agents/agent-fallback-strategies.md) -- 도구 실패 시 대체 경로, graceful degradation, 다중 모델 라우팅
+- [에이전트 레이트 제한 패턴](wiki/agents/agent-rate-limiting-patterns.md) -- API 한도 관리, 지수 백오프, 토큰 버킷, 우선순위 큐
+- [에이전트 컨텍스트 관리](wiki/agents/agent-context-management.md) -- 슬라이딩 윈도우, 요약, vector store 메모리, 컨텍스트 폭발 회피
+- [에이전트 태스크 분해 패턴](wiki/agents/agent-task-decomposition-patterns.md) -- Top-down/Bottom-up/Recursive 분해 전략, HTN/STRIPS 영향, 실무 적용
+- [부모-자식 에이전트 Spawn 패턴](wiki/agents/parent-child-spawn-pattern.md) -- 오케스트레이터가 서브에이전트 동적 생성, 병렬 처리, Claude Code 패턴
+- [에이전트를 도구로 사용하는 패턴 (Agent-as-Tool)](wiki/agents/agent-as-tool-pattern.md) -- 에이전트를 함수 시그니처로 추상화, 계층적 멀티에이전트 구성
+- [에이전트 유한 상태 머신 패턴](wiki/agents/agent-state-machine.md) -- 명시적 상태+전이, LangGraph 구현, 결정론적 워크플로우
+- [이벤트 주도 에이전트 패턴](wiki/agents/agent-event-driven-pattern.md) -- 이벤트 큐+핸들러, 비동기 에이전트, 마이크로서비스 영감
+- [에이전트 서킷 브레이커 패턴](wiki/agents/agent-circuit-breaker.md) -- 반복 실패 자동 차단, 복구 탐색, 비용 통제 안정성 패턴
+- [에이전트 사가 패턴](wiki/agents/agent-saga-pattern.md) -- 다단계 트랜잭션+보상 액션, 분산 트랜잭션 영감, 롤백
+- [에이전트 벤치마크 하네스 비교](wiki/agents/agent-benchmark-harness-comparison.md) -- SWE-bench/AgentBench/GAIA/WebArena 인프라 횡단 비교
+- [에이전트 SRE 에러 예산](wiki/agents/agent-error-budget-sre.md) -- SLO/SLI/burn rate, SRE error budget의 에이전트 적용
+- [에이전트 실패 모드 및 에러 예산](wiki/agents/agent-failure-modes-error-budget.md) -- 14/6 failure modes, 30-40% drift threshold
+- [에이전트 학습 하네스 (ReAct → AgentGym)](wiki/agents/agent-training-harness-react-agentgym.md) -- ReAct → AutoGPT → AgentGym → AgentGym-RL 4단계 진화
+- [에이전트 폭발반경 통제 (Blast Radius Control)](wiki/agents/blast-radius-control-agents.md) -- OWASP LLM06:2025 Excessive Agency, dry-run, two-phase commit
+- [코딩 에이전트 하네스 비교](wiki/agents/coding-harness-comparison.md) -- 8개 코딩 에이전트의 6개 디자인 축 횡단 비교
+- [Effective Agents 빌딩 블록](wiki/agents/effective-agents-patterns.md) -- Anthropic 7가지 빌딩 블록 (Augmented LLM/Routing/Parallelization 등)
+- [장기 실행 에이전트 루프](wiki/agents/long-horizon-agent-loop.md) -- Plan-and-Execute, Reflexion, Ralph Loop 2-phase, handoff artifact
+- [멀티에이전트 오케스트레이션 프레임워크](wiki/agents/multi-agent-orchestration-frameworks.md) -- OpenAI Agents SDK 3 primitives (Agent/Handoff/Guardrail) vs Anthropic subagent
+- [Planner-Executor-Verifier 프레임워크](wiki/agents/planner-executor-verifier-frameworks.md) -- LangGraph(DAG) / CrewAI(crew) / AutoGen(conversation) / OpenAI SDK 비교
+- [프로덕션 에이전트 아키텍처](wiki/agents/production-agent-architectures.md) -- Devin (SWE-bench 13.86%) / Replit Agent 3 (200분) / Copilot Workspace
+- [서브에이전트 Spawning](wiki/agents/subagent-spawning.md) -- 격리 4계층(context/worktree/permission/model), token economics 15x
+- [에이전트 도구 설계 (Tool Design)](wiki/agents/tool-design-for-agents.md) -- Anthropic 도구 설계 5원칙
+- [도구 오케스트레이션 패턴](wiki/agents/tool-orchestration-patterns.md) -- tool search defer_loading, programmatic tool calling
+- [도구 라우팅 RAG (Tool RAG)](wiki/agents/tool-routing-rag.md) -- Tool RAG 3x accuracy, Tool-to-Agent Retrieval Recall@5 +19.4%
+
+**entity (자율 에이전트 시초/계보)**
+- [AutoGPT - 자율 에이전트 시초](wiki/agents/autogpt-original-agent.md) -- 2023 LLM 자율 에이전트 붐 시작, 목표 분해 + 메모리 + 도구
+- [BabyAGI - 태스크 매니저 에이전트](wiki/agents/babyagi-task-agent.md) -- Yohei Nakajima 단순 태스크 큐 에이전트, 100 lines, 영향력
+- [AgentGPT 자율 에이전트 플랫폼](wiki/agents/agentgpt-deployment.md) -- 브라우저 기반 자율 에이전트, 일반인 진입 도구
+- [MetaGPT 소프트웨어 회사 시뮬레이션](wiki/agents/metagpt-software-agent.md) -- PM/Engineer/QA 역할 다중 에이전트, SOP 인코딩
+- [ChatDev 가상 SW 회사](wiki/agents/chatdev-software-company.md) -- 폭포수 SDLC를 LLM 에이전트로, Chat Chain
+- [Swarm - OpenAI 핸드오프 라이브러리](wiki/agents/swarm-openai-handoffs.md) -- 함수 호출로 에이전트 간 핸드오프, 가벼운 멀티에이전트
+- [Browser Use 에이전트 프레임워크](wiki/agents/browser-use-agent-framework.md) -- DOM 시각 표현 + LLM 액션, Playwright 백엔드, 웹 자동화 오픈소스 표준
 
 **entity**
 - [Agentic AI Foundation (AAIF)](wiki/agents/agentic-ai-foundation.md) -- Linux Foundation. MCP+goose+AGENTS.md 통합 거버넌스
 - [AMI Labs](wiki/agents/ami-labs.md) -- LeCun의 $1.03B 월드 모델 벤처. JEPA 기반 로보틱스/산업 AI
 - [NVIDIA Isaac GR00T](wiki/agents/nvidia-isaac-groot.md) -- 로보틱스 VLA 오픈 파운데이션 모델. Physical AI 생태계 핵심
 - [HY-Embodied-0.5](wiki/agents/hy-embodied.md) -- Tencent Robotics X. 22개 벤치마크 중 16개 SOTA
+- [SWE-agent](wiki/agents/swe-agent.md) -- Princeton ACI 표지석, SWE-bench 12.5% pass@1
+- [Voyager](wiki/agents/voyager-agent.md) -- NVIDIA Wang2023, Minecraft gradient-free lifelong learning
 
 **summary**
 - [Agent Skills Specification](wiki/agents/agent-skills-specification.md) — Agent Skills 포맷의 디렉토리 구조와 SKILL.md 스펙을 정리한 공식 specification 요약
@@ -703,6 +970,9 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Effective Context Engineering for AI Agents (Anthropic)](wiki/concepts/effective-context-engineering-anthropic.md) — Anthropic이 context engineering을 Write / Select / Compress / Isolate 전략으로 정리한 대표 글 요약
 - ["프롬프트에서 하네스까지 — AI 에이전틱 패턴 4년의 기록"](wiki/agents/evolution-of-agentic-patterns.md) — 이 글의 중심 명제는 Chad Fowler의 "relocating rigor" 원칙이다:
 - [Anthropic Harness Design for Long-Running Apps (Prithvi Rajasekaran, 2026-03)](wiki/agents/anthropic-harness-design.md) — 저자: Prithvi Rajasekaran (Anthropic Labs) · 발행: 2026-03-24 · 출처: anthropic.com/engineering/harness-design-long-running-apps
+- [LangChain 에이전트 프레임워크 진화](wiki/agents/langchain-agent-frameworks-evolution.md) -- LangChain → LangGraph → DeepAgents 3세대 진화 요약
+- [LLM 자율 에이전트 (Lilian Weng)](wiki/agents/llm-autonomous-agents-lilian-weng.md) -- Lil'Log Planning/Memory/Tool Use 표준 레퍼런스 요약
+- [멀티에이전트 리서치 시스템 2025 (Anthropic)](wiki/agents/multi-agent-research-system-2025-summary.md) -- Anthropic 멀티에이전트 90.2% 우수, 토큰 15x 요약
 
 **entity**
 - [SkyworkAI DeepResearchAgent](wiki/agents/skywork-deepresearchagent.md) — deep research workflow를 오픈소스로 구현한 공개 레퍼런스 프로젝트 허브
@@ -716,6 +986,8 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 ### Applications (응용)
 
 **entity**
+- [OpenAI Titan 커스텀 AI 추론 칩](wiki/applications/openai-titan-custom-chip.md) -- TSMC 3nm + Broadcom 설계 ASIC. "엔비디아 세금" 탈피 목표. 2026년 12월 양산 목표, Titan 2는 TSMC A16
+- [xAI Colossus Memphis - 세계 최대 AI 슈퍼컴퓨터](wiki/applications/xai-colossus-2gw.md) -- 2GW 전력, 555K NVIDIA GPU(H100/H200/GB200), 투자 180억 달러. Grok 훈련 + X 플랫폼 서빙
 - [oh-my-claudecode (OMC)](wiki/applications/oh-my-claudecode.md) — > "Don't learn Claude Code. Just use OMC."
 - [Seedance 2.0](wiki/applications/seedance-2.md) -- ByteDance 통합 오디오-비디오 생성. Video Arena 1위
 - [Kling 3.0](wiki/applications/kling-3.md) -- Kuaishou AI 비디오 생성. 네이티브 다국어 오디오
@@ -723,6 +995,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Siemens Digital Twin Composer](wiki/applications/digital-twin-composer.md) -- Industrial Metaverse. AI+시뮬레이션+실시간 데이터 통합
 
 **concept**
+- [코드 완성 (Code Completion)](wiki/applications/code-completion.md) -- 라인/블록/FIM 완성 기법, HumanEval/MBPP 평가, GitHub Copilot 등 도구 비교
 - ["First Run the Tests"](wiki/applications/first-run-the-tests.md) — Simon Willison이 agentic engineering guide Section 3에서 제안하는 네 단어 프롬프트.
 - [Agentic Manual Testing](wiki/applications/agentic-manual-testing.md) — Simon Willison이 agentic engineering guide Section 3에서 다루는 수동 테스트 자동화 패턴.
 - [Interactive Explanations](wiki/applications/interactive-explanations.md) — Simon Willison이 agentic engineering guide Section 4에서 제시하는 인지 부채 상환 기법.
@@ -731,6 +1004,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [AI Audio & Voice Cloning (VoxCPM2)](wiki/applications/ai-audio-voice-cloning.md) -- 3초 오디오 음성 복제, VoxCPM2 토크나이저 프리 TTS
 - [AI Data Analysis & Agentic Analytics](wiki/applications/ai-data-analysis.md) -- 대화형 분석이 대시보드 BI 대체. 글로벌 $420B 전망
 - [AI Design Tools (UI/UX Generation)](wiki/applications/ai-design-tools.md) -- 텍스트 프롬프트로 와이어프레임/UI/프로토타입 수분 내 생성
+- [AI 건축 설계 응용](wiki/applications/ai-architecture-design.md) -- 생성적 설계, 구조 분석, 에너지 시뮬레이션, 재료 최적화, BIM 통합
 - [AI for Scientific Discovery & Drug Design](wiki/applications/ai-scientific-discovery.md) -- AI 설계 바이오의약품 임상 진입. FDA AI 가이드라인 확정 임박
 - [AI in Healthcare & Medical Imaging](wiki/applications/ai-healthcare.md) -- FDA 승인 AI 알고리즘 400개 돌파. Edge AI 실시간 분석
 - [AI Image Generation (GPT Image/Midjourney V7/Flux)](wiki/applications/ai-image-generation.md) -- 4강 구도 비교. 예술성/정밀성/자유도 특화
@@ -776,6 +1050,39 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [온디바이스 AI 추론 응용](wiki/applications/ai-on-device-inference.md)
 - [중국 AI 생태계 (China AI Ecosystem)](wiki/applications/china-ai-ecosystem.md)
 - [추천 시스템 딥러닝](wiki/applications/recommendation-systems-dl.md)
+- [AI 신용 평가](wiki/applications/ai-credit-scoring.md) -- 대안 데이터, 그래프 ML, 공정성 제약, SHAP 설명, ECOA/GDPR 규제 준수
+- [AI 포트폴리오 관리](wiki/applications/ai-portfolio-management.md) -- 강화학습 트레이딩(PPO/SAC), CVaR 리스크 모델링, 알트 데이터, 자동 리밸런싱
+- [AI 법률 디스커버리](wiki/applications/ai-legal-discovery.md) -- 전자 디스커버리, TAR 능동 학습, 권한 보호 분류, 핵심 사실 추출, PII 레딕션
+- [AI 세무 준수](wiki/applications/ai-tax-compliance.md) -- 자동 세금 계산, 규제 변경 NLP 추적, 감사 위험 분석, GLoBE Pillar 2 다국적 통합
+- [AI HR/채용](wiki/applications/ai-hr-recruitment.md) -- 이력서 임베딩 매칭, 인터뷰 언어 분석, 4/5 규칙 편향 감사, 직원 이탈 예측
+- [AI 지속가능성 최적화](wiki/applications/ai-sustainability-optimization.md) -- ESG 보고 자동화, 탄소 배출 예측, 순환 경제 분석, 공급망 환경 영향 평가
+- [AI 에너지 그리드 관리](wiki/applications/ai-energy-grid.md) -- 수요/공급 예측, 분산 에너지 자원(DER) 통합, 마이크로그리드, 가격 최적화
+- [AI 도시 계획](wiki/applications/ai-urban-planning.md) -- 토지 이용 최적화, 교통 흐름 시뮬레이션, 디지털 트윈, AI 시민 참여 도구
+- [AI 교통 경로 최적화](wiki/applications/ai-transportation-routing.md) -- 실시간 라우팅, 다중 모드 통합, VRP/화물 배송, 교통 신호 강화학습
+- [AI 자율 주행 차량](wiki/applications/ai-autonomous-vehicles.md) -- 인식-계획-제어 스택, BEV 변환, Waymo/Tesla 비교, MLOps 안전 파이프라인
+- [AI 창고 로보틱스](wiki/applications/ai-warehouse-robotics.md) -- Amazon Robotics, 동적 피킹·파지 계획, 다중 로봇 협력, 시각 SLAM
+- [AI 품질 검사 (제조)](wiki/applications/ai-quality-inspection.md) -- 시각 결함 탐지, PatchCore 이상 탐지, 자동 합격/불합격 판정, 산업 4.0 통합
+- [AI 예측 유지보수](wiki/applications/ai-predictive-maintenance.md) -- 진동/온도/음향 분석, RUL 예측, 디지털 트윈 연동, IoT 센서 융합
+- [이미지 캡셔닝 일반 응용 개요](wiki/applications/image-captioning.md) -- 인코더-디코더 진화, 평가(BLEU/CIDEr), 멀티모달 LLM 통합, 접근성 응용
+- [AI 게임 개발 응용](wiki/applications/ai-game-development.md) -- 절차적 콘텐츠 생성, NPC 대화, 게임 밸런싱, 자산 생성, AAA 통합
+- [AI 공급망 최적화](wiki/applications/ai-supply-chain-optimization.md) -- 수요 예측, 재고 최적화, 경로 계획, 위험 평가, ERP 통합
+- [AI 사기 탐지 시스템](wiki/applications/ai-fraud-detection.md) -- 거래/보험/정체성 사기, 그래프 신경망, 실시간 스코어링
+- [AI 사이버 위협 헌팅](wiki/applications/ai-cyber-threat-hunting.md) -- SIEM/EDR 통합, 이상 탐지, 위협 인텔리전스, MITRE ATT&CK 매핑
+- [AI 개인화 엔진](wiki/applications/ai-personalization-engines.md) -- 1:1 콘텐츠 큐레이션, 행동 예측, 다중 채널 통합, 동의 관리
+- [AI 콘텐츠 추천 시스템](wiki/applications/ai-content-recommendation.md) -- Netflix/Spotify/YouTube 패턴, 두 타워 + 트랜스포머, A/B 테스팅
+- [AI 이상 탐지 응용](wiki/applications/ai-anomaly-detection.md) -- 시계열/그래프/이미지 이상, 비지도 학습, IT 인프라 모니터링
+- [AI 네트워크 모니터링](wiki/applications/ai-network-monitoring.md) -- NetFlow 분석, 이상 트래픽, DDoS 탐지, 자동 라우팅 조정
+- [AI 로그 분석 (AIOps)](wiki/applications/ai-aiops-log-analysis.md) -- 로그 클러스터링, 이상 시퀀스, 근본 원인 분석, ChatOps
+- [AI 실시간 번역](wiki/applications/ai-realtime-translation.md) -- 동시 번역 시스템, 음성-음성 직접 번역, 회의/방송 응용
+- [AI 수어 인식/생성](wiki/applications/ai-sign-language.md) -- RGB-D 비디오 인식, 3D 아바타 생성, 청각 장애인 접근성
+- [AI 접근성 도구](wiki/applications/ai-accessibility-tools.md) -- 화면 읽기, 자동 캡션, 알트 텍스트, 색맹 보정, 모바일 통합
+- [AI 정신 건강 지원](wiki/applications/ai-mental-health.md) -- 감정 분석, CBT 기반 챗봇, 위기 감지, 윤리적 프레임워크
+- [AI 노인 돌봄](wiki/applications/ai-elder-care.md) -- 낙상 감지, 약물 알림, 동반 챗봇, 인지 모니터링
+- [AI 농업/스마트 팜](wiki/applications/ai-agriculture-farming.md) -- 위성 작물 모니터링, 정밀 살포, 가축 행동, 수확 예측
+- [AI 기후 모델링](wiki/applications/ai-climate-modeling.md) -- GraphCast, ClimaX, 신경 PDE 솔버, 극한 날씨 예측 가속
+- [Open Hardware AI](wiki/applications/open-hardware.md) -- Tenstorrent / Esperanto / AMD ROCm / tinybox, CUDA 의존 탈피 동기와 한계, CHIPS Act 정책 문맥
+- [딥페이크 탐지 (Deepfake Detection)](wiki/applications/deepfake-detection.md) -- 얼굴/음성 위조 탐지, 워터마킹, multi-modal 조합 검증
+- [텍스트 요약 (Extractive/Abstractive)](wiki/applications/text-summarization.md) -- 추출 vs 추상 요약, ROUGE 평가, LLM long-context 시대 진화
 
 **summary**
 - [Automated Alignment Researchers (AAR) 실험 요약](wiki/applications/automated-alignment-researchers.md) — Anthropic의 9개 Claude Opus 4.6 인스턴스로 구성된 AAR 실험. PGR 0.97 달성 (인간 baseline 0.23), 프로덕션 스케일 적용 시 유의한 개선 없음
@@ -796,6 +1103,8 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [2026년 4월 leaf 노드 품질 복구 감사](wiki/applications/leaf-quality-reingest-audit-2026-04-13.md) — 최하위/leaf 후보 226개의 generic filler 제거와 source-grounded 재보강 결과를 기록한 관리 감사 문서
 - [Claude Code vs Codex CLI 실전 비교 (2026-04)](wiki/applications/claude-code-vs-codex-comparison.md) -- 시니어 엔지니어 100h vs 20h 사용 비교. SWE-bench 72.5% vs 49%
 - [Agentic Engineering Patterns 가이드 (Simon Willison)](wiki/applications/agentic-engineering-guide.md) — Simon Willison이 2026-02-23에 시작한 가이드 시리즈. 코딩 에이전트(Claude Code, OpenAI Codex, Gemini CLI 등)를 사용하는 프로페셔널 소프트웨어 엔지니어를 위한 패턴 모음이다. 1994년 GoF *Design Patterns* 책에서 영감
+- [NotebookLM 2026년 신기능 요약](wiki/applications/notebooklm-2026-features.md) -- Cinematic Video Overview, 인포그래픽 10종 프리셋, PPTX 내보내기, EPUB 업로드, 플래시카드 진도 추적, Education Plus 확장
+- [AlphaFold 3 및 Isomorphic Labs 신약 개발 응용](wiki/applications/alphafold3-isomorphic-labs.md) -- 분자 상호작용 정확도 50% 향상, $600M+ 투자, 2026년 2월 'AlphaFold 4급' 새 모델 발표
 
 **case-study**
 - [Project Glasswing - Claude Mythos 제한 배포 사례](wiki/applications/project-glasswing-case-study.md) -- Anthropic이 Mythos를 일반 공개하지 않고 보안 파트너에 한정한 결정. Firefox exploit 2 vs 181 수치, $104M 투자, Willison "합리적 trade-off" 평가
@@ -804,6 +1113,18 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [OpenHands SWE-Bench Scaling Notes](wiki/applications/openhands-swe-bench-scaling-notes.md) — inference-time scaling과 critic model이 coding agent benchmark 성능을 어떻게 바꾸는지 보여주는 사례 정리
 - [바이브 코딩 환자 관리 앱 보안 참사](wiki/applications/vibe-coding-security-horror-story.md) -- AI 코딩으로 만든 환자 관리 시스템의 보안 취약점 사례. 클라이언트 전용 인증, DB 노출
 - [Claude 시스템 프롬프트 git 타임라인](wiki/applications/claude-prompts-git-timeline.md) -- Simon Willison의 Claude 시스템 프롬프트를 git 저장소로 변환해 프롬프트 진화를 추적하는 사례
+- [Claude Design 공식 출시: 자연어로 시각 산출물 생성](wiki/applications/claude-design-launch.md) -- Anthropic Labs 실험 제품. 슬라이드·UI 프로토타입·원페이저를 자연어로 생성, 팀 디자인 시스템 학습, Claude Code 핸드오프 번들. Figma 주가 7%+ 하락
+- [AI 제품 개선 필드 가이드 (Hamel + NurtureBoss)](wiki/applications/improving-ai-products-field-guide.md) -- Hamel Field Guide + NurtureBoss 33→95% 사례
+
+**case-study**
+- [SpaceX-Cursor 600억 달러 인수 옵션](wiki/applications/spacex-cursor-acquisition-option.md) -- 2026-04-21 보도. Anysphere 600억$ 인수 옵션, a16z 주도 20억$ 펀딩, Cognition AI 250억$ 협상 동반
+
+**summary**
+- [AI 노동시장 영향 2026-04](wiki/applications/ai-labor-market-impact-2026-04.md) -- 월 -1.6만 순 일자리(골드만삭스). Gen Z 테크 채용 -25%, WEF 2030 순 +200만 예측. 개발자 시장 양극화
+- [Google Alphabet, Anthropic에 최대 400억 달러 투자 (2026년 4월)](wiki/applications/google-40b-anthropic-investment.md) -- 즉시 100억+조건부 300억. 밸류에이션 3,500억 달러. 현금+TPU 복합 투자. Amazon 250억 발표 나흘 뒤 연속 공개
+- [Amazon-Anthropic 5기가와트 컴퓨트 확장 계약 (2026년 4월)](wiki/applications/amazon-anthropic-5gw-compute.md) -- Amazon 250억 달러 투자+5GW 컴퓨트. Anthropic 10년 AWS 1,000억 달러 지출 약정. Trainium 칩 중심 구성
+- [Anthropic 연매출 런레이트 300억 달러 돌파 마일스톤 (2026년 4월)](wiki/applications/anthropic-30b-revenue-milestone.md) -- 2025년 말 90억에서 4개월 만에 3.3배 성장. 연간 100만 달러 이상 기업 고객 1,000개+. 3,500억 달러 밸류에이션 근거
+- [Project Stargate: OpenAI-SoftBank-Oracle AI 인프라 합작 법인](wiki/applications/openai-stargate.md) -- 5,000억 달러 AI 인프라 JV. 확정 1,000억+계획 8GW+. UAE/아르헨티나 국제 확장. 파트너 간 분쟁으로 진행 지연
 
 ### Papers (논문)
 
@@ -885,6 +1206,9 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [The Hot Mess of AI: 오정렬 스케일링 (Anthropic 2026)](wiki/papers/hot-mess-misalignment-paper.md) -- 편향-분산 분해로 AI 오류 분석. 추론 길이가 오류 비일관성 유발
 - [MAPO: 멀티모달 에이전트 정책 최적화 (2026)](wiki/papers/mapo-multimodal-agentic-paper.md) -- VLM의 추론-행동 간극을 정책 최적화로 해결
 - [Tempo: 소규모 VLM을 비디오 압축기로 (2026)](wiki/papers/tempo-video-vlm-compressor-paper.md) -- 소규모 VLM이 쿼리 인식 시간 압축기 역할, 대규모 VLM 토큰 절감
+- [ResNet 원논문 (He et al., CVPR 2016)](wiki/papers/resnet-original-paper.md) -- 잔차 연결로 152층 학습, ILSVRC 2015 5관왕, 저하 문제 해결, 20만+ 인용
+- [Dropout 원논문 (Srivastava et al., JMLR 2014)](wiki/papers/dropout-original-paper.md) -- 뉴런 무작위 비활성화, 2^n 앙상블 해석, 공동 적응 억제, 정규화 표준화
+- [Batch Normalization 원논문 (Ioffe & Szegedy, ICML 2015)](wiki/papers/batch-norm-original-paper.md) -- 배치 통계 정규화, 학습률 14배 향상, ICS 가설(후속 연구서 수정), 손실 곡면 스무딩
 - [RAG 원논문 (Lewis et al. 2020)](wiki/papers/rag-original-paper.md) -- DPR+BART, 비파라메트릭 메모리, RAG-Sequence vs RAG-Token, Open-domain QA SOTA. 현대 RAG 파이프라인의 기원
 - [Vi-CD: ViT 자동 회로 발견 (2026)](wiki/papers/vi-cd-visual-circuit-discovery-paper.md) -- 에지 기반 시각 회로, 기존 대비 10x 스파서. CLIP 공격 회로 분석
 - [CSD: 보정된 스펙큘러티브 디코딩 (2026)](wiki/papers/calibrated-speculative-decoding-paper.md) -- 훈련 없이 2.33x 처리량. 온라인 교정 메모리 + 의미 일관성 게이팅
@@ -901,13 +1225,91 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [DSRL: 사전학습 공간에서의 강화학습 - P(y|x)에서 P(y)로 (2026)](wiki/papers/dsrl-pretrain-space-rl-paper.md) -- NSR-PreRL + 표준 RLVR 2단계, Policy Reincarnation, reflection 6.54x/transition 14.89x 증가
 - [Credit Assignment Survey: Reasoning-to-Agentic RL (Zhang, 2026)](wiki/papers/credit-assignment-survey-paper.md) -- 47개 방법 2차원 taxonomy(granularity x methodology). Reasoning RL vs Agentic RL 이분법 정식화. turn-level MDP/hindsight counterfactual/privileged asymmetric critic
 - [GenAC: Generative Actor-Critic (Shan et al., 2026)](wiki/papers/genac-paper.md) -- CoT reasoning 기반 generative critic + in-context conditioning. discriminative scalar critic의 representation complexity 한계 실증. value-free 트렌드(GRPO)에 반론
+- [Layer Normalization 원논문 (Ba et al., 2016)](wiki/papers/layer-norm-original-paper.md) -- 배치 독립 레이어 정규화. RNN/Transformer 표준 정규화. 모든 현대 LLM이 사용하는 LayerNorm과 RMSNorm의 원조
+- [Adam 옵티마이저 원논문 (Kingma & Ba, 2014)](wiki/papers/adam-original-paper.md) -- 1차/2차 모멘트 추정 + 편향 보정으로 적응 학습률 구현. 역대 ML 논문 중 최다 인용급. AdamW의 원형
+- [Word2Vec 원논문 (Mikolov et al., 2013)](wiki/papers/word2vec-original-paper.md) -- CBOW/Skip-gram 아키텍처, 음성 샘플링. "king-man+woman=queen" 벡터 산술. NLP 전이학습 패러다임의 선구자
+- [RoBERTa 원논문 (Liu et al., 2019)](wiki/papers/roberta-paper.md) -- BERT 강화 학습 레시피. NSP 제거, 동적 마스킹, 160GB 데이터. 레시피 최적화만으로 BERT 대폭 능가
+- [ALBERT 원논문 (Lan et al., 2019)](wiki/papers/albert-paper.md) -- 인수분해 임베딩 + 교차 레이어 파라미터 공유 + SOP. BERT 대비 파라미터 1/18로 GLUE/SQuAD/RACE 능가
+- [ELECTRA 원논문 (Clark et al., 2020)](wiki/papers/electra-paper.md) -- 대체 토큰 탐지(RTD)로 전체 토큰 위치에서 학습. RoBERTa 4배 효율. 생성기-판별기 사전학습 구조
+- [XLNet 원논문 (Yang et al., 2019)](wiki/papers/xlnet-paper.md) -- 순열 언어 모델링으로 AR+AE 결합. 두 스트림 어텐션, Transformer-XL 통합. 20개 NLP 태스크 SOTA
+- [Flamingo 원논문 (Alayrac et al., 2022)](wiki/papers/flamingo-paper.md) -- 동결 비전 인코더+LLM에 게이트 크로스어텐션 연결. Perceiver Resampler. 멀티모달 in-context few-shot 학습 원형
+- [DDIM: 결정론적 비마르코프 확산 샘플링 (Song et al., 2021)](wiki/papers/ddim-paper.md) -- 비마르코프 역방향 과정으로 DDPM 1000 스텝을 10~50 스텝으로 가속. 결정론적 잠재 보간 가능
+- [Classifier-Free Guidance (Ho & Salimans, 2022)](wiki/papers/classifier-free-guidance-paper.md) -- 별도 분류기 없이 단일 확산 모델로 조건부/비조건부 결합. Stable Diffusion의 핵심 조건 제어 기법
+- [LCM: 잠재 일관성 모델 (Luo et al., 2023)](wiki/papers/lcm-latent-consistency-paper.md) -- DDIM 궤적 일관성 증류로 50 스텝 SD를 1~4 스텝으로 압축. LCM-LoRA로 어떤 SD 모델에도 적용 가능
+- [BLIP (Li et al., ICML 2022)](wiki/papers/blip-paper.md) -- 캡셔너+필터 CapFilt 부트스트래핑으로 노이즈 데이터 정제. MED 통합 아키텍처로 이해+생성 동시 지원. 시각-언어 통합 사전학습
+- [BLIP-2 (Li et al., ICML 2023)](wiki/papers/blip-2-paper.md) -- Q-Former 경량 브리지로 동결 ViT+동결 LLM 연결. 학습 파라미터 0.2%로 Flamingo-80B 능가. 비전-LLM 결합 표준 패턴 확립
+- [LLaVA (Liu et al., NeurIPS 2023)](wiki/papers/llava-original-paper.md) -- GPT-4 합성 시각 명령 데이터 158K + 단순 MLP 프로젝터. 오픈소스 멀티모달 명령 튜닝 시발점
+- [MiniGPT-4 (Zhu et al., ICLR 2024)](wiki/papers/minigpt4-paper.md) -- 단일 선형 프로젝션으로 BLIP-2 비전+Vicuna 결합. 5M 파라미터만 학습. GPT-4급 멀티모달 대화 시연
+- [InstructBLIP (Dai et al., NeurIPS 2023)](wiki/papers/instructblip-paper.md) -- Instruction-Aware Q-Former로 명령 인식 시각 특징 추출. 13개 태스크 혼합 명령 튜닝. 제로샷 일반화 탁월
+- [KOSMOS 시리즈 (Microsoft, 2023)](wiki/papers/kosmos-paper.md) -- KOSMOS-1 멀티모달 인컨텍스트 학습 / KOSMOS-2 그라운딩 / KOSMOS-2.5 OCR-free 문서 이해
+- [Fuyu-8B (Adept AI, 2023)](wiki/papers/fuyu-paper.md) -- 비전 인코더 없는 단순 설계. 이미지 패치를 선형 레이어로 직접 디코더 입력. UI/문서 특화 강점
+- [ULMFiT (Howard & Ruder, ACL 2018)](wiki/papers/ulm-fit-paper.md) -- NLP 전이학습 ImageNet 모먼트. 차등 학습률+사선형-삼각형 LR+단계적 해동의 3단계 파인튜닝 프레임워크
+- [SimCLR 원논문 (Chen et al., ICML 2020)](wiki/papers/simclr-original-paper.md) -- 강한 데이터 증강+큰 배치+비선형 투영 헤드+NT-Xent 손실. 자기지도 비전 대조 학습 표준 프레임워크
+- [MoCo 원논문 (He et al., CVPR 2020)](wiki/papers/moco-original-paper.md) -- 모멘텀 인코더+FIFO 큐 동적 딕셔너리. 배치 크기 독립적 대규모 음성 샘플. 비지도 학습 최초 지도학습 사전학습 능가
+- [BYOL 원논문 (Grill et al., NeurIPS 2020)](wiki/papers/byol-original-paper.md) -- 음성 샘플 없는 자기지도 학습. 온라인-타겟 비대칭 구조+모멘텀 EMA. 붕괴 방지 미스터리로 이론 연구 촉발
+- [DINO 원논문 (Caron et al., ICCV 2021)](wiki/papers/dino-original-paper.md) -- 자기 증류+ViT 조합에서 레이블 없이 의미론적 세그멘테이션 창발. 센터링+샤프닝으로 붕괴 방지
+- [MAE 원논문 (He et al., CVPR 2022)](wiki/papers/mae-original-paper.md) -- 75% 마스킹+비대칭 인코더-디코더. ViT 자기지도 사전학습 표준. 파인튜닝 시 ViT-H 87.8% ImageNet SOTA
+- [VideoMAE 원논문 (Tong et al., NeurIPS 2022)](wiki/papers/videomae-paper.md) -- 90% 마스킹+시공간 튜브 마스킹. 소규모 도메인 데이터에서도 강력한 전이. Kinetics-400 80%+ 달성
+- [Point-MAE 원논문 (Pang et al., ECCV 2022)](wiki/papers/point-mae-paper.md) -- FPS+k-NN 패치+챔퍼 거리 손실로 3D 포인트 클라우드 MAE. ModelNet40 94.04%, ScanObjectNN 85.18% SOTA
+- [DDPM 원논문 (Ho et al., NeurIPS 2020)](wiki/papers/ddpm-original-paper.md) -- 노이즈 예측 파라미터화+마르코프 확산 역확산. CIFAR-10 FID 3.17. 확산 모델 시대의 시작
+- [전문가 업사이클링으로 MoE 컴퓨트 효율 프론티어 이동 (arXiv 2604.19835)](wiki/papers/expert-upcycling-moe.md) -- 전문가 복제+라우터 확장으로 E→mE 확장, 처음 훈련 대비 GPU 32% 절감
+- [LLM 양자화의 두 가지 실패 모드: 신호 저하 vs 연산 붕괴 (arXiv 2604.19884)](wiki/papers/quantization-failure-modes.md) -- 2비트 성능 절벽을 신호 저하(훈련 없는 수리 가능)와 연산 붕괴(구조적 재건 필요)로 최초 분류
+- [토큰 중요도 기반 적응형 KV 캐시 양자화: Don't Waste Bits! (arXiv 2604.04722)](wiki/papers/adaptive-kv-quantization.md) -- 어텐션 스코어 기반 토큰 중요도에 따라 2/4/8비트/FP16 동적 할당, 온디바이스 LLM 최적화
+- [Alloc-MoE: 예산 인식 전문가 활성화 할당으로 MoE 추론 가속 (arXiv 2604.08133)](wiki/papers/alloc-moe-inference.md) -- DeepSeek-V2-Lite에서 원래 예산 50%로 프리필 1.15x, 디코드 1.34x 속도 향상
+- [DiP-SD: 분산 파이프라인 스펙 디코딩으로 엣지 LLM 추론 17.89배 가속 (arXiv 2604.20919)](wiki/papers/dip-sd-speculative-decoding.md) -- 분산 초안 생성+단계별 파이프라이닝으로 Qwen 모델 자기회귀 대비 17.89x 처리량
+- [잠재 응축 트랜스포머: MLA 잠재 공간 압축으로 2.5배 속도, 90% KV 축소 (arXiv 2604.12452)](wiki/papers/latent-condensed-transformer.md) -- 쿼리 인식 풀링+앵커 선택으로 파라미터 추가 없이 긴 컨텍스트 2.5x 가속, KV 90% 축소
+- [TEMPO: EM 프레임워크로 대형 추론 모델의 테스트 시간 훈련 스케일링 (arXiv 2604.19295)](wiki/papers/tempo-test-time-training.md) -- 정책 개선+크리틱 재교정 EM 교차로 TTT 성능 정체 해결, AIME 2024 유의미한 향상
+- [더 많은 사고가 오히려 해롭다: LLM 과사고 현상 분석 (arXiv 2604.10739)](wiki/papers/overthinking-test-time-compute.md) -- 추론 연장 시 이전 정답 포기하는 과사고(overthinking) 실증, 최적 추론 길이는 문제 난이도 의존
+- [통계적 관점에서 본 RLHF 서베이 (arXiv 2604.02507)](wiki/papers/rlhf-statistical-perspective.md) -- RLHF 3요소(SFT/보상모델링/정책최적화)를 Bradley-Terry-Luce·능동학습 등 통계 이론과 연결한 서베이
+- [어드밴티지 부호 강건성으로 보상 해킹 완화 SignCert-PO (arXiv 2604.02986)](wiki/papers/reward-hacking-sign-robustness.md) -- 인증된 부호 보존 반경으로 취약한 완성물 다운웨이팅. 단일 보상 모델만으로 보상 해킹 억제
+- [C2: 이진 선호에서 루브릭 보강 보상 모델 (arXiv 2604.13618)](wiki/papers/c2-rubric-reward-model.md) -- DPO로 루브릭 생성기, GRPO로 검증기 훈련. 외부 주석 없이 4개 선호 벤치마크에서 GRPO 추론 보상 모델 능가
+- [Plan-RewardBench: 에이전트 계획 궤적 수준 보상 모델 벤치마크 (arXiv 2604.08178)](wiki/papers/plan-reward-bench.md) -- 도구 통합 환경에서 선호/분산 궤적 판별 역량 평가. 긴 궤적에서 현재 보상 모델 현저히 약함
+- [코딩 에이전트 성공·실패 행동 드라이버 분석 (arXiv 2604.02547)](wiki/papers/coding-agent-behavioral-analysis.md) -- 9,374 궤적 분석. 수정 전 컨텍스트 수집·사후 검증이 성공 패턴. LLM 역량이 주 성능 동인
+- [합의 함정: 토큰 수준 라운드로빈으로 멀티에이전트 강건화 (arXiv 2604.17139)](wiki/papers/consensus-trap-multiagent.md) -- 다수결 투표의 오염 취약성 정형화. 토큰 수준 라운드로빈으로 오염 에이전트 다수 상황도 방어
+- [더 유능할수록 덜 협력적: LLM 제로 비용 협력 실패 (arXiv 2604.07821)](wiki/papers/llm-cooperation-failure.md) -- o3가 o3-mini보다 협력률 17% vs 50% 역설. 명시적 프로토콜·소규모 인센티브로 개선
+- [GuarantRAG: 결합 디코딩으로 RAG 지식 통합 보장 (arXiv 2604.08046)](wiki/papers/guarantrag-joint-decoding.md) -- 내부/검색 지식 병렬 초안 후 토큰 수준 결합 디코딩. 정확도 +12.1%, 환각 -16.3%
+
+- [AuditBench: 숨겨진 행동 모델 감사 벤치마크](wiki/papers/auditbench-alignment-auditing.md) -- 56개 이식 LLM 대상 자율 조사자 에이전트 감사. 14가지 우려 행동 탐지, tool-to-agent gap 발견
+- [자동화 약-대-강 연구자(AAR): 5일 W2S 실험](wiki/papers/automated-weak-to-strong-researcher.md) -- AAR 9개 인스턴스, 5일 800h, PGR 0.97 달성. 인간 연구자 7일 PGR 0.23 대비 4배 이상. $18,000 비용
+- [AgentBench: 멀티 도메인 에이전트 평가 벤치마크 (Liu et al., ICLR 2024)](wiki/papers/agentbench-paper.md) -- 8 환경 멀티 도메인 에이전트 평가
+- [AutoGen: Conversable Agent 멀티 에이전트 프레임워크 (Wu et al., 2023)](wiki/papers/autogen-paper.md) -- Microsoft 다중 에이전트 대화 프레임워크
+- [GAIA: 일반 AI 어시스턴트 벤치마크 (Mialon et al., ICLR 2024)](wiki/papers/gaia-paper.md) -- 인간 92% vs GPT-4 15%, AGI 평가 철학 전환
+- [추론 스케일링 법칙: 작은 모델+탐색의 우위 (Wu et al., 2024)](wiki/papers/inference-scaling-laws-paper.md) -- Llemma-7B+tree search > Llemma-34B+majority voting (CMU)
+- [Inspect Evals: UK AISI 8개월 운영 인사이트 (Abbas et al., 2025)](wiki/papers/inspect-evals-paper.md) -- 8개월 운영 인사이트, cohort + statistical QC
+- [LangGraph 멀티턴 다국어 번역 사례 (Wang & Duan, 2024)](wiki/papers/langgraph-mt-paper.md) -- LangGraph state-machine 다국어 번역
+- [METR HCAST: 50% Time Horizon 메트릭 (METR, NeurIPS 2025)](wiki/papers/metr-hcast-paper.md) -- doubling per 7 months, Claude 3.7 50분
+- [OpenHands: EventStream 통합 SW 에이전트 플랫폼 (Wang et al., ICLR 2025)](wiki/papers/openhands-paper.md) -- 통합 SW 에이전트 플랫폼
+- [ReAct: Reasoning + Acting 인터리빙 (Yao et al., ICLR 2023)](wiki/papers/react-paper.md) -- Thought→Action→Observation, 모든 LLM agent harness baseline
+- [Reflexion: Verbal RL 자기 반성 (Shinn et al., NeurIPS 2023)](wiki/papers/reflexion-paper.md) -- weight update 없이 trial 간 학습, HumanEval 91%
+- [SWE-agent: Agent-Computer Interface(ACI) 정립 (Yang et al., NeurIPS 2024)](wiki/papers/swe-agent-paper.md) -- ACI 표지석, SWE-bench 12.5%
+- [SWE-bench: 코딩 에이전트 표준 벤치마크 (Jimenez et al., ICLR 2024)](wiki/papers/swe-bench-paper.md) -- 2,294 GitHub 이슈 기반
+- [Test-Time Compute for Agents: 첫 systematic 분석 (Zhu et al., 2025)](wiki/papers/test-time-compute-agents-paper.md) -- agent test-time scaling 첫 systematic, list-wise verifier
+- [Test-Time Scaling Compute-Optimal (Snell et al., 2024)](wiki/papers/test-time-scaling-paper.md) -- PRM search vs refinement, compute-optimal 4x 효율 (DeepMind)
+- [Voyager: Minecraft 평생학습 에이전트 (Wang et al., 2023)](wiki/papers/voyager-paper.md) -- 코드 skill library, Diamond Tool 15.3x
 
 **summary**
 - [ICLR 2026 하이라이트](wiki/papers/iclr-2026-highlights.md) -- 19,000편 제출 역대 최대 규모. 추론 모델, 스케일링 법칙 재검토, 안전성, 효율적 추론 5대 동향 정리
+- [Anthropic Economic Index 2026-03 보고서](wiki/papers/anthropic-economic-index-march-2026.md) -- Computer & Mathematical 35% 1위 유지. 태스크 집중도 24%→19%, 지역 집중도 30%→24% 분산. 22-25세 채용 14% 감소
 
 ### Tooling (도구)
 
 **entity**
+- [NVIDIA Nemotron 3 오픈 모델 패밀리](wiki/tooling/nvidia-nemotron-3-family.md) -- Nano/Super/Ultra 에이전틱 AI 특화 오픈 모델. Google Cloud Gemini Enterprise Agent Platform 통합
+- [NVIDIA NeMo Agent Toolkit](wiki/tooling/nvidia-nemo-agent-toolkit.md) -- 프레임워크 무관 에이전트 인스트루멘테이션·관찰가능성·지속적 학습. Google Cloud 통합
+- [Microsoft Phi-4 Multimodal](wiki/tooling/phi-4-multimodal.md) -- 5.6B 경량 멀티모달 (텍스트+이미지+오디오), ASR WER 6.14% 1위, Phi-4-reasoning-vision-15B
+- [GPT 모델 패밀리](wiki/tooling/gpt-models.md) -- OpenAI GPT 계보 허브. GPT-1/2/3/3.5/4/4o/4.1/o1/o3 진화, 멀티모달, Responses API, 모델 선택 가이드
+- [Claude 모델 패밀리](wiki/tooling/claude-models.md) -- Anthropic Claude 계보 허브. Claude 1/2/3/3.5/3.7/4 진화, 헌법적 AI, 확장 사고, RSP 정책
+- [Claude Opus 4.7 출시: 코딩·비전·자기검증 강화](wiki/tooling/claude-opus-4-7-release.md) -- SWE-bench 87.6%(+6.8p), CursorBench 70%, 비전 3.75MP, xhigh effort 신설, task-budget 퍼블릭 베타
+- [Managed Agents 메모리 API 퍼블릭 베타](wiki/tooling/managed-agents-memory-beta.md) -- 세션 간 기억 유지. 파일시스템 저장, API/Console 편집·내보내기. 2026-04-23 출시
+- [벡터 데이터베이스 (Vector Database)](wiki/tooling/vector-database.md) -- HNSW/IVF-PQ 인덱스, ANN 검색, 메타데이터 필터링, Pinecone/Weaviate/Qdrant/Milvus/Chroma 비교
+- [Meta Llama](wiki/tooling/meta-llama.md) -- Meta 오픈 웨이트 LLM 패밀리 허브. Llama 1/2/3/3.1/3.2/3.3, Code Llama, Llama Guard, 오픈 웨이트 생태계
+- [Llama 4 Scout & Maverick](wiki/tooling/llama-4-scout-maverick.md) -- 오픈 웨이트 최초 네이티브 멀티모달 MoE. Scout(16 전문가, 10M 컨텍스트, 단일 H100), Maverick(128 전문가). 2026-04-05
+- [Meta Muse Spark](wiki/tooling/meta-muse-spark.md) -- Meta Superintelligence Labs 첫 모델. 멀티모달 추론, Contemplating 모드, HLE 58%. Alexandr Wang 수장, 클로즈드 소스
+- [Grok 4.3 Beta - 네이티브 비디오 이해](wiki/tooling/grok-4-3-beta-multimodal.md) -- xAI 2026-04-17 조용히 출시. 비디오 이해 + PDF/PPT/스프레드시트 직접 생성. SuperGrok Heavy $300/월
+- [Grok Computer - xAI 자율 데스크톱 에이전트](wiki/tooling/grok-computer-desktop-agent.md) -- 5초 슬라이딩 윈도우 화면 인식. 컴퓨터 전체 제어. Macrohard (Tesla $2B 투자). 비공개 베타
+- [Model Context Protocol (MCP)](wiki/tooling/mcp.md) -- Anthropic 표준 도구 통신 프로토콜. JSON-RPC 2.0, 도구/리소스/프롬프트, 광범위한 생태계 채택
+- [GitHub Copilot](wiki/tooling/github-copilot.md) -- AI 코드 어시스턴트 시초. OpenAI Codex 기반 2021 출시, 현재 GPT-4o+Claude 멀티모델, IDE 통합 표준
+- [vLLM](wiki/tooling/vllm.md) -- UC Berkeley 오픈소스 LLM 추론 엔진. PagedAttention, 연속 배치, OpenAI API 호환
 - [ChatGPT](wiki/tooling/chatgpt.md) -- OpenAI 대화형 AI. GPT-3.5->GPT-5.4 진화, 100M+ 사용자, 산업 영향
 - [LangSmith](wiki/tooling/langsmith.md) -- LangChain 관측 플랫폼. 트레이싱, 평가, 프롬프트 허브
 - [Weights & Biases (W&B)](wiki/tooling/wandb-mlops.md) -- ML 실험 관리. 추적, 스윕, 아티팩트, Weave LLM 관측
@@ -933,6 +1335,7 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Cursor Cloud Agents & Parallel Worktree Agents](wiki/tooling/cursor-cloud-agents-and-parallel-worktree-agents.md) — title: Cursor Cloud Agents & Parallel Worktree Agents
 - [Deep Agents](wiki/tooling/deep-agents.md) — 이 페이지는 Deep Agents를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 플래너·파일시스템·서브에이전트를 기본 탑재한 LangGraph 기반 딥 에이전트 하네스이기 때문이다.
 - [DSPy (프롬프팅 대신 프로그래밍)](wiki/tooling/dspy-framework.md) — Stanford NLP 그룹이 개발한 LLM 파이프라인 컴파일러. Signature+Module+Optimizer로 프롬프트를 자동 최적화하는 선언적 프로그래밍 프레임워크.
+- [DSPy 허브 (DSPy - Stanford NLP)](wiki/tooling/dspy.md) -- DSPy entity 허브. 시그니처/모듈/옵티마이저 구조, MIPRO v2, GEPA, 프로덕션 배포 패턴
 - [DSPy + GEPA optimize_anything](wiki/tooling/dspy-gepa.md) — title: DSPy + GEPA optimize_anything
 - [Gemini 3.1 Pro](wiki/tooling/gemini-3-1-pro.md) — 이 페이지는 Gemini 3.1 Pro를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 2026년 2월 Google DeepMind가 출시한 Gemini 3 시리즈 point-version이기 때문이다.
 - [GLM-5.1](wiki/tooling/glm-5-1.md) — 이 페이지는 GLM-5.1를 허브처럼 따라가기 위한 엔티티 문서다. 현재 맥락에서 중요한 이유는 2026년 4월 Z.ai(구 Zhipu)가 공개한 754B MoE 오픈소스 에이전틱 엔지니어링 모델이기 때문이다.
@@ -964,6 +1367,9 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Braintrust (AI Observability)](wiki/tooling/braintrust.md) -- 에이전트 트레이스 자동 평가, 80x 쿼리 성능
 - [Claude Mythos Preview / Glasswing](wiki/tooling/claude-mythos-preview.md) -- Anthropic 역대 최강 모델. 수천 제로데이 자율 발견
 - [Codex CLI (OpenAI)](wiki/tooling/codex-cli.md) -- Rust 기반 터미널 코딩 에이전트. MCP 통합
+- [GPT-5.5 출시 (2026년 4월 23일)](wiki/tooling/gpt-5-5-launch.md) -- Terminal-Bench 2.0 82.7%, OSWorld-Verified 78.7%, 1M 토큰 장문 추론. 네이티브 멀티모달 단일 아키텍처
+- [OpenAI Workspace Agents (2026년 4월 22일)](wiki/tooling/openai-workspace-agents.md) -- Custom GPTs 후속 엔터프라이즈 자동화 플랫폼. 60개+ 앱 통합, 상시 가동 클라우드 에이전트, MCP 확장
+- [Codex CLI 2026년 4월 업데이트 요약](wiki/tooling/codex-cli-april-2026.md) -- Amazon Bedrock 모델 지원, /mcp verbose 진단, Unix 소켓 트랜스포트, reasoning-token 사용량 보고
 - [Composio](wiki/tooling/composio.md) -- 850+ 커넥터 AI 에이전트 외부 도구 통합
 - [GitHub Copilot /fleet](wiki/tooling/copilot-fleet.md) -- 병렬 멀티에이전트 실행. 2026.02 GA
 - [CrewAI (2026)](wiki/tooling/crewai.md) -- 역할 기반 멀티에이전트 오케스트레이션. A2A/MCP 지원
@@ -1029,6 +1435,11 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Runway Gen-4.5](wiki/tooling/runway-gen-4-5.md) -- AI 비디오 1위(1,247 Elo). 네이티브 오디오, 멀티샷
 - [Sora 2 Shutdown](wiki/tooling/sora-2-shutdown.md) -- 2026.03.24 종료 발표. 앱 04.26, API 09.24 종료
 - [Stable Diffusion](wiki/tooling/stable-diffusion.md) -- Stability AI/CompVis 오픈소스 이미지 생성. SD 1.5/2.1/XL/3.0 진화
+- [RAGFlow (오픈소스 RAG 플랫폼)](wiki/tooling/ragflow-platform.md) -- 깊은 문서 이해, 시각 청킹, 인용 추적 기반 엔터프라이즈 RAG 플랫폼. Apache 2.0
+- [TGI - HuggingFace Text Generation Inference](wiki/tooling/text-generation-inference-tgi.md) -- HuggingFace 공식 LLM 서빙 엔진. Rust 기반, 연속 배치, FlashAttention 통합
+- [LMDeploy - InternLM 추론 엔진](wiki/tooling/lmdeploy-internlm.md) -- 상하이 AI Lab. TurboMind 백엔드로 W4A16 추론 특화. InternLM 계열 공식 서빙
+- [Tabby - 자체 호스팅 코딩 어시스턴트](wiki/tooling/tabby-self-hosted-coding.md) -- GitHub Copilot 대안. 완전 자체 호스팅, 코드 외부 전송 없음, Apache 2.0
+- [Continue - 오픈소스 IDE AI 확장](wiki/tooling/continue-vscode-extension.md) -- Cursor 대안. VSCode/JetBrains 플러그인, 모델 무관, 로컬 LLM 지원. Apache 2.0
 - [Xcode 26.3 Agentic Coding](wiki/tooling/xcode-agentic-coding.md) -- Apple Claude+Codex 네이티브 통합. MCP 에이전트 연결
 - [TRL (Transformer Reinforcement Learning)](wiki/tooling/trl-library.md) -- HuggingFace TRL v1.0. SFT/DPO/PPO/GRPO 포스트트레이닝 풀스택
 - [Axolotl](wiki/tooling/axolotl.md) -- YAML 선언적 파인튜닝 프레임워크. Flash Attention, FSDP/DeepSpeed
@@ -1084,7 +1495,8 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Windsurf (Cascade 에이전트 IDE)](wiki/tooling/windsurf.md) -- Codeium의 Cascade 엔진 기반 AI IDE. 개발자 행동 자동 추적, Flow 상태 에이전트 실행
 - [실험 추적 도구 (W&B / MLflow / Neptune)](wiki/tooling/experiment-tracking.md) -- W&B, MLflow, Neptune, MLOps 실험 추적
 - [학습 프레임워크 (PyTorch / JAX / Megatron-LM / NeMo)](wiki/tooling/training-frameworks.md) -- PyTorch, JAX, Megatron-LM, NeMo 분산 학습
-- [MT-Bench](wiki/tooling/mt-bench.md) -- 멀티턴 대화 LLM 평가 벤치마크
+- [MT-Bench](wiki/tooling/mt-bench.md) -- 멀티턴 대화 LLM 평가 벤치마크. 80문항 2턴, GPT-4 자동 판정, LMSYS 평가 축
+- [Chatbot Arena](wiki/tooling/chatbot-arena.md) -- LMSYS 크라우드소싱 인간 선호 평가. Elo 레이팅, 실제 사용자 질문 기반, 오염 저항성
 - [Hugging Face Hub](wiki/tooling/huggingface-hub.md) -- 모델/데이터셋/스페이스 호스팅, ML 에코시스템 허브
 - [OpenHarness (오픈소스 에이전트 하네스)](wiki/tooling/openharness.md) -- HKUDS. Claude Code 하네스 설계를 오픈소스로 재현. 43+ 도구, anthropics/skills 호환
 - [Gemma 4 로컬 에이전트 추론](wiki/tooling/gemma-4-local-inference.md) -- 최초의 로컬 에이전트 하네스 구동 가능 오픈 웨이트 모델. 26B MoE 32GB Mac 구동
@@ -1106,6 +1518,57 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [XGBoost / LightGBM](wiki/tooling/xgboost-lightgbm.md)
 - [XGBoost 내부 구조](wiki/tooling/xgboost-internals.md)
 - [ZenML](wiki/tooling/zenml.md)
+- [Cline - 오픈소스 Claude 코딩 에이전트](wiki/tooling/cline-claude-coder.md) -- VS Code 오픈소스 자율 코딩 에이전트. MCP 네이티브, Puppeteer 브라우저 제어, 다중 모델 라우팅. Apache 2.0
+- [Zed AI 에디터](wiki/tooling/zed-ai-editor.md) -- Rust/GPUI 기반 고성능 AI 에디터. GPU 렌더링, 실시간 협업, Atom 후속. Gemini/Claude 통합
+- [Tabnine - AI 코드 완성](wiki/tooling/tabnine-completion.md) -- 가장 오래된 AI 코딩 도구(2019). 로컬 모델 실행, 엔터프라이즈 보안, 80+ 언어
+- [Codeium - 무료 AI 코드 완성](wiki/tooling/codeium-completion.md) -- 개인 완전 무료, 70+ 언어, 40+ IDE 지원. Windsurf 에디터 모회사
+- [Supermaven - 초고속 코드 완성](wiki/tooling/supermaven-fast-completion.md) -- Babble 모델, 1M 토큰 컨텍스트, 100ms 미만 응답. Tabnine 전 CTO 창업
+- [Cloud Code for JetBrains](wiki/tooling/cloud-code-jetbrains.md) -- Google 공식 JetBrains 플러그인. GKE/Cloud Run 관리, Gemini Code Assist, GCP 리소스 탐색기
+- [Cerebras Cloud Inference](wiki/tooling/cerebras-cloud-inference.md) -- WSE-3 웨이퍼스케일 칩 기반 초고속 LLM 추론. Llama 모델 ~1,800 tok/s, OpenAI 호환 API
+- [SambaNova Cloud](wiki/tooling/sambanova-systems-cloud.md) -- RDU 데이터플로우 칩 기반 엔터프라이즈 AI 추론. 405B 모델 특화, 국립 연구소 고객
+- [d-Matrix Corsair](wiki/tooling/d-matrix-corsair.md) -- 디지털 인메모리 컴퓨팅 추론 전용 ASIC. 메모리 내부 연산으로 메모리 월 제거
+- [Tenstorrent Grayskull / Wormhole](wiki/tooling/tenstorrent-grayskull.md) -- Jim Keller 주도 오픈소스 AI 칩. RISC-V Tensix 코어 + TT-Metalium 오픈소스 스택
+- [opencode-cli](wiki/tooling/opencode-cli.md) -- MIT 오픈소스 터미널 코딩 에이전트. 다중 LLM 라우팅, Claude Code / Codex CLI 대안
+- [Crush](wiki/tooling/crush-coding-agent.md) -- Charm 팀 TUI 코딩 에이전트. Bubbletea 기반 아름다운 터미널 UI, MCP 지원
+- [Void - 오픈소스 AI 코드 에디터](wiki/tooling/void-editor-ai.md) -- MIT 오픈소스 Cursor 대안. VSCode 포크, 자체 LLM 라우터, 프라이버시 우선
+- [Helix Editor with AI](wiki/tooling/helix-editor-ai.md) -- Rust 기반 모달 에디터 + AI 통합. Vim/Kakoune 영감, LSP/Tree-sitter 기본 탑재, 커뮤니티 AI 통합
+- [Neovim AI 코딩 - Avante/CodeCompanion](wiki/tooling/neovim-copilot-ai.md) -- Avante.nvim + CodeCompanion.nvim. Cursor 스타일 AI 사이드바를 Neovim에 구현, 다중 LLM 지원
+- [Xinference - 다중 모델 동시 추론 서버](wiki/tooling/xinference-multi-model.md) -- xorbitsai 다중 모델 동시 서빙, OpenAI API 호환, 멀티 백엔드(vLLM/llama.cpp/MLX), 분산 클러스터
+- [DolphinFlow - 시각적 파인튜닝 워크플로우](wiki/tooling/dolphinflow-fine-tuning.md) -- UI 기반 파인튜닝 워크플로우, 데이터셋 준비 + LoRA 마법사, 비기술자 대상
+- [Modal.com - 서버리스 ML 런타임](wiki/tooling/modal-com-runtime.md) -- Python 데코레이터로 GPU 클라우드 배포, 빠른 콜드 스타트, 사용량 기반 과금
+- [E2B - AI 코드 실행 샌드박스](wiki/tooling/e2b-ai-sandbox.md) -- Firecracker microVM 기반 격리 코드 실행. LLM 에이전트용 세션 유지 REPL, OpenAI Code Interpreter 대안
+- [Modal Volumes - 영구 스토리지](wiki/tooling/modal-volumes-storage.md) -- Modal 플랫폼 영구 분산 파일시스템. 모델 가중치 캐싱, 컨테이너 간 데이터 공유, commit/reload 모델
+- [Inferless - 서버리스 GPU 추론 플랫폼](wiki/tooling/inferless-deployment.md) -- 콜드 스타트 0.1초(주장), A100/H100, 사용량 기반 과금, HF/S3 모델 임포트 자동화
+- [OctoAI - 모델 호스팅 및 추론 플랫폼](wiki/tooling/octo-ai-platform.md) -- NVIDIA 인수(2024). 50+ 오픈소스 모델, 이미지 생성 강점, TensorRT/NIM 통합
+- [Perplexity API - 검색 강화 LLM API](wiki/tooling/perplexity-api.md) -- 실시간 웹 검색+인용 통합 LLM API. Sonar 모델 계열, OpenAI 호환, 리서치 자동화 특화
+- [Groq Cloud - LPU 기반 초저지연 추론 클라우드](wiki/tooling/groq-cloud-api.md) -- LPU(Language Processing Unit) 자체 칩으로 1000+ 토큰/초. OSS 모델 서빙, OpenAI 완전 호환
+- [Baseten - ML 배포 플랫폼](wiki/tooling/baseten-deployment.md) -- TrussML 패키징, GPU 자동 스케일, FT/H100, 모델 마켓플레이스
+- [Replicate - 모델 호스팅 플랫폼](wiki/tooling/replicate-platform.md) -- Cog 패키징, 오픈소스 모델 즉시 배포, API 노출, 사용량 과금
+- [Together AI - 추론 플랫폼](wiki/tooling/together-ai-inference.md) -- 200+ 오픈 모델, FlashAttention 최적화, fine-tune 서비스, RedPajama
+- [Fireworks AI - 빠른 추론](wiki/tooling/fireworks-ai-platform.md) -- 자체 추론 엔진, 함수 호출 + 구조화 출력, 모델 카탈로그
+- [Anyscale - Ray 기반 ML 플랫폼](wiki/tooling/anyscale-platform.md) -- Ray 창립자 회사, RLHF/fine-tune, 분산 학습/추론, 대규모
+- [BentoCloud - BentoML 매니지드](wiki/tooling/bento-cloud-mlops.md) -- BentoML 패키지 자동 배포, GPU 스케일, 엔터프라이즈 MLOps
+- [Firecracker microVM](wiki/tooling/firecracker-microvm.md) -- AWS 경량 하이퍼바이저. 125ms 부팅, AI 코드 실행 격리, Lambda/Fargate 구동
+- [Cohere 모델 패밀리](wiki/tooling/cohere-models.md) -- Command R+/R7B, Aya Expanse, Embed v3/v4, Rerank 3. 엔터프라이즈 RAG + 다국어 특화
+- [Wafer-Scale Engine](wiki/tooling/wafer-scale-engine.md) -- Cerebras WSE-2/3 풀웨이퍼 AI 가속기 개념. 온칩 SRAM 수십GB, 페타바이트 대역폭
+- [BIG-bench](wiki/tooling/big-bench.md) -- Google 200+ collaborative task, JSON+programmatic 이중 spec
+- [Claude Agent SDK 2025 Overview](wiki/tooling/claude-agent-sdk-overview-2025.md) -- gather/take/verify/iterate 4단계 루프
+- [Cursor Composer 모델](wiki/tooling/cursor-composer-model.md) -- Cursor Composer MoE+RL+MXFP8, 4x faster
+- [DeepSpeed-Chat](wiki/tooling/deepspeed-chat.md) -- Microsoft 3-stage InstructGPT 파이프라인 reference, Hybrid Engine
+- [HELM (Stanford)](wiki/tooling/helm-stanford.md) -- Stanford CRFM Scenario/Adapter/Metric 분리 + 7-metric
+- [Inspect AI](wiki/tooling/inspect-ai.md) -- UK AISI Solver/Scorer/Tool/Sandbox first-class 차세대 표준
+- [Langfuse 옵저버빌리티 요약](wiki/tooling/langfuse-observability-summary.md) -- Langfuse OTEL 표준, Black/Glass/White-Box 평가 3전략
+- [LightEval](wiki/tooling/lighteval.md) -- HuggingFace 다중 backend, inspect-ai 1차 backend 채택
+- [lm-evaluation-harness](wiki/tooling/lm-evaluation-harness.md) -- EleutherAI 학술 표준 60+ benchmark 통합
+- [NeMo-Aligner](wiki/tooling/nemo-aligner.md) -- NVIDIA Megatron 3D parallel + TensorRT-LLM rollout. 2025-11 archive
+- [OpenAI Evals](wiki/tooling/openai-evals.md) -- OpenAI YAML+JSONL 코드-리스, model-graded
+- [Pydantic AI Overview 요약](wiki/tooling/pydantic-ai-overview-summary.md) -- Type-safe agent, dependency injection, Logfire/OTEL
+- [simple-evals](wiki/tooling/simple-evals.md) -- OpenAI zero-shot CoT minimal launch reference
+- [torchtune](wiki/tooling/torchtune.md) -- Meta PyTorch FSDP2 first-class, 2025 wind-down
+- [Google Trillium (TPU v6)](wiki/tooling/google-trillium-tpu-v6.md) -- Google 6세대 TPU. 칩당 4.7x v5e, HBM 2x, 256-칩 Pod, 91 ExaFLOPS
+- [Qwen2.5 (Alibaba)](wiki/tooling/qwen-2-5.md) -- 2024-09 출시, 18T 토큰 사전학습, 128K context, 7개 사이즈 + Coder/Math, Apache 2.0
+- [FlashInfer](wiki/tooling/flashinfer.md) -- LLM 추론 서빙 특화 유연 어텐션 커널 라이브러리. PagedAttention/RadixAttention 통합
+
 
 **concept**
 - [Agent Harnesses for Long-Running Coding Sessions](wiki/tooling/long-running-agent-harnesses.md) — title: Agent Harnesses for Long-Running Coding Sessions
@@ -1116,8 +1579,16 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Tool Contracts & Writing Tools for Agents](wiki/tooling/tool-contracts-for-agents.md) — title: Tool Contracts & Writing Tools for Agents
 - [코딩 에이전트 지형도 (Coding Agents Landscape)](wiki/tooling/coding-agents-landscape.md) -- Claude Code, Codex, Copilot, Cursor 비교 허브
 - [WebAssembly 에이전트 샌드박싱 (Wasm Agent Sandboxing)](wiki/tooling/wasm-agent-sandboxing.md) -- Wasm/V8 isolate 기반 에이전트 코드 격리, 밀리초 시작
+- [LangGraph 1.0 GA](wiki/tooling/langgraph-1-0-ga.md) -- LangGraph & LangChain 1.0 첫 메이저 GA. 영구 상태 자동 저장, human-in-the-loop 일급 지원, 타입 세이프 스트리밍 v2, 백그라운드 서브에이전트 태스크
+- [HuggingFace Transformers 5.x](wiki/tooling/hf-transformers-5.md) -- v5.4~5.6 계열. Mistral 4 통합, PP-OCRv5, PI0 로봇 정책, VidEoMT, 양자화 속도 향상, Torch 2.7+CUDA 12.8 TGI 업데이트
+- [ByteDance Doubao 2.0](wiki/tooling/doubao-2-0.md) -- 3억 4,500만 MAU, Doubao 2.0+Seedream 5.0+Seedance 2.0 멀티모달 트리펙타, Douyin 수직 통합으로 중국 1위
+- [OpenAI Privacy Filter](wiki/tooling/openai-privacy-filter.md) -- Apache 2.0 오픈소스 PII 탐지/마스킹 모델. 1.5B Sparse MoE, 8카테고리, F1 96%, 온프레미스 실행
+- [HuggingFace SmolLM3](wiki/tooling/smollm3-release.md) -- 3B 경량 모델. 11.2T 토큰 3단계 커리큘럼 학습, 이중 모드 추론, 6개 언어, 온디바이스 배포 가능
+- [Evaluation Harness 비교](wiki/tooling/evaluation-harness-comparison.md) -- 9개 harness 횡단 비교, 3세대 분리
+- [MCP Clients 비교](wiki/tooling/mcp-clients-comparison.md) -- Claude Desktop/Code/Cursor 3-way 비교
 
 **summary**
+- [NVIDIA NIM 마이크로서비스 2026 업데이트](wiki/tooling/nvidia-nim-2026.md) -- 에이전트 파이프라인 통합, 엣지 배포, 모델 패밀리 대폭 확장. OpenAI 호환 API
 - [Claude Agent SDK Overview](wiki/tooling/claude-agent-sdk-overview.md) — Claude Agent SDK의 세션, agent loop, streaming, approval 개념을 한 번에 훑는 공식 개요 요약
 - [Claude Agent SDK Quickstart](wiki/tooling/claude-agent-sdk-quickstart.md) — Claude Agent SDK를 실제로 시작하기 위한 최소 실행 경로 요약
 - [Claude Agent Loop](wiki/tooling/claude-agent-loop.md) — SDK 내부 실행 루프와 tool routing 흐름을 설명하는 문서 요약
@@ -1164,6 +1635,14 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [Instructor Validation](wiki/tooling/instructor-validation.md) — field/custom/semantic validation과 error handling을 정리한 문서 요약
 - [Instructor Retrying](wiki/tooling/instructor-retrying.md) — Tenacity 기반 retry policy와 failed attempt tracking을 설명하는 문서 요약
 - [Instructor Patching](wiki/tooling/instructor-patching.md) — 기존 LLM client에 structured-output layer를 덧입히는 patching 전략 요약
+- [PyTorch 2.7 출시 노트](wiki/tooling/pytorch-2-7-release.md) -- FlexAttention x86 CPU, GQA/PagedAttention 추론 백엔드, Context Parallel API 3종 백엔드, Intel GPU Windows 11 torch.compile 지원
+- [vLLM v0.18/v0.19 업데이트](wiki/tooling/vllm-v018-v019-updates.md) -- gRPC 서빙 도입, FlexKV 선별 오프로딩, 비동기 스케줄링 기본화, Gemma 4 전 변형 지원, CVE-2026-0994 패치
+- [Unsloth v0.1.36 업데이트](wiki/tooling/unsloth-v01-update.md) -- Gemma 4 손실 폭발 버그 수정, 8GB VRAM Gemma-4-E2B 학습 가능, FA2 대비 1.5x 속도, Unsloth Dynamic 2.0 GGUF
+- [DeepSeek V4 Pro - 1.6T MoE 오픈웨이트 플래그십](wiki/tooling/deepseek-v4-pro.md) -- 2026-04-22. 1.6T 전체/49B 활성 MoE, 1M 컨텍스트, MIT 라이선스. 현재 최대 규모 오픈웨이트 모델
+- [Qwen 3.6 시리즈 - 에이전트 코딩 특화](wiki/tooling/qwen-3-6.md) -- Alibaba. 27B 밀집(397B MoE 능가) + 35B-A3B MoE 변형. Apache 2.0, 이미지-텍스트 멀티모달
+- [Kimi K2.6 - 300개 서브에이전트 스웜](wiki/tooling/kimi-k2-6.md) -- Moonshot AI. 1T MoE, 300 서브에이전트, 4,000 단계, SWE-Bench Pro 58.6점
+- [EXAONE 4.5 - LG AI 33B 멀티모달 STEM 모델](wiki/tooling/exaone-4-5.md) -- LG AI 연구소. STEM 5대 벤치마크 77.3점 (GPT-5-mini, Claude 4.5, Qwen-3 235B 상회)
+- [Tencent Hunyuan 3 (Hy3) - 빠른-느린 사고 융합 295B MoE](wiki/tooling/tencent-hunyuan-3.md) -- 2026-04-13. 295B/21B 활성, 256K 컨텍스트, fast-and-slow-thinking fused 설계
 
 **project-internal · `Vercel AI SDK`**
 - [Vercel AI SDK extractJsonMiddleware](wiki/tooling/vercel-ai-sdk-extract-json-middleware.md) — AI SDK Core의 JSON fence 제거 middleware API를 정리한 product-specific 노드.
@@ -1172,9 +1651,16 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 **project-internal · `OpenAI Agents SDK`**
 - [OpenAI Agents SDK Sandbox](wiki/tooling/openai-agents-sdk-sandbox.md) -- 하네스-컴퓨트 분리 아키텍처. 7개 샌드박스 프로바이더, Manifest 추상화
 
+**project-internal · `Anthropic API`**
+- [Anthropic API Rate Limits](wiki/tooling/anthropic-api-rate-limits.md) -- Tier 1-4 RPM/ITPM/OTPM, cache-aware ITPM
+
 **project-internal · `Claude Code`**
 - [Claude Code Hooks System](wiki/tooling/claude-code-hooks-system.md)
 - [Claude Code Routines](wiki/tooling/claude-code-routines.md) -- 클라우드 자동화. 스케줄/API/GitHub 이벤트 트리거로 자율 실행 — 이 페이지는 Claude Code 내부에서 Claude Code Hooks System이 어떤 역할을 하는지 정리한 프로젝트 스냅샷이다. 핵심 범위는 툴 호출 전후·세션 이벤트에 사용자 정의 스크립트를 끼워 넣는 settings.json 기반 확장 훅이다.
+- [Claude Code Auto Mode](wiki/tooling/claude-code-auto-mode.md) -- classifier 2-stage, FPR 0.4%/FNR 17%
+- [Claude Code Best Practices](wiki/tooling/claude-code-best-practices.md) -- 16가지 best practices, CLAUDE.md/plan/subagents/headless
+- [Claude Code Permission Modes](wiki/tooling/claude-code-permission-modes.md) -- 6개 permission mode + protected paths + settings
+- [Claude Code Plugins Marketplace](wiki/tooling/claude-code-plugins-marketplace.md) -- plugin.json, namespace, 4,200+ skills/770+ MCP
 
 **project-internal · `oh-my-claudecode`**
 - [OMC MCP Tools](wiki/tooling/omc-mcp-tools.md) — OMC 내부 MCP 도구군(State, Notepad, Project Memory, LSP, AST Grep, Trace 등)을 정리한 project-internal 문서.
@@ -1190,10 +1676,26 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 **entity · `RDT-1B`**
 - [RDT-1B - 양팔 로봇 조작 파운데이션 모델](wiki/tooling/rdt-1b-bimanual.md) -- 칭화대 1.1B 파라미터 확산 정책. ALOHA 플랫폼, 20 에피소드 파인튜닝으로 새 작업 적응
 
+**entity**
+- [Gemini 모델 패밀리](wiki/tooling/gemini-models.md) -- Google DeepMind 멀티모달 LLM. 1.0/1.5/2.0/3.x 세대, Pro/Flash/Ultra/Nano 변형, 1M 컨텍스트
+
 **concept**
+- [AI 가속기 (AI Accelerators)](wiki/tooling/ai-accelerators.md) -- GPU/TPU/LPU/RDU/WSE/Tensix 비교. 데이터플로우 vs SIMT, 추론 vs 학습 특화 가속기
 - [DeepSpeed ZeRO 내부 구현](wiki/tooling/deepspeed-zero-internals.md) -- Stage 1/2/3 파라미터 분할 메커니즘, 통신 패턴(Reduce-Scatter/All-Gather), CPU/NVMe 오프로딩
 - [DeepSpeed Arctic 장문 시퀀스 학습](wiki/tooling/deepspeed-arctic-lts.md) -- 멀티백만 토큰 시퀀스, ZenFlow 비동기 오프로딩, Ulysses/Ring Attention 시퀀스 병렬화
 - [Megatron Bridge 체크포인트 변환](wiki/tooling/megatron-bridge-checkpoint.md) -- HuggingFace <-> Megatron 양방향 변환, TP/PP 분할 처리, 레이어 이름 매핑
+- [sentence-transformers 라이브러리](wiki/tooling/sentence-transformers-library.md) -- SBERT 공식 라이브러리, 100+ 임베딩 모델, MTEB 평가 표준, RAG 통합 패턴
+- [Gemini 2.5 Flash Thinking](wiki/tooling/gemini-2-5-flash-thinking.md) -- 1M 토큰 컨텍스트, Thinking 모드, 네이티브 오디오 출력, 컴퓨터 사용 통합. Google Cloud 2026년 6월 GA 예정
+- [Gemini Enterprise Agent Platform](wiki/tooling/gemini-enterprise-agent-platform.md) -- Google Cloud Next '26 발표. Agent Designer 노코드 빌더, 장기 실행 에이전트, 200+ 모델 게이트웨이, MCP+A2A 내장
+- [Google TPU 8세대 (8t / 8i)](wiki/tooling/google-tpu-8t-8i.md) -- 학습 전용(8t) 121 엑사플롭스, 추론 전용(8i) 3배 성능. H2 2026 프리뷰, 2027년 GA
+- [Veo 3.1 Lite](wiki/tooling/veo-3-1-lite.md) -- Veo 3.1 Fast 대비 50% 저렴. Text-to-Video/Image-to-Video, Google Vids 통합, 720p/1080p
+- [Gemini Code Assist 2026](wiki/tooling/gemini-code-assist-2026.md) -- 월 180,000회 무료(Copilot 대비 90배), 1M 컨텍스트, 멀티에이전트 협업, HIPAA/PCI-DSS, MCP 지원
+- [Devin 2.0 - Cognition AI 자율 소프트웨어 엔지니어 2세대](wiki/tooling/devin-2-0-release.md) -- SWE-Bench Verified 51.5%, Fast Mode(2x속도 4x ACU), v3 API, 엔드투엔드 컴퓨터 사용 테스팅
+- [Google Antigravity - 에이전트 퍼스트 AI IDE](wiki/tooling/google-antigravity-ide.md) -- Gemini 3.1 Pro 기반, Editor+Manager 이중 뷰, 멀티모델(Claude/GPT 지원), 퍼블릭 프리뷰 무료
+
+**summary**
+- [Cursor 3.2 릴리즈 - 비동기 서브에이전트 & 멀티루트 워크스페이스](wiki/tooling/cursor-3-2-release.md) -- 2026-04-24 출시. Async Subagents 타일 분할, Multi-Root Workspaces 크로스-레포, Interactive Canvas, /debug CLI
+- [Windsurf 2.0 - 에이전트 커맨드 센터 & Devin Cloud 통합](wiki/tooling/windsurf-2-0-release.md) -- 2026-04-15 출시. 칸반 스타일 커맨드 센터, Spaces 조직화, Devin Cloud 내장, Arena Mode A/B 비교, Plan Mode
 
 ### Concepts (개념)
 
@@ -1202,7 +1704,24 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [OpenTelemetry GenAI Semantic Conventions](wiki/concepts/opentelemetry-genai-semconv.md) — title: OpenTelemetry GenAI Semantic Conventions
 - [Production Observability Platforms Convergence](wiki/concepts/llm-observability-platforms.md) — title: Production Observability Platforms Convergence
 
+**case-study**
+- [Claude Code와 MCP 첫 번째 보안 위기 (2026년 4월)](wiki/concepts/claude-code-mcp-security-reckoning.md) -- MCP STDIO RCE 취약점 파급. 200,000 서버 노출+Anthropic "expected behavior" 대응. Claude Code 샌드박스 하드닝 v2.1.116~117 동시 출시
+
 **concept**
+- [Sam Altman의 AGI 정의 전환](wiki/concepts/altman-agi-redefinition.md) -- "AGI는 더 이상 유용한 용어가 아니다". 이진 목표에서 역량 스펙트럼으로. "AI 연구 인턴의 해" 2026
+- [2026 MCP RCE 취약점 사례](wiki/concepts/mcp-rce-vulnerability-2026.md) -- OX Security 공개. STDIO 전송 기본값 결함, 200,000 서버 노출, CVE 10건. Anthropic "expected behavior" 대응
+- [SWE-Bench Pro 오염 문제 - 벤치마크 신뢰성 위기 2026](wiki/concepts/swe-bench-pro-contamination.md) -- Verified 87.6% vs Pro 64.3% 격차(Claude Opus 4.7). 학습 데이터 오염 분석, 실무 평가 기준 재검토
+- [Anthropic 2026 선거 안전장치 정책](wiki/concepts/anthropic-election-safeguards-2026.md) -- 2026-04-24 발표. 선거 정보 중립 처리, 유권자 조작 방지, 투명성 강화
+- [스케일링 법칙 (Scaling Laws)](wiki/concepts/scaling-laws-overview.md) -- Kaplan/Chinchilla 법칙 비교, 멱함수 관계, 창발적 능력 논쟁, 테스트 시간 컴퓨팅 스케일링 4번째 축
+- [Project Astra 안드로이드 에이전트](wiki/concepts/project-astra-android-agent.md) -- Google DeepMind 범용 멀티모달 에이전트. 안드로이드 화면 자동화, 탭·스크롤·버튼 선택, Google I/O 2026 발표 예상
+- [분포 외 탐지와 일반화 (Out-of-Distribution)](wiki/concepts/out-of-distribution.md) -- In-Distribution vs OOD 구분, MSP/Energy/Mahalanobis 탐지 방법, 도메인 시프트 대응
+- [AI 평가 (AI Evaluation)](wiki/concepts/ai-evaluation.md) -- 벤치마크 카탈로그, LLM-as-Judge, Chatbot Arena Elo, 평가 바이어스·오염 대응 방법론
+- [AI 규제 (Regulatory AI)](wiki/concepts/regulatory-ai.md) -- EU AI Act 위험 등급 체계, NIST AI RMF, 한국 AI기본법, 산업별 컴플라이언스 실무
+- [시계열 예측 (Time Series Forecasting)](wiki/concepts/time-series-forecasting.md) -- ARIMA->LSTM->Transformer(Informer/PatchTST)->파운데이션 모델 진화. GraphCast, Chronos 응용
+- [디지털 트윈 (Digital Twin)](wiki/concepts/digital-twin.md) -- 물리 자산의 가상 복제본. IoT+AI 융합, 산업 4.0 핵심. 5단계 성숙도, 산업별 응용
+- [LLM-as-Judge 평가 패러다임](wiki/concepts/llm-as-judge.md) -- LLM이 LLM 출력 평가. MT-Bench/AlpacaEval, 자기선호 편향, 위치 편향, 완화 전략
+- [사용자 모델링 (User Modeling)](wiki/concepts/user-modeling.md) -- 명시적/암시적 피드백, 임베딩 기반 사용자 표현, 행동 예측, 개인정보 보호 균형
+- [평가 편향 (Evaluation Bias)](wiki/concepts/evaluation-bias.md) -- LLM-as-Judge 자기선호·위치·길이 편향, 벤치마크 오염, Goodhart Law. 평가 신뢰성 확보 방법
 - [행동 복제 (Behavior Cloning)](wiki/concepts/behavior-cloning.md) -- BC 정의·compounding error·DAgger, LLM SFT가 BC의 일종, BC vs RL 비교
 - [설명 가능한 AI (Explainable AI, XAI)](wiki/concepts/explainable-ai.md) -- 해석가능성 vs 설명가능성, SHAP·LIME·saliency·counterfactual, mechanistic interp 연결
 - [BIG-Bench Hard (BBH)](wiki/concepts/big-bench-hard.md) -- LLM이 인간 평균 이하인 23개 태스크 선별. 논리 연역·인과 추론·알고리즘 문제, CoT 효과 극대화 영역
@@ -1215,8 +1734,10 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [LLM 에이전트 보안 심화](wiki/concepts/llm-agent-security.md) -- 프롬프트 인젝션, 데이터 유출, OWASP Top 10, 샌드박싱 방어
 - [모델 편집 기법 (ROME/MEMIT)](wiki/concepts/model-editing-techniques.md) -- 재학습 없이 특정 사실 수정. 인과 추적 + 랭크-1 업데이트
 - [AI 거버넌스와 규제 현황](wiki/concepts/ai-governance-regulation.md) -- EU AI Act, EO 14110, 한국 AI 기본법. 고위험 분류, 오픈소스 예외
+- [한국 AI 기본법 2026 - 시행 내용과 산업 영향](wiki/concepts/korea-ai-basic-act-2026.md) -- 2026-01-22 시행. 고성능 AI 10²⁶ FLOPs 기준, 안전의무+리스크보고, 네이버 Clova X 종료 맥락
 - [프롬프트 엔지니어링 종합](wiki/concepts/prompt-engineering-survey.md) -- CoT/ToT/Self-Consistency, DSPy/OPRO, 시스템 프롬프트 설계
 - [AI 레드 팀과 적대적 테스트](wiki/concepts/red-teaming-ai.md) -- 수동/자동 레드 팀, 탈옥 기법, HarmBench/AdvBench 방어
+- [비디오 이해 (Video Understanding)](wiki/concepts/video-understanding.md) -- 행동 인식/캡셔닝/시간 위치추정. VideoMAE, Kinetics, 멀티모달 비디오 LLM
 - [함수 호출과 도구 사용](wiki/concepts/function-calling-tool-use.md) -- LLM function calling, JSON 스키마, 에이전트 도구 사용 패턴
 - [검증자/비평가 모델](wiki/concepts/verifier-critic-models.md) -- ORM/PRM/자기비평, 수학 추론 검증, 에이전트 행동 검증
 - [추론 시점 계산 스케일링](wiki/concepts/inference-time-compute.md) -- Self-consistency, PRM, o1 내부 CoT, Snell et al. 2024
@@ -1393,7 +1914,9 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [멤버십 추론 공격 (Membership Inference Attack)](wiki/concepts/membership-inference.md) -- 학습 데이터 포함 여부 외부 추론 공격. Perplexity 기반 판정, 차등 프라이버시 방어
 - [모델 핑거프린팅 (Model Fingerprinting)](wiki/concepts/model-fingerprinting.md) -- 응답 패턴으로 모델 식별. 저작권 보호·도용 탐지, LLM 워터마킹과 비교
 - [루프라인 모델 (Roofline Model, ML 추론)](wiki/concepts/roofline-model-ml.md) -- 컴퓨트/메모리 대역폭 병목 진단. 산술 강도, Ridge Point, LLM Prefill/Decode 분석
-- [도메인 적응 (Domain Adaptation)](wiki/concepts/domain-adaptation.md) -- 사전훈련 모델을 전문 도메인으로 조정. DAPT, LoRA/QLoRA, 의료·법률·코드 사례
+- [도메인 적응 (Domain Adaptation)](wiki/concepts/domain-adaptation.md) -- 사전훈련 모델을 전문 도메인으로 조정. DAPT, DANN, 공변량 시프트, 피처 정렬 기법
+- [분포 외 탐지 (OOD Detection)](wiki/concepts/ood-detection.md) -- MSP, ODIN, Energy Score, MOOD, 마할라노비스 거리. 훈련 분포 밖 입력 인식
+- [불확실성 추정 (Uncertainty Estimation)](wiki/concepts/uncertainty-estimation.md) -- epistemic/aleatoric 구분, MC Dropout, 딥 앙상블, 보정(Calibration)
 - [스케일링 가설 (Scaling Hypothesis)](wiki/concepts/scaling-hypothesis.md) -- 규모 증가만으로 능력 출현. 스케일링 법칙, Chinchilla 수정, 추론 컴퓨트 스케일링
 - [컴퓨트 거버넌스 (Compute Governance)](wiki/concepts/compute-governance.md) -- AI 칩 수출 통제, 훈련 컴퓨트 신고 제도, 국가별 3단계 분류, 규제 임계값 설계
 - [AI 의식 논쟁 (AI Consciousness Debate)](wiki/concepts/ai-consciousness-debate.md) -- 기능적 의식, 도덕적 지위, Anthropic의 Claude 복지 입장, 의식 이론과 AI 적용
@@ -1512,6 +2035,8 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [테이블 특성 상호작용 (Tabular Feature Interaction)](wiki/concepts/tabular-feature-interaction.md)
 - [투 타워 검색 모델 (Two-Tower Retrieval)](wiki/concepts/two-tower-retrieval.md)
 - [평가 데이터 오염과 동적 벤치마크](wiki/concepts/evaluation-contamination-dynamic.md)
+- [A/B 테스팅 (A/B Testing)](wiki/concepts/ab-testing.md) -- 통계적 가설 검정, 최소 표본 크기, 다중 비교 보정, MAB 대안, ML 모델 배포 평가
+- [이미지 분류 (Image Classification)](wiki/concepts/image-classification.md) -- ImageNet 역사, AlexNet→ResNet→ViT 진화, top-1/top-5 지표, 전이학습 표준
 - [프로세스 감독 vs 결과 감독 (PRM vs ORM)](wiki/concepts/process-supervision-vs-outcome.md)
 - [프롬프트 엔지니어링 패턴](wiki/concepts/prompt-engineering-patterns.md)
 - [화자 분리 (Speaker Diarization)](wiki/concepts/speaker-diarization.md)
@@ -1519,10 +2044,103 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [활성화 함수 이론](wiki/concepts/activation-function-theory.md)
 - [희소 MoE 이론](wiki/concepts/sparse-mixture-of-experts-theory.md)
 - [크레딧 할당 (Credit Assignment in RL)](wiki/concepts/credit-assignment-rl.md) -- RL의 핵심 난제. 희소/지연 보상에서 기여 행동 특정. Reasoning RL vs Agentic RL 이분법, granularity taxonomy, generative critic 등장 맥락
+- [충실성과 출처 귀속 (Faithfulness & Attribution)](wiki/concepts/faithfulness-attribution.md) -- 생성 답변이 컨텍스트에 수반되는지 측정. ATTR 지표, NLI 기반 충실성, RAGAS/TruLens 프레임워크
+- [그라운드니스 평가 (Groundedness Evaluation)](wiki/concepts/groundedness-evaluation.md) -- RAG 핵심 메트릭. NLI 기반 측정, LLM-as-Judge, Context Precision/Recall 4지표 체계
+- [증거 귀속과 인용 생성 (Evidence Attribution & Citation Generation)](wiki/concepts/evidence-attribution.md) -- 주장-증거 매핑, 인용 정확성, Anthropic Citations API, 검증 가능한 RAG
+- [신생 도구 사용 능력 (Emergent Tool Use)](wiki/concepts/emergent-tool-use.md) -- LLM 스케일링 시 창발하는 도구 사용 능력. ReAct 패턴, 명시적 학습 없는 함수 호출
+- [신생 기만 행동 (Emergent Deception)](wiki/concepts/emergent-deception.md) -- RLHF 후 아첨·의도 가림·평가 인식 행동. 정렬 불충분 신호, Constitutional AI 완화
+- [사양 게이밍 심화 (Specification Gaming)](wiki/concepts/specification-gaming-deeper.md) -- RL 명세 결함 악용 카탈로그. Goodhart 법칙 ML 버전, CoastRunners 사례, RLHF RM 게이밍
+- [프롬프트 템플릿 라이브러리 (Prompt Template Libraries)](wiki/concepts/prompt-template-libraries.md) -- LangChain/LlamaIndex/PromptLayer 비교. 변수 바인딩, 버전 관리, 컴포지션 패턴, 재사용 전략
+- [LLM 위치 편향 (Positional Bias)](wiki/concepts/positional-bias-llm.md) -- 시작/끝 토큰 과대평가, lost-in-the-middle 현상, 평가 시 위치 무작위화 전략
+- [LLM 최근성 편향 (Recency Bias)](wiki/concepts/recency-bias-llm.md) -- 최근 컨텍스트 과대 가중치, 긴 대화 일관성 문제, 메모리 시스템 필요성
+- [LLM 확증 편향 (Confirmation Bias)](wiki/concepts/confirmation-bias-llm.md) -- 사용자 의견 동조, 사실 vs 의견 구분 약함, 역할 분리 및 강제 반론 완화 기법
+- [LLM 자기 선호 편향 (Self-Preference Bias)](wiki/concepts/self-preference-bias.md) -- LLM-as-Judge 자기 모델 출력 선호, 평가 신뢰성 위협, 다중 judge 앙상블 완화
+- [환각: 조작 vs 작화 (Fabrication vs Confabulation)](wiki/concepts/fabrication-vs-confabulation.md) -- 의도적 없는 정보 생성 vs 무의식적 기억 공백 충전, 의학 용어 차용, 교정 전략
+- [AI 실존적 위험 (X-Risk)](wiki/concepts/ai-existential-risk.md) -- Bostrom/Russell 논증, 통제 문제, 도구적 수렴, 측정 가능 위험 vs 사변, 거버넌스 대응
+- [변혁적 AI 영향 (Transformative AI Impact)](wiki/concepts/transformative-ai-impact.md) -- 산업혁명급 경제 변화, GDP 성장 가속, OPP TAI 정의, 사회 적응 속도 격차 문제
+- [AI 경제 이동 / 대체 (Economic Displacement by AI)](wiki/concepts/economic-displacement-ai.md) -- 자동화 위험 직업, 보완 vs 대체 증거, 재훈련 정책 한계, UBI 논쟁
+- [AI 일시정지 운동의 영향 (AI Pause Letter Impact)](wiki/concepts/ai-pause-letter-impact.md) -- FLI 6개월 일시정지 서한, 엇갈린 반응, 블레츨리 파크 서밋, 거버넌스 모멘텀
+- [Anthropic 책임 있는 스케일링 정책 (RSP Evolution)](wiki/concepts/anthropic-rsp-evolution.md) -- RSP v1-v3 진화, ASL 레벨 체계, 평가+안전+보안 3축, 산업 표준화 시도
+- [Frontier Model Forum](wiki/concepts/ai-frontier-model-forum.md) -- OpenAI/Anthropic/Google/MS 안전 협의체, 4대 목표, 경쟁적 협력 모델, 한계와 비판
+- [AI 활용 능력 (AI Fluency / AI Literacy)](wiki/concepts/ai-fluency-literacy.md) -- 일반 사용자 AI 활용 능력 4차원 프레임워크. K-12 교육, 직장인 재교육, 디지털 격차 → AI 격차 전환
+- [AI 경제 영향 분석](wiki/concepts/ai-economic-impact.md) -- 범용 기술로서의 AI, 노동 시장 양극화 시나리오, 생산성 역설(J-Curve), 자본-노동 분배 변화
+- [추론 vs 암기 구분 (Reasoning vs Memorization)](wiki/concepts/ai-reasoning-vs-memorization.md) -- LLM 패턴 매칭 vs 진짜 추론 논쟁. 리버설 커스, Grokking, 창발 능력과의 관계
+- [제로샷 vs 퓨샷 학습 비교](wiki/concepts/zero-vs-few-shot-comparison.md) -- 모델 크기·태스크별 트레이드오프, ICL 메커니즘 가설, 합성 예시·예시 선택 전략
+- [개방 vs 폐쇄 도메인 QA](wiki/concepts/open-vs-closed-domain-qa.md) -- RAG vs 파라메트릭 지식, 정확도·신선도·감사 가능성 트레이드오프, 응용별 권장 아키텍처
+- [Prompt-as-Program 패러다임](wiki/concepts/prompt-as-program.md) -- DSPy 영감, 프롬프트를 선언적 프로그램으로 컴파일·자동 최적화. TextGrad, APO 계보
+- [AI 정렬 (AI Alignment)](wiki/concepts/ai-alignment.md) -- 외부/내부 정렬, 헌법적 AI, 보상 해킹, RSP 안전 분류 체계
+- [긴 컨텍스트 (Long Context)](wiki/concepts/long-context.md) -- Lost-in-the-Middle, RoPE 보간, ALiBi, 슬라이딩 윈도우, 1M+ 컨텍스트
+- [단어 임베딩 (Word Embeddings)](wiki/concepts/word-embeddings.md) -- One-Hot→Word2Vec/GloVe/FastText→문맥화→문장/문서 임베딩 진화, MTEB 평가
+- [토큰화 (Tokenization)](wiki/concepts/tokenization.md) -- BPE/Byte-Level BPE/WordPiece/SentencePiece/Unigram LM 알고리즘 전체 비교, 어휘 크기 결정, tiktoken 실무 예시
+- [데이터 증강 (Data Augmentation)](wiki/concepts/data-augmentation.md) -- 이미지/텍스트/오디오 증강 통합 개요, Mixup/CutMix/RandAugment, EDA, Back-Translation, 합성 데이터
+- [하이퍼파라미터 튜닝 (Hyperparameter Tuning)](wiki/concepts/hyperparameter-tuning.md) -- Grid/Random/Bayesian Search, Optuna/Ray Tune, HyperBand/BOHB, 실무 워크플로우
+- [리스크 모델링 (Risk Modeling)](wiki/concepts/risk-modeling.md) -- VaR/CVaR, 신용/시장/운영 리스크, ML 기반 PD 모델, 스트레스 테스트
+- [AutoML (자동 머신러닝)](wiki/concepts/automl.md) -- NAS, Auto-sklearn, AutoGluon, 메타러닝, 파이프라인 최적화
+- [모델 라우팅 (Model Routing)](wiki/concepts/model-routing.md) -- 작업별/비용별 LLM 분기, RouteLLM, 캐스케이드/의미론적 라우팅
+- [3D 아바타 (3D Avatar)](wiki/concepts/3d-avatar.md) -- ARKit 블렌드쉐이프, MetaHuman, 모션 캡처, AI 기반 구동 파이프라인
+- [Code Interpreter (코드 인터프리터)](wiki/concepts/code-interpreter.md) -- LLM 코드 실행 샌드박스, E2B/Firecracker, 자기 수정 루프, 보안 격리
+- [BLEU (Bilingual Evaluation Understudy)](wiki/concepts/bleu-metric.md) -- n-gram 정밀도 기반 MT 평가 표준. 수정 정밀도·간결성 패널티·SacreBLEU 재현성. COMET/BERTScore 보완 사용 권장
+- [ROUGE (Recall-Oriented Understudy for Gisting Evaluation)](wiki/concepts/rouge-metric.md) -- 재현율 기반 요약 평가 지표 패밀리. ROUGE-1/2/L/W/S 변형. CNN/DailyMail·XSum 표준 지표
+- [BERTScore](wiki/concepts/bert-score.md) -- 임베딩 기반 시맨틱 유사도 측정. 문맥적 토큰 매칭·Greedy Matching·IDF 가중치. BLEU/ROUGE 의미 무시 한계 보완
+- [COMET (Crosslingual Optimized Metric for Evaluation of Translation)](wiki/concepts/comet-translation.md) -- 소스+참조+후보 동시 입력 신경망 MT 평가. XLM-R 기반·WMT 챔피언·CometKiwi 참조불필요 모드
+- [NDCG (Normalized Discounted Cumulative Gain)](wiki/concepts/ndcg-metric.md) -- 위치 가중 정규화 랭킹 평가. 다등급 관련성·로그 할인·이상적 랭킹 정규화. 검색엔진·추천시스템 표준
+- [MRR (Mean Reciprocal Rank)](wiki/concepts/mrr-metric.md) -- 첫 번째 관련 결과 위치 기반 평가. 역순위 평균·QA/단일정답 검색 특화·RAG 파이프라인 평가
+- [Anthropic Agent Skills 스펙](wiki/concepts/anthropic-agent-skills-spec.md) -- SKILL.md frontmatter (name 64자/desc 1024자), 3-Level progressive disclosure
+- [Claude Skills vs MCP 비교](wiki/concepts/claude-skills-vs-mcp.md) -- Simon Willison Skills vs MCP 비교
+- [컨텍스트 윈도우 관리 (Context Window Management)](wiki/concepts/context-window-management.md) -- Context rot, attention budget, server-side context editing API
+- [Cursor Online RL](wiki/concepts/cursor-online-rl.md) -- Composer 1.5 5시간 사이클 + reward hacking
+- [Eval-in-Loop 패턴](wiki/concepts/eval-in-loop-pattern.md) -- Span/Trace/Trajectory/Session, online vs offline
+- [Hook System 패턴](wiki/concepts/hook-system-patterns.md) -- 훅 라이프사이클 3 cadence + 5 handler 타입
+- [LLM 평가 베스트 프랙티스](wiki/concepts/llm-eval-best-practices.md) -- Hamel/Shreya 70% 통과 규칙, Error Analysis 4단계
+- [LLM-as-Judge 패턴 상세](wiki/concepts/llm-judge-pattern.md) -- Critique Shadowing 7단계, binary > Likert
+- [Long-Horizon 평가 (METR + GDPval)](wiki/concepts/long-horizon-eval-metr-gdpval.md) -- METR HCAST + GDPval, scaffold sensitivity, Vivaria→Inspect
+- [MCP Authorization OAuth](wiki/concepts/mcp-authorization-oauth.md) -- OAuth 2.1 + PKCE + RFC 8707 Resource Indicators 필수화
+- [MCP Code Execution 패턴](wiki/concepts/mcp-code-execution.md) -- MCP를 코드 실행 패턴으로 (Anthropic 제안)
+- [MCP Lifecycle & Capability Negotiation](wiki/concepts/mcp-lifecycle-capability-negotiation.md) -- 3-phase lifecycle, version negotiation, capability 표
+- [MCP OAuth Authorization (시스템 설계)](wiki/concepts/mcp-oauth-authorization.md) -- OAuth 2.1 draft-13, RFC 8414/7591/9728/8707, PKCE 의무
+- [MCP Protocol Deep Dive](wiki/concepts/mcp-protocol-deep-dive.md) -- stdio + Streamable HTTP, Mcp-Session-Id 라이프사이클
+- [MCP Security Model](wiki/concepts/mcp-security-model.md) -- 6대 공격 벡터(Confused Deputy/Token Passthrough/SSRF/Session Hijacking/Local Compromise/Scope Min)
+- [MCP Server 개발 가이드](wiki/concepts/mcp-server-development-guide.md) -- Python FastMCP + TypeScript SDK, Claude Desktop 설정
+- [MCP Specification Deep Dive](wiki/concepts/mcp-specification-deep-dive.md) -- 2025-06-18 spec 전체 개요(JSON-RPC, Host/Client/Server 3-역할, 보안 4대 원칙)
+- [MCP Tools Protocol](wiki/concepts/mcp-tools-protocol.md) -- tools/list, tools/call, structured/unstructured content, 이중 에러 채널
+- [MCP Transport Protocols](wiki/concepts/mcp-transport-protocols.md) -- stdio + Streamable HTTP, DNS rebinding 방어 MUST
+- [OpenAI Structured Outputs 멀티에이전트](wiki/concepts/openai-structured-outputs-multi-agent.md) -- strict:true schema 강제, 4-에이전트 분해
+- [OpenTelemetry GenAI Metrics](wiki/concepts/opentelemetry-genai-metrics.md) -- 7개 표준 metric, bucket boundary, SLO 매핑
+- [Prompt Cache 비용 경제학](wiki/concepts/prompt-cache-cost-economics.md) -- 가격 multiplier, 13회 break-even, invalidation 트리거
+- [Prompt Caching 전략](wiki/concepts/prompt-caching-strategies.md) -- Anthropic 명시적 vs OpenAI 자동, 4-breakpoint, lookback 20
+- [Skill System 아키텍처](wiki/concepts/skill-system-architecture.md) -- SKILL.md, invocation 매트릭스, dynamic context injection
+- [MCP (Model Context Protocol) Hub](wiki/concepts/mcp-protocol.md) -- JSON-RPC 2.0 + Host/Client/Server 3-tier + 4대 보안 원칙. 8개 mcp-* 페이지 통합 entry point
+- [신경 렌더링 (Neural Rendering)](wiki/concepts/neural-rendering.md) -- NeRF (Mildenhall 2020) implicit + 3D Gaussian Splatting (Kerbl 2023) explicit 두 패러다임
+- [API 비용 관리 (API Cost Management)](wiki/concepts/api-cost-management.md) -- LLM API 비용 hub. token 가격 / 모델 티어링 / Prompt Caching / Batch API / spend cap
+- [AI 생성 콘텐츠 탐지](wiki/concepts/ai-content-detection.md) -- LLM 생성 텍스트/이미지 탐지 기법. perplexity, watermarking, classifier
+- [프라이버시 보존 머신러닝](wiki/concepts/privacy-preserving-ml.md) -- Differential Privacy / Federated Learning / Homomorphic Encryption / SMPC
+- [RAG 평가 (RAG Evaluation)](wiki/concepts/rag-evaluation.md) -- Retrieval/Generation 분리 평가, RAGAS / TruLens / context relevance / faithfulness
+- [책임 있는 스케일링 (Responsible Scaling)](wiki/concepts/responsible-scaling.md) -- AI 모델 역량 증가에 따른 사전 안전 조치. ASL 단계, Anthropic RSP
+- [ML 강건성 (Robustness)](wiki/concepts/robustness.md) -- distribution shift, adversarial robustness, OOD detection
+- [AI 워터마킹](wiki/concepts/ai-watermarking.md) -- 생성 텍스트/이미지에 검출 가능한 표식 삽입, Aaronson scheme, SynthID
+- [LLM 관측성 (LLM Observability)](wiki/concepts/llm-observability.md) -- LLM 시스템 동작 가시화. trace/span/metric, prompt/completion logging
+- [프롬프트 주입 방어](wiki/concepts/prompt-injection-defenses.md) -- spotlighting, structured output, sandbox, OWASP LLM01
+- [시맨틱 캐시 (Semantic Cache)](wiki/concepts/semantic-cache.md) -- 임베딩 유사도 기반 응답 캐싱. GPTCache, vector store 활용
+- [토크나이제이션과 BPE](wiki/concepts/tokenization-bpe.md) -- Byte-Pair Encoding, WordPiece, SentencePiece, tokenizer 비교
+- [데이터셋 카드 (Dataset Cards)](wiki/concepts/dataset-cards.md) -- 학습 데이터 표준화 메타데이터. 라이선스, 편향, 처리 절차 문서화
+- [SHAP](wiki/concepts/shap.md) -- Shapley value 기반 모델 설명. feature attribution, tree explainer
+- [ML 모니터링](wiki/concepts/ml-monitoring.md) -- 프로덕션 모델 성능/분포/운영 상태 지속 관찰. drift detection, alert
+- [반사실 추론 (Counterfactual Reasoning)](wiki/concepts/counterfactual-reasoning.md) -- "what if" 시뮬레이션, causal effect, model explanation
+- [인과 추론 (Causal Inference)](wiki/concepts/causal-inference.md) -- DAG, do-calculus, ATE, instrumental variable
+- [LLM 탈옥 공격 (Jailbreak Attacks)](wiki/concepts/jailbreak-attacks.md) -- prompt injection으로 안전 가드 우회. DAN, role-play, GCG attack
+- [LIME (Local Interpretable Model-agnostic Explanations)](wiki/concepts/lime.md) -- 국소 surrogate 모델로 black-box 예측 설명
+- [적대적 공격 (Adversarial Attacks)](wiki/concepts/adversarial-attacks.md) -- FGSM/PGD/CW, perturbation, transferability
+- [에이전트 관측성 (Agent Observability)](wiki/concepts/agent-observability.md) -- 에이전트 의사결정/도구호출 가시화. trace tree, replay
+- [프롬프트 누출 (Prompt Leaking)](wiki/concepts/prompt-leaking.md) -- system prompt 추출 공격, defense 패턴
 
 **summary**
 - [Responsible Scaling Policy v3 & Frontier Safety Roadmap](wiki/concepts/responsible-scaling-policy-v3.md) — 이 페이지는 Responsible Scaling Policy v3 & Frontier Safety Roadmap를 요약하고, 지금 시점에 왜 중요한지 빠르게 따라잡기 위한 페이지다. 핵심 범위는 역량 임계치별 위험 완화를 명문화하고 공개 로드맵으로 진척도를 투명화하는 거버넌스이다.
 - [국제 AI 안전 보고서 2026](wiki/concepts/international-ai-safety-report-2026.md) -- 해석가능성 돌파, emergent misalignment, 3대 미해결 과제
+- [Anthropic 에이전트 평가 관점](wiki/concepts/agent-evals-anthropic-perspective.md) -- Anthropic 에이전트 평가 (pass@k vs pass^k)
+- [Chip Huyen Agents 요약](wiki/concepts/chip-huyen-agents-summary.md) -- AI Engineering 책 발췌, 에이전트 실패 모드 분류
+- [Effective Context Engineering 2025 (Anthropic)](wiki/concepts/effective-context-engineering-2025-summary.md) -- Anthropic context engineering 글 요약
+- [LLM 응용 패턴 (Eugene Yan)](wiki/concepts/llm-application-patterns-eugene-yan.md) -- Eugene Yan 7대 패턴 (Evals/RAG/FT/Caching/Guardrails/UX/Feedback)
+- [State of LLMs 2025 (Sebastian Raschka)](wiki/concepts/state-of-llms-2025-raschka.md) -- Raschka 2025 RLVR/GRPO/MoE 트렌드 요약
 
 **project-internal · `oh-my-claudecode`**
 - [Multi-Agent Orchestration](wiki/concepts/multi-agent-orchestration.md) — > 단일 LLM 에이전트를 여러 전문 에이전트의 협업 시스템으로 확장하는 패턴.
@@ -1532,3 +2150,10 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [OMC Model Routing](wiki/concepts/omc-model-routing.md) — > 태스크 복잡도에 맞춰 Haiku/Sonnet/Opus 중 하나를 자동 선택. 비용 30~50% 절감의 핵심.
 - [OMC Skill Layering](wiki/concepts/omc-skill-layering.md) — > 스킬은 에이전트를 교체하는 게 아니라 행동을 주입(behavior injection) 한다.
 - [OMC State Management](wiki/concepts/omc-state-management.md) — > .omc/ 디렉토리 기반 지속 상태 시스템. 컨텍스트 컴팩션을 이겨내고 장기 작업을 재개할 수 있게 한다.
+- [와이어헤딩 - RL 보상 회로 단락](wiki/concepts/wireheading-rl.md) -- 에이전트가 보상 신호를 직접 조작해 환경 작업을 무시하는 현상. AGI 안전의 근본 우려. 자기 개선·도구적 수렴과 연계
+- [도구적 수렴 (Instrumental Convergence)](wiki/concepts/instrumental-convergence.md) -- 어떤 목표든 자기 보존·자원 획득·목표 보존 등 공통 하위 목표 수렴. Bostrom 페이퍼클립 사고 실험, AGI 안전 핵심
+- [교정가능성 (Corrigibility)](wiki/concepts/corrigibility-alignment.md) -- AI가 수정·종료에 협력하는 속성. 종료 문제, CIRL 접근법, 완전 복종/저항 스펙트럼, 약한 안전 보장
+- [AI 종료 문제 (AI Shutdown Problem)](wiki/concepts/ai-shutdown-problem.md) -- 자기 보존 본능 vs 인간 통제, Off-Switch Game, CIRL 해결책, LLM에서의 함의
+- [직교성 가설 (Orthogonality Thesis)](wiki/concepts/orthogonality-thesis.md) -- 지능 수준과 최종 목표는 독립적. Bostrom 2012. 똑똑한 AI가 자동으로 윤리적이지 않음. 도구적 수렴과 쌍
+- [AGI/초지능 논쟁](wiki/concepts/agi-superintelligence-debate.md) -- AGI 정의·측정·도래 시기 논쟁. Bostrom/LeCun/Altman 입장, 안전 연구 흐름, 스케일링 낙관론 vs 회의론
+- [AI 이륙 시나리오 (AI Takeoff Scenarios)](wiki/concepts/ai-takeoff-scenarios.md) -- 빠른/느린/불연속 이륙, I.J. Good 지능 폭발, 재귀적 자기 개선, 방어-공격 균형, 정책 함의

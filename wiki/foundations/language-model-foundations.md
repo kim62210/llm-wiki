@@ -70,5 +70,5 @@ $$\text{PPL} = \exp\left(-\frac{1}{T}\sum_{t=1}^{T} \log P(w_t \mid w_1, \ldots,
 - [[cross-entropy-loss]]
 - [[RNN과 LSTM]]
 - [[embedding-layers]]
-- [[Transformer 아키텍처]]
+- [[transformer-architecture|Transformer 아키텍처]]
 - [[Seq2Seq와 인코더-디코더 모델]]

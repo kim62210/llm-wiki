@@ -3,21 +3,23 @@ title: OpenRLHF - 분산 RLHF 프레임워크
 category: tooling
 page_type: entity
 project: OpenRLHF
-tags: [tooling, rlhf, ray, vllm, ppo, grpo, reinforce++, distributed-training, post-training]
-sources: [raw/2026-04-14-ml-training-deep-dive.md]
+tags: [tooling, rlhf, ray, vllm, ppo, grpo, reinforce++, distributed-training, post-training, async-rl]
+sources: [raw/2026-04-14-ml-training-deep-dive.md, raw/2026-05-06-train-harness-openrlhf.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-05-06
 ---
 
 # OpenRLHF - 분산 RLHF 프레임워크
 
 ## 개요
 
-OpenRLHF는 Ray와 vLLM을 기반으로 한 오픈소스 분산 RLHF(Reinforcement Learning from Human Feedback) 프레임워크이다. 2024년 초 공개 이후 빠르게 성장하여 2026년 4월 기준 GitHub 약 8.9k 스타를 보유하고 있으며, Google, ByteDance, Alibaba, Meituan, UC Berkeley Starling Team 등 주요 연구/산업 조직에서 실전 사용 중이다. Ray 기반의 최초의 프로덕션급 오픈소스 RLHF 프레임워크로서 PPO, GRPO, REINFORCE++, DAPO 등 다양한 RL 알고리즘을 지원하며, 기존 프레임워크 대비 1.22x-1.68x의 학습 처리량 향상을 달성한다.
+OpenRLHF는 Ray와 vLLM을 기반으로 한 오픈소스 분산 RLHF(Reinforcement Learning from Human Feedback) 프레임워크이다. 2024년 초 공개 이후 빠르게 성장하여 **2026년 5월 기준 GitHub 9.4k 스타, 934 forks** (Python 99.7%)를 보유하며, Google, ByteDance, Alibaba, Meituan, UC Berkeley Starling Team 등 주요 연구/산업 조직에서 실전 사용 중이다. **Ray 기반의 최초의 프로덕션급 오픈소스 RLHF 프레임워크**로서 PPO, GRPO, REINFORCE++, DAPO 등 다양한 RL 알고리즘을 지원하며, 기존 프레임워크 대비 1.22x-1.68x의 학습 처리량 향상을 달성한다.
 
 - GitHub: [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF)
 - 논문: [OpenRLHF: An Easy-to-use, Scalable and High-performance RLHF Framework (Hu et al., 2024)](https://arxiv.org/abs/2405.11143)
+- 최신 버전: **v0.10.3** (2026-05-03)
 - EMNLP 2025 Demos에서 발표
+- 8523 LOC core code (TRL 19071, verl 32325 보다 작음)
 
 ## 핵심 아키텍처
 
@@ -117,6 +119,29 @@ OpenRLHF는 70B 모델의 PPO 학습을 다음과 같이 분산 배치한다:
 
 v0.9 이후 도입된 에이전트 기반 아키텍처는 비동기(async) RL 학습을 지원한다. 생성과 학습이 파이프라인으로 겹쳐서(overlap) 실행되므로 GPU 유휴 시간이 줄어든다. 이는 코드 생성, 도구 사용 등 에이전트 태스크에서 응답 생성 시간이 긴 경우 특히 효과적이다.
 
+핵심 옵션:
+
+- `--train.async_enable`: generation과 training 병렬 (async mode)
+- `--train.async_queue_size N`: off-policy 정도 조절 (큐 길이로 stale weight 정도 결정)
+- `--train.partial_rollout_enable`: vLLM pause/resume으로 weight sync 도중에도 부분 rollout 유지
+- `--agent_func_path`: agentic RL용 사용자 함수 경유 (multi-turn rollout)
+
+### 멀티노드 셋업 (SLURM 예시)
+
+```bash
+# 1) Ray cluster init
+ray start --address {MASTER}:6379
+
+# 2) job submit
+ray job submit --address="http://127.0.0.1:8265" -- ...
+```
+
+runtime env JSON으로 종속성 관리. multi-node에서도 각 컴포넌트의 GPU 할당이 독립적이다 (`--actor.num_gpus_per_node 8`, `--critic.num_gpus_per_node 8`, `--vllm.tensor_parallel_size N`).
+
+### Hybrid Engine 스케줄링
+
+Actor 모델과 vLLM 엔진이 동일 GPU에서 idle time 최소화하며 공유. weight broadcast는 NCCL P2P 또는 broadcast group 사용. Token-in-Token-out 일관성으로 sampling/training token 정렬을 보장.
+
 ## 제한 사항과 고려 사항
 
 - **학습 곡선**: Ray, vLLM, ZeRO-3 등 여러 분산 시스템의 이해가 필요하며, 디버깅 시 각 컴포넌트의 로그를 개별적으로 확인해야 한다
@@ -136,7 +161,11 @@ v0.9 이후 도입된 에이전트 기반 아키텍처는 비동기(async) RL �
 - [[grpo]] -- GRPO 알고리즘
 - [[dapo]] -- DAPO 알고리즘 (OpenRLHF에서 구현 지원)
 - [[verl-bytedance]] -- 동일 영역의 ByteDance 프레임워크
+- [[deepspeed-chat]] -- Hybrid Engine 원조
+- [[nemo-aligner]] -- NVIDIA Megatron stack 대안
+- [[trl-library]] -- HuggingFace post-training (HF 생태계 통합)
 - [[reward-model-training]] -- 보상 모델 학습
 - [[gpu-cluster-scheduling]] -- 분산 GPU 스케줄링
 - [[mixed-precision-training]] -- 혼합 정밀도 학습
 - [[training-frameworks]] -- 학습 프레임워크 전반 개요
+- [[rl-harness-frameworks-comparison]] -- RL harness 통합 비교

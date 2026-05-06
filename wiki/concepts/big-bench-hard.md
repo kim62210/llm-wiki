@@ -92,3 +92,6 @@ flowchart LR
 - [[chain-of-thought-prompting]] - BBH 성능 향상의 핵심 기법
 - [[tree-of-thought]] - CoT 확장인 ToT의 평가에도 BBH 일부 태스크 활용
 - [[gsm8k-benchmark]] - 수학 추론 전문 벤치마크와의 비교
+- [[big-bench]] - BBH 의 모태인 BIG-bench 본체 (200+ task, JSON / programmatic 이중 spec)
+- [[lm-evaluation-harness]] - BBH 23 task 가 lm-eval 의 `bbh` group 으로 흡수되어 평가됨
+- [[evaluation-harness-comparison]] - 9개 평가 harness 횡단 비교

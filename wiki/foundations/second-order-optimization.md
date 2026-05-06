@@ -101,6 +101,9 @@ flowchart LR
 
 ## 관련 문서
 
+- [[gradient-descent]] - 경사 하강법 기초 및 변종
+- [[adam-original-paper]] - Adam/AdamW 원논문: 1차 적응형 방법의 표준
+- [[neural-network]] - 2차 최적화가 적용되는 신경망 기초
 - [[optimization-theory]] - 최적화 이론 및 1차 방법
 - [[gradient-descent-backpropagation]] - 표준 역전파와 경사 하강
 - [[natural-gradient]] - Fisher 정보 행렬 기반 자연 경사법

@@ -6,7 +6,7 @@ page_type: concept
 tags: [FFN, feed-forward, SwiGLU, GeGLU, GLU, key-value-memories, transformer, activation]
 sources: [raw/2026-04-14-ml-foundations-gap.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-27
 ---
 
 ## 개요
@@ -121,6 +121,63 @@ flowchart LR
 - [Shazeer, "GLU Variants Improve Transformer" (arXiv:2002.05202)](https://arxiv.org/abs/2002.05202)
 - [Geva et al., "Transformer Feed-Forward Layers Are Key-Value Memories" (EMNLP 2021)](https://arxiv.org/abs/2012.14913)
 
+## 실무 구현 패턴
+
+### PyTorch SwiGLU 구현
+
+```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+
+class SwiGLUFFN(nn.Module):
+    """LLaMA/Mistral 스타일 SwiGLU FFN."""
+
+    def __init__(self, d_model: int, d_ff: int | None = None):
+        super().__init__()
+        if d_ff is None:
+            # 8/3 * d_model, 256 배수로 올림
+            d_ff = int(8 * d_model / 3)
+            d_ff = 256 * ((d_ff + 255) // 256)
+
+        # GLU 변형은 W_1(값), V(게이트), W_2(출력) 세 행렬 필요
+        self.w_gate = nn.Linear(d_model, d_ff, bias=False)
+        self.w_up = nn.Linear(d_model, d_ff, bias=False)
+        self.w_down = nn.Linear(d_ff, d_model, bias=False)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        # SiLU = Swish (beta=1 고정)
+        return self.w_down(F.silu(self.w_gate(x)) * self.w_up(x))
+```
+
+### 병렬 어텐션 + FFN (PaLM 스타일)
+
+PaLM에서 도입된 어텐션과 FFN의 병렬 실행 방식:
+
+$$y = x + \text{Attn}(\text{Norm}(x)) + \text{FFN}(\text{Norm}(x))$$
+
+표준 순차 방식 대비 통신 최적화 효과가 있지만 표현력이 약간 감소한다.
+
+## 확장: MoE FFN
+
+[[mixture-of-experts-moe-llms]] 에서 FFN은 N개의 "전문가(expert)" FFN으로 교체된다. 각 토큰은 라우터가 선택한 Top-K 전문가의 가중합 결과를 출력으로 받는다. 파라미터는 N배 증가하지만 활성화 연산은 K개 전문가분만 발생하므로 dense FFN과 유사한 연산량을 유지한다.
+
+```mermaid
+flowchart LR
+    토큰["토큰 x"] --> 라우터["게이팅 네트워크\n(Router)"]
+    라우터 -->|"Top-K 선택"| E1["Expert FFN 1"]
+    라우터 -->|"Top-K 선택"| E2["Expert FFN 2"]
+    라우터 -.->|"비활성"| E3["Expert FFN 3..N"]
+    E1 --> 합산["가중합 출력"]
+    E2 --> 합산
+```
+
+## 교차참조
+
+- [[activation-functions]] -- ReLU, GeLU, Swish/SiLU 등 활성화 함수 비교
+- [[mixture-of-experts-moe-llms]] -- FFN을 전문가 풀로 확장하는 아키텍처
+
 ## 관련 문서
 
 - [[transformer-architecture]] -- FFN이 핵심 구성 요소인 전체 구조
@@ -129,3 +186,5 @@ flowchart LR
 - [[pre-ln-vs-post-ln]] -- FFN 전후의 레이어 정규화 위치
 - [[gated-attention]] -- 어텐션에도 게이팅을 적용하는 최신 연구
 - [[gated-deltanet]] -- 게이트 메커니즘의 선형 어텐션 적용
+- [[mixture-of-experts-moe-llms]] -- FFN을 전문가로 교체하는 MoE 아키텍처
+- [[activation-functions]] -- SwiGLU/GeGLU 활성화 함수 상세

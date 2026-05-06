@@ -3,13 +3,30 @@ title: Evaluation Harness
 category: tooling
 page_type: entity
 tags: [tooling, entity, evaluation, lm-evaluation-harness, openai-evals, framework]
-sources: [raw/2026-04-14-ml-foundations-gap.md]
+sources: [raw/2026-04-14-ml-foundations-gap.md, raw/2026-05-06-eval-harness-comparison-overview.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-05-06
 ---
 # Evaluation Harness
 
-LLM 평가 하니스(evaluation harness)는 다양한 벤치마크를 표준화된 환경에서 실행하고 결과를 비교할 수 있게 해주는 프레임워크다. 이 페이지에서는 두 가지 핵심 프로젝트를 다룬다: EleutherAI의 lm-evaluation-harness(LM Eval Harness)와 OpenAI의 Evals. 이 두 프레임워크는 LLM 평가의 인프라 계층을 구성하며, [[mmlu]], [[humaneval]], [[gsm8k]], [[truthfulqa]] 같은 개별 벤치마크를 실행하는 "실행 엔진" 역할을 한다.
+LLM 평가 하니스(evaluation harness)는 다양한 벤치마크를 표준화된 환경에서 실행하고 결과를 비교할 수 있게 해주는 프레임워크다. 이 페이지는 평가 harness 의 허브 역할을 하며, EleutherAI 의 lm-evaluation-harness 와 OpenAI 의 Evals 를 중심으로 시작해 9개 framework 전체를 다룬다. 이들 프레임워크는 LLM 평가의 인프라 계층을 구성하며, [[mmlu]], [[humaneval]], [[gsm8k]], [[truthfulqa]] 같은 개별 벤치마크를 실행하는 "실행 엔진" 역할을 한다.
+
+## 평가 harness 카탈로그 (2026-05 기준)
+
+| 카테고리 | Harness | 페이지 |
+|---|---|---|
+| 학술 표준 | EleutherAI lm-evaluation-harness | [[lm-evaluation-harness]] |
+| Collaborative task | Google BIG-bench | [[big-bench]] |
+| Holistic 평가 | Stanford HELM | [[helm-stanford]] |
+| Code-less custom | OpenAI Evals | [[openai-evals]] |
+| Zero-shot CoT 레퍼런스 | OpenAI simple-evals | [[simple-evals]] |
+| 차세대 표준 (Solver/Scorer/Sandbox) | UK AISI Inspect AI | [[inspect-ai]] |
+| HF 다중 backend | HuggingFace lighteval | [[lighteval]] |
+| Agent 평가 비교 | SWE-bench / AgentBench / GAIA / WebArena | [[agent-benchmark-harness-comparison]] |
+| Long-horizon | METR HCAST / OpenAI GDPval | [[long-horizon-eval-metr-gdpval]] |
+| 횡단 비교 | 9개 framework 전체 비교 | [[evaluation-harness-comparison]] |
+
+세대 흐름: **static eval (lm-eval/BIG-bench/HELM/OpenAI Evals/simple-evals)** → **agent eval (SWE-bench/AgentBench/GAIA/WebArena)** → **long-horizon (HCAST/GDPval)**. [[inspect-ai]] 가 세 세대를 잇는 hub framework 로 부상 중이다 (lighteval backend, METR migration destination).
 
 ## lm-evaluation-harness (EleutherAI)
 
@@ -113,12 +130,15 @@ OpenAI Evals는 lm-eval과 상호 보완적 위치에 있다. lm-eval이 기존 
 
 ## 관련 평가 프레임워크
 
-lm-eval과 OpenAI Evals 외에도 목적에 따라 다양한 프레임워크가 있다.
+lm-eval 과 OpenAI Evals 외에도 목적에 따라 다양한 프레임워크가 있다. 자세한 비교는 [[evaluation-harness-comparison]] 참조.
 
 - **[[deepeval]]**: LLM 응답의 다차원 품질(관련성, 충실도, 독성 등) 평가. pytest 통합으로 CI/CD 파이프라인에 삽입 가능
 - **[[ragas]]**: RAG 파이프라인 특화 평가. context recall/precision, faithfulness 등
-- **HELM (Stanford)**: 투명성, 공정성, 강건성 등 다차원 평가 프레임워크
-- **Inspect AI (UK AISI)**: AI 안전성 평가 특화 프레임워크
+- **[[helm-stanford]]**: Scenario/Adapter/Metric 분리 + 7-metric multi-dim. Stanford CRFM
+- **[[inspect-ai]]**: Solver/Scorer/Tool/Sandbox first-class. UK AISI 차세대 표준
+- **[[lighteval]]**: HF 의 다중 backend 통합, inspect-ai 를 1차 backend
+- **[[big-bench]]**: Google + 450+ contributor 의 200+ collaborative task
+- **[[simple-evals]]**: OpenAI 의 zero-shot CoT minimal 평가
 
 ## 실무 활용 가이드
 
@@ -133,21 +153,42 @@ lm-eval과 OpenAI Evals 외에도 목적에 따라 다양한 프레임워크가 
 **SWE 평가**: 코드 생성 에이전트의 실무 능력은 [[swe-bench-pro]]로 평가한다.
 
 ## 관련 문서
+
+### 9개 harness 페이지
+- [[lm-evaluation-harness]] -- EleutherAI 학술 표준 (내부 디테일)
+- [[big-bench]] -- Google 200+ collaborative task
+- [[helm-stanford]] -- Stanford 7-metric holistic
+- [[openai-evals]] -- OpenAI YAML/JSONL
+- [[simple-evals]] -- OpenAI zero-shot CoT
+- [[inspect-ai]] -- UK AISI 차세대 표준 (Solver/Scorer/Sandbox)
+- [[lighteval]] -- HuggingFace 다중 backend (inspect-ai wrap)
+
+### Agent / long-horizon
+- [[agent-benchmark-harness-comparison]] -- SWE-bench / AgentBench / GAIA / WebArena
+- [[long-horizon-eval-metr-gdpval]] -- METR HCAST + GDPval
+- [[evaluation-harness-comparison]] -- 9개 횡단 비교 + 세 세대 분리
+- [[swe-bench-ecosystem-2026]] -- SWE-bench 생태계
+- [[long-horizon-agent-benchmarks]] -- 장기 task 측면
+
+### 인접 평가 프레임워크
 - [[alpacaeval]] -- AlpacaEval (LLM 자동 평가 벤치마크)
 - [[dspy-framework]] -- DSPy (프롬프팅 대신 프로그래밍)
+- [[deepeval]] -- pytest-style LLM 평가
+- [[ragas]] -- RAG 평가 프레임워크
+- [[chatbot-arena]] -- human pairwise
 
+### 벤치마크 / 메트릭
 - [[mmlu]] -- 지식 평가 벤치마크
 - [[humaneval]] -- 코드 생성 벤치마크
 - [[gsm8k]] -- 수학 추론 벤치마크
 - [[truthfulqa]] -- 진실성 벤치마크
 - [[mt-bench]] -- 다중 턴 대화 벤치마크
 - [[perplexity]] -- 언어 모델 내재 평가
+- [[big-bench-hard]] -- BBH (lm-eval 의 `bbh` group)
 - [[benchmark-contamination]] -- 데이터 오염 문제
 - [[benchmark-saturation-goodharts-law]] -- 벤치마크 포화
 - [[classification-metrics]] -- 분류 평가 지표
 - [[human-evaluation-protocols]] -- 인간 평가 설계
-- [[deepeval]] -- LLM 평가 프레임워크
-- [[ragas]] -- RAG 평가 프레임워크
 - [[swe-bench-pro]] -- 소프트웨어 엔지니어링 벤치마크
 - [[livebench]] -- 동적 벤치마크
 - [[humanity-last-exam]] -- 극난이도 벤치마크

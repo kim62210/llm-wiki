@@ -69,7 +69,7 @@ $$P[\sigma^1 \succ \sigma^2] = \frac{\exp \sum_t \hat{r}(\sigma^1_t)}{\exp \sum_
 
 ## 관련 문서
 
-- [[InstructGPT RLHF 파이프라인]]
+- [[rlhf-pipeline|InstructGPT RLHF 파이프라인]]
 - [[Constitutional AI (Anthropic RLAIF)]]
-- [[DPO 직접 선호도 최적화]]
+- [[dpo|DPO 직접 선호도 최적화]]
 - [[reward-hacking-overoptimization]]

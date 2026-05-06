@@ -75,6 +75,6 @@ Seq2Seq(RNN 기반)의 한계는 순차 연산으로 인한 병렬화 불가와 
 
 - [[RNN과 LSTM]]
 - [[attention-mechanism-overview]]
-- [[Transformer 아키텍처]]
+- [[transformer-architecture|Transformer 아키텍처]]
 - [[language-model-foundations]]
 - [[embedding-layers]]

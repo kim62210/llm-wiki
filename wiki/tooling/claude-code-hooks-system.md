@@ -3,10 +3,10 @@ title: Claude Code Hooks System
 category: tooling
 page_type: project-internal
 project: Claude Code
-tags: [tooling, project-internal, claude, code, hooks, system, harness-engineering]
-sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/claude-code-hooks-system.md, raw/hot-topics-sources/2026-04-10/051-claude-code-hooks-reference.md, raw/hot-topics-sources/2026-04-10/052-claude-code-changelog.md, raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md, raw/hot-topics-sources/2026-04-10/053-anthropics-claude-code.md, raw/hot-topics-sources/2026-04-10/054-common-workflows.md]
+tags: [tooling, project-internal, claude, code, hooks, system, harness-engineering, async-events, handler-types]
+sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/claude-code-hooks-system.md, raw/hot-topics-sources/2026-04-10/051-claude-code-hooks-reference.md, raw/hot-topics-sources/2026-04-10/052-claude-code-changelog.md, raw/hot-topics-sources/2026-04-10/043-claude-agent-sdk-overview.md, raw/hot-topics-sources/2026-04-10/053-anthropics-claude-code.md, raw/hot-topics-sources/2026-04-10/054-common-workflows.md, raw/2026-05-06-harness-pattern-hook-system.md]
 created: 2026-04-10
-updated: 2026-04-15
+updated: 2026-05-06
 ---
 # Claude Code Hooks System
 
@@ -132,6 +132,68 @@ Claude Code Hooks는 [[anthropic-harness-design|Anthropic 하네스 설계]] 철
 4. **프로젝트별 환경 자동 로드**: `CwdChanged` -> 해당 프로젝트 `.env` 자동 활성화
 5. **작업 완료 알림**: `PostToolUse(Bash)` -> 장시간 명령 완료 시 알림 전송
 
+## 2026년 신규 비동기 이벤트
+
+2026년에 추가된 async event들은 임의 시점(non-blocking)에 발화하며, 외부 변경(파일/설정/디렉토리), 권한 흐름, subagent lifecycle 등을 다룬다.
+
+| 이벤트 | matcher | 활용 |
+|--------|---------|------|
+| `FileChanged` | literal 파일명 (regex 아님, 예: `.envrc\|.env`) | 감시 파일 변경 추적 |
+| `ConfigChange` | `user_settings\|project_settings\|local_settings\|policy_settings\|skills` | 설정 reload 트리거 |
+| `CwdChanged` | matcher 없음 | 프로젝트별 환경 자동 로드 |
+| `Notification` | `permission_prompt\|idle_prompt\|auth_success\|elicitation_complete` | 알림 처리 |
+| `SubagentStart` / `SubagentStop` | agent 종류 (`general-purpose\|Explore\|Plan\|<custom>`) | subagent 추적 |
+| `InstructionsLoaded` | 없음 | CLAUDE.md / `.claude/rules/*.md` 로딩 후 동적 지시 |
+| `PreCompact` / `PostCompact` | `manual\|auto` | 컨텍스트 압축 직전 상태 보존 |
+| `Elicitation` / `ElicitationResult` | 없음 | 사용자 정보 요청 흐름 |
+| `WorktreeCreate` / `WorktreeRemove` | 없음 | worktree 라이프사이클 |
+| `UserPromptExpansion` | 없음 | 프롬프트 확장 단계 |
+| `PermissionRequest` / `PermissionDenied` | 없음 | 권한 흐름 가시화 |
+| `TaskCreated` / `TaskCompleted` | 없음 | 태스크 추적 |
+| `TeammateIdle` | 없음 | 팀 에이전트 idle 처리 |
+
+자세한 일반 패턴은 [[hook-system-patterns|Hook System Patterns]] 참조.
+
+## 5종 Handler 타입
+
+| 타입 | 설명 |
+|------|------|
+| `command` | Shell 스크립트 (stdin JSON, exit code + stdout 응답) |
+| `http` | HTTP POST (JSON body), `allowedEnvVars`로 env 화이트리스트 |
+| `mcp_tool` | 연결된 [[mcp-protocol-deep-dive\|MCP server]]의 tool 호출 |
+| `prompt` | LLM에게 yes/no 결정 위임 |
+| `agent` | 서브에이전트를 spawn해서 검증 (experimental) |
+
+각 타입별 schema와 예시는 [[hook-system-patterns]]의 Handler 5가지 타입 섹션 참조.
+
+## Permission Decision 4가지
+
+PreToolUse 훅의 `permissionDecision`:
+- `allow`: permission prompt 건너뜀
+- `deny`: 도구 호출 차단 (Claude에게 메시지)
+- `ask`: 사용자에게 컨펌 요청
+- `defer`: graceful exit, 나중에 재개 (non-interactive 전용)
+
+## Exit Code 규약
+
+| Code | 의미 | 동작 |
+|------|------|------|
+| 0 | 성공 | stdout 파싱 후 진행 |
+| 2 | 차단 에러 | stderr를 Claude에 전달, 도구 실행 차단 |
+| 그 외 | 비차단 에러 | stderr 첫 줄만 transcript에 표시, 진행 |
+
+## 컨텍스트 주입 한도
+
+`additionalContext`, `systemMessage`, plain stdout으로 주입되는 텍스트는 **10K 문자 cap**. 초과 시 파일로 저장되고 preview만 주입된다.
+
+## 환경 변수
+
+- `$CLAUDE_PROJECT_DIR` - 프로젝트 루트
+- `${CLAUDE_PLUGIN_ROOT}` - 플러그인 설치 디렉토리
+- `${CLAUDE_PLUGIN_DATA}` - 플러그인 persistent data
+- `CLAUDE_ENV_FILE` - SessionStart/Setup/CwdChanged/FileChanged에서 환경변수 영속화 path
+- `$CLAUDE_CODE_REMOTE` - web 환경에서 "true"
+
 ## 대표 자료
 
 - [Claude Code Hooks Reference](https://code.claude.com/docs/en/hooks)
@@ -140,7 +202,11 @@ Claude Code Hooks는 [[anthropic-harness-design|Anthropic 하네스 설계]] 철
 
 ## 관련 문서
 
+- [[hook-system-patterns]] -- 일반 hook 패턴 (source-agnostic)
 - [[claude-agent-loop|Claude Agent Loop]]
 - [[anthropic-harness-design|Anthropic Harness Design]]
 - [[agent-skills|Agent Skills]]
+- [[skill-system-architecture]] -- skill의 hooks 필드와 lifecycle
 - [[mcp-authorization|MCP Authorization]]
+- [[mcp-protocol-deep-dive]] -- mcp_tool hook 통합
+- [[subagent-spawning]] -- SubagentStart/Stop 훅과 연관

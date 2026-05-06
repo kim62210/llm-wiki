@@ -104,16 +104,16 @@ graph LR
 
 원본 대비 현대 LLM(LLaMA, Mistral, Qwen 등)에서 변경된 주요 설계 결정:
 
-| 항목 | 원본 (2017) | 현대 (2024-2026) |
-|------|------------|-----------------|
-| 정규화 위치 | [[pre-ln-vs-post-ln|Post-LN]] | Pre-LN (또는 Pre-RMSNorm) |
-| 정규화 방식 | LayerNorm | RMSNorm |
-| 활성화 함수 | ReLU | SwiGLU / GeGLU |
-| 위치 인코딩 | 사인/코사인 | [[positional-encoding|RoPE]] |
-| 어텐션 변형 | MHA | GQA, [[multi-head-latent-attention|MLA]] |
-| 어텐션 게이팅 | 없음 | [[gated-attention]] |
-| 어텐션 최적화 | 없음 | FlashAttention |
-| 시퀀스 혼합 대안 | 없음 | [[mamba-3|SSM]] 하이브리드 |
+| 항목        | 원본 (2017)           | 현대 (2024-2026)                     |                         |
+| --------- | ------------------- | ---------------------------------- | ----------------------- |
+| 정규화 위치    | [[pre-ln-vs-post-ln | Post-LN]]                          | Pre-LN (또는 Pre-RMSNorm) |
+| 정규화 방식    | LayerNorm           | RMSNorm                            |                         |
+| 활성화 함수    | ReLU                | SwiGLU / GeGLU                     |                         |
+| 위치 인코딩    | 사인/코사인              | [[positional-encoding              | RoPE]]                  |
+| 어텐션 변형    | MHA                 | GQA, [[multi-head-latent-attention | MLA]]                   |
+| 어텐션 게이팅   | 없음                  | [[gated-attention]]                |                         |
+| 어텐션 최적화   | 없음                  | FlashAttention                     |                         |
+| 시퀀스 혼합 대안 | 없음                  | [[mamba-3                          | SSM]] 하이브리드             |
 
 ## 계산 복잡도
 

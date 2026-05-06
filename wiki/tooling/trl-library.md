@@ -3,17 +3,22 @@ title: TRL -- HuggingFace 포스트트레이닝 풀스택 라이브러리
 category: tooling
 page_type: entity
 project: TRL
-tags: [huggingface, post-training, sft, dpo, ppo, grpo, rlhf, reinforcement-learning, fine-tuning]
-sources: [raw/2026-04-14-ml-training-deep-dive.md]
+tags: [huggingface, post-training, sft, dpo, ppo, grpo, rlhf, reinforcement-learning, fine-tuning, vllm]
+sources: [raw/2026-04-14-ml-training-deep-dive.md, raw/2026-05-06-train-harness-trl.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-05-06
 ---
 
 # TRL: HuggingFace 포스트트레이닝 풀스택 라이브러리
 
 ## 개요
 
-TRL(Transformers Reinforcement Learning)은 HuggingFace가 개발한 오픈소스 포스트트레이닝(post-training) 라이브러리다. 2026년 4월 릴리스된 **v1.0**은 연구용 코드베이스에서 프로덕션 수준의 안정적 라이브러리로의 전환을 선언한 마일스톤이다. 현재 **75개 이상의 포스트트레이닝 기법**을 구현하고 있으며, [[supervised-fine-tuning]]부터 [[direct-preference-optimization]], [[ppo-for-llms]]까지 전체 파이프라인을 단일 라이브러리에서 처리할 수 있다.
+TRL(Transformers Reinforcement Learning)은 HuggingFace가 개발한 오픈소스 포스트트레이닝(post-training) 라이브러리다. 2026년 4월 릴리스된 **v1.0**은 연구용 코드베이스에서 프로덕션 수준의 안정적 라이브러리로의 전환을 선언한 마일스톤이며, **v1.3.0** (2026-04-26)이 최신 버전이다. 현재 **75개 이상의 포스트트레이닝 기법**을 구현하고 있으며, [[supervised-fine-tuning]]부터 [[direct-preference-optimization]], [[ppo-for-llms]]까지 전체 파이프라인을 단일 라이브러리에서 처리할 수 있다.
+
+- 공식 repo: github.com/huggingface/trl
+- 공식 문서: huggingface.co/docs/trl
+- License: Apache-2.0
+- 핵심 저자: Leandro von Werra, Younes Belkada, Lewis Tunstall, Edward Beeching 외
 
 ## 아키텍처
 
@@ -122,6 +127,27 @@ v1.0 기준 제공되는 주요 Trainer:
 - **GKDTrainer** -- Generalized Knowledge Distillation (experimental)
 - **MiniLLMTrainer** -- 소형 모델 증류 (experimental)
 
+## vLLM rollout 통합
+
+TRL은 PPO/GRPO 등 generation이 필요한 알고리즘에서 vLLM을 두 가지 모드로 통합한다. RLHF 학습 시간의 80%를 차지하는 generation 병목을 직접 해소하는 핵심 통합점이다.
+
+| 모드 | 설명 | 사용 |
+|------|------|------|
+| **Colocate mode** | vLLM이 trainer process 내부에서 실행, GPU 메모리 공유 (memory shrink/grow) | 단일 노드 PPO에서 가장 흔한 운영 패턴 |
+| **Server mode** | vLLM이 별도 process/GPU에서 HTTP 서버로 실행 | 멀티 노드, 분리된 generation cluster |
+
+추가로 **Liger-Kernel**과 결합하면 GRPO loss + vLLM server 조합에서 generation을 추가 가속할 수 있다.
+
+## 분산 / 인프라 통합
+
+- **Accelerate**: 단일 GPU → multi-node 클러스터 자동 확장 (DDP, FSDP, DeepSpeed)
+- **PEFT**: LoRA, QLoRA 4bit quantization
+- **Unsloth**: 최적화 커널 통합 (옵션)
+- **vLLM**: 위 두 모드
+- **FSDP1/FSDP2**: PyTorch native sharded data parallel
+- **DeepSpeed ZeRO Stage 2/3**: Accelerate 경유
+- **Liger-Kernel**: GRPO + vLLM server 가속
+
 ## 생태계 통합
 
 ```mermaid
@@ -199,3 +225,9 @@ trainer.train()
 - 공식 문서: https://huggingface.co/docs/trl
 - GitHub: https://github.com/huggingface/trl
 - v1.0 블로그: https://huggingface.co/blog/trl-v1
+
+## 관련 문서
+
+- [[openrlhf]], [[verl-bytedance]], [[deepspeed-chat]], [[nemo-aligner]] - 경쟁 RLHF 프레임워크
+- [[torchtune]] - PyTorch native 대안
+- [[rl-harness-frameworks-comparison]] - RL harness 통합 비교

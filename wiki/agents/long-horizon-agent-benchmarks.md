@@ -152,6 +152,10 @@ MLE-Bench는 Kaggle 스타일의 현실적 ML 과제로 에이전트의 end-to-e
 - [[featbench-paper]] -- FeatBench: Realistic Feature-level Code Generation Evaluation
 - [[evaluation-contamination-dynamic]] -- 평가 데이터 오염과 동적 벤치마크
 - [[agentfly-paper]] -- AgentFly: Fine-tuning LLM Agents without Fine-tuning LLMs
+- [[long-horizon-eval-metr-gdpval]] -- METR HCAST + GDPval 평가 인프라 디테일 (50%-time-horizon, scaffold sensitivity)
+- [[agent-benchmark-harness-comparison]] -- SWE-bench / AgentBench / GAIA / WebArena 인프라 비교
+- [[evaluation-harness-comparison]] -- 9개 평가 harness 횡단 비교 + 세 세대 분리
+- [[inspect-ai]] -- METR 이 Vivaria 에서 마이그레이션한 차세대 표준 framework
 
 - [[ai-hot-topics-2026-04]]
 - [[agent-trees|Hierarchical Planning with Agent Trees]]

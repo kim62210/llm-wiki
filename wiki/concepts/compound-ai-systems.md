@@ -165,5 +165,5 @@ class RAGPipeline(dspy.Module):
 - [[context-engineering]] -- 복합 시스템에서 LLM 컨텍스트 설계
 - [[model-context-protocol-mcp]] -- 도구/서비스 통합 표준 프로토콜
 - [[tool-calling-optimization]] -- 복합 시스템의 도구 호출 최적화
-- [[추론 시점 계산 스케일링 (Test-Time Compute)]] -- 복합 시스템에서 추론 예산 활용
-- [[LangSmith - LLM 애플리케이션 관측 플랫폼]] -- 복합 시스템 관측 도구
+- [[test-time-compute|추론 시점 계산 스케일링 (Test-Time Compute)]] -- 복합 시스템에서 추론 예산 활용
+- [[langsmith|LangSmith - LLM 애플리케이션 관측 플랫폼]] -- 복합 시스템 관측 도구

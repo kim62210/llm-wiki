@@ -61,8 +61,8 @@ flowchart TD
 ## 관련 문서
 - [[cot-faithfulness-paper]] -- Lie to Me: 오픈 웨이트 추론 모델의 Chain-of-Thought 충실도 측정
 
-- [[GPT-3 퓨샷 학습]]
-- [[DPO 직접 선호도 최적화]]
+- [[gpt-3-paper|GPT-3 퓨샷 학습]]
+- [[dpo|DPO 직접 선호도 최적화]]
 - [[Constitutional AI (Anthropic)]]
 - [[RLHF 인간 선호도 강화학습 원논문 (Christiano et al.)]]
 - [[reward-hacking-overoptimization]]

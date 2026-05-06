@@ -2,10 +2,10 @@
 title: Anthropic Multi-Agent Research System
 category: agents
 page_type: summary
-tags: [agents, summary, anthropic, multi-agent, research]
-sources: [raw/hot-topics-sources/2026-04-10/006-how-we-built-our-multi-agent-research-system.md, raw/2026-04-10-hot-ai-topics-sources/agent-trees/05-anthropic-com-how-we-built-our-multi-agent-research-system.md]
+tags: [agents, summary, anthropic, multi-agent, research, orchestrator-worker, parallel-tool-calling]
+sources: [raw/hot-topics-sources/2026-04-10/006-how-we-built-our-multi-agent-research-system.md, raw/2026-04-10-hot-ai-topics-sources/agent-trees/05-anthropic-com-how-we-built-our-multi-agent-research-system.md, raw/2026-05-06-blog-anthropic-multi-agent-research-system.md]
 created: 2026-04-10
-updated: 2026-04-13
+updated: 2026-05-06
 ---
 # Anthropic Multi-Agent Research System
 
@@ -73,8 +73,47 @@ Anthropic이 Claude Research 기능의 백엔드로 사용한 멀티 에이전�
 - `Scale effort to query complexity`: 단순 질문에 과도한 병렬성을 쓰지 않도록 agent 수와 tool call 예산을 프롬프트 안에 명시하는 것이 중요하다.
 - `Tool design and selection are critical`: MCP처럼 도구 수가 늘어날수록 툴 설명 품질 자체가 성능 레버가 된다.
 
+## 검증된 정량 결과 (2025-06 원문 기준)
+
+| 지표 | 값 |
+|---|---|
+| Multi-agent (Opus 4 + Sonnet 4) vs Single-agent (Opus 4) | **+90.2%** 성능 개선 |
+| 일반 chat 대비 토큰 소모 | 약 **15×** |
+| 일반 single-agent 대비 토큰 소모 | 약 **4×** |
+| Parallel tool calling 시간 절약 | **약 90%** |
+
+→ **고가치 태스크에서만 경제성** 있음 (토큰 비용 정당화).
+
+## Scale Effort to Query Complexity (Anthropic 가이드)
+
+| 쿼리 복잡도 | 권장 서브에이전트 수 |
+|---|---|
+| 단순 사실 확인 | 1개 + 3-10 도구 호출 |
+| 비교 분석 | 2-4개 |
+| 복잡한 연구 | 10+ 개 |
+
+## 운영 도전과 대응
+
+| 도전 | 대응 |
+|---|---|
+| Statefulness compounds errors | 체크포인트 + 그레이스풀 에러 처리 |
+| Non-determinism complicates debugging | **풀 프로덕션 추적** + 프라이버시 보호 |
+| Long-running deployment 충돌 | **Rainbow deployment** (점진 전환) |
+
+## 자주 발생하는 실패 모드
+
+- 단순 쿼리에 50+ 서브에이전트 스폰 (과잉 분배)
+- 존재하지 않는 출처를 무한정 검색
+- 서브에이전트끼리 과도한 업데이트로 서로 산만하게 함
+- 모든 에이전트가 같은 도구를 호출해 중복 작업
+
+깊은 글 요약과 8가지 프롬프트 엔지니어링 원칙은 [[multi-agent-research-system-2025-summary]] 참조.
+
 ## 관련 문서
 
 - [[orchestrator-worker-pattern|Orchestrator-Worker Multi-Agent Pattern]]
 - [[agent-trees|Hierarchical Planning with Agent Trees]]
 - [[subagents|Subagents]]
+- [[multi-agent-research-system-2025-summary]] — 8가지 프롬프트 원칙 + 운영 디테일
+- [[effective-agents-patterns]] — Anthropic 7가지 빌딩 블록 (Orchestrator-Workers 포함)
+- [[deep-research-agents-roadmap]] — Deep research agents 로드맵

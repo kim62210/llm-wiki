@@ -67,7 +67,7 @@ flowchart TD
 
 ## 관련 문서
 
-- [[InstructGPT RLHF 파이프라인]]
+- [[rlhf-pipeline|InstructGPT RLHF 파이프라인]]
 - [[RLHF 인간 선호도 강화학습 원논문 (Christiano et al.)]]
 - [[kl-divergence]]
 - [[Constitutional AI (Anthropic)]]

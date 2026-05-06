@@ -93,4 +93,4 @@ $$\text{TD 타깃} = r + \gamma Q^-\left(s', \arg\max_{a'} Q(s', a')\right)$$
 
 - [[markov-decision-process]]
 - [[policy-gradient-ppo]]
-- [[RLHF 파이프라인]]
+- [[rlhf-pipeline|RLHF 파이프라인]]

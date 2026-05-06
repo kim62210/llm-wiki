@@ -66,7 +66,7 @@ flowchart LR
 ## 관련 문서
 - [[byte-latent-transformer-paper]] -- Byte Latent Transformer: 토크나이저 없이 원시 바이트에서 학습하는 아키텍처
 
-- [[GPT-3 퓨샷 학습]]
+- [[gpt-3-paper|GPT-3 퓨샷 학습]]
 - [[Chinchilla 스케일링 법칙]]
 - [[Chain-of-Thought 추론]]
 - [[emergent-abilities]]

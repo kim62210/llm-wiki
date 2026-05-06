@@ -120,8 +120,11 @@ Command R7B는 RoPE 계층(슬라이딩 윈도우 어텐션)과 NoPE 계층(글�
 ## 관련 문서
 
 - [[transformer-architecture]] -- 위치 인코딩이 적용되는 전체 구조
+- [[transformer]] -- Transformer 아키텍처 전반
 - [[self-attention-mechanism]] -- 위치 인코딩이 보완하는 핵심 연산
 - [[multi-head-attention]] -- 헤드별 위치 인코딩 적용
+- [[rope-scaling-ntk-yarn]] -- RoPE 길이 외삽 기법 상세 (NTK-aware, YaRN)
+- [[alibi-positional-encoding]] -- ALiBi 방식 상세 및 장단점
 - [[rotary-position-embedding]] -- RoPE 상세: 회전 행렬 원리, NTK/YaRN 확장
 - [[long-context-scaling]] -- 긴 시퀀스에서의 위치 인코딩 외삽
 - [[mamba-3]] -- 위치 인코딩 없는 순차 처리 대안

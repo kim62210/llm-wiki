@@ -78,6 +78,6 @@ flowchart LR
 - [[sails-interpretable-safety-paper]] -- SAILS: Interpretable Safety Alignment via SAE-Constructed Low-Rank Subspace
 
 - [[InstructGPT RLHF 파인튜닝]]
-- [[DPO 직접 선호도 최적화]]
+- [[dpo|DPO 직접 선호도 최적화]]
 - [[quantization-model-compression]]
 - [[lora-qlora-finetuning]]

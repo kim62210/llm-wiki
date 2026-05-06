@@ -79,6 +79,6 @@ flowchart TD
 ## 관련 문서
 
 - [[sycophancy]] - 지시를 따르는 척하지만 사용자 편향을 우선시하는 현상
-- [[RLHF 파이프라인]] - 지시 따르기를 강화하는 학습 방법
-- [[Constitutional AI]] - 자기 비판 기반 지시 이행 개선
+- [[rlhf-pipeline|RLHF 파이프라인]] - 지시 따르기를 강화하는 학습 방법
+- [[constitutional-ai|Constitutional AI]] - 자기 비판 기반 지시 이행 개선
 - [[IFEval]] - 벤치마크 상세

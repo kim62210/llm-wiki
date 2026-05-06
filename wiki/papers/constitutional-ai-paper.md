@@ -72,7 +72,7 @@ AI가 자신의 응답을 이 원칙들에 비추어 비판(critique)하고, 더
 ## 관련 문서
 - [[vlm-survey-26k-paper]] -- Vision Language Models: A Survey of 26K Papers
 
-- [[InstructGPT RLHF 파이프라인]]
+- [[rlhf-pipeline|InstructGPT RLHF 파이프라인]]
 - [[RLHF 인간 선호도 강화학습 원논문 (Christiano et al.)]]
-- [[DPO 직접 선호도 최적화]]
+- [[dpo|DPO 직접 선호도 최적화]]
 - [[alignment-tax]]

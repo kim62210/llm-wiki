@@ -146,4 +146,4 @@ LoRA(Low-Rank Adaptation)는 현재 가장 많이 사용되는 PEFT 기법이다
 - [[전이 학습]]
 - [[LLM 지식 증류]]
 - [[어댑터 기반 파인튜닝 (Adapter Tuning)]]
-- [[프롬프트 엔지니어링]]
+- [[prompt-engineering|프롬프트 엔지니어링]]

@@ -2,10 +2,10 @@
 title: Benchmark Contamination
 category: concepts
 page_type: concept
-tags: [concepts, concept, evaluation, benchmark, contamination, data-leakage]
+tags: [concepts, concept, evaluation, benchmark, contamination, data-leakage, evaluation-bias, swe-bench]
 sources: [raw/2026-04-14-ml-foundations-gap.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-27
 ---
 # Benchmark Contamination
 
@@ -81,8 +81,49 @@ updated: 2026-04-14
 - [[evaluation-harness]]로 표준 벤치마크를 실행하되, 결과 해석에 오염 가능성을 항상 감안한다
 - 동적 벤치마크([[livebench]])나 극난이도 벤치마크([[humanity-last-exam]])를 함께 참고한다
 
+## SWE-Bench 오염 사례
+
+[[swe-bench-pro-contamination]]은 코딩 벤치마크 오염의 대표적 사례다. 공개 GitHub 이슈와 PR을 기반으로 하는 SWE-bench의 특성상, 후발 모델들이 훈련 데이터에 이 이슈들의 해결 패턴을 포함했을 가능성이 높다. SWE-bench Verified와 SWE-bench Pro는 이 문제를 완화하기 위해 더 엄선된 테스트 셋을 구성했다.
+
+## 오염 탐지 방법 시각화
+
+```mermaid
+flowchart TD
+    DETECT[오염 탐지 접근] --> STATIC[정적 분석\n학습 데이터 기반]
+    DETECT --> DYNAMIC[동적 분석\n모델 행동 기반]
+
+    STATIC --> NGRAM[N-gram 오버랩\n직접 텍스트 비교]
+    STATIC --> FILTER[데이터 필터링\n사전 제거]
+
+    DYNAMIC --> MEMBER[멤버십 추론 공격\n문제 완성 테스트]
+    DYNAMIC --> PERF[성능 이상 탐지\n같은 난이도 새 문제 비교]
+    DYNAMIC --> CANARY[Canary 문자열\n마커 삽입 후 재현 확인]
+
+    NGRAM & MEMBER & PERF & CANARY --> SCORE[오염 점수 산출]
+    FILTER --> CLEAN[클린 학습 데이터]
+```
+
+위 다이어그램은 학습 전 정적 예방과 학습 후 동적 탐지의 두 갈래 접근을 보여준다.
+
+## 평가 편향과의 관계
+
+[[ai-evaluation]] 맥락에서 벤치마크 오염은 **평가 편향(evaluation bias)**의 한 유형이다. 다른 유형의 편향과 함께 이해해야 한다:
+
+| 편향 유형 | 원인 | 결과 |
+|----------|------|------|
+| 오염 편향 | 벤치마크 데이터 학습 | 점수 부풀리기 |
+| 판정 편향 | LLM 판정자의 스타일 선호 | 특정 스타일 유리 |
+| 선택 편향 | 벤치마크 문제 설계 치우침 | 편협한 능력 측정 |
+| 언어 편향 | 영어 중심 평가 | 다국어 능력 과소평가 |
+
+[[chatbot-arena]]는 오염 편향에 강건한 반면, [[mt-bench]]는 질문이 공개되어 취약하다.
+
 ## 관련 문서
 
+- [[swe-bench-pro-contamination]] -- SWE-Bench 오염 사례 상세
+- [[ai-evaluation]] -- AI 평가 방법론 전반
+- [[chatbot-arena]] -- 오염에 강건한 인간 선호 평가
+- [[mt-bench]] -- 오염 취약 고정 벤치마크
 - [[benchmark-saturation-goodharts-law]] -- Goodhart의 법칙과 벤치마크 포화
 - [[mmlu]] -- 오염 논란의 대표 벤치마크
 - [[humaneval]] -- 코드 생성 벤치마크 오염 사례

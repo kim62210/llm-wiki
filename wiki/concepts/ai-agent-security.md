@@ -113,7 +113,6 @@ sequenceDiagram
 
 ## 관련 문서
 - [[llm-agent-security]] -- LLM 에이전트 보안 심화
-
 - [[indirect-prompt-injection]] - 간접 프롬프트 인젝션 공격의 상세 메커니즘
 - [[zero-trust-ai-agents]] - 에이전트 보안을 위한 제로 트러스트 아키텍처
 - [[agent-prompt-injection-defense]] - 프롬프트 인젝션 방어 기법

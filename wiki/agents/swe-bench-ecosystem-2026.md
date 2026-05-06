@@ -102,3 +102,6 @@ flowchart LR
 - [[component-level-agent-evaluation]] -- 컴포넌트 수준 에이전트 평가
 - [[openhands]] -- SWE-bench 상위권 자율 코딩 에이전트
 - [[terminal-bench-2-0]] -- 터미널 벤치마크
+- [[agent-benchmark-harness-comparison]] -- SWE-bench / AgentBench / GAIA / WebArena 인프라 비교 (Docker 3-tier 디테일 등)
+- [[evaluation-harness-comparison]] -- 9개 평가 harness 횡단 비교
+- [[inspect-ai]] -- 차세대 평가 표준 (Sandbox abstraction)

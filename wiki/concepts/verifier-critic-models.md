@@ -135,6 +135,6 @@ PPO (Proximal Policy Optimization) 기반 RLHF에서 비평가 모델은 필수 
 
 - [[프로세스 보상 모델 (PRM)]] - 단계별 검증에 특화된 검증자
 - [[자기 일관성]] - 자기 검증의 기본 패턴
-- [[Constitutional AI]] - 비평을 통한 AI 안전 학습
-- [[RLHF]] - 검증자/보상 모델이 핵심 역할
+- [[constitutional-ai|Constitutional AI]] - 비평을 통한 AI 안전 학습
+- [[rlhf|RLHF]] - 검증자/보상 모델이 핵심 역할
 - [[보상 해킹]] - ORM 검증자의 주요 약점

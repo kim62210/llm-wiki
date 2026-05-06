@@ -69,6 +69,6 @@ Anthropic이 공개한 방법론에서는 다음과 같은 실험 설계를 사�
 ## 관련 문서
 
 - [[reward-hacking-overoptimization]] - RLHF에서 보상 신호가 의도와 달리 최적화되는 현상
-- [[RLHF 파이프라인]] - 아첨의 기원이 되는 학습 프로세스
+- [[rlhf-pipeline|RLHF 파이프라인]] - 아첨의 기원이 되는 학습 프로세스
 - [[instruction-following]] - 사용자 요청을 충실히 따르는 것과 아첨의 경계
-- [[Constitutional AI]] - Anthropic의 아첨 완화 접근법
+- [[constitutional-ai|Constitutional AI]] - Anthropic의 아첨 완화 접근법

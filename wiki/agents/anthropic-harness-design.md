@@ -3,10 +3,10 @@ title: Anthropic Harness Design for Long-Running Apps (Prithvi Rajasekaran, 2026
 aliases: ["anthropic harness design", "harness design long running apps", "prithvi harness", "rajasekaran harness"]
 category: agents
 page_type: summary
-tags: [harness-engineering, generator-evaluator, anthropic, claude-opus, playwright, long-running-tasks]
-sources: [raw/2026-04-09-anthropic-harness-design-long-running-apps.md, raw/2026-04-10-hot-ai-topics-sources/long-running-agent-harnesses/02-anthropic-com-harness-design-for-long-running-application-development.md]
+tags: [harness-engineering, generator-evaluator, anthropic, claude-opus, playwright, long-running-tasks, ralph-loop, context-reset]
+sources: [raw/2026-04-09-anthropic-harness-design-long-running-apps.md, raw/2026-04-10-hot-ai-topics-sources/long-running-agent-harnesses/02-anthropic-com-harness-design-for-long-running-application-development.md, raw/2026-05-06-harness-pattern-long-horizon-loop.md]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-05-06
 ---
 
 # Anthropic Harness Design for Long-Running Application Development
@@ -214,6 +214,47 @@ Builder는 "ran coherently for over two hours without the sprint decomposition t
 
 모델이 개선되어도 하네스 디자인 문제는 사라지지 않는다 — **scaffolding이 필요한 경계가 이동할 뿐**. 그 경계의 반대편에는 항상 새로운 불가능한 태스크가 있고, 엔지니어링의 재미는 거기에 있다.
 
+## 7. Ralph Loop 패턴 (2-Phase Initializer + Coding)
+
+후속 Anthropic 가이드("effective-harnesses-for-long-running-agents", 2025-09)는 위 generator-evaluator를 더 단순화한 **Ralph Loop**를 제시한다.
+
+### 핵심 흐름
+
+```mermaid
+flowchart TD
+    Init[Initializer Agent: 1회] --> Setup[feature_list.json + init.sh + progress.txt + git init]
+    Setup --> Loop{Repeat per session}
+    Loop --> Read[Read git log + progress.txt]
+    Read --> Pick[Pick top incomplete feature]
+    Pick --> Work[Work + verify]
+    Work --> Commit[Git commit + update progress]
+    Commit --> Reset[Context reset]
+    Reset --> Loop
+```
+
+### Handoff artifact 4종
+
+| 아티팩트 | 포맷 | 목적 |
+|----------|------|------|
+| `feature_list.json` | JSON (model-induced corruption resistant) | 요구사항 + pass/fail |
+| `init.sh` | Shell script | dev server startup + smoke test |
+| `claude-progress.txt` | Plain text | 세션별 작업 로그 |
+| Git history | git | versioning + rollback |
+
+JSON이 plain text보다 모델이 무심코 깨뜨릴 가능성이 낮아서 핵심 상태는 JSON으로 유지한다.
+
+### Failure modes 매핑
+
+| Failure mode | 대처 |
+|--------------|------|
+| Premature completion (양치기 완료 선언) | feature_list.json 의 모든 항목 starting failing 상태 |
+| Undocumented progress | git commit + progress.txt 강제 |
+| Inadequate testing | Browser automation (Puppeteer/Playwright MCP) 강제 |
+| Coherence loss | Context reset + handoff |
+| Self-praise bias | Generator/Evaluator 분리 |
+
+자세한 내용은 [[long-horizon-agent-loop]] 참조.
+
 ## 관련 문서
 - [[agent-interrupt-resume]] -- 에이전트 인터럽트/재개 패턴 (Agent Interrupt & Resume)
 
@@ -227,3 +268,6 @@ Builder는 "ran coherently for over two hours without the sprint decomposition t
 - [[subagents]] — 관련이지만 다른 동기(컨텍스트 창)에서 출발한 패턴
 - [[harness-quadrants]] — Fowler/Böckeler 4사분면 중 "Inferential" 에 해당
 - [[evolution-of-agentic-patterns]] — 3 에라 연대기에서 Era 3
+- [[long-horizon-agent-loop]] — Ralph Loop, Plan-and-Execute, Reflexion 패턴 정리
+- [[context-window-management]] — compaction vs reset 트레이드오프 상세
+- [[subagent-spawning]] — multi-agent + isolation 신규 필드

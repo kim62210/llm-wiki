@@ -2,10 +2,10 @@
 title: 에이전트 워크로드를 위한 프롬프트 캐싱
 category: agents
 page_type: concept
-tags: [prompt-caching, cost-optimization, latency, agentic-workload, static-prefix]
-sources: [raw/2026-04-14-ai-hot-topics-100.md]
+tags: [prompt-caching, cost-optimization, latency, agentic-workload, static-prefix, pre-warming, lookback-window]
+sources: [raw/2026-04-14-ai-hot-topics-100.md, raw/2026-05-06-harness-pattern-prompt-caching.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-05-06
 ---
 
 ## 개요
@@ -158,9 +158,46 @@ API 응답의 `usage` 필드에서 캐시 효과를 추적한다:
 - **캐시 격리**: 조직(organization) 수준 격리, 2026.02.05부터 워크스페이스 수준으로 전환
 - **정확 매칭**: 텍스트, 이미지, 도구 정의 순서까지 100% 동일해야 캐시 히트
 
+### Pre-warming 패턴
+
+`max_tokens: 0`으로 시스템 프롬프트만 미리 캐시할 수 있다:
+
+```python
+prewarm = client.messages.create(
+    model="claude-opus-4-7",
+    max_tokens=0,
+    system=[{"type": "text", "text": "...", "cache_control": {"type": "ephemeral"}}],
+    messages=[{"role": "user", "content": "warmup"}],
+)
+```
+
+배포 직후 startup script로 warm-up하면 첫 사용자 요청부터 cache hit이 가능하다. 워크스페이스 단위 isolation을 고려해 워크스페이스마다 warm-up이 필요할 수 있다.
+
+### Cache Hit Rate KPI
+
+- `cache_read_input_tokens / (cache_read + cache_creation + input)` 모니터링
+- 목표 70-90%
+- 70% 미만이면 prompt 구조(정적/변동 분리) 재검토
+
+### 1시간 TTL 도입 시점
+
+- 24시간 내 동일 시스템 프롬프트로 100+ 요청
+- 5분 TTL 만료가 잦은 워크플로우 (사용자별 deep work)
+- 2x cache write cost를 hit rate × 90% 절감으로 회수 계산
+
+### OpenAI와의 비교
+
+[[prompt-caching-strategies]]에 cross-provider 비교표(활성화 방식, 비용, TTL, lookback)가 정리되어 있다. 핵심 차이만 요약:
+- OpenAI: 자동 캐시, write 비용 무료, read 0.5x (50% 절감)
+- Anthropic: 명시적 breakpoint, write 1.25x/2x, read 0.1x (90% 절감)
+- OpenAI는 routing 영향에 `prompt_cache_key` 사용
+
 ## 관련 문서
 
+- [[prompt-caching-strategies]] - cross-provider 비교 (Anthropic vs OpenAI)
 - [[tool-calling-optimization]] - 도구 호출 최적화
 - [[how-coding-agents-work]] - 코딩 에이전트 동작 원리
 - [[context-folding]] - 컨텍스트 폴딩
+- [[context-window-management]] - 캐시와 context editing의 트레이드오프
+- [[tool-orchestration-patterns]] - 도구 정의 캐싱
 - [[portkey]] - AI 게이트웨이 (캐싱 기능 포함)

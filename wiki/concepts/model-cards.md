@@ -5,7 +5,7 @@ page_type: concept
 tags: [governance, model-cards, documentation, transparency, fairness, Mitchell, responsible-ai]
 sources: [raw/2026-04-14-ml-foundations-gap.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-27
 ---
 
 ## 개요
@@ -68,11 +68,70 @@ Model Cards가 모델을 문서화한다면, Datasheets for Datasets는 학습/�
 
 Model Cards의 가장 큰 한계는 자발적(voluntary) 문서화라는 점이다. 작성 품질과 깊이가 조직마다 크게 다르며, 법적 구속력이 없다. 또한 모델이 배포된 후 실제 사용 맥락이 변화해도 Model Card가 업데이트되지 않는 경우가 많다. EU AI Act 같은 규제가 강화되면서 Model Card 수준의 문서화가 법적 의무로 전환되는 추세다.
 
+## 모델 카드 작성 흐름
+
+```mermaid
+flowchart TD
+    A[모델 개발 시작] --> B[의도한 용도 정의]
+    B --> C[관련 요소 식별\n인구통계·도메인·환경]
+    C --> D[평가 데이터셋 선정]
+    D --> E[하위 집단별 분리 평가]
+    E --> F{성능 격차 존재?}
+    F -- 예 --> G[편향 원인 분석 및 문서화]
+    F -- 아니오 --> H[지표 정리]
+    G --> H
+    H --> I[윤리적 고려사항 작성]
+    I --> J[모델 카드 초안]
+    J --> K[이해관계자 검토]
+    K --> L{수정 필요?}
+    L -- 예 --> J
+    L -- 아니오 --> M[모델 카드 배포]
+    M --> N[모델 생애주기 동안 갱신]
+```
+
+모델 카드 작성은 선형 단계가 아니라, 평가-분석-문서화를 반복하는 순환 과정이다. 특히 하위 집단별 분리 평가 단계는 전통 ML에서는 인구통계 그룹, LLM에서는 언어별·도메인별 성능 격차를 중점으로 점검한다.
+
+## 주요 기업별 모델 카드 최신 현황 (2026 기준)
+
+### Anthropic
+
+[[responsible-scaling]]의 ASL 체계와 연동되어 모델 카드가 작성된다. 단순 성능 지표를 넘어 CBRN(화학·생물·방사선·핵) 위험 역량 평가, 사이버보안 위협 역량 평가를 포함한다. Claude 3.x 시리즈 이후부터 레드팀 평가 결과 요약을 카드에 포함한다.
+
+### Google / Meta / Hugging Face
+
+- **Google**: Vertex AI AutoML에서 모델 카드 자동 생성 기능 제공
+- **Meta**: Llama 시리즈 오픈 웨이트 모델의 Acceptable Use Policy와 모델 카드를 함께 발행
+- **Hugging Face**: Hub의 `README.md`에 YAML 메타데이터를 삽입하는 방식 (`[[dataset-cards]]`와 동일한 구조)
+
+### System Card와의 구분
+
+OpenAI는 "System Card"라는 변형을 사용한다. 기술적 성능 외에 사회적 영향, 배포 결정 근거까지 포함하는 더 포괄적 형식이다. GPT-4o, o3 등 주요 모델 출시 시 공개한다.
+
+## 규제 환경과의 연계
+
+| 규제/프레임워크 | 모델 문서화 요구사항 |
+|----------------|---------------------|
+| EU AI Act | 고위험 AI 시스템에 기술 문서(technical documentation) 의무화 |
+| NIST AI RMF | AI 위험 프로파일 문서화 권고 |
+| 미국 행정명령 EO 14110 | 이중 용도 기반 모델에 안전 테스트 결과 보고 의무 |
+
+[[ai-evaluation]] 프로세스와 통합해 평가 자동화하고, 결과를 모델 카드에 자동 반영하는 파이프라인이 2026년 표준 실천으로 자리잡고 있다.
+
+## 한계 (추가)
+
+- **자기보고 편향**: 카드에 적힌 내용이 사실인지 외부에서 검증하기 어렵다
+- **갱신 부담**: 모델 업데이트마다 카드를 갱신해야 하나 실제로는 초기 버전이 오래 사용
+- **세분화 어려움**: 하위 집단별 평가는 해당 집단 데이터가 충분할 때만 의미 있음
+
 ## 관련 문서
 
 - [[datasheets-for-datasets]] -- 데이터셋 문서화 프레임워크
+- [[dataset-cards]] -- Hugging Face 데이터셋 카드 표준
 - [[fairness-metrics-bias-auditing]] -- 공정성 정량 측정
 - [[responsible-ai-practices]] -- 윤리적 AI 개발 원칙
+- [[responsible-scaling]] -- 책임 있는 스케일링 정책과 안전 평가
+- [[ai-evaluation]] -- 모델 평가 방법론 (벤치마크, 레드팀)
 - [[nist-ai-rmf]] -- AI 위험 관리 프레임워크
 - [[iso-42001]] -- AI 관리체계 인증 표준
 - [[model-lifecycle-management]] -- 모델 수명주기 관리
+- [[regulatory-ai]] -- AI 규제 환경과 문서화 의무

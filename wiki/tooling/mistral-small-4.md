@@ -3,10 +3,10 @@ title: Mistral Small 4
 category: tooling
 page_type: entity
 project: Mistral AI
-tags: [mistral, small-4, moe, reasoning, multimodal, apache-2, open-source]
-sources: [raw/2026-04-14-ai-hot-topics-100.md]
+tags: [mistral, small-4, moe, reasoning, multimodal, apache-2, open-source, unified-model, 256K-context]
+sources: [raw/2026-04-14-ai-hot-topics-100.md, raw/2026-04-27-harvest-opensource.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-27
 ---
 
 ## 개요
@@ -140,9 +140,28 @@ Ministral 14B 추론 변형은 AIME '25에서 85%를 달성하며, Small 4와는
 | [[deepseek-v3-2]] | ~37B | MIT | $0.27 | MoE, 높은 추론 성능 |
 | GPT-5.4 Mini | 비공개 | 상용 | $0.75 | 범용 |
 
+## 세 역량 통합 관점 (2026-04-27 추가)
+
+2026-04-27 harvest 소스에 따르면 Mistral Small 4는 Mistral의 세 전문 계보를 단일 모델로 통합했다는 점이 강조된다:
+
+| 통합 역량 | 전신 모델 계보 | 설명 |
+|-----------|--------------|------|
+| 추론 | Magistral 계보 | 복잡한 다단계 추론, 수학, 과학 |
+| 멀티모달 | Pixtral 계보 | 이미지-텍스트 이해 |
+| 에이전트 코딩 | Devstral 계보 | 자율 코드 작성, 도구 사용 |
+
+이 통합 덕분에 운영 팀이 세 가지 특화 모델을 별도로 서빙·관리할 필요 없이 하나의 모델로 다양한 워크로드를 커버할 수 있다. 인프라 단순화와 비용 절감 효과가 있다.
+
+### 서빙 생태계 지원
+
+vLLM, llama.cpp, SGLang, HuggingFace Transformers 전체 생태계를 지원한다. [[meta-llama]] 기반 생태계와의 호환성도 높다.
+
 ## 관련 문서
 
 - [[voxtral-tts]] - Mistral의 음성합성 모델
 - [[leanstral]] - Mistral의 형식 검증 AI
 - [[gemma-4]] - Google의 경쟁 오픈소스 모델
 - [[deepseek-v3-2]] - DeepSeek의 경쟁 오픈소스 모델
+- [[meta-llama]] - 비교 대상 오픈소스 LLM 아키텍처
+- [[mixture-of-experts]] - MoE 아키텍처 개념
+- [[exaone-4-5]] - 동시기 경쟁 멀티모달 모델

@@ -95,5 +95,5 @@ $\gamma$는 단순히 수렴을 보장하는 수학적 장치가 아니라 에�
 
 - [[q-learning-dqn]]
 - [[policy-gradient-ppo]]
-- [[RLHF 파이프라인]]
+- [[rlhf-pipeline|RLHF 파이프라인]]
 - [[bayesian-inference]]

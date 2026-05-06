@@ -3,9 +3,9 @@ title: 에이전트 샌드박스 인프라 (Agent Sandbox Infrastructure)
 category: agents
 page_type: concept
 tags: [sandbox, E2B, Daytona, Firecracker, microVM, code-execution, isolation, security]
-sources: [raw/2026-04-16-topic-queue-500.md]
+sources: [raw/2026-04-16-topic-queue-500.md, raw/2026-05-06-harness-prod-sandbox-isolation.md, raw/2026-05-06-harness-prod-hosted-sandbox-microvm.md]
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-05-06
 ---
 # 에이전트 샌드박스 인프라 (Agent Sandbox Infrastructure)
 
@@ -107,8 +107,116 @@ flowchart TD
     Q3 -->|셀프호스팅| DT[Daytona / 자체 구축]
 ```
 
+## 2026-05-06 보강 — Local Sandbox Stack & 운영 사례
+
+### 운영 환경 표준 스택 (2026-05)
+
+- **macOS**: `sandbox-exec` (Seatbelt) — Chrome 등 critical 3rd party 도 사용
+- **Linux**: `bubblewrap` (namespaces) + `landlock` (filesystem LSM) + `seccomp`
+  (syscall filter) 의 defense-in-depth
+- **Windows**: native 미흡 → WSL2 안에서 Linux sandbox 실행 (Cursor 채택 패턴)
+
+### 주요 도구 default 설정 (2026-05)
+
+- **Claude Code**: Linux=bubblewrap, macOS=Seatbelt, **off by default**
+- **OpenAI Codex**: Linux=Landlock+seccomp, **on by default** (sandboxing
+  enabled by default 인 유일한 메이저 agent)
+- **Cursor**: 위와 동일 + macOS Seatbelt 의 deprecated API 위험을 인지하고도 채택
+
+### Linux Stack 구성 요소
+
+#### bubblewrap
+
+- 50KB sandbox binary, GNOME 팀 maintain, Flatpak 의 backend
+- root 없이 실행 — `CLONE_NEWUSER` 로 user namespace 생성
+- 격리: PID, UTS, IPC namespace
+- mount isolation: ephemeral tmpfs `$HOME`, project dir 만 writable
+- network: `--unshare-net` 로 완전 차단
+
+#### Landlock LSM
+
+- Linux 5.13 부터 kernel 에 포함 (root 권한 불필요)
+- ABI V1 (5.13+), V2 (5.19+), V3 (6.2+) — graceful degradation
+- 역할: filesystem access control at VFS level
+- bubblewrap 보완 영역:
+  - `/proc` 를 통한 escape path 차단
+  - permitted mount 안에서의 symlink trick 방어
+
+#### seccomp
+
+- syscall whitelist/blacklist
+- Codex 의 default sandbox 와 ai-jail 등에서 활용
+- Landlock 이 filesystem 만 다루므로 seccomp 가 unsafe syscall 차단 담당
+
+### macOS — sandbox-exec (Seatbelt)
+
+- profile: SBPL (Sandbox Profile Language) — Apple deprecated 표시했으나 여전히 동작
+- Cursor 는 runtime 에 dynamic profile 생성: "permissions with fine granularity,
+  restricting syscalls and reads or writes to specific files and directories"
+- **한계**: GPU (Metal), Display (Cocoa) 는 system-level 이라 sandbox-exec 로 제한 불가
+
+### Threat Model — 차단 대상
+
+1. **Credential theft**: dotfile (`.aws`, `.ssh`, `.gnupg`) unmount
+2. **Supply-chain attack**: 컴파일된 dependency 가 filesystem 접근
+3. **Persistent system modification**: system file read-only
+4. **Symlink exploitation**: Landlock 이 permitted mount 내 symlink 차단
+5. **`/proc` escape**: Landlock coverage
+
+### 도구 비교 (실측)
+
+| 도구 | 격리 강도 | 구동 비용 | 적합 환경 |
+|---|---|---|---|
+| sandbox-exec (Mac) | 중 | ms | macOS dev |
+| bubblewrap+Landlock+seccomp | 중상 | ms | Linux dev |
+| Firejail | 중 | ms | dev (setuid root 필요) |
+| nsjail/minijail | 중상 | ms | production (복잡) |
+| systemd-nspawn | 상 | seconds | system container |
+| Docker | 상 | seconds | reproducible env |
+| gVisor | 매우 상 | ~100ms+ | 멀티테넌트 untrusted code |
+| Firecracker microVM | 최상 | ~125ms boot | per-tenant VM 격리 |
+| e2b sandbox | 최상 (Firecracker) | API 호출 | hosted sandbox |
+| OpenHands runtime | Docker container | seconds | agent eval |
+
+### Cursor Production Data
+
+- "Sandboxed agents stop 40% less often than unsandboxed ones, saving users
+  hours of manual review and approval"
+- "approximately a third of requests on supported platforms" 가 sandbox 에서 실행
+
+### Defense in Depth — 운영 권장
+
+1. **Process layer**: bubblewrap (Linux) / sandbox-exec (Mac)
+2. **Filesystem layer**: Landlock (Linux) — bubblewrap 보완
+3. **Syscall layer**: seccomp (Linux)
+4. **Network layer**: 별도 firewall, agent 가 외부 access 시 explicit prompt
+5. **Path-based**: Claude Code 의 protected paths (`.git`, `.bashrc`,
+   `.mcp.json` 등) 정책 layer
+
+### Hosted vs Local 결정 매트릭스
+
+| 시나리오 | 권장 격리 |
+|---|---|
+| 로컬 dev, trusted user 가 LLM 호출 | sandbox-exec / bwrap+landlock+seccomp |
+| 단일 조직 internal agent | container + bwrap layer |
+| Multi-tenant SaaS agent | Firecracker microVM (e2b 등) |
+| Untrusted user code 실행 | Firecracker + network 차단 |
+| Compliance-critical | Confidential VM (SEV/TDX) |
+
+### Network Policy 패턴
+
+격리 강도와 별개로 network 는 별도 정책:
+
+- **default off**: agent 외부 통신 명시 승인 필요 (Codex 패턴)
+- **whitelist domain**: 특정 도메인만 허용 (npm registry, pypi 등)
+- **proxy 강제**: 모든 outgoing traffic 이 logging proxy 통과
+- **VPC 격리**: hosted sandbox 가 자체 VPC 에서만 작동
+
 ## 관련 문서
 
 - [[microvm-agent-sandboxes]] - microVM 기반 샌드박스 기술 심화
 - [[openai-agents-sdk-sandbox]] - OpenAI Agents SDK의 샌드박스 연동
 - [[zero-trust-ai-agents]] - 에이전트 보안 전반
+- [[claude-code-permission-modes]] - Claude Code 의 permission layer
+- [[claude-code-auto-mode]] - classifier 기반 layer
+- [[e2b-ai-sandbox]] - hosted sandbox

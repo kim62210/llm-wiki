@@ -68,7 +68,7 @@ MoE에서 오류 감소는 활성 용량 증가와 전문가 수 확장 두 경�
 
 ## 관련 문서
 
-- [[Neural Scaling Laws]] -- Kaplan/Chinchilla 스케일링 법칙 기초
+- [[neural-scaling-laws|Neural Scaling Laws]] -- Kaplan/Chinchilla 스케일링 법칙 기초
 - [[Sparsely-Gated MoE]] -- MoE 원논문
 - [[Mixtral 8x7B]] -- 실전 Sparse MoE 모델
 - [[DeepSeek-V3]] -- MLA + 보조 손실 없는 MoE 최신 구현

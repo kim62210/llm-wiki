@@ -3,10 +3,10 @@ title: Context Engineering (컨텍스트 엔지니어링)
 aliases: ["context engineering", "컨텍스트 엔지니어링", Context Engineering, context engineering]
 category: concepts
 page_type: concept
-tags: [context-engineering, paradigm, 2025, agentic-era, kv-cache]
-sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md, raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/context-engineering.md, raw/hot-topics-sources/2026-04-10/001-effective-context-engineering-for-ai-agents.md, raw/hot-topics-sources/2026-04-10/002-acon-optimizing-context-compression-for-long-horizon-llm-agents.md, raw/hot-topics-sources/2026-04-10/003-agentic-context-engineering-evolving-contexts-for-self-improving-language-models.md, raw/hot-topics-sources/2026-04-10/004-agentfold-long-horizon-web-agents-with-proactive-context-management.md, raw/hot-topics-sources/2026-04-10/005-context-rot-how-increasing-input-tokens-impacts-llm-performance.md]
+tags: [context-engineering, paradigm, 2025, agentic-era, kv-cache, context-rot, compaction]
+sources: [raw/2026-04-09-evolution-of-ai-agentic-patterns.md, raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/context-engineering.md, raw/hot-topics-sources/2026-04-10/001-effective-context-engineering-for-ai-agents.md, raw/hot-topics-sources/2026-04-10/002-acon-optimizing-context-compression-for-long-horizon-llm-agents.md, raw/hot-topics-sources/2026-04-10/003-agentic-context-engineering-evolving-contexts-for-self-improving-language-models.md, raw/hot-topics-sources/2026-04-10/004-agentfold-long-horizon-web-agents-with-proactive-context-management.md, raw/hot-topics-sources/2026-04-10/005-context-rot-how-increasing-input-tokens-impacts-llm-performance.md, raw/2026-05-06-blog-anthropic-effective-context-engineering.md]
 created: 2026-04-09
-updated: 2026-04-10
+updated: 2026-05-06
 ---
 # Context Engineering (컨텍스트 엔지니어링)
 
@@ -100,6 +100,30 @@ Karpathy가 제안한 멘탈 모델: LLM 시스템을 운영체제로 보는 관
 | 무엇을 밖으로 뺄까? | 파일, RAG, 메모리, 도구 호출 결과로 외부화 |
 
 이 표를 보면 context engineering은 단순 프롬프트 작성이 아니라 **정보 배치와 예산 관리**에 더 가깝다는 점이 드러난다.
+
+## Anthropic 2025-09 글의 추가 인사이트
+
+### Context Rot 메커니즘
+
+**Context rot** = 컨텍스트 윈도우 토큰 수가 증가할수록 모델이 그 안의 정보를 정확히 회상하는 능력이 저하되는 현상. 원인은 트랜스포머의 **n² pairwise 토큰 관계**로 인한 어텐션 분산이다.
+
+→ "긴 컨텍스트 = 모든 토큰 동일 신호"라는 가정은 깨졌다. **신호 대 잡음 비율(signal-to-noise ratio)** 관점에서 설계해야 한다.
+
+### "Goldilocks Zone" 시스템 프롬프트
+
+Anthropic의 권고: 시스템 프롬프트는 너무 모호하지도 너무 brittle하지도 않은 **Goldilocks zone**을 추구. XML 태그나 Markdown 헤더로 명확히 섹션 구분 (`<background_information>`, `<instructions>` 등).
+
+### Few-Shot 예시 원칙
+
+> "diverse, canonical" 예시 사용. 모든 엣지 케이스를 우겨넣지 말 것 — 다양한 표준 케이스로 충분.
+
+### 장기 작업 3가지 전략 (요약)
+
+1. **Compaction** — 컨텍스트 한계 직전 대화 압축. "overly aggressive compaction can result in the loss of subtle but critical context"
+2. **Structured Note-Taking** — 외부 NOTES.md/todo.md (Claude playing Pokémon 사례)
+3. **Sub-Agent Architectures** — 1,000-2,000 토큰 압축 요약만 메인으로 반환
+
+자세한 글 요약은 [[effective-context-engineering-2025-summary]] 참조.
 
 ## 여전히 불충분한 이유
 

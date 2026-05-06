@@ -2,11 +2,11 @@
 title: Meta Muse Spark
 category: tooling
 page_type: entity
-project: Meta Superintelligence Labs
-tags: [meta, muse-spark, [[multimodal-foundation-[[open-source-ai-movement-2026|model]]s|multimodal]], multi-agent, reasoning, superintelligence]
-sources: [raw/2026-04-14-ai-hot-topics-100.md]
+project: Muse Spark
+tags: [meta, muse-spark, multimodal, multi-agent, reasoning, superintelligence, Alexandr-Wang, closed-source, April-2026]
+sources: [raw/2026-04-14-ai-hot-topics-100.md, raw/2026-04-27-harvest-openai-xai-meta.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-27
 ---
 
 ## 개요
@@ -110,9 +110,20 @@ Meta는 다음 영역에서 여전히 성능 격차가 존재함을 공식적으
 
 Meta Superintelligence Labs(MSL)은 전 Scale AI CEO Alexandr Wang이 이끄는 조직으로, Meta의 AI 연구를 "개인 초지능" 목표로 재편한다. Muse Spark는 MSL 체제 하에서 발표된 첫 번째 주요 모델이며, 기존 Llama 계열과 달리 아키텍처부터 전면 재설계되었다.
 
+## 2026-04 업데이트: 클로즈드 소스 전략 확인
+
+2026년 4월 공식 발표를 통해 Muse Spark가 Llama 시리즈와 달리 **클로즈드 소스**로 유지됨이 재확인됐다. Meta Superintelligence Labs는 Alexandr Wang(전 Scale AI CEO) 수장 체제로 안착했으며, Muse Spark는 Meta AI 앱과 meta.ai의 핵심 엔진으로 30억+ 사용자에게 서비스 중이다.
+
+**[[llama-4-scout-maverick]] 과의 전략적 분화:**
+- Llama 4 (Scout/Maverick): 오픈 웨이트, 커뮤니티/기업 파인튜닝용
+- Muse Spark: 클로즈드, Meta 직접 서비스 최고 성능 모델
+
+Muse Spark가 미래 Llama 시리즈의 교사 모델(codistillation)로 활용될 가능성이 있다. [[ai-game-development]] 분야에서 Meta Quest 플랫폼과의 연계 가능성도 논의 중이다.
+
 ## 관련 문서
 
+- [[meta-llama]] - Llama 오픈 웨이트 전략과 Muse Spark 클로즈드 전략 대비
+- [[llama-4-scout-maverick]] - 동기 출시된 오픈 웨이트 모델
+- [[ai-game-development]] - Meta의 게임 AI 활용 방향
 - [[claude-opus-4-6]] - Anthropic의 최신 프론티어 모델
-- [[gemini-3-1-pro]] - Google의 경쟁 프론티어 모델
 - [[gpt-5-4]] - OpenAI의 최신 프론티어 모델
-- [[deepseek-v3-2]] - DeepSeek의 오픈소스 프론티어 모델

@@ -113,8 +113,9 @@ $$\mathcal{L}(\theta) = \mathbb{E}_{x \sim p_{\text{data}}} [\log p_\theta(x)]$$
 
 ## 관련 문서
 
-- [[autoencoders-vae]] - 잠재 변수 기반 생성 모델 비교
+- [[autoencoders-vae]] - 잠재 변수 기반 생성 모델 비교 (VAE)
 - [[diffusion-models]] - 확률 흐름 ODE와의 연결
+- [[continuous-normalizing-flow]] - CNF 상세: Neural ODE 기반 연속 흐름
 - [[score-matching-diffusion]] - NF와 스코어 매칭의 이론적 연결
 - [[neural-ode]] - 연속 정규화 흐름의 기반 수학
 - [[gans]] - 경쟁 생성 모델 비교

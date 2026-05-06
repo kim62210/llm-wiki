@@ -3,10 +3,10 @@ title: OpenHands - 자율 소프트웨어 엔지니어링 에이전트
 category: tooling
 page_type: entity
 project: OpenHands
-tags: [autonomous-[[coding-agent|agent]], swe-agent, open-source, coding, github, devin]
-sources: [raw/2026-04-14-ai-hot-topics-100.md]
+tags: [autonomous-agent, swe-agent, open-source, coding, github, devin, eventstream, codeact, mcp, all-hands-ai]
+sources: [raw/2026-04-14-ai-hot-topics-100.md, raw/2026-05-06-coding-harness-openhands.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-05-06
 ---
 
 # OpenHands / Devin
@@ -109,9 +109,189 @@ OpenHands는 GitHub App으로 설치하여 이슈에 자동 반응하는 워크�
 - 벤치마크 결과는 index.openhands.dev에서 실시간 확인 가능
 - v1.6.0 기준 GitHub 스타 70K+, 기여자 490명으로 오픈소스 코딩 에이전트 중 최대 커뮤니티
 
+## V1 SDK 아키텍처 (2025-2026)
+
+OpenHands V1 SDK 출시 후 정착된 아키텍처 (arXiv:2511.03690).
+
+### Event sourcing core
+
+> "At V1's core lies an event-sourcing pattern treating all interactions as immutable events appended to a log."
+
+```mermaid
+flowchart TD
+    User[사용자 입력] --> CS[ConversationState<br/>유일한 stateful 컴포넌트]
+    CS --> Meta[Mutable metadata<br/>agent_status, stats, policy]
+    CS --> Log[Append-only EventLog]
+    Log --> E1[Event 1]
+    Log --> E2[Event 2]
+    Log --> E3[Event N]
+    Lock[FIFO Lock] --> CS
+    CS --> Persist[Persistence<br/>base_state.json + 개별 event JSON]
+```
+
+### Event 클래스 위계
+
+- 베이스 `Event`: "immutable structure (ID, timestamp, source) with type-safe serialization"
+- `LLMConvertibleEvent`: LLM에 전달 가능
+- 내부 events: state management과 control flow, LLM 노출 X
+
+### ConversationState (유일한 stateful 컴포넌트)
+
+> "A FIFO lock ensures thread-safe updates through a two-path pattern: state-only updates for metadata changes, and event-based updates that append to the log."
+
+### Persistence
+
+> "dual-path design—only new events write to disk, avoiding rewrites of large histories"
+
+> "Conversations resume by loading base_state.json and replaying events from the directory, with agents automatically detecting incomplete conversations and continuing from the last processed event."
+
+## Action–Execution–Observation 패턴
+
+| 단계 | 역할 |
+|---|---|
+| **Action** | "Specifies the input schema for a tool call. LLM-generated arguments are validated against a Pydantic model before execution." |
+| **Execution** | `ToolExecutor`. "receives a validated Action and performs the underlying execution." |
+| **Observation** | "Captures the output of the execution, defining a structured return schema, and converting results (or errors) into a LLM-compatible format." |
+
+이 분리로 **타입 안정성 + LLM 호환 마샬링 + 에러 통합**이 일관되게 보장.
+
+## Skills (AgentContext)
+
+> "AgentContext centralizes all inputs that shape LLM behavior, including prefixes/suffixes for system/user messages and user-defined Skill objects."
+
+### 정의 방식
+
+> "defined programmatically or loaded from markdown files (e.g., .openhands/skills/, or compatible formats like .cursorrules, agents.md)."
+
+### Trigger 모드
+
+- `trigger=None` — 항상 활성
+- Keyword 기반 conditional — user input 키워드 매칭으로 활성
+
+→ Cursor의 `.cursorrules`, GitHub Copilot의 `agents.md`와 호환. **다른 도구의 컨벤션을 직접 재사용** 가능.
+
+## MCP 통합 (first-class)
+
+> "Their JSON Schemas are automatically translated into Action models, and their results are surfaced as structured Observation."
+
+구현:
+
+- `MCPToolDefinition`
+- `MCPToolExecutor` — "delegates execution to FastMCP's MCPClient, which manages server communication and transport details"
+
+> "external MCP tools behave identically to native tools—validated on input, type-safe at runtime, and serialized for LLM consumption."
+
+## Workspace 추상화
+
+### Opt-in sandboxing 철학
+
+> "Sandboxing should be opt-in, not universal. V1 unifies agent and tool execution in a single process by default, aligning with MCP's assumptions."
+
+### 두 가지 워크스페이스 모드
+
+| 모드 | 동작 |
+|---|---|
+| **LocalWorkspace** | "the host filesystem and shell" 직접 사용. 컨테이너 오버헤드 없음 |
+| **RemoteWorkspace** | `DockerWorkspace`, `APIRemoteWorkspace`, Modal, Daytona, E2B. HTTP로 Agent Server에 위임 |
+
+> "Each agent instance runs in an independent container with a dedicated file system, environment, and resource. This containerized design simplifies deployment and enables SaaS-style multi-tenancy while preserving workspace isolation."
+
+### Factory pattern
+
+> "When instantiated with a string path or LocalWorkspace, it returns a LocalConversation that executes the full agent loop in-process. When provided a RemoteWorkspace, the same call transparently constructs a RemoteConversation."
+
+→ 동일 코드가 로컬/원격에서 동작.
+
+## Runtime details
+
+### Client-server architecture
+
+- Client: `openhands/runtime/impl/action_execution/action_execution_client.py`
+- Runtimes: `openhands/runtime/impl/docker/docker_runtime.py`, `local/local_runtime.py`
+
+### 통신
+
+> "communicates with the action execution server over RESTful API, sending actions and receiving observations"
+
+### Container 내부 컴포넌트
+
+- ActionExecutor (코어)
+- Bash Shell
+- Browser environment
+- Plugins (Jupyter Server 등)
+
+| 플러그인 | 위치 | 기능 |
+|---|---|---|
+| Jupyter | `openhands/runtime/plugins/jupyter/__init__.py` | Kernel Gateway 통한 IPython cell 실행 |
+| VS Code | `openhands/runtime/plugins/vscode/*` | 토큰화된 connection URL 노출 |
+| Agent Skills | `openhands/runtime/plugins/agent_skills/*` | 능력 확장 |
+
+### Volume management
+
+> "OpenHands supports bind mounts and Docker named volumes in SandboxConfig.volumes" — overlay copy-on-write 가능. Overlay 모드는 `SANDBOX_VOLUME_OVERLAYS` env로 활성화.
+
+## Agent Server REST endpoints
+
+- `POST /conversations`
+- `GET /conversations/id`
+- WebSocket — 실시간 event 스트리밍
+
+> "When a RemoteConversation starts, it serializes agent configuration—including LLM settings, tools, and context—into JSON and submits it to /conversations. The server reconstructs the agent, launches a local execution loop, and streams structured events back in real time."
+
+## 보안 모델
+
+### SecurityAnalyzer
+
+도구 호출을 위험 등급으로 평가: `low`, `medium`, `high`, `unknown`.
+
+### ConfirmationPolicy
+
+> "whether user approval is required before execution based on the action's details and assessed risk"
+
+> "When approval is required, the agent pauses in a special WAITING_FOR_CONFIRMATION state until the user explicitly approves or rejects the action."
+
+### SecretRegistry
+
+> "secure, late-bound, and remotely manageable credentials"
+
+> "ensures strict per-session isolation. Tools access secrets only at execution time, and all secret values appearing in outputs are masked to prevent leakage."
+
+### 분리 원칙
+
+> "This architecture separates risk assessment from enforcement, allowing developers [to] define custom SecurityAnalyzer and ConfirmationPolicy without touching tool executors or core logic."
+
+## CodeAct paradigm
+
+> "OpenHands includes a strong generalist agent implemented based on the CodeAct architecture, with additions for web browsing and code editing specialists."
+
+> "The CodeAct agent, without any modifications to its system prompt, demonstrates competitive performance across three major task categories: software development, web interaction, and miscellaneous tasks."
+
+CodeAct = **모든 액션을 코드 실행으로 표현** (별도 tool calling 포맷 대신).
+
+## 핵심 설계 원칙 (4)
+
+1. **Optional isolation** — Local by default, sandboxed when needed
+2. **Stateless by default** — Immutable components; single ConversationState as source of truth
+3. **Strict separation of concerns** — 4 modular packages (SDK, Tools, Workspace, Server)
+4. **Two-layer composability** — Independent deployment packages + typed component extension
+
+## 결과
+
+- **SWE-Bench Verified**: 72.8%
+- **GAIA**: 67.9%
+- 100+ 언어 모델 지원
+- GitHub 72.7k 스타, 9.2k forks
+- 사용 기업: TikTok, VMware, Roche, Amazon, Netflix, Mastercard, Red Hat, MongoDB, Apple, NVIDIA, Google
+- 배포 옵션: Software Agent SDK (Python), CLI, Local GUI (REST + React), Cloud Platform, Self-hosted Kubernetes
+
 ## 관련 문서
 
 - [[swe-bench-pro]] -- SWE-bench Pro 벤치마크
 - [[swe-bench-ecosystem-2026]] -- SWE-bench 생태계 2026년 현황
 - [[ai-code-review-tools]] -- AI 코드 리뷰 도구
 - [[how-coding-agents-work]] -- 코딩 에이전트 작동 원리
+- [[swe-agent|SWE-agent (Princeton/Stanford)]] -- ACI 연구 산출물
+- [[mcp-protocol|MCP]] -- first-class 통합
+- [[devin-2-0-release|Devin 2.0]] -- 비교 대상 closed-source 자율 에이전트
+- [[coding-harness-comparison|코딩 에이전트 하네스 횡단 비교]]
+- [[event-sourcing-pattern]] -- EventStream의 이론적 기반

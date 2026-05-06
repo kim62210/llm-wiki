@@ -3,10 +3,10 @@ title: veRL - ByteDance RL 학습 프레임워크
 category: tooling
 page_type: entity
 project: veRL
-tags: [tooling, verl, bytedance, rlhf, dapo, grpo, hybridflow, distributed-training, post-training]
-sources: [raw/2026-04-14-ml-training-deep-dive.md]
+tags: [tooling, verl, bytedance, rlhf, dapo, grpo, hybridflow, distributed-training, post-training, megatron, fsdp2]
+sources: [raw/2026-04-14-ml-training-deep-dive.md, raw/2026-05-06-train-harness-verl.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-05-06
 ---
 
 # veRL - ByteDance RL 학습 프레임워크
@@ -86,6 +86,28 @@ RLHF 데이터플로우는 생성(rollout), 보상 계산, 어드밴티지 추�
 | ReMax | - |
 | PRIME | 프로세스 보상 + RL 통합 |
 | GSPO | - |
+| KL_Cov / Clip_Cov | entropy-based 변형 |
+
+## Training / Rollout backend 옵션
+
+verl은 backend가 plug-in 가능한 hybrid 아키텍처다.
+
+**Training engines**:
+- **FSDP / FSDP2**: CPU offload 지원
+- **Megatron-LM**: LoRA + router replay (MoE 학습), 3D parallelism
+
+**Rollout engines**:
+- **vLLM** (≥0.8.2 권장)
+- **SGLang**: multi-turn + VLM 지원
+- **HF Transformers**: 단순 케이스
+
+각 worker는 단일 controller가 dispatch하지만 SPMD로 collective 수행 → 컨트롤 오버헤드 감소. Multi-turn rollout, tool-calling, sequence packing, FlashAttention 2 모두 native 지원.
+
+## rollout vs policy update 정책
+
+- **기본**: 동기 (rollout 끝나면 학습)
+- **옵션**: 비동기 partial rollout
+- **DAPO 모드**: dynamic sampling — token-level KL/clip 정책 분리
 
 ## DAPO: veRL의 대표 성과
 
@@ -134,6 +156,14 @@ DAPO와 함께 공개된 수학 추론 학습 데이터셋으로, 17,000개의 �
 - [DAPO: An Open-Source LLM Reinforcement Learning System at Scale (2025)](https://arxiv.org/abs/2503.14476)
 - [veRL 공식 문서](https://verl.readthedocs.io/)
 
+## 운영 사례 추가
+
+- ByteDance Seed의 사내 RL post-training 인프라 (Doubao 모델 등)
+- AMD ROCm 통합으로 ROCm 클러스터에서도 운영 가능 — AMD ROCm Blogs 게시
+- Intelligent-Internet/ii_verl, verl_prime 등 다수 fork
+- HybridFlow 논문: SOTA baseline 대비 **1.53x ~ 20.57x throughput improvement**
+- 671B 모델 + 수백 GPU expert parallel 학습 데모
+
 ## 관련 문서
 
 - [[rlhf-pipeline]] -- RLHF 전체 파이프라인
@@ -141,7 +171,11 @@ DAPO와 함께 공개된 수학 추론 학습 데이터셋으로, 17,000개의 �
 - [[grpo]] -- GRPO 알고리즘
 - [[ppo-for-llms]] -- PPO의 LLM 적용
 - [[openrlhf]] -- 동일 영역의 OpenRLHF 프레임워크
+- [[deepspeed-chat]] -- Hybrid Engine 원조
+- [[nemo-aligner]] -- NVIDIA Megatron stack 대안
+- [[trl-library]] -- HuggingFace post-training
 - [[reward-model-training]] -- 보상 모델 학습
 - [[gpu-cluster-scheduling]] -- GPU 클러스터 스케줄링
 - [[training-frameworks]] -- 학습 프레임워크 전반
 - [[model-checkpointing-sharding]] -- 체크포인팅과 샤딩
+- [[rl-harness-frameworks-comparison]] -- RL harness 통합 비교

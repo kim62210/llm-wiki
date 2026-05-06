@@ -3,9 +3,9 @@ title: 에이전트 비용 최적화 (Agent Cost Optimization)
 category: agents
 page_type: concept
 tags: [cost-optimization, token-budget, model-routing, prompt-caching, cost-efficiency, LLM-economics]
-sources: [raw/2026-04-16-topic-queue-500.md]
+sources: [raw/2026-04-16-topic-queue-500.md, raw/2026-05-06-harness-prod-cost-control-prompt-cache.md]
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-05-06
 ---
 # 에이전트 비용 최적화 (Agent Cost Optimization)
 
@@ -110,8 +110,48 @@ Anthropic의 경우 캐시 히트 시 입력 토큰 비용이 기본가의 10%�
 | Cache Hit Rate | 캐시 히트 비율 (목표: 70%+) |
 | Model Distribution | 모델별 호출 비율 |
 
+## 2026-05-06 보강 — Anthropic 가격 정확치 (per 1M tokens)
+
+| 모델 | Base Input | 5min Cache Write | 1h Cache Write | Cache Hit | Output |
+|---|---|---|---|---|---|
+| Opus 4.7 | $5 | $6.25 (1.25x) | $10 (2x) | $0.50 (0.1x) | $25 |
+| Sonnet 4.6 | $3 | $3.75 | $6 | $0.30 | $15 |
+| Haiku 4.5 | $1 | $1.25 | $2 | $0.10 | $5 |
+
+### Pricing Multiplier 정리
+
+- 5-min cache write: **1.25x base**
+- 1-hour cache write: **2x base**
+- Cache read: **0.1x base** (90% off)
+
+### Break-even (Opus 4.7, 100K token system prompt)
+
+- First request (cache write): **$0.6255**
+- Subsequent (cache hit, within 5 min): **$0.0505** (92% reduction)
+- **Break-even**: 5분 window 내 약 13 회 재사용 시 cache 비용 ≤ uncached 처리 비용
+
+### Batch API 활용
+
+- Batch API 가격은 standard 의 **50%**
+- 별도 quota pool — realtime 한도 영향 없음
+- 비실시간 작업 (예: bulk classification, dataset preprocessing) 은 1순위 후보
+
+### Cost Control Strategy 5 단계
+
+1. **Token Budget Guard** — 회당/세션/일일 3단계 cap
+2. **Tier-based Routing** — Critical Opus, Standard Sonnet, Volume Haiku
+3. **Autorun Cost Cap** — `--max-cost` 플래그 또는 hook 으로 누적 추적
+4. **Cache hit rate monitoring** — 응답의 `cache_read_input_tokens` 비율 ≥ 50% 목표
+5. **ROI Threshold** — system prompt ≥ 1024 토큰 (Sonnet 기준) + 5분 내 ≥ 13 회
+   재사용 시 캐싱 활성화
+
+자세한 cache 경제 모델은 [[prompt-cache-cost-economics]] 참고.
+
 ## 관련 문서
 
 - [[prompt-caching-agentic]] - 프롬프트 캐싱 심화
 - [[how-coding-agents-work]] - 코딩 에이전트 내부 동작
 - [[agent-observability-tracing]] - 비용 추적을 위한 옵저버빌리티
+- [[prompt-cache-cost-economics]] - cache 가격/break-even/invalidation
+- [[anthropic-api-rate-limits]] - cache 가 ITPM 에 미치는 영향
+- [[agent-error-budget-sre]] - 비용 SLI

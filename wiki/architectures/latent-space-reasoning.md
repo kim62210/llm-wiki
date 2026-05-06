@@ -107,5 +107,5 @@ CoT 데이터 없이도 학습 가능하다. 잠재 반복 횟수를 보상 신�
 
 - [[test-time-compute]] - TTC의 아키텍처 레벨 구현 방법론
 - [[chain-of-thought]] - 외재화 추론과의 비교 기준
-- [[Transformer 아키텍처]] - 기반 아키텍처
+- [[transformer-architecture|Transformer 아키텍처]] - 기반 아키텍처
 - [[moe-routing-advances]] - 유사하게 적응형 연산을 추구하는 방향

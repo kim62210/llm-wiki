@@ -64,5 +64,5 @@ CLIP(Contrastive Language-Image Pretraining)은 이미지 인코더와 텍스트
 - [[RoPE와 위치 인코딩]]
 - [[CLIP과 멀티모달 임베딩]]
 - [[attention-mechanism-overview]]
-- [[Transformer 아키텍처]]
+- [[transformer-architecture|Transformer 아키텍처]]
 - [[contrastive-learning]]

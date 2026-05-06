@@ -85,5 +85,5 @@ DPO(Direct Preference Optimization)는 이 KL-제약 최적화 문제를 닫힌 
 - [[information-theory]]
 - [[autoencoders-vae]]
 - [[cross-entropy-loss]]
-- [[RLHF 파이프라인]]
+- [[rlhf-pipeline|RLHF 파이프라인]]
 - [[DPO와 선호 학습]]

@@ -2,10 +2,11 @@
 title: MT-Bench
 category: tooling
 page_type: entity
-tags: [tooling, entity, benchmark, evaluation, multi-turn, llm-judge, mt-bench]
+project: MT-Bench
+tags: [tooling, entity, benchmark, evaluation, multi-turn, llm-judge, mt-bench, lmsys, gpt4-judge]
 sources: [raw/2026-04-14-ml-foundations-gap.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-27
 ---
 # MT-Bench
 
@@ -93,9 +94,49 @@ MT-Bench는 LMSYS가 운영하는 Chatbot Arena와 한 쌍을 이룬다.
 
 **판정 모델 선택**: GPT-4 외에 Claude, Gemini 등을 판정자로 사용하여 교차 검증하면 편향을 줄일 수 있다.
 
+## Chatbot Arena와의 종합 비교
+
+[[chatbot-arena]]는 MT-Bench와 함께 LMSYS의 양대 평가 축을 형성한다. 두 접근의 보완성은 다음 표로 정리된다.
+
+| 항목 | MT-Bench | Chatbot Arena |
+|------|----------|--------------|
+| 질문 수 | 80개 (고정) | 무제한 (사용자 제공) |
+| 평가자 | GPT-4 자동 판정 | 인간 크라우드소싱 |
+| 평가 방식 | 절대 점수 (1-10) + 쌍대 비교 | Elo 레이팅 |
+| 재현성 | 높음 | 낮음 |
+| 오염 저항성 | 낮음 (질문 공개) | 높음 (즉흥 질문) |
+| 비용 | GPT-4 API 비용 | 무료 (자원봉사) |
+| 결과 신뢰도 | 통계적으로 작은 샘플 | 대규모에서 안정적 |
+
+두 지표의 순위 상관관계가 높게 나타나면서 [[llm-as-judge]] 접근의 타당성이 검증되었다.
+
+## 평가 파이프라인 구조
+
+```mermaid
+sequenceDiagram
+    participant E as 평가자
+    participant M as 대상 모델
+    participant J as GPT-4 판정자
+    participant DB as 결과 DB
+
+    E->>M: 1턴 질문 전송
+    M-->>E: 1턴 응답 수신
+    E->>M: 2턴 후속 질문 전송
+    M-->>E: 2턴 응답 수신
+    E->>J: [질문 + 응답] 판정 요청
+    J-->>E: 1-10점 + 판정 근거 반환
+    E->>DB: 점수 기록
+    DB-->>E: 카테고리별 평균 점수 집계
+```
+
+위 시퀀스 다이어그램은 MT-Bench의 2턴 평가 흐름을 보여준다. 각 질문마다 이 사이클이 반복되며, 80개 질문 × 2턴 = 160번의 응답이 생성된다.
+
 ## 관련 문서
 - [[mtbench-llmjudge]] -- MT-Bench + LLM-as-Judge
-
+- [[chatbot-arena]] -- LMSYS 인간 선호 기반 평가 플랫폼
+- [[llm-as-judge]] -- LLM 판정 기반 평가 방법론
+- [[ai-evaluation]] -- AI 평가 방법론 전반
+- [[benchmark-contamination]] -- 벤치마크 오염 문제 (MT-Bench도 취약)
 - [[mmlu]] -- 지식 평가 벤치마크
 - [[humaneval]] -- 코드 생성 벤치마크
 - [[gsm8k]] -- 수학 추론 벤치마크

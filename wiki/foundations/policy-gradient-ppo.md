@@ -100,6 +100,6 @@ $$r_{\text{eff}}(x, y) = r_\phi(x, y) - \beta \cdot \log\frac{\pi_\theta(y \mid 
 
 - [[markov-decision-process]]
 - [[q-learning-dqn]]
-- [[RLHF 파이프라인]]
+- [[rlhf-pipeline|RLHF 파이프라인]]
 - [[DPO와 선호 학습]]
 - [[kl-divergence]]

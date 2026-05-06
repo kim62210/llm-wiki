@@ -1,11 +1,12 @@
 ---
 title: Mamba-3 - 차세대 상태 공간 모델 (SSM)
 category: architectures
-page_type: concept
-tags: [SSM, state-space-model, Mamba, MIMO, complex-state, sequence-modeling, inference-efficiency]
+page_type: entity
+project: Mamba
+tags: [SSM, state-space-model, Mamba, MIMO, complex-state, sequence-modeling, inference-efficiency, hybrid-attention, SSD]
 sources: [raw/2026-04-14-ai-hot-topics-100.md]
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-27
 ---
 
 ## 개요
@@ -113,11 +114,14 @@ graph TB
 Mamba-3는 dstate=64로 Mamba-2의 dstate=128과 동등한 perplexity를 달성하여, 실질적으로 2배의 디코드 지연시간 감소를 제공한다. 모든 선형 모델이 긴 시퀀스에서 최적화된 어텐션([[vllm-v1-engine|vLLM]]) 대비 유의미하게 빠르다. SSM의 고정 크기 상태 벡터는 에이전트가 장기 대화를 유지할 때 컨텍스트 팽창 없이 과거 정보를 압축하는 특성이 있어, [[context-folding|Context Folding]] 개념과 맞닿아 있다.
 
 ## 관련 문서
+
+- [[mamba-architecture]] - Mamba 1/2 기본 구조 및 선택적 스캔 상세
+- [[ssm]] - 상태 공간 모델 개념 전반
+- [[transformer]] - 비교 기준 아키텍처
+- [[positional-encoding]] - 위치 정보 처리 방식 비교 (Mamba는 암묵적 처리)
+- [[pre-ln-vs-post-ln]] - 하이브리드 학습 안정성과 관련된 정규화 위치
 - [[recurrentgemma-griffin]] -- RecurrentGemma / Griffin
 - [[hgrn2]] -- HGRN2 (계층적 게이팅 선형 RNN)
-- [[gated-attention]]
-
+- [[gated-attention]] - 어텐션 변형 기법
 - [[multi-head-latent-attention]] - 어텐션 기반 KV 캐시 압축 (트랜스포머 진영의 효율화)
-- [[deepseek-mhc]] - 다중 스트림 연결 구조 (트랜스포머 아키텍처 혁신)
-- [[test-time-compute-scaling]] - 추론 시 계산 확장 패러다임
 - [[context-folding]] - 에이전트 장기 컨텍스트 관리 (SSM의 압축 특성과 연결)

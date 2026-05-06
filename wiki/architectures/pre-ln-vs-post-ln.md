@@ -126,6 +126,9 @@ Gemma 2는 Pre-LN과 Post-LN을 동시에 적용하는 하이브리드 방식으
 ## 관련 문서
 
 - [[transformer-architecture]] -- Pre-LN/Post-LN이 적용되는 전체 구조
+- [[transformer]] -- Transformer 아키텍처 전반
+- [[layer-norm-original-paper]] -- Ba et al. LayerNorm 원논문 (2016)
+- [[normalization-layers]] -- BatchNorm, LayerNorm, RMSNorm 비교
 - [[transformer-ffn]] -- 정규화가 적용되는 서브 계층 중 하나
 - [[self-attention-mechanism]] -- 정규화가 적용되는 또 다른 서브 계층
 - [[gated-attention]] -- 학습 안정성에 기여하는 상보적 기법

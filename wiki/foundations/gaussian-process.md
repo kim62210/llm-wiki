@@ -2,10 +2,10 @@
 title: 가우시안 프로세스 (Gaussian Process)
 category: foundations
 page_type: concept
-tags: [gaussian-process, gp, 커널, 베이지안, 함수분포, 불확실성추정, gp회귀]
+tags: [gaussian-process, gp, 커널, 베이지안, 함수분포, 불확실성추정, gp회귀, sparse-gp, bayesian-optimization, NTK]
 sources: [raw/2026-04-16-topic-queue-500.md]
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-04-27
 ---
 
 # 가우시안 프로세스 (Gaussian Process, GP)
@@ -97,10 +97,24 @@ stateDiagram-v2
 
 표준 GP의 계산 복잡도는 $O(n^3)$ (행렬 역산). 학습 데이터가 10,000개를 넘으면 실용성이 낮아진다.
 
-**해결책:**
+**근사 방법:**
+
+```mermaid
+flowchart TD
+    GP["완전 GP O(N³)"]
+    GP --> Ind["유도점 기반 방법"]
+    GP --> Rand["랜덤 특징 (RFF)"]
+    GP --> Struct["구조적 근사 (KISS-GP)"]
+
+    Ind --> FITC["FITC"]
+    Ind --> VFE["VFE (변분 자유 에너지)"]
+    Ind --> SVGP["SVGP (미니배치 학습 가능)"]
+```
+
 - **Inducing points (희소 GP)**: $m \ll n$개의 유도점으로 근사. 복잡도 $O(nm^2)$
+- **SVGP (Stochastic Variational GP)**: 미니배치 학습으로 수백만 데이터에도 적용 가능
 - **Deep GP**: GP의 계층적 합성. 표현력 증가
-- **Pathwise conditioning**: 효율적 사후 샘플링
+- **Random Fourier Features (RFF)**: 커널을 명시적 특징으로 근사해 선형 GP 구현
 
 ### GP vs. 딥러닝
 
@@ -110,10 +124,54 @@ stateDiagram-v2
 | 불확실성 | 정확한 베이지안 | 추가 기법 필요 (MC Dropout 등) |
 | 계산 비용 | $O(n^3)$ | $O(n)$ (미니배치) |
 | 커널 설계 | 도메인 지식 필요 | 자동 특징 추출 |
+| 해석 가능성 | 높음 | 낮음 |
+
+## 코드 예시 (GPyTorch)
+
+```python
+import torch
+import gpytorch
+
+class ExactGPModel(gpytorch.models.ExactGP):
+    def __init__(self, train_x, train_y, likelihood):
+        super().__init__(train_x, train_y, likelihood)
+        self.mean_module = gpytorch.means.ConstantMean()
+        self.covar_module = gpytorch.kernels.ScaleKernel(
+            gpytorch.kernels.RBFKernel()
+        )
+
+    def forward(self, x):
+        mean_x = self.mean_module(x)
+        covar_x = self.covar_module(x)
+        return gpytorch.distributions.MultivariateNormal(mean_x, covar_x)
+
+likelihood = gpytorch.likelihoods.GaussianLikelihood()
+model = ExactGPModel(train_x, train_y, likelihood)
+
+# 하이퍼파라미터 학습 (주변 우도 최대화)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.1)
+mll = gpytorch.mlls.ExactMarginalLogLikelihood(likelihood, model)
+
+for _ in range(100):
+    optimizer.zero_grad()
+    loss = -mll(model(train_x), train_y)
+    loss.backward()
+    optimizer.step()
+
+# 예측: 평균 + 95% 신뢰 구간
+model.eval()
+with torch.no_grad(), gpytorch.settings.fast_pred_var():
+    preds = likelihood(model(test_x))
+    mean = preds.mean
+    lower, upper = preds.confidence_region()
+```
 
 ## 관련 문서
 
 - [[bayesian-inference]] - GP의 이론적 기반인 베이지안 추론
+- [[bayesian-deep-learning]] - 딥러닝에서의 베이지안 접근과 GP의 관계
+- [[kernel-methods]] - GP의 핵심 수학적 기반인 커널 이론
+- [[reproducing-kernel-hilbert-space]] - 커널 함수의 함수 공간 이론
 - [[neural-tangent-kernel]] - 무한 신경망과 GP의 연결
 - [[probability-statistics-for-ml]] - GP가 의존하는 확률론적 기초
 - [[causal-inference-ml]] - 비모수 방법의 또 다른 응용

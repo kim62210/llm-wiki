@@ -64,6 +64,6 @@ flowchart LR
 
 ## 관련 문서
 
-- [[Neural Scaling Laws]] -- Kaplan 스케일링 법칙 기초
+- [[neural-scaling-laws|Neural Scaling Laws]] -- Kaplan 스케일링 법칙 기초
 - [[Chinchilla Scaling]] -- 최적 모델-데이터 비율 D=20N
 - [[MoE Transformer 스케일링 법칙]] -- MoE에서의 스케일링 이론

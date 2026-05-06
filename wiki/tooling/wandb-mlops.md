@@ -145,8 +145,8 @@ W&B의 핵심 가치는 "실험의 재현성과 비교 가능성"이다. 여러 
 
 ## 관련 문서
 
-- [[LangSmith - LLM 애플리케이션 관측 플랫폼]]
+- [[langsmith|LangSmith - LLM 애플리케이션 관측 플랫폼]]
 - [[분산 학습]]
-- [[LLM 관측 플랫폼]]
+- [[llm-observability-platforms|LLM 관측 플랫폼]]
 - [[파인튜닝 기법]]
 - [[MLOps 기초]]

@@ -117,4 +117,4 @@ Snell et al.(2024)의 결론:
 - [[프로세스 보상 모델]]
 - [[연쇄 추론 (Chain-of-Thought)]]
 - [[복합 AI 시스템 (Compound AI Systems)]]
-- [[Neural Scaling Laws]]
+- [[neural-scaling-laws|Neural Scaling Laws]]

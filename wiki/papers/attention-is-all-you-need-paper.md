@@ -54,4 +54,4 @@ updated: 2026-04-15
 - [[GPT-3 스케일링과 인컨텍스트 학습]]
 - [[self-attention-mechanism]]
 - [[multi-head-attention]]
-- [[Transformer 아키텍처]]
+- [[transformer-architecture|Transformer 아키텍처]]

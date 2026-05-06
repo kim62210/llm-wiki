@@ -87,4 +87,4 @@ GAM은 진행 중인 대화를 Event Progression Graph로 격리하고, 의미�
 - [[에이전트 메모리 시스템]] -- 에이전트 메모리 유형 분류 (concept)
 - [[Memory in the Age of AI Agents]] -- 에이전트 메모리 서베이 논문
 - [[Mem0 유니버설 메모리 레이어]] -- 실무 메모리 레이어 구현체
-- [[에이전틱 RAG]] -- 메모리와 검색의 교차 지점
+- [[agentic-rag|에이전틱 RAG]] -- 메모리와 검색의 교차 지점

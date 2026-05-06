@@ -86,7 +86,7 @@ CLIP(Contrastive Language-Image Pretraining)의 알려진 취약점 중 하나�
 
 ## 관련 문서
 
-- [[회로 추적]] - 기계적 해석가능성에서의 회로 분석 일반 개념
+- [[circuit-tracing|회로 추적]] - 기계적 해석가능성에서의 회로 분석 일반 개념
 - [[비전 트랜스포머]] - ViT 아키텍처 기초
 - [[CLIP]] - OpenAI CLIP 모델 및 타이포그래피 공격 배경
 - [[기계적 해석가능성]] - Anthropic 등의 해석가능성 연구 흐름

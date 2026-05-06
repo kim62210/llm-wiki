@@ -2,10 +2,10 @@
 title: 도메인 적응 (Domain Adaptation)
 category: concepts
 page_type: concept
-tags: [fine-tuning, transfer-learning, domain-adaptation, nlp, specialization]
+tags: [fine-tuning, transfer-learning, domain-adaptation, nlp, specialization, distribution-shift, DANN, covariate-shift]
 sources: [raw/2026-04-16-topic-queue-500.md]
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-04-27
 ---
 
 # 도메인 적응 (Domain Adaptation)
@@ -143,10 +143,90 @@ flowchart TD
 - [ ] 재앙적 망각(catastrophic forgetting) 모니터링 전략
 - [ ] 도메인 특화 평가셋 구축
 
+## 분포 시프트 유형 상세
+
+기존 분류 체계에서 다루지 않은 **통계적 시프트 유형**을 추가로 정리한다.
+
+| 유형 | 변화하는 것 | 가정 | 예시 |
+|------|-------------|------|------|
+| 공변량 시프트(Covariate Shift) | $P(X)$ | $P(Y \mid X)$ 고정 | 해상도 다른 이미지 |
+| 레이블 시프트(Label Shift) | $P(Y)$ | $P(X \mid Y)$ 고정 | 클래스 불균형 변화 |
+| 개념 드리프트(Concept Drift) | $P(Y \mid X)$ | 없음 | 스팸 메일 패턴 진화 |
+| 데이터셋 편향 | 수집 방식 | 없음 | 사진 배경 편향 |
+
+공변량 시프트 가정 하에서는 소스 샘플에 가중치 $w(x) = \frac{P_T(x)}{P_S(x)}$를 곱해 목적함수를 보정할 수 있다.
+
+$$\mathcal{L}_{adapted} = \sum_i w(x_i) \cdot \ell(f(x_i), y_i)$$
+
+## 비지도 도메인 적응의 피처 정렬 기법
+
+타깃 레이블이 전혀 없는 **비지도 도메인 적응(Unsupervised Domain Adaptation, UDA)** 시나리오에서는 피처 정렬(feature alignment)이 핵심 전략이다.
+
+### DANN (Domain-Adversarial Neural Networks)
+
+Ganin et al. (2015)이 제안한 도메인 적대적 신경망. Gradient Reversal Layer (GRL)를 사용해 도메인 불변 표현을 학습한다.
+
+```python
+# Gradient Reversal Layer 개념 코드
+class GradientReversalLayer(torch.autograd.Function):
+    @staticmethod
+    def forward(ctx, x, alpha):
+        ctx.alpha = alpha
+        return x.clone()
+
+    @staticmethod
+    def backward(ctx, grad_output):
+        # 역전파 시 그래디언트 부호 반전
+        return -ctx.alpha * grad_output, None
+```
+
+DANN 손실 함수: $\mathcal{L} = \mathcal{L}_{class} - \lambda \mathcal{L}_{domain}$
+
+분류기는 레이블 예측 손실을 최소화하고, 도메인 판별기는 도메인 판별 손실을 최소화하며, 특징 추출기는 레이블 손실은 낮추되 도메인 판별기를 혼란시키는 방향으로 학습된다.
+
+```mermaid
+flowchart LR
+    X[입력 X] --> FE[특징 추출기\nFeature Extractor]
+    FE --> LC[레이블 분류기\nLabel Classifier]
+    FE --> GRL[Gradient Reversal\nLayer]
+    GRL --> DD[도메인 판별기\nDomain Discriminator]
+    LC --> Loss1[분류 손실 최소화]
+    DD --> Loss2[도메인 판별 손실\n최소화 → 특징 추출기엔\n역방향 전파]
+```
+
+위 다이어그램은 DANN의 삼분 구조와 GRL을 통한 적대적 학습 흐름을 보여준다.
+
+### CORAL (Correlation Alignment)
+
+소스와 타깃의 2차 통계량(공분산 행렬)을 정렬한다.
+
+$$\mathcal{L}_{CORAL} = \frac{1}{4d^2} \| C_S - C_T \|_F^2$$
+
+계산이 간단하고 미니배치에서 효율적으로 동작한다.
+
+### MMD (Maximum Mean Discrepancy)
+
+두 분포 간의 거리를 재생 커널 힐베르트 공간(RKHS)에서 측정한다.
+
+$$\text{MMD}^2(P_S, P_T) = \left\| \mathbb{E}_{x \sim P_S}[\phi(x)] - \mathbb{E}_{x \sim P_T}[\phi(x)] \right\|^2$$
+
+## OOD 탐지와의 관계
+
+도메인 적응과 [[ood-detection]](분포 외 탐지)는 밀접히 관련되지만 목표가 다르다:
+
+- **도메인 적응**: 분포 이동 *후에도* 잘 예측하는 것 (적응)
+- **OOD 탐지**: 분포 밖 샘플을 *인식*해서 경보를 울리는 것 (탐지)
+
+실무에서는 두 접근을 함께 사용한다. OOD 탐지로 극단적 분포 이탈을 걸러내고, 도메인 적응으로 점진적 분포 이동에 대응한다. [[out-of-distribution]] 문서에서 OOD 문제 전반을 다룬다.
+
 ## 관련 문서
 - [[raft-retrieval-fine-tuning]] -- RAFT (검색 인식 파인튜닝)
-
-- [[transfer-learning]] - 사전훈련 지식을 새 태스크로 이전하는 일반 패러다임
-- [[supervised-fine-tuning]] - 레이블 데이터로 모델을 특정 태스크에 맞추는 기법
-- [[scaling-laws]] - 도메인 데이터 규모와 성능의 관계
-- [[ai-benchmarks-overview]] - 도메인별 평가 벤치마크 현황
+- [[transfer-learning]] -- 사전훈련 지식을 새 태스크로 이전하는 일반 패러다임
+- [[transfer-learning-for-nlp]] -- NLP 특화 전이학습
+- [[supervised-fine-tuning]] -- 레이블 데이터로 모델을 특정 태스크에 맞추는 기법
+- [[fine-tuning]] -- 파인튜닝 기법 상세
+- [[out-of-distribution]] -- OOD 문제 전반
+- [[ood-detection]] -- 분포 외 탐지 기법
+- [[uncertainty-estimation]] -- 불확실성 추정과 분포 시프트
+- [[scaling-laws]] -- 도메인 데이터 규모와 성능의 관계
+- [[ai-benchmarks-overview]] -- 도메인별 평가 벤치마크 현황

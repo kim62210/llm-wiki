@@ -126,7 +126,7 @@ PaLM이 LLM 발전에 기여한 핵심:
 
 ## 관련 문서
 
-- [[Neural Scaling Laws]]
+- [[neural-scaling-laws|Neural Scaling Laws]]
 - [[Gemini 아키텍처]]
 - [[GQA (Grouped Query Attention)]]
 - [[Multi-Query Attention]]

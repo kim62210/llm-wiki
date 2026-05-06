@@ -129,7 +129,7 @@ LangSmith의 가장 큰 가치는 LLM 애플리케이션의 "블랙박스 문제
 ## 관련 문서
 
 - [[LangChain]]
-- [[LLM 관측 플랫폼]]
+- [[llm-observability-platforms|LLM 관측 플랫폼]]
 - [[Weights & Biases - ML 실험 관리]]
 - [[에이전트 평가 지표와 벤치마크]]
-- [[프롬프트 엔지니어링]]
+- [[prompt-engineering|프롬프트 엔지니어링]]
