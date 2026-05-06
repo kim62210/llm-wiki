@@ -93,7 +93,7 @@ mHC는 다중 스트림이라는 추가 연산에도 불구하고 오버헤드�
 
 mHC는 어텐션 메커니즘이나 데이터 개선이 아닌, **아키텍처 설계 수준의 근본적 혁신**이다. 향후 LLM 확장이 계산량만큼이나 구조적 안정성에 의존함을 시사한다. DeepSeek이 2026년 더 큰 모델을 훈련하기 위한 기반 기술로 활용될 전망이며, SCMP에 따르면 DeepSeek은 이 논문을 2026년 초 발표하며 더 큰 모델 훈련을 향한 의지를 시사했다.
 
-mHC는 [[multi-head-latent-attention|Multi-Head Latent Attention([[multi-head-latent-attention|MLA]])]]과 함께 DeepSeek의 아키텍처 혁신 양대 축을 구성한다. MLA가 KV 캐시 압축으로 추론 효율을 개선한다면, mHC는 훈련 안정성을 개선하여 더 큰 모델의 스케일링을 가능하게 한다.
+mHC는 [[multi-head-latent-attention|Multi-Head Latent Attention(MLA)]]과 함께 DeepSeek의 아키텍처 혁신 양대 축을 구성한다. MLA가 KV 캐시 압축으로 추론 효율을 개선한다면, mHC는 훈련 안정성을 개선하여 더 큰 모델의 스케일링을 가능하게 한다.
 
 ## 관련 문서
 

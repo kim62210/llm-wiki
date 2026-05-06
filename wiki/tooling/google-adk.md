@@ -148,7 +148,7 @@ go get google.golang.org/adk
 ## 관련 문서
 
 - [[model-context-protocol-mcp]] -- ADK가 지원하는 MCP 도구 통합
-- [[multi-agent-[[multi-agent-orchestration|orchestration]]]] -- 멀티에이전트 오케스트레이션 개념
+- [[multi-agent-orchestration]] -- 멀티에이전트 오케스트레이션 개념
 - [[langgraph]] -- 경쟁 프레임워크: LangGraph
 - [[openai-agents-sdk]] -- 경쟁 프레임워크: OpenAI Agents SDK
 - [[mastra]] -- 경쟁 프레임워크: Mastra

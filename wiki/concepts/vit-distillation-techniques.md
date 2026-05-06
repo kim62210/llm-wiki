@@ -12,7 +12,7 @@ updated: 2026-04-17
 
 ## 개요
 
-지식 증류(Knowledge Distillation)는 크고 강력한 교사 모델(teacher)의 지식을 작고 효율적인 학생 모델(student)로 전달하는 학습 패러다임이다. ViT([[vision-transformer-vit]]) 계열에서는 [[deit-data-efficient-image-transformer]](Data-efficient Image Transformer)가 이 기법을 ViT에 적극 도입하여 소규모 데이터에서도 강력한 성능을 달성할 수 있게 했다.
+지식 증류(Knowledge Distillation)는 크고 강력한 교사 모델(teacher)의 지식을 작고 효율적인 학생 모델(student)로 전달하는 학습 패러다임이다. ViT([[vision-transformer]]) 계열에서는 [[deit-data-efficient-image-transformer]](Data-efficient Image Transformer)가 이 기법을 ViT에 적극 도입하여 소규모 데이터에서도 강력한 성능을 달성할 수 있게 했다.
 
 [[knowledge-distillation-theory]]의 일반 원리를 ViT의 구조적 특성에 맞게 적용한 다양한 방법들을 다룬다.
 
@@ -115,6 +115,6 @@ flowchart LR
 
 - [[deit-data-efficient-image-transformer]] - 증류 토큰을 도입한 원조 DeiT 논문 요약
 - [[knowledge-distillation-theory]] - 지식 증류의 일반 이론적 배경
-- [[vision-transformer-vit]] - 증류 대상 학생 모델의 기반 아키텍처
+- [[vision-transformer]] - 증류 대상 학생 모델의 기반 아키텍처
 - [[efficientformer-v2]] - 증류와 함께 활용 가능한 경량 ViT 구조
 - [[vit-patch-embedding]] - 경량 학생 ViT 설계 시 고려할 패치 임베딩 선택

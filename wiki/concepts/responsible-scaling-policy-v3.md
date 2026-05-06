@@ -1,6 +1,6 @@
 ---
 title: Responsible Scaling Policy v3 & Frontier Safety Roadmap
-aliases: [responsible-scaling-policy-v3-and-frontier-[[ai-safety-[[deliberative-alignment|alignment]]-2026|safety]]-roadmap]
+aliases: [responsible-scaling-policy-v3-and-frontier-[[ai-safety-alignment-2026|safety]]-roadmap]
 category: concepts
 page_type: summary
 tags: [concepts, summary, responsible, scaling, policy, safety-and-alignment]

@@ -6,7 +6,7 @@ project: Claude Opus 4.5
 tags: [tooling, entity, anthropic, model, opus]
 sources: [raw/2026-04-10-hot-ai-topics-sources/long-horizon-agent-benchmarks/04-anthropic-com-introducing-claude-opus-4-5.md]
 created: 2026-04-10
-updated: 2026-04-15
+updated: 2026-05-06
 ---
 # Claude Opus 4.5
 
@@ -62,12 +62,12 @@ Opus 4.6은 Opus 4.5의 후속 모델(2026년 2월 출시)이다:
 
 | 항목 | Opus 4.5 | [[claude-opus-4-6|Opus 4.6]] |
 |---|---|---|
-| 컨텍스트 | [교차검증 필요] | 1M 토큰 |
-| METR 작업 지평선 | [교차검증 필요] | 14시간 30분 |
-| 출시 시점 | [교차검증 필요] | 2026-02-05 |
+| 컨텍스트 | 200K 토큰 (베타 헤더로 1M 활성화 가능) | 1M 토큰 |
+| METR 작업 지평선 | 자료 미공개 [교차검증 필요] | 14시간 30분 |
+| 출시 시점 | 2025-11-24 | 2026-02-05 |
 | 위상 | 선대 플래그십 | 현재 플래그십 |
 
-[교차검증 필요] Opus 4.5의 정확한 출시일, 컨텍스트 길이, 벤치마크 수치는 [공식 발표](https://www.anthropic.com/news/claude-opus-4-5)에서 확인 필요.
+출처: [Anthropic 공식 발표](https://www.anthropic.com/news/claude-opus-4-5) — context window 200K, max output 64K, knowledge cutoff March 2025, $5/$25 per million tokens, auto-compaction at 95% context.
 
 ## Claude Developer Platform 통합
 

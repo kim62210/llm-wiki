@@ -57,7 +57,7 @@ MCP를 도입할 때는 소개 글보다 이 스펙이 더 중요하다. transpo
 
 - [[model-context-protocol-mcp|Model Context Protocol (MCP)]]
 - [[model-context-protocol|MCP 2026 Roadmap & Enterprise Readiness]]
-- [[mcp-authorization|MCP [[mcp-authorization|OAuth]] 2.1 + PKCE Authorization]]
+- [[mcp-authorization|MCP OAuth 2.1 + PKCE Authorization]]
 
 후속 수동 ingest에서는 source version과 API 이름을 먼저 재확인한다. 이 원칙은 SDK 문서와 protocol 문서를 섞지 않기 위한 최소 안전장치다.
 

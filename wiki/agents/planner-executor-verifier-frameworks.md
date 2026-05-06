@@ -133,13 +133,17 @@ crew = Crew(agents=[planner, coder, reviewer], tasks=[...])
 | Dev speed | 10-14 days | 2-3 days | 5-7 days | 빠름 |
 | Production control | 가장 강함 | 중간 | 중간 | 제한적 |
 
-## OpenHands (참고 - 별도 자료 필요)
+## OpenHands (참고)
 
-OpenHands (전 OpenDevin)는 오픈소스 software engineer agent.
-- ReAct 패턴 기반
-- Sandbox runtime (docker-based)
-- Multi-agent (CodeAct, Browsing, etc.)
-- 정확한 비교는 추가 조사 필요 [교차검증 필요]
+OpenHands (전 OpenDevin)는 오픈소스 software engineer agent로, ICLR 2025에 논문이 채택된 학술/산업 협력 프로젝트다 (MIT 라이선스).
+
+- **이벤트 스트림 아키텍처**: 모든 agent-environment 상호작용이 typed event로 중앙 허브를 통과 (User Message → Agent → LLM → Action → Runtime → Observation → Agent)
+- **CodeAct 프레임워크**: 기본 generalist agent인 `CodeActAgent`가 자연어 대화 또는 코드 실행(bash, Python, browser) 중 하나를 매 step마다 선택
+- **Sandbox runtime**: Docker 기반 OS, bash shell, web browser, IPython server를 격리 환경에서 제공
+- **Multi-agent delegation**: `AgentDelegateAction`을 통해 한 agent가 다른 agent에게 sub-task 위임 (예: CodeActAgent → BrowsingAgent)
+- planner/executor/verifier를 *명시 역할*로 분리하기보다, generalist agent가 필요할 때만 specialized agent로 위임하는 *동적 분기* 모델
+
+따라서 OpenHands는 LangGraph의 명시 state machine이나 CrewAI의 명시 role assignment보다 *event-sourced delegation*에 가까운 패러다임이다.
 
 ## Verifier 패턴의 변종
 

@@ -130,6 +130,6 @@ LiteRT-LM의 핵심 차별점은 Google이 직접 관리하는 모델 최적화(
 ## 관련 문서
 
 - [[on-device-llm]] -- 온디바이스 LLM / 엣지 AI 배포 개념
-- [[ai-inference-[[quantization-model-compression|quantization]]-2026]] -- 엣지 배포를 위한 양자화 기법
+- [[ai-inference-quantization-2026]] -- 엣지 배포를 위한 양자화 기법
 - [LiteRT-LM GitHub](https://github.com/google-ai-edge/LiteRT-LM)
 - [Google AI Edge - LiteRT-LM Overview](https://ai.google.dev/edge/litert-lm/overview)

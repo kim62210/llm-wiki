@@ -1,5 +1,5 @@
 ---
-title: [[claude-[[coding-agent|agent]]-sdk|Claude]] Opus 4.5 Release Notes
+title: [[claude-agent-sdk|Claude]] Opus 4.5 Release Notes
 category: tooling
 page_type: summary
 tags: [tooling, summary, anthropic, opus, release-notes]

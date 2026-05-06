@@ -143,5 +143,5 @@ MIM은 대조학습(contrastive learning, SimCLR, MoCo 등)과 함께 현재 비
 - [[masked-autoencoder-mae]] - MAE 상세 설명
 - [[beit-bert-pretraining-images]] - BEiT 상세 설명
 - [[self-supervised-learning]] - 자기지도 학습 전체 개요
-- [[vision-transformer-vit]] - 기반 ViT 아키텍처
+- [[vision-transformer]] - 기반 ViT 아키텍처
 - [[hierarchical-vit-design]] - Swin 등 계층적 ViT (SimMIM의 적용 대상)

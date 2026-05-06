@@ -16,7 +16,7 @@ updated: 2026-04-17
 
 ## 발견된 문제: 아티팩트 토큰
 
-[[vision-transformer-vit]] 기반 모델, 특히 DINOv2 같은 대규모 자기지도 학습 모델에서 특정 현상이 관찰되었다:
+[[vision-transformer]] 기반 모델, 특히 DINOv2 같은 대규모 자기지도 학습 모델에서 특정 현상이 관찰되었다:
 
 ```mermaid
 flowchart TD
@@ -107,7 +107,7 @@ stateDiagram-v2
 
 ## 관련 문서
 
-- [[vision-transformer-vit]] - ViT 기본 아키텍처
+- [[vision-transformer]] - ViT 기본 아키텍처
 - [[dinov2]] - 레지스터 토큰을 처음 도입한 모델
 - [[masked-image-modeling-survey]] - ViT 사전학습 방법 비교
 - [[hierarchical-vit-design]] - ViT 설계 패턴 비교

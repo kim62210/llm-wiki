@@ -112,7 +112,7 @@ class ResidualBlock(nn.Module):
 
 ### ViT (Vision Transformer, 2020)
 
-[[vit]]에서 상세히 다루는 ViT는 이미지를 16×16 패치로 분할하고 트랜스포머로 처리한다.
+[[vision-transformer]]에서 상세히 다루는 ViT는 이미지를 16×16 패치로 분할하고 트랜스포머로 처리한다.
 
 ```mermaid
 flowchart LR
@@ -335,7 +335,7 @@ MAE(Masked Autoencoders), DINO, CLIP 등 레이블 없이 사전학습하는 방
 ## 관련 문서
 
 - [[resnet-original-paper]] - ResNet 원논문 심화 분석
-- [[vit]] - Vision Transformer 아키텍처 상세
+- [[vision-transformer]] - Vision Transformer 아키텍처 상세
 - [[densenet-dense-connections]] - DenseNet 밀집 연결 구조
 - [[ai-quality-inspection]] - 산업 품질 검사 실무 응용
 - [[transfer-learning]] - 전이 학습 전반 개념

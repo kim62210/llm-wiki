@@ -28,7 +28,7 @@ flowchart TD
     EVACLIP18 --> VLMs[다양한 VLM 백본]
 ```
 
-EVA 계보는 처음에 대규모 [[vision-transformer-vit]] 자기지도 사전학습에서 시작해 점차 CLIP 스케일링으로 발전했다.
+EVA 계보는 처음에 대규모 [[vision-transformer]] 자기지도 사전학습에서 시작해 점차 CLIP 스케일링으로 발전했다.
 
 ## 핵심 기술: 스케일링 안정화
 
@@ -116,7 +116,7 @@ EVA-CLIP 연구에서 발견된 스케일링 패턴:
 ## 관련 문서
 
 - [[clip]] - CLIP 원본 개념
-- [[vision-transformer-vit]] - 기반 아키텍처 ViT
+- [[vision-transformer]] - 기반 아키텍처 ViT
 - [[internvit-6b]] - EVA-CLIP 기반 6B 비전 인코더
 - [[masked-image-modeling-survey]] - 마스크 이미지 모델링 사전학습 비교
 - [[hierarchical-vit-design]] - 대형 ViT 설계 패턴

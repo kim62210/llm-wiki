@@ -45,7 +45,7 @@ MCP를 production에 붙이려면 authorization draft와 정식 스펙을 함께
 
 ## 관련 문서
 
-- [[mcp-authorization|MCP [[mcp-authorization|OAuth]] 2.1 + PKCE Authorization]]
+- [[mcp-authorization|MCP OAuth 2.1 + PKCE Authorization]]
 - [[mcp-specification-2025-11-25|MCP Specification 2025-11-25]]
 - [[model-context-protocol-mcp|Model Context Protocol (MCP)]]
 

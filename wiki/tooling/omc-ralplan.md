@@ -86,7 +86,7 @@ Ralplan의 해결:
 
 ## 에이전트 역할 경계
 
-Ralplan의 세 에이전트는 각자 하지 말아야 할 일이 명확하다 ([[omc-[[coding-agent|agent]]-catalog]] 참조):
+Ralplan의 세 에이전트는 각자 하지 말아야 할 일이 명확하다 ([[omc-agent-catalog]] 참조):
 
 | 에이전트 | Does | Does Not |
 |---|---|---|

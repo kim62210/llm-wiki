@@ -32,7 +32,7 @@ updated: 2026-04-13
 실무 관점에서는 지연시간, 처리량, 메모리 사용량, 비용 구조를 함께 봐야 한다. 따라서 이 페이지의 개념은 단독 기법이 아니라 전체 serving stack 안에서 어떤 병목을 줄이는지로 이해하는 편이 좋다.
 
 ## 관련 문서
-- [[ai-inference-[[nvfp4-quantization|quantization]]-2026]]
+- [[ai-inference-quantization-2026]]
 - [[turboquant]]
 - [[long-context-scaling]]
 

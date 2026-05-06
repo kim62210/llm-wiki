@@ -178,5 +178,5 @@ Ultrawork는 병렬성이 크기 때문에 **토큰 폭발 위험**이 있다. 6
 - [[omc-ralph-mode]]
 - [[omc-team-mode]]
 - [[omc-model-routing]]
-- [[multi-[[coding-agent|agent]]-orchestration]]
+- [[multi-agent-orchestration]]
 

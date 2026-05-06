@@ -12,7 +12,7 @@ updated: 2026-04-17
 
 ## 개요
 
-DeiT(Data-efficient Image Transformers)는 Facebook AI Research(FAIR)가 2020년 발표한 비전 트랜스포머 학습 방법론이다. [[vision-transformer-vit]]가 JFT-300M 같은 대규모 데이터셋 없이는 성능이 떨어진다는 한계를 극복하기 위해 설계되었다. DeiT의 핵심 기여는 **ImageNet-1k만으로도 경쟁력 있는 ViT 모델을 학습**할 수 있음을 보인 것이다.
+DeiT(Data-efficient Image Transformers)는 Facebook AI Research(FAIR)가 2020년 발표한 비전 트랜스포머 학습 방법론이다. [[vision-transformer]]가 JFT-300M 같은 대규모 데이터셋 없이는 성능이 떨어진다는 한계를 극복하기 위해 설계되었다. DeiT의 핵심 기여는 **ImageNet-1k만으로도 경쟁력 있는 ViT 모델을 학습**할 수 있음을 보인 것이다.
 
 ## 배경: ViT의 데이터 의존성 문제
 
@@ -105,7 +105,7 @@ DeiT는 다음 측면에서 중요한 전환점이었다:
 
 ## 관련 문서
 
-- [[vision-transformer-vit]] - DeiT의 기반 아키텍처
+- [[vision-transformer]] - DeiT의 기반 아키텍처
 - [[knowledge-distillation]] - 증류 토큰의 이론적 배경
 - [[beit-bert-pretraining-images]] - BEiT: 마스크 사전학습으로 다른 방향의 데이터 효율화
 - [[masked-autoencoder-mae]] - 자기지도 학습으로 데이터 효율화

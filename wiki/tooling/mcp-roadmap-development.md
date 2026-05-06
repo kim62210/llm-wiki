@@ -56,6 +56,6 @@ MCP를 채택하는 조직은 스펙만 보는 것으로 끝나지 않는다. ro
 ## 관련 문서
 
 - [[the-2026-mcp-roadmap|The 2026 MCP Roadmap]]
-- [[mcp-[[mcp-specification-2025-11-25|specification]]-2025-11-25|MCP Specification 2025-11-25]]
+- [[mcp-specification-2025-11-25|MCP Specification 2025-11-25]]
 - [[model-context-protocol-mcp|Model Context Protocol (MCP)]]
 

@@ -123,14 +123,17 @@ context_management={
 
 ## 4. Thinking Block 처리
 
-모델 세대별 default 동작이 상이하다 [교차검증 필요 — Anthropic 공식 문서 확인 권장].
+`clear_thinking_20251015` strategy는 extended thinking이 활성화된 대화에서 thinking block 보존을 제어한다. 모델 세대별 default 동작 차이는 Anthropic 공식 문서(`platform.claude.com/docs/en/build-with-claude/extended-thinking`)에 다음과 같이 명시되어 있다.
 
 | 세대 | 기본 보존 정책 |
 |------|----------------|
-| Opus 4.5+, Sonnet 4.6+ | 모든 thinking block 보존 |
-| Opus 4.1 이하, Sonnet 4.5 이하, 모든 Haiku | 마지막 assistant turn의 thinking만 보존 |
+| Opus 4.5 이상 | 이전 assistant turn의 모든 thinking block 보존 (4.5에서 도입된 새 기본 동작) |
+| Opus 4.1 이하 | 마지막 assistant turn의 thinking만 보존 |
+| Sonnet 4.6 이상 | 모든 thinking block 보존 |
+| Sonnet 4.5 이하 | 마지막 turn만 보존 |
+| 모든 Haiku (4.5 포함) | 마지막 turn만 보존 |
 
-→ 멀티 모델 코드는 `keep`을 명시적으로 설정해 default 의존을 피하는 것이 안전하다.
+→ 멀티 모델 코드는 `keep` 파라미터를 명시 설정해 default 의존을 피해야 한다 (Anthropic 공식 권고). Context editing은 베타 헤더 `context-management-2025-06-27`로 활성화된다.
 
 ## 5. Prompt Caching과 상호작용
 

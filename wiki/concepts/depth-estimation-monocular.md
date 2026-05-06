@@ -12,7 +12,7 @@ updated: 2026-04-17
 
 ## 개요
 
-단안 깊이 추정(monocular depth estimation)은 **단일 RGB 이미지만으로 각 픽셀의 깊이(depth) 값을 예측**하는 컴퓨터 비전 태스크다. 스테레오 카메라나 LiDAR 없이 깊이 정보를 얻을 수 있어 자율주행, AR/VR, 3D 재구성 등 다양한 응용에서 핵심 기술로 활용된다. [[vision-transformer-vit]] 기반 모델이 이 분야를 급속도로 발전시켰으며, [[3d-gaussian-splatting]] 등 3D 재구성 기법의 초기화에도 자주 사용된다.
+단안 깊이 추정(monocular depth estimation)은 **단일 RGB 이미지만으로 각 픽셀의 깊이(depth) 값을 예측**하는 컴퓨터 비전 태스크다. 스테레오 카메라나 LiDAR 없이 깊이 정보를 얻을 수 있어 자율주행, AR/VR, 3D 재구성 등 다양한 응용에서 핵심 기술로 활용된다. [[vision-transformer]] 기반 모델이 이 분야를 급속도로 발전시켰으며, [[3d-gaussian-splatting]] 등 3D 재구성 기법의 초기화에도 자주 사용된다.
 
 ## 문제의 난이도: 고유 모호성
 
@@ -55,7 +55,7 @@ Eigen et al. (2014)의 선구적 작업 이후 CNN 기반 인코더-디코더 �
 
 ### 2. ViT 기반 모델 (2021~)
 
-[[vision-transformer-vit]] 기반의 DPT(Dense Prediction Transformer)가 등장하며 판도를 바꿨다. ViT 인코더의 전역 어텐션이 원근법적 일관성을 훨씬 잘 포착한다.
+[[vision-transformer]] 기반의 DPT(Dense Prediction Transformer)가 등장하며 판도를 바꿨다. ViT 인코더의 전역 어텐션이 원근법적 일관성을 훨씬 잘 포착한다.
 
 **MiDaS v3.1 / DPT**: 다수의 데이터셋을 혼합 학습하여 제로샷 일반화 달성
 
@@ -112,7 +112,7 @@ flowchart LR
 ## 관련 문서
 - [[depth-estimation-stereo]] -- 스테레오 깊이 추정 (Stereo Depth Estimation)
 
-- [[vision-transformer-vit]] - DPT/Depth Anything의 기반 인코더
+- [[vision-transformer]] - DPT/Depth Anything의 기반 인코더
 - [[3d-gaussian-splatting]] - 깊이 추정 결과를 초기화로 활용
 - [[volume-rendering-differentiable]] - NeRF에서 깊이와 렌더링의 결합
 - [[optical-flow-deep-learning]] - 비디오의 움직임 추정 (깊이와 상보적)

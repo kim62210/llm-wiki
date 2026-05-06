@@ -5,7 +5,7 @@ page_type: concept
 tags: [dspy, prompt-optimization, prompt-programming, automatic-prompting, llm-pipeline]
 sources: []
 created: 2026-04-27
-updated: 2026-04-27
+updated: 2026-05-06
 ---
 
 # Prompt-as-Program 패러다임
@@ -251,6 +251,6 @@ DSPy 논문 결과에서 수동 프롬프트 엔지니어링 대비 개선 사�
 
 - [[dspy]] - DSPy 프레임워크의 전체 아키텍처, 모듈 목록, 옵티마이저 상세.
 - [[prompt-engineering]] - 수동 프롬프트 엔지니어링 기법 — Prompt-as-Program의 대조 배경.
-- [[prompt-template-libraries]] - LangChain, LlamaIndex 등 정적 템플릿 라이브러리 (조사 필요).
+- [[prompt-template-libraries]] - LangChain `PromptTemplate`(`{변수}` 단일 중괄호, `from_template` 인스턴스화)과 LlamaIndex `PromptTemplate`(데이터 검색·인덱싱 통합 지향) 등 정적 템플릿 라이브러리 — Prompt-as-Program의 대조 사례.
 - [[chain-of-thought]] - CoT 모듈을 DSPy로 자동 최적화하는 대표 사례.
 - [[zero-vs-few-shot-comparison]] - 자동 예시 선택의 기반이 되는 퓨샷 학습 원리.

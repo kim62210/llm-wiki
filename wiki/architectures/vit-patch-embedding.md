@@ -12,7 +12,7 @@ updated: 2026-04-17
 
 ## 개요
 
-[[vision-transformer-vit]](ViT)의 패치 임베딩(patch embedding)은 2D 이미지를 Transformer가 처리할 수 있는 1D 토큰 시퀀스로 변환하는 첫 번째 단계다. 이 변환 방식은 단순해 보이지만, 실제로는 모델의 성능, 학습 안정성, 계산 효율에 큰 영향을 미친다. 원본 ViT의 단순한 비겹침(non-overlapping) 패치 분할 이후, 다양한 개선된 설계가 등장했다.
+[[vision-transformer]](ViT)의 패치 임베딩(patch embedding)은 2D 이미지를 Transformer가 처리할 수 있는 1D 토큰 시퀀스로 변환하는 첫 번째 단계다. 이 변환 방식은 단순해 보이지만, 실제로는 모델의 성능, 학습 안정성, 계산 효율에 큰 영향을 미친다. 원본 ViT의 단순한 비겹침(non-overlapping) 패치 분할 이후, 다양한 개선된 설계가 등장했다.
 
 [[cnn]] 구조에서 쌓아온 신호 처리 지식이 ViT 패치 임베딩 설계에 어떻게 녹아들었는지를 이해하는 것이 이 문서의 핵심이다.
 
@@ -121,7 +121,7 @@ flowchart TD
 
 ## 관련 문서
 
-- [[vision-transformer-vit]] - 패치 임베딩을 사용하는 원본 ViT 아키텍처
+- [[vision-transformer]] - 패치 임베딩을 사용하는 원본 ViT 아키텍처
 - [[cnn]] - Conv Stem의 기반이 되는 합성곱 신경망 원리
 - [[siglip2-multilingual]] - NaFlex 동적 해상도 패치 처리 응용
 - [[efficientformer-v2]] - 하이브리드 Conv+Attention 구조에서의 패치 설계

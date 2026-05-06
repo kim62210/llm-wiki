@@ -137,6 +137,6 @@ AI Frontiers의 분석에 따르면, 수출 통제는 "중국의 칩 제조 역�
 - [[sovereign-ai|Sovereign AI / National AI Strategies]]
 - [[ai-venture-bubble-2026|AI Venture Bubble]]
 - [[custom-ai-chips-asic|Custom AI Chips (ASIC)]]
-- [[ai-[[ai-regulation-us|regulation]]-us|AI Regulation (US)]]
+- [[ai-regulation-us|AI Regulation (US)]]
 - [[eu-ai-act-enforcement|EU AI Act Enforcement]]
 - [[deepseek-v4|DeepSeek V4 / R2]]

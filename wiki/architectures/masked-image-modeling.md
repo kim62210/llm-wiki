@@ -237,7 +237,7 @@ MIM은 [[Q-Former (Querying Transformer)]]나 [[Perceiver Resampler]]와 같은 
 
 - [[mae-original-paper]] -- MAE 원 논문 (He et al. 2022)
 - [[masked-image-modeling-survey]] -- MIM 서베이
-- [[vit]] -- Vision Transformer 기반 아키텍처
+- [[vision-transformer]] -- Vision Transformer 기반 아키텍처
 - [[self-supervised-learning|자기지도 학습 (Self-Supervised Learning)]] -- MIM의 상위 패러다임
 - [[대조 학습 (Contrastive & Metric Learning)]] -- 상호 보완적 자기지도 방법
 - [[video-understanding]] -- VideoMAE 등 비디오 응용

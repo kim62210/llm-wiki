@@ -6,7 +6,7 @@ project: NVIDIA Nemotron
 tags: [nvidia, nemotron, open-model, agentic-ai, nemo-framework, nano-super-ultra, llm]
 sources: [raw/2026-04-27-harvest-deepmind-msft-nvidia.md]
 created: 2026-04-27
-updated: 2026-04-27
+updated: 2026-05-06
 ---
 
 # NVIDIA Nemotron 3 오픈 모델 패밀리
@@ -36,13 +36,13 @@ flowchart TD
 
 ### Nano / Super / Ultra 계층
 
-| 티어 | 대상 사용 사례 | 파라미터 규모 (추정) | 출시 상태 |
-|------|-------------|-------------------|---------|
-| Nano | 온디바이스, 엣지 추론, 저지연 에이전트 | ~8B 이하 | GTC 2026 발표 |
-| Super | 중간 규모 에이전트, 균형 성능/비용 | ~50-70B | 2026년 상반기 예정 |
-| Ultra | 최고 성능, 복잡한 추론 에이전트 | ~400B+ | 2026년 상반기 예정 |
+| 티어 | 대상 사용 사례 | 파라미터 규모 | 출시 상태 |
+|------|-------------|-------------|---------|
+| Nano | 온디바이스, 엣지 추론, 저지연 에이전트 | 31.6B 총 / 3.2B 활성 | GTC 2026 발표 |
+| Super | 중간 규모 에이전트, 균형 성능/비용 | 120B 총 / 12B 활성 | 2026년 상반기 예정 |
+| Ultra | 최고 성능, 복잡한 추론 에이전트 | 550B 총 / 최대 55B 활성 | 2026년 상반기 예정 |
 
-*파라미터 규모는 공식 발표가 없으므로 [교차검증 필요]. GTC 2026 발표 당시 Nano만 구체적 사양이 공개됐다.*
+출처: [NVIDIA Nemotron 3 family - research.nvidia.com](https://research.nvidia.com/labs/nemotron/Nemotron-3/), GTC San Jose 2026 발표. 모두 hybrid Mamba-Transformer MoE 아키텍처로, LatentMoE(저랭크 latent 공간 라우팅), Multi-Token Prediction(speculative decoding 내장), 1M 토큰 컨텍스트(Mamba-2 layer의 선형 시간 복잡도 기반)를 공유한다.
 
 ### 에이전틱 AI 특화 설계
 
@@ -97,7 +97,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model="nvidia/nemotron-3-ultra",  # [교차검증 필요] - 실제 모델 ID 확인 필요
+    model="nvidia/nemotron-3-ultra",  # build.nvidia.com 카탈로그에서 정확한 ID 확인 필요
     messages=[
         {"role": "user", "content": "에이전트 플래닝 작업을 수행해줘"}
     ]
@@ -128,7 +128,7 @@ Nemotron 3 Ultra는 [[reasoning-llm|추론 강화 LLM]] 패러다임을 채용�
 NVIDIA는 Nemotron 3를 오픈소스(또는 오픈 가중치)로 공개해 개발자 커뮤니티를 유입시키는 전략을 취한다. 이는 [[meta-llama|Meta Llama 4]]와 유사한 접근법이다.
 
 - **Hugging Face 배포**: 모델 가중치를 Hugging Face Hub에서 무료 다운로드 가능
-- **상업적 이용**: 일정 규모 이하 기업은 무료 상업 이용 허용 (라이선스 세부사항 [교차검증 필요])
+- **상업적 이용**: 라이선스 정확한 조건(매출 한도, 책임 조항 등)은 HuggingFace 모델 카드의 LICENSE 파일에서 직접 확인 권장
 - **NIM 배포**: 상업적 대규모 배포는 NIM 마이크로서비스를 통해
 
 ## 실무 활용 가이드

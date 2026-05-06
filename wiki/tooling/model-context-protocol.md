@@ -44,6 +44,6 @@ MCP 2026 Roadmap & Enterprise Readiness은 단순한 제품 소개보다 **모�
 ## 관련 문서
 
 - [[ai-hot-topics-2026-04|2026년 4월 AI 개발 핫토픽 100선]]
-- [[long-running-[[coding-agent|agent]]-harnesses|Agent Harnesses for Long-Running Coding Sessions]]
+- [[long-running-agent-harnesses|Agent Harnesses for Long-Running Coding Sessions]]
 - [[mcp-authorization|MCP OAuth 2.1 + PKCE Authorization]]
 

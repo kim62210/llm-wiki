@@ -229,5 +229,5 @@ MiniGPT-4는 코드와 가중치를 완전히 공개했으며, 학술 연구자�
 - [[llava-original-paper]] - 유사한 접근법, GPT-4 합성 데이터 활용
 - [[instructblip-paper]] - BLIP-2 기반 더 체계적인 명령 튜닝
 - [[multimodal-llm]] - 멀티모달 LLM 개념 전반
-- [[vit]] - 비전 트랜스포머 기반 인코더
+- [[vision-transformer]] - 비전 트랜스포머 기반 인코더
 - [[instruction-tuning]] - 명령 튜닝 개념

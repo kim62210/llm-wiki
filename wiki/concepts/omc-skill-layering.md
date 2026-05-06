@@ -4,7 +4,7 @@ aliases: [OMC Skill Layering, Skills]
 category: concepts
 page_type: project-internal
 project: oh-my-claudecode
-tags: [omc, [[hermes-[[coding-agent|agent]]|skill]]s, composition, layering]
+tags: [omc, [[hermes-agent|skill]]s, composition, layering]
 sources: [raw/2026-04-09-omc-ARCHITECTURE.md, raw/2026-04-09-omc-AGENTS.md]
 created: 2026-04-09
 updated: 2026-04-13

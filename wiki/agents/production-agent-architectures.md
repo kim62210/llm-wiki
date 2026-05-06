@@ -92,26 +92,27 @@ flowchart LR
 
 ## 3. GitHub Copilot Workspace
 
-### 디자인 철학 (공개 자료 기반)
+### 디자인 철학 (공개 user manual 기반)
 
-GitHub의 long-horizon coding agent. Issue → Spec → Plan → Implementation → Tests의 4단계 파이프라인:
+GitHub Next의 long-horizon coding agent. Task(보통 GitHub Issue) → Spec → Plan → Implementation의 4단계 파이프라인:
 
 ```mermaid
 flowchart LR
-    Issue[GitHub Issue] --> Spec[Spec<br/>structured task]
-    Spec --> Plan[Plan<br/>multi-file change]
-    Plan --> Impl[Implementation]
-    Impl --> Tests[Tests<br/>iterate]
+    Issue[GitHub Issue<br/>또는 Task] --> Spec[Spec<br/>current vs proposed]
+    Spec --> Plan[Plan<br/>file-level edit list]
+    Plan --> Impl[Implementation<br/>diff per file]
+    Impl --> Review[Human Review]
 ```
 
-1. **Spec**: 자연어 issue를 구조화된 작업 명세로
-2. **Plan**: 구현 전 변경 계획
-3. **Implementation**: 코드 변경 (multi-file)
-4. **Tests**: 테스트 실행 + iterate
+1. **Spec**: 자연어 task를 *proposed specification*으로 변환. "구현 디테일이 아닌 성공 기준"을 글머리 기호 리스트로 작성. 현재 codebase 상태(current)와 제안된 변경 후 상태(proposed)를 모두 articulate
+2. **Plan**: 파일 단위 편집 리스트. **fully editable + regeneratable** — 사용자가 수정·재생성 가능
+3. **Implementation**: 사용자가 "Implement" 버튼 클릭 시 파일별로 순차 생성, 진행 상황을 plan 항목과 동기화. 각 파일 완료 시 diff view 제공
+4. **Review**: PR 머지 전 명시적 사용자 승인 필요
 
-명시적 단계별 사용자 검토 가능.
-
-(공식 spec 디테일은 GitHub Copilot Workspace docs 추가 조사 필요) [교차검증 필요]
+핵심 특징:
+- **Editable artifacts at every step**: spec/plan/diff 모두 사용자가 직접 수정 가능 — opaque chain-of-thought 대신 artifact-oriented planning
+- **File ranking via LLM + code search**: spec 생성 시 관련 파일을 LLM 기법과 traditional code search 조합으로 식별, 상위 파일 컨텐츠가 워크플로우 전반의 context로 사용
+- **Human-in-the-loop by design**: 모든 단계에 검토 기회 제공, 자동 푸시 없음
 
 ## 비교 표
 

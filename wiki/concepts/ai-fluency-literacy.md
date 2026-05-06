@@ -5,7 +5,7 @@ page_type: concept
 tags: [ai-literacy, ai-fluency, digital-divide, education, human-ai-interaction]
 sources: []
 created: 2026-04-27
-updated: 2026-04-27
+updated: 2026-05-06
 ---
 
 # AI 활용 능력 (AI Fluency / AI Literacy)
@@ -192,6 +192,6 @@ AI 격차의 핵심 차이점:
 
 - [[ai-economic-impact]] - AI가 노동 시장과 거시 경제에 미치는 영향. AI 격차의 경제적 결과를 이해하는 데 필요.
 - [[prompt-engineering]] - AI 활용 능력의 핵심 실천 기술인 프롬프트 설계.
-- [[ai-literacy-curriculum]] - AI 리터러시 커리큘럼 설계 원칙과 사례 (조사 필요).
+- [[ai-literacy-curriculum]] - AI 리터러시 커리큘럼 설계 원칙과 사례. UNESCO가 2024년 Digital Learning Week에서 발표한 "AI competency framework for students"(4 dimensions × 12 competencies: Human-centred mindset, Ethics of AI, AI techniques and applications, AI system design)가 대표 가이드라인.
 - [[transformative-ai-impact]] - 범사회적 AI 전환이 교육·역량에 미치는 영향.
 - [[economic-displacement-ai]] - AI로 인한 직업 대체와 재교육 수요.

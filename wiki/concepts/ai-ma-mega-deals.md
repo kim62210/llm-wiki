@@ -86,7 +86,7 @@ PwC는 2026년 기술 M&A가 AI 주도로 계속 가속화될 것으로 전망�
 
 ## 관련 문서
 
-- [[ai-[[ai-venture-bubble-2026|venture]]-bubble-2026|AI 벤처 버블 (2026 Q1 $300B)]]
+- [[ai-venture-bubble-2026|AI 벤처 버블 (2026 Q1 $300B)]]
 - [[sovereign-ai|주권 AI / 국가 AI 전략]]
 - [[ai-workforce-impact|AI 인력 영향과 스킬 프리미엄]]
 - [[ai-copyright-litigation|AI 저작권 및 IP 소송]]

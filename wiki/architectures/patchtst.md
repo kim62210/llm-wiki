@@ -10,7 +10,7 @@ updated: 2026-04-17
 
 # PatchTST
 
-PatchTST(Patch Time Series Transformer)는 2023년 Nie 외 연구진(프린스턴 대학 + IBM)이 발표한 시계열 예측 모델이다. [[vision-transformer-vit]]에서 이미지를 패치로 분할하는 아이디어를 시계열에 적용하여, 긴 시계열을 **겹치는 시간 세그먼트(patch)**로 나눈 뒤 각 패치를 토큰으로 처리한다. [[time-series-forecasting-dl]] 분야에서 이전까지 지배적이던 채널 혼합(channel mixing) 방식 대신 채널 독립(channel independence) 전략을 채택하여 당시 SOTA를 달성했다.
+PatchTST(Patch Time Series Transformer)는 2023년 Nie 외 연구진(프린스턴 대학 + IBM)이 발표한 시계열 예측 모델이다. [[vision-transformer]]에서 이미지를 패치로 분할하는 아이디어를 시계열에 적용하여, 긴 시계열을 **겹치는 시간 세그먼트(patch)**로 나눈 뒤 각 패치를 토큰으로 처리한다. [[time-series-forecasting-dl]] 분야에서 이전까지 지배적이던 채널 혼합(channel mixing) 방식 대신 채널 독립(channel independence) 전략을 채택하여 당시 SOTA를 달성했다.
 
 ## 핵심 아이디어: 패치 분할
 
@@ -55,7 +55,7 @@ flowchart TD
 
 **겹치는 패치(Overlapping Patches)**: 패치가 겹칠 수 있도록 스트라이드 S를 패치 크기 P보다 작게 설정하여 인접 패치 간 연속성을 보존한다. 일반적으로 P=16, S=8로 설정한다.
 
-**표준 ViT 인코더**: 어텐션, FFN, LayerNorm으로 구성된 표준 [[vision-transformer-vit]] 블록을 시계열 도메인에 그대로 이식했다. 도메인 전용 특수 설계를 최소화했음에도 성능이 우수하다.
+**표준 ViT 인코더**: 어텐션, FFN, LayerNorm으로 구성된 표준 [[vision-transformer]] 블록을 시계열 도메인에 그대로 이식했다. 도메인 전용 특수 설계를 최소화했음에도 성능이 우수하다.
 
 ## 자기지도 사전학습 (Masked Patch Modeling)
 
@@ -112,6 +112,6 @@ PatchTST 이후 등장한 [[itransformer]]는 상반된 접근법을 취한다.
 - [[n-beats-n-hits]] -- N-BEATS / N-HiTS
 
 - [[time-series-forecasting-dl]] - PatchTST가 속하는 딥러닝 시계열 예측 맥락
-- [[vision-transformer-vit]] - 패치 분할 아이디어의 원천
+- [[vision-transformer]] - 패치 분할 아이디어의 원천
 - [[itransformer]] - 변수를 토큰으로 처리하는 대안 접근법
 - [[temporal-fusion-transformer]] - 이종 입력과 해석 가능성을 갖춘 시계열 모델

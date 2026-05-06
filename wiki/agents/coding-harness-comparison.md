@@ -187,10 +187,12 @@ flowchart TD
 
 ## 미확인 / 추가 조사 필요
 
-- Cursor의 inference infra 정확한 구성 (Fireworks 사용 여부 등)는 paywall 또는 비공개. [교차검증 필요]
-- Devin의 otterlink 내부 동작 (KVM/Firecracker 기반 여부)는 비공개. [교차검증 필요]
-- Continue.dev의 정확한 context provider 전체 목록은 docs 페이지 일부 404. [교차검증 필요]
-- Claude Code의 subagent definition frontmatter (name/description/tools schema 정확한 spec)는 docs 추가 fetch 필요
+다음 항목들은 공개된 1차 자료에서 명시적으로 확인되지 않은 정보다. 인용 시 [교차검증 필요].
+
+- **Cursor inference infra 구성**: Fireworks/Together 등 외부 inference provider 사용 여부는 Anysphere가 공개하지 않음. 자체 GPU 클러스터 + 일부 외부 routing 추정.
+- **Devin otterlink 내부 구현**: 업계 분석(Ubicloud, microVM-2026 리뷰)에 따르면 "Firecracker + custom snapshot logic"에 수렴하는 형태로 추정되나, Cognition은 KVM/Firecracker/QEMU 중 어떤 조합인지 공식적으로 확인하지 않음.
+- **Continue.dev context provider 전체 목록**: 공식 docs 일부 페이지가 404 또는 마이그레이션 중. config.yaml schema 기반 inference 권장.
+- **Claude Code subagent definition frontmatter spec**: name/description/tools schema의 정확한 필드 목록은 platform.claude.com docs에서 직접 확인 권장 (버전별 변동 가능).
 
 ## 관련 문서
 

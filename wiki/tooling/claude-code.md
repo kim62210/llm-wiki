@@ -237,7 +237,7 @@ git diff main --name-only | claude -p "review these changed files for security i
 ```
 
 ## 관련 문서
-- [[claude-opus-4-5-release-notes]] -- [[claude-[[coding-agent|agent]]-sdk|Claude]] Opus 4.5 Release Notes
+- [[claude-opus-4-5-release-notes]] -- [[claude-agent-sdk|Claude]] Opus 4.5 Release Notes
 - [[claude-prompts-git-timeline]] -- Claude 시스템 프롬프트를 git 타임라인으로 추적하기
 - [[claude-code-vs-codex-comparison]] -- Claude Code vs Codex CLI 실전 비교 (2026-04)
 

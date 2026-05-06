@@ -12,7 +12,7 @@ updated: 2026-04-17
 
 ## 개요
 
-ConvMixer는 2022년 등장한 경량 이미지 분류 아키텍처로, [[vision-transformer-vit]](ViT)의 핵심 아이디어인 **패치 임베딩(patch embedding)**을 순수 합성곱(convolution) 연산만으로 구현한다. 어텐션(attention) 메커니즘 없이도 경쟁력 있는 성능을 달성하면서, 구조가 극도로 단순하다는 점이 특징이다.
+ConvMixer는 2022년 등장한 경량 이미지 분류 아키텍처로, [[vision-transformer]](ViT)의 핵심 아이디어인 **패치 임베딩(patch embedding)**을 순수 합성곱(convolution) 연산만으로 구현한다. 어텐션(attention) 메커니즘 없이도 경쟁력 있는 성능을 달성하면서, 구조가 극도로 단순하다는 점이 특징이다.
 
 논문 제목 "Patches Are All You Need?"는 ViT의 성공 원인이 트랜스포머 자체가 아니라 패치 기반 입력 표현에 있을 수 있다는 가설을 검증하는 실험이다.
 
@@ -20,7 +20,7 @@ ConvMixer는 2022년 등장한 경량 이미지 분류 아키텍처로, [[vision
 
 ### 패치 임베딩을 합성곱으로
 
-[[vision-transformer-vit]]에서 패치 분할은 선형 투영(linear projection)으로 구현되지만, ConvMixer는 **스트라이드(stride) = 패치 크기(p)**인 합성곱 레이어 하나로 동일 효과를 낸다.
+[[vision-transformer]]에서 패치 분할은 선형 투영(linear projection)으로 구현되지만, ConvMixer는 **스트라이드(stride) = 패치 크기(p)**인 합성곱 레이어 하나로 동일 효과를 낸다.
 
 ```python
 # 패치 임베딩 레이어 (채널 h, 패치 크기 p)
@@ -119,5 +119,5 @@ ConvMixer는 "트랜스포머의 어텐션이 핵심인가, 패치 분할이 핵
 ## 관련 문서
 
 - [[cnn]] - 합성곱 신경망 기초
-- [[vision-transformer-vit]] - 패치 임베딩의 원조 아키텍처
+- [[vision-transformer]] - 패치 임베딩의 원조 아키텍처
 - [[data-augmentation-advanced]] - ConvMixer 학습 시 자주 사용되는 증강 기법

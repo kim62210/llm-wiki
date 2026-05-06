@@ -51,7 +51,7 @@ BEiT는 DALL-E의 dVAE(discrete Variational Autoencoder)를 이미지 토크나�
 
 ### 2단계: 마스크 이미지 모델링
 
-[[vision-transformer-vit]] 구조를 베이스로 다음 절차를 따른다:
+[[vision-transformer]] 구조를 베이스로 다음 절차를 따른다:
 
 1. 196개 패치 중 약 75개(40%)를 랜덤 블록 마스킹
 2. 가시 패치만 트랜스포머 인코더에 입력 (마스크 토큰도 포함)
@@ -114,7 +114,7 @@ flowchart LR
 
 ## 관련 문서
 
-- [[vision-transformer-vit]] - 기반 아키텍처
+- [[vision-transformer]] - 기반 아키텍처
 - [[masked-autoencoder-mae]] - MAE: 다른 접근의 마스크 이미지 모델링
 - [[masked-image-modeling-survey]] - MIM 방법론 전체 비교
 - [[deit-data-efficient-image-transformer]] - 감독학습 기반 데이터 효율화

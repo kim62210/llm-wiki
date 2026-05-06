@@ -143,6 +143,6 @@ Human-in-the-loop 메커니즘은 선택사항이 아닌 기초 요구사항이�
 - [[ai-agent-marketplaces]] -- 에이전트 조달·배포 마켓플레이스 생태계
 - [[orchestrator-worker-pattern|Orchestrator-Worker Multi-Agent Pattern]]
 - [[evolution-of-agentic-patterns|Evolution of Agentic Patterns]]
-- [[llm-observability-platforms|[[context-engineering|LLM]] Observability Platforms]]
+- [[llm-observability-platforms|LLM Observability Platforms]]
 - [[opentelemetry-genai-semconv|OpenTelemetry GenAI Semantic Conventions]]
-- [[multi-agent-[[multi-agent-orchestration|orchestration]]|Multi-Agent Orchestration]]
+- [[multi-agent-orchestration|Multi-Agent Orchestration]]

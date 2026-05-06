@@ -34,7 +34,7 @@ flowchart TD
 
 ### 1. 시공간 튜브 토크나이저 (Spatiotemporal Tube Tokenizer)
 
-[[vision-transformer-vit]]의 패치 분할 방식을 시간 축으로 확장한다. 공간 패치 크기 $16 \times 16$에 시간 방향 $t$ 프레임을 묶어 하나의 "튜브 토큰"을 만든다. 이 방식은 [[transformer-architecture]] 기반 인코더가 시간과 공간을 동시에 처리할 수 있게 한다.
+[[vision-transformer]]의 패치 분할 방식을 시간 축으로 확장한다. 공간 패치 크기 $16 \times 16$에 시간 방향 $t$ 프레임을 묶어 하나의 "튜브 토큰"을 만든다. 이 방식은 [[transformer-architecture]] 기반 인코더가 시간과 공간을 동시에 처리할 수 있게 한다.
 
 ### 2. 마스킹 전략
 
@@ -80,6 +80,6 @@ VideoMAE로 사전학습된 모델은 다음 태스크에서 우수한 결과를
 ## 관련 문서
 
 - [[masked-autoencoder-mae]] - 이미지 도메인 MAE, VideoMAE의 원형
-- [[vision-transformer-vit]] - 기반 인코더 아키텍처
+- [[vision-transformer]] - 기반 인코더 아키텍처
 - [[video-clip-contrastive]] - 비디오-텍스트 대조학습 기반 보완 접근법
 - [[optical-flow-deep-learning]] - 비디오 움직임 표현의 전통적 기법

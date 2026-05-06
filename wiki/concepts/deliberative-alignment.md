@@ -2,7 +2,7 @@
 title: Deliberative Alignment & Anti-Scheming Training
 category: concepts
 page_type: concept
-tags: [concepts, concept, deliberative, [[ai-[[responsible-scaling-policy-v3|safety]]-alignment-2026|alignment]]]
+tags: [concepts, concept, deliberative, [[ai-safety-alignment-2026|alignment]]]
 sources: [raw/2026-04-10-hot-ai-topics-100.md, raw/hot-topics-sources/2026-04-10/topics/deliberative-alignment.md, raw/hot-topics-sources/2026-04-10/358-stress-testing-deliberative-alignment-for-anti-scheming-training.md, raw/hot-topics-sources/2026-04-10/359-detecting-and-reducing-scheming-in-ai-models.md, raw/hot-topics-sources/2026-04-10/360-deliberative-alignment-reasoning-enables-safer-language-models.md, raw/hot-topics-sources/2026-04-10/361-stress-testing-deliberative-alignment.md, raw/hot-topics-sources/2026-04-10/362-frontier-models-are-capable-of-in-context-scheming.md]
 created: 2026-04-10
 updated: 2026-04-15

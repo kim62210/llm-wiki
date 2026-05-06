@@ -94,7 +94,7 @@ EU는 개별 국가가 아닌 블록 단위의 집단 주권 전략을 채택했
 
 ## 관련 문서
 
-- [[ai-[[ai-regulation-us|regulation]]-us|미국 AI 규제]]
+- [[ai-regulation-us|미국 AI 규제]]
 - [[us-china-ai-competition]] -- 미중 AI 패권 경쟁 구체 현황
 - [[ai-copyright-litigation|AI 저작권 및 IP 소송]]
 - [[ai-venture-bubble-2026|AI 벤처 버블 (2026 Q1 $300B)]]

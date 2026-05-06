@@ -301,7 +301,6 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [VGGNet - 깊이로 승부한 네트워크](wiki/architectures/vgg-deep-nets.md)
 - [VideoCLIP - 비디오-텍스트 대조학습](wiki/architectures/video-clip-contrastive.md)
 - [VideoMAE - 마스크 비디오 자기지도학습](wiki/architectures/videomae-masked-video.md)
-- [Vision Transformer (ViT)](wiki/architectures/vision-transformer-vit.md)
 - [TabR - 검색 증강 테이블 학습](wiki/architectures/tabr-retrieval-augmented.md) -- k-NN 유사 훈련 샘플 컨텍스트 활용, 정형 데이터의 RAG 패턴, 트리 기반 모델과 경쟁
 - [RealMLP - 현대화된 테이블 MLP](wiki/architectures/realmlp-tabular.md) -- BatchNorm/그래디언트 클리핑/범주형 임베딩 조합, 최적 하이퍼파라미터 분석
 - [다중 태스크 추천 순위 (MMOE/PLE)](wiki/architectures/multi-task-ranking.md) -- 클릭/구매/시청 다중 목표 최적화, 시소 현상, YouTube/TikTok 사례
@@ -349,7 +348,6 @@ AI/ML 개발 학습 지식 베이스. 소스를 `raw/`에 넣으면 LLM이 구�
 - [SwAV - 클러스터링 기반 비전 표현](wiki/architectures/swav-clustering-features.md) -- 온라인 클러스터링 + 멀티뷰 일관성
 - [VICReg 분산-불변-공분산 정규화](wiki/architectures/vicreg-variance-invariance.md) -- 명시적 정규화 항으로 모드 붕괴 방지
 - [Barlow Twins 중복 감소](wiki/architectures/barlow-twins-redundancy.md) -- 교차 상관 행렬 항등 매트릭스 근접
-- [Vision Transformer (ViT)](wiki/architectures/vit.md) -- Dosovitskiy 2020 ICLR. 16×16 patch + position embedding + [CLS] + 표준 Transformer encoder
 - [Domain Expert MoE](wiki/architectures/domain-expert-moe.md) -- Branch-Train-Merge / Branch-Train-MiX, expert를 도메인별 specialize
 
 **entity**

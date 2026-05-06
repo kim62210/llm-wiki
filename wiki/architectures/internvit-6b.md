@@ -13,7 +13,7 @@ updated: 2026-04-17
 
 ## 개요
 
-InternViT-6B는 Shanghai AI Laboratory가 개발한 InternVL(Internal Vision-Language) 프레임워크의 핵심 비전 인코더다. 60억(6B) 파라미터를 가진 대규모 [[vision-transformer-vit]] 기반 인코더로, 기존 [[clip|CLIP]] 계열 비전 인코더를 크게 뛰어넘는 시각 표현 능력을 목표로 설계되었다. LLM과 결합해 강력한 멀티모달 이해 능력을 달성한다.
+InternViT-6B는 Shanghai AI Laboratory가 개발한 InternVL(Internal Vision-Language) 프레임워크의 핵심 비전 인코더다. 60억(6B) 파라미터를 가진 대규모 [[vision-transformer]] 기반 인코더로, 기존 [[clip|CLIP]] 계열 비전 인코더를 크게 뛰어넘는 시각 표현 능력을 목표로 설계되었다. LLM과 결합해 강력한 멀티모달 이해 능력을 달성한다.
 
 ## InternVL 프레임워크에서의 위치
 
@@ -127,7 +127,7 @@ Hugging Face에서 모델 가중치를 직접 다운로드해 사용할 수 있�
 
 ## 관련 문서
 
-- [[vision-transformer-vit]] - 기반 ViT 아키텍처
+- [[vision-transformer]] - 기반 ViT 아키텍처
 - [[clip]] - CLIP 대조학습 방법론
 - [[eva-clip-scaling]] - EVA-CLIP (InternViT 초기화 기반)
 - [[hierarchical-vit-design]] - 대형 ViT 설계 패턴

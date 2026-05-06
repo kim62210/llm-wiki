@@ -40,4 +40,4 @@ Anthropic이 에이전트용 도구 설계 원칙을 정리한 엔지니어링 �
 
 - [[tool-contracts-for-agents|Tool Contracts & Writing Tools for Agents]]
 - [[vercel-ai-sdk-tool-calling|Vercel AI SDK Tool Calling]]
-- [[model-context-protocol-mcp|Model Context Protocol ([[model-context-protocol-mcp|MCP]])]]
+- [[model-context-protocol-mcp|Model Context Protocol (MCP)]]

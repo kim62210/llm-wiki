@@ -1,3 +1,56 @@
+## 2026-05-06 -- Wiki 종합 점검 + 심층 개선 사이클
+
+직전 lint 통과 후 더 깊이 들어가 마크다운 무결성, 빈약한 stub, TODO 마커, 중복 페이지를 정밀 점검·개선했다.
+
+**1. Nested wikilink 24건 정리**
+- 직전 alias 작업의 부작용으로 발생한 `[[outer-[[inner|alias]]-rest]]` 패턴 24건을 22개 직접 매핑으로 정리
+- 수정된 23개 파일: ai-agent-guardrails, mcp-authorization-draft, claude-code, writing-effective-tools-for-agents, claude-opus-4-5-release-notes, google-adk, mcp-roadmap-development, gpt-5-4, mcp-specification-2025-11-25, model-context-protocol, omc-ralplan, omc-ultrawork, flashattention-4-paper, deepseek-mhc, sovereign-ai, agentic-ai-production, omc-skill-layering, responsible-scaling-policy-v3, ai-ma-mega-deals, us-china-ai-competition, deliberative-alignment, kv-cache-compression, litert-lm
+- Mermaid 다이어그램 노드 안의 `[["[[clip|CLIP]] ..."]]` 등 9건은 정당한 사용으로 유지
+
+**2. 빈약한 stub 페이지 4건 보강 (평균 970 단어)**
+- `tooling/feast.md` 359 chars → 904 단어 (Offline/Online Store/Registry/Feature Server 4 컴포넌트, Push API, Tecton 비교)
+- `tooling/dvc.md` 437 chars → 965 단어 (`.dvc` 메타, Remote Storage 7종, dvc.yaml stages, DVCLive, Studio)
+- `applications/ai-workflow-automation.md` 470 chars → 974 단어 (Trigger→Context→LLM→Action 4단계, 7개 플랫폼 비교)
+- `applications/ai-data-pipeline-automation.md` 475 chars → 1,113 단어 (Airflow/Prefect/Dagster/Kestra/Mage 카탈로그)
+- 모두 1차 공식 docs (feast.dev, dvc.org/doc, n8n.io, airflow/prefect/dagster) fetch 기반
+
+**3. TODO/조사필요 마커 18개 처리**
+- 자동 보강 9파일 / 11마커 (1차 소스 검증 후 사실 채움)
+  - `agents/planner-executor-verifier-frameworks` — OpenHands event-sourced delegation, CodeAct (arXiv 2407.16741)
+  - `agents/production-agent-architectures` — Copilot Workspace 4단계 파이프라인 (githubnext user manual)
+  - `concepts/context-window-management` — thinking block 보존 정책 모델 세대별 5행 표 (Anthropic extended thinking docs)
+  - `concepts/prompt-as-program` — LangChain PromptTemplate / LlamaIndex 비교
+  - `concepts/ai-fluency-literacy` — UNESCO AI competency framework 4 dimensions × 12
+  - `tooling/claude-opus-4-5` — 200K/1M 컨텍스트, 출시일 2025-11-24
+  - `tooling/gemini-2-5-flash-thinking` — thinkingBudget API 사양 (0~24576, -1=dynamic)
+  - `tooling/nvidia-nemotron-3-family` — Nano/Super/Ultra 정확 파라미터 + Mamba-Transformer MoE
+  - `concepts/omc-hook-system`, `agents/coding-harness-comparison` — placeholder 정리·근거 명확화
+- 명확화 1마커: METR 작업 지평선 데이터 미공개 → "[교차검증 필요]" 명시
+- 오탐 6파일: TODO/XXX 단어가 정상 콘텐츠 일부 (IOB 태깅 B-XXX, "TODO 항목" 인용 등)
+
+**4. vit / vision-transformer-vit / vision-transformer 중복 통합 (옵션 A)**
+- 가장 풍부한 `architectures/vision-transformer.md`로 통합 (218줄, aliases에 vit/vision-transformer-vit 포함)
+- `architectures/vit.md` (5/6 신규), `architectures/vision-transformer-vit.md` (4/17 작성) 삭제
+- `[[vit]]` 5건 + `[[vision-transformer-vit]]` 27건 = **32개 wikilink reference** 모두 통합 페이지로 변경
+- index.md 두 entry 제거
+
+**최종 lint 검증 (2,002 페이지)**
+| 항목 | 결과 |
+|------|------|
+| Nested wikilinks (non-mermaid) | **0건** ✓ |
+| Missing frontmatter (non-meta) | **0건** ✓ |
+| 한국어 본문 위반 | **0건** ✓ |
+| 빈약 페이지 (body<500) | **0건** ✓ |
+| Broken wikilink count ≥ 3 | 5건 (다음 사이클 후보) |
+
+**다음 사이클 후보 (broken wikilink count ≥ 3)**
+- `Showboat` (6회), `Rodney` (5회) — Simon Willison agentic guide 도구명, entity 페이지 신규 후보
+- `adamw` (5회) — AdamW 옵티마이저 별도 entity/concept 페이지 후보
+- `ml-reproducibility` (3회) — 신규 concept 페이지 후보
+- `RLHF 인간 선호도 강화학습 원논문 (Christiano et al.)` (3회) — Christiano 2017 paper 페이지 후보
+
+---
+
 ## 2026-05-06 -- Wiki Lint: 전체 점검 + 자동 수정
 
 **점검 통계**

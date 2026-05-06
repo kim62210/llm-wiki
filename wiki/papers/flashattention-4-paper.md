@@ -1,5 +1,5 @@
 ---
-title: [[flash-[[self-attention-mechanism|attention]]-fundamentals|FlashAttention]]-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling
+title: [[flash-attention-fundamentals|FlashAttention]]-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling
 category: papers
 page_type: paper
 tags: [paper, inference, attention, gpu-kernels]

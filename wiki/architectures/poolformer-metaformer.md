@@ -109,7 +109,7 @@ MetaFormer 가설이 중요한 이유:
 
 ## 관련 문서
 
-- [[vision-transformer-vit]] - ViT: Self-Attention 기반 비전 Transformer
+- [[vision-transformer]] - ViT: Self-Attention 기반 비전 Transformer
 - [[convnext]] - ConvNeXt: Conv 기반 MetaFormer 변형
 - [[mamba-original-paper|mamba-ssm]] - Mamba: 상태 공간 모델 기반 토큰 믹서
 - [[self-attention-mechanism|Attention]] - Attention 메커니즘 원리

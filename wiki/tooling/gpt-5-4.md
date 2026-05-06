@@ -38,4 +38,4 @@ updated: 2026-04-13
 - [[claude-opus-4-6]]
 - [[gemini-3-1-pro]]
 - [[ai-reasoning-models]] -- GPT-5.4의 추론 통합(OSWorld 75%)이 속하는 개념 계층
-- [[computer-use-[[coding-agent|agent]]s]] -- 네이티브 컴퓨터 사용 플래그십이라는 특성과 연결
+- [[computer-use-agent|computer-use-agents]] -- 네이티브 컴퓨터 사용 플래그십이라는 특성과 연결

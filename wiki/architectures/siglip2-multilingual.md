@@ -101,5 +101,5 @@ flowchart LR
 
 - [[siglip]] - SigLIP2의 전작. 시그모이드 손실 도입 원점
 - [[clip]] - 비전-언어 대조 학습의 기초
-- [[vision-transformer-vit]] - 이미지 인코더 기반 아키텍처
+- [[vision-transformer]] - 이미지 인코더 기반 아키텍처
 - [[vit-patch-embedding]] - NaFlex와 연관된 패치 임베딩 설계

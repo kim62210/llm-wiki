@@ -274,7 +274,7 @@ Fuyu의 가장 큰 기여는 **"비전 인코더가 반드시 필요하지 않�
 
 - [[multimodal-llm]] - 멀티모달 LLM 개념 전반
 - [[image-tokenization]] - 이미지 토크나이징 방법 비교
-- [[vit]] - 비전 트랜스포머 (Fuyu가 사용하지 않는 것)
+- [[vision-transformer]] - 비전 트랜스포머 (Fuyu가 사용하지 않는 것)
 - [[blip-2-paper]] - 비교: Q-Former 기반 복잡한 브리지
 - [[llava-original-paper]] - 비교: MLP 프로젝터 방식
 - [[kosmos-paper]] - 비교: Microsoft의 유사 시기 멀티모달 접근

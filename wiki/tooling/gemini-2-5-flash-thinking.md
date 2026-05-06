@@ -6,7 +6,7 @@ project: Gemini
 tags: [gemini, thinking-model, 1m-context, google-deepmind, native-audio, computer-use]
 sources: [raw/2026-04-27-harvest-deepmind-msft-nvidia.md]
 created: 2026-04-27
-updated: 2026-04-27
+updated: 2026-05-06
 ---
 
 # Gemini 2.5 Flash Thinking
@@ -53,7 +53,7 @@ Gemini 2.5 Pro와 동일한 1M 토큰 컨텍스트 창을 유지하면서 토큰
 Thinking 모드는 응답 전에 내부 추론 단계(chain-of-thought)를 거치는 방식으로, 복잡한 수학 문제나 다단계 코딩 작업에서 정확도를 높인다. [[reasoning-llm]] 문서에서 다루는 o1/o3 계열 모델과 유사한 방향이지만, Flash 가격대에서 활성화할 수 있다는 점이 차별점이다.
 
 - 응답 품질과 지연 시간 사이 트레이드오프가 존재
-- Thinking 예산(budget) 파라미터로 추론 깊이 조절 가능 [교차검증 필요 - API 파라미터 상세]
+- `thinkingBudget` 파라미터로 추론 토큰 수 직접 제어 (Flash 기준 0~24576 토큰 범위, 0이면 thinking 비활성화, -1이면 dynamic thinking 모드 — 모델이 요청 복잡도에 따라 자동 조절). 출처: `ai.google.dev/gemini-api/docs/thinking`
 - 수학, 코딩, 다단계 추론 벤치마크에서 Flash Lite 대비 유의미한 향상
 
 ### 2. 네이티브 오디오 출력 (Native Audio Output)
@@ -127,7 +127,7 @@ response = model.generate_content("요약해줘: ...")
 
 ### Thinking 모드 활성화
 
-모델 ID에 `-thinking` 접미사 또는 API 파라미터로 활성화한다. [교차검증 필요 - 정확한 API 파라미터 이름은 공식 Google AI Studio 문서에서 확인 권장]
+Gemini 2.5 시리즈는 `thinkingConfig.thinkingBudget` 파라미터로 thinking을 제어한다 (Gemini API `generateContent` 호출 내). 0이면 비활성, -1이면 dynamic thinking, 1~24576이면 명시적 토큰 한도. `thinkingLevel`은 2.5 시리즈에서 지원되지 않는다. 자세한 사양은 [Gemini API thinking docs](https://ai.google.dev/gemini-api/docs/thinking) 참조.
 
 ---
 

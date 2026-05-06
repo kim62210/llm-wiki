@@ -108,6 +108,6 @@ NeMo Guardrails는 주요 에이전트 프레임워크와 직접 통합된다:
 ## 관련 문서
 
 - [[human-in-the-loop-patterns]] - 인간 승인 패턴
-- [[evolution-of-[[coding-agent|agent]]ic-patterns]] - 에이전트 패턴의 진화
+- [[evolution-of-agentic-patterns]] - 에이전트 패턴의 진화
 - [[langfuse]] - LLM 옵저버빌리티 (가드레일 모니터링)
 - [[portkey]] - AI 게이트웨이 (네트워크 레벨 가드레일)

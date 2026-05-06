@@ -12,7 +12,7 @@ updated: 2026-04-17
 
 ## 개요
 
-MobileViT는 Apple이 2021년 발표한 경량 비전 트랜스포머 아키텍처다. CNN과 ViT를 하이브리드 방식으로 결합해 **모바일 기기에서 동작할 수 있는 작은 크기**를 유지하면서도 트랜스포머의 글로벌 처리 능력을 활용한다. MobileNet 계열의 파라미터 효율성과 [[vision-transformer-vit]]의 비국소적(non-local) 표현 학습을 통합한 것이 핵심이다.
+MobileViT는 Apple이 2021년 발표한 경량 비전 트랜스포머 아키텍처다. CNN과 ViT를 하이브리드 방식으로 결합해 **모바일 기기에서 동작할 수 있는 작은 크기**를 유지하면서도 트랜스포머의 글로벌 처리 능력을 활용한다. MobileNet 계열의 파라미터 효율성과 [[vision-transformer]]의 비국소적(non-local) 표현 학습을 통합한 것이 핵심이다.
 
 ## 동기: 왜 CNN-ViT 하이브리드인가
 
@@ -112,6 +112,6 @@ flowchart TD
 ## 관련 문서
 
 - [[mobilenet-efficientnet]] - MobileNet 계열 경량 CNN
-- [[vision-transformer-vit]] - 기반 ViT 아키텍처
+- [[vision-transformer]] - 기반 ViT 아키텍처
 - [[hierarchical-vit-design]] - 계층적 ViT 설계 패턴 (Swin 등)
 - [[deit-data-efficient-image-transformer]] - 데이터 효율적 ViT 학습

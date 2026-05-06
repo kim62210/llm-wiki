@@ -12,7 +12,7 @@ updated: 2026-04-17
 
 ## 개요
 
-TimeSformer(Time-Space Transformer)는 Facebook AI Research(2021)에서 발표한 비디오 인식 트랜스포머 아키텍처다. 핵심 기여는 **시간 어텐션(temporal attention)과 공간 어텐션(spatial attention)을 별도 레이어로 분리(divided attention)**하는 방식으로, [[vision-transformer-vit]]를 비디오에 직접 적용할 때 발생하는 연산 폭발 문제를 해결한다.
+TimeSformer(Time-Space Transformer)는 Facebook AI Research(2021)에서 발표한 비디오 인식 트랜스포머 아키텍처다. 핵심 기여는 **시간 어텐션(temporal attention)과 공간 어텐션(spatial attention)을 별도 레이어로 분리(divided attention)**하는 방식으로, [[vision-transformer]]를 비디오에 직접 적용할 때 발생하는 연산 폭발 문제를 해결한다.
 
 ## 문제 배경: 시공간 어텐션의 연산 비용
 
@@ -65,7 +65,7 @@ TimeSformer 논문에서는 5가지 어텐션 설계를 실험적으로 비교�
 
 ## ViT와의 관계 및 확장
 
-TimeSformer는 [[vision-transformer-vit]]의 사전학습 가중치(ImageNet 21K)를 직접 초기화에 활용한다. 공간 어텐션 레이어는 ViT와 동일한 구조이므로 가중치 재사용이 자연스럽다. 시간 어텐션 레이어는 신규 추가이므로 제로 초기화 후 파인튜닝한다.
+TimeSformer는 [[vision-transformer]]의 사전학습 가중치(ImageNet 21K)를 직접 초기화에 활용한다. 공간 어텐션 레이어는 ViT와 동일한 구조이므로 가중치 재사용이 자연스럽다. 시간 어텐션 레이어는 신규 추가이므로 제로 초기화 후 파인튜닝한다.
 
 [[transformer-architecture]] 관점에서 TimeSformer는 기존 구조를 유지하면서 어텐션 패턴만 도메인 특화로 수정한 "최소 침습(minimal invasive)" 설계다.
 
@@ -84,7 +84,7 @@ TimeSformer는 [[vision-transformer-vit]]의 사전학습 가중치(ImageNet 21K
 
 ## 관련 문서
 
-- [[vision-transformer-vit]] - 사전학습 가중치를 재사용하는 기반 아키텍처
+- [[vision-transformer]] - 사전학습 가중치를 재사용하는 기반 아키텍처
 - [[transformer-architecture]] - 셀프 어텐션의 기본 원리
 - [[videomae-masked-video]] - 비디오 자기지도학습 접근법
 - [[video-clip-contrastive]] - 텍스트-비디오 대조학습

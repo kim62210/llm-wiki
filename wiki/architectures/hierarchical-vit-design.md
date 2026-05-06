@@ -12,7 +12,7 @@ updated: 2026-04-17
 
 ## 개요
 
-계층적 ViT(Hierarchical Vision Transformer)는 [[vision-transformer-vit]] 원본의 단일 스케일 한계를 극복하기 위해 CNN처럼 **다중 해상도 피처맵**을 생성하는 설계 패턴이다. [[swin-transformer]]를 필두로 CSWin, MaxViT 등 다양한 변형이 등장했다. 객체 탐지, 세그멘테이션 같은 밀집 예측(dense prediction) 태스크에서 원본 ViT보다 강력한 성능을 보인다.
+계층적 ViT(Hierarchical Vision Transformer)는 [[vision-transformer]] 원본의 단일 스케일 한계를 극복하기 위해 CNN처럼 **다중 해상도 피처맵**을 생성하는 설계 패턴이다. [[swin-transformer]]를 필두로 CSWin, MaxViT 등 다양한 변형이 등장했다. 객체 탐지, 세그멘테이션 같은 밀집 예측(dense prediction) 태스크에서 원본 ViT보다 강력한 성능을 보인다.
 
 ## 왜 계층적 설계가 필요한가
 
@@ -134,7 +134,7 @@ flowchart TD
 ## 관련 문서
 
 - [[swin-transformer]] - Swin Transformer 상세
-- [[vision-transformer-vit]] - 원본 ViT
+- [[vision-transformer]] - 원본 ViT
 - [[masked-image-modeling-survey]] - MIM 방법론 (SimMIM 포함)
 - [[mobilevit-efficient-vit]] - 경량 하이브리드 ViT
 - [[vit-register-tokens]] - ViT 아티팩트 억제 기법

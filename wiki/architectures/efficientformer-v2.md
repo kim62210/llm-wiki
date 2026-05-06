@@ -12,7 +12,7 @@ updated: 2026-04-17
 
 ## 개요
 
-EfficientFormer-v2는 모바일 디바이스에서의 실시간 추론을 목표로 설계된 레이턴시 최적화 비전 트랜스포머(Vision Transformer)다. [[vision-transformer-vit]]의 강력한 표현력을 유지하면서도 [[mobilevit-efficient-vit]]와 같은 경량화 모델들이 추구하는 낮은 지연 시간과 적은 메모리 사용량을 달성하기 위해, 연산 병목 분석과 구조적 재설계를 결합한다.
+EfficientFormer-v2는 모바일 디바이스에서의 실시간 추론을 목표로 설계된 레이턴시 최적화 비전 트랜스포머(Vision Transformer)다. [[vision-transformer]]의 강력한 표현력을 유지하면서도 [[mobilevit-efficient-vit]]와 같은 경량화 모델들이 추구하는 낮은 지연 시간과 적은 메모리 사용량을 달성하기 위해, 연산 병목 분석과 구조적 재설계를 결합한다.
 
 핵심 철학은 "이론적 FLOPs가 아닌 실제 하드웨어 레이턴시를 최적화 목표로 삼는 것"이다. FLOPs가 낮다고 레이턴시가 낮은 것이 아님을 출발점으로, 실제 iPhone이나 Android 기기에서의 실행 시간을 직접 측정하여 아키텍처를 설계한다.
 
@@ -95,6 +95,6 @@ Transformer의 FFN(Feed-Forward Network) 부분도 최적화한다:
 ## 관련 문서
 
 - [[mobilevit-efficient-vit]] - 유사한 모바일 비전 트랜스포머 경량화 접근
-- [[vision-transformer-vit]] - EfficientFormer-v2가 기반하는 ViT 아키텍처 원론
+- [[vision-transformer]] - EfficientFormer-v2가 기반하는 ViT 아키텍처 원론
 - [[vit-patch-embedding]] - 패치 임베딩과 스테이지별 해상도 설계
 - [[vit-distillation-techniques]] - EfficientFormer-v2와 함께 사용 가능한 경량화 전략

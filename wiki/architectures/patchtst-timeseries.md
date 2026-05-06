@@ -136,7 +136,7 @@ flowchart LR
 
 ## 관련 문서
 
-- [[vision-transformer-vit]] - ViT: PatchTST가 패치 개념을 차용한 이미지 Transformer
+- [[vision-transformer]] - ViT: PatchTST가 패치 개념을 차용한 이미지 Transformer
 - [[self-attention-mechanism|Attention]] - Self-Attention 메커니즘
 - [[time-series-forecasting]] - 시계열 예측 일반 개요
 - [[dlinear-timeseries]] - PatchTST가 능가한 강력한 선형 기준선
